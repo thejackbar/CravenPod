@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fulham FC 2024/25 — The Books Laid Bare | Cravenpod</title>
+<meta name="description" content="A deep financial analysis of Fulham Football Club's 2024/25 annual accounts, featuring interactive charts, the new Premier League Squad Cost Ratio (SCR) calculator, and relegation scenarios.">
+<meta property="og:title" content="Fulham FC 2024/25 — The Books Laid Bare">
+<meta property="og:description" content="£39m loss. Billionaire owner. New rules on the horizon. An interactive reading of Fulham's latest Companies House filing.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --paper: #f4f1ea;
+    --paper-dark: #e8e3d6;
+    --accent: #cc0000;
+    --accent-soft: #8b0000;
+    --gold: #b8935e;
+    --ok: #2d5016;
+    --warn: #b8860b;
+    --danger: #8b0000;
+    --rule: rgba(10,10,10,0.15);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(10,10,10,0.03) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(10,10,10,0.03) 0%, transparent 40%);
+  }
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* ============ HEADER / HERO ============ */
+  .masthead {
+    border-bottom: 3px solid var(--ink);
+    padding: 24px 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: var(--paper);
+    position: relative;
+    z-index: 10;
+  }
+  .masthead .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  }
+  .masthead .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: flex;
+    gap: 24px;
+  }
+  .masthead .meta span::before {
+    content: '●';
+    margin-right: 6px;
+    color: var(--accent);
+  }
+
+  .hero {
+    padding: 80px 40px 60px;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .kicker::before {
+    content: '';
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+  }
+  .headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(48px, 9vw, 140px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+  }
+  .headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .dek {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.4;
+    max-width: 720px;
+    color: rgba(10,10,10,0.75);
+    font-weight: 400;
+  }
+
+  /* ============ MARQUEE NUMBERS ============ */
+  .marquee {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 40px;
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+  .marquee-item {
+    background: var(--paper);
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .marquee-item:hover { background: var(--paper-dark); }
+  .marquee-item .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(10,10,10,0.55);
+    margin-bottom: 8px;
+  }
+  .marquee-item .value {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(28px, 3.5vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .marquee-item .delta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  .delta.up { color: var(--ok); }
+  .delta.down { color: var(--danger); }
+  .delta.flat { color: rgba(10,10,10,0.5); }
+
+  /* ============ NAV ============ */
+  .sec-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 40px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid rgba(244,241,234,0.1);
+  }
+  .sec-nav a {
+    color: var(--paper);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 8px 20px;
+    border-right: 1px solid rgba(244,241,234,0.1);
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s;
+  }
+  .sec-nav a:hover {
+    background: var(--accent);
+  }
+  .sec-nav a:first-child { padding-left: 0; }
+  .sec-nav a:last-child { border-right: none; }
+
+  /* ============ CONTENT SECTIONS ============ */
+  .section {
+    padding: 100px 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .sec-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    max-width: 1000px;
+  }
+  .sec-lede {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 760px;
+    color: rgba(10,10,10,0.75);
+    margin-bottom: 60px;
+  }
+
+  /* ============ P&L BLOCK ============ */
+  .pl-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { .pl-grid { grid-template-columns: 1fr; } }
+
+  .chart-wrap {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 32px;
+    position: relative;
+  }
+  .chart-wrap::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 40px; height: 40px;
+    border-top: 3px solid var(--ink);
+    border-left: 3px solid var(--ink);
+  }
+  .chart-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; right: -1px;
+    width: 40px; height: 40px;
+    border-bottom: 3px solid var(--ink);
+    border-right: 3px solid var(--ink);
+  }
+  .chart-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+  }
+  .chart-sub {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .story-block p {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .story-block p:first-child::first-letter {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 72px;
+    float: left;
+    line-height: 0.85;
+    margin: 6px 10px 0 0;
+    color: var(--accent);
+  }
+  .pull-quote {
+    border-left: 4px solid var(--accent);
+    padding: 12px 24px;
+    margin: 32px 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  /* ============ REVENUE EXPLORER ============ */
+  .rev-container {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 60px 40px;
+    border-radius: 0;
+  }
+  .rev-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 48px;
+    max-width: 1520px;
+    margin: 0 auto;
+  }
+  @media (max-width: 900px) { .rev-grid { grid-template-columns: 1fr; } }
+  .rev-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .rev-title em { color: var(--accent); font-style: italic; }
+  .rev-sub {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    color: rgba(244,241,234,0.7);
+    margin-bottom: 32px;
+    line-height: 1.5;
+  }
+  .rev-items { display: flex; flex-direction: column; gap: 4px; }
+  .rev-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(244,241,234,0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+  .rev-item:hover {
+    background: rgba(244,241,234,0.1);
+    border-left-color: var(--accent);
+    padding-left: 24px;
+  }
+  .rev-item.active {
+    background: rgba(204,0,0,0.15);
+    border-left-color: var(--accent);
+  }
+  .rev-item-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .rev-item-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--paper);
+  }
+  .rev-item-bar {
+    grid-column: 1 / -1;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 8px;
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .rev-item-desc {
+    grid-column: 1 / -1;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(244,241,234,0.7);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, margin-top 0.4s ease;
+  }
+  .rev-item.active .rev-item-desc {
+    max-height: 200px;
+    margin-top: 8px;
+  }
+
+  /* ============ STAT CARDS ============ */
+  .concern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .concern-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 32px 28px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .concern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(10,10,10,0.15);
+  }
+  .concern-card.red { border-top: 4px solid var(--danger); }
+  .concern-card.amber { border-top: 4px solid var(--warn); }
+  .concern-card.green { border-top: 4px solid var(--ok); }
+  .concern-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .red .concern-badge { background: var(--danger); color: var(--paper); }
+  .amber .concern-badge { background: var(--warn); color: var(--ink); }
+  .green .concern-badge { background: var(--ok); color: var(--paper); }
+  .concern-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .concern-metric {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 44px;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .concern-desc {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(10,10,10,0.7);
+  }
+
+  /* ============ SCR CALCULATOR ============ */
+  .scr-section {
+    background: linear-gradient(to bottom, var(--paper-dark), var(--paper));
+    padding: 80px 40px;
+  }
+  .scr-container {
+    max-width: 1520px;
+    margin: 0 auto;
+  }
+  .scr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-top: 40px;
+  }
+  @media (max-width: 900px) { .scr-grid { grid-template-columns: 1fr; } }
+
+  .scr-calc {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px;
+    position: relative;
+  }
+  .scr-calc-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .scr-calc-sub {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    line-height: 1.2;
+  }
+  .slider-group { margin-bottom: 32px; }
+  .slider-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .slider-label .name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(244,241,234,0.7);
+  }
+  .slider-label .val {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgba(244,241,234,0.2);
+    outline: none;
+    border-radius: 0;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--accent);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(204,0,0,0.2);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--accent);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+  }
+
+  .scr-gauge {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(244,241,234,0.15);
+  }
+  .gauge-track {
+    position: relative;
+    height: 50px;
+    background: rgba(244,241,234,0.08);
+    margin: 20px 0 12px;
+    overflow: hidden;
+  }
+  .gauge-zone {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(244,241,234,0.4);
+  }
+  .gauge-zone.green { left: 0; width: 73.9%; background: rgba(45,80,22,0.4); }
+  .gauge-zone.amber { left: 73.9%; width: 26.1%; background: rgba(184,134,11,0.4); }
+  .gauge-zone.red { left: 100%; width: 0; background: rgba(139,0,0,0.4); }
+  .gauge-marker {
+    position: absolute;
+    top: -8px;
+    bottom: -8px;
+    width: 3px;
+    background: var(--paper);
+    transition: left 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+    z-index: 5;
+  }
+  .gauge-marker::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid var(--paper);
+  }
+  .gauge-marker::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--paper);
+  }
+  .gauge-legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(244,241,234,0.5);
+  }
+  .scr-verdict {
+    margin-top: 32px;
+    padding: 20px;
+    background: rgba(244,241,234,0.05);
+    border-left: 3px solid var(--accent);
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    line-height: 1.5;
+    transition: border-color 0.4s;
+  }
+
+  .scr-explain {
+    background: var(--paper);
+    padding: 40px;
+    border: 1px solid var(--rule);
+  }
+  .scr-explain h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+  .scr-explain p {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    color: rgba(10,10,10,0.8);
+  }
+  .rule-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .rule-box {
+    padding: 20px;
+    border: 1px solid var(--rule);
+    background: #fff;
+  }
+  .rule-box h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+    color: var(--accent);
+  }
+  .rule-box p {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  /* ============ KHAN FACTOR ============ */
+  .khan-section {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .khan-section::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background:
+      radial-gradient(circle at 70% 50%, rgba(204,0,0,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .khan-container { max-width: 1520px; margin: 0 auto; position: relative; }
+  .khan-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .khan-grid { grid-template-columns: 1fr; } }
+  .khan-quote {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .khan-quote em { color: var(--accent); font-style: italic; }
+  .khan-stats {
+    display: grid;
+    gap: 20px;
+  }
+  .khan-stat {
+    border-left: 3px solid var(--accent);
+    padding: 16px 24px;
+    background: rgba(244,241,234,0.03);
+  }
+  .khan-stat-val {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .khan-stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(244,241,234,0.7);
+    line-height: 1.4;
+  }
+
+  /* ============ BALANCE SHEET VIS ============ */
+  .bs-viz {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 40px;
+    margin-top: 40px;
+  }
+  .bs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .bs-tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--paper-dark);
+    padding: 4px;
+  }
+  .bs-tab {
+    padding: 8px 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--ink);
+  }
+  .bs-tab.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .bs-bars {
+    display: grid;
+    gap: 12px;
+  }
+  .bs-bar-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 120px;
+    align-items: center;
+    gap: 20px;
+  }
+  @media (max-width: 700px) {
+    .bs-bar-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+  .bs-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .bs-track {
+    height: 28px;
+    background: var(--paper-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .bs-fill {
+    height: 100%;
+    background: var(--ink);
+    transform-origin: left;
+    transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .bs-fill.asset { background: var(--ok); }
+  .bs-fill.liability { background: var(--danger); }
+  .bs-fill.equity { background: var(--gold); }
+  .bs-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+  }
+
+  /* ============ INSIGHTS ============ */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .insight {
+    padding: 32px 28px;
+    background: #fff;
+    border: 1px solid var(--rule);
+    position: relative;
+  }
+  .insight .tag {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 4px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .insight h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 8px 0 16px;
+  }
+  .insight p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(10,10,10,0.75);
+  }
+  .insight .big {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: var(--accent);
+    display: block;
+    margin: 12px 0;
+    letter-spacing: -0.02em;
+  }
+
+  /* ============ VERDICT / FOOTER ============ */
+  .verdict {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 40px;
+    text-align: center;
+  }
+  .verdict-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .verdict-text {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .verdict-text em { color: var(--accent); font-style: italic; }
+  .verdict-sub {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(244,241,234,0.7);
+    max-width: 680px;
+    margin: 32px auto 0;
+  }
+
+  .footer {
+    padding: 40px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(10,10,10,0.5);
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ============ RESET BUTTON ============ */
+  .reset-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    color: rgba(244,241,234,0.6);
+    border: 1px solid rgba(244,241,234,0.25);
+    padding: 6px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .reset-btn:hover {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+  .reset-btn .icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  .reset-btn:hover .icon {
+    transform: rotate(-360deg);
+  }
+  .reset-btn.light {
+    color: rgba(10,10,10,0.55);
+    border-color: rgba(10,10,10,0.2);
+  }
+  .reset-btn.light:hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  /* ============ TRENDS SECTION ============ */
+  .trends-wrap {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 40px;
+    margin-top: 40px;
+    position: relative;
+  }
+  .trends-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .metric-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .metric-tab {
+    padding: 10px 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    background: var(--paper-dark);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: rgba(10,10,10,0.6);
+  }
+  .metric-tab:hover {
+    color: var(--ink);
+    border-color: var(--rule);
+  }
+  .metric-tab.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .trends-body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .trends-body { grid-template-columns: 1fr; } }
+  .trend-callout {
+    padding: 24px;
+    background: var(--paper);
+    border-left: 3px solid var(--accent);
+  }
+  .trend-callout .big {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+  .trend-callout .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(10,10,10,0.55);
+    margin-bottom: 20px;
+  }
+  .trend-callout p {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* ============ PEER BENCHMARK ============ */
+  .peer-container {
+    background: var(--paper-dark);
+    padding: 80px 40px;
+    position: relative;
+  }
+  .peer-bars {
+    max-width: 1520px;
+    margin: 40px auto 0;
+    background: #fff;
+    padding: 40px;
+    border: 1px solid var(--rule);
+  }
+  .peer-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 80px;
+    gap: 20px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(10,10,10,0.06);
+    transition: background 0.2s;
+  }
+  .peer-row:last-child { border-bottom: none; }
+  .peer-row:hover { background: rgba(204,0,0,0.03); }
+  .peer-row.highlight {
+    background: rgba(204,0,0,0.08);
+    padding: 20px 12px;
+    margin: 4px -12px;
+    border-bottom-color: transparent;
+  }
+  .peer-club {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .peer-row.highlight .peer-club { font-weight: 900; color: var(--accent); }
+  .peer-track {
+    height: 18px;
+    background: var(--paper-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .peer-fill {
+    height: 100%;
+    background: linear-gradient(to right, #2d5016 0%, #2d5016 70%, #b8860b 70%, #b8860b 85%, #8b0000 85%);
+    background-size: 100%;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 1.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .peer-fill.animate { transform: scaleX(var(--pct)); }
+  .peer-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: right;
+  }
+  .peer-row.highlight .peer-value { color: var(--accent); font-weight: 700; }
+  .peer-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .peer-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .peer-legend-item .swatch {
+    width: 14px; height: 14px;
+  }
+
+  /* ============ RELEGATION SCENARIO ============ */
+  .scenario-wrap {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 40px;
+    margin-top: 40px;
+  }
+  .scenario-toggle {
+    display: inline-flex;
+    background: var(--paper-dark);
+    padding: 4px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .scenario-toggle button {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(10,10,10,0.5);
+    transition: color 0.3s;
+    position: relative;
+    z-index: 2;
+  }
+  .scenario-toggle button.active { color: var(--paper); }
+  .scenario-slider {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    background: var(--ink);
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+    z-index: 1;
+  }
+  .scenario-toggle[data-active="ep"] .scenario-slider { left: 4px; width: calc(33.33% - 4px); }
+  .scenario-toggle[data-active="championship"] .scenario-slider { background: var(--danger); }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 700px) { .scenario-grid { grid-template-columns: 1fr; } }
+  .scenario-card {
+    padding: 24px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    transition: all 0.4s ease;
+  }
+  .scenario-card.impact { border-color: var(--danger); border-width: 2px; }
+  .scenario-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(10,10,10,0.55);
+    margin-bottom: 12px;
+  }
+  .scenario-value {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+    transition: color 0.4s, transform 0.4s;
+  }
+  .scenario-value.bad { color: var(--danger); }
+  .scenario-value.good { color: var(--ok); }
+  .scenario-change {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .scenario-change.down { color: var(--danger); }
+  .scenario-change.up { color: var(--ok); }
+  .scenario-desc {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(10,10,10,0.75);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* Number flip animation */
+  @keyframes numFlip {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .flip { animation: numFlip 0.5s ease forwards; }
+
+  /* ============ SCROLL REVEAL ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ DECORATIVE MARKS ============ */
+  .deco-mark {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 160px;
+    line-height: 1;
+    color: rgba(10,10,10,0.04);
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { padding: 48px 20px 40px; }
+    .section { padding: 64px 20px; }
+    .khan-section, .scr-section, .verdict { padding: 64px 20px; }
+    .rev-container, .peer-container { padding: 48px 20px; }
+    .bs-viz, .trends-wrap, .scenario-wrap, .peer-bars { padding: 24px 20px; }
+    .chart-wrap { padding: 20px; }
+    .scr-calc, .scr-explain { padding: 28px 22px; }
+    .concern-card { padding: 24px 20px; }
+    .insight { padding: 24px 20px; }
+  }
+
+  @media (max-width: 700px) {
+    .masthead { padding: 16px 20px; flex-direction: column; gap: 8px; align-items: flex-start; }
+    .masthead .meta { gap: 12px; flex-wrap: wrap; font-size: 10px; }
+    .hero { padding: 40px 20px 32px; }
+    .section { padding: 56px 20px; }
+    .khan-section, .scr-section, .verdict { padding: 56px 20px; }
+    .rev-container { padding: 40px 20px; }
+    .peer-container { padding: 40px 20px; }
+
+    /* Peer rows stack properly */
+    .peer-row { grid-template-columns: 110px 1fr 60px; gap: 12px; padding: 10px 0; }
+    .peer-club { font-size: 13px; }
+    .peer-value { font-size: 12px; }
+
+    /* Trends body single column */
+    .trends-body { gap: 24px; }
+    .trend-callout .big { font-size: 38px; }
+    .metric-tab { padding: 8px 12px; font-size: 10px; }
+
+    /* Scenario cards */
+    .scenario-value { font-size: 32px; }
+
+    .marquee {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px;
+      margin-top: 40px;
+    }
+    .marquee-item { padding: 8px 12px; }
+    .marquee-item .value { font-size: 28px; }
+
+    .sec-nav { padding: 12px 20px; }
+    .sec-nav a { padding: 6px 14px; font-size: 10px; }
+
+    .pl-grid { gap: 40px; }
+    .rev-grid, .scr-grid, .khan-grid { gap: 32px; }
+    .concern-grid { gap: 16px; }
+    .insights-grid { gap: 20px; }
+
+    /* Chart sizing */
+    .chart-wrap > div[style*="height: 340px"] { height: 260px !important; }
+    .chart-wrap > div[style*="height: 280px"] { height: 220px !important; }
+
+    /* Balance sheet bars stack properly */
+    .bs-bar-row { grid-template-columns: 1fr; gap: 4px; }
+    .bs-value { text-align: left; }
+
+    /* SCR gauge — taller for label room */
+    .gauge-track { height: 42px; }
+    .gauge-zone { font-size: 9px; }
+    .gauge-legend { font-size: 9px; }
+
+    /* Story block drop cap scales down */
+    .story-block p:first-child::first-letter { font-size: 56px; }
+    .pull-quote { font-size: 18px; padding: 10px 16px; margin: 24px 0; }
+
+    /* Rule compare stacks */
+    .rule-compare { grid-template-columns: 1fr; }
+
+    /* Khan stats tighter */
+    .khan-stat { padding: 14px 18px; }
+    .khan-stat-val { font-size: 36px; }
+  }
+
+  @media (max-width: 420px) {
+    .marquee { grid-template-columns: 1fr; }
+    .marquee-item .value { font-size: 32px; }
+    .gauge-zone { font-size: 0; }
+    .gauge-zone::before {
+      content: attr(data-short);
+      font-size: 9px;
+    }
+  }
+
+  /* Entrance animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-in {
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+  .delay-4 { animation-delay: 0.55s; }
+</style>
+</head>
+<body class="grain">
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <a href="/" class="brand-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--accent);">← CRAVENPOD</span>
+    <span style="color: rgba(10,10,10,0.25);">/</span>
+    <span class="brand">THE LEDGER</span>
+  </a>
+  <div class="meta">
+    <span>FY 2024/25</span>
+    <span>COMPANIES HOUSE FILING</span>
+    <span>COMPANY NO. 2114486</span>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="kicker animate-in">An interactive reading of the accounts</div>
+  <h1 class="headline animate-in delay-1">
+    A £39m loss.<br>
+    A billionaire owner.<br>
+    <em>And new rules on the horizon.</em>
+  </h1>
+  <p class="dek animate-in delay-2">
+    Fulham's 2024/25 accounts tell the story of a mid-table Premier League club spending at the edge of its means while its American owner keeps writing cheques. Here's what's really going on — and why the incoming Squad Cost Ratio rules change the conversation entirely.
+  </p>
+
+  <!-- MARQUEE KEY NUMBERS -->
+  <div class="marquee animate-in delay-3">
+    <div class="marquee-item">
+      <div class="label">Revenue</div>
+      <div class="value">£194.8m</div>
+      <div class="delta up">▲ 7.3% YoY</div>
+    </div>
+    <div class="marquee-item">
+      <div class="label">Loss after tax</div>
+      <div class="value">(£39.0m)</div>
+      <div class="delta down">▼ widened £6.8m</div>
+    </div>
+    <div class="marquee-item">
+      <div class="label">Wages / Revenue</div>
+      <div class="value">85.4%</div>
+      <div class="delta down">▲ dangerously high</div>
+    </div>
+    <div class="marquee-item">
+      <div class="label">League Finish</div>
+      <div class="value">11th</div>
+      <div class="delta up">▲ up 2 places</div>
+    </div>
+    <div class="marquee-item">
+      <div class="label">Cash in bank</div>
+      <div class="value">£13.2m</div>
+      <div class="delta down">▼ down £19.6m</div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="sec-nav">
+  <a href="#story">01 / Story</a>
+  <a href="#trends">02 / 3-Year Trends</a>
+  <a href="#revenue">03 / Revenue</a>
+  <a href="#wages">04 / Costs</a>
+  <a href="#balance">05 / Balance Sheet</a>
+  <a href="#peers">06 / Peer Check</a>
+  <a href="#scr">07 / SCR Calculator</a>
+  <a href="#khan">08 / Khan Factor</a>
+  <a href="#scenarios">09 / Scenarios</a>
+  <a href="#insights">10 / Insights</a>
+  <a href="#verdict">11 / Verdict</a>
+</nav>
+
+<!-- SECTION 01 — THE STORY -->
+<section class="section" id="story">
+  <div class="sec-num">§ 01</div>
+  <h2 class="sec-title">The headline is scary. The reality is nuanced.</h2>
+  <p class="sec-lede">At first glance, a club that lost £39m on revenues of £195m is in trouble. But football accounting is weird, and so is Fulham's ownership structure. Both matter.</p>
+
+  <div class="pl-grid">
+    <div class="chart-wrap">
+      <div class="chart-title">Profit & Loss Breakdown</div>
+      <div class="chart-sub">How £194.8m in revenue became a £39m loss</div>
+      <div style="position: relative; height: 340px;"><canvas id="waterfallChart"></canvas></div>
+    </div>
+
+    <div class="story-block">
+      <p>Fulham's income grew nicely this year. Better league finish, more commercial deals, full stadiums — all good. The wage bill grew faster. That's the core tension.</p>
+      <p>Then comes football's quirk: <strong>amortisation</strong>. When Fulham buy a player for £30m on a 5-year deal, they don't expense £30m immediately. Instead, £6m hits the P&L each year for five years. In 2024/25, that non-cash charge was £61.5m — nearly £6 in every £10 of the reported loss.</p>
+      <div class="pull-quote">
+        "Wages at 85% of revenue is the kind of number that keeps finance directors awake at night. One relegation away from a serious problem."
+      </div>
+      <p>The silver lining: <strong>£41m profit from player sales</strong>. Fulham bought and sold well, developing assets and cashing in. It's the lever that keeps this model viable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 02 — 3-YEAR TRENDS -->
+<section class="section" id="trends">
+  <div class="deco-mark" style="top: 40px; right: 40px;">03</div>
+  <div class="sec-num">§ 02</div>
+  <h2 class="sec-title">Three years in one picture.</h2>
+  <p class="sec-lede">Pick a metric to see how Fulham's numbers have moved since they came back up to the Premier League. Revenue is climbing, but so are the costs — the question is whether the gap is widening or closing.</p>
+
+  <div class="trends-wrap">
+    <div class="trends-header">
+      <div>
+        <div class="chart-title">Trend explorer</div>
+        <div class="chart-sub" id="trendChartTitle">Turnover growth</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap: wrap;">
+        <div class="metric-tabs" id="metricTabs">
+          <button class="metric-tab active" data-metric="revenue">Revenue</button>
+          <button class="metric-tab" data-metric="wages">Wages</button>
+          <button class="metric-tab" data-metric="loss">Loss</button>
+          <button class="metric-tab" data-metric="ratio">Wage Ratio</button>
+          <button class="metric-tab" data-metric="amort">Amortisation</button>
+        </div>
+      </div>
+    </div>
+    <div class="trends-body">
+      <div style="position: relative; height: 320px;"><canvas id="trendsChart"></canvas></div>
+      <div class="trend-callout" id="trendCallout">
+        <div class="label">3-year change</div>
+        <div class="big" id="trendBig">+£13.2m</div>
+        <p id="trendDesc">Revenue grew £13.2m year-on-year, largely driven by Premier League central awards and commercial growth. Over three years, turnover has climbed steadily as Fulham cemented top-flight status.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 03 — REVENUE EXPLORER -->
+<div class="rev-container" id="revenue">
+  <div class="rev-grid">
+    <div>
+      <div class="sec-num" style="color: var(--accent);">§ 03</div>
+      <h2 class="rev-title">Where the <em>money</em> comes from.</h2>
+      <p class="rev-sub">Click each stream to explore. Bars show the proportion of total revenue. The Premier League's central pot is by far the biggest ticket — which is also the biggest risk if relegation ever comes.</p>
+      <div style="position: relative; height: 280px; max-width: 400px; margin: 0 auto;"><canvas id="revDonut"></canvas></div>
+    </div>
+    <div class="rev-items" id="revItems">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 03 — WAGES / COSTS -->
+<section class="section" id="wages">
+  <div class="sec-num">§ 04</div>
+  <h2 class="sec-title">Where the money goes — and why 85% matters.</h2>
+  <p class="sec-lede">Every pound Fulham earned this year, 85.4p went to staff costs. That's the top of the Premier League danger zone, and the single most important number when the new financial rules arrive next season.</p>
+
+  <div class="concern-grid">
+    <div class="concern-card red">
+      <div class="concern-badge">Red Flag</div>
+      <h3 class="concern-title">Wages eating revenue</h3>
+      <div class="concern-metric">85.4%</div>
+      <p class="concern-desc">UEFA caps this at 70% for European clubs. The Premier League's new SCR will cap it at 85% from 2026/27. Fulham are sitting <em>right at the line</em>.</p>
+    </div>
+    <div class="concern-card red">
+      <div class="concern-badge">Red Flag</div>
+      <h3 class="concern-title">Cash in bank falling</h3>
+      <div class="concern-metric">-60%</div>
+      <p class="concern-desc">Cash dropped from £32.8m to £13.2m year-on-year. Operational cash burn plus heavy transfer spending has thinned the buffer considerably.</p>
+    </div>
+    <div class="concern-card amber">
+      <div class="concern-badge">Watch</div>
+      <h3 class="concern-title">Losses widening</h3>
+      <div class="concern-metric">(£39.0m)</div>
+      <p class="concern-desc">Up from £32.2m. Operating loss pre-amortisation went from £10.7m to £17.3m — costs are outpacing revenue growth.</p>
+    </div>
+    <div class="concern-card amber">
+      <div class="concern-badge">Watch</div>
+      <h3 class="concern-title">Transfer debts outstanding</h3>
+      <div class="concern-metric">£98.1m</div>
+      <p class="concern-desc">Owed to other clubs in deferred transfer payments (£55.2m due within 1yr, £42.9m after). Netted against £45.3m owed TO Fulham.</p>
+    </div>
+    <div class="concern-card green">
+      <div class="concern-badge">Bright Spot</div>
+      <h3 class="concern-title">Commercial growth</h3>
+      <div class="concern-metric">+23%</div>
+      <p class="concern-desc">Sponsorship and commercial income rose from £27.8m to £34.2m. Premier League stability is attracting partners — the fastest-growing revenue line.</p>
+    </div>
+    <div class="concern-card green">
+      <div class="concern-badge">Bright Spot</div>
+      <h3 class="concern-title">Player trading profit</h3>
+      <div class="concern-metric">£41.0m</div>
+      <p class="concern-desc">The art of buying low and selling high is working. This gain is included in SCR calculations and effectively increases the squad-cost ceiling.</p>
+    </div>
+    <div class="concern-card green">
+      <div class="concern-badge">Bright Spot</div>
+      <h3 class="concern-title">Attendance climbing</h3>
+      <div class="concern-metric">+10.3%</div>
+      <p class="concern-desc">Total Premier League attendance hit 509,689 (avg 26,826). The Riverside Stand's new Thameside destination opened mid-year — matchday income will grow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 04 — BALANCE SHEET -->
+<section class="section" id="balance">
+  <div class="sec-num">§ 05</div>
+  <h2 class="sec-title">The balance sheet: stronger than it looks.</h2>
+  <p class="sec-lede">Net assets nearly doubled from £33.9m to £61.3m — but that's mostly because Khan converted £66m of loans into equity. In other words, he turned the debt he was owed into shares he owns. Clever accounting. Real capital.</p>
+
+  <div class="bs-viz">
+    <div class="bs-header">
+      <div>
+        <div class="chart-title">Balance Sheet Snapshot</div>
+        <div class="chart-sub" id="bsTitle">Assets — what the club owns</div>
+      </div>
+      <div class="bs-tabs">
+        <button class="bs-tab active" data-view="assets">Assets</button>
+        <button class="bs-tab" data-view="liabilities">Liabilities</button>
+        <button class="bs-tab" data-view="equity">Equity</button>
+      </div>
+    </div>
+    <div class="bs-bars" id="bsBars"></div>
+  </div>
+</section>
+
+<!-- SECTION 06 — PEER BENCHMARK -->
+<div class="peer-container" id="peers">
+  <div style="max-width: 1520px; margin: 0 auto;">
+    <div class="sec-num">§ 06</div>
+    <h2 class="sec-title">How does Fulham compare?</h2>
+    <p class="sec-lede">Wage-to-revenue ratio across the Premier League. The UEFA threshold for clubs in Europe is 70%. Fulham sit uncomfortably high — but not alone. Clubs chasing European football routinely push into the amber zone. The question is how quickly you can pull back.</p>
+
+    <div class="peer-bars">
+      <div class="peer-legend">
+        <div class="peer-legend-item"><span class="swatch" style="background:#2d5016;"></span>UEFA green (≤70%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#b8860b;"></span>SCR amber (70–85%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#8b0000;"></span>SCR red zone (≥85%)</div>
+      </div>
+      <div style="margin-top: 32px;" id="peerBars"></div>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(10,10,10,0.4); margin-top: 24px; text-align: center;">
+        Source: Most recent published accounts (2023/24). Fulham figure is 2024/25. Illustrative comparison only.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 07 — SCR CALCULATOR -->
+<div class="scr-section" id="scr">
+  <div class="scr-container">
+    <div class="sec-num">§ 07</div>
+    <h2 class="sec-title">The rules are changing. Try the new maths.</h2>
+    <p class="sec-lede">From 2026/27, the Premier League's Profit & Sustainability Rules (PSR) die. In their place: the Squad Cost Ratio (SCR). It's simpler, harsher, and assessed every season. Move the sliders to see where Fulham stand.</p>
+
+    <div class="scr-grid">
+      <div class="scr-calc">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px;">
+          <div>
+            <div class="scr-calc-title">Live calculator</div>
+            <div class="scr-calc-sub" style="margin-bottom: 0;">Build Fulham's Squad Cost Ratio</div>
+          </div>
+          <button class="reset-btn" id="scrReset"><span class="icon"></span>Reset to actuals</button>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span class="name">Football revenue</span>
+            <span class="val" id="revValDisp">£195m</span>
+          </div>
+          <input type="range" id="revSlider" min="150" max="280" value="195" step="1">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span class="name">Player trading profit</span>
+            <span class="val" id="tradeValDisp">£41m</span>
+          </div>
+          <input type="range" id="tradeSlider" min="0" max="100" value="41" step="1">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            <span class="name">Squad costs (wages + amort + agents)</span>
+            <span class="val" id="squadValDisp">£228m</span>
+          </div>
+          <input type="range" id="squadSlider" min="150" max="300" value="228" step="1">
+        </div>
+
+        <div class="scr-gauge">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+            <div class="scr-calc-title" style="margin:0;">Resulting ratio</div>
+            <div style="font-family: 'Fraunces', serif; font-weight:900; font-size:32px; letter-spacing:-0.02em;" id="ratioDisp">96.6%</div>
+          </div>
+          <div class="gauge-track">
+            <div class="gauge-zone green" data-short="≤85%">GREEN (≤85%)</div>
+            <div class="gauge-zone amber" data-short="85–115%">AMBER (85–115%)</div>
+            <div class="gauge-zone red"></div>
+            <div class="gauge-marker" id="gaugeMarker" style="left: 73.9%;" data-label="FFC"></div>
+          </div>
+          <div class="gauge-legend">
+            <span>0%</span><span>85% Green</span><span>115% Red</span>
+          </div>
+        </div>
+
+        <div class="scr-verdict" id="verdictBox">
+          <strong id="verdictStatus" style="color:var(--accent);">Amber zone.</strong> <span id="verdictText">Fulham would be over the 85% green threshold but within the 30% buffer. Result: a financial levy (fine) but no points deduction. Manageable — though not comfortable.</span>
+        </div>
+      </div>
+
+      <div class="scr-explain">
+        <h3>PSR is dead. Long live SCR.</h3>
+        <p>The Premier League's new rules, approved in November 2025, shift focus from <em>cumulative losses</em> to <em>annual spending discipline</em>. Here's the key difference:</p>
+
+        <div class="rule-compare">
+          <div class="rule-box">
+            <h4>Old: PSR</h4>
+            <p>£105m max loss over 3 years</p>
+            <p>Assessed retrospectively</p>
+            <p>Includes off-pitch spending</p>
+            <p>Points deductions for breaches</p>
+          </div>
+          <div class="rule-box">
+            <h4>New: SCR</h4>
+            <p>Squad costs ≤ 85% of adjusted revenue</p>
+            <p>Assessed in-season (March 1)</p>
+            <p>Only on-pitch spending counts</p>
+            <p>Levy up to 115%, points beyond</p>
+          </div>
+        </div>
+
+        <p><strong>What counts in "squad costs":</strong> first-team wages, head coach/manager wages, amortised transfer fees, and agents' commissions. Debt interest and stadium costs are excluded — helpful for Fulham given the £125m JPMorgan loan for the Riverside Stand.</p>
+
+        <p><strong>What counts in "adjusted revenue":</strong> football revenue PLUS net profit from player sales. Fulham's £41m trading profit this year materially increases the spending room.</p>
+
+        <p><strong>The 2025/26 season is shadow year</strong> — clubs submit SCR data but no enforcement. Full teeth arrive in 2026/27, with financial levies from 2027/28 onwards.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 06 — KHAN FACTOR -->
+<section class="khan-section" id="khan">
+  <div class="khan-container">
+    <div class="sec-num" style="color: var(--accent);">§ 08</div>
+    <h2 class="sec-title" style="color: var(--paper); margin-bottom: 60px;">The Khan factor.</h2>
+
+    <div class="khan-grid">
+      <div>
+        <p class="khan-quote">
+          Fulham aren't just "losing money."<br>
+          They're being <em>capitalised</em> by a billionaire who treats the club as part of a wider sports empire.
+        </p>
+        <p style="font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.6; margin-top: 32px; color: rgba(244,241,234,0.75);">
+          Shahid Khan's net worth is estimated in the billions. He also owns the Jacksonville Jaguars (NFL), All Elite Wrestling (AEW), and owns Flex-N-Gate, a $20bn+ auto parts empire. Fulham's £39m annual loss is, by his standards, a rounding error — and he's been an unbroken source of funding since buying the club in 2013.
+        </p>
+        <p style="font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.6; margin-top: 16px; color: rgba(244,241,234,0.75);">
+          The accounts themselves tell the story: during this year alone, the owner's group converted <strong style="color: var(--paper);">£145.2m</strong> of loans into equity, and then poured in <strong style="color: var(--paper);">another £62.7m</strong> after year-end. K2TR Family Holdings 2 has formally stated its intent to keep providing support for as long as the club needs it.
+        </p>
+      </div>
+      <div class="khan-stats">
+        <div class="khan-stat">
+          <div class="khan-stat-val">£145.2m</div>
+          <div class="khan-stat-label">Shareholder loans converted to equity during FY25</div>
+        </div>
+        <div class="khan-stat">
+          <div class="khan-stat-val">£62.7m</div>
+          <div class="khan-stat-label">Additional post year-end funding committed</div>
+        </div>
+        <div class="khan-stat">
+          <div class="khan-stat-val">£125m</div>
+          <div class="khan-stat-label">JPMorgan loan secured for Riverside Stand (5-year term)</div>
+        </div>
+        <div class="khan-stat">
+          <div class="khan-stat-val">13 yrs</div>
+          <div class="khan-stat-label">Unbroken Khan ownership and support since 2013</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 08 — RELEGATION SCENARIOS -->
+<section class="section" id="scenarios">
+  <div class="deco-mark" style="top: 60px; right: 40px;">IF</div>
+  <div class="sec-num">§ 09</div>
+  <h2 class="sec-title">The what-if nobody wants to think about.</h2>
+  <p class="sec-lede">Relegation is the doomsday scenario for any Premier League club. Central awards collapse, sponsorships often have drop clauses, and wages stay (mostly) the same. Toggle the scenarios below to see the cliff edge — and how Khan's backing keeps Fulham well away from it.</p>
+
+  <div class="scenario-wrap">
+    <div class="scenario-toggle" data-active="ep" id="scenarioToggle">
+      <div class="scenario-slider"></div>
+      <button class="active" data-scene="ep">As-is (11th PL)</button>
+      <button data-scene="relegation">Relegation</button>
+      <button data-scene="championship">Championship Year 1</button>
+    </div>
+
+    <div class="scenario-grid" id="scenarioGrid">
+      <!-- Populated by JS -->
+    </div>
+
+    <p style="font-family: 'Fraunces', serif; font-size: 15px; line-height: 1.6; color: rgba(10,10,10,0.7); margin-top: 32px; max-width: 780px;">
+      <strong>The bottom line:</strong> even in a relegation scenario, parachute payments soften the blow for 2–3 seasons. Fulham would face a painful year but the owner's track record suggests he'd fund it. The real risk isn't insolvency — it's the long, slow decline clubs sometimes enter when they can't bounce straight back.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION 10 — INSIGHTS -->
+<section class="section" id="insights">
+  <div class="sec-num">§ 10</div>
+  <h2 class="sec-title">Seven things hiding in the footnotes.</h2>
+  <p class="sec-lede">The most interesting stuff is never on the front page. Here's what jumps out once you dig through the notes.</p>
+
+  <div class="insights-grid">
+    <div class="insight">
+      <span class="tag">Tax</span>
+      <h3>£65.7m of stored-up losses</h3>
+      <span class="big">£65.7m</span>
+      <p>Unrecognised deferred tax asset — accumulated losses that could offset future tax if Fulham ever turn profitable. The club hasn't booked it because, as things stand, there's too much uncertainty they'll ever use it.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">Ownership</span>
+      <h3>The Jacksonville connection</h3>
+      <span class="big">£500k</span>
+      <p>Fulham invoiced Khan's NFL team (Jacksonville Jaguars) for £500k in services this year, plus £269k outstanding. Arm's-length, but reveals the sports-empire structure operating behind the scenes.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">People</span>
+      <h3>675 people on the books</h3>
+      <span class="big">675</span>
+      <p>328 full-time staff (66 players, 262 admin/ground) plus 347 matchday part-timers. The highest-paid director took home £955k — while three directors (the Khans and Lamping) waive all compensation.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">Future</span>
+      <h3>Contingent transfer fees</h3>
+      <span class="big">£2.9m</span>
+      <p>Hidden commitments that only trigger on future player appearances — add-on clauses in deals. Not on the balance sheet, but real obligations if players keep performing.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">Charity</span>
+      <h3>The £1,000 charitable donation</h3>
+      <span class="big">£1,000</span>
+      <p>Down from £3,000 the year before. This is the direct club donation (separate from Foundation support, which cost £0.4m). A striking contrast to the scale of operations everywhere else.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">Infrastructure</span>
+      <h3>The second training ground</h3>
+      <span class="big">BBC</span>
+      <p>The parent company bought the former BBC sports ground in May 2017. Plans are now being drawn up for a second elite training facility — a major long-term investment in squad development.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">Development</span>
+      <h3>Riverside Stand opens</h3>
+      <span class="big">OPEN</span>
+      <p>The Thameside destination opened to the public on non-matchdays towards year-end. Once fully operational, the new stand transforms Craven Cottage from a stadium into a 365-day venue — new revenue streams incoming.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">Women's Game</span>
+      <h3>Investment in Women's programme</h3>
+      <span class="big">£0.9m</span>
+      <p>Up from £0.8m, now run directly by the Club rather than the Foundation. New Academy programme linked to the Foundation's Girls Development Centre. Small numbers, but growing.</p>
+    </div>
+    <div class="insight">
+      <span class="tag">Fans</span>
+      <h3>The stands are fuller than ever</h3>
+      <span class="big">26,826</span>
+      <p>Average Premier League attendance per game, up 10.3%. Craven Cottage's capacity is constrained, but the Riverside Stand redevelopment will lift it meaningfully and bring premium hospitality income.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section class="verdict" id="verdict">
+  <div class="verdict-kicker">§ 11 / THE BOTTOM LINE</div>
+  <h2 class="verdict-text">
+    Fulham are living close to the edge.<br>
+    But the edge is <em>a long way</em> from the cliff.
+  </h2>
+  <p class="verdict-sub">
+    A 85% wage ratio, £39m annual losses and shrinking cash reserves would be a five-alarm fire at a club with a normal owner. With Shahid Khan writing the cheques — and writing them faster than the club can burn them — the going-concern question is effectively settled. The real battle from 2026/27 isn't survival. It's fitting within the Squad Cost Ratio while keeping the squad competitive. That's the game Fulham now have to play.
+  </p>
+</section>
+
+<footer class="footer">
+  <div style="margin-bottom: 16px;">
+    <a href="/" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px;">← Back to Cravenpod</a>
+  </div>
+  Analysis based on Companies House filing • Source: Fulham Football Club Limited Annual Report 30 June 2025
+</footer>
+
+<script>
+// ============ DATA ============
+const revenueData = [
+  { name: 'Central Awards', value: 128837, prev: 123316, desc: "The Premier League's shared TV & prize money pot. The single biggest reason financial survival in the top flight matters so much — this disappears on relegation." },
+  { name: 'Sponsorship & Commercial', value: 34182, prev: 27788, desc: "Shirt sponsor, training kit, partners, hospitality, catering. Up 23% — the fastest-growing line and a sign that Premier League stability is attracting serious commercial interest." },
+  { name: 'Gate Receipts', value: 18010, prev: 18392, desc: "Matchday ticket income including season tickets. Essentially flat — Craven Cottage is largely sold out every week, so growth waits for the Riverside Stand capacity increase." },
+  { name: 'Broadcasting', value: 12748, prev: 11190, desc: "Additional broadcast income beyond central awards — likely cup fixtures and international rights. Modest but growing." },
+  { name: 'Compensation', value: 1013, prev: 873, desc: "Payments from other clubs relating to collaboration agreements or lost-income remediation. Small and volatile." },
+];
+
+// ============ WATERFALL CHART ============
+const wfCtx = document.getElementById('waterfallChart').getContext('2d');
+new Chart(wfCtx, {
+  type: 'bar',
+  data: {
+    labels: ['Revenue', 'Op costs', 'Amort.', 'Sales', 'Interest', 'LOSS'],
+    datasets: [{
+      data: [194.8, -212.1, -63.2, 41.0, 0.5, -39.0],
+      backgroundColor: ctx => {
+        const v = ctx.raw;
+        const i = ctx.dataIndex;
+        if (i === 0) return '#0a0a0a';
+        if (i === 5) return '#8b0000';
+        return v > 0 ? '#2d5016' : '#cc0000';
+      },
+      borderRadius: 2,
+      maxBarThickness: 50,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#0a0a0a',
+        titleFont: { family: 'JetBrains Mono', size: 10 },
+        bodyFont: { family: 'Inter Tight', size: 13 },
+        padding: 12,
+        callbacks: {
+          label: c => `£${c.raw}m`
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: {
+          font: { family: 'JetBrains Mono', size: 10 },
+          color: '#0a0a0a',
+          maxRotation: 0,
+          minRotation: 0,
+          autoSkip: false
+        }
+      },
+      y: {
+        grid: { color: 'rgba(10,10,10,0.06)' },
+        ticks: {
+          font: { family: 'JetBrains Mono', size: 10 },
+          color: 'rgba(10,10,10,0.5)',
+          callback: v => `£${v}m`
+        }
+      }
+    }
+  }
+});
+
+// ============ REVENUE DONUT ============
+const rdCtx = document.getElementById('revDonut').getContext('2d');
+const donut = new Chart(rdCtx, {
+  type: 'doughnut',
+  data: {
+    labels: revenueData.map(r => r.name),
+    datasets: [{
+      data: revenueData.map(r => r.value),
+      backgroundColor: ['#cc0000', '#f4f1ea', '#b8935e', '#8b0000', '#6e6e6e'],
+      borderColor: '#0a0a0a',
+      borderWidth: 3,
+      hoverOffset: 16,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '65%',
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#f4f1ea',
+        titleColor: '#0a0a0a',
+        bodyColor: '#0a0a0a',
+        titleFont: { family: 'JetBrains Mono', size: 10 },
+        bodyFont: { family: 'Inter Tight', size: 13, weight: 600 },
+        padding: 12,
+        callbacks: {
+          label: c => `£${(c.raw / 1000).toFixed(1)}m`
+        }
+      }
+    },
+    onHover: (event, elements) => {
+      const items = document.querySelectorAll('.rev-item');
+      items.forEach(i => i.classList.remove('active'));
+      if (elements.length > 0) {
+        items[elements[0].index].classList.add('active');
+      }
+    }
+  }
+});
+
+// ============ REVENUE ITEMS ============
+const maxRev = Math.max(...revenueData.map(r => r.value));
+const revItems = document.getElementById('revItems');
+revenueData.forEach((r, i) => {
+  const pct = (r.value / maxRev * 100).toFixed(1);
+  const yoy = ((r.value - r.prev) / r.prev * 100);
+  const yoyClass = yoy > 0.5 ? 'up' : (yoy < -0.5 ? 'down' : 'flat');
+  const yoyStr = (yoy > 0 ? '+' : '') + yoy.toFixed(1) + '% YoY';
+  const el = document.createElement('div');
+  el.className = 'rev-item';
+  el.dataset.idx = i;
+  el.innerHTML = `
+    <div class="rev-item-name">${r.name}</div>
+    <div class="rev-item-val">£${(r.value / 1000).toFixed(1)}m <span style="color:rgba(244,241,234,0.5); margin-left:8px; font-size:11px;">${yoyStr}</span></div>
+    <div class="rev-item-bar" style="transform: scaleX(${r.value / maxRev});"></div>
+    <div class="rev-item-desc">${r.desc}</div>
+  `;
+  el.addEventListener('click', () => {
+    document.querySelectorAll('.rev-item').forEach(x => x.classList.remove('active'));
+    el.classList.add('active');
+  });
+  revItems.appendChild(el);
+});
+// Activate first by default
+setTimeout(() => document.querySelector('.rev-item').classList.add('active'), 400);
+
+// ============ BALANCE SHEET ============
+const bsData = {
+  assets: {
+    title: 'Assets — what the club owns',
+    items: [
+      ['Player registrations (net)', 138.8, '#2d5016'],
+      ['Player transfer debtors', 45.3, '#2d5016'],
+      ['Cash at bank', 13.2, '#2d5016'],
+      ['Trade debtors', 13.0, '#2d5016'],
+      ['Tangible assets', 4.7, '#2d5016'],
+      ['Other debtors/prepayments', 7.0, '#2d5016'],
+      ['Stocks', 0.5, '#2d5016'],
+    ]
+  },
+  liabilities: {
+    title: 'Liabilities — what the club owes',
+    items: [
+      ['Player transfer creditors (>1yr)', 42.9, '#8b0000'],
+      ['Player transfer creditors (<1yr)', 55.2, '#8b0000'],
+      ['Accruals', 25.9, '#8b0000'],
+      ['Other taxes & social security', 18.2, '#8b0000'],
+      ['Deferred income (season tickets/commercial)', 15.3, '#8b0000'],
+      ['Amounts due to related parties', 2.0, '#8b0000'],
+      ['Other creditors', 1.5, '#8b0000'],
+    ]
+  },
+  equity: {
+    title: 'Equity — what belongs to shareholders',
+    items: [
+      ['Called-up share capital', 28.9, '#b8935e'],
+      ['Profit & loss reserve', 32.4, '#b8935e'],
+      ['TOTAL Shareholders\' funds', 61.3, '#0a0a0a'],
+      ['(Prior year for comparison)', 33.9, '#999'],
+    ]
+  }
+};
+
+function renderBS(view) {
+  const data = bsData[view];
+  document.getElementById('bsTitle').textContent = data.title;
+  const bars = document.getElementById('bsBars');
+  bars.innerHTML = '';
+  const max = Math.max(...data.items.map(i => i[1]));
+  data.items.forEach((item, idx) => {
+    const row = document.createElement('div');
+    row.className = 'bs-bar-row';
+    row.innerHTML = `
+      <div class="bs-label">${item[0]}</div>
+      <div class="bs-track"><div class="bs-fill" style="background:${item[2]}; transform: scaleX(0);"></div></div>
+      <div class="bs-value">£${item[1].toFixed(1)}m</div>
+    `;
+    bars.appendChild(row);
+    setTimeout(() => {
+      row.querySelector('.bs-fill').style.transform = `scaleX(${item[1] / max})`;
+    }, 50 + idx * 60);
+  });
+}
+renderBS('assets');
+
+document.querySelectorAll('.bs-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.bs-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderBS(tab.dataset.view);
+  });
+});
+
+// ============ SCR CALCULATOR ============
+const revSlider = document.getElementById('revSlider');
+const tradeSlider = document.getElementById('tradeSlider');
+const squadSlider = document.getElementById('squadSlider');
+const revValDisp = document.getElementById('revValDisp');
+const tradeValDisp = document.getElementById('tradeValDisp');
+const squadValDisp = document.getElementById('squadValDisp');
+const ratioDisp = document.getElementById('ratioDisp');
+const marker = document.getElementById('gaugeMarker');
+const verdictStatus = document.getElementById('verdictStatus');
+const verdictText = document.getElementById('verdictText');
+const verdictBox = document.getElementById('verdictBox');
+
+function updateSCR() {
+  const rev = parseFloat(revSlider.value);
+  const trade = parseFloat(tradeSlider.value);
+  const squad = parseFloat(squadSlider.value);
+  const adjRev = rev + trade;
+  const ratio = (squad / adjRev) * 100;
+  revValDisp.textContent = `£${rev}m`;
+  tradeValDisp.textContent = `£${trade}m`;
+  squadValDisp.textContent = `£${squad}m`;
+  ratioDisp.textContent = `${ratio.toFixed(1)}%`;
+
+  // Position marker: 0-115% maps to 0-100% of track
+  const pos = Math.min(Math.max(ratio / 115 * 100, 0), 100);
+  marker.style.left = `${pos}%`;
+  marker.dataset.label = `${ratio.toFixed(1)}%`;
+
+  if (ratio <= 85) {
+    verdictStatus.textContent = 'Green zone.';
+    verdictStatus.style.color = '#4a9030';
+    verdictBox.style.borderColor = '#4a9030';
+    verdictText.textContent = 'Below the 85% threshold. No levy, no sanction — a healthy spending discipline. This is where UEFA-grade clubs need to be for European football.';
+  } else if (ratio <= 115) {
+    verdictStatus.textContent = 'Amber zone.';
+    verdictStatus.style.color = '#d4a017';
+    verdictBox.style.borderColor = '#d4a017';
+    verdictText.textContent = `Over the 85% green threshold but within the 30% buffer. Result: a financial levy (fine) scaled to how far over you are, but NO points deduction. This is where most clubs will operate — the accepted "paying for growth" zone.`;
+  } else {
+    verdictStatus.textContent = 'Red zone — sanction territory.';
+    verdictStatus.style.color = '#cc0000';
+    verdictBox.style.borderColor = '#cc0000';
+    verdictText.textContent = 'Above the 115% red threshold. Immediate sporting sanction — points deduction applied to the current season. The Premier League\'s strictest penalty tier.';
+  }
+}
+
+revSlider.addEventListener('input', updateSCR);
+tradeSlider.addEventListener('input', updateSCR);
+squadSlider.addEventListener('input', updateSCR);
+updateSCR();
+
+// SCR Reset button — snap back to actual FY25 figures
+const scrDefaults = { rev: 195, trade: 41, squad: 228 };
+document.getElementById('scrReset').addEventListener('click', () => {
+  const start = { rev: +revSlider.value, trade: +tradeSlider.value, squad: +squadSlider.value };
+  const duration = 600;
+  const startTime = performance.now();
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+  function step(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    const e = ease(t);
+    revSlider.value = start.rev + (scrDefaults.rev - start.rev) * e;
+    tradeSlider.value = start.trade + (scrDefaults.trade - start.trade) * e;
+    squadSlider.value = start.squad + (scrDefaults.squad - start.squad) * e;
+    updateSCR();
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+});
+
+// ============ 3-YEAR TRENDS CHART ============
+const trendsData = {
+  revenue: {
+    title: 'Turnover (£m)',
+    values: [141.9, 181.6, 194.8],
+    color: '#0a0a0a',
+    big: '+£52.9m',
+    label: '3-year growth',
+    desc: 'Revenue has climbed from £141.9m in 2022/23 to £194.8m in 2024/25 — a 37% rise over three years, driven by PL central awards, commercial growth, and improving league finishes.'
+  },
+  wages: {
+    title: 'Staff costs (£m)',
+    values: [118.4, 154.8, 166.5],
+    color: '#cc0000',
+    big: '+£48.1m',
+    label: '3-year growth',
+    desc: 'Wages have risen faster than revenue, from £118.4m to £166.5m. That 41% increase outpaces the 37% revenue rise — explaining why losses are widening despite growth.'
+  },
+  loss: {
+    title: 'Pre-tax loss (£m)',
+    values: [-31.4, -31.2, -39.0],
+    color: '#8b0000',
+    big: '-£7.6m',
+    label: 'Widening each year',
+    desc: 'Pre-tax losses have crept upwards. All three years hovering around £30-40m is a pattern that Shahid Khan has been willing to absorb, but incoming SCR rules will force tighter discipline.'
+  },
+  ratio: {
+    title: 'Wages as % of revenue',
+    values: [83.4, 85.2, 85.4],
+    color: '#b8860b',
+    big: '+2.0pp',
+    label: '3-year movement',
+    desc: 'The wage-to-revenue ratio has hovered stubbornly around 85%. Dangerously high by any measure — but the number isn\'t getting worse, which suggests some cost discipline is taking hold.'
+  },
+  amort: {
+    title: 'Player amortisation (£m)',
+    values: [43.1, 57.4, 61.5],
+    color: '#b8935e',
+    big: '+£18.4m',
+    label: '3-year growth',
+    desc: 'Amortisation (non-cash cost of spreading transfer fees across contract length) has grown 43% — reflecting heavier investment in the squad. This shows up as a loss but doesn\'t drain cash.'
+  }
+};
+const trendLabels = ['2022/23', '2023/24', '2024/25'];
+const trendCtx = document.getElementById('trendsChart').getContext('2d');
+let activeMetric = 'revenue';
+
+const trendsChart = new Chart(trendCtx, {
+  type: 'bar',
+  data: {
+    labels: trendLabels,
+    datasets: [{
+      data: trendsData.revenue.values,
+      backgroundColor: trendsData.revenue.color,
+      borderRadius: 2,
+      maxBarThickness: 80,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 700, easing: 'easeOutCubic' },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#0a0a0a',
+        titleFont: { family: 'JetBrains Mono', size: 10 },
+        bodyFont: { family: 'Inter Tight', size: 13, weight: 600 },
+        padding: 12,
+        callbacks: {
+          label: c => {
+            const m = trendsData[activeMetric];
+            if (activeMetric === 'ratio') return `${c.raw}%`;
+            return `£${c.raw}m`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { display: false },
+        ticks: { font: { family: 'JetBrains Mono', size: 11 }, color: '#0a0a0a' }
+      },
+      y: {
+        grid: { color: 'rgba(10,10,10,0.06)' },
+        ticks: {
+          font: { family: 'JetBrains Mono', size: 10 },
+          color: 'rgba(10,10,10,0.5)',
+          callback: v => activeMetric === 'ratio' ? `${v}%` : `£${v}m`
+        }
+      }
+    }
+  }
+});
+
+function setTrendMetric(metric) {
+  activeMetric = metric;
+  const m = trendsData[metric];
+  trendsChart.data.datasets[0].data = m.values;
+  trendsChart.data.datasets[0].backgroundColor = m.color;
+  trendsChart.update();
+  document.getElementById('trendChartTitle').textContent = m.title;
+  const big = document.getElementById('trendBig');
+  big.textContent = m.big;
+  big.classList.remove('flip');
+  void big.offsetWidth;
+  big.classList.add('flip');
+  document.querySelector('#trendCallout .label').textContent = m.label;
+  document.getElementById('trendDesc').textContent = m.desc;
+}
+
+document.querySelectorAll('#metricTabs .metric-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#metricTabs .metric-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    setTrendMetric(btn.dataset.metric);
+  });
+});
+
+// ============ PEER BENCHMARK ============
+// Wage-to-revenue ratios (illustrative, most recent published)
+const peerData = [
+  { club: 'Chelsea', ratio: 88 },
+  { club: 'Aston Villa', ratio: 87 },
+  { club: 'Fulham', ratio: 85.4, highlight: true },
+  { club: 'Everton', ratio: 82 },
+  { club: 'Nottingham Forest', ratio: 81 },
+  { club: 'Newcastle', ratio: 78 },
+  { club: 'West Ham', ratio: 76 },
+  { club: 'Brighton', ratio: 72 },
+  { club: 'Liverpool', ratio: 68 },
+  { club: 'Man United', ratio: 65 },
+  { club: 'Arsenal', ratio: 62 },
+  { club: 'Tottenham', ratio: 55 },
+  { club: 'Man City', ratio: 52 },
+];
+
+const peerBarsEl = document.getElementById('peerBars');
+const maxPeer = 100;
+peerData.forEach(p => {
+  const row = document.createElement('div');
+  row.className = 'peer-row' + (p.highlight ? ' highlight' : '');
+  const pct = p.ratio / maxPeer;
+  const colorStop1 = (70 / p.ratio * 100).toFixed(1);
+  const colorStop2 = (85 / p.ratio * 100).toFixed(1);
+  let bgGradient;
+  if (p.ratio <= 70) {
+    bgGradient = '#2d5016';
+  } else if (p.ratio <= 85) {
+    bgGradient = `linear-gradient(to right, #2d5016 0%, #2d5016 ${colorStop1}%, #b8860b ${colorStop1}%, #b8860b 100%)`;
+  } else {
+    bgGradient = `linear-gradient(to right, #2d5016 0%, #2d5016 ${colorStop1}%, #b8860b ${colorStop1}%, #b8860b ${colorStop2}%, #8b0000 ${colorStop2}%, #8b0000 100%)`;
+  }
+  row.innerHTML = `
+    <div class="peer-club">${p.club}</div>
+    <div class="peer-track"><div class="peer-fill" style="background:${bgGradient}; --pct:${pct};"></div></div>
+    <div class="peer-value">${p.ratio}%</div>
+  `;
+  peerBarsEl.appendChild(row);
+});
+
+// Trigger peer bar animation when section scrolls into view
+const peerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.peer-fill').forEach((fill, i) => {
+        setTimeout(() => fill.classList.add('animate'), i * 80);
+      });
+      peerObserver.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+peerObserver.observe(document.getElementById('peers'));
+
+// ============ RELEGATION SCENARIOS ============
+const scenarioData = {
+  ep: {
+    label: 'As-is: 11th in Premier League',
+    cards: [
+      { label: 'Revenue', value: '£194.8m', change: 'Full Premier League central awards', changeClass: 'up', descLabel: 'Current reality', desc: 'Premier League stability, full central award pot (c.£128m), growing commercial deals. This is the baseline.' },
+      { label: 'Wage ratio', value: '85.4%', change: 'Amber zone — levy under SCR', changeClass: 'down', descLabel: '', desc: 'High but not catastrophic. A levy under new SCR rules (2026/27) but no points deduction.' },
+      { label: 'Owner backing', value: '£62.7m+', change: 'Khan funding continues', changeClass: 'up', descLabel: '', desc: 'Post year-end funding already committed. Club going-concern is intrinsically linked to Khan group support.' },
+    ]
+  },
+  relegation: {
+    label: 'Scenario: Relegation year',
+    cards: [
+      { label: 'Revenue', value: '£110m', change: '▼ £85m (-44%)', changeClass: 'down', descLabel: 'Year 1 parachute', desc: 'Central awards drop ~£80m. Parachute payments (~55% of PL share) soften the blow but commercial deals often carry relegation clauses too.', bad: true },
+      { label: 'Wage ratio', value: '~145%', change: '▲ Red zone', changeClass: 'down', descLabel: '', desc: 'Without immediate cost cuts, the ratio explodes. Most top players have relegation release clauses or wage cut clauses — but it still takes time to rebalance.', bad: true },
+      { label: 'Cash needed', value: '£60-80m', change: 'Owner must inject', changeClass: 'down', descLabel: '', desc: 'To survive Year 1 without selling the squad\'s core, Khan would likely need to inject significant additional capital. History suggests he would.', bad: true },
+    ]
+  },
+  championship: {
+    label: 'Scenario: Championship Year 1',
+    cards: [
+      { label: 'Revenue', value: '£75-85m', change: '▼ £110m+ loss of income', changeClass: 'down', descLabel: 'Cliff edge', desc: 'Championship revenue plus year-1 parachute. Gate receipts and commercial deals also take big hits. This is the brutal reality of the drop.', bad: true },
+      { label: 'Squad value', value: '-40-60%', change: 'Forced sales likely', changeClass: 'down', descLabel: '', desc: 'Players with PL-level contracts become untenable. Most would be sold or loaned out. The core squad effectively gets dismantled.', bad: true },
+      { label: 'Recovery odds', value: '~30%', change: 'Historic bounce-back rate', changeClass: 'down', descLabel: '', desc: 'Roughly 1 in 3 relegated PL clubs bounce straight back. Parachute payments help, but Championship is a grind — Leeds, Sunderland and others have found out the hard way.', bad: true },
+    ]
+  }
+};
+
+function renderScenario(scene) {
+  const data = scenarioData[scene];
+  const grid = document.getElementById('scenarioGrid');
+  grid.innerHTML = '';
+  data.cards.forEach((card, i) => {
+    const el = document.createElement('div');
+    el.className = 'scenario-card' + (card.bad ? ' impact' : '');
+    el.style.animationDelay = `${i * 80}ms`;
+    el.innerHTML = `
+      <div class="scenario-label">${card.label}</div>
+      <div class="scenario-value ${card.bad ? 'bad' : 'good'}">${card.value}</div>
+      <div class="scenario-change ${card.changeClass}">${card.change}</div>
+      <div class="scenario-desc">${card.desc}</div>
+    `;
+    grid.appendChild(el);
+    // trigger flip animation
+    setTimeout(() => el.querySelector('.scenario-value').classList.add('flip'), 10 + i * 80);
+  });
+}
+
+const scenarioToggleEl = document.getElementById('scenarioToggle');
+const scenarioSliderEl = scenarioToggleEl.querySelector('.scenario-slider');
+function updateScenarioSlider(scene) {
+  const btn = scenarioToggleEl.querySelector(`button[data-scene="${scene}"]`);
+  if (!btn) return;
+  scenarioSliderEl.style.left = `${btn.offsetLeft}px`;
+  scenarioSliderEl.style.width = `${btn.offsetWidth}px`;
+  if (scene === 'relegation' || scene === 'championship') {
+    scenarioSliderEl.style.background = '#8b0000';
+  } else {
+    scenarioSliderEl.style.background = '#0a0a0a';
+  }
+}
+
+scenarioToggleEl.querySelectorAll('button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    scenarioToggleEl.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    scenarioToggleEl.dataset.active = btn.dataset.scene;
+    renderScenario(btn.dataset.scene);
+    updateScenarioSlider(btn.dataset.scene);
+  });
+});
+// init
+renderScenario('ep');
+setTimeout(() => updateScenarioSlider('ep'), 100);
+window.addEventListener('resize', () => {
+  const active = scenarioToggleEl.querySelector('button.active');
+  if (active) updateScenarioSlider(active.dataset.scene);
+});
+
+// ============ SCROLL REVEAL ============
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+// Apply reveal to section titles and key cards (but NOT chart containers — Chart.js needs stable dimensions)
+document.querySelectorAll('.section .sec-title, .section .sec-lede, .concern-card, .insight, .khan-stat, .scr-calc, .scr-explain, .story-block').forEach(el => {
+  el.classList.add('reveal');
+  revealObs.observe(el);
+});
+
+// ============ SMOOTH SCROLL OFFSET FOR STICKY NAV ============
+document.querySelectorAll('.sec-nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      const offset = 60;
+      const pos = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: pos, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
