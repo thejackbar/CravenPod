@@ -202,7 +202,12 @@ The writing voice is distinctive and should be consistent across all articles:
 1. **Add `robots.txt` and `sitemap.xml`** — basic SEO hygiene for a fresh site
 2. **Add proper Open Graph images** — currently no `og:image` defined. Design a 1200×630 card for both the landing page and the dashboard article
 3. **Favicon** — need an SVG + PNG fallback. A simple monogram "C" with crimson offset matching the site logo would fit
-4. **Analytics** — add Plausible, Fathom, or similar privacy-respecting analytics. Avoid Google Analytics given the editorial tone
+4. **Analytics** — ✅ GoatCounter is live. **Every new page must include this snippet before `</body>`:**
+   ```html
+   <script data-goatcounter="https://cravenpod.goatcounter.com/count"
+           async src="//gc.zgo.at/count.js"></script>
+   ```
+   Dashboard: `cravenpod.goatcounter.com`
 
 ### Content pipeline (already teased in "What's cooking")
 1. **The Riverside Stand, in full** — architectural + financial story of the new stand
