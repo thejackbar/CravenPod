@@ -127,296 +127,122 @@
   .site-nav a:hover { color: var(--accent); }
   .site-nav a:hover::after { transform: scaleX(1); }
 
-  /* ========== HERO ========== */
-  .hero {
-    padding: 100px 40px 80px;
-    max-width: 1600px;
+  /* ========== BLOG HEADER ========== */
+  .blog-header {
+    padding: 64px 40px 48px;
+    max-width: 960px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    border-bottom: 1px solid var(--rule);
   }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 80px;
-    align-items: end;
-  }
-  @media (max-width: 900px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
-  }
-
-  .tagline {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--accent);
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .tagline::before {
-    content: '';
-    width: 48px;
-    height: 2px;
-    background: var(--accent);
-  }
-
-  .hero-title {
+  .blog-header h1 {
     font-family: 'Fraunces', serif;
     font-weight: 900;
-    font-size: clamp(54px, 9vw, 150px);
-    line-height: 0.88;
-    letter-spacing: -0.04em;
-    margin-bottom: 32px;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
   }
-  .hero-title em {
+  .blog-header h1 em {
     font-style: italic;
     font-weight: 400;
     color: var(--accent);
   }
-
-  .hero-deck {
+  .blog-header p {
     font-family: 'Fraunces', serif;
-    font-size: clamp(18px, 2vw, 22px);
-    line-height: 1.45;
-    max-width: 580px;
-    color: rgba(10,10,10,0.75);
-  }
-  .hero-deck strong { color: var(--ink); font-weight: 600; }
-
-  .hero-right {
-    padding: 32px 0;
-    border-left: 1px solid var(--rule);
-    padding-left: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  @media (max-width: 900px) {
-    .hero-right { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 32px; }
-  }
-  .hero-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .hero-stat-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-  }
-  .hero-stat-value {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: 40px;
-    letter-spacing: -0.03em;
-    line-height: 1;
-  }
-  .hero-stat-desc {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 15px;
+    font-size: clamp(17px, 1.8vw, 20px);
+    line-height: 1.5;
     color: rgba(10,10,10,0.7);
+    max-width: 600px;
   }
 
-  /* ========== MARQUEE DIVIDER ========== */
-  .marquee-bar {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 18px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    z-index: 2;
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-  }
-  .marquee-track {
-    display: inline-block;
-    animation: marquee 40s linear infinite;
-    padding-left: 100%;
-  }
-  .marquee-track span {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 22px;
-    font-weight: 400;
-    margin-right: 48px;
-  }
-  .marquee-track span::before {
-    content: '◆';
-    color: var(--accent);
-    margin-right: 48px;
-    font-style: normal;
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* ========== FEATURED POST ========== */
-  .featured {
-    padding: 100px 40px;
-    max-width: 1600px;
+  /* ========== ARTICLE LIST ========== */
+  .articles {
+    max-width: 960px;
     margin: 0 auto;
+    padding: 0 40px;
     position: relative;
     z-index: 2;
   }
-  .section-kicker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--accent);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .section-kicker::before {
-    content: '';
-    width: 30px;
-    height: 2px;
-    background: var(--accent);
-  }
-  .section-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: clamp(40px, 5vw, 64px);
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    margin-bottom: 60px;
-    max-width: 1000px;
-  }
 
-  .post-card {
+  .article-entry {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    background: #fff;
-    border: 1px solid var(--rule);
-    position: relative;
-    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.4s;
+    grid-template-columns: 140px 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--rule);
     text-decoration: none;
     color: var(--ink);
+    transition: background 0.3s;
   }
-  .post-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 30px 60px -30px rgba(10,10,10,0.2);
-  }
-  @media (max-width: 900px) {
-    .post-card { grid-template-columns: 1fr; }
+  .article-entry:hover .article-title {
+    color: var(--accent);
   }
 
-  .post-visual {
-    background: var(--ink);
-    color: var(--paper);
-    padding: 60px 48px;
-    position: relative;
-    overflow: hidden;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .article-date-col {
+    padding-top: 4px;
   }
-  .post-visual::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -20%;
-    width: 80%;
-    height: 80%;
-    background: radial-gradient(circle, rgba(204,0,0,0.3) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .post-visual-kicker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: rgba(244,241,234,0.7);
-    position: relative;
-  }
-  .post-visual-big {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: clamp(80px, 10vw, 140px);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    position: relative;
-  }
-  .post-visual-big em {
-    color: var(--accent);
-    font-style: italic;
-    font-weight: 400;
-  }
-  .post-visual-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+  .article-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(244,241,234,0.6);
-    position: relative;
-    padding-top: 24px;
-    border-top: 1px solid rgba(244,241,234,0.2);
+    color: var(--muted);
+    line-height: 1.6;
   }
-
-  .post-body {
-    padding: 60px 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 32px;
-  }
-  .post-meta {
+  .article-tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 3px 8px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--muted);
-    margin-bottom: 20px;
+    background: var(--ink);
+    color: var(--paper);
   }
-  .post-title {
+
+  .article-body {}
+  .article-title {
     font-family: 'Fraunces', serif;
     font-weight: 700;
-    font-size: clamp(28px, 3.5vw, 44px);
-    line-height: 1.08;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.15;
     letter-spacing: -0.02em;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    transition: color 0.2s;
   }
-  .post-dek {
+  .article-dek {
     font-family: 'Fraunces', serif;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.55;
-    color: rgba(10,10,10,0.75);
+    color: rgba(10,10,10,0.7);
+    margin-bottom: 16px;
   }
-  .post-cta {
+  .article-read {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: var(--accent);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: gap 0.3s;
   }
-  .post-card:hover .post-cta { gap: 14px; }
-  .post-cta .arrow {
+  .article-entry:hover .article-read {
+    gap: 14px;
+  }
+  .article-read .arrow {
     display: inline-block;
     width: 24px;
     height: 1px;
     background: currentColor;
     position: relative;
   }
-  .post-cta .arrow::after {
+  .article-read .arrow::after {
     content: '';
     position: absolute;
     top: -3px;
@@ -428,216 +254,148 @@
     transform: rotate(45deg);
   }
 
-  /* ========== UPCOMING SECTION ========== */
-  .upcoming {
-    background: var(--paper-dark);
-    padding: 100px 40px;
-    position: relative;
-    z-index: 2;
-  }
-  .upcoming-container {
-    max-width: 1600px;
-    margin: 0 auto;
-  }
-  .upcoming-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    margin-top: 40px;
-  }
-  .upcoming-item {
-    padding: 36px 32px;
-    background: var(--paper);
-    transition: background 0.3s ease;
-    cursor: default;
-  }
-  .upcoming-item:hover { background: #fff; }
-  .upcoming-status {
-    display: inline-block;
-    padding: 4px 10px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    background: var(--ink);
-    color: var(--paper);
-    margin-bottom: 20px;
-  }
-  .upcoming-status.coming { background: var(--accent); }
-  .upcoming-item h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-  .upcoming-item p {
-    font-family: 'Fraunces', serif;
-    font-size: 15px;
-    line-height: 1.5;
-    color: rgba(10,10,10,0.7);
-  }
-
   /* ========== ABOUT ========== */
   .about {
-    padding: 100px 40px;
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
+    padding: 80px 40px;
     position: relative;
     z-index: 2;
   }
-  .about-grid {
+  .about-inner {
+    border-top: 1px solid var(--rule);
+    padding-top: 48px;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 80px;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 48px;
     align-items: start;
   }
-  @media (max-width: 900px) {
-    .about-grid { grid-template-columns: 1fr; gap: 32px; }
-  }
-  .about h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: clamp(40px, 5vw, 64px);
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-  }
-  .about h2 em {
-    font-style: italic;
-    font-weight: 400;
+  .about-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
     color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .about-label::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--accent);
   }
   .about-text p {
     font-family: 'Fraunces', serif;
-    font-size: 19px;
+    font-size: 17px;
     line-height: 1.55;
-    margin-bottom: 20px;
-    color: rgba(10,10,10,0.85);
+    color: rgba(10,10,10,0.8);
+    margin-bottom: 16px;
   }
-  .about-text p:first-child::first-letter {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: 68px;
-    float: left;
-    line-height: 0.85;
-    margin: 6px 12px 0 0;
-    color: var(--accent);
+  .about-text p:last-child {
+    margin-bottom: 0;
   }
 
   /* ========== FOOTER ========== */
   .site-foot {
     background: var(--ink);
     color: var(--paper);
-    padding: 80px 40px 40px;
+    padding: 60px 40px 32px;
     position: relative;
     z-index: 2;
   }
   .site-foot-container {
-    max-width: 1600px;
+    max-width: 960px;
     margin: 0 auto;
   }
   .foot-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 48px;
-    padding-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 32px;
     border-bottom: 1px solid rgba(244,241,234,0.15);
-  }
-  @media (max-width: 700px) {
-    .foot-top { grid-template-columns: 1fr; gap: 32px; }
+    flex-wrap: wrap;
+    gap: 24px;
   }
   .foot-brand {
     font-family: 'Fraunces', serif;
     font-weight: 900;
-    font-size: 48px;
+    font-size: 32px;
     letter-spacing: -0.03em;
     line-height: 1;
-    margin-bottom: 20px;
   }
   .foot-brand em { color: var(--accent); font-style: italic; }
   .foot-tagline {
     font-family: 'Fraunces', serif;
     font-style: italic;
-    font-size: 18px;
-    color: rgba(244,241,234,0.7);
-    max-width: 400px;
-    line-height: 1.4;
-  }
-  .foot-col h4 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--accent);
-    margin-bottom: 20px;
-  }
-  .foot-col a, .foot-col p {
-    display: block;
-    text-decoration: none;
-    color: rgba(244,241,234,0.8);
     font-size: 15px;
-    line-height: 1.8;
-    transition: color 0.2s;
+    color: rgba(244,241,234,0.6);
   }
-  .foot-col a:hover { color: var(--accent); }
   .foot-bottom {
-    padding-top: 32px;
+    padding-top: 24px;
     display: flex;
     justify-content: space-between;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(244,241,234,0.5);
+    color: rgba(244,241,234,0.4);
     flex-wrap: wrap;
     gap: 16px;
   }
 
   /* ========== RESPONSIVE ========== */
-  @media (max-width: 900px) {
-    .hero { padding: 64px 20px 48px; }
-    .featured, .about { padding: 80px 20px; }
-    .upcoming { padding: 80px 20px; }
-    .site-foot { padding: 64px 20px 32px; }
-    .post-visual, .post-body { padding: 40px 28px; }
-    .post-visual { min-height: 300px; }
-    .upcoming-item { padding: 28px 24px; }
-  }
   @media (max-width: 700px) {
-    .site-head { padding: 16px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
+    .site-head {
+      padding: 16px 20px;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
     .site-nav { gap: 20px; }
-    .hero { padding: 48px 20px 32px; }
-    .hero-right { padding-top: 32px; }
-    .marquee-track span { font-size: 16px; margin-right: 32px; }
-    .marquee-track span::before { margin-right: 32px; }
-    .about-text p:first-child::first-letter { font-size: 52px; }
-    .post-visual-big { font-size: 64px; }
+    .blog-header { padding: 48px 20px 36px; }
+    .articles { padding: 0 20px; }
+    .article-entry {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 36px 0;
+    }
+    .article-date-col {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 0;
+    }
+    .article-tag { margin-top: 0; }
+    .about { padding: 60px 20px; }
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .site-foot { padding: 48px 20px 24px; }
   }
 
   /* ========== SCROLL REVEAL ========== */
   .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.9s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.9s cubic-bezier(0.2, 0.9, 0.3, 1);
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
   }
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
   }
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
   .animate-in {
     opacity: 0;
-    animation: fadeUp 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+    animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
   }
   .delay-1 { animation-delay: 0.1s; }
-  .delay-2 { animation-delay: 0.25s; }
-  .delay-3 { animation-delay: 0.4s; }
-  .delay-4 { animation-delay: 0.55s; }
+  .delay-2 { animation-delay: 0.2s; }
 </style>
 </head>
 <body>
@@ -650,133 +408,45 @@
     <span class="subtitle">/ Long-form Fulham</span>
   </a>
   <nav class="site-nav">
-    <a href="#featured">Writing</a>
-    <a href="#upcoming">Coming Up</a>
+    <a href="#articles">Writing</a>
     <a href="#about">About</a>
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <div class="tagline animate-in">A Fulham reading room</div>
-      <h1 class="hero-title animate-in delay-1">
-        The <em>long way round</em><br>
-        at Craven Cottage.
-      </h1>
-      <p class="hero-deck animate-in delay-2">
-        <strong>Cravenpod</strong> is a slow-cooked corner of the internet for Fulham supporters who want their football writing to linger a bit longer than the final whistle. Deep dives into the numbers, the history, the decisions, and the people behind the club by the Thames.
-      </p>
-    </div>
-    <div class="hero-right animate-in delay-3">
-      <div class="hero-stat">
-        <span class="hero-stat-label">Writing</span>
-        <span class="hero-stat-value">01</span>
-        <span class="hero-stat-desc">piece published, more in the oven</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-label">Focus</span>
-        <span class="hero-stat-value">FFC</span>
-        <span class="hero-stat-desc">only. No hot takes, no clickbait.</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-label">Schedule</span>
-        <span class="hero-stat-value">Slow</span>
-        <span class="hero-stat-desc">when there's something worth saying.</span>
-      </div>
-    </div>
-  </div>
+<!-- BLOG HEADER -->
+<section class="blog-header">
+  <h1 class="animate-in">Fulham FC, <em>in the long form.</em></h1>
+  <p class="animate-in delay-1">Deep dives into the numbers, the history, and the decisions behind the club by the Thames. Written slowly, published rarely.</p>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-bar">
-  <div class="marquee-track">
-    <span>COME ON YOU WHITES</span>
-    <span>THE COTTAGERS</span>
-    <span>SINCE 1879</span>
-    <span>THE THAMES ELEVEN</span>
-    <span>COME ON YOU WHITES</span>
-    <span>THE COTTAGERS</span>
-    <span>SINCE 1879</span>
-    <span>THE THAMES ELEVEN</span>
-  </div>
-</div>
+<!-- ARTICLES -->
+<section class="articles" id="articles">
 
-<!-- FEATURED -->
-<section class="featured" id="featured">
-  <div class="section-kicker reveal">Latest</div>
-  <h2 class="section-title reveal">The piece on Fulham's books.</h2>
-
-  <a href="/posts/fulham-fc-2024-25-financial-analysis/" class="post-card reveal">
-    <div class="post-visual">
-      <div class="post-visual-kicker">FINANCIAL DEEP-DIVE</div>
-      <div class="post-visual-big">
-        £39m <em>loss.</em>
-      </div>
-      <div class="post-visual-footer">
-        <span>11 interactive sections</span>
-        <span>~15 min read</span>
-      </div>
+  <a href="/posts/fulham-fc-2024-25-financial-analysis/" class="article-entry reveal">
+    <div class="article-date-col">
+      <div class="article-date">Dec 2025</div>
+      <div class="article-tag">Financial Analysis</div>
     </div>
-    <div class="post-body">
-      <div>
-        <div class="post-meta">Dec 2025 · Financial Analysis</div>
-        <h3 class="post-title">Fulham FC 2024/25: The Books Laid Bare</h3>
-        <p class="post-dek">
-          A deep reading of the 2024/25 accounts just filed at Companies House. Revenue is up 7.3% to £194.8m. Losses widened to £39m. Wage-to-revenue is sitting at a fragile 85.4%. And from 2026/27, Premier League rules change entirely. What do the numbers actually mean, and does any of it matter when the owner is Shahid Khan?
-        </p>
-      </div>
-      <div class="post-cta">
-        <span>Read the analysis</span>
-        <span class="arrow"></span>
-      </div>
+    <div class="article-body">
+      <h2 class="article-title">Fulham FC 2024/25: The Books Laid Bare</h2>
+      <p class="article-dek">A deep reading of the 2024/25 accounts filed at Companies House. Revenue up 7.3% to £194.8m, losses widened to £39m, and the wage ratio sits at a fragile 85.4%. Eleven interactive sections covering the P&L, balance sheet, peer benchmarks, the new SCR rules, and what it all means under Shahid Khan.</p>
+      <span class="article-read">
+        Read the analysis <span class="arrow"></span>
+      </span>
     </div>
   </a>
-</section>
 
-<!-- UPCOMING -->
-<section class="upcoming" id="upcoming">
-  <div class="upcoming-container">
-    <div class="section-kicker reveal">In the pipeline</div>
-    <h2 class="section-title reveal">What's cooking.</h2>
+  <!-- Future articles go here. Copy the article-entry block above. -->
 
-    <div class="upcoming-grid">
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status coming">Next up</div>
-        <h3>The Riverside Stand, in full</h3>
-        <p>An architectural and financial look at the biggest thing to happen at Craven Cottage in a generation — what it cost, who paid for it, and what it'll do for the club.</p>
-      </div>
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status">Planned</div>
-        <h3>The Silva years, a retrospective</h3>
-        <p>Marco Silva has quietly become one of the most important managers in Fulham's history. A closer look at the tactical identity he built.</p>
-      </div>
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status">Planned</div>
-        <h3>Player trading: how Fulham became net-positive</h3>
-        <p>£41m profit on player sales in FY25 wasn't an accident. A breakdown of the recruitment model and the people behind it.</p>
-      </div>
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status">Planned</div>
-        <h3>The Khan sports empire</h3>
-        <p>Fulham, Jacksonville Jaguars, AEW, Flex-N-Gate — how does Craven Cottage fit into the bigger picture?</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
-  <div class="about-grid">
-    <div>
-      <div class="section-kicker reveal">Why</div>
-      <h2 class="reveal">A <em>slower</em> way to read about football.</h2>
-    </div>
-    <div class="about-text reveal">
-      <p>Cravenpod exists because the internet doesn't need another hot take. It needs someone to actually sit with the accounts, read every footnote, and explain why the number on page 24 matters more than the headline on the back page.</p>
-      <p>This isn't news. It's not punditry. It's the kind of writing that used to live in thick Saturday supplements — except about one specific football club, by the Thames, whose name rhymes with "Bulham".</p>
-      <p>Written slowly. Published rarely. Read carefully, if you like.</p>
+  <div class="about-inner reveal">
+    <div class="about-label">About</div>
+    <div class="about-text">
+      <p><strong>Cravenpod</strong> is a slow-cooked corner of the internet for Fulham supporters who want their football writing to go deeper than the final whistle. It's not news, not punditry — it's the kind of writing that used to live in thick Saturday supplements, except about one specific club whose name rhymes with "Bulham".</p>
+      <p>Independent and unaffiliated with Fulham Football Club.</p>
     </div>
   </div>
 </section>
@@ -785,30 +455,17 @@
 <footer class="site-foot">
   <div class="site-foot-container">
     <div class="foot-top">
-      <div>
-        <div class="foot-brand">Craven<em>pod</em></div>
-        <p class="foot-tagline">Long-form Fulham writing, cooked slow. Independent and unaffiliated with Fulham Football Club.</p>
-      </div>
-      <div class="foot-col">
-        <h4>Read</h4>
-        <a href="/posts/fulham-fc-2024-25-financial-analysis/">The Ledger 2024/25</a>
-      </div>
-      <div class="foot-col">
-        <h4>Site</h4>
-        <a href="#featured">Latest</a>
-        <a href="#upcoming">Coming up</a>
-        <a href="#about">About</a>
-      </div>
+      <div class="foot-brand">Craven<em>pod</em></div>
+      <span class="foot-tagline">Long-form Fulham, cooked slow.</span>
     </div>
     <div class="foot-bottom">
-      <span>© Cravenpod 2026</span>
+      <span>&copy; Cravenpod 2026</span>
       <span>Made with care by the Thames</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // Scroll reveal
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -816,25 +473,9 @@
         revealObs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  // Smooth scroll nav
-  document.querySelectorAll('.site-nav a').forEach(link => {
-    link.addEventListener('click', e => {
-      const href = link.getAttribute('href');
-      if (href.startsWith('#')) {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          const offset = 20;
-          const pos = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: pos, behavior: 'smooth' });
-        }
-      }
-    });
-  });
 </script>
 
 </body>
