@@ -94,10 +94,10 @@ a{color:inherit}
 .form-dot-label .swatch{width:10px;height:10px;border-radius:50%}
 .form-narrative{font-family:'Fraunces',serif;font-size:16px;line-height:1.5;color:rgba(10,10,10,0.8);margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
 .form-matches{margin-top:16px}
-.form-match{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px;font-family:'Inter Tight',sans-serif}
+.form-match{display:grid;grid-template-columns:1fr 24px 24px;align-items:center;gap:16px;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px;font-family:'Inter Tight',sans-serif}
 .form-match:last-child{border-bottom:none}
-.form-match .score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px}
-.form-match .venue{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em}
+.form-match .score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;text-align:center}
+.form-match .venue{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;text-align:center}
 
 /* ========== KEY STATS ========== */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
