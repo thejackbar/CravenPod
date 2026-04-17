@@ -208,6 +208,7 @@ The writing voice is distinctive and should be consistent across all articles:
            async src="//gc.zgo.at/count.js"></script>
    ```
    Dashboard: `cravenpod.goatcounter.com`
+5. **Homepage sync** — **whenever a new post is published, `index.html` must be updated to include it** so readers can find it from the home page. Add the post to the relevant category section (Match Previews, Match Reviews, Finances, Team News, FFCW, Transfers, etc.) with title, dek, date, and link to `/posts/<slug>/`.
 
 ### Content pipeline (already teased in "What's cooking")
 1. **The Riverside Stand, in full** — architectural + financial story of the new stand
