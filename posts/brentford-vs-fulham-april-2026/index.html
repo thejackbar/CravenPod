@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brentford vs Fulham — West London Derby Preview | Cravenpod</title>
+<meta name="description" content="Interactive preview of the West London derby: Brentford vs Fulham, Saturday 18 April 2026 at the Gtech Community Stadium. Form, stats, team news, score predictor, and pick your XI.">
+<meta property="og:title" content="Brentford vs Fulham — West London Derby Preview">
+<meta property="og:description" content="7th vs 12th. Three points between them. European places on the line. The full interactive preview.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0a0a;
+  --paper: #f4f1ea;
+  --paper-dark: #e8e3d6;
+  --accent: #cc0000;
+  --accent-soft: #8b0000;
+  --gold: #b8935e;
+  --bees: #e8b624;
+  --bees-dark: #c4960e;
+  --whites: #1a1a1a;
+  --ok: #2d5016;
+  --warn: #b8860b;
+  --danger: #8b0000;
+  --rule: rgba(10,10,10,0.15);
+  --muted: rgba(10,10,10,0.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter Tight',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;overflow-x:hidden;background-image:radial-gradient(circle at 15% 8%,rgba(10,10,10,0.03) 0%,transparent 40%),radial-gradient(circle at 85% 65%,rgba(232,182,36,0.05) 0%,transparent 45%)}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
+a{color:inherit}
+
+/* ========== MASTHEAD ========== */
+.masthead{border-bottom:3px solid var(--ink);padding:24px 40px 20px;display:flex;justify-content:space-between;align-items:baseline;background:var(--paper);position:relative;z-index:10}
+.brand-link{text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px}
+.brand{font-family:'Fraunces',serif;font-weight:900;font-size:22px;letter-spacing:-.02em}
+.back-link{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
+.masthead .meta{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;display:flex;gap:24px}
+.masthead .meta span::before{content:'●';margin-right:6px;color:var(--bees)}
+
+/* ========== MATCH HERO ========== */
+.match-hero{background:var(--ink);color:var(--paper);padding:80px 40px 60px;position:relative;z-index:2;overflow:hidden}
+.match-hero::before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:rgba(244,241,234,0.08)}
+.match-hero::after{content:'';position:absolute;top:-50%;right:-10%;width:40%;height:200%;background:radial-gradient(circle,rgba(232,182,36,0.12) 0%,transparent 60%);pointer-events:none}
+.match-hero-inner{max-width:1200px;margin:0 auto;position:relative}
+.match-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:32px;text-align:center}
+.match-badge{display:flex;align-items:center;justify-content:center;gap:60px;margin-bottom:40px}
+.team-badge{text-align:center;flex:1;max-width:300px}
+.team-crest{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin:0 auto 16px;border:3px solid rgba(244,241,234,0.2)}
+.team-crest.home{background:var(--bees);color:var(--ink)}
+.team-crest.away{background:var(--paper);color:var(--ink)}
+.team-name{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(28px,5vw,48px);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.team-pos{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.15em;color:rgba(244,241,234,0.6)}
+.match-vs{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:24px;color:var(--accent);flex-shrink:0}
+.match-details{text-align:center;padding-top:32px;border-top:1px solid rgba(244,241,234,0.1);display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.match-detail{display:flex;flex-direction:column;gap:4px}
+.match-detail-label{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.5)}
+.match-detail-value{font-family:'Fraunces',serif;font-weight:600;font-size:18px}
+.prob-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;max-width:500px;margin:24px auto 0;gap:2px}
+.prob-bar div{transition:width .8s ease}
+.prob-bar .home-prob{background:var(--bees)}
+.prob-bar .draw-prob{background:rgba(244,241,234,0.4)}
+.prob-bar .away-prob{background:var(--paper)}
+.prob-labels{display:flex;justify-content:space-between;max-width:500px;margin:8px auto 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(244,241,234,0.6)}
+
+/* ========== SECTION BASE ========== */
+.section{padding:80px 40px;max-width:1400px;margin:0 auto;position:relative;z-index:2}
+.sec-num{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
+.sec-title{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:.95;letter-spacing:-.03em;margin-bottom:20px;max-width:900px}
+.sec-title em{font-style:italic;font-weight:400;color:var(--accent)}
+.sec-lede{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;max-width:720px;color:rgba(10,10,10,0.75);margin-bottom:48px}
+
+/* ========== FORM GUIDE ========== */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.form-grid{grid-template-columns:1fr}}
+.form-card{background:#fff;border:1px solid var(--rule);padding:32px}
+.form-card-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+.form-card-team{font-family:'Fraunces',serif;font-weight:900;font-size:24px}
+.form-card-record{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+.form-results{display:flex;gap:8px;margin-bottom:20px}
+.form-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#fff;cursor:default;transition:transform .2s}
+.form-dot:hover{transform:scale(1.15)}
+.form-dot.W{background:var(--ok)}
+.form-dot.D{background:var(--warn)}
+.form-dot.L{background:var(--danger)}
+.form-dot-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:8px;display:flex;gap:8px}
+.form-dot-label span{display:flex;align-items:center;gap:4px}
+.form-dot-label .swatch{width:10px;height:10px;border-radius:50%}
+.form-narrative{font-family:'Fraunces',serif;font-size:16px;line-height:1.5;color:rgba(10,10,10,0.8);margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.form-matches{margin-top:16px}
+.form-match{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px;font-family:'Inter Tight',sans-serif}
+.form-match:last-child{border-bottom:none}
+.form-match .score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px}
+.form-match .venue{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em}
+
+/* ========== KEY STATS ========== */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.stat-card{background:#fff;border:1px solid var(--rule);padding:28px;position:relative;transition:transform .3s,box-shadow .3s}
+.stat-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -16px rgba(10,10,10,0.12)}
+.stat-card-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px}
+.stat-compare{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.stat-team{text-align:center;flex:1}
+.stat-team-name{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:8px}
+.stat-value{font-family:'Fraunces',serif;font-weight:900;font-size:36px;line-height:1;letter-spacing:-.02em}
+.stat-value.highlight{color:var(--accent)}
+.stat-vs-label{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--muted);flex-shrink:0}
+.stat-bar-track{display:flex;height:8px;gap:2px;margin-top:16px;border-radius:4px;overflow:hidden}
+.stat-bar-track .home{background:var(--bees)}
+.stat-bar-track .away{background:var(--ink)}
+
+/* ========== HEAD TO HEAD ========== */
+.h2h-container{background:var(--ink);color:var(--paper);padding:80px 40px;position:relative;z-index:2}
+.h2h-inner{max-width:1400px;margin:0 auto}
+.h2h-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,241,234,0.1);margin:40px 0}
+.h2h-stat{background:var(--ink);padding:28px 24px;text-align:center}
+.h2h-stat-val{font-family:'Fraunces',serif;font-weight:900;font-size:48px;line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.h2h-stat-val.bees{color:var(--bees)}
+.h2h-stat-val.draws{color:rgba(244,241,234,0.5)}
+.h2h-stat-val.whites{color:var(--paper)}
+.h2h-stat-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.6)}
+.h2h-results{display:grid;gap:8px;margin-top:32px}
+.h2h-row{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;padding:16px 20px;background:rgba(244,241,234,0.03);align-items:center;transition:background .2s}
+.h2h-row:hover{background:rgba(244,241,234,0.07)}
+.h2h-home{text-align:right;font-family:'Fraunces',serif;font-weight:600;font-size:16px}
+.h2h-score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;padding:6px 16px;background:rgba(244,241,234,0.08);text-align:center;min-width:70px}
+.h2h-away{font-family:'Fraunces',serif;font-weight:600;font-size:16px}
+.h2h-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(244,241,234,0.5);text-align:right;letter-spacing:.1em}
+.h2h-comp{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(244,241,234,0.5);letter-spacing:.1em}
+.h2h-winner-home{border-left:3px solid var(--bees)}
+.h2h-winner-away{border-right:3px solid var(--paper)}
+.h2h-draw{border-left:3px solid rgba(244,241,234,0.3)}
+
+/* ========== TEAM NEWS ========== */
+.teamNews-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.teamNews-grid{grid-template-columns:1fr}}
+.teamNews-card{background:#fff;border:1px solid var(--rule);padding:32px;position:relative}
+.teamNews-card.brentford{border-top:4px solid var(--bees)}
+.teamNews-card.fulham{border-top:4px solid var(--ink)}
+.teamNews-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}
+.teamNews-team{font-family:'Fraunces',serif;font-weight:900;font-size:24px}
+.teamNews-formation{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.15em}
+.teamNews-xi{margin-bottom:20px}
+.teamNews-xi-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:12px}
+.xi-line{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.xi-player{padding:6px 12px;background:var(--paper);font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:600;border:1px solid var(--rule);transition:all .2s}
+.xi-player:hover{background:var(--paper-dark)}
+.xi-player.key{border-left:3px solid var(--accent)}
+.injury-list{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.injury-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px}
+.injury-item:last-child{border-bottom:none}
+.injury-name{font-family:'Fraunces',serif;font-weight:600}
+.injury-reason{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;padding:3px 8px;background:var(--danger);color:var(--paper)}
+.injury-reason.doubt{background:var(--warn);color:var(--ink)}
+.injury-reason.suspended{background:var(--ink);color:var(--paper)}
+
+/* ========== INTERACTIVE COMPONENTS ========== */
+.interactive-section{background:var(--paper-dark);padding:80px 40px;position:relative;z-index:2}
+.interactive-inner{max-width:1400px;margin:0 auto}
+
+/* POLL */
+.poll-container{background:#fff;border:1px solid var(--rule);padding:40px;max-width:700px;margin:0 auto}
+.poll-title{font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
+.poll-sub{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.poll-options{display:flex;gap:12px;margin-bottom:24px}
+@media(max-width:600px){.poll-options{flex-direction:column}}
+.poll-btn{flex:1;padding:20px;border:2px solid var(--rule);background:var(--paper);cursor:pointer;text-align:center;font-family:'Fraunces',serif;font-weight:700;font-size:18px;transition:all .3s;position:relative;overflow:hidden}
+.poll-btn:hover{border-color:var(--ink);background:#fff}
+.poll-btn.selected{border-color:var(--accent);background:rgba(204,0,0,0.05)}
+.poll-btn .poll-pct{display:block;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;margin-top:8px;color:var(--accent);opacity:0;transition:opacity .4s}
+.poll-btn.voted .poll-pct{opacity:1}
+.poll-btn .poll-bar-bg{position:absolute;bottom:0;left:0;height:4px;background:var(--accent);width:0;transition:width .8s cubic-bezier(0.2,0.9,0.3,1)}
+.poll-total{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
+
+/* SCORE PREDICTOR */
+.predictor{background:#fff;border:1px solid var(--rule);padding:40px;max-width:700px;margin:40px auto 0}
+.predictor-title{font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
+.predictor-sub{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.predictor-scores{display:flex;align-items:center;justify-content:center;gap:24px}
+.predictor-team{text-align:center}
+.predictor-team-name{font-family:'Fraunces',serif;font-weight:700;font-size:18px;margin-bottom:12px}
+.score-picker{display:flex;flex-direction:column;align-items:center;gap:8px}
+.score-picker button{width:44px;height:36px;border:1px solid var(--rule);background:var(--paper);font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s}
+.score-picker button:hover{background:var(--ink);color:var(--paper)}
+.score-picker .score-val{font-family:'Fraunces',serif;font-weight:900;font-size:56px;line-height:1;letter-spacing:-.03em;min-width:60px;text-align:center}
+.predictor-dash{font-family:'Fraunces',serif;font-size:36px;color:var(--muted);margin-top:40px}
+.predictor-submit{display:block;margin:32px auto 0;padding:14px 40px;background:var(--ink);color:var(--paper);border:none;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
+.predictor-submit:hover{background:var(--accent)}
+.predictor-submit:disabled{opacity:.4;cursor:not-allowed}
+.predictor-results{margin-top:32px;padding-top:24px;border-top:1px solid var(--rule);display:none}
+.predictor-results.show{display:block}
+.predictor-results-title{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px;text-align:center}
+.popular-scores{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.pop-score{padding:10px 16px;background:var(--paper);border:1px solid var(--rule);text-align:center;min-width:80px}
+.pop-score .s{font-family:'Fraunces',serif;font-weight:900;font-size:22px}
+.pop-score .n{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:.1em}
+
+/* ========== TEAM SELECTOR ========== */
+.selector-container{background:#fff;border:1px solid var(--rule);padding:40px;max-width:900px;margin:40px auto 0}
+.selector-title{font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
+.selector-sub{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.pitch{position:relative;width:100%;max-width:500px;margin:0 auto;aspect-ratio:2/3;background:#3a7d44;border-radius:4px;overflow:hidden;border:3px solid #2d6335}
+.pitch::before{content:'';position:absolute;top:50%;left:10%;right:10%;height:1px;background:rgba(255,255,255,0.3)}
+.pitch::after{content:'';position:absolute;top:50%;left:50%;width:80px;height:80px;border:1px solid rgba(255,255,255,0.3);border-radius:50%;transform:translate(-50%,-50%)}
+.pitch-slot{position:absolute;width:70px;height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
+.pitch-slot:hover{transform:scale(1.08)}
+.pitch-slot .shirt{width:40px;height:40px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;transition:all .3s}
+.pitch-slot.filled .shirt{background:var(--ink);color:var(--paper);border-color:var(--paper)}
+.pitch-slot .p-name{font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;text-align:center;margin-top:4px;text-shadow:0 1px 2px rgba(0,0,0,0.5);max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:.05em}
+.player-pool{margin-top:24px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.pool-player{padding:6px 12px;background:var(--paper);border:1px solid var(--rule);font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;user-select:none}
+.pool-player:hover{background:var(--paper-dark);border-color:var(--ink)}
+.pool-player.used{opacity:.3;pointer-events:none;text-decoration:line-through}
+.pool-player.active{border-color:var(--accent);background:rgba(204,0,0,0.05)}
+.selector-submit{display:block;margin:24px auto 0;padding:12px 32px;background:var(--ink);color:var(--paper);border:none;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
+.selector-submit:hover{background:var(--accent)}
+.selector-results{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule);display:none;text-align:center}
+.selector-results.show{display:block}
+.selector-results p{font-family:'Fraunces',serif;font-size:15px;color:var(--muted)}
+
+/* ========== TACTICAL ========== */
+.tactical-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.tactical-grid{grid-template-columns:1fr}}
+.battle-card{background:#fff;border:1px solid var(--rule);padding:24px;transition:transform .3s,box-shadow .3s}
+.battle-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -16px rgba(10,10,10,0.12)}
+.battle-header{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
+.battle-vs{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.battle-player{text-align:center;flex:1}
+.battle-player-name{font-family:'Fraunces',serif;font-weight:700;font-size:18px}
+.battle-player-pos{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em}
+.battle-v{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--muted)}
+.battle-desc{font-family:'Fraunces',serif;font-size:15px;line-height:1.5;color:rgba(10,10,10,0.8)}
+
+/* ========== VERDICT ========== */
+.verdict{background:var(--ink);color:var(--paper);padding:80px 40px;text-align:center;position:relative;z-index:2}
+.verdict-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:24px}
+.verdict-text{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(32px,5vw,64px);line-height:1.05;letter-spacing:-.03em;max-width:1000px;margin:0 auto}
+.verdict-text em{color:var(--accent);font-style:italic}
+.verdict-sub{font-family:'Fraunces',serif;font-size:18px;line-height:1.6;color:rgba(244,241,234,0.7);max-width:680px;margin:32px auto 0}
+.verdict-prediction{margin-top:40px;padding-top:32px;border-top:1px solid rgba(244,241,234,0.1);display:flex;justify-content:center;gap:60px}
+.verdict-score{font-family:'Fraunces',serif;font-weight:900;font-size:72px;letter-spacing:-.03em;line-height:1}
+.verdict-score-team{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.6);margin-bottom:8px}
+
+/* ========== FOOTER ========== */
+.footer{padding:40px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:rgba(10,10,10,0.5);background:var(--paper);border-top:1px solid var(--rule)}
+.footer a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:900px){
+  .section,.interactive-section{padding:56px 20px}
+  .match-hero{padding:48px 20px 40px}
+  .h2h-container{padding:56px 20px}
+  .verdict{padding:56px 20px}
+  .poll-container,.predictor,.selector-container{padding:28px 20px}
+}
+@media(max-width:700px){
+  .masthead{padding:16px 20px;flex-direction:column;gap:8px;align-items:flex-start}
+  .masthead .meta{gap:12px;flex-wrap:wrap;font-size:10px}
+  .match-badge{gap:24px;flex-direction:column}
+  .match-vs{order:-1}
+  .match-badge{flex-direction:row}
+  .match-details{gap:20px}
+  .team-name{font-size:28px}
+  .team-crest{width:60px;height:60px;font-size:22px}
+  .h2h-summary{grid-template-columns:repeat(3,1fr)}
+  .h2h-stat-val{font-size:36px}
+  .h2h-row{grid-template-columns:1fr auto 1fr;gap:8px;padding:12px}
+  .h2h-home,.h2h-away{font-size:13px}
+  .h2h-score{font-size:14px;padding:4px 10px;min-width:55px}
+  .stat-value{font-size:28px}
+  .score-picker .score-val{font-size:44px}
+  .pitch{aspect-ratio:2/2.8}
+  .pitch-slot{width:56px;height:56px}
+  .pitch-slot .shirt{width:32px;height:32px;font-size:10px}
+  .pitch-slot .p-name{font-size:8px}
+  .pool-player{font-size:11px;padding:5px 8px}
+  .verdict-score{font-size:56px}
+  .verdict-prediction{gap:32px}
+}
+
+/* ========== SCROLL REVEAL ========== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.9,.3,1),transform .9s cubic-bezier(.2,.9,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{opacity:0;animation:fadeUp .9s cubic-bezier(.2,.9,.3,1) forwards}
+.delay-1{animation-delay:.1s}.delay-2{animation-delay:.25s}.delay-3{animation-delay:.4s}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <a href="/" class="brand-link">
+    <span class="back-link">← Cravenpod</span>
+    <span style="color:rgba(10,10,10,0.25);">/</span>
+    <span class="brand">Match Preview</span>
+  </a>
+  <div class="meta">
+    <span>Matchweek 33</span>
+    <span>West London Derby</span>
+  </div>
+</header>
+
+<!-- MATCH HERO -->
+<section class="match-hero">
+  <div class="match-hero-inner">
+    <div class="match-kicker animate-in">Premier League · Saturday 18 April 2026</div>
+    <div class="match-badge animate-in delay-1">
+      <div class="team-badge">
+        <div class="team-crest home">BFC</div>
+        <div class="team-name">Brentford</div>
+        <div class="team-pos">7th · 47 pts · W13 D8 L11</div>
+      </div>
+      <div class="match-vs">vs</div>
+      <div class="team-badge">
+        <div class="team-crest away">FFC</div>
+        <div class="team-name">Fulham</div>
+        <div class="team-pos">12th · 44 pts · W13 D5 L14</div>
+      </div>
+    </div>
+    <div class="match-details animate-in delay-2">
+      <div class="match-detail">
+        <span class="match-detail-label">Kick-off</span>
+        <span class="match-detail-value">12:30 BST</span>
+      </div>
+      <div class="match-detail">
+        <span class="match-detail-label">Venue</span>
+        <span class="match-detail-value">Gtech Community Stadium</span>
+      </div>
+      <div class="match-detail">
+        <span class="match-detail-label">TV</span>
+        <span class="match-detail-value">TNT Sports</span>
+      </div>
+      <div class="match-detail">
+        <span class="match-detail-label">Referee</span>
+        <span class="match-detail-value">Paul Tierney</span>
+      </div>
+    </div>
+    <div class="prob-bar animate-in delay-3">
+      <div class="home-prob" style="width:44.9%"></div>
+      <div class="draw-prob" style="width:25.9%"></div>
+      <div class="away-prob" style="width:29.2%"></div>
+    </div>
+    <div class="prob-labels animate-in delay-3">
+      <span>Brentford 44.9%</span>
+      <span>Draw 25.9%</span>
+      <span>Fulham 29.2%</span>
+    </div>
+  </div>
+</section>
+
+<!-- FORM GUIDE -->
+<section class="section" id="form">
+  <div class="sec-num">§ 01</div>
+  <h2 class="sec-title">The form book says <em>be careful.</em></h2>
+  <p class="sec-lede">Brentford haven't won in five — all draws. Fulham have won three of six but can't buy a win on the road. Something's got to give in this West London derby.</p>
+
+  <div class="form-grid">
+    <div class="form-card reveal">
+      <div class="form-card-header">
+        <span class="form-card-team">Brentford</span>
+        <span class="form-card-record">Last 6: W1 D5 L0</span>
+      </div>
+      <div class="form-results">
+        <div class="form-dot D" title="Everton 2-2">D</div>
+        <div class="form-dot D" title="Leeds 0-0">D</div>
+        <div class="form-dot D" title="Wolves 2-2">D</div>
+        <div class="form-dot D" title="Bournemouth 0-0">D</div>
+        <div class="form-dot W" title="Burnley 3-4">W</div>
+        <div class="form-dot L" title="Brighton 0-2">L</div>
+      </div>
+      <div class="form-dot-label">
+        <span><span class="swatch" style="background:var(--ok)"></span>Win</span>
+        <span><span class="swatch" style="background:var(--warn)"></span>Draw</span>
+        <span><span class="swatch" style="background:var(--danger)"></span>Loss</span>
+      </div>
+      <div class="form-narrative">Five consecutive draws — unprecedented in Brentford's Premier League history. Keith Andrews' side remain dangerous (4 of last 6 games with 3+ goals) but just can't find the decisive moment. Home record this season: only 2 defeats in 12.</div>
+      <div class="form-matches">
+        <div class="form-match"><span>Brentford 2-2 Everton</span><span class="score">D</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Leeds 0-0 Brentford</span><span class="score">D</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Brentford 2-2 Wolves</span><span class="score">D</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Bournemouth 0-0 Brentford</span><span class="score">D</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Burnley 3-4 Brentford</span><span class="score">W</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Brentford 0-2 Brighton</span><span class="score">L</span><span class="venue">H</span></div>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <div class="form-card-header">
+        <span class="form-card-team">Fulham</span>
+        <span class="form-card-record">Last 6: W3 D1 L2</span>
+      </div>
+      <div class="form-results">
+        <div class="form-dot L" title="Liverpool 2-0">L</div>
+        <div class="form-dot W" title="Burnley 3-1">W</div>
+        <div class="form-dot D" title="Forest 0-0">D</div>
+        <div class="form-dot L" title="West Ham 0-1">L</div>
+        <div class="form-dot W" title="Fulham 2-1 Spurs">W</div>
+        <div class="form-dot W" title="Sunderland 1-3">W</div>
+      </div>
+      <div class="form-dot-label">
+        <span><span class="swatch" style="background:var(--ok)"></span>Win</span>
+        <span><span class="swatch" style="background:var(--warn)"></span>Draw</span>
+        <span><span class="swatch" style="background:var(--danger)"></span>Loss</span>
+      </div>
+      <div class="form-narrative">Marco Silva's side have found rhythm at home but the road remains a problem — just 1 win in their last 6 away games. The 2-0 defeat at Liverpool last week was the latest, though they competed well for long stretches. Fulham have won three consecutive West London derbies against Brentford.</div>
+      <div class="form-matches">
+        <div class="form-match"><span>Liverpool 2-0 Fulham</span><span class="score">L</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Fulham 3-1 Burnley</span><span class="score">W</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Forest 0-0 Fulham</span><span class="score">D</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Fulham 0-1 West Ham</span><span class="score">L</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Fulham 2-1 Spurs</span><span class="score">W</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Sunderland 1-3 Fulham</span><span class="score">W</span><span class="venue">A</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY STATS -->
+<section class="section" id="stats">
+  <div class="sec-num">§ 02</div>
+  <h2 class="sec-title">The numbers that <em>matter.</em></h2>
+  <p class="sec-lede">Brentford lead the league in shot accuracy. Fulham can't stop shooting from distance. One stat above all tells the story of this matchup.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <div class="stat-card-label">Shots on target %</div>
+      <div class="stat-compare">
+        <div class="stat-team"><div class="stat-team-name">Brentford</div><div class="stat-value highlight">37.4%</div></div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team"><div class="stat-team-name">Fulham</div><div class="stat-value">29.6%</div></div>
+      </div>
+      <div class="stat-bar-track"><div class="home" style="width:55.8%"></div><div class="away" style="width:44.2%"></div></div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-card-label">xG per shot</div>
+      <div class="stat-compare">
+        <div class="stat-team"><div class="stat-team-name">Brentford</div><div class="stat-value highlight">0.17</div></div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team"><div class="stat-team-name">Fulham</div><div class="stat-value">0.11</div></div>
+      </div>
+      <div class="stat-bar-track"><div class="home" style="width:60.7%"></div><div class="away" style="width:39.3%"></div></div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-card-label">Goals from outside box</div>
+      <div class="stat-compare">
+        <div class="stat-team"><div class="stat-team-name">Brentford</div><div class="stat-value">5</div></div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team"><div class="stat-team-name">Fulham</div><div class="stat-value highlight">9</div></div>
+      </div>
+      <div class="stat-bar-track"><div class="home" style="width:35.7%"></div><div class="away" style="width:64.3%"></div></div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-card-label">Both teams scored (BTTS)</div>
+      <div class="stat-compare">
+        <div class="stat-team"><div class="stat-team-name">Brentford</div><div class="stat-value">59%</div></div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team"><div class="stat-team-name">Fulham</div><div class="stat-value">50%</div></div>
+      </div>
+      <div class="stat-bar-track"><div class="home" style="width:54.1%"></div><div class="away" style="width:45.9%"></div></div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-card-label">League position</div>
+      <div class="stat-compare">
+        <div class="stat-team"><div class="stat-team-name">Brentford</div><div class="stat-value highlight">7th</div></div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team"><div class="stat-team-name">Fulham</div><div class="stat-value">12th</div></div>
+      </div>
+      <div class="stat-bar-track"><div class="home" style="width:51.6%"></div><div class="away" style="width:48.4%"></div></div>
+    </div>
+    <div class="stat-card reveal">
+      <div class="stat-card-label">Points gap</div>
+      <div class="stat-compare">
+        <div class="stat-team"><div class="stat-team-name">Brentford</div><div class="stat-value">47</div></div>
+        <div class="stat-vs-label">—</div>
+        <div class="stat-team"><div class="stat-team-name">Fulham</div><div class="stat-value">44</div></div>
+      </div>
+      <div style="text-align:center;margin-top:16px;font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--muted);">Just 3 points. A Fulham win closes the gap to nothing.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HEAD TO HEAD -->
+<section class="h2h-container" id="h2h">
+  <div class="h2h-inner">
+    <div class="sec-num" style="color:var(--accent)">§ 03</div>
+    <h2 class="sec-title" style="color:var(--paper)">69 meetings. <em>One city.</em></h2>
+    <p class="sec-lede" style="color:rgba(244,241,234,0.7)">Fulham hold the slimmest of edges in the all-time record and have dominated the Premier League era fixture, winning 5 of 8 meetings. They've won 3 derbies in a row — including a 3-1 win at Craven Cottage in September.</p>
+
+    <div class="h2h-summary">
+      <div class="h2h-stat"><div class="h2h-stat-val bees">25</div><div class="h2h-stat-label">Brentford wins</div></div>
+      <div class="h2h-stat"><div class="h2h-stat-val draws">18</div><div class="h2h-stat-label">Draws</div></div>
+      <div class="h2h-stat"><div class="h2h-stat-val whites">26</div><div class="h2h-stat-label">Fulham wins</div></div>
+    </div>
+
+    <div class="h2h-results">
+      <div class="h2h-row h2h-winner-away"><div class="h2h-home">Fulham</div><div class="h2h-score">3 - 1</div><div class="h2h-away">Brentford<br><span class="h2h-comp">PL · Sep 2025</span></div></div>
+      <div class="h2h-row h2h-winner-away"><div class="h2h-home">Brentford</div><div class="h2h-score">2 - 3</div><div class="h2h-away">Fulham<br><span class="h2h-comp">PL · May 2025</span></div></div>
+      <div class="h2h-row h2h-winner-away"><div class="h2h-home">Fulham</div><div class="h2h-score">2 - 1</div><div class="h2h-away">Brentford<br><span class="h2h-comp">PL · Nov 2024</span></div></div>
+      <div class="h2h-row h2h-draw"><div class="h2h-home">Brentford</div><div class="h2h-score">0 - 0</div><div class="h2h-away">Fulham<br><span class="h2h-comp">PL · May 2024</span></div></div>
+      <div class="h2h-row h2h-winner-home"><div class="h2h-home">Fulham</div><div class="h2h-score">0 - 3</div><div class="h2h-away">Brentford<br><span class="h2h-comp">PL · Aug 2023</span></div></div>
+      <div class="h2h-row h2h-winner-home"><div class="h2h-home">Brentford</div><div class="h2h-score">3 - 2</div><div class="h2h-away">Fulham<br><span class="h2h-comp">PL · Mar 2023</span></div></div>
+      <div class="h2h-row h2h-winner-away"><div class="h2h-home">Fulham</div><div class="h2h-score">3 - 2</div><div class="h2h-away">Brentford<br><span class="h2h-comp">PL · Aug 2022</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM NEWS -->
+<section class="section" id="teamnews">
+  <div class="sec-num">§ 04</div>
+  <h2 class="sec-title">Who's in, <em>who's out.</em></h2>
+  <p class="sec-lede">Brentford lose Kevin Schade to suspension. Fulham are missing key midfield men Kenny Tete and Harrison Reed. Both sides go into this derby with genuine absences to manage.</p>
+
+  <div class="teamNews-grid">
+    <div class="teamNews-card brentford reveal">
+      <div class="teamNews-header">
+        <span class="teamNews-team">Brentford</span>
+        <span class="teamNews-formation">4-2-3-1</span>
+      </div>
+      <div class="teamNews-xi">
+        <div class="teamNews-xi-label">Predicted XI</div>
+        <div class="xi-line"><span class="xi-player">Kelleher</span></div>
+        <div class="xi-line"><span class="xi-player">Kayode</span><span class="xi-player">Collins</span><span class="xi-player">van den Berg</span><span class="xi-player">Lewis-Potter</span></div>
+        <div class="xi-line"><span class="xi-player">Yarmoliuk</span><span class="xi-player">Jensen</span></div>
+        <div class="xi-line"><span class="xi-player">Ouattara</span><span class="xi-player key">Damsgaard</span><span class="xi-player">Mbeumo</span></div>
+        <div class="xi-line"><span class="xi-player key">Igor Thiago</span></div>
+      </div>
+      <div class="injury-list">
+        <div class="teamNews-xi-label">Unavailable</div>
+        <div class="injury-item"><span class="injury-name">Kevin Schade</span><span class="injury-reason suspended">Suspended</span></div>
+        <div class="injury-item"><span class="injury-name">Fábio Carvalho</span><span class="injury-reason">ACL</span></div>
+        <div class="injury-item"><span class="injury-name">Amad Milambo</span><span class="injury-reason">ACL</span></div>
+        <div class="injury-item"><span class="injury-name">Josh Dasilva</span><span class="injury-reason">Groin</span></div>
+        <div class="injury-item"><span class="injury-name">Kristoffer Ajer</span><span class="injury-reason doubt">Doubt</span></div>
+        <div class="injury-item"><span class="injury-name">Mikkel Damsgaard</span><span class="injury-reason doubt">Knock</span></div>
+      </div>
+    </div>
+
+    <div class="teamNews-card fulham reveal">
+      <div class="teamNews-header">
+        <span class="teamNews-team">Fulham</span>
+        <span class="teamNews-formation">4-2-3-1</span>
+      </div>
+      <div class="teamNews-xi">
+        <div class="teamNews-xi-label">Predicted XI</div>
+        <div class="xi-line"><span class="xi-player">Leno</span></div>
+        <div class="xi-line"><span class="xi-player">Castagne</span><span class="xi-player key">Andersen</span><span class="xi-player">Bassey</span><span class="xi-player key">Robinson</span></div>
+        <div class="xi-line"><span class="xi-player">Berge</span><span class="xi-player">Iwobi</span></div>
+        <div class="xi-line"><span class="xi-player key">Wilson</span><span class="xi-player">King</span><span class="xi-player">Bobb</span></div>
+        <div class="xi-line"><span class="xi-player key">Muniz</span></div>
+      </div>
+      <div class="injury-list">
+        <div class="teamNews-xi-label">Unavailable</div>
+        <div class="injury-item"><span class="injury-name">Kenny Tete</span><span class="injury-reason">Hamstring</span></div>
+        <div class="injury-item"><span class="injury-name">Harrison Reed</span><span class="injury-reason">Knee</span></div>
+        <div class="injury-item"><span class="injury-name">Kevin</span><span class="injury-reason">Unknown</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TACTICAL BATTLES -->
+<section class="section" id="tactics">
+  <div class="sec-num">§ 05</div>
+  <h2 class="sec-title">The key <em>battles.</em></h2>
+  <p class="sec-lede">Four matchups on the pitch that'll decide the outcome. From Robinson's bombing runs to Thiago's movement, these are the duels to watch.</p>
+
+  <div class="tactical-grid">
+    <div class="battle-card reveal">
+      <div class="battle-header">Left flank</div>
+      <div class="battle-vs">
+        <div class="battle-player"><div class="battle-player-name">Robinson</div><div class="battle-player-pos">LB · Fulham</div></div>
+        <div class="battle-v">vs</div>
+        <div class="battle-player"><div class="battle-player-name">Ouattara</div><div class="battle-player-pos">RW · Brentford</div></div>
+      </div>
+      <div class="battle-desc">Robinson's overlapping runs from left-back have been a weapon all season. But Ouattara's raw pace on the counter is a genuine threat. If Robinson bombs forward, the space behind him is where Brentford will look to hurt Fulham.</div>
+    </div>
+    <div class="battle-card reveal">
+      <div class="battle-header">Midfield control</div>
+      <div class="battle-vs">
+        <div class="battle-player"><div class="battle-player-name">Berge</div><div class="battle-player-pos">CM · Fulham</div></div>
+        <div class="battle-v">vs</div>
+        <div class="battle-player"><div class="battle-player-name">Jensen</div><div class="battle-player-pos">CM · Brentford</div></div>
+      </div>
+      <div class="battle-desc">Both sides play through central midfield. Jensen dictates Brentford's tempo while Berge is the shield in front of Fulham's defence. Whoever wins this territory controls the match.</div>
+    </div>
+    <div class="battle-card reveal">
+      <div class="battle-header">The danger man</div>
+      <div class="battle-vs">
+        <div class="battle-player"><div class="battle-player-name">Wilson</div><div class="battle-player-pos">RW · Fulham</div></div>
+        <div class="battle-v">vs</div>
+        <div class="battle-player"><div class="battle-player-name">Lewis-Potter</div><div class="battle-player-pos">LB · Brentford</div></div>
+      </div>
+      <div class="battle-desc">Wilson has been one of the league's outstanding players this season — 10 goals, 6 assists, and a knack for scoring from distance. Lewis-Potter has to stay tight or risk giving Wilson space to shoot. Fulham's 9 goals from outside the box are a direct Wilson-shaped threat.</div>
+    </div>
+    <div class="battle-card reveal">
+      <div class="battle-header">The focal point</div>
+      <div class="battle-vs">
+        <div class="battle-player"><div class="battle-player-name">Igor Thiago</div><div class="battle-player-pos">ST · Brentford</div></div>
+        <div class="battle-v">vs</div>
+        <div class="battle-player"><div class="battle-player-name">Andersen</div><div class="battle-player-pos">CB · Fulham</div></div>
+      </div>
+      <div class="battle-desc">Thiago is chasing the Golden Boot and everything Brentford create goes through him. Andersen is Fulham's defensive leader and the best reader of the game in this fixture. A classic striker-vs-centre-back battle.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE SECTION: POLLS + PREDICTOR + TEAM SELECTOR -->
+<section class="interactive-section" id="interact">
+  <div class="interactive-inner">
+    <div class="sec-num">§ 06</div>
+    <h2 class="sec-title">Your <em>call.</em></h2>
+    <p class="sec-lede">Three ways to nail your colours to the mast before kick-off. Vote, predict, and pick your XI.</p>
+
+    <!-- RESULT POLL -->
+    <div class="poll-container reveal" id="pollBox">
+      <div class="poll-title">Who wins?</div>
+      <div class="poll-sub">Vote and see how the crowd leans.</div>
+      <div class="poll-options" id="pollOptions">
+        <button class="poll-btn" data-choice="brentford">Brentford<span class="poll-pct" id="pctBre">-</span><span class="poll-bar-bg"></span></button>
+        <button class="poll-btn" data-choice="draw">Draw<span class="poll-pct" id="pctDraw">-</span><span class="poll-bar-bg"></span></button>
+        <button class="poll-btn" data-choice="fulham">Fulham<span class="poll-pct" id="pctFul">-</span><span class="poll-bar-bg"></span></button>
+      </div>
+      <div class="poll-total" id="pollTotal"></div>
+    </div>
+
+    <!-- SCORE PREDICTOR -->
+    <div class="predictor reveal" id="predictorBox">
+      <div class="predictor-title">Predict the score</div>
+      <div class="predictor-sub">Pick a scoreline. We'll show you how your prediction stacks up.</div>
+      <div class="predictor-scores">
+        <div class="predictor-team">
+          <div class="predictor-team-name">Brentford</div>
+          <div class="score-picker">
+            <button onclick="adjustScore('home',1)">+</button>
+            <div class="score-val" id="homeScore">1</div>
+            <button onclick="adjustScore('home',-1)">−</button>
+          </div>
+        </div>
+        <div class="predictor-dash">—</div>
+        <div class="predictor-team">
+          <div class="predictor-team-name">Fulham</div>
+          <div class="score-picker">
+            <button onclick="adjustScore('away',1)">+</button>
+            <div class="score-val" id="awayScore">1</div>
+            <button onclick="adjustScore('away',-1)">−</button>
+          </div>
+        </div>
+      </div>
+      <button class="predictor-submit" id="predictBtn" onclick="submitPrediction()">Lock in prediction</button>
+      <div class="predictor-results" id="predictResults">
+        <div class="predictor-results-title">Most popular predictions</div>
+        <div class="popular-scores" id="popScores"></div>
+      </div>
+    </div>
+
+    <!-- TEAM SELECTOR -->
+    <div class="selector-container reveal" id="selectorBox">
+      <div class="selector-title">Pick your Fulham XI</div>
+      <div class="selector-sub">Tap a position on the pitch, then tap a player below to fill it. Build your dream lineup for the derby.</div>
+      <div class="pitch" id="pitch"></div>
+      <div class="player-pool" id="playerPool"></div>
+      <button class="selector-submit" id="selectorSubmit" onclick="submitXI()">Submit your XI</button>
+      <div class="selector-results" id="selectorResults">
+        <p id="selectorMsg"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section class="verdict" id="verdict">
+  <div class="verdict-kicker">§ 07 / The Cravenpod Take</div>
+  <h2 class="verdict-text">Brentford's draw streak <em>breaks.</em><br>But not the way they want.</h2>
+  <p class="verdict-sub">Fulham have won three consecutive derbies against Brentford and, despite their away struggles, the Cottagers tend to turn up for this fixture. Brentford's inability to close games out — five draws in a row — suggests a side that creates chances but lacks the composure to convert them when it matters. Wilson's threat from distance, Robinson's energy, and Andersen's leadership give Fulham the edge. It'll be tight, noisy, and probably decided by one moment of quality.</p>
+  <div class="verdict-prediction">
+    <div><div class="verdict-score-team">Brentford</div><div class="verdict-score">1</div></div>
+    <div><div class="verdict-score-team">Fulham</div><div class="verdict-score" style="color:var(--accent)">2</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div style="margin-bottom:16px"><a href="/">← Back to Cravenpod</a></div>
+  Data sources: premierleague.com, premierinjuries.com, 11v11.com, brentfordfc.com, sportsmole.co.uk · All stats as of 17 April 2026
+</footer>
+
+<script>
+// ========== SCROLL REVEAL ==========
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)} });
+},{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ========== RESULT POLL ==========
+const POLL_KEY = 'cravenpod-brf-poll';
+let pollData = {brentford:12,draw:8,fulham:18}; // seed data
+let userVoted = false;
+try { const saved = localStorage.getItem(POLL_KEY); if(saved){pollData=JSON.parse(saved);userVoted=true;showPollResults()} } catch(e){}
+
+function votePoll(choice){
+  if(userVoted) return;
+  userVoted = true;
+  pollData[choice] = (pollData[choice]||0) + 1;
+  try{localStorage.setItem(POLL_KEY, JSON.stringify(pollData))}catch(e){}
+  document.querySelector(`[data-choice="${choice}"]`).classList.add('selected');
+  showPollResults();
+}
+function showPollResults(){
+  const total = pollData.brentford + pollData.draw + pollData.fulham;
+  document.querySelectorAll('.poll-btn').forEach(btn => {
+    btn.classList.add('voted');
+    const c = btn.dataset.choice;
+    const pct = Math.round((pollData[c]/total)*100);
+    btn.querySelector('.poll-pct').textContent = pct+'%';
+    btn.querySelector('.poll-bar-bg').style.width = pct+'%';
+  });
+  document.getElementById('pollTotal').textContent = total + ' votes';
+}
+document.querySelectorAll('.poll-btn').forEach(btn => btn.addEventListener('click', () => votePoll(btn.dataset.choice)));
+
+// ========== SCORE PREDICTOR ==========
+const PRED_KEY = 'cravenpod-brf-pred';
+let homeS = 1, awayS = 1;
+let predictions = {'1-1':14,'2-1':11,'1-2':9,'0-0':5,'2-2':7,'0-1':4,'3-1':3,'1-0':6,'2-0':3,'0-2':2}; // seed
+let userPredicted = false;
+try{const s=localStorage.getItem(PRED_KEY);if(s){predictions=JSON.parse(s);userPredicted=true;document.getElementById('predictBtn').disabled=true;document.getElementById('predictBtn').textContent='Prediction locked';showPredictions()}}catch(e){}
+
+function adjustScore(team,delta){
+  if(userPredicted)return;
+  if(team==='home'){homeS=Math.max(0,Math.min(9,homeS+delta));document.getElementById('homeScore').textContent=homeS}
+  else{awayS=Math.max(0,Math.min(9,awayS+delta));document.getElementById('awayScore').textContent=awayS}
+}
+function submitPrediction(){
+  if(userPredicted)return;
+  userPredicted=true;
+  const key=homeS+'-'+awayS;
+  predictions[key]=(predictions[key]||0)+1;
+  try{localStorage.setItem(PRED_KEY,JSON.stringify(predictions))}catch(e){}
+  document.getElementById('predictBtn').disabled=true;
+  document.getElementById('predictBtn').textContent='Prediction locked ✓';
+  showPredictions();
+}
+function showPredictions(){
+  const el=document.getElementById('predictResults');
+  el.classList.add('show');
+  const sorted=Object.entries(predictions).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const total=Object.values(predictions).reduce((a,b)=>a+b,0);
+  document.getElementById('popScores').innerHTML=sorted.map(([score,count])=>{
+    const pct=Math.round(count/total*100);
+    return `<div class="pop-score"><div class="s">${score}</div><div class="n">${pct}% (${count})</div></div>`;
+  }).join('');
+}
+
+// ========== TEAM SELECTOR ==========
+const positions = [
+  {id:'GK',label:'GK',top:'88%',left:'50%'},
+  {id:'RB',label:'RB',top:'72%',left:'82%'},
+  {id:'CB1',label:'CB',top:'75%',left:'62%'},
+  {id:'CB2',label:'CB',top:'75%',left:'38%'},
+  {id:'LB',label:'LB',top:'72%',left:'18%'},
+  {id:'CM1',label:'CM',top:'55%',left:'62%'},
+  {id:'CM2',label:'CM',top:'55%',left:'38%'},
+  {id:'RW',label:'RW',top:'35%',left:'82%'},
+  {id:'AM',label:'AM',top:'38%',left:'50%'},
+  {id:'LW',label:'LW',top:'35%',left:'18%'},
+  {id:'ST',label:'ST',top:'15%',left:'50%'}
+];
+const squad = ['Leno','Castagne','Andersen','Bassey','Robinson','Berge','Iwobi','Wilson','King','Bobb','Muniz','Jimenez','Cairney','Lukic','Cuenca','Sessegnon','Diop','Stansfield','Nelson','Vinicius'];
+let selectedSlot = null;
+let xi = {};
+
+function buildPitch(){
+  const pitch=document.getElementById('pitch');
+  positions.forEach(p => {
+    const slot=document.createElement('div');
+    slot.className='pitch-slot';
+    slot.style.top=p.top;
+    slot.style.left=p.left;
+    slot.style.transform='translate(-50%,-50%)';
+    slot.dataset.pos=p.id;
+    slot.innerHTML=`<div class="shirt">${p.label}</div><div class="p-name">${p.label}</div>`;
+    slot.addEventListener('click',()=>selectSlot(p.id));
+    pitch.appendChild(slot);
+  });
+  const pool=document.getElementById('playerPool');
+  squad.forEach(name => {
+    const el=document.createElement('div');
+    el.className='pool-player';
+    el.textContent=name;
+    el.dataset.player=name;
+    el.addEventListener('click',()=>assignPlayer(name));
+    pool.appendChild(el);
+  });
+}
+function selectSlot(posId){
+  document.querySelectorAll('.pitch-slot').forEach(s=>s.querySelector('.shirt').style.boxShadow='');
+  selectedSlot=posId;
+  const slot=document.querySelector(`[data-pos="${posId}"]`);
+  slot.querySelector('.shirt').style.boxShadow='0 0 0 3px rgba(204,0,0,0.8)';
+  // If slot already filled, unfill
+  if(xi[posId]){
+    const oldPlayer=xi[posId];
+    delete xi[posId];
+    slot.classList.remove('filled');
+    slot.querySelector('.p-name').textContent=positions.find(p=>p.id===posId).label;
+    slot.querySelector('.shirt').textContent=positions.find(p=>p.id===posId).label;
+    document.querySelector(`[data-player="${oldPlayer}"]`).classList.remove('used');
+  }
+}
+function assignPlayer(name){
+  if(!selectedSlot)return;
+  // Check if already used
+  if(Object.values(xi).includes(name))return;
+  xi[selectedSlot]=name;
+  const slot=document.querySelector(`[data-pos="${selectedSlot}"]`);
+  slot.classList.add('filled');
+  slot.querySelector('.p-name').textContent=name;
+  const initials=name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,3);
+  slot.querySelector('.shirt').textContent=initials;
+  slot.querySelector('.shirt').style.boxShadow='';
+  document.querySelector(`[data-player="${name}"]`).classList.add('used');
+  // Auto-advance to next empty slot
+  const nextEmpty=positions.find(p=>!xi[p.id]);
+  if(nextEmpty){selectSlot(nextEmpty.id)}else{selectedSlot=null}
+}
+function submitXI(){
+  const filled=Object.keys(xi).length;
+  const res=document.getElementById('selectorResults');
+  res.classList.add('show');
+  if(filled<11){
+    document.getElementById('selectorMsg').textContent=`You've picked ${filled}/11 players. Fill all positions to submit.`;
+    return;
+  }
+  const xiStr=positions.map(p=>xi[p.id]).join(', ');
+  document.getElementById('selectorMsg').innerHTML=`<strong>Your XI is locked in.</strong><br><span style="font-size:14px;color:var(--muted)">${xiStr}</span>`;
+  document.getElementById('selectorSubmit').disabled=true;
+  document.getElementById('selectorSubmit').textContent='XI submitted ✓';
+}
+buildPitch();
+// Auto-select GK first
+selectSlot('GK');
+</script>
+</body>
+</html>
