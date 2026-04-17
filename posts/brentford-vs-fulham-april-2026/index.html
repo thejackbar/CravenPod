@@ -19,8 +19,11 @@
   --accent: #cc0000;
   --accent-soft: #8b0000;
   --gold: #b8935e;
-  --bees: #e8b624;
-  --bees-dark: #c4960e;
+  --bees: #d40000;
+  --bees-dark: #a80000;
+  --bees-white: #fff;
+  --fulham-green: #3d6b4f;
+  --fulham-green-light: #4a8060;
   --whites: #1a1a1a;
   --ok: #2d5016;
   --warn: #b8860b;
@@ -30,7 +33,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Inter Tight',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;overflow-x:hidden;background-image:radial-gradient(circle at 15% 8%,rgba(10,10,10,0.03) 0%,transparent 40%),radial-gradient(circle at 85% 65%,rgba(232,182,36,0.05) 0%,transparent 45%)}
+body{font-family:'Inter Tight',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;overflow-x:hidden;background-image:radial-gradient(circle at 15% 8%,rgba(212,0,0,0.04) 0%,transparent 40%),radial-gradient(circle at 85% 65%,rgba(61,107,79,0.05) 0%,transparent 45%)}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
 a{color:inherit}
 
@@ -45,14 +48,13 @@ a{color:inherit}
 /* ========== MATCH HERO ========== */
 .match-hero{background:var(--ink);color:var(--paper);padding:80px 40px 60px;position:relative;z-index:2;overflow:hidden}
 .match-hero::before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:rgba(244,241,234,0.08)}
-.match-hero::after{content:'';position:absolute;top:-50%;right:-10%;width:40%;height:200%;background:radial-gradient(circle,rgba(232,182,36,0.12) 0%,transparent 60%);pointer-events:none}
+.match-hero::after{content:'';position:absolute;top:-50%;right:-10%;width:40%;height:200%;background:radial-gradient(circle,rgba(212,0,0,0.15) 0%,transparent 60%);pointer-events:none}
 .match-hero-inner{max-width:1200px;margin:0 auto;position:relative}
 .match-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:32px;text-align:center}
 .match-badge{display:flex;align-items:center;justify-content:center;gap:60px;margin-bottom:40px}
 .team-badge{text-align:center;flex:1;max-width:300px}
-.team-crest{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin:0 auto 16px;border:3px solid rgba(244,241,234,0.2)}
-.team-crest.home{background:var(--bees);color:var(--ink)}
-.team-crest.away{background:var(--paper);color:var(--ink)}
+.team-crest{width:90px;height:90px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.team-crest svg{width:100%;height:100%}
 .team-name{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(28px,5vw,48px);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
 .team-pos{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.15em;color:rgba(244,241,234,0.6)}
 .match-vs{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:24px;color:var(--accent);flex-shrink:0}
@@ -64,7 +66,7 @@ a{color:inherit}
 .prob-bar div{transition:width .8s ease}
 .prob-bar .home-prob{background:var(--bees)}
 .prob-bar .draw-prob{background:rgba(244,241,234,0.4)}
-.prob-bar .away-prob{background:var(--paper)}
+.prob-bar .away-prob{background:var(--fulham-green)}
 .prob-labels{display:flex;justify-content:space-between;max-width:500px;margin:8px auto 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(244,241,234,0.6)}
 
 /* ========== SECTION BASE ========== */
@@ -110,7 +112,7 @@ a{color:inherit}
 .stat-vs-label{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--muted);flex-shrink:0}
 .stat-bar-track{display:flex;height:8px;gap:2px;margin-top:16px;border-radius:4px;overflow:hidden}
 .stat-bar-track .home{background:var(--bees)}
-.stat-bar-track .away{background:var(--ink)}
+.stat-bar-track .away{background:var(--fulham-green)}
 
 /* ========== HEAD TO HEAD ========== */
 .h2h-container{background:var(--ink);color:var(--paper);padding:80px 40px;position:relative;z-index:2}
@@ -131,7 +133,7 @@ a{color:inherit}
 .h2h-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(244,241,234,0.5);text-align:right;letter-spacing:.1em}
 .h2h-comp{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(244,241,234,0.5);letter-spacing:.1em}
 .h2h-winner-home{border-left:3px solid var(--bees)}
-.h2h-winner-away{border-right:3px solid var(--paper)}
+.h2h-winner-away{border-right:3px solid var(--fulham-green)}
 .h2h-draw{border-left:3px solid rgba(244,241,234,0.3)}
 
 /* ========== TEAM NEWS ========== */
@@ -139,7 +141,7 @@ a{color:inherit}
 @media(max-width:800px){.teamNews-grid{grid-template-columns:1fr}}
 .teamNews-card{background:#fff;border:1px solid var(--rule);padding:32px;position:relative}
 .teamNews-card.brentford{border-top:4px solid var(--bees)}
-.teamNews-card.fulham{border-top:4px solid var(--ink)}
+.teamNews-card.fulham{border-top:4px solid var(--fulham-green)}
 .teamNews-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}
 .teamNews-team{font-family:'Fraunces',serif;font-weight:900;font-size:24px}
 .teamNews-formation{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.15em}
@@ -148,7 +150,6 @@ a{color:inherit}
 .xi-line{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
 .xi-player{padding:6px 12px;background:var(--paper);font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:600;border:1px solid var(--rule);transition:all .2s}
 .xi-player:hover{background:var(--paper-dark)}
-.xi-player.key{border-left:3px solid var(--accent)}
 .injury-list{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
 .injury-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px}
 .injury-item:last-child{border-bottom:none}
@@ -208,7 +209,7 @@ a{color:inherit}
 .pitch-slot{position:absolute;width:70px;height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
 .pitch-slot:hover{transform:scale(1.08)}
 .pitch-slot .shirt{width:40px;height:40px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;transition:all .3s}
-.pitch-slot.filled .shirt{background:var(--ink);color:var(--paper);border-color:var(--paper)}
+.pitch-slot.filled .shirt{background:var(--fulham-green);color:var(--paper);border-color:var(--paper)}
 .pitch-slot .p-name{font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;text-align:center;margin-top:4px;text-shadow:0 1px 2px rgba(0,0,0,0.5);max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:.05em}
 .player-pool{margin-top:24px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .pool-player{padding:6px 12px;background:var(--paper);border:1px solid var(--rule);font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;user-select:none}
@@ -264,7 +265,7 @@ a{color:inherit}
   .match-badge{flex-direction:row}
   .match-details{gap:20px}
   .team-name{font-size:28px}
-  .team-crest{width:60px;height:60px;font-size:22px}
+  .team-crest{width:70px;height:70px}
   .h2h-summary{grid-template-columns:repeat(3,1fr)}
   .h2h-stat-val{font-size:36px}
   .h2h-row{grid-template-columns:1fr auto 1fr;gap:8px;padding:12px}
@@ -310,13 +311,32 @@ a{color:inherit}
     <div class="match-kicker animate-in">Premier League · Saturday 18 April 2026</div>
     <div class="match-badge animate-in delay-1">
       <div class="team-badge">
-        <div class="team-crest home">BFC</div>
+        <div class="team-crest home">
+          <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+            <defs><clipPath id="bShield"><path d="M45 5 L80 20 L80 55 Q80 75 45 85 Q10 75 10 55 L10 20 Z"/></clipPath></defs>
+            <path d="M45 5 L80 20 L80 55 Q80 75 45 85 Q10 75 10 55 L10 20 Z" fill="#fff" stroke="#d40000" stroke-width="3"/>
+            <g clip-path="url(#bShield)">
+              <rect x="10" y="5" width="10" height="80" fill="#d40000"/>
+              <rect x="30" y="5" width="10" height="80" fill="#d40000"/>
+              <rect x="50" y="5" width="10" height="80" fill="#d40000"/>
+              <rect x="70" y="5" width="10" height="80" fill="#d40000"/>
+            </g>
+            <text x="45" y="56" text-anchor="middle" font-family="Fraunces,serif" font-weight="900" font-size="22" fill="#d40000">B</text>
+          </svg>
+        </div>
         <div class="team-name">Brentford</div>
         <div class="team-pos">7th · 47 pts · W13 D8 L11</div>
       </div>
       <div class="match-vs">vs</div>
       <div class="team-badge">
-        <div class="team-crest away">FFC</div>
+        <div class="team-crest away">
+          <svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45 5 L80 20 L80 55 Q80 75 45 85 Q10 75 10 55 L10 20 Z" fill="#1a1a1a" stroke="#f4f1ea" stroke-width="3"/>
+            <text x="45" y="48" text-anchor="middle" font-family="Fraunces,serif" font-weight="900" font-size="18" fill="#f4f1ea">FFC</text>
+            <line x1="25" y1="60" x2="65" y2="60" stroke="#f4f1ea" stroke-width="1" opacity="0.4"/>
+            <text x="45" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#f4f1ea" opacity="0.6" letter-spacing="2">EST 1879</text>
+          </svg>
+        </div>
         <div class="team-name">Fulham</div>
         <div class="team-pos">12th · 44 pts · W13 D5 L14</div>
       </div>
@@ -512,7 +532,7 @@ a{color:inherit}
 <section class="section" id="teamnews">
   <div class="sec-num">§ 04</div>
   <h2 class="sec-title">Who's in, <em>who's out.</em></h2>
-  <p class="sec-lede">Brentford lose Kevin Schade to suspension. Fulham are missing key midfield men Kenny Tete and Harrison Reed. Both sides go into this derby with genuine absences to manage.</p>
+  <p class="sec-lede">Brentford lose Kevin Schade to suspension. Fulham are without right-back Kenny Tete and midfielder Harrison Reed. Both sides go into this derby with genuine absences to manage.</p>
 
   <div class="teamNews-grid">
     <div class="teamNews-card brentford reveal">
@@ -525,8 +545,8 @@ a{color:inherit}
         <div class="xi-line"><span class="xi-player">Kelleher</span></div>
         <div class="xi-line"><span class="xi-player">Kayode</span><span class="xi-player">Collins</span><span class="xi-player">van den Berg</span><span class="xi-player">Lewis-Potter</span></div>
         <div class="xi-line"><span class="xi-player">Yarmoliuk</span><span class="xi-player">Jensen</span></div>
-        <div class="xi-line"><span class="xi-player">Ouattara</span><span class="xi-player key">Damsgaard</span><span class="xi-player">Mbeumo</span></div>
-        <div class="xi-line"><span class="xi-player key">Igor Thiago</span></div>
+        <div class="xi-line"><span class="xi-player">Ouattara</span><span class="xi-player">Damsgaard</span><span class="xi-player">Mbeumo</span></div>
+        <div class="xi-line"><span class="xi-player">Igor Thiago</span></div>
       </div>
       <div class="injury-list">
         <div class="teamNews-xi-label">Unavailable</div>
@@ -547,10 +567,10 @@ a{color:inherit}
       <div class="teamNews-xi">
         <div class="teamNews-xi-label">Predicted XI</div>
         <div class="xi-line"><span class="xi-player">Leno</span></div>
-        <div class="xi-line"><span class="xi-player">Castagne</span><span class="xi-player key">Andersen</span><span class="xi-player">Bassey</span><span class="xi-player key">Robinson</span></div>
+        <div class="xi-line"><span class="xi-player">Castagne</span><span class="xi-player">Andersen</span><span class="xi-player">Bassey</span><span class="xi-player">Robinson</span></div>
         <div class="xi-line"><span class="xi-player">Berge</span><span class="xi-player">Iwobi</span></div>
-        <div class="xi-line"><span class="xi-player key">Wilson</span><span class="xi-player">King</span><span class="xi-player">Bobb</span></div>
-        <div class="xi-line"><span class="xi-player key">Muniz</span></div>
+        <div class="xi-line"><span class="xi-player">Wilson</span><span class="xi-player">King</span><span class="xi-player">Bobb</span></div>
+        <div class="xi-line"><span class="xi-player">Muniz</span></div>
       </div>
       <div class="injury-list">
         <div class="teamNews-xi-label">Unavailable</div>
@@ -769,7 +789,7 @@ const positions = [
   {id:'LW',label:'LW',top:'35%',left:'18%'},
   {id:'ST',label:'ST',top:'15%',left:'50%'}
 ];
-const squad = ['Leno','Castagne','Andersen','Bassey','Robinson','Berge','Iwobi','Wilson','King','Bobb','Muniz','Jimenez','Cairney','Lukic','Cuenca','Sessegnon','Diop','Stansfield','Nelson','Vinicius'];
+const squad = ['Leno','Lecomte','Tete','Bassey','Andersen','Cuenca','Castagne','Sessegnon','Diop','Robinson','Reed','Cairney','Berge','Iwobi','Lukic','King','Smith Rowe','Jimenez','Wilson','Muniz','Kusi-Asare','Chukwueze','Kevin','Bobb'];
 let selectedSlot = null;
 let xi = {};
 
