@@ -1199,79 +1199,101 @@ body::before {
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (function() {
-  const PREFIX = 'cravenpod-brentford-0-0-fulham-apr26-';
+  const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+  const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+  const sb = window.supabase.createClient(SB_URL, SB_KEY);
 
-  /* ── Poll engine ── */
-  function getState(poll) {
-    try {
-      return JSON.parse(localStorage.getItem(PREFIX + poll) || 'null');
-    } catch(e) { return null; }
+  const LS_PREFIX = 'cravenpod-bre0ful-apr26-';
+
+  const POLL_IDS = {
+    potm:    'bre-ful-apr26-potm',
+    fair:    'bre-ful-apr26-fair',
+    concern: 'bre-ful-apr26-concern',
+    rating:  'bre-ful-apr26-rating',
+  };
+
+  /* ── localStorage: just stores which choice the user picked ── */
+  function getUserChoice(poll) {
+    try { return localStorage.getItem(LS_PREFIX + poll) || null; } catch(e) { return null; }
+  }
+  function saveUserChoice(poll, choice) {
+    try { localStorage.setItem(LS_PREFIX + poll, choice); } catch(e) {}
   }
 
-  function setState(poll, data) {
-    try { localStorage.setItem(PREFIX + poll, JSON.stringify(data)); } catch(e) {}
+  /* ── Fetch aggregated counts from Supabase view ── */
+  async function fetchCounts(pollId) {
+    const { data, error } = await sb.from('poll_counts')
+      .select('choice, count')
+      .eq('poll_id', pollId);
+    if (error || !data) return {};
+    const counts = {};
+    data.forEach(row => { counts[row.choice] = parseInt(row.count) || 0; });
+    return counts;
   }
 
-  function renderPoll(poll, choices) {
-    const state = getState(poll);
-    const block = document.getElementById(poll + '-block');
+  /* ── Render a poll with real counts ── */
+  function renderPoll(pollName, userChoice, counts) {
+    const block = document.getElementById(pollName + '-block');
     if (!block) return;
-    if (!state) return;
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userChoice) return;
 
     block.classList.add('poll-voted');
-    const buttons = block.querySelectorAll('.poll-btn');
-    buttons.forEach(btn => {
-      if (btn.dataset.choice === state.choice) btn.classList.add('user-choice');
+    block.querySelectorAll('.poll-btn').forEach(btn => {
+      btn.classList.remove('user-choice');
+      if (btn.dataset.choice === userChoice) btn.classList.add('user-choice');
     });
 
-    const total = Object.values(state.counts).reduce((a, b) => a + b, 0);
+    const choices = getPollChoices(pollName);
     choices.forEach(choice => {
-      const count = state.counts[choice] || 0;
+      const count = counts[choice] || 0;
       const pct = total > 0 ? Math.round((count / total) * 100) : 0;
-      const pctEl = document.getElementById(poll + '-pct-' + choice);
-      const barEl = document.getElementById(poll + '-bar-' + choice);
+      const pctEl = document.getElementById(pollName + '-pct-' + choice);
+      const barEl = document.getElementById(pollName + '-bar-' + choice);
       if (pctEl) pctEl.textContent = pct + '%';
-      if (barEl) {
-        setTimeout(() => { barEl.style.width = pct + '%'; }, 50);
-      }
+      if (barEl) setTimeout(() => { barEl.style.width = pct + '%'; }, 50);
     });
 
-    const countEl = document.getElementById(poll + '-count');
+    const countEl = document.getElementById(pollName + '-count');
     if (countEl) countEl.textContent = total + (total === 1 ? ' vote' : ' votes') + ' cast';
   }
 
-  window.castVote = function(poll, choice) {
-    const state = getState(poll);
-    if (state) return; // already voted
-
-    const choices = getPollChoices(poll);
-    const counts = {};
-    choices.forEach(c => { counts[c] = 0; });
-    counts[choice] = 1;
-
-    const newState = { choice: choice, counts: counts };
-    setState(poll, newState);
-    renderPoll(poll, choices);
-  };
-
-  function getPollChoices(poll) {
-    const block = document.getElementById(poll + '-block');
+  function getPollChoices(pollName) {
+    const block = document.getElementById(pollName + '-block');
     if (!block) return [];
     return Array.from(block.querySelectorAll('.poll-btn[data-choice]')).map(b => b.dataset.choice);
   }
 
-  /* ── Init polls on load ── */
-  ['potm', 'fair', 'concern'].forEach(poll => {
-    renderPoll(poll, getPollChoices(poll));
-  });
+  /* ── Cast a poll vote ── */
+  window.castVote = async function(pollName, choice) {
+    if (getUserChoice(pollName)) return;
+    const pollId = POLL_IDS[pollName];
+    if (!pollId) return;
+
+    saveUserChoice(pollName, choice);
+    await sb.from('poll_votes').insert({ poll_id: pollId, choice: choice });
+    const counts = await fetchCounts(pollId);
+    renderPoll(pollName, choice, counts);
+  };
+
+  /* ── Init polls: fetch current community counts on load ── */
+  async function initPolls() {
+    for (const [pollName, pollId] of Object.entries(POLL_IDS)) {
+      if (pollName === 'rating') continue;
+      const userChoice = getUserChoice(pollName);
+      const counts = await fetchCounts(pollId);
+      renderPoll(pollName, userChoice, counts);
+    }
+  }
+  initPolls();
 
   /* ── Rating widget ── */
-  const ratingRow = document.getElementById('rating-row');
+  const ratingRow    = document.getElementById('rating-row');
   const ratingResult = document.getElementById('rating-result');
-  const ratingCount = document.getElementById('rating-count');
-  const RATING_KEY = PREFIX + 'rating';
+  const ratingCount  = document.getElementById('rating-count');
 
   function buildRatingButtons() {
     if (!ratingRow) return;
@@ -1285,35 +1307,39 @@ body::before {
     }
   }
 
-  function getRatingState() {
-    try { return JSON.parse(localStorage.getItem(RATING_KEY) || 'null'); } catch(e) { return null; }
+  async function castRating(val) {
+    if (getUserChoice('rating')) return;
+    saveUserChoice('rating', String(val));
+    await sb.from('poll_votes').insert({ poll_id: POLL_IDS.rating, choice: String(val) });
+    await renderRating(String(val));
   }
 
-  function castRating(val) {
-    const existing = getRatingState();
-    if (existing) return;
-    const data = { val: val, count: 1, sum: val };
-    try { localStorage.setItem(RATING_KEY, JSON.stringify(data)); } catch(e) {}
-    renderRating(data);
-  }
+  async function renderRating(userVal) {
+    if (!ratingRow) return;
+    const counts = await fetchCounts(POLL_IDS.rating);
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userVal) return;
 
-  function renderRating(data) {
-    if (!data || !ratingRow) return;
     ratingRow.querySelectorAll('.rating-btn').forEach(btn => {
       btn.onclick = null;
       btn.style.cursor = 'default';
-      if (parseInt(btn.dataset.val) === data.val) btn.classList.add('selected');
+      btn.classList.toggle('selected', btn.dataset.val === userVal);
     });
-    const avg = (data.sum / data.count).toFixed(1);
-    if (ratingResult) {
-      ratingResult.textContent = 'Average rating: ' + avg + ' / 10';
-      ratingResult.classList.add('visible');
+
+    if (total > 0) {
+      const sum = Object.entries(counts).reduce((acc, [r, c]) => acc + parseInt(r) * c, 0);
+      const avg = (sum / total).toFixed(1);
+      if (ratingResult) {
+        ratingResult.textContent = 'Community average: ' + avg + ' / 10';
+        ratingResult.classList.add('visible');
+      }
+      if (ratingCount) ratingCount.textContent = total + (total === 1 ? ' rating' : ' ratings') + ' submitted';
     }
-    if (ratingCount) ratingCount.textContent = data.count + (data.count === 1 ? ' rating' : ' ratings') + ' submitted';
   }
 
   buildRatingButtons();
-  renderRating(getRatingState());
+  const existingRating = getUserChoice('rating');
+  if (existingRating) renderRating(existingRating);
 
   /* ── Timeline toggle ── */
   window.toggleTimeline = function(el) {
