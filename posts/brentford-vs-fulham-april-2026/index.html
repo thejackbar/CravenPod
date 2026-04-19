@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brentford vs Fulham — West London Derby Preview | Cravenpod</title>
+<title>Brentford vs Fulham: West London Derby Preview | Cravenpod</title>
 <meta name="description" content="Interactive preview of the West London derby: Brentford vs Fulham, Saturday 18 April 2026 at the Gtech Community Stadium. Form, stats, team news, score predictor, and pick your XI.">
-<meta property="og:title" content="Brentford vs Fulham — West London Derby Preview">
+<meta property="og:title" content="Brentford vs Fulham: West London Derby Preview">
 <meta property="og:description" content="7th vs 12th. Three points between them. European places on the line. The full interactive preview.">
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,83 +33,83 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Inter Tight',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;overflow-x:hidden;background-image:radial-gradient(circle at 15% 8%,rgba(212,0,0,0.04) 0%,transparent 40%),radial-gradient(circle at 85% 65%,rgba(61,107,79,0.05) 0%,transparent 45%)}
+body{font-family:'Inter Tight', sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;overflow-x:hidden;background-image:radial-gradient(circle at 15% 8%, rgba(212,0,0,0.04) 0%, transparent 40%), radial-gradient(circle at 85% 65%, rgba(61,107,79,0.05) 0%, transparent 45%)}
 body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.3;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
 a{color:inherit}
 
 /* ========== MASTHEAD ========== */
 .masthead{border-bottom:3px solid var(--ink);padding:24px 40px 20px;display:flex;justify-content:space-between;align-items:baseline;background:var(--paper);position:relative;z-index:10}
 .brand-link{text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px}
-.brand{font-family:'Fraunces',serif;font-weight:900;font-size:22px;letter-spacing:-.02em}
-.back-link{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
-.masthead .meta{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;display:flex;gap:24px}
+.brand{font-family:'Fraunces', serif;font-weight:900;font-size:22px;letter-spacing:-.02em}
+.back-link{font-family:'JetBrains Mono', monospace;font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
+.masthead .meta{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;display:flex;gap:24px}
 .masthead .meta span::before{content:'●';margin-right:6px;color:var(--bees)}
 
 /* ========== MATCH HERO ========== */
 .match-hero{background:var(--ink);color:var(--paper);padding:80px 40px 60px;position:relative;z-index:2;overflow:hidden}
 .match-hero::before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:rgba(244,241,234,0.08)}
-.match-hero::after{content:'';position:absolute;top:-50%;right:-10%;width:40%;height:200%;background:radial-gradient(circle,rgba(212,0,0,0.15) 0%,transparent 60%);pointer-events:none}
+.match-hero::after{content:'';position:absolute;top:-50%;right:-10%;width:40%;height:200%;background:radial-gradient(circle, rgba(212,0,0,0.15) 0%, transparent 60%);pointer-events:none}
 .match-hero-inner{max-width:1200px;margin:0 auto;position:relative}
-.match-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:32px;text-align:center}
+.match-kicker{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:32px;text-align:center}
 .match-badge{display:flex;align-items:center;justify-content:center;gap:60px;margin-bottom:40px}
 .team-badge{text-align:center;flex:1;max-width:300px}
 .team-crest{width:90px;height:90px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
 .team-crest svg{width:100%;height:100%}
-.team-name{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(28px,5vw,48px);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
-.team-pos{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.15em;color:rgba(244,241,234,0.6)}
-.match-vs{font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:24px;color:var(--accent);flex-shrink:0}
+.team-name{font-family:'Fraunces', serif;font-weight:900;font-size:clamp(28px,5vw,48px);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.team-pos{font-family:'JetBrains Mono', monospace;font-size:12px;letter-spacing:.15em;color:rgba(244,241,234,0.6)}
+.match-vs{font-family:'Fraunces', serif;font-weight:400;font-style:italic;font-size:24px;color:var(--accent);flex-shrink:0}
 .match-details{text-align:center;padding-top:32px;border-top:1px solid rgba(244,241,234,0.1);display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
 .match-detail{display:flex;flex-direction:column;gap:4px}
-.match-detail-label{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.5)}
-.match-detail-value{font-family:'Fraunces',serif;font-weight:600;font-size:18px}
+.match-detail-label{font-family:'JetBrains Mono', monospace;font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.5)}
+.match-detail-value{font-family:'Fraunces', serif;font-weight:600;font-size:18px}
 .prob-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;max-width:500px;margin:24px auto 0;gap:2px}
 .prob-bar div{transition:width .8s ease}
 .prob-bar .home-prob{background:var(--bees)}
 .prob-bar .draw-prob{background:rgba(244,241,234,0.4)}
 .prob-bar .away-prob{background:var(--fulham-green)}
-.prob-labels{display:flex;justify-content:space-between;max-width:500px;margin:8px auto 0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(244,241,234,0.6)}
+.prob-labels{display:flex;justify-content:space-between;max-width:500px;margin:8px auto 0;font-family:'JetBrains Mono', monospace;font-size:10px;letter-spacing:.1em;color:rgba(244,241,234,0.6)}
 
 /* ========== SECTION BASE ========== */
 .section{padding:80px 40px;max-width:1400px;margin:0 auto;position:relative;z-index:2}
-.sec-num{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
-.sec-title{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:.95;letter-spacing:-.03em;margin-bottom:20px;max-width:900px}
+.sec-num{font-family:'JetBrains Mono', monospace;font-size:12px;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
+.sec-title{font-family:'Fraunces', serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:.95;letter-spacing:-.03em;margin-bottom:20px;max-width:900px}
 .sec-title em{font-style:italic;font-weight:400;color:var(--accent)}
-.sec-lede{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;max-width:720px;color:rgba(10,10,10,0.75);margin-bottom:48px}
+.sec-lede{font-family:'Fraunces', serif;font-size:19px;line-height:1.5;max-width:720px;color:rgba(10,10,10,0.75);margin-bottom:48px}
 
 /* ========== FORM GUIDE ========== */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 @media(max-width:800px){.form-grid{grid-template-columns:1fr}}
 .form-card{background:#fff;border:1px solid var(--rule);padding:32px}
 .form-card-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
-.form-card-team{font-family:'Fraunces',serif;font-weight:900;font-size:24px}
-.form-card-record{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+.form-card-team{font-family:'Fraunces', serif;font-weight:900;font-size:24px}
+.form-card-record{font-family:'JetBrains Mono', monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
 .form-results{display:flex;gap:8px;margin-bottom:20px}
-.form-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#fff;cursor:default;transition:transform .2s}
+.form-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono', monospace;font-size:11px;font-weight:700;color:#fff;cursor:default;transition:transform .2s}
 .form-dot:hover{transform:scale(1.15)}
 .form-dot.W{background:var(--ok)}
 .form-dot.D{background:var(--warn)}
 .form-dot.L{background:var(--danger)}
-.form-dot-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:8px;display:flex;gap:8px}
+.form-dot-label{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);margin-top:8px;display:flex;gap:8px}
 .form-dot-label span{display:flex;align-items:center;gap:4px}
 .form-dot-label .swatch{width:10px;height:10px;border-radius:50%}
-.form-narrative{font-family:'Fraunces',serif;font-size:16px;line-height:1.5;color:rgba(10,10,10,0.8);margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.form-narrative{font-family:'Fraunces', serif;font-size:16px;line-height:1.5;color:rgba(10,10,10,0.8);margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
 .form-matches{margin-top:16px}
-.form-match{display:grid;grid-template-columns:1fr 24px 24px;align-items:center;gap:16px;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px;font-family:'Inter Tight',sans-serif}
+.form-match{display:grid;grid-template-columns:1fr 24px 24px;align-items:center;gap:16px;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px;font-family:'Inter Tight', sans-serif}
 .form-match:last-child{border-bottom:none}
-.form-match .score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;text-align:center}
-.form-match .venue{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;text-align:center}
+.form-match .score{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:13px;text-align:center}
+.form-match .venue{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;text-align:center}
 
 /* ========== KEY STATS ========== */
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.stat-card{background:#fff;border:1px solid var(--rule);padding:28px;position:relative;transition:transform .3s,box-shadow .3s}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px,1fr));gap:20px}
+.stat-card{background:#fff;border:1px solid var(--rule);padding:28px;position:relative;transition:transform .3s, box-shadow .3s}
 .stat-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -16px rgba(10,10,10,0.12)}
-.stat-card-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px}
+.stat-card-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px}
 .stat-compare{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
 .stat-team{text-align:center;flex:1}
-.stat-team-name{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:8px}
-.stat-value{font-family:'Fraunces',serif;font-weight:900;font-size:36px;line-height:1;letter-spacing:-.02em}
+.stat-team-name{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:8px}
+.stat-value{font-family:'Fraunces', serif;font-weight:900;font-size:36px;line-height:1;letter-spacing:-.02em}
 .stat-value.highlight{color:var(--accent)}
-.stat-vs-label{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--muted);flex-shrink:0}
+.stat-vs-label{font-family:'Fraunces', serif;font-style:italic;font-size:14px;color:var(--muted);flex-shrink:0}
 .stat-bar-track{display:flex;height:8px;gap:2px;margin-top:16px;border-radius:4px;overflow:hidden}
 .stat-bar-track .home{background:var(--bees)}
 .stat-bar-track .away{background:var(--fulham-green)}
@@ -119,19 +119,19 @@ a{color:inherit}
 .h2h-inner{max-width:1400px;margin:0 auto}
 .h2h-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(244,241,234,0.1);margin:40px 0}
 .h2h-stat{background:var(--ink);padding:28px 24px;text-align:center}
-.h2h-stat-val{font-family:'Fraunces',serif;font-weight:900;font-size:48px;line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.h2h-stat-val{font-family:'Fraunces', serif;font-weight:900;font-size:48px;line-height:1;letter-spacing:-.02em;margin-bottom:8px}
 .h2h-stat-val.bees{color:var(--bees)}
 .h2h-stat-val.draws{color:rgba(244,241,234,0.5)}
 .h2h-stat-val.whites{color:var(--paper)}
-.h2h-stat-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.6)}
+.h2h-stat-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.6)}
 .h2h-results{display:grid;gap:8px;margin-top:32px}
 .h2h-row{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;padding:16px 20px;background:rgba(244,241,234,0.03);align-items:center;transition:background .2s}
 .h2h-row:hover{background:rgba(244,241,234,0.07)}
-.h2h-home{text-align:right;font-family:'Fraunces',serif;font-weight:600;font-size:16px}
-.h2h-score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;padding:6px 16px;background:rgba(244,241,234,0.08);text-align:center;min-width:70px}
-.h2h-away{font-family:'Fraunces',serif;font-weight:600;font-size:16px}
-.h2h-date{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(244,241,234,0.5);text-align:right;letter-spacing:.1em}
-.h2h-comp{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(244,241,234,0.5);letter-spacing:.1em}
+.h2h-home{text-align:right;font-family:'Fraunces', serif;font-weight:600;font-size:16px}
+.h2h-score{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:18px;padding:6px 16px;background:rgba(244,241,234,0.08);text-align:center;min-width:70px}
+.h2h-away{font-family:'Fraunces', serif;font-weight:600;font-size:16px}
+.h2h-date{font-family:'JetBrains Mono', monospace;font-size:10px;color:rgba(244,241,234,0.5);text-align:right;letter-spacing:.1em}
+.h2h-comp{font-family:'JetBrains Mono', monospace;font-size:10px;color:rgba(244,241,234,0.5);letter-spacing:.1em}
 .h2h-winner-home{border-left:3px solid var(--bees)}
 .h2h-winner-away{border-right:3px solid var(--fulham-green)}
 .h2h-draw{border-left:3px solid rgba(244,241,234,0.3)}
@@ -143,18 +143,18 @@ a{color:inherit}
 .teamNews-card.brentford{border-top:4px solid var(--bees)}
 .teamNews-card.fulham{border-top:4px solid var(--fulham-green)}
 .teamNews-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}
-.teamNews-team{font-family:'Fraunces',serif;font-weight:900;font-size:24px}
-.teamNews-formation{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.15em}
+.teamNews-team{font-family:'Fraunces', serif;font-weight:900;font-size:24px}
+.teamNews-formation{font-family:'JetBrains Mono', monospace;font-size:12px;color:var(--muted);letter-spacing:.15em}
 .teamNews-xi{margin-bottom:20px}
-.teamNews-xi-label{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:12px}
+.teamNews-xi-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:12px}
 .xi-line{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.xi-player{padding:6px 12px;background:var(--paper);font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:600;border:1px solid var(--rule);transition:all .2s}
+.xi-player{padding:6px 12px;background:var(--paper);font-family:'Inter Tight', sans-serif;font-size:13px;font-weight:600;border:1px solid var(--rule);transition:all .2s}
 .xi-player:hover{background:var(--paper-dark)}
 .injury-list{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
 .injury-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(10,10,10,0.05);font-size:14px}
 .injury-item:last-child{border-bottom:none}
-.injury-name{font-family:'Fraunces',serif;font-weight:600}
-.injury-reason{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;padding:3px 8px;background:var(--danger);color:var(--paper)}
+.injury-name{font-family:'Fraunces', serif;font-weight:600}
+.injury-reason{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;padding:3px 8px;background:var(--danger);color:var(--paper)}
 .injury-reason.doubt{background:var(--warn);color:var(--ink)}
 .injury-reason.suspended{background:var(--ink);color:var(--paper)}
 
@@ -164,89 +164,89 @@ a{color:inherit}
 
 /* POLL */
 .poll-container{background:#fff;border:1px solid var(--rule);padding:40px;max-width:700px;margin:0 auto}
-.poll-title{font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
-.poll-sub{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.poll-title{font-family:'Fraunces', serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
+.poll-sub{font-family:'Fraunces', serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
 .poll-options{display:flex;gap:12px;margin-bottom:24px}
 @media(max-width:600px){.poll-options{flex-direction:column}}
-.poll-btn{flex:1;padding:20px;border:2px solid var(--rule);background:var(--paper);cursor:pointer;text-align:center;font-family:'Fraunces',serif;font-weight:700;font-size:18px;transition:all .3s;position:relative;overflow:hidden}
+.poll-btn{flex:1;padding:20px;border:2px solid var(--rule);background:var(--paper);cursor:pointer;text-align:center;font-family:'Fraunces', serif;font-weight:700;font-size:18px;transition:all .3s;position:relative;overflow:hidden}
 .poll-btn:hover{border-color:var(--ink);background:#fff}
 .poll-btn.selected{border-color:var(--accent);background:rgba(204,0,0,0.05)}
-.poll-btn .poll-pct{display:block;font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;margin-top:8px;color:var(--accent);opacity:0;transition:opacity .4s}
+.poll-btn .poll-pct{display:block;font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;margin-top:8px;color:var(--accent);opacity:0;transition:opacity .4s}
 .poll-btn.voted .poll-pct{opacity:1}
 .poll-btn .poll-bar-bg{position:absolute;bottom:0;left:0;height:4px;background:var(--accent);width:0;transition:width .8s cubic-bezier(0.2,0.9,0.3,1)}
-.poll-total{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
+.poll-total{text-align:center;font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
 
 /* SCORE PREDICTOR */
 .predictor{background:#fff;border:1px solid var(--rule);padding:40px;max-width:700px;margin:40px auto 0}
-.predictor-title{font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
-.predictor-sub{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.predictor-title{font-family:'Fraunces', serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
+.predictor-sub{font-family:'Fraunces', serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
 .predictor-scores{display:flex;align-items:center;justify-content:center;gap:24px}
 .predictor-team{text-align:center}
-.predictor-team-name{font-family:'Fraunces',serif;font-weight:700;font-size:18px;margin-bottom:12px}
+.predictor-team-name{font-family:'Fraunces', serif;font-weight:700;font-size:18px;margin-bottom:12px}
 .score-picker{display:flex;flex-direction:column;align-items:center;gap:8px}
-.score-picker button{width:44px;height:36px;border:1px solid var(--rule);background:var(--paper);font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s}
+.score-picker button{width:44px;height:36px;border:1px solid var(--rule);background:var(--paper);font-family:'JetBrains Mono', monospace;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s}
 .score-picker button:hover{background:var(--ink);color:var(--paper)}
-.score-picker .score-val{font-family:'Fraunces',serif;font-weight:900;font-size:56px;line-height:1;letter-spacing:-.03em;min-width:60px;text-align:center}
-.predictor-dash{font-family:'Fraunces',serif;font-size:36px;color:var(--muted);margin-top:40px}
-.predictor-submit{display:block;margin:32px auto 0;padding:14px 40px;background:var(--ink);color:var(--paper);border:none;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
+.score-picker .score-val{font-family:'Fraunces', serif;font-weight:900;font-size:56px;line-height:1;letter-spacing:-.03em;min-width:60px;text-align:center}
+.predictor-dash{font-family:'Fraunces', serif;font-size:36px;color:var(--muted);margin-top:40px}
+.predictor-submit{display:block;margin:32px auto 0;padding:14px 40px;background:var(--ink);color:var(--paper);border:none;font-family:'JetBrains Mono', monospace;font-size:12px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
 .predictor-submit:hover{background:var(--accent)}
 .predictor-submit:disabled{opacity:.4;cursor:not-allowed}
 .predictor-results{margin-top:32px;padding-top:24px;border-top:1px solid var(--rule);display:none}
 .predictor-results.show{display:block}
-.predictor-results-title{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px;text-align:center}
+.predictor-results-title{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px;text-align:center}
 .popular-scores{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .pop-score{padding:10px 16px;background:var(--paper);border:1px solid var(--rule);text-align:center;min-width:80px}
-.pop-score .s{font-family:'Fraunces',serif;font-weight:900;font-size:22px}
-.pop-score .n{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:.1em}
+.pop-score .s{font-family:'Fraunces', serif;font-weight:900;font-size:22px}
+.pop-score .n{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:.1em}
 
 /* ========== TEAM SELECTOR ========== */
 .selector-container{background:#fff;border:1px solid var(--rule);padding:40px;max-width:900px;margin:40px auto 0}
-.selector-title{font-family:'Fraunces',serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
-.selector-sub{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.selector-title{font-family:'Fraunces', serif;font-weight:900;font-size:28px;margin-bottom:8px;text-align:center}
+.selector-sub{font-family:'Fraunces', serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
 .pitch{position:relative;width:100%;max-width:500px;margin:0 auto;aspect-ratio:2/3;background:#3a7d44;border-radius:4px;overflow:hidden;border:3px solid #2d6335}
 .pitch::before{content:'';position:absolute;top:50%;left:10%;right:10%;height:1px;background:rgba(255,255,255,0.3)}
 .pitch::after{content:'';position:absolute;top:50%;left:50%;width:80px;height:80px;border:1px solid rgba(255,255,255,0.3);border-radius:50%;transform:translate(-50%,-50%)}
 .pitch-slot{position:absolute;width:70px;height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
 .pitch-slot:hover{transform:scale(1.08)}
-.pitch-slot .shirt{width:40px;height:40px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;transition:all .3s}
+.pitch-slot .shirt{width:40px;height:40px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono', monospace;font-size:11px;font-weight:700;transition:all .3s}
 .pitch-slot.filled .shirt{background:var(--fulham-green);color:var(--paper);border-color:var(--paper)}
-.pitch-slot .p-name{font-family:'JetBrains Mono',monospace;font-size:9px;color:#fff;text-align:center;margin-top:4px;text-shadow:0 1px 2px rgba(0,0,0,0.5);max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:.05em}
+.pitch-slot .p-name{font-family:'JetBrains Mono', monospace;font-size:9px;color:#fff;text-align:center;margin-top:4px;text-shadow:0 1px 2px rgba(0,0,0,0.5);max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:.05em}
 .player-pool{margin-top:24px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.pool-player{padding:6px 12px;background:var(--paper);border:1px solid var(--rule);font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;user-select:none}
+.pool-player{padding:6px 12px;background:var(--paper);border:1px solid var(--rule);font-family:'Inter Tight', sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;user-select:none}
 .pool-player:hover{background:var(--paper-dark);border-color:var(--ink)}
 .pool-player.used{opacity:.3;pointer-events:none;text-decoration:line-through}
 .pool-player.active{border-color:var(--accent);background:rgba(204,0,0,0.05)}
-.selector-submit{display:block;margin:24px auto 0;padding:12px 32px;background:var(--ink);color:var(--paper);border:none;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
+.selector-submit{display:block;margin:24px auto 0;padding:12px 32px;background:var(--ink);color:var(--paper);border:none;font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
 .selector-submit:hover{background:var(--accent)}
 .selector-results{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule);display:none;text-align:center}
 .selector-results.show{display:block}
-.selector-results p{font-family:'Fraunces',serif;font-size:15px;color:var(--muted)}
+.selector-results p{font-family:'Fraunces', serif;font-size:15px;color:var(--muted)}
 
 /* ========== TACTICAL ========== */
 .tactical-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 @media(max-width:800px){.tactical-grid{grid-template-columns:1fr}}
-.battle-card{background:#fff;border:1px solid var(--rule);padding:24px;transition:transform .3s,box-shadow .3s}
+.battle-card{background:#fff;border:1px solid var(--rule);padding:24px;transition:transform .3s, box-shadow .3s}
 .battle-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -16px rgba(10,10,10,0.12)}
-.battle-header{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
+.battle-header{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
 .battle-vs{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
 .battle-player{text-align:center;flex:1}
-.battle-player-name{font-family:'Fraunces',serif;font-weight:700;font-size:18px}
-.battle-player-pos{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.15em}
-.battle-v{font-family:'Fraunces',serif;font-style:italic;font-size:14px;color:var(--muted)}
-.battle-desc{font-family:'Fraunces',serif;font-size:15px;line-height:1.5;color:rgba(10,10,10,0.8)}
+.battle-player-name{font-family:'Fraunces', serif;font-weight:700;font-size:18px}
+.battle-player-pos{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);letter-spacing:.15em}
+.battle-v{font-family:'Fraunces', serif;font-style:italic;font-size:14px;color:var(--muted)}
+.battle-desc{font-family:'Fraunces', serif;font-size:15px;line-height:1.5;color:rgba(10,10,10,0.8)}
 
 /* ========== VERDICT ========== */
 .verdict{background:var(--ink);color:var(--paper);padding:80px 40px;text-align:center;position:relative;z-index:2}
-.verdict-kicker{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:24px}
-.verdict-text{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(32px,5vw,64px);line-height:1.05;letter-spacing:-.03em;max-width:1000px;margin:0 auto}
+.verdict-kicker{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:24px}
+.verdict-text{font-family:'Fraunces', serif;font-weight:900;font-size:clamp(32px,5vw,64px);line-height:1.05;letter-spacing:-.03em;max-width:1000px;margin:0 auto}
 .verdict-text em{color:var(--accent);font-style:italic}
-.verdict-sub{font-family:'Fraunces',serif;font-size:18px;line-height:1.6;color:rgba(244,241,234,0.7);max-width:680px;margin:32px auto 0}
+.verdict-sub{font-family:'Fraunces', serif;font-size:18px;line-height:1.6;color:rgba(244,241,234,0.7);max-width:680px;margin:32px auto 0}
 .verdict-prediction{margin-top:40px;padding-top:32px;border-top:1px solid rgba(244,241,234,0.1);display:flex;justify-content:center;gap:60px}
-.verdict-score{font-family:'Fraunces',serif;font-weight:900;font-size:72px;letter-spacing:-.03em;line-height:1}
-.verdict-score-team{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.6);margin-bottom:8px}
+.verdict-score{font-family:'Fraunces', serif;font-weight:900;font-size:72px;letter-spacing:-.03em;line-height:1}
+.verdict-score-team{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:rgba(244,241,234,0.6);margin-bottom:8px}
 
 /* ========== FOOTER ========== */
-.footer{padding:40px;text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:rgba(10,10,10,0.5);background:var(--paper);border-top:1px solid var(--rule)}
+.footer{padding:40px;text-align:center;font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:rgba(10,10,10,0.5);background:var(--paper);border-top:1px solid var(--rule)}
 .footer a{color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
 
 /* ========== RESPONSIVE ========== */
@@ -283,7 +283,7 @@ a{color:inherit}
 }
 
 /* ========== SCROLL REVEAL ========== */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.9,.3,1),transform .9s cubic-bezier(.2,.9,.3,1)}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.9,.3,1), transform .9s cubic-bezier(.2,.9,.3,1)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .animate-in{opacity:0;animation:fadeUp .9s cubic-bezier(.2,.9,.3,1) forwards}
@@ -363,7 +363,7 @@ a{color:inherit}
 <section class="section" id="form">
   <div class="sec-num">§ 01</div>
   <h2 class="sec-title">The form book says <em>be careful.</em></h2>
-  <p class="sec-lede">Brentford haven't won in five — all draws. Fulham have won three of six but can't buy a win on the road. Something's got to give in this West London derby.</p>
+  <p class="sec-lede">Brentford haven't won in five, all draws. Fulham have won three of six but can't buy a win on the road. Something's got to give in this West London derby.</p>
 
   <div class="form-grid">
     <div class="form-card reveal">
@@ -384,7 +384,7 @@ a{color:inherit}
         <span><span class="swatch" style="background:var(--warn)"></span>Draw</span>
         <span><span class="swatch" style="background:var(--danger)"></span>Loss</span>
       </div>
-      <div class="form-narrative">Five consecutive draws — unprecedented in Brentford's Premier League history. Keith Andrews' side remain dangerous (4 of last 6 games with 3+ goals) but just can't find the decisive moment. Home record this season: only 2 defeats in 12.</div>
+      <div class="form-narrative">Five consecutive draws, unprecedented in Brentford's Premier League history. Keith Andrews' side remain dangerous (4 of last 6 games with 3+ goals) but just can't find the decisive moment. Home record this season: only 2 defeats in 12.</div>
       <div class="form-matches">
         <div class="form-match"><span>Brentford 2-2 Everton</span><span class="score">D</span><span class="venue">H</span></div>
         <div class="form-match"><span>Leeds 0-0 Brentford</span><span class="score">D</span><span class="venue">A</span></div>
@@ -413,7 +413,7 @@ a{color:inherit}
         <span><span class="swatch" style="background:var(--warn)"></span>Draw</span>
         <span><span class="swatch" style="background:var(--danger)"></span>Loss</span>
       </div>
-      <div class="form-narrative">Marco Silva's side have found rhythm at home but the road remains a problem — just 1 win in their last 6 away games. The 2-0 defeat at Liverpool last week was the latest, though they competed well for long stretches. Fulham have won three consecutive West London derbies against Brentford.</div>
+      <div class="form-narrative">Marco Silva's side have found rhythm at home but the road remains a problem, just 1 win in their last 6 away games. The 2-0 defeat at Liverpool last week was the latest, though they competed well for long stretches. Fulham have won three consecutive West London derbies against Brentford.</div>
       <div class="form-matches">
         <div class="form-match"><span>Liverpool 2-0 Fulham</span><span class="score">L</span><span class="venue">A</span></div>
         <div class="form-match"><span>Fulham 3-1 Burnley</span><span class="score">W</span><span class="venue">H</span></div>
@@ -482,10 +482,10 @@ a{color:inherit}
       <div class="stat-card-label">Points gap</div>
       <div class="stat-compare">
         <div class="stat-team"><div class="stat-team-name">Brentford</div><div class="stat-value">47</div></div>
-        <div class="stat-vs-label">—</div>
+        <div class="stat-vs-label">vs</div>
         <div class="stat-team"><div class="stat-team-name">Fulham</div><div class="stat-value">44</div></div>
       </div>
-      <div style="text-align:center;margin-top:16px;font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--muted);">Just 3 points. A Fulham win closes the gap to nothing.</div>
+      <div style="text-align:center;margin-top:16px;font-family:'Fraunces', serif;font-style:italic;font-size:15px;color:var(--muted);">Just 3 points. A Fulham win closes the gap to nothing.</div>
     </div>
   </div>
 </section>
@@ -495,7 +495,7 @@ a{color:inherit}
   <div class="h2h-inner">
     <div class="sec-num" style="color:var(--accent)">§ 03</div>
     <h2 class="sec-title" style="color:var(--paper)">69 meetings. <em>One city.</em></h2>
-    <p class="sec-lede" style="color:rgba(244,241,234,0.7)">Fulham hold the slimmest of edges in the all-time record and have dominated the Premier League era fixture, winning 5 of 8 meetings. They've won 3 derbies in a row — including a 3-1 win at Craven Cottage in September.</p>
+    <p class="sec-lede" style="color:rgba(244,241,234,0.7)">Fulham hold the slimmest of edges in the all-time record and have dominated the Premier League era fixture, winning 5 of 8 meetings. They've won 3 derbies in a row, including a 3-1 win at Craven Cottage in September.</p>
 
     <div class="h2h-summary">
       <div class="h2h-stat"><div class="h2h-stat-val bees">25</div><div class="h2h-stat-label">Brentford wins</div></div>
@@ -601,7 +601,7 @@ a{color:inherit}
         <div class="battle-v">vs</div>
         <div class="battle-player"><div class="battle-player-name">Lewis-Potter</div><div class="battle-player-pos">LB · Brentford</div></div>
       </div>
-      <div class="battle-desc">Wilson has been one of the league's outstanding players this season — 10 goals, 6 assists, and a knack for scoring from distance. Lewis-Potter has to stay tight or risk giving Wilson space to shoot. Fulham's 9 goals from outside the box are a direct Wilson-shaped threat.</div>
+      <div class="battle-desc">Wilson has been one of the league's outstanding players this season,10 goals, 6 assists, and a knack for scoring from distance. Lewis-Potter has to stay tight or risk giving Wilson space to shoot. Fulham's 9 goals from outside the box are a direct Wilson-shaped threat.</div>
     </div>
     <div class="battle-card reveal">
       <div class="battle-header">The focal point</div>
@@ -647,7 +647,7 @@ a{color:inherit}
             <button onclick="adjustScore('home',-1)">−</button>
           </div>
         </div>
-        <div class="predictor-dash">—</div>
+        <div class="predictor-dash">–</div>
         <div class="predictor-team">
           <div class="predictor-team-name">Fulham</div>
           <div class="score-picker">
@@ -682,7 +682,7 @@ a{color:inherit}
 <section class="verdict" id="verdict">
   <div class="verdict-kicker">§ 07 / The Cravenpod Take</div>
   <h2 class="verdict-text">Brentford's draw streak <em>breaks.</em><br>But not the way they want.</h2>
-  <p class="verdict-sub">Fulham have won three consecutive derbies against Brentford and, despite their away struggles, the Cottagers tend to turn up for this fixture. Brentford's inability to close games out — five draws in a row — suggests a side that creates chances but lacks the composure to convert them when it matters. Wilson's threat from distance, Robinson's energy, and Andersen's leadership give Fulham the edge. It'll be tight, noisy, and probably decided by one moment of quality.</p>
+  <p class="verdict-sub">Fulham have won three consecutive derbies against Brentford and, despite their away struggles, the Cottagers tend to turn up for this fixture. Brentford's inability to close games out, five draws in a row, suggests a side that creates chances but lacks the composure to convert them when it matters. Wilson's threat from distance, Robinson's energy, and Andersen's leadership give Fulham the edge. It'll be tight, noisy, and probably decided by one moment of quality.</p>
   <div class="verdict-prediction">
     <div><div class="verdict-score-team">Brentford</div><div class="verdict-score">1</div></div>
     <div><div class="verdict-score-team">Fulham</div><div class="verdict-score" style="color:var(--accent)">2</div></div>
@@ -703,12 +703,12 @@ a{color:inherit}
 // ========== SCROLL REVEAL ==========
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target)} });
-},{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+},{threshold:.15, rootMargin:'0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 // ========== RESULT POLL ==========
 const POLL_KEY = 'cravenpod-brf-poll';
-let pollData = {brentford:12,draw:8,fulham:18}; // seed data
+let pollData = {brentford:12, draw:8, fulham:18}; // seed data
 let userVoted = false;
 try { const saved = localStorage.getItem(POLL_KEY); if(saved){pollData=JSON.parse(saved);userVoted=true;showPollResults()} } catch(e){}
 
@@ -740,17 +740,17 @@ let predictions = {'1-1':14,'2-1':11,'1-2':9,'0-0':5,'2-2':7,'0-1':4,'3-1':3,'1-
 let userPredicted = false;
 try{const s=localStorage.getItem(PRED_KEY);if(s){predictions=JSON.parse(s);userPredicted=true;document.getElementById('predictBtn').disabled=true;document.getElementById('predictBtn').textContent='Prediction locked';showPredictions()}}catch(e){}
 
-function adjustScore(team,delta){
+function adjustScore(team, delta){
   if(userPredicted)return;
-  if(team==='home'){homeS=Math.max(0,Math.min(9,homeS+delta));document.getElementById('homeScore').textContent=homeS}
-  else{awayS=Math.max(0,Math.min(9,awayS+delta));document.getElementById('awayScore').textContent=awayS}
+  if(team==='home'){homeS=Math.max(0, Math.min(9, homeS+delta));document.getElementById('homeScore').textContent=homeS}
+  else{awayS=Math.max(0, Math.min(9, awayS+delta));document.getElementById('awayScore').textContent=awayS}
 }
 function submitPrediction(){
   if(userPredicted)return;
   userPredicted=true;
   const key=homeS+'-'+awayS;
   predictions[key]=(predictions[key]||0)+1;
-  try{localStorage.setItem(PRED_KEY,JSON.stringify(predictions))}catch(e){}
+  try{localStorage.setItem(PRED_KEY, JSON.stringify(predictions))}catch(e){}
   document.getElementById('predictBtn').disabled=true;
   document.getElementById('predictBtn').textContent='Prediction locked ✓';
   showPredictions();
@@ -758,9 +758,9 @@ function submitPrediction(){
 function showPredictions(){
   const el=document.getElementById('predictResults');
   el.classList.add('show');
-  const sorted=Object.entries(predictions).sort((a,b)=>b[1]-a[1]).slice(0,6);
-  const total=Object.values(predictions).reduce((a,b)=>a+b,0);
-  document.getElementById('popScores').innerHTML=sorted.map(([score,count])=>{
+  const sorted=Object.entries(predictions).sort((a, b)=>b[1]-a[1]).slice(0,6);
+  const total=Object.values(predictions).reduce((a, b)=>a+b,0);
+  document.getElementById('popScores').innerHTML=sorted.map(([score, count])=>{
     const pct=Math.round(count/total*100);
     return `<div class="pop-score"><div class="s">${score}</div><div class="n">${pct}% (${count})</div></div>`;
   }).join('');
@@ -768,17 +768,17 @@ function showPredictions(){
 
 // ========== TEAM SELECTOR ==========
 const positions = [
-  {id:'GK',label:'GK',top:'88%',left:'50%'},
-  {id:'RB',label:'RB',top:'72%',left:'82%'},
-  {id:'CB1',label:'CB',top:'75%',left:'62%'},
-  {id:'CB2',label:'CB',top:'75%',left:'38%'},
-  {id:'LB',label:'LB',top:'72%',left:'18%'},
-  {id:'CM1',label:'CM',top:'55%',left:'62%'},
-  {id:'CM2',label:'CM',top:'55%',left:'38%'},
-  {id:'RW',label:'RW',top:'35%',left:'82%'},
-  {id:'AM',label:'AM',top:'38%',left:'50%'},
-  {id:'LW',label:'LW',top:'35%',left:'18%'},
-  {id:'ST',label:'ST',top:'15%',left:'50%'}
+  {id:'GK', label:'GK', top:'88%', left:'50%'},
+  {id:'RB', label:'RB', top:'72%', left:'82%'},
+  {id:'CB1', label:'CB', top:'75%', left:'62%'},
+  {id:'CB2', label:'CB', top:'75%', left:'38%'},
+  {id:'LB', label:'LB', top:'72%', left:'18%'},
+  {id:'CM1', label:'CM', top:'55%', left:'62%'},
+  {id:'CM2', label:'CM', top:'55%', left:'38%'},
+  {id:'RW', label:'RW', top:'35%', left:'82%'},
+  {id:'AM', label:'AM', top:'38%', left:'50%'},
+  {id:'LW', label:'LW', top:'35%', left:'18%'},
+  {id:'ST', label:'ST', top:'15%', left:'50%'}
 ];
 const squad = ['Leno','Lecomte','Tete','Bassey','Andersen','Cuenca','Castagne','Sessegnon','Diop','Robinson','Reed','Cairney','Berge','Iwobi','Lukic','King','Smith Rowe','Jimenez','Wilson','Muniz','Kusi-Asare','Chukwueze','Kevin','Bobb'];
 let selectedSlot = null;

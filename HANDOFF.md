@@ -1,4 +1,4 @@
-# Cravenpod — Claude Code Handoff Brief
+# Cravenpod, Claude Code Handoff Brief
 
 A long-form Fulham FC writing site, currently consisting of a landing page and one in-depth financial analysis. This document contains everything a fresh Claude Code session needs to pick up the project cleanly.
 
@@ -22,10 +22,10 @@ claude
 **Cravenpod** is an editorial-style micro-site covering Fulham Football Club in long-form. It's independent, unaffiliated with the club, and built around the premise that football writing is better when it's slow-cooked rather than hot-taked.
 
 Currently the site consists of:
-- **One landing page** (`index.html`) — hero, featured article, upcoming pieces, about
-- **One published article** (`posts/fulham-fc-2024-25-financial-analysis/index.html`) — an interactive 11-section financial deep-dive on Fulham's FY25 accounts, with a Squad Cost Ratio calculator, peer benchmark, relegation scenarios, and more
+- **One landing page** (`index.html`), hero, featured article, upcoming pieces, about
+- **One published article** (`posts/fulham-fc-2024-25-financial-analysis/index.html`), an interactive 11-section financial deep-dive on Fulham's FY25 accounts, with a Squad Cost Ratio calculator, peer benchmark, relegation scenarios, and more
 
-The articles are built as **single-file HTML dashboards** — no framework, no build step. Just open in a browser.
+The articles are built as **single-file HTML dashboards**: no framework, no build step. Just open in a browser.
 
 ---
 
@@ -58,9 +58,9 @@ The site has a deliberate editorial / newsprint aesthetic that should be preserv
 
 ```css
 --ink: #0a0a0a          /* primary text, dark sections */
---paper: #f4f1ea        /* default background — warm off-white */
+--paper: #f4f1ea        /* default background, warm off-white */
 --paper-dark: #e8e3d6   /* secondary background */
---accent: #cc0000       /* crimson — sparingly, for emphasis */
+--accent: #cc0000       /* crimson, sparingly, for emphasis */
 --accent-soft: #8b0000  /* deeper red for danger/red zones */
 --gold: #b8935e         /* warm accent */
 --ok: #2d5016           /* green signals */
@@ -72,25 +72,25 @@ The site has a deliberate editorial / newsprint aesthetic that should be preserv
 
 ### Typography (all Google Fonts)
 
-- **Fraunces** — display serif with variable italic. Used for headlines, pull quotes, and big numbers.
-- **JetBrains Mono** — monospace. Used for kicker labels, metadata, technical micro-copy. Always uppercase, letter-spacing `0.15em` to `0.3em`.
-- **Inter Tight** — body sans-serif. Used for regular paragraph text and UI.
+- **Fraunces**: display serif with variable italic. Used for headlines, pull quotes, and big numbers.
+- **JetBrains Mono**: monospace. Used for kicker labels, metadata, technical micro-copy. Always uppercase, letter-spacing `0.15em` to `0.3em`.
+- **Inter Tight**: body sans-serif. Used for regular paragraph text and UI.
 
 **Never use default system fonts or Arial/Helvetica/Inter/Roboto defaults.** If adding a font weight, add it to the Google Fonts URL.
 
 ### Key design moves
 
-- **Grain texture overlay** — SVG noise filter applied via `body::before` at 30% opacity
-- **Radial gradient atmospheres** — subtle soft-focus colour washes positioned off-axis
-- **Editorial numbering** — sections prefixed with `§ 01`, `§ 02`, etc. in monospace
-- **Crimson punctuation** — the accent colour should appear sparingly as emphasis, never as a background flood
-- **Italic display type** — Fraunces italic used for the emphasis word in headlines (as in "The *long way round*")
-- **Asymmetric layouts** — grids are rarely 50/50. Use 1.4fr/1fr or 2fr/1fr to create visual tension
-- **Hairline borders** — `1px solid var(--rule)` on cards, never thick borders
+- **Grain texture overlay**: SVG noise filter applied via `body::before` at 30% opacity
+- **Radial gradient atmospheres**: subtle soft-focus colour washes positioned off-axis
+- **Editorial numbering**: sections prefixed with `§ 01`, `§ 02`, etc. in monospace
+- **Crimson punctuation**: the accent colour should appear sparingly as emphasis, never as a background flood
+- **Italic display type**: Fraunces italic used for the emphasis word in headlines (as in "The *long way round*")
+- **Asymmetric layouts**: grids are rarely 50/50. Use 1.4fr/1fr or 2fr/1fr to create visual tension
+- **Hairline borders**: `1px solid var(--rule)` on cards, never thick borders
 
 ### Mobile design rules
 
-**Never use negative margins on top-level sections.** A previous bug had `margin: 0 -40px` on full-bleed coloured sections which caused 40px of horizontal overflow on mobile. These sections (`.rev-container`, `.peer-container`, `.scr-section`, `.khan-section`, `.verdict`) are siblings of the main content, not children — they span the viewport naturally.
+**Never use negative margins on top-level sections.** A previous bug had `margin: 0 -40px` on full-bleed coloured sections which caused 40px of horizontal overflow on mobile. These sections (`.rev-container`, `.peer-container`, `.scr-section`, `.khan-section`, `.verdict`) are siblings of the main content, not children, they span the viewport naturally.
 
 **Reveal animations don't play well with Chart.js.** Any element containing a canvas that Chart.js measures cannot have `transform: translateY()` applied. Keep `.reveal` off chart containers.
 
@@ -169,7 +169,7 @@ Critical context for any financial analysis article going forward.
 - Adjusted revenue = football revenue + net profit on player sales
 - Non-football costs (debt interest, stadium) excluded
 - Assessed each March 1 on full-season forecasts
-- 2025/26 is "shadow year" — data collected, no enforcement
+- 2025/26 is "shadow year", data collected, no enforcement
 - Financial levies begin 2027/28
 
 **SSR (Sustainability and Systemic Resilience):**
@@ -186,59 +186,59 @@ Critical context for any financial analysis article going forward.
 The writing voice is distinctive and should be consistent across all articles:
 
 - **Plain English over jargon.** If a term needs defining, define it. Assume a smart reader who isn't a finance pro.
-- **British spelling and punctuation.** "Analyse" not "analyze", "centre" not "center", em-dashes with spaces ( — ) for asides.
+- **British spelling and punctuation.** "Analyse" not "analyze", "centre" not "center". **Never use em-dashes.** Use commas, full stops, parentheses, or colons for asides instead. This applies to all article prose, headlines, pull quotes, and captions.
 - **Dry, slightly warm.** Not chirpy, not snarky. The voice of a football-literate friend explaining the books over a pint.
-- **Numbers woven in, not stacked.** Rather than "£194.8m revenue, £166.5m wages, £39m loss", write "Revenue climbed to £194.8m, but wages followed at £166.5m — the gap producing a £39m loss."
+- **Numbers woven in, not stacked.** Rather than "£194.8m revenue, £166.5m wages, £39m loss", write "Revenue climbed to £194.8m, but wages followed at £166.5m, the gap producing a £39m loss."
 - **Headlines are declarative, not cryptic.** "The balance sheet: stronger than it looks." Not "A tale of two sides." Tell the reader what they're about to learn.
 - **Pull quotes and dropcaps used sparingly** for rhythm.
 - **No exclamation marks** except in direct quotes.
-- **Cockney/Fulham local colour** is fine in moderation — the site is rooted in place. "By the Thames", "Craven Cottage", "the cottagers" all appropriate.
+- **Cockney/Fulham local colour** is fine in moderation, the site is rooted in place. "By the Thames", "Craven Cottage", "the cottagers" all appropriate.
 
 ### Mandatory: run `/humanizer` on every article
 
-Before any article is published or updated, the article prose **must** be passed through the `/humanizer` skill. This strips the standard AI tells (em-dash overuse where it isn't adding anything, negative parallelisms, rule-of-three padding, persuasive-authority tropes like "the uncomfortable truth is", vague "structural problem dressed up as X" phrasing, etc.) while preserving the Cravenpod voice rules above. Em-dashes with spaces are still canonical for asides — don't let the humanizer strip them wholesale.
+Before any article is published or updated, the article prose **must** be passed through the `/humanizer` skill. This strips the standard AI tells: negative parallelisms, rule-of-three padding, persuasive-authority tropes like "the uncomfortable truth is", vague "structural problem dressed up as X" phrasing, and so on. The humanizer should also strip every em-dash, since em-dashes are banned site-wide (see voice rules above).
 
 ---
 
 ## 9. What to do next (prioritised ideas)
 
 ### Immediate housekeeping
-1. **Add `robots.txt` and `sitemap.xml`** — basic SEO hygiene for a fresh site
-2. **Add proper Open Graph images** — currently no `og:image` defined. Design a 1200×630 card for both the landing page and the dashboard article
-3. **Favicon** — need an SVG + PNG fallback. A simple monogram "C" with crimson offset matching the site logo would fit
-4. **Analytics** — ✅ GoatCounter is live. **Every new page must include this snippet before `</body>`:**
+1. **Add `robots.txt` and `sitemap.xml`**: basic SEO hygiene for a fresh site
+2. **Add proper Open Graph images**: currently no `og:image` defined. Design a 1200×630 card for both the landing page and the dashboard article
+3. **Favicon**: need an SVG + PNG fallback. A simple monogram "C" with crimson offset matching the site logo would fit
+4. **Analytics**: ✅ GoatCounter is live. **Every new page must include this snippet before `</body>`:**
    ```html
    <script data-goatcounter="https://cravenpod.goatcounter.com/count"
            async src="//gc.zgo.at/count.js"></script>
    ```
    Dashboard: `cravenpod.goatcounter.com`
-5. **Homepage sync** — **whenever a new post is published, `index.html` must be updated to include it** so readers can find it from the home page. Add the post to the relevant category section (Match Previews, Match Reviews, Finances, Team News, FFCW, Transfers, etc.) with title, dek, date, and link to `/posts/<slug>/`.
+5. **Homepage sync**: **whenever a new post is published, `index.html` must be updated to include it** so readers can find it from the home page. Add the post to the relevant category section (Match Previews, Match Reviews, Finances, Team News, FFCW, Transfers, etc.) with title, dek, date, and link to `/posts/<slug>/`.
 
 ### Content pipeline (already teased in "What's cooking")
-1. **The Riverside Stand, in full** — architectural + financial story of the new stand
-2. **The Silva years** — tactical retrospective on manager Marco Silva
-3. **Player trading: how Fulham became net-positive** — transfer strategy breakdown
-4. **The Khan sports empire** — Fulham's place in Khan's wider sports holdings
+1. **The Riverside Stand, in full**: architectural + financial story of the new stand
+2. **The Silva years**: tactical retrospective on manager Marco Silva
+3. **Player trading: how Fulham became net-positive**: transfer strategy breakdown
+4. **The Khan sports empire**: Fulham's place in Khan's wider sports holdings
 
 ### Structural improvements
-1. **Article template** — extract the dashboard's CSS into a shared stylesheet (`/assets/article.css`) so future articles don't duplicate 1000+ lines
-2. **Navigation system** — as the archive grows, the landing page's single-card featured section needs to become a proper article listing
-3. **RSS feed** — readers of long-form sites love RSS. Generate `/feed.xml`
-4. **Dark mode toggle** — CSS variables are already structured for it; just needs a toggle with `prefers-color-scheme` as default
-5. **Reading time calculator** — currently hardcoded "~15 min read". Should be computed from article word count
-6. **Print stylesheet** — the dashboard is substantial. A print-optimised version would be a nice touch
-7. **`_redirects` or nginx rule** — add 301 redirects from `/posts/xxx.html` → `/posts/xxx/` for robustness
+1. **Article template**: extract the dashboard's CSS into a shared stylesheet (`/assets/article.css`) so future articles don't duplicate 1000+ lines
+2. **Navigation system**: as the archive grows, the landing page's single-card featured section needs to become a proper article listing
+3. **RSS feed**: readers of long-form sites love RSS. Generate `/feed.xml`
+4. **Dark mode toggle**: CSS variables are already structured for it; just needs a toggle with `prefers-color-scheme` as default
+5. **Reading time calculator**: currently hardcoded "~15 min read". Should be computed from article word count
+6. **Print stylesheet**: the dashboard is substantial. A print-optimised version would be a nice touch
+7. **`_redirects` or nginx rule**: add 301 redirects from `/posts/xxx.html` → `/posts/xxx/` for robustness
 
 ### Bigger moves
-1. **Convert to Astro or 11ty** — if the archive grows past 5-10 articles, a static site generator will be worth the refactor. Astro would preserve the "islands" of interactivity in the dashboard perfectly
-2. **Typography refinement** — consider adding `opsz` variable font settings for Fraunces at different sizes (optical sizing on for large display, off for body)
-3. **Server config for caching** — since articles are static HTML with CDN-loaded assets, aggressive browser caching with far-future expiry on `/posts/*` would be ideal
-4. **Dashboard data separation** — the financial numbers are currently hardcoded in the HTML. Extracting them to a JSON file makes updating easier when new accounts drop
+1. **Convert to Astro or 11ty**: if the archive grows past 5-10 articles, a static site generator will be worth the refactor. Astro would preserve the "islands" of interactivity in the dashboard perfectly
+2. **Typography refinement**: consider adding `opsz` variable font settings for Fraunces at different sizes (optical sizing on for large display, off for body)
+3. **Server config for caching**: since articles are static HTML with CDN-loaded assets, aggressive browser caching with far-future expiry on `/posts/*` would be ideal
+4. **Dashboard data separation**: the financial numbers are currently hardcoded in the HTML. Extracting them to a JSON file makes updating easier when new accounts drop
 
 ### Content quality
-1. **Fact-check peer benchmarks** — the peer ratio bars in the dashboard use illustrative figures. Getting real Deloitte Football Money League figures would strengthen the piece
-2. **Embed a source section** — list every linked source at the bottom of the dashboard for rigour
-3. **Correction log** — if financial figures get revised, a public correction log adds credibility
+1. **Fact-check peer benchmarks**: the peer ratio bars in the dashboard use illustrative figures. Getting real Deloitte Football Money League figures would strengthen the piece
+2. **Embed a source section**: list every linked source at the bottom of the dashboard for rigour
+3. **Correction log**: if financial figures get revised, a public correction log adds credibility
 
 ---
 
@@ -258,53 +258,53 @@ If you don't know it, search the web for it. If you can't find it on a working s
 
 These have been tested and return real, scrapable content:
 
-- **fotmob.com** — confirmed lineups, substitutions with minutes, player ratings, match facts (e.g. `https://www.fotmob.com/matches/<slug>/<id>`)
-- **sports.yahoo.com** / **ca.sports.yahoo.com** — post-match articles with manager quotes
-- **fulhamfc.com** — official press conferences and match reports
-- **vavel.com** — match coverage and post-match analysis
-- **sportsmole.co.uk** — predicted lineups and team news
-- **sofascore.com** — match stats and lineups (often loads via JS so verify content actually returned)
-- **westlondonsport.com** — Fulham coverage with quotes
-- **soccernet.ng** — useful for Iwobi-related stories
-- **fulhamish.co.uk** — fan-site coverage with reasonable detail
+- **fotmob.com**: confirmed lineups, substitutions with minutes, player ratings, match facts (e.g. `https://www.fotmob.com/matches/<slug>/<id>`)
+- **sports.yahoo.com** / **ca.sports.yahoo.com**: post-match articles with manager quotes
+- **fulhamfc.com**: official press conferences and match reports
+- **vavel.com**: match coverage and post-match analysis
+- **sportsmole.co.uk**: predicted lineups and team news
+- **sofascore.com**: match stats and lineups (often loads via JS so verify content actually returned)
+- **westlondonsport.com**: Fulham coverage with quotes
+- **soccernet.ng**: useful for Iwobi-related stories
+- **fulhamish.co.uk**: fan-site coverage with reasonable detail
 
 ### Known blocked / unreliable sources
 
-- **wikipedia.org / wikimedia.org** — returns 403 hostname_blocked in this environment. Don't rely on it for league tables despite it being the "obvious" choice; use the Premier League's own pages or a working football site instead.
-- **bbc.co.uk/sport** — has historically returned restricted content; verify before depending on it
-- **theguardian.com** — same caveat
+- **wikipedia.org / wikimedia.org**: returns 403 hostname_blocked in this environment. Don't rely on it for league tables despite it being the "obvious" choice; use the Premier League's own pages or a working football site instead.
+- **bbc.co.uk/sport**: has historically returned restricted content; verify before depending on it
+- **theguardian.com**: same caveat
 
 ### Workflow when writing a match piece
 
 1. Get the confirmed lineup from fotmob.com first (search "<home> vs <away> fotmob")
 2. Get manager quotes from sports.yahoo.com or the club's own site
-3. Get league context (current position, points, GD) by asking the user — league tables move quickly and any cached source will be out of date
+3. Get league context (current position, points, GD) by asking the user, league tables move quickly and any cached source will be out of date
 4. Cross-reference at least two sources for any specific incident (goal, save, sub minute) before writing it
-5. If unsure about any fact, **ask the user before publishing** — they will confirm or correct
+5. If unsure about any fact, **ask the user before publishing**: they will confirm or correct
 
 ### Voice when uncertain
 
-When the data is light, write tighter and more factual rather than padding with invented narrative colour. "Fulham had spells in the first half" is better than "Between the sixth and fortieth minute Fulham were the better side" if you can't verify the precise window. Avoid manufactured hot-takes about manager personalities ("Silva's media management is impeccable") — they read as filler.
+When the data is light, write tighter and more factual rather than padding with invented narrative colour. "Fulham had spells in the first half" is better than "Between the sixth and fortieth minute Fulham were the better side" if you can't verify the precise window. Avoid manufactured hot-takes about manager personalities ("Silva's media management is impeccable"), they read as filler.
 
 ---
 
 ## 11. Technical gotchas to avoid
 
-These are landmines I stepped on while building — don't repeat them.
+These are landmines I stepped on while building, don't repeat them.
 
-1. **`maintainAspectRatio: false` on Chart.js** — this ignores the `height` attribute on `<canvas>`. Always wrap canvases in a div with a fixed height: `<div style="position: relative; height: 340px;"><canvas></canvas></div>`
+1. **`maintainAspectRatio: false` on Chart.js**: this ignores the `height` attribute on `<canvas>`. Always wrap canvases in a div with a fixed height: `<div style="position: relative; height: 340px;"><canvas></canvas></div>`
 
-2. **Never initialise Chart.js inside an element with `transform`** — the library can't measure dimensions correctly. Keep scroll-reveal animations off chart containers.
+2. **Never initialise Chart.js inside an element with `transform`**: the library can't measure dimensions correctly. Keep scroll-reveal animations off chart containers.
 
-3. **Browser storage APIs don't work in some sandboxed HTML contexts** — if testing in an iframe, `localStorage` and `sessionStorage` may fail silently. Use in-memory JavaScript variables where possible.
+3. **Browser storage APIs don't work in some sandboxed HTML contexts**: if testing in an iframe, `localStorage` and `sessionStorage` may fail silently. Use in-memory JavaScript variables where possible.
 
-4. **CDN failures silently break the dashboard** — Chart.js is loaded from `cdnjs.cloudflare.com`. If it fails to load, charts silently don't render. For robustness, consider self-hosting critical JS dependencies.
+4. **CDN failures silently break the dashboard**: Chart.js is loaded from `cdnjs.cloudflare.com`. If it fails to load, charts silently don't render. For robustness, consider self-hosting critical JS dependencies.
 
-5. **Mobile Safari vs Chrome** — on older mobile Safari, `backdrop-filter` can cause rendering glitches. Not used currently but something to watch if added.
+5. **Mobile Safari vs Chrome**: on older mobile Safari, `backdrop-filter` can cause rendering glitches. Not used currently but something to watch if added.
 
-6. **The grain SVG noise filter is heavy on scroll** — `position: fixed` with an SVG filter can trigger repaint on some devices. If performance issues arise, replace with a pre-rendered noise PNG.
+6. **The grain SVG noise filter is heavy on scroll**: `position: fixed` with an SVG filter can trigger repaint on some devices. If performance issues arise, replace with a pre-rendered noise PNG.
 
-7. **Full-bleed sections with negative margins** — as mentioned above, don't use `margin: 0 -40px` on top-level sections. Width them naturally with 100% and use inner max-width containers.
+7. **Full-bleed sections with negative margins**: as mentioned above, don't use `margin: 0 -40px` on top-level sections. Width them naturally with 100% and use inner max-width containers.
 
 ---
 
@@ -315,7 +315,7 @@ Before making substantive changes, a fresh Claude Code session should clarify:
 1. **Is this for the live site or a staging copy?** If live, be cautious about layout-breaking changes.
 2. **Do we have a deploy pipeline?** (CI/CD? Manual scp? Docker container rebuild?) This dictates whether changes can be tested locally first.
 3. **Is there a preferred commit style / branch strategy?** The editorial nature of the site suggests maybe small, semantic commits.
-4. **What's the priority right now — new content, refactoring, or polish?** The ideas in Section 9 span all three.
+4. **What's the priority right now, new content, refactoring, or polish?** The ideas in Section 9 span all three.
 
 ---
 
