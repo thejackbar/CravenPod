@@ -194,6 +194,10 @@ The writing voice is distinctive and should be consistent across all articles:
 - **No exclamation marks** except in direct quotes.
 - **Cockney/Fulham local colour** is fine in moderation — the site is rooted in place. "By the Thames", "Craven Cottage", "the cottagers" all appropriate.
 
+### Mandatory: run `/humanizer` on every article
+
+Before any article is published or updated, the article prose **must** be passed through the `/humanizer` skill. This strips the standard AI tells (em-dash overuse where it isn't adding anything, negative parallelisms, rule-of-three padding, persuasive-authority tropes like "the uncomfortable truth is", vague "structural problem dressed up as X" phrasing, etc.) while preserving the Cravenpod voice rules above. Em-dashes with spaces are still canonical for asides — don't let the humanizer strip them wholesale.
+
 ---
 
 ## 9. What to do next (prioritised ideas)
