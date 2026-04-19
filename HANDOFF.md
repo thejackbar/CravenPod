@@ -238,7 +238,53 @@ The writing voice is distinctive and should be consistent across all articles:
 
 ---
 
-## 10. Technical gotchas to avoid
+## 10. Facts and sourcing (READ THIS BEFORE WRITING ANY MATCH CONTENT)
+
+**Never invent facts. Ever.** This includes:
+- Player names, lineups, and substitutions
+- Goalscorers, assists, or who took specific shots
+- Quotes from managers or players
+- Match incidents (yellow cards, fouls, specific minute events)
+- League positions, points totals, goal difference, fixtures
+- Historical results
+
+If you don't know it, search the web for it. If you can't find it on a working source, **stop and ask the user** rather than guessing. Made-up facts are worse than admitting uncertainty.
+
+### Verified working sources (use these first)
+
+These have been tested and return real, scrapable content:
+
+- **fotmob.com** — confirmed lineups, substitutions with minutes, player ratings, match facts (e.g. `https://www.fotmob.com/matches/<slug>/<id>`)
+- **sports.yahoo.com** / **ca.sports.yahoo.com** — post-match articles with manager quotes
+- **fulhamfc.com** — official press conferences and match reports
+- **vavel.com** — match coverage and post-match analysis
+- **sportsmole.co.uk** — predicted lineups and team news
+- **sofascore.com** — match stats and lineups (often loads via JS so verify content actually returned)
+- **westlondonsport.com** — Fulham coverage with quotes
+- **soccernet.ng** — useful for Iwobi-related stories
+- **fulhamish.co.uk** — fan-site coverage with reasonable detail
+
+### Known blocked / unreliable sources
+
+- **wikipedia.org / wikimedia.org** — returns 403 hostname_blocked in this environment. Don't rely on it for league tables despite it being the "obvious" choice; use the Premier League's own pages or a working football site instead.
+- **bbc.co.uk/sport** — has historically returned restricted content; verify before depending on it
+- **theguardian.com** — same caveat
+
+### Workflow when writing a match piece
+
+1. Get the confirmed lineup from fotmob.com first (search "<home> vs <away> fotmob")
+2. Get manager quotes from sports.yahoo.com or the club's own site
+3. Get league context (current position, points, GD) by asking the user — league tables move quickly and any cached source will be out of date
+4. Cross-reference at least two sources for any specific incident (goal, save, sub minute) before writing it
+5. If unsure about any fact, **ask the user before publishing** — they will confirm or correct
+
+### Voice when uncertain
+
+When the data is light, write tighter and more factual rather than padding with invented narrative colour. "Fulham had spells in the first half" is better than "Between the sixth and fortieth minute Fulham were the better side" if you can't verify the precise window. Avoid manufactured hot-takes about manager personalities ("Silva's media management is impeccable") — they read as filler.
+
+---
+
+## 11. Technical gotchas to avoid
 
 These are landmines I stepped on while building — don't repeat them.
 
@@ -258,7 +304,7 @@ These are landmines I stepped on while building — don't repeat them.
 
 ---
 
-## 11. Questions to ask me (the person running Claude Code)
+## 12. Questions to ask me (the person running Claude Code)
 
 Before making substantive changes, a fresh Claude Code session should clarify:
 
@@ -269,7 +315,7 @@ Before making substantive changes, a fresh Claude Code session should clarify:
 
 ---
 
-## 12. First-run checklist for a new Claude Code session
+## 13. First-run checklist for a new Claude Code session
 
 When you (the human) bring this to Claude Code, try this opening prompt:
 
