@@ -1912,9 +1912,9 @@ new Chart(wfCtx, {
       backgroundColor: ctx => {
         const v = ctx.raw;
         const i = ctx.dataIndex;
-        if (i === 0) return '#0a0a0a';
-        if (i === 5) return '#8b0000';
-        return v > 0 ? '#2d5016' : '#cc0000';
+        if (i === 0) return '#9d8bff';
+        if (i === 5) return '#cc0033';
+        return v > 0 ? '#4a8060' : '#ff3b67';
       },
       borderRadius: 2,
       maxBarThickness: 50,
@@ -1926,7 +1926,11 @@ new Chart(wfCtx, {
     plugins: {
       legend: { display: false },
       tooltip: {
-        backgroundColor: '#0a0a0a',
+        backgroundColor: 'rgba(6,7,15,0.95)',
+        titleColor: '#f5f6fa',
+        bodyColor: '#f5f6fa',
+        borderColor: 'rgba(255,255,255,0.10)',
+        borderWidth: 1,
         titleFont: { family: 'JetBrains Mono', size: 10 },
         bodyFont: { family: 'Inter Tight', size: 13 },
         padding: 12,
@@ -1940,7 +1944,7 @@ new Chart(wfCtx, {
         grid: { display: false },
         ticks: {
           font: { family: 'JetBrains Mono', size: 10 },
-          color: '#0a0a0a',
+          color: 'rgba(245,246,250,0.65)',
           maxRotation: 0,
           minRotation: 0,
           autoSkip: false
@@ -1966,8 +1970,8 @@ const donut = new Chart(rdCtx, {
     labels: revenueData.map(r => r.name),
     datasets: [{
       data: revenueData.map(r => r.value),
-      backgroundColor: ['#cc0000', '#f4f1ea', '#b8935e', '#8b0000', '#6e6e6e'],
-      borderColor: '#0a0a0a',
+      backgroundColor: ['#ff3b67', '#9d8bff', '#d4af6e', '#cc0033', '#6ec3d4'],
+      borderColor: 'rgba(6,7,15,0.6)',
       borderWidth: 3,
       hoverOffset: 16,
     }]
@@ -1979,9 +1983,11 @@ const donut = new Chart(rdCtx, {
     plugins: {
       legend: { display: false },
       tooltip: {
-        backgroundColor: '#f4f1ea',
-        titleColor: '#0a0a0a',
-        bodyColor: '#0a0a0a',
+        backgroundColor: 'rgba(6,7,15,0.95)',
+        titleColor: '#f5f6fa',
+        bodyColor: '#f5f6fa',
+        borderColor: 'rgba(255,255,255,0.10)',
+        borderWidth: 1,
         titleFont: { family: 'JetBrains Mono', size: 10 },
         bodyFont: { family: 'Inter Tight', size: 13, weight: 600 },
         padding: 12,
@@ -2031,33 +2037,33 @@ const bsData = {
   assets: {
     title: 'Assets, what the club owns',
     items: [
-      ['Player registrations (net)', 138.8, '#2d5016'],
-      ['Player transfer debtors', 45.3, '#2d5016'],
-      ['Cash at bank', 13.2, '#2d5016'],
-      ['Trade debtors', 13.0, '#2d5016'],
-      ['Tangible assets', 4.7, '#2d5016'],
-      ['Other debtors/prepayments', 7.0, '#2d5016'],
-      ['Stocks', 0.5, '#2d5016'],
+      ['Player registrations (net)', 138.8, '#4a8060'],
+      ['Player transfer debtors', 45.3, '#4a8060'],
+      ['Cash at bank', 13.2, '#4a8060'],
+      ['Trade debtors', 13.0, '#4a8060'],
+      ['Tangible assets', 4.7, '#4a8060'],
+      ['Other debtors/prepayments', 7.0, '#4a8060'],
+      ['Stocks', 0.5, '#4a8060'],
     ]
   },
   liabilities: {
     title: 'Liabilities, what the club owes',
     items: [
-      ['Player transfer creditors (>1yr)', 42.9, '#8b0000'],
-      ['Player transfer creditors (<1yr)', 55.2, '#8b0000'],
-      ['Accruals', 25.9, '#8b0000'],
-      ['Other taxes & social security', 18.2, '#8b0000'],
-      ['Deferred income (season tickets/commercial)', 15.3, '#8b0000'],
-      ['Amounts due to related parties', 2.0, '#8b0000'],
-      ['Other creditors', 1.5, '#8b0000'],
+      ['Player transfer creditors (>1yr)', 42.9, '#cc0033'],
+      ['Player transfer creditors (<1yr)', 55.2, '#cc0033'],
+      ['Accruals', 25.9, '#cc0033'],
+      ['Other taxes & social security', 18.2, '#cc0033'],
+      ['Deferred income (season tickets/commercial)', 15.3, '#cc0033'],
+      ['Amounts due to related parties', 2.0, '#cc0033'],
+      ['Other creditors', 1.5, '#cc0033'],
     ]
   },
   equity: {
     title: 'Equity, what belongs to shareholders',
     items: [
-      ['Called-up share capital', 28.9, '#b8935e'],
-      ['Profit & loss reserve', 32.4, '#b8935e'],
-      ['TOTAL Shareholders\' funds', 61.3, '#0a0a0a'],
+      ['Called-up share capital', 28.9, '#d4af6e'],
+      ['Profit & loss reserve', 32.4, '#d4af6e'],
+      ['TOTAL Shareholders\' funds', 61.3, '#9d8bff'],
       ['(Prior year for comparison)', 33.9, '#999'],
     ]
   }
@@ -2134,8 +2140,8 @@ function updateSCR() {
     verdictText.textContent = `Over the 85% green threshold but within the 30% buffer. Result: a financial levy (fine) scaled to how far over you are, but NO points deduction. This is where most clubs will operate, the accepted "paying for growth" zone.`;
   } else {
     verdictStatus.textContent = 'Red zone, sanction territory.';
-    verdictStatus.style.color = '#cc0000';
-    verdictBox.style.borderColor = '#cc0000';
+    verdictStatus.style.color = '#ff3b67';
+    verdictBox.style.borderColor = '#ff3b67';
     verdictText.textContent = 'Above the 115% red threshold. Immediate sporting sanction, points deduction applied to the current season. The Premier League\'s strictest penalty tier.';
   }
 }
@@ -2169,7 +2175,7 @@ const trendsData = {
   revenue: {
     title: 'Turnover (£m)',
     values: [141.9, 181.6, 194.8],
-    color: '#0a0a0a',
+    color: '#9d8bff',
     big: '+£52.9m',
     label: '3-year growth',
     desc: 'Revenue has climbed from £141.9m in 2022/23 to £194.8m in 2024/25, a 37% rise over three years, driven by PL central awards, commercial growth, and improving league finishes.'
@@ -2177,7 +2183,7 @@ const trendsData = {
   wages: {
     title: 'Staff costs (£m)',
     values: [118.4, 154.8, 166.5],
-    color: '#cc0000',
+    color: '#ff3b67',
     big: '+£48.1m',
     label: '3-year growth',
     desc: 'Wages have risen faster than revenue, from £118.4m to £166.5m. That 41% increase outpaces the 37% revenue rise, explaining why losses are widening despite growth.'
@@ -2185,7 +2191,7 @@ const trendsData = {
   loss: {
     title: 'Pre-tax loss (£m)',
     values: [-31.4, -31.2, -39.0],
-    color: '#8b0000',
+    color: '#cc0033',
     big: '-£7.6m',
     label: 'Widening each year',
     desc: 'Pre-tax losses have crept upwards. All three years hovering around £30-40m is a pattern that Shahid Khan has been willing to absorb, but incoming SCR rules will force tighter discipline.'
@@ -2193,7 +2199,7 @@ const trendsData = {
   ratio: {
     title: 'Wages as % of revenue',
     values: [83.4, 85.2, 85.4],
-    color: '#b8860b',
+    color: '#d4a015',
     big: '+2.0pp',
     label: '3-year movement',
     desc: 'The wage-to-revenue ratio has hovered stubbornly around 85%. Dangerously high by any measure, but the number isn\'t getting worse, which suggests some cost discipline is taking hold.'
@@ -2201,7 +2207,7 @@ const trendsData = {
   amort: {
     title: 'Player amortisation (£m)',
     values: [43.1, 57.4, 61.5],
-    color: '#b8935e',
+    color: '#d4af6e',
     big: '+£18.4m',
     label: '3-year growth',
     desc: 'Amortisation (non-cash cost of spreading transfer fees across contract length) has grown 43%, reflecting heavier investment in the squad. This shows up as a loss but doesn\'t drain cash.'
@@ -2229,7 +2235,11 @@ const trendsChart = new Chart(trendCtx, {
     plugins: {
       legend: { display: false },
       tooltip: {
-        backgroundColor: '#0a0a0a',
+        backgroundColor: 'rgba(6,7,15,0.95)',
+        titleColor: '#f5f6fa',
+        bodyColor: '#f5f6fa',
+        borderColor: 'rgba(255,255,255,0.10)',
+        borderWidth: 1,
         titleFont: { family: 'JetBrains Mono', size: 10 },
         bodyFont: { family: 'Inter Tight', size: 13, weight: 600 },
         padding: 12,
@@ -2245,7 +2255,7 @@ const trendsChart = new Chart(trendCtx, {
     scales: {
       x: {
         grid: { display: false },
-        ticks: { font: { family: 'JetBrains Mono', size: 11 }, color: '#0a0a0a' }
+        ticks: { font: { family: 'JetBrains Mono', size: 11 }, color: 'rgba(245,246,250,0.65)' }
       },
       y: {
         grid: { color: 'rgba(245,246,250,0.06)' },
@@ -2311,7 +2321,7 @@ peerData.forEach(p => {
   const colorStop2 = (85 / p.ratio * 100).toFixed(1);
   let bgGradient;
   if (p.ratio <= 70) {
-    bgGradient = '#2d5016';
+    bgGradient = '#4a8060';
   } else if (p.ratio <= 85) {
     bgGradient = `linear-gradient(to right, #2d5016 0%, #2d5016 ${colorStop1}%, #b8860b ${colorStop1}%, #b8860b 100%)`;
   } else {
@@ -2394,9 +2404,9 @@ function updateScenarioSlider(scene) {
   scenarioSliderEl.style.left = `${btn.offsetLeft}px`;
   scenarioSliderEl.style.width = `${btn.offsetWidth}px`;
   if (scene === 'relegation' || scene === 'championship') {
-    scenarioSliderEl.style.background = '#8b0000';
+    scenarioSliderEl.style.background = '#cc0033';
   } else {
-    scenarioSliderEl.style.background = '#0a0a0a';
+    scenarioSliderEl.style.background = '#9d8bff';
   }
 }
 
