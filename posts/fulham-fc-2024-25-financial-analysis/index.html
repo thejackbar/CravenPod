@@ -84,7 +84,7 @@
 
   /* ============ HEADER / HERO ============ */
   .masthead {
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 2px solid var(--glass-edge-strong);
     padding: 24px 40px 20px;
     display: flex;
     justify-content: space-between;
@@ -291,16 +291,16 @@
     position: absolute;
     top: -1px; left: -1px;
     width: 40px; height: 40px;
-    border-top: 3px solid var(--ink);
-    border-left: 3px solid var(--ink);
+    border-top: 2px solid var(--glass-edge-strong);
+    border-left: 2px solid var(--glass-edge-strong);
   }
   .chart-wrap::after {
     content: '';
     position: absolute;
     bottom: -1px; right: -1px;
     width: 40px; height: 40px;
-    border-bottom: 3px solid var(--ink);
-    border-right: 3px solid var(--ink);
+    border-bottom: 2px solid var(--glass-edge-strong);
+    border-right: 2px solid var(--glass-edge-strong);
   }
   .chart-title {
     font-family: 'JetBrains Mono', monospace;
@@ -1086,7 +1086,7 @@
   }
   .peer-fill {
     height: 100%;
-    background: linear-gradient(to right, #2d5016 0%, #2d5016 70%, #b8860b 70%, #b8860b 85%, #8b0000 85%);
+    background: linear-gradient(to right, #4a8060 0%, #4a8060 70%, #d4a015 70%, #d4a015 85%, #cc0033 85%);
     background-size: 100%;
     transform-origin: left;
     transform: scaleX(0);
@@ -1635,9 +1635,9 @@
 
     <div class="peer-bars">
       <div class="peer-legend">
-        <div class="peer-legend-item"><span class="swatch" style="background:#2d5016;"></span>UEFA green (≤70%)</div>
-        <div class="peer-legend-item"><span class="swatch" style="background:#b8860b;"></span>SCR amber (70–85%)</div>
-        <div class="peer-legend-item"><span class="swatch" style="background:#8b0000;"></span>SCR red zone (≥85%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#4a8060;"></span>UEFA green (≤70%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#d4a015;"></span>SCR amber (70–85%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#cc0033;"></span>SCR red zone (≥85%)</div>
       </div>
       <div style="margin-top: 32px;" id="peerBars"></div>
       <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(245,246,250,0.4); margin-top: 24px; text-align: center;">
@@ -2323,9 +2323,9 @@ peerData.forEach(p => {
   if (p.ratio <= 70) {
     bgGradient = '#4a8060';
   } else if (p.ratio <= 85) {
-    bgGradient = `linear-gradient(to right, #2d5016 0%, #2d5016 ${colorStop1}%, #b8860b ${colorStop1}%, #b8860b 100%)`;
+    bgGradient = `linear-gradient(to right, #4a8060 0%, #4a8060 ${colorStop1}%, #d4a015 ${colorStop1}%, #d4a015 100%)`;
   } else {
-    bgGradient = `linear-gradient(to right, #2d5016 0%, #2d5016 ${colorStop1}%, #b8860b ${colorStop1}%, #b8860b ${colorStop2}%, #8b0000 ${colorStop2}%, #8b0000 100%)`;
+    bgGradient = `linear-gradient(to right, #4a8060 0%, #4a8060 ${colorStop1}%, #d4a015 ${colorStop1}%, #d4a015 ${colorStop2}%, #cc0033 ${colorStop2}%, #cc0033 100%)`;
   }
   row.innerHTML = `
     <div class="peer-club">${p.club}</div>
