@@ -10,32 +10,67 @@
 <meta property="og:type" content="article">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=JetBrains+Mono:wght@400;500;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
   :root {
-    --ink: #0a0a0a;
-    --paper: #f4f1ea;
-    --paper-dark: #e8e3d6;
-    --accent: #cc0000;
-    --accent-soft: #8b0000;
-    --gold: #b8935e;
-    --ok: #2d5016;
-    --warn: #b8860b;
-    --danger: #8b0000;
-    --rule: rgba(10,10,10,0.15);
+    /* base atmosphere */
+    --bg-0: #06070f;
+    --bg-1: #0a0d1c;
+    --bg-2: #0e1226;
+
+    /* text */
+    --ink:      #f5f6fa;
+    --ink-soft: rgba(245,246,250,0.78);
+    --ink-mute: rgba(245,246,250,0.55);
+
+    /* legacy aliases (used as text on dark sections, kept light) */
+    --paper:      #f5f6fa;
+    --paper-dark: rgba(255,255,255,0.05);
+
+    /* glass surfaces */
+    --glass:             rgba(255,255,255,0.05);
+    --glass-strong:      rgba(255,255,255,0.09);
+    --glass-edge:        rgba(255,255,255,0.10);
+    --glass-edge-strong: rgba(255,255,255,0.20);
+
+    /* brand accents */
+    --accent:      #ff3b67;
+    --accent-soft: #cc0033;
+    --accent-glow: rgba(255,59,103,0.40);
+    --gold:        #d4af6e;
+
+    /* status (lifted for dark) */
+    --ok:     #4a8060;
+    --warn:   #d4a015;
+    --danger: #ff5577;
+
+    /* utility */
+    --rule:  rgba(255,255,255,0.10);
+    --muted: rgba(245,246,250,0.55);
+
+    /* shadows + radius */
+    --shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+    --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+    --r-sm:   10px;
+    --r-md:   16px;
+    --r-lg:   22px;
+    --r-pill: 999px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html { scroll-behavior: smooth; overflow-x: hidden; color-scheme: dark; }
   body {
     font-family: 'Inter Tight', sans-serif;
-    background: var(--paper);
     color: var(--ink);
     line-height: 1.5;
     overflow-x: hidden;
+    background-color: var(--bg-0);
     background-image:
-      radial-gradient(circle at 20% 10%, rgba(10,10,10,0.03) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(10,10,10,0.03) 0%, transparent 40%);
+      radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.22) 0%, transparent 60%),
+      radial-gradient(ellipse  900px 760px at 94% 10%, rgba(204,0,51,0.20)    0%, transparent 60%),
+      radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(110,195,212,0.11) 0%, transparent 70%),
+      linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+    background-attachment: fixed;
   }
   .grain::before {
     content: '';
@@ -43,24 +78,24 @@
     inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.35;
+    opacity: 0.18;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
 
   /* ============ HEADER / HERO ============ */
   .masthead {
-    border-bottom: 3px solid var(--ink);
+    border-bottom: 2px solid var(--glass-edge-strong);
     padding: 24px 40px 20px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    background: var(--paper);
+    background: var(--glass);
     position: relative;
     z-index: 10;
   }
   .masthead .brand {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 22px;
     letter-spacing: -0.02em;
   }
@@ -103,24 +138,27 @@
     background: var(--accent);
   }
   .headline {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: clamp(48px, 9vw, 140px);
     line-height: 0.88;
     letter-spacing: -0.04em;
     margin-bottom: 40px;
   }
   .headline em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
+    font-style: normal;
+    font-weight: 300;
+    background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   .dek {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: clamp(18px, 2vw, 24px);
     line-height: 1.4;
     max-width: 720px;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
     font-weight: 400;
   }
 
@@ -138,23 +176,23 @@
     z-index: 2;
   }
   .marquee-item {
-    background: var(--paper);
+    background: var(--glass);
     padding: 8px 24px;
     cursor: pointer;
     transition: background 0.3s ease;
   }
-  .marquee-item:hover { background: var(--paper-dark); }
+  .marquee-item:hover { background: var(--glass); }
   .marquee-item .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(10,10,10,0.55);
+    color: rgba(245,246,250,0.55);
     margin-bottom: 8px;
   }
   .marquee-item .value {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: clamp(28px, 3.5vw, 52px);
     line-height: 1;
     letter-spacing: -0.03em;
@@ -167,20 +205,20 @@
   }
   .delta.up { color: var(--ok); }
   .delta.down { color: var(--danger); }
-  .delta.flat { color: rgba(10,10,10,0.5); }
+  .delta.flat { color: rgba(245,246,250,0.5); }
 
   /* ============ NAV ============ */
   .sec-nav {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 14px 40px;
     display: flex;
     gap: 0;
     overflow-x: auto;
-    border-bottom: 1px solid rgba(244,241,234,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   .sec-nav a {
     color: var(--paper);
@@ -190,7 +228,7 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     padding: 8px 20px;
-    border-right: 1px solid rgba(244,241,234,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
     white-space: nowrap;
     transition: color 0.2s, background 0.2s;
   }
@@ -216,8 +254,8 @@
     margin-bottom: 16px;
   }
   .sec-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: clamp(36px, 5vw, 72px);
     line-height: 0.95;
     letter-spacing: -0.03em;
@@ -225,11 +263,11 @@
     max-width: 1000px;
   }
   .sec-lede {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 20px;
     line-height: 1.5;
     max-width: 760px;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
     margin-bottom: 60px;
   }
 
@@ -243,7 +281,7 @@
   @media (max-width: 900px) { .pl-grid { grid-template-columns: 1fr; } }
 
   .chart-wrap {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 32px;
     position: relative;
@@ -253,16 +291,16 @@
     position: absolute;
     top: -1px; left: -1px;
     width: 40px; height: 40px;
-    border-top: 3px solid var(--ink);
-    border-left: 3px solid var(--ink);
+    border-top: 2px solid var(--glass-edge-strong);
+    border-left: 2px solid var(--glass-edge-strong);
   }
   .chart-wrap::after {
     content: '';
     position: absolute;
     bottom: -1px; right: -1px;
     width: 40px; height: 40px;
-    border-bottom: 3px solid var(--ink);
-    border-right: 3px solid var(--ink);
+    border-bottom: 2px solid var(--glass-edge-strong);
+    border-right: 2px solid var(--glass-edge-strong);
   }
   .chart-title {
     font-family: 'JetBrains Mono', monospace;
@@ -272,21 +310,21 @@
     margin-bottom: 4px;
   }
   .chart-sub {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 24px;
   }
 
   .story-block p {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 20px;
   }
   .story-block p:first-child::first-letter {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 72px;
     float: left;
     line-height: 0.85;
@@ -297,15 +335,16 @@
     border-left: 4px solid var(--accent);
     padding: 12px 24px;
     margin: 32px 0;
-    font-family: 'Fraunces', serif;
+    font-family: 'Inter Tight', sans-serif;
     font-style: italic;
+    font-weight: 400;
     font-size: 22px;
     line-height: 1.4;
   }
 
   /* ============ REVENUE EXPLORER ============ */
   .rev-container {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 60px 40px;
     border-radius: 0;
@@ -319,18 +358,18 @@
   }
   @media (max-width: 900px) { .rev-grid { grid-template-columns: 1fr; } }
   .rev-title {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 44px;
     line-height: 1;
     letter-spacing: -0.02em;
     margin-bottom: 16px;
   }
-  .rev-title em { color: var(--accent); font-style: italic; }
+  .rev-title em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .rev-sub {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 17px;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     margin-bottom: 32px;
     line-height: 1.5;
   }
@@ -340,14 +379,14 @@
     grid-template-columns: 1fr auto;
     gap: 16px;
     padding: 16px 20px;
-    background: rgba(244,241,234,0.05);
+    background: rgba(255,255,255,0.05);
     cursor: pointer;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
     position: relative;
   }
   .rev-item:hover {
-    background: rgba(244,241,234,0.1);
+    background: rgba(255,255,255,0.1);
     border-left-color: var(--accent);
     padding-left: 24px;
   }
@@ -356,7 +395,7 @@
     border-left-color: var(--accent);
   }
   .rev-item-name {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 600;
     font-size: 17px;
   }
@@ -376,10 +415,10 @@
   }
   .rev-item-desc {
     grid-column: 1 / -1;
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, margin-top 0.4s ease;
@@ -397,7 +436,7 @@
     margin-top: 40px;
   }
   .concern-card {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 32px 28px;
     position: relative;
@@ -405,7 +444,7 @@
   }
   .concern-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(10,10,10,0.15);
+    box-shadow: var(--shadow-md);
   }
   .concern-card.red { border-top: 4px solid var(--danger); }
   .concern-card.amber { border-top: 4px solid var(--warn); }
@@ -424,15 +463,15 @@
   .amber .concern-badge { background: var(--warn); color: var(--ink); }
   .green .concern-badge { background: var(--ok); color: var(--paper); }
   .concern-title {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 1.2;
     margin-bottom: 12px;
   }
   .concern-metric {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 44px;
     letter-spacing: -0.03em;
     line-height: 1;
@@ -442,7 +481,7 @@
   .concern-desc {
     font-size: 15px;
     line-height: 1.5;
-    color: rgba(10,10,10,0.7);
+    color: rgba(245,246,250,0.7);
   }
 
   /* ============ SCR CALCULATOR ============ */
@@ -464,7 +503,7 @@
   @media (max-width: 900px) { .scr-grid { grid-template-columns: 1fr; } }
 
   .scr-calc {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 40px;
     position: relative;
@@ -478,7 +517,7 @@
     margin-bottom: 8px;
   }
   .scr-calc-sub {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 32px;
@@ -496,10 +535,10 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
   }
   .slider-label .val {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
     font-size: 20px;
   }
@@ -507,7 +546,7 @@
     -webkit-appearance: none;
     width: 100%;
     height: 4px;
-    background: rgba(244,241,234,0.2);
+    background: rgba(255,255,255,0.2);
     outline: none;
     border-radius: 0;
   }
@@ -532,12 +571,12 @@
   .scr-gauge {
     margin-top: 40px;
     padding-top: 32px;
-    border-top: 1px solid rgba(244,241,234,0.15);
+    border-top: 1px solid rgba(255,255,255,0.15);
   }
   .gauge-track {
     position: relative;
     height: 50px;
-    background: rgba(244,241,234,0.08);
+    background: rgba(255,255,255,0.08);
     margin: 20px 0 12px;
     overflow: hidden;
   }
@@ -552,7 +591,7 @@
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(244,241,234,0.4);
+    color: rgba(255,255,255,0.4);
   }
   .gauge-zone.green { left: 0; width: 73.9%; background: rgba(45,80,22,0.4); }
   .gauge-zone.amber { left: 73.9%; width: 26.1%; background: rgba(184,134,11,0.4); }
@@ -562,7 +601,7 @@
     top: -8px;
     bottom: -8px;
     width: 3px;
-    background: var(--paper);
+    background: var(--glass);
     transition: left 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
     z-index: 5;
   }
@@ -596,37 +635,37 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.1em;
-    color: rgba(244,241,234,0.5);
+    color: rgba(255,255,255,0.5);
   }
   .scr-verdict {
     margin-top: 32px;
     padding: 20px;
-    background: rgba(244,241,234,0.05);
+    background: rgba(255,255,255,0.05);
     border-left: 3px solid var(--accent);
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 17px;
     line-height: 1.5;
     transition: border-color 0.4s;
   }
 
   .scr-explain {
-    background: var(--paper);
+    background: var(--glass);
     padding: 40px;
     border: 1px solid var(--rule);
   }
   .scr-explain h3 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
     font-size: 28px;
     margin-bottom: 16px;
     line-height: 1.1;
   }
   .scr-explain p {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 17px;
     line-height: 1.6;
     margin-bottom: 16px;
-    color: rgba(10,10,10,0.8);
+    color: rgba(245,246,250,0.8);
   }
   .rule-compare {
     display: grid;
@@ -637,7 +676,7 @@
   .rule-box {
     padding: 20px;
     border: 1px solid var(--rule);
-    background: #fff;
+    background: var(--glass);
   }
   .rule-box h4 {
     font-family: 'JetBrains Mono', monospace;
@@ -656,7 +695,7 @@
 
   /* ============ KHAN FACTOR ============ */
   .khan-section {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 100px 40px;
     position: relative;
@@ -681,14 +720,14 @@
   }
   @media (max-width: 900px) { .khan-grid { grid-template-columns: 1fr; } }
   .khan-quote {
-    font-family: 'Fraunces', serif;
+    font-family: 'Inter Tight', sans-serif;
     font-weight: 400;
     font-style: italic;
     font-size: clamp(32px, 4vw, 56px);
     line-height: 1.15;
     letter-spacing: -0.02em;
   }
-  .khan-quote em { color: var(--accent); font-style: italic; }
+  .khan-quote em { font-style: normal; font-weight: 600; background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .khan-stats {
     display: grid;
     gap: 20px;
@@ -696,11 +735,11 @@
   .khan-stat {
     border-left: 3px solid var(--accent);
     padding: 16px 24px;
-    background: rgba(244,241,234,0.03);
+    background: rgba(255,255,255,0.03);
   }
   .khan-stat-val {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 44px;
     line-height: 1;
     letter-spacing: -0.02em;
@@ -711,13 +750,13 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     line-height: 1.4;
   }
 
   /* ============ BALANCE SHEET VIS ============ */
   .bs-viz {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 40px;
     margin-top: 40px;
@@ -733,7 +772,7 @@
   .bs-tabs {
     display: flex;
     gap: 4px;
-    background: var(--paper-dark);
+    background: var(--glass);
     padding: 4px;
   }
   .bs-tab {
@@ -749,7 +788,7 @@
     color: var(--ink);
   }
   .bs-tab.active {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
   }
   .bs-bars {
@@ -766,19 +805,19 @@
     .bs-bar-row { grid-template-columns: 1fr; gap: 4px; }
   }
   .bs-label {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 600;
     font-size: 15px;
   }
   .bs-track {
     height: 28px;
-    background: var(--paper-dark);
+    background: var(--glass);
     position: relative;
     overflow: hidden;
   }
   .bs-fill {
     height: 100%;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     transform-origin: left;
     transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
   }
@@ -801,7 +840,7 @@
   }
   .insight {
     padding: 32px 28px;
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     position: relative;
   }
@@ -809,7 +848,7 @@
     position: absolute;
     top: -12px;
     left: 24px;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 4px 12px;
     font-family: 'JetBrains Mono', monospace;
@@ -818,7 +857,7 @@
     letter-spacing: 0.2em;
   }
   .insight h3 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
     font-size: 22px;
     line-height: 1.2;
@@ -827,11 +866,11 @@
   .insight p {
     font-size: 15px;
     line-height: 1.6;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
   }
   .insight .big {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 36px;
     color: var(--accent);
     display: block;
@@ -841,7 +880,7 @@
 
   /* ============ VERDICT / FOOTER ============ */
   .verdict {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 100px 40px;
     text-align: center;
@@ -855,20 +894,20 @@
     margin-bottom: 24px;
   }
   .verdict-text {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: clamp(36px, 5vw, 72px);
     line-height: 1.05;
     letter-spacing: -0.03em;
     max-width: 1100px;
     margin: 0 auto;
   }
-  .verdict-text em { color: var(--accent); font-style: italic; }
+  .verdict-text em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .verdict-sub {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 18px;
     line-height: 1.6;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     max-width: 680px;
     margin: 32px auto 0;
   }
@@ -880,8 +919,8 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(10,10,10,0.5);
-    background: var(--paper);
+    color: rgba(245,246,250,0.5);
+    background: var(--glass);
     border-top: 1px solid var(--rule);
   }
 
@@ -891,8 +930,8 @@
     align-items: center;
     gap: 6px;
     background: transparent;
-    color: rgba(244,241,234,0.6);
-    border: 1px solid rgba(244,241,234,0.25);
+    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.25);
     padding: 6px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -919,18 +958,18 @@
     transform: rotate(-360deg);
   }
   .reset-btn.light {
-    color: rgba(10,10,10,0.55);
-    border-color: rgba(10,10,10,0.2);
+    color: rgba(245,246,250,0.55);
+    border-color: rgba(245,246,250,0.2);
   }
   .reset-btn.light:hover {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     border-color: var(--ink);
   }
 
   /* ============ TRENDS SECTION ============ */
   .trends-wrap {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 40px;
     margin-top: 40px;
@@ -955,18 +994,18 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    background: var(--paper-dark);
+    background: var(--glass);
     border: 1px solid transparent;
     cursor: pointer;
     transition: all 0.25s ease;
-    color: rgba(10,10,10,0.6);
+    color: rgba(245,246,250,0.6);
   }
   .metric-tab:hover {
     color: var(--ink);
     border-color: var(--rule);
   }
   .metric-tab.active {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
   }
   .trends-body {
@@ -978,12 +1017,12 @@
   @media (max-width: 900px) { .trends-body { grid-template-columns: 1fr; } }
   .trend-callout {
     padding: 24px;
-    background: var(--paper);
+    background: var(--glass);
     border-left: 3px solid var(--accent);
   }
   .trend-callout .big {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 48px;
     line-height: 1;
     letter-spacing: -0.03em;
@@ -994,25 +1033,25 @@
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(10,10,10,0.55);
+    color: rgba(245,246,250,0.55);
     margin-bottom: 20px;
   }
   .trend-callout p {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 16px;
     line-height: 1.5;
   }
 
   /* ============ PEER BENCHMARK ============ */
   .peer-container {
-    background: var(--paper-dark);
+    background: var(--glass);
     padding: 80px 40px;
     position: relative;
   }
   .peer-bars {
     max-width: 1520px;
     margin: 40px auto 0;
-    background: #fff;
+    background: var(--glass);
     padding: 40px;
     border: 1px solid var(--rule);
   }
@@ -1022,7 +1061,7 @@
     gap: 20px;
     align-items: center;
     padding: 14px 0;
-    border-bottom: 1px solid rgba(10,10,10,0.06);
+    border-bottom: 1px solid rgba(245,246,250,0.06);
     transition: background 0.2s;
   }
   .peer-row:last-child { border-bottom: none; }
@@ -1034,20 +1073,20 @@
     border-bottom-color: transparent;
   }
   .peer-club {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 600;
     font-size: 16px;
   }
-  .peer-row.highlight .peer-club { font-weight: 900; color: var(--accent); }
+  .peer-row.highlight .peer-club { font-weight: 800; color: var(--accent); }
   .peer-track {
     height: 18px;
-    background: var(--paper-dark);
+    background: var(--glass);
     position: relative;
     overflow: hidden;
   }
   .peer-fill {
     height: 100%;
-    background: linear-gradient(to right, #2d5016 0%, #2d5016 70%, #b8860b 70%, #b8860b 85%, #8b0000 85%);
+    background: linear-gradient(to right, #4a8060 0%, #4a8060 70%, #d4a015 70%, #d4a015 85%, #cc0033 85%);
     background-size: 100%;
     transform-origin: left;
     transform: scaleX(0);
@@ -1083,14 +1122,14 @@
 
   /* ============ RELEGATION SCENARIO ============ */
   .scenario-wrap {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 40px;
     margin-top: 40px;
   }
   .scenario-toggle {
     display: inline-flex;
-    background: var(--paper-dark);
+    background: var(--glass);
     padding: 4px;
     margin-bottom: 40px;
     position: relative;
@@ -1104,7 +1143,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(10,10,10,0.5);
+    color: rgba(245,246,250,0.5);
     transition: color 0.3s;
     position: relative;
     z-index: 2;
@@ -1114,7 +1153,7 @@
     position: absolute;
     top: 4px;
     bottom: 4px;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
     z-index: 1;
   }
@@ -1129,7 +1168,7 @@
   .scenario-card {
     padding: 24px;
     border: 1px solid var(--rule);
-    background: var(--paper);
+    background: var(--glass);
     transition: all 0.4s ease;
   }
   .scenario-card.impact { border-color: var(--danger); border-width: 2px; }
@@ -1138,12 +1177,12 @@
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(10,10,10,0.55);
+    color: rgba(245,246,250,0.55);
     margin-bottom: 12px;
   }
   .scenario-value {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 40px;
     letter-spacing: -0.02em;
     line-height: 1;
@@ -1160,10 +1199,10 @@
   .scenario-change.down { color: var(--danger); }
   .scenario-change.up { color: var(--ok); }
   .scenario-desc {
-    font-family: 'Fraunces', serif;
+    font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 15px;
     line-height: 1.5;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid var(--rule);
@@ -1189,16 +1228,83 @@
 
   /* ============ DECORATIVE MARKS ============ */
   .deco-mark {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
     font-size: 160px;
     line-height: 1;
-    color: rgba(10,10,10,0.04);
+    color: rgba(245,246,250,0.04);
     position: absolute;
     pointer-events: none;
     user-select: none;
     z-index: 0;
   }
+
+  /* ============ FROSTED OVERRIDES ============ */
+  /* Major dark sections — add backdrop-filter + glass-edge borders */
+  .rev-container,
+  .peer-container,
+  .scr-section,
+  .khan-section,
+  .verdict,
+  .marquee {
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+            backdrop-filter: blur(22px) saturate(140%);
+    border-top: 1px solid var(--glass-edge);
+    border-bottom: 1px solid var(--glass-edge);
+  }
+
+  /* Cards — round corners, glass edge, soft shadow + lit-edge highlight */
+  .concern-card,
+  .scenario-card,
+  .insight,
+  .scr-calc,
+  .scr-explain,
+  .scr-verdict,
+  .khan-stat,
+  .bs-viz,
+  .trends-wrap,
+  .scenario-wrap,
+  .peer-bars,
+  .chart-wrap,
+  .pl-card,
+  .fact-card,
+  .stat-card {
+    border-radius: var(--r-md);
+    border-color: var(--glass-edge);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+            backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /* Masthead becomes sticky frosted bar */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--glass-edge);
+    background: rgba(10,13,28,0.60) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+            backdrop-filter: blur(22px) saturate(140%);
+  }
+
+  /* Buttons that previously used dark ink fill go to accent + glow */
+  button.calc-reset,
+  .scr-reset,
+  .calc-submit,
+  .toggle-btn,
+  .tab-btn.active,
+  .scenario-tab.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent;
+    border-radius: var(--r-pill);
+    box-shadow: 0 0 24px var(--accent-glow);
+  }
+
+  /* Concern badges – flip to higher-contrast on dark */
+  .red .concern-badge { background: var(--danger); color: #fff; }
+  .amber .concern-badge { background: var(--warn); color: var(--bg-1); }
+  .green .concern-badge { background: var(--ok); color: #fff; }
 
   /* Responsive */
   @media (max-width: 900px) {
@@ -1307,7 +1413,7 @@
 <header class="masthead">
   <a href="/" class="brand-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
     <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--accent);">← THAT'S SO CRAVEN</span>
-    <span style="color: rgba(10,10,10,0.25);">/</span>
+    <span style="color: rgba(245,246,250,0.25);">/</span>
     <span class="brand">THE LEDGER</span>
   </a>
   <div class="meta">
@@ -1529,12 +1635,12 @@
 
     <div class="peer-bars">
       <div class="peer-legend">
-        <div class="peer-legend-item"><span class="swatch" style="background:#2d5016;"></span>UEFA green (≤70%)</div>
-        <div class="peer-legend-item"><span class="swatch" style="background:#b8860b;"></span>SCR amber (70–85%)</div>
-        <div class="peer-legend-item"><span class="swatch" style="background:#8b0000;"></span>SCR red zone (≥85%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#4a8060;"></span>UEFA green (≤70%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#d4a015;"></span>SCR amber (70–85%)</div>
+        <div class="peer-legend-item"><span class="swatch" style="background:#cc0033;"></span>SCR red zone (≥85%)</div>
       </div>
       <div style="margin-top: 32px;" id="peerBars"></div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(10,10,10,0.4); margin-top: 24px; text-align: center;">
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(245,246,250,0.4); margin-top: 24px; text-align: center;">
         Source: Most recent published accounts (2023/24). Fulham figure is 2024/25. Illustrative comparison only.
       </p>
     </div>
@@ -1585,7 +1691,7 @@
         <div class="scr-gauge">
           <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
             <div class="scr-calc-title" style="margin:0;">Resulting ratio</div>
-            <div style="font-family: 'Fraunces', serif; font-weight:900; font-size:32px; letter-spacing:-0.02em;" id="ratioDisp">96.6%</div>
+            <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight:900; font-size:32px; letter-spacing:-0.02em;" id="ratioDisp">96.6%</div>
           </div>
           <div class="gauge-track">
             <div class="gauge-zone green" data-short="≤85%">GREEN (≤85%)</div>
@@ -1646,10 +1752,10 @@
           Fulham aren't just "losing money."<br>
           They're being <em>capitalised</em> by a billionaire who treats the club as part of a wider sports empire.
         </p>
-        <p style="font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.6; margin-top: 32px; color: rgba(244,241,234,0.75);">
+        <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; line-height: 1.6; margin-top: 32px; color: rgba(255,255,255,0.75);">
           Shahid Khan's net worth is estimated in the billions. He also owns the Jacksonville Jaguars (NFL), All Elite Wrestling (AEW), and owns Flex-N-Gate, a $20bn+ auto parts empire. Fulham's £39m annual loss is, by his standards, a rounding error, and he's been an unbroken source of funding since buying the club in 2013.
         </p>
-        <p style="font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.6; margin-top: 16px; color: rgba(244,241,234,0.75);">
+        <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; line-height: 1.6; margin-top: 16px; color: rgba(255,255,255,0.75);">
           The accounts themselves tell the story: during this year alone, the owner's group converted <strong style="color: var(--paper);">£145.2m</strong> of loans into equity, and then poured in <strong style="color: var(--paper);">another £62.7m</strong> after year-end. K2TR Family Holdings 2 has formally stated its intent to keep providing support for as long as the club needs it.
         </p>
       </div>
@@ -1694,7 +1800,7 @@
       <!-- Populated by JS -->
     </div>
 
-    <p style="font-family: 'Fraunces', serif; font-size: 15px; line-height: 1.6; color: rgba(10,10,10,0.7); margin-top: 32px; max-width: 780px;">
+    <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; line-height: 1.6; color: rgba(245,246,250,0.7); margin-top: 32px; max-width: 780px;">
       <strong>The bottom line:</strong> even in a relegation scenario, parachute payments soften the blow for 2–3 seasons. Fulham would face a painful year but the owner's track record suggests he'd fund it. The real risk isn't insolvency, it's the long, slow decline clubs sometimes enter when they can't bounce straight back.
     </p>
   </div>
@@ -1806,9 +1912,9 @@ new Chart(wfCtx, {
       backgroundColor: ctx => {
         const v = ctx.raw;
         const i = ctx.dataIndex;
-        if (i === 0) return '#0a0a0a';
-        if (i === 5) return '#8b0000';
-        return v > 0 ? '#2d5016' : '#cc0000';
+        if (i === 0) return '#9d8bff';
+        if (i === 5) return '#cc0033';
+        return v > 0 ? '#4a8060' : '#ff3b67';
       },
       borderRadius: 2,
       maxBarThickness: 50,
@@ -1820,7 +1926,11 @@ new Chart(wfCtx, {
     plugins: {
       legend: { display: false },
       tooltip: {
-        backgroundColor: '#0a0a0a',
+        backgroundColor: 'rgba(6,7,15,0.95)',
+        titleColor: '#f5f6fa',
+        bodyColor: '#f5f6fa',
+        borderColor: 'rgba(255,255,255,0.10)',
+        borderWidth: 1,
         titleFont: { family: 'JetBrains Mono', size: 10 },
         bodyFont: { family: 'Inter Tight', size: 13 },
         padding: 12,
@@ -1834,17 +1944,17 @@ new Chart(wfCtx, {
         grid: { display: false },
         ticks: {
           font: { family: 'JetBrains Mono', size: 10 },
-          color: '#0a0a0a',
+          color: 'rgba(245,246,250,0.65)',
           maxRotation: 0,
           minRotation: 0,
           autoSkip: false
         }
       },
       y: {
-        grid: { color: 'rgba(10,10,10,0.06)' },
+        grid: { color: 'rgba(245,246,250,0.06)' },
         ticks: {
           font: { family: 'JetBrains Mono', size: 10 },
-          color: 'rgba(10,10,10,0.5)',
+          color: 'rgba(245,246,250,0.5)',
           callback: v => `£${v}m`
         }
       }
@@ -1860,8 +1970,8 @@ const donut = new Chart(rdCtx, {
     labels: revenueData.map(r => r.name),
     datasets: [{
       data: revenueData.map(r => r.value),
-      backgroundColor: ['#cc0000', '#f4f1ea', '#b8935e', '#8b0000', '#6e6e6e'],
-      borderColor: '#0a0a0a',
+      backgroundColor: ['#ff3b67', '#9d8bff', '#d4af6e', '#cc0033', '#6ec3d4'],
+      borderColor: 'rgba(6,7,15,0.6)',
       borderWidth: 3,
       hoverOffset: 16,
     }]
@@ -1873,9 +1983,11 @@ const donut = new Chart(rdCtx, {
     plugins: {
       legend: { display: false },
       tooltip: {
-        backgroundColor: '#f4f1ea',
-        titleColor: '#0a0a0a',
-        bodyColor: '#0a0a0a',
+        backgroundColor: 'rgba(6,7,15,0.95)',
+        titleColor: '#f5f6fa',
+        bodyColor: '#f5f6fa',
+        borderColor: 'rgba(255,255,255,0.10)',
+        borderWidth: 1,
         titleFont: { family: 'JetBrains Mono', size: 10 },
         bodyFont: { family: 'Inter Tight', size: 13, weight: 600 },
         padding: 12,
@@ -1907,7 +2019,7 @@ revenueData.forEach((r, i) => {
   el.dataset.idx = i;
   el.innerHTML = `
     <div class="rev-item-name">${r.name}</div>
-    <div class="rev-item-val">£${(r.value / 1000).toFixed(1)}m <span style="color:rgba(244,241,234,0.5); margin-left:8px; font-size:11px;">${yoyStr}</span></div>
+    <div class="rev-item-val">£${(r.value / 1000).toFixed(1)}m <span style="color:rgba(255,255,255,0.5); margin-left:8px; font-size:11px;">${yoyStr}</span></div>
     <div class="rev-item-bar" style="transform: scaleX(${r.value / maxRev});"></div>
     <div class="rev-item-desc">${r.desc}</div>
   `;
@@ -1925,33 +2037,33 @@ const bsData = {
   assets: {
     title: 'Assets, what the club owns',
     items: [
-      ['Player registrations (net)', 138.8, '#2d5016'],
-      ['Player transfer debtors', 45.3, '#2d5016'],
-      ['Cash at bank', 13.2, '#2d5016'],
-      ['Trade debtors', 13.0, '#2d5016'],
-      ['Tangible assets', 4.7, '#2d5016'],
-      ['Other debtors/prepayments', 7.0, '#2d5016'],
-      ['Stocks', 0.5, '#2d5016'],
+      ['Player registrations (net)', 138.8, '#4a8060'],
+      ['Player transfer debtors', 45.3, '#4a8060'],
+      ['Cash at bank', 13.2, '#4a8060'],
+      ['Trade debtors', 13.0, '#4a8060'],
+      ['Tangible assets', 4.7, '#4a8060'],
+      ['Other debtors/prepayments', 7.0, '#4a8060'],
+      ['Stocks', 0.5, '#4a8060'],
     ]
   },
   liabilities: {
     title: 'Liabilities, what the club owes',
     items: [
-      ['Player transfer creditors (>1yr)', 42.9, '#8b0000'],
-      ['Player transfer creditors (<1yr)', 55.2, '#8b0000'],
-      ['Accruals', 25.9, '#8b0000'],
-      ['Other taxes & social security', 18.2, '#8b0000'],
-      ['Deferred income (season tickets/commercial)', 15.3, '#8b0000'],
-      ['Amounts due to related parties', 2.0, '#8b0000'],
-      ['Other creditors', 1.5, '#8b0000'],
+      ['Player transfer creditors (>1yr)', 42.9, '#cc0033'],
+      ['Player transfer creditors (<1yr)', 55.2, '#cc0033'],
+      ['Accruals', 25.9, '#cc0033'],
+      ['Other taxes & social security', 18.2, '#cc0033'],
+      ['Deferred income (season tickets/commercial)', 15.3, '#cc0033'],
+      ['Amounts due to related parties', 2.0, '#cc0033'],
+      ['Other creditors', 1.5, '#cc0033'],
     ]
   },
   equity: {
     title: 'Equity, what belongs to shareholders',
     items: [
-      ['Called-up share capital', 28.9, '#b8935e'],
-      ['Profit & loss reserve', 32.4, '#b8935e'],
-      ['TOTAL Shareholders\' funds', 61.3, '#0a0a0a'],
+      ['Called-up share capital', 28.9, '#d4af6e'],
+      ['Profit & loss reserve', 32.4, '#d4af6e'],
+      ['TOTAL Shareholders\' funds', 61.3, '#9d8bff'],
       ['(Prior year for comparison)', 33.9, '#999'],
     ]
   }
@@ -2028,8 +2140,8 @@ function updateSCR() {
     verdictText.textContent = `Over the 85% green threshold but within the 30% buffer. Result: a financial levy (fine) scaled to how far over you are, but NO points deduction. This is where most clubs will operate, the accepted "paying for growth" zone.`;
   } else {
     verdictStatus.textContent = 'Red zone, sanction territory.';
-    verdictStatus.style.color = '#cc0000';
-    verdictBox.style.borderColor = '#cc0000';
+    verdictStatus.style.color = '#ff3b67';
+    verdictBox.style.borderColor = '#ff3b67';
     verdictText.textContent = 'Above the 115% red threshold. Immediate sporting sanction, points deduction applied to the current season. The Premier League\'s strictest penalty tier.';
   }
 }
@@ -2063,7 +2175,7 @@ const trendsData = {
   revenue: {
     title: 'Turnover (£m)',
     values: [141.9, 181.6, 194.8],
-    color: '#0a0a0a',
+    color: '#9d8bff',
     big: '+£52.9m',
     label: '3-year growth',
     desc: 'Revenue has climbed from £141.9m in 2022/23 to £194.8m in 2024/25, a 37% rise over three years, driven by PL central awards, commercial growth, and improving league finishes.'
@@ -2071,7 +2183,7 @@ const trendsData = {
   wages: {
     title: 'Staff costs (£m)',
     values: [118.4, 154.8, 166.5],
-    color: '#cc0000',
+    color: '#ff3b67',
     big: '+£48.1m',
     label: '3-year growth',
     desc: 'Wages have risen faster than revenue, from £118.4m to £166.5m. That 41% increase outpaces the 37% revenue rise, explaining why losses are widening despite growth.'
@@ -2079,7 +2191,7 @@ const trendsData = {
   loss: {
     title: 'Pre-tax loss (£m)',
     values: [-31.4, -31.2, -39.0],
-    color: '#8b0000',
+    color: '#cc0033',
     big: '-£7.6m',
     label: 'Widening each year',
     desc: 'Pre-tax losses have crept upwards. All three years hovering around £30-40m is a pattern that Shahid Khan has been willing to absorb, but incoming SCR rules will force tighter discipline.'
@@ -2087,7 +2199,7 @@ const trendsData = {
   ratio: {
     title: 'Wages as % of revenue',
     values: [83.4, 85.2, 85.4],
-    color: '#b8860b',
+    color: '#d4a015',
     big: '+2.0pp',
     label: '3-year movement',
     desc: 'The wage-to-revenue ratio has hovered stubbornly around 85%. Dangerously high by any measure, but the number isn\'t getting worse, which suggests some cost discipline is taking hold.'
@@ -2095,7 +2207,7 @@ const trendsData = {
   amort: {
     title: 'Player amortisation (£m)',
     values: [43.1, 57.4, 61.5],
-    color: '#b8935e',
+    color: '#d4af6e',
     big: '+£18.4m',
     label: '3-year growth',
     desc: 'Amortisation (non-cash cost of spreading transfer fees across contract length) has grown 43%, reflecting heavier investment in the squad. This shows up as a loss but doesn\'t drain cash.'
@@ -2123,7 +2235,11 @@ const trendsChart = new Chart(trendCtx, {
     plugins: {
       legend: { display: false },
       tooltip: {
-        backgroundColor: '#0a0a0a',
+        backgroundColor: 'rgba(6,7,15,0.95)',
+        titleColor: '#f5f6fa',
+        bodyColor: '#f5f6fa',
+        borderColor: 'rgba(255,255,255,0.10)',
+        borderWidth: 1,
         titleFont: { family: 'JetBrains Mono', size: 10 },
         bodyFont: { family: 'Inter Tight', size: 13, weight: 600 },
         padding: 12,
@@ -2139,13 +2255,13 @@ const trendsChart = new Chart(trendCtx, {
     scales: {
       x: {
         grid: { display: false },
-        ticks: { font: { family: 'JetBrains Mono', size: 11 }, color: '#0a0a0a' }
+        ticks: { font: { family: 'JetBrains Mono', size: 11 }, color: 'rgba(245,246,250,0.65)' }
       },
       y: {
-        grid: { color: 'rgba(10,10,10,0.06)' },
+        grid: { color: 'rgba(245,246,250,0.06)' },
         ticks: {
           font: { family: 'JetBrains Mono', size: 10 },
-          color: 'rgba(10,10,10,0.5)',
+          color: 'rgba(245,246,250,0.5)',
           callback: v => activeMetric === 'ratio' ? `${v}%` : `£${v}m`
         }
       }
@@ -2205,11 +2321,11 @@ peerData.forEach(p => {
   const colorStop2 = (85 / p.ratio * 100).toFixed(1);
   let bgGradient;
   if (p.ratio <= 70) {
-    bgGradient = '#2d5016';
+    bgGradient = '#4a8060';
   } else if (p.ratio <= 85) {
-    bgGradient = `linear-gradient(to right, #2d5016 0%, #2d5016 ${colorStop1}%, #b8860b ${colorStop1}%, #b8860b 100%)`;
+    bgGradient = `linear-gradient(to right, #4a8060 0%, #4a8060 ${colorStop1}%, #d4a015 ${colorStop1}%, #d4a015 100%)`;
   } else {
-    bgGradient = `linear-gradient(to right, #2d5016 0%, #2d5016 ${colorStop1}%, #b8860b ${colorStop1}%, #b8860b ${colorStop2}%, #8b0000 ${colorStop2}%, #8b0000 100%)`;
+    bgGradient = `linear-gradient(to right, #4a8060 0%, #4a8060 ${colorStop1}%, #d4a015 ${colorStop1}%, #d4a015 ${colorStop2}%, #cc0033 ${colorStop2}%, #cc0033 100%)`;
   }
   row.innerHTML = `
     <div class="peer-club">${p.club}</div>
@@ -2288,9 +2404,9 @@ function updateScenarioSlider(scene) {
   scenarioSliderEl.style.left = `${btn.offsetLeft}px`;
   scenarioSliderEl.style.width = `${btn.offsetWidth}px`;
   if (scene === 'relegation' || scene === 'championship') {
-    scenarioSliderEl.style.background = '#8b0000';
+    scenarioSliderEl.style.background = '#cc0033';
   } else {
-    scenarioSliderEl.style.background = '#0a0a0a';
+    scenarioSliderEl.style.background = '#9d8bff';
   }
 }
 

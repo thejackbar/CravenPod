@@ -52,47 +52,107 @@ The articles are built as **single-file HTML dashboards**: no framework, no buil
 
 ## 4. Design system (read this before making any visual changes)
 
-The site has a deliberate editorial / newsprint aesthetic that should be preserved across new pages and articles.
+The site has a "Frosted Touch" aesthetic: dark layered atmosphere, translucent glass panels, soft diffused shadows, rounded corners, gradient accents. Modern but tactile. The previous editorial / newsprint cream palette has been retired. The canonical implementation is in `index.html`; new pages and articles should adopt the same tokens and patterns.
 
 ### Colour palette (CSS variables in `:root`)
 
 ```css
---ink: #0a0a0a          /* primary text, dark sections */
---paper: #f4f1ea        /* default background, warm off-white */
---paper-dark: #e8e3d6   /* secondary background */
---accent: #cc0000       /* crimson, sparingly, for emphasis */
---accent-soft: #8b0000  /* deeper red for danger/red zones */
---gold: #b8935e         /* warm accent */
---ok: #2d5016           /* green signals */
---warn: #b8860b         /* amber signals */
---danger: #8b0000       /* red signals */
---rule: rgba(10,10,10,0.15)  /* hairlines */
---muted: rgba(10,10,10,0.6)  /* secondary text */
+/* base atmosphere */
+--bg-0: #06070f;             /* deepest layer */
+--bg-1: #0a0d1c;             /* mid layer */
+--bg-2: #0e1226;             /* lift layer */
+
+/* glass surfaces */
+--glass:              rgba(255,255,255,0.05);  /* default panel */
+--glass-strong:       rgba(255,255,255,0.09);  /* hover / lifted */
+--glass-edge:         rgba(255,255,255,0.10);  /* hairline borders */
+--glass-edge-strong:  rgba(255,255,255,0.20);  /* hover borders */
+
+/* text */
+--ink:      #f5f6fa                  /* primary text */
+--ink-soft: rgba(245,246,250,0.78)   /* secondary text */
+--ink-mute: rgba(245,246,250,0.55)   /* labels, metadata */
+
+/* brand accents */
+--accent:      #ff3b67                  /* primary accent (warm crimson) */
+--accent-deep: #cc0033                  /* deeper crimson for solid blocks */
+--accent-glow: rgba(255,59,103,0.40)    /* halo / glow shadow colour */
+--gold:        #d4af6e
+--aqua:        #6ec3d4
+--violet:      #9d8bff
+
+/* shadows */
+--shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+--shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+--shadow-lg: 0 32px 80px -20px rgba(0,0,0,0.58);
+
+/* radius scale */
+--r-sm:   10px;
+--r-md:   16px;
+--r-lg:   22px;
+--r-pill: 999px;
 ```
+
+### Body atmosphere
+
+The `body` carries a fixed multi-layer radial gradient on top of `--bg-0`, with a low-opacity SVG grain overlay via `body::before`. Frosted glass panels are layered above this, picking up the colour wash through `backdrop-filter: blur(...)`. Don't override the body background on inner sections, the atmosphere should bleed through.
+
+```css
+body {
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse  900px 760px at 94% 10%, rgba(204,0,51,0.20)    0%, transparent 60%),
+    radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(110,195,212,0.11) 0%, transparent 70%),
+    linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+  background-attachment: fixed;
+}
+```
+
+### Glass panel pattern
+
+Reuse this recipe for any card, sticky bar, footer panel, or content surface:
+
+```css
+.glass-panel {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-lg);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.glass-panel:hover { border-color: var(--glass-edge-strong); }
+```
+
+The inset top highlight is what sells the "lit edge" glass look — keep it. Always include both `-webkit-backdrop-filter` and `backdrop-filter` for Safari support.
 
 ### Typography (all Google Fonts)
 
-- **Fraunces**: display serif with variable italic. Used for headlines, pull quotes, and big numbers.
-- **JetBrains Mono**: monospace. Used for kicker labels, metadata, technical micro-copy. Always uppercase, letter-spacing `0.15em` to `0.3em`.
-- **Inter Tight**: body sans-serif. Used for regular paragraph text and UI.
+- **Bricolage Grotesque** (variable, opsz 12..96, wdth 75..100, wght 200..800): display sans for headlines, big numbers, the logo. No italic faces — emphasis is conveyed by weight contrast (e.g. surrounding text at 800, emphasis word at 300) plus a gradient text clip.
+- **Inter Tight** (regular + italic, weights 400–700): body text, italic descriptors (taglines, captions, marquee items), buttons.
+- **JetBrains Mono** (weights 400/500/700): monospace for kicker labels, metadata, technical micro-copy. Always uppercase, letter-spacing `0.15em` to `0.3em`.
 
-**Never use default system fonts or Arial/Helvetica/Inter/Roboto defaults.** If adding a font weight, add it to the Google Fonts URL.
+**Bricolage Grotesque tops out at 800.** Don't use `font-weight: 900`. **Never use default system fonts.** If adding a font weight or axis, update the Google Fonts URL.
 
 ### Key design moves
 
-- **Grain texture overlay**: SVG noise filter applied via `body::before` at 30% opacity
-- **Radial gradient atmospheres**: subtle soft-focus colour washes positioned off-axis
-- **Editorial numbering**: sections prefixed with `§ 01`, `§ 02`, etc. in monospace
-- **Crimson punctuation**: the accent colour should appear sparingly as emphasis, never as a background flood
-- **Italic display type**: Fraunces italic used for the emphasis word in headlines (as in "The *long way round*")
+- **Body gradient atmosphere**: violet + crimson + aqua radial blobs on a deep charcoal-blue base, fixed-attached so it stays put on scroll
+- **SVG grain**: `body::before` at 0.18 opacity adds tactility without muddying the dark field
+- **Frosted glass panels**: every card / sticky bar / footer surface uses the glass-panel recipe
+- **Crimson gradient on emphasis**: the linear-gradient `#ff3b67 → #ff7a8a → #ffb1a6` clipped to text is the brand emphasis. Reserve it for one or two phrases per page
+- **Pill buttons**: `.btn-primary` (filled accent + glow shadow), `.btn-ghost` (glass surface). See `index.html` for the canonical classes
+- **Editorial numbering**: sections still prefixed with `§ 01`, `§ 02` in monospace (carried over from the editorial era)
 - **Asymmetric layouts**: grids are rarely 50/50. Use 1.4fr/1fr or 2fr/1fr to create visual tension
-- **Hairline borders**: `1px solid var(--rule)` on cards, never thick borders
+- **Hairline borders**: `1px solid var(--glass-edge)` on cards, never thick borders
 
 ### Mobile design rules
 
 **Never use negative margins on top-level sections.** A previous bug had `margin: 0 -40px` on full-bleed coloured sections which caused 40px of horizontal overflow on mobile. These sections (`.rev-container`, `.peer-container`, `.scr-section`, `.khan-section`, `.verdict`) are siblings of the main content, not children, they span the viewport naturally.
 
 **Reveal animations don't play well with Chart.js.** Any element containing a canvas that Chart.js measures cannot have `transform: translateY()` applied. Keep `.reveal` off chart containers.
+
+**Backdrop-filter on iOS Safari**: works, but layering many translucent panels can hurt scroll FPS on older devices. If a page has more than ~10 frosted panels in view at once, consider trimming to fewer larger panels rather than many small ones.
 
 ---
 
