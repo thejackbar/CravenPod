@@ -89,7 +89,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    background: var(--paper);
+    background: var(--glass);
     position: relative;
     z-index: 10;
   }
@@ -158,7 +158,7 @@
     font-size: clamp(18px, 2vw, 24px);
     line-height: 1.4;
     max-width: 720px;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
     font-weight: 400;
   }
 
@@ -176,18 +176,18 @@
     z-index: 2;
   }
   .marquee-item {
-    background: var(--paper);
+    background: var(--glass);
     padding: 8px 24px;
     cursor: pointer;
     transition: background 0.3s ease;
   }
-  .marquee-item:hover { background: var(--paper-dark); }
+  .marquee-item:hover { background: var(--glass); }
   .marquee-item .label {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(10,10,10,0.55);
+    color: rgba(245,246,250,0.55);
     margin-bottom: 8px;
   }
   .marquee-item .value {
@@ -205,20 +205,20 @@
   }
   .delta.up { color: var(--ok); }
   .delta.down { color: var(--danger); }
-  .delta.flat { color: rgba(10,10,10,0.5); }
+  .delta.flat { color: rgba(245,246,250,0.5); }
 
   /* ============ NAV ============ */
   .sec-nav {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 14px 40px;
     display: flex;
     gap: 0;
     overflow-x: auto;
-    border-bottom: 1px solid rgba(244,241,234,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   .sec-nav a {
     color: var(--paper);
@@ -228,7 +228,7 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     padding: 8px 20px;
-    border-right: 1px solid rgba(244,241,234,0.1);
+    border-right: 1px solid rgba(255,255,255,0.1);
     white-space: nowrap;
     transition: color 0.2s, background 0.2s;
   }
@@ -267,7 +267,7 @@
     font-size: 20px;
     line-height: 1.5;
     max-width: 760px;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
     margin-bottom: 60px;
   }
 
@@ -281,7 +281,7 @@
   @media (max-width: 900px) { .pl-grid { grid-template-columns: 1fr; } }
 
   .chart-wrap {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 32px;
     position: relative;
@@ -344,7 +344,7 @@
 
   /* ============ REVENUE EXPLORER ============ */
   .rev-container {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 60px 40px;
     border-radius: 0;
@@ -369,7 +369,7 @@
   .rev-sub {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 17px;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     margin-bottom: 32px;
     line-height: 1.5;
   }
@@ -379,14 +379,14 @@
     grid-template-columns: 1fr auto;
     gap: 16px;
     padding: 16px 20px;
-    background: rgba(244,241,234,0.05);
+    background: rgba(255,255,255,0.05);
     cursor: pointer;
     transition: all 0.3s ease;
     border-left: 3px solid transparent;
     position: relative;
   }
   .rev-item:hover {
-    background: rgba(244,241,234,0.1);
+    background: rgba(255,255,255,0.1);
     border-left-color: var(--accent);
     padding-left: 24px;
   }
@@ -418,7 +418,7 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, margin-top 0.4s ease;
@@ -436,7 +436,7 @@
     margin-top: 40px;
   }
   .concern-card {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 32px 28px;
     position: relative;
@@ -444,7 +444,7 @@
   }
   .concern-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(10,10,10,0.15);
+    box-shadow: var(--shadow-md);
   }
   .concern-card.red { border-top: 4px solid var(--danger); }
   .concern-card.amber { border-top: 4px solid var(--warn); }
@@ -481,7 +481,7 @@
   .concern-desc {
     font-size: 15px;
     line-height: 1.5;
-    color: rgba(10,10,10,0.7);
+    color: rgba(245,246,250,0.7);
   }
 
   /* ============ SCR CALCULATOR ============ */
@@ -503,7 +503,7 @@
   @media (max-width: 900px) { .scr-grid { grid-template-columns: 1fr; } }
 
   .scr-calc {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 40px;
     position: relative;
@@ -535,7 +535,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
   }
   .slider-label .val {
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -546,7 +546,7 @@
     -webkit-appearance: none;
     width: 100%;
     height: 4px;
-    background: rgba(244,241,234,0.2);
+    background: rgba(255,255,255,0.2);
     outline: none;
     border-radius: 0;
   }
@@ -571,12 +571,12 @@
   .scr-gauge {
     margin-top: 40px;
     padding-top: 32px;
-    border-top: 1px solid rgba(244,241,234,0.15);
+    border-top: 1px solid rgba(255,255,255,0.15);
   }
   .gauge-track {
     position: relative;
     height: 50px;
-    background: rgba(244,241,234,0.08);
+    background: rgba(255,255,255,0.08);
     margin: 20px 0 12px;
     overflow: hidden;
   }
@@ -591,7 +591,7 @@
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(244,241,234,0.4);
+    color: rgba(255,255,255,0.4);
   }
   .gauge-zone.green { left: 0; width: 73.9%; background: rgba(45,80,22,0.4); }
   .gauge-zone.amber { left: 73.9%; width: 26.1%; background: rgba(184,134,11,0.4); }
@@ -601,7 +601,7 @@
     top: -8px;
     bottom: -8px;
     width: 3px;
-    background: var(--paper);
+    background: var(--glass);
     transition: left 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
     z-index: 5;
   }
@@ -635,12 +635,12 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.1em;
-    color: rgba(244,241,234,0.5);
+    color: rgba(255,255,255,0.5);
   }
   .scr-verdict {
     margin-top: 32px;
     padding: 20px;
-    background: rgba(244,241,234,0.05);
+    background: rgba(255,255,255,0.05);
     border-left: 3px solid var(--accent);
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 17px;
@@ -649,7 +649,7 @@
   }
 
   .scr-explain {
-    background: var(--paper);
+    background: var(--glass);
     padding: 40px;
     border: 1px solid var(--rule);
   }
@@ -665,7 +665,7 @@
     font-size: 17px;
     line-height: 1.6;
     margin-bottom: 16px;
-    color: rgba(10,10,10,0.8);
+    color: rgba(245,246,250,0.8);
   }
   .rule-compare {
     display: grid;
@@ -676,7 +676,7 @@
   .rule-box {
     padding: 20px;
     border: 1px solid var(--rule);
-    background: #fff;
+    background: var(--glass);
   }
   .rule-box h4 {
     font-family: 'JetBrains Mono', monospace;
@@ -695,7 +695,7 @@
 
   /* ============ KHAN FACTOR ============ */
   .khan-section {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 100px 40px;
     position: relative;
@@ -735,7 +735,7 @@
   .khan-stat {
     border-left: 3px solid var(--accent);
     padding: 16px 24px;
-    background: rgba(244,241,234,0.03);
+    background: rgba(255,255,255,0.03);
   }
   .khan-stat-val {
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -750,13 +750,13 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     line-height: 1.4;
   }
 
   /* ============ BALANCE SHEET VIS ============ */
   .bs-viz {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 40px;
     margin-top: 40px;
@@ -772,7 +772,7 @@
   .bs-tabs {
     display: flex;
     gap: 4px;
-    background: var(--paper-dark);
+    background: var(--glass);
     padding: 4px;
   }
   .bs-tab {
@@ -788,7 +788,7 @@
     color: var(--ink);
   }
   .bs-tab.active {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
   }
   .bs-bars {
@@ -811,13 +811,13 @@
   }
   .bs-track {
     height: 28px;
-    background: var(--paper-dark);
+    background: var(--glass);
     position: relative;
     overflow: hidden;
   }
   .bs-fill {
     height: 100%;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     transform-origin: left;
     transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
   }
@@ -840,7 +840,7 @@
   }
   .insight {
     padding: 32px 28px;
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     position: relative;
   }
@@ -848,7 +848,7 @@
     position: absolute;
     top: -12px;
     left: 24px;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 4px 12px;
     font-family: 'JetBrains Mono', monospace;
@@ -866,7 +866,7 @@
   .insight p {
     font-size: 15px;
     line-height: 1.6;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
   }
   .insight .big {
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -880,7 +880,7 @@
 
   /* ============ VERDICT / FOOTER ============ */
   .verdict {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     padding: 100px 40px;
     text-align: center;
@@ -907,7 +907,7 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 18px;
     line-height: 1.6;
-    color: rgba(244,241,234,0.7);
+    color: rgba(255,255,255,0.7);
     max-width: 680px;
     margin: 32px auto 0;
   }
@@ -919,8 +919,8 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(10,10,10,0.5);
-    background: var(--paper);
+    color: rgba(245,246,250,0.5);
+    background: var(--glass);
     border-top: 1px solid var(--rule);
   }
 
@@ -930,8 +930,8 @@
     align-items: center;
     gap: 6px;
     background: transparent;
-    color: rgba(244,241,234,0.6);
-    border: 1px solid rgba(244,241,234,0.25);
+    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.25);
     padding: 6px 12px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -958,18 +958,18 @@
     transform: rotate(-360deg);
   }
   .reset-btn.light {
-    color: rgba(10,10,10,0.55);
-    border-color: rgba(10,10,10,0.2);
+    color: rgba(245,246,250,0.55);
+    border-color: rgba(245,246,250,0.2);
   }
   .reset-btn.light:hover {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
     border-color: var(--ink);
   }
 
   /* ============ TRENDS SECTION ============ */
   .trends-wrap {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 40px;
     margin-top: 40px;
@@ -994,18 +994,18 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    background: var(--paper-dark);
+    background: var(--glass);
     border: 1px solid transparent;
     cursor: pointer;
     transition: all 0.25s ease;
-    color: rgba(10,10,10,0.6);
+    color: rgba(245,246,250,0.6);
   }
   .metric-tab:hover {
     color: var(--ink);
     border-color: var(--rule);
   }
   .metric-tab.active {
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     color: var(--paper);
   }
   .trends-body {
@@ -1017,7 +1017,7 @@
   @media (max-width: 900px) { .trends-body { grid-template-columns: 1fr; } }
   .trend-callout {
     padding: 24px;
-    background: var(--paper);
+    background: var(--glass);
     border-left: 3px solid var(--accent);
   }
   .trend-callout .big {
@@ -1033,7 +1033,7 @@
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: rgba(10,10,10,0.55);
+    color: rgba(245,246,250,0.55);
     margin-bottom: 20px;
   }
   .trend-callout p {
@@ -1044,14 +1044,14 @@
 
   /* ============ PEER BENCHMARK ============ */
   .peer-container {
-    background: var(--paper-dark);
+    background: var(--glass);
     padding: 80px 40px;
     position: relative;
   }
   .peer-bars {
     max-width: 1520px;
     margin: 40px auto 0;
-    background: #fff;
+    background: var(--glass);
     padding: 40px;
     border: 1px solid var(--rule);
   }
@@ -1061,7 +1061,7 @@
     gap: 20px;
     align-items: center;
     padding: 14px 0;
-    border-bottom: 1px solid rgba(10,10,10,0.06);
+    border-bottom: 1px solid rgba(245,246,250,0.06);
     transition: background 0.2s;
   }
   .peer-row:last-child { border-bottom: none; }
@@ -1080,7 +1080,7 @@
   .peer-row.highlight .peer-club { font-weight: 800; color: var(--accent); }
   .peer-track {
     height: 18px;
-    background: var(--paper-dark);
+    background: var(--glass);
     position: relative;
     overflow: hidden;
   }
@@ -1122,14 +1122,14 @@
 
   /* ============ RELEGATION SCENARIO ============ */
   .scenario-wrap {
-    background: #fff;
+    background: var(--glass);
     border: 1px solid var(--rule);
     padding: 40px;
     margin-top: 40px;
   }
   .scenario-toggle {
     display: inline-flex;
-    background: var(--paper-dark);
+    background: var(--glass);
     padding: 4px;
     margin-bottom: 40px;
     position: relative;
@@ -1143,7 +1143,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(10,10,10,0.5);
+    color: rgba(245,246,250,0.5);
     transition: color 0.3s;
     position: relative;
     z-index: 2;
@@ -1153,7 +1153,7 @@
     position: absolute;
     top: 4px;
     bottom: 4px;
-    background: var(--ink);
+    background: rgba(6,7,15,0.55);
     transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
     z-index: 1;
   }
@@ -1168,7 +1168,7 @@
   .scenario-card {
     padding: 24px;
     border: 1px solid var(--rule);
-    background: var(--paper);
+    background: var(--glass);
     transition: all 0.4s ease;
   }
   .scenario-card.impact { border-color: var(--danger); border-width: 2px; }
@@ -1177,7 +1177,7 @@
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: rgba(10,10,10,0.55);
+    color: rgba(245,246,250,0.55);
     margin-bottom: 12px;
   }
   .scenario-value {
@@ -1202,7 +1202,7 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 15px;
     line-height: 1.5;
-    color: rgba(10,10,10,0.75);
+    color: rgba(245,246,250,0.75);
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid var(--rule);
@@ -1232,12 +1232,79 @@
     font-weight: 800;
     font-size: 160px;
     line-height: 1;
-    color: rgba(10,10,10,0.04);
+    color: rgba(245,246,250,0.04);
     position: absolute;
     pointer-events: none;
     user-select: none;
     z-index: 0;
   }
+
+  /* ============ FROSTED OVERRIDES ============ */
+  /* Major dark sections — add backdrop-filter + glass-edge borders */
+  .rev-container,
+  .peer-container,
+  .scr-section,
+  .khan-section,
+  .verdict,
+  .marquee {
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+            backdrop-filter: blur(22px) saturate(140%);
+    border-top: 1px solid var(--glass-edge);
+    border-bottom: 1px solid var(--glass-edge);
+  }
+
+  /* Cards — round corners, glass edge, soft shadow + lit-edge highlight */
+  .concern-card,
+  .scenario-card,
+  .insight,
+  .scr-calc,
+  .scr-explain,
+  .scr-verdict,
+  .khan-stat,
+  .bs-viz,
+  .trends-wrap,
+  .scenario-wrap,
+  .peer-bars,
+  .chart-wrap,
+  .pl-card,
+  .fact-card,
+  .stat-card {
+    border-radius: var(--r-md);
+    border-color: var(--glass-edge);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+            backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+
+  /* Masthead becomes sticky frosted bar */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--glass-edge);
+    background: rgba(10,13,28,0.60) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+            backdrop-filter: blur(22px) saturate(140%);
+  }
+
+  /* Buttons that previously used dark ink fill go to accent + glow */
+  button.calc-reset,
+  .scr-reset,
+  .calc-submit,
+  .toggle-btn,
+  .tab-btn.active,
+  .scenario-tab.active {
+    background: var(--accent);
+    color: #fff;
+    border-color: transparent;
+    border-radius: var(--r-pill);
+    box-shadow: 0 0 24px var(--accent-glow);
+  }
+
+  /* Concern badges – flip to higher-contrast on dark */
+  .red .concern-badge { background: var(--danger); color: #fff; }
+  .amber .concern-badge { background: var(--warn); color: var(--bg-1); }
+  .green .concern-badge { background: var(--ok); color: #fff; }
 
   /* Responsive */
   @media (max-width: 900px) {
@@ -1346,7 +1413,7 @@
 <header class="masthead">
   <a href="/" class="brand-link" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
     <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--accent);">← THAT'S SO CRAVEN</span>
-    <span style="color: rgba(10,10,10,0.25);">/</span>
+    <span style="color: rgba(245,246,250,0.25);">/</span>
     <span class="brand">THE LEDGER</span>
   </a>
   <div class="meta">
@@ -1573,7 +1640,7 @@
         <div class="peer-legend-item"><span class="swatch" style="background:#8b0000;"></span>SCR red zone (≥85%)</div>
       </div>
       <div style="margin-top: 32px;" id="peerBars"></div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(10,10,10,0.4); margin-top: 24px; text-align: center;">
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(245,246,250,0.4); margin-top: 24px; text-align: center;">
         Source: Most recent published accounts (2023/24). Fulham figure is 2024/25. Illustrative comparison only.
       </p>
     </div>
@@ -1685,10 +1752,10 @@
           Fulham aren't just "losing money."<br>
           They're being <em>capitalised</em> by a billionaire who treats the club as part of a wider sports empire.
         </p>
-        <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; line-height: 1.6; margin-top: 32px; color: rgba(244,241,234,0.75);">
+        <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; line-height: 1.6; margin-top: 32px; color: rgba(255,255,255,0.75);">
           Shahid Khan's net worth is estimated in the billions. He also owns the Jacksonville Jaguars (NFL), All Elite Wrestling (AEW), and owns Flex-N-Gate, a $20bn+ auto parts empire. Fulham's £39m annual loss is, by his standards, a rounding error, and he's been an unbroken source of funding since buying the club in 2013.
         </p>
-        <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; line-height: 1.6; margin-top: 16px; color: rgba(244,241,234,0.75);">
+        <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; line-height: 1.6; margin-top: 16px; color: rgba(255,255,255,0.75);">
           The accounts themselves tell the story: during this year alone, the owner's group converted <strong style="color: var(--paper);">£145.2m</strong> of loans into equity, and then poured in <strong style="color: var(--paper);">another £62.7m</strong> after year-end. K2TR Family Holdings 2 has formally stated its intent to keep providing support for as long as the club needs it.
         </p>
       </div>
@@ -1733,7 +1800,7 @@
       <!-- Populated by JS -->
     </div>
 
-    <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; line-height: 1.6; color: rgba(10,10,10,0.7); margin-top: 32px; max-width: 780px;">
+    <p style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; line-height: 1.6; color: rgba(245,246,250,0.7); margin-top: 32px; max-width: 780px;">
       <strong>The bottom line:</strong> even in a relegation scenario, parachute payments soften the blow for 2–3 seasons. Fulham would face a painful year but the owner's track record suggests he'd fund it. The real risk isn't insolvency, it's the long, slow decline clubs sometimes enter when they can't bounce straight back.
     </p>
   </div>
@@ -1880,10 +1947,10 @@ new Chart(wfCtx, {
         }
       },
       y: {
-        grid: { color: 'rgba(10,10,10,0.06)' },
+        grid: { color: 'rgba(245,246,250,0.06)' },
         ticks: {
           font: { family: 'JetBrains Mono', size: 10 },
-          color: 'rgba(10,10,10,0.5)',
+          color: 'rgba(245,246,250,0.5)',
           callback: v => `£${v}m`
         }
       }
@@ -1946,7 +2013,7 @@ revenueData.forEach((r, i) => {
   el.dataset.idx = i;
   el.innerHTML = `
     <div class="rev-item-name">${r.name}</div>
-    <div class="rev-item-val">£${(r.value / 1000).toFixed(1)}m <span style="color:rgba(244,241,234,0.5); margin-left:8px; font-size:11px;">${yoyStr}</span></div>
+    <div class="rev-item-val">£${(r.value / 1000).toFixed(1)}m <span style="color:rgba(255,255,255,0.5); margin-left:8px; font-size:11px;">${yoyStr}</span></div>
     <div class="rev-item-bar" style="transform: scaleX(${r.value / maxRev});"></div>
     <div class="rev-item-desc">${r.desc}</div>
   `;
@@ -2181,10 +2248,10 @@ const trendsChart = new Chart(trendCtx, {
         ticks: { font: { family: 'JetBrains Mono', size: 11 }, color: '#0a0a0a' }
       },
       y: {
-        grid: { color: 'rgba(10,10,10,0.06)' },
+        grid: { color: 'rgba(245,246,250,0.06)' },
         ticks: {
           font: { family: 'JetBrains Mono', size: 10 },
-          color: 'rgba(10,10,10,0.5)',
+          color: 'rgba(245,246,250,0.5)',
           callback: v => activeMetric === 'ratio' ? `${v}%` : `£${v}m`
         }
       }
