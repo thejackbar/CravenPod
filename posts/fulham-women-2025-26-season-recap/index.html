@@ -429,7 +429,11 @@
 
 
 <section style="padding: 80px 40px 0; max-width: 780px; margin: 0 auto; position: relative; z-index: 2;">
-  <div class="animate-in" style="margin-bottom: 20px;">
+  <div class="animate-in" style="margin-bottom: 20px; display:flex; align-items:center; gap:16px;">
+    <img src="https://r2.thesportsdb.com/images/media/team/badge/xwwvyt1448811086.png"
+         alt="Fulham FC Women"
+         width="64" height="64"
+         style="border-radius:50%; filter:drop-shadow(0 0 18px rgba(255,59,103,0.45)); flex-shrink:0;">
     <span style="font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.28em; color:var(--accent);">Season Review · 2025/26 · FAWNL Division One South East</span>
   </div>
   <h1 class="animate-in delay-1" style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(54px,9vw,110px); line-height:0.88; letter-spacing:-0.04em; color:var(--ink); margin-bottom:28px;">
@@ -612,6 +616,11 @@
         </div>
         <div class="cup-round-body">
           <div class="cup-round-tag">Quarter-Final · February 2026</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <img src="https://r2.thesportsdb.com/images/media/team/badge/xwwvyt1448811086.png" width="28" height="28" style="border-radius:3px;object-fit:contain;" alt="Fulham">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-mute);">vs</span>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Atletico London"><path d="M14 2L4 6.5v7c0 6.4 4.3 12.4 10 13.8 5.7-1.4 10-7.4 10-13.8v-7L14 2z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/></svg>
+          </div>
           <div class="cup-round-result">Fulham 4–1 Atletico London</div>
           <p class="cup-round-detail">A comfortable home win to reach the last four, with Fulham scoring four without reply after the opener.</p>
         </div>
@@ -624,6 +633,11 @@
         </div>
         <div class="cup-round-body">
           <div class="cup-round-tag">Semi-Final · 19 April 2026 · Motspur Park</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <img src="https://r2.thesportsdb.com/images/media/team/badge/xwwvyt1448811086.png" width="28" height="28" style="border-radius:3px;object-fit:contain;" alt="Fulham">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-mute);">vs</span>
+            <img src="https://r2.thesportsdb.com/images/media/team/badge/dfyfhl1604094109.png" width="28" height="28" style="border-radius:3px;object-fit:contain;" alt="Tottenham Hotspur">
+          </div>
           <div class="cup-round-result">Fulham 2–1 Tottenham Hotspur Academy</div>
           <p class="cup-round-detail">Kayleigh Stead struck inside two minutes. Spurs pulled level through Ruby Gaitely in the 58th. Stella Gandee Morgan restored the lead with 12 minutes left and Fulham held on to reach the final.</p>
         </div>
@@ -636,6 +650,11 @@
         </div>
         <div class="cup-round-body">
           <div class="cup-round-tag">Final · 28 April 2026 · VBS Community Stadium</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <img src="https://r2.thesportsdb.com/images/media/team/badge/xwwvyt1448811086.png" width="28" height="28" style="border-radius:3px;object-fit:contain;" alt="Fulham">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--ink-mute);">vs</span>
+            <img src="https://r2.thesportsdb.com/images/media/team/badge/md7iqx1684129667.png" width="28" height="28" style="border-radius:3px;object-fit:contain;" alt="AFC Wimbledon">
+          </div>
           <div class="cup-round-result gold">Fulham 1–0 AFC Wimbledon</div>
           <p class="cup-round-detail">A tense final settled by a single goal. Ellie Olds, with two minutes remaining, found the net to give Fulham the Capital Women's Cup and complete a league and cup double.</p>
         </div>
@@ -764,6 +783,19 @@ const WIN_COL  = '#6ee89a';
 const DRAW_COL = '#d4af6e';
 let active = null;
 
+const badges = {
+  'Cambridge United': 'https://r2.thesportsdb.com/images/media/team/badge/ggihm61750279411.png',
+  'Norwich City':     'https://r2.thesportsdb.com/images/media/team/badge/pabczm1679951464.png',
+  'Dulwich Hamlet':   'https://r2.thesportsdb.com/images/media/team/badge/jt4evu1682546086.png',
+  'Chatham Town':     'https://r2.thesportsdb.com/images/media/team/badge/or5vzk1703219410.png',
+  'Chesham United':   'https://r2.thesportsdb.com/images/media/team/badge/wyc80m1682317440.png',
+  'QPR':              'https://r2.thesportsdb.com/images/media/team/badge/l4qscx1601721022.png',
+  'AFC Sudbury':      'https://r2.thesportsdb.com/images/media/team/badge/ejq6501685648309.png',
+  'MK Dons':          'https://r2.thesportsdb.com/images/media/team/badge/9hx41b1748524969.png',
+  'London Bees':      'https://r2.thesportsdb.com/images/media/team/badge/y7n3ar1610532640.png',
+  'Luton Town':       'https://r2.thesportsdb.com/images/media/team/badge/v977eh1681319466.png',
+};
+
 const detailCache = matches.map(m => {
   const isW      = m.result === 'W';
   const scoreCol = isW ? WIN_COL : DRAW_COL;
@@ -771,8 +803,13 @@ const detailCache = matches.map(m => {
   const noteHtml = m.note
     ? `<span style="display:inline-block;margin-left:12px;padding:3px 8px;background:rgba(255,59,103,0.15);border:1px solid rgba(255,59,103,0.3);border-radius:4px;font-size:9px;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;">${m.note}</span>`
     : '';
-  return `<div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;">
+  const badgeUrl  = badges[m.opp];
+  const badgeHtml = badgeUrl
+    ? `<img src="${badgeUrl}" width="28" height="28" style="border-radius:3px;object-fit:contain;flex-shrink:0;" onerror="this.style.display='none'">`
+    : '';
+  return `<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
     <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;letter-spacing:-0.02em;color:${scoreCol};">${m.score}</span>
+    ${badgeHtml}
     <span style="font-family:'Inter Tight',sans-serif;font-size:16px;color:var(--ink);">${m.opp}</span>
     <span style="font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.2em;color:var(--ink-mute);">${venue} · ${m.date}</span>
     ${noteHtml}
