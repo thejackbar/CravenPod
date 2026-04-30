@@ -16,7 +16,95 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* CSS_PLACEHOLDER */
+:root {
+  /* base atmosphere */
+  --bg-0: #06070f;
+  --bg-1: #0a0d1c;
+  --bg-2: #0e1226;
+
+  /* text */
+  --ink:      #f5f6fa;
+  --ink-soft: rgba(245,246,250,0.78);
+  --ink-mute: rgba(245,246,250,0.55);
+
+  /* legacy aliases */
+  --paper:      #f5f6fa;
+  --paper-dark: rgba(255,255,255,0.04);
+
+  /* glass surfaces */
+  --glass:             rgba(255,255,255,0.05);
+  --glass-strong:      rgba(255,255,255,0.09);
+  --glass-edge:        rgba(255,255,255,0.10);
+  --glass-edge-strong: rgba(255,255,255,0.20);
+
+  /* brand accents */
+  --accent:      #ff3b67;
+  --accent-soft: #cc0033;
+  --accent-glow: rgba(255,59,103,0.40);
+  --gold:        #d4af6e;
+
+  /* team palette */
+  --gunners:           #db0007;
+  --gunners-light:     #ef4444;
+  --gunners-deep:      #9b0000;
+  --fulham-green:      #5a8c70;
+  --fulham-green-light:#6ea585;
+
+  /* status */
+  --ok:     #4a8060;
+  --warn:   #d4a015;
+  --danger: #ff5577;
+
+  /* utility */
+  --rule:  rgba(255,255,255,0.10);
+  --muted: rgba(245,246,250,0.55);
+
+  /* shadows + radius */
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+  --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+  --r-sm:   10px;
+  --r-md:   16px;
+  --r-lg:   22px;
+  --r-pill: 999px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;color-scheme:dark}
+body{font-family:'Inter Tight', sans-serif;color:var(--ink);line-height:1.5;overflow-x:hidden;background-color:var(--bg-0);background-image:radial-gradient(ellipse 1100px 700px at 8% -8%, rgba(157,139,255,0.22) 0%, transparent 60%),radial-gradient(ellipse 900px 760px at 94% 10%, rgba(219,0,7,0.22) 0%, transparent 60%),radial-gradient(ellipse 1100px 900px at 50% 108%, rgba(110,195,212,0.11) 0%, transparent 70%),linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);background-attachment:fixed}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
+a{color:inherit}
+
+/* ========== MASTHEAD ========== */
+.masthead{position:sticky;top:0;z-index:50;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(10,13,28,0.60);border-bottom:1px solid var(--glass-edge);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%)}
+.brand-link{text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px}
+.brand{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em}
+.back-link{font-family:'JetBrains Mono', monospace;font-size:11px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase}
+.masthead .meta{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;display:flex;gap:24px}
+.masthead .meta span::before{content:'●';margin-right:6px;color:var(--gunners-light)}
+
+/* ========== MATCH HERO ========== */
+.match-hero{background:rgba(6,7,15,0.55);color:var(--ink);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:80px 40px 60px;position:relative;z-index:2;overflow:hidden}
+.match-hero::before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:rgba(255,255,255,0.08)}
+.match-hero::after{content:'';position:absolute;top:-50%;right:-10%;width:40%;height:200%;background:radial-gradient(circle, rgba(219,0,7,0.18) 0%, transparent 60%);pointer-events:none}
+.match-hero-inner{max-width:1200px;margin:0 auto;position:relative}
+.match-kicker{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:32px;text-align:center}
+.match-badge{display:flex;align-items:center;justify-content:center;gap:60px;margin-bottom:40px}
+.team-badge{text-align:center;flex:1;max-width:300px}
+.team-crest{width:90px;height:90px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.team-crest svg{width:100%;height:100%}
+.team-name{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:clamp(28px,5vw,48px);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.team-pos{font-family:'JetBrains Mono', monospace;font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,0.6)}
+.match-vs{font-family:'Bricolage Grotesque', sans-serif;font-weight:400;font-style:italic;font-size:24px;color:var(--accent);flex-shrink:0}
+.match-details{text-align:center;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1);display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.match-detail{display:flex;flex-direction:column;gap:4px}
+.match-detail-label{font-family:'JetBrains Mono', monospace;font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,0.5)}
+.match-detail-value{font-family:'Bricolage Grotesque', sans-serif;font-weight:600;font-size:18px}
+.match-tz{margin-top:12px;font-family:'JetBrains Mono', monospace;font-size:10px;letter-spacing:.15em;color:rgba(255,255,255,0.45);text-align:center}
+.prob-bar{display:flex;height:8px;border-radius:4px;overflow:hidden;max-width:500px;margin:24px auto 0;gap:2px}
+.prob-bar div{transition:width .8s ease}
+.prob-bar .home-prob{background:var(--gunners)}
+.prob-bar .draw-prob{background:rgba(255,255,255,0.4)}
+.prob-bar .away-prob{background:var(--fulham-green)}
+.prob-labels{display:flex;justify-content:space-between;max-width:500px;margin:8px auto 0;font-family:'JetBrains Mono', monospace;font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,0.6)}
 </style>
 </head>
 <body>
