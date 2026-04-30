@@ -187,6 +187,30 @@ a{color:inherit}
 .race-callout-num--accent{color:var(--fulham-green)}
 .race-callout-label{font-family:'Bricolage Grotesque', sans-serif;font-size:14px;line-height:1.5;color:var(--ink-soft)}
 
+/* ========== SCORERS ========== */
+.scorers-split{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px}
+.scorers-col-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--ink-mute);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.scorers-col-label .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.scorer-row{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--glass-edge)}
+.scorer-row:last-child{border-bottom:none}
+.scorer-num{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:22px;min-width:36px}
+.scorer-num.gunners{color:var(--gunners-light)}
+.scorer-num.whites{color:var(--fulham-green)}
+.scorer-name{font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:16px;flex:1}
+.scorer-bar-wrap{width:80px;height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden}
+.scorer-bar{height:100%;border-radius:3px;transition:width .8s cubic-bezier(.2,.9,.3,1)}
+.scorer-bar.gunners{background:var(--gunners)}
+.scorer-bar.whites{background:var(--fulham-green)}
+
+/* ========== STRENGTHS CALLOUT ========== */
+.strengths-panel{margin-top:48px;padding:32px 36px;background:linear-gradient(135deg, rgba(90,140,112,0.15), rgba(90,140,112,0.04));border:1px solid rgba(110,165,133,0.35);border-radius:var(--r-md)}
+.strengths-panel-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--fulham-green);margin-bottom:16px}
+.strengths-panel-title{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em;margin-bottom:12px}
+.strengths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.strength-item{padding:20px 22px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-edge);border-radius:var(--r-md)}
+.strength-item-num{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:40px;letter-spacing:-.03em;line-height:1;color:var(--fulham-green);margin-bottom:8px}
+.strength-item-label{font-family:'Bricolage Grotesque', sans-serif;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+
 /* ========== HEAD TO HEAD ========== */
 .h2h-container{background:rgba(6,7,15,0.55);color:var(--ink);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:80px 40px;position:relative;z-index:2}
 .h2h-inner{max-width:1400px;margin:0 auto}
@@ -364,6 +388,8 @@ a{color:inherit}
   .race-pos{font-size:18px}
   .race-team{font-size:15px;gap:8px}
   .race-callout-grid{grid-template-columns:repeat(2,1fr)}
+  .scorers-split{grid-template-columns:1fr}
+  .strengths-grid{grid-template-columns:1fr 1fr}
   .score-picker .score-val{font-size:44px}
   .pitch{aspect-ratio:2/2.8}
   .pitch-slot{width:56px;height:56px}
@@ -630,6 +656,148 @@ a{color:inherit}
       <div class="race-callout">
         <div class="race-callout-num race-callout-num--accent">51</div>
         <div class="race-callout-label">Points a Fulham win Saturday would take them to — potentially 6th</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- §03 KEY STATS -->
+<section class="section" id="key-stats">
+  <div class="section-label">By the numbers</div>
+  <h2 class="section-title">The statistical gulf</h2>
+  <p class="section-intro">Arsenal have the best attack and best defence in the Premier League this season. Fulham are mid-table in both — yet their Wilson–Jiménez axis has quietly racked up 19 goals between them. One moment of quality could change everything.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card reveal">
+      <div class="stat-card-label">Goals scored (34 games)</div>
+      <div class="stat-compare">
+        <div class="stat-team">
+          <div class="stat-team-name">Arsenal</div>
+          <div class="stat-value" style="color:var(--gunners-light)">64</div>
+        </div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team">
+          <div class="stat-team-name">Fulham</div>
+          <div class="stat-value" style="color:var(--fulham-green)">44</div>
+        </div>
+      </div>
+      <div class="stat-bar-track" style="margin-top:20px">
+        <div class="home" style="width:59.3%"></div>
+        <div class="away" style="width:40.7%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--ink-mute)">
+        <span>1.88/game</span><span>1.29/game</span>
+      </div>
+    </div>
+
+    <div class="stat-card reveal">
+      <div class="stat-card-label">Goals conceded (34 games)</div>
+      <div class="stat-compare">
+        <div class="stat-team">
+          <div class="stat-team-name">Arsenal</div>
+          <div class="stat-value" style="color:var(--gunners-light)">26</div>
+        </div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team">
+          <div class="stat-team-name">Fulham</div>
+          <div class="stat-value" style="color:var(--fulham-green)">46</div>
+        </div>
+      </div>
+      <div class="stat-bar-track" style="margin-top:20px">
+        <div class="home" style="width:36.1%"></div>
+        <div class="away" style="width:63.9%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--ink-mute)">
+        <span>0.76/game ↓</span><span>1.35/game ↑</span>
+      </div>
+    </div>
+
+    <div class="stat-card reveal">
+      <div class="stat-card-label">Clean sheets (34 games)</div>
+      <div class="stat-compare">
+        <div class="stat-team">
+          <div class="stat-team-name">Arsenal</div>
+          <div class="stat-value" style="color:var(--gunners-light)">16</div>
+        </div>
+        <div class="stat-vs-label">vs</div>
+        <div class="stat-team">
+          <div class="stat-team-name">Fulham</div>
+          <div class="stat-value" style="color:var(--fulham-green)">8</div>
+        </div>
+      </div>
+      <div class="stat-bar-track" style="margin-top:20px">
+        <div class="home" style="width:66.7%"></div>
+        <div class="away" style="width:33.3%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:6px;font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--ink-mute)">
+        <span>Most in PL</span><span>Back-to-back ↑</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top scorers -->
+  <div class="scorers-split">
+    <div>
+      <div class="scorers-col-label">
+        <span class="dot" style="background:var(--gunners)"></span>
+        Arsenal top scorers
+      </div>
+      <div class="scorer-row">
+        <span class="scorer-num gunners">12</span>
+        <span class="scorer-name">Viktor Gyökeres</span>
+        <div class="scorer-bar-wrap"><div class="scorer-bar gunners" style="width:100%"></div></div>
+      </div>
+      <div class="scorer-row">
+        <span class="scorer-num gunners">7</span>
+        <span class="scorer-name">Eberechi Eze</span>
+        <div class="scorer-bar-wrap"><div class="scorer-bar gunners" style="width:58%"></div></div>
+      </div>
+      <div class="scorer-row">
+        <span class="scorer-num gunners">6</span>
+        <span class="scorer-name">Bukayo Saka</span>
+        <div class="scorer-bar-wrap"><div class="scorer-bar gunners" style="width:50%"></div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="scorers-col-label">
+        <span class="dot" style="background:var(--fulham-green)"></span>
+        Fulham top scorers
+      </div>
+      <div class="scorer-row">
+        <span class="scorer-num whites">10</span>
+        <span class="scorer-name">Harry Wilson</span>
+        <div class="scorer-bar-wrap"><div class="scorer-bar whites" style="width:100%"></div></div>
+      </div>
+      <div class="scorer-row">
+        <span class="scorer-num whites">9</span>
+        <span class="scorer-name">Raúl Jiménez</span>
+        <div class="scorer-bar-wrap"><div class="scorer-bar whites" style="width:90%"></div></div>
+      </div>
+      <div class="scorer-row">
+        <span class="scorer-num whites">3</span>
+        <span class="scorer-name">Emile Smith Rowe</span>
+        <div class="scorer-bar-wrap"><div class="scorer-bar whites" style="width:30%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fulham strengths -->
+  <div class="strengths-panel reveal">
+    <div class="strengths-panel-label">Fulham strengths</div>
+    <h3 class="strengths-panel-title">Wilson &amp; Jiménez: the threat Arsenal can't ignore</h3>
+    <p style="font-family:'Bricolage Grotesque', sans-serif;font-size:16px;line-height:1.6;color:var(--ink-soft)">Harry Wilson's 10-goal, 6-assist season has been one of the quiet stories of 2025-26. Paired with the relentless movement of Jiménez, Fulham have scored from both wings and through the middle. Marco Silva's front two have accounted for <strong style="color:var(--ink)">43% of Fulham's league goals</strong> this season. Leno is in form, Cairney and Berge give structure in midfield, and back-to-back clean sheets have silenced questions about fragility at the back.</p>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="strength-item-num">19</div>
+        <div class="strength-item-label">Goals between Wilson &amp; Jiménez — Fulham's engine room</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-item-num">6</div>
+        <div class="strength-item-label">Wilson assists — most at Fulham this season</div>
+      </div>
+      <div class="strength-item">
+        <div class="strength-item-num">191'</div>
+        <div class="strength-item-label">Minutes since Fulham last conceded in the Premier League</div>
       </div>
     </div>
   </div>
