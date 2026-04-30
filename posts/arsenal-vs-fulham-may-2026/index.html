@@ -160,21 +160,32 @@ a{color:inherit}
 .race-container{background:rgba(6,7,15,0.55);color:var(--ink);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:80px 40px;position:relative;z-index:2}
 .race-inner{max-width:1100px;margin:0 auto}
 .race-table{margin-top:32px;display:flex;flex-direction:column;gap:6px}
-.race-row{display:grid;grid-template-columns:60px 1fr auto auto;align-items:center;gap:16px;padding:18px 22px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-edge);border-radius:var(--r-md);transition:background .25s, transform .25s}
+.race-header{display:grid;grid-template-columns:60px 1fr 72px 72px 64px;align-items:center;gap:16px;padding:8px 22px;font-family:'JetBrains Mono', monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute)}
+.race-row{display:grid;grid-template-columns:60px 1fr 72px 72px 64px;align-items:center;gap:16px;padding:18px 22px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-edge);border-radius:var(--r-md);transition:background .25s, transform .25s}
 .race-row:hover{background:rgba(255,255,255,0.07)}
 .race-row.is-fulham{background:rgba(90,140,112,0.18);border-color:rgba(110,165,133,0.45);box-shadow:0 0 0 1px rgba(110,165,133,0.20), 0 18px 50px -28px rgba(110,165,133,0.55)}
 .race-row.is-projected{background:linear-gradient(90deg, rgba(255,59,103,0.22), rgba(255,59,103,0.05));border-color:rgba(255,59,103,0.45);box-shadow:0 0 0 1px rgba(255,59,103,0.20)}
 .race-pos{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink-mute)}
 .race-row.is-fulham .race-pos,.race-row.is-projected .race-pos{color:var(--accent)}
-.race-team{font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:18px}
+.race-team{font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.race-team em{font-style:italic;color:var(--ink-soft);font-weight:400;font-size:15px}
 .race-tag{font-family:'JetBrains Mono', monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);padding:4px 10px;border:1px solid var(--glass-edge);border-radius:var(--r-pill)}
+.race-tag--green{color:var(--fulham-green);border-color:rgba(90,140,112,0.55)}
 .race-tag.eu{color:var(--gold);border-color:rgba(212,175,110,0.45)}
 .race-tag.win{color:var(--accent);border-color:rgba(255,59,103,0.55)}
-.race-pts{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:18px;letter-spacing:.05em;min-width:64px;text-align:right}
+.race-gd{font-family:'JetBrains Mono', monospace;font-size:15px;text-align:right}
+.race-gd--pos{color:#4ade80}
+.race-gd--neg{color:var(--danger)}
+.race-pts{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:18px;letter-spacing:.05em;text-align:right}
+.race-remain{font-family:'JetBrains Mono', monospace;font-size:14px;color:var(--ink-mute);text-align:right}
 .race-divider{height:1px;background:linear-gradient(90deg, transparent, rgba(212,175,110,0.45), transparent);margin:6px 0;position:relative}
 .race-divider::after{content:'EUROPA LEAGUE LINE';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(6,7,15,0.95);padding:0 12px;font-family:'JetBrains Mono', monospace;font-size:9px;letter-spacing:.25em;color:var(--gold)}
-.race-note{margin-top:24px;padding:20px 24px;background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-md);font-family:'Bricolage Grotesque', sans-serif;font-size:16px;line-height:1.5;color:var(--ink-soft)}
-.race-note strong{color:var(--accent);font-weight:700}
+.race-note{margin-top:24px;padding:20px 24px;background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-md);font-family:'Bricolage Grotesque', sans-serif;font-size:15px;line-height:1.5;color:var(--ink-mute)}
+.race-callout-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.race-callout{background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-md);padding:28px 24px;text-align:center}
+.race-callout-num{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:52px;letter-spacing:-.03em;line-height:1;color:var(--ink);margin-bottom:10px}
+.race-callout-num--accent{color:var(--fulham-green)}
+.race-callout-label{font-family:'Bricolage Grotesque', sans-serif;font-size:14px;line-height:1.5;color:var(--ink-soft)}
 
 /* ========== HEAD TO HEAD ========== */
 .h2h-container{background:rgba(6,7,15,0.55);color:var(--ink);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:80px 40px;position:relative;z-index:2}
@@ -346,10 +357,13 @@ a{color:inherit}
   .h2h-home,.h2h-away{font-size:13px}
   .h2h-score{font-size:14px;padding:4px 10px;min-width:55px}
   .stat-value{font-size:28px}
-  .race-row{grid-template-columns:44px 1fr auto;gap:10px;padding:14px 16px}
+  .race-header{display:none}
+  .race-row{grid-template-columns:44px 1fr auto auto;gap:10px;padding:14px 16px}
+  .race-remain{display:none}
   .race-tag{display:none}
   .race-pos{font-size:18px}
-  .race-team{font-size:15px}
+  .race-team{font-size:15px;gap:8px}
+  .race-callout-grid{grid-template-columns:repeat(2,1fr)}
   .score-picker .score-val{font-size:44px}
   .pitch{aspect-ratio:2/2.8}
   .pitch-slot{width:56px;height:56px}
@@ -496,6 +510,126 @@ a{color:inherit}
         <div class="form-match"><span>Liverpool 2-0 Fulham</span><span class="score">L</span><span class="venue">A</span></div>
         <div class="form-match"><span>Brentford 0-0 Fulham</span><span class="score">D</span><span class="venue">A</span></div>
         <div class="form-match"><span>Fulham 1-0 Aston Villa</span><span class="score">W</span><span class="venue">H</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- §02 EUROPEAN RACE -->
+<section class="race-container" id="european-race">
+  <div class="section-inner">
+    <div class="section-label">The European Race</div>
+    <h2 class="section-title">One win from Europe</h2>
+    <p class="section-intro">Fulham sit three points off the final Europa League place with four games remaining. A win at the Emirates would pull them level with Brighton — and potentially above them on goal difference. The table below shows exactly what's at stake.</p>
+
+    <div class="race-table">
+      <div class="race-header">
+        <span class="race-pos">Pos</span>
+        <span class="race-team">Club</span>
+        <span class="race-gd">GD</span>
+        <span class="race-pts">Pts</span>
+        <span class="race-remain">Left</span>
+      </div>
+
+      <div class="race-row">
+        <span class="race-pos">6th</span>
+        <span class="race-team">
+          <img src="https://resources.premierleague.com/premierleague/badges/t36.svg" width="22" height="22" alt="Brighton" loading="lazy">
+          Brighton
+        </span>
+        <span class="race-gd race-gd--pos">+14</span>
+        <span class="race-pts">50</span>
+        <span class="race-remain">4</span>
+      </div>
+
+      <div class="race-divider"></div>
+
+      <div class="race-row">
+        <span class="race-pos">7th</span>
+        <span class="race-team">
+          <img src="https://resources.premierleague.com/premierleague/badges/t91.svg" width="22" height="22" alt="Bournemouth" loading="lazy">
+          Bournemouth
+        </span>
+        <span class="race-gd race-gd--pos">+6</span>
+        <span class="race-pts">49</span>
+        <span class="race-remain">4</span>
+      </div>
+
+      <div class="race-row">
+        <span class="race-pos">8th</span>
+        <span class="race-team">
+          <img src="https://resources.premierleague.com/premierleague/badges/t8.svg" width="22" height="22" alt="Chelsea" loading="lazy">
+          Chelsea
+        </span>
+        <span class="race-gd race-gd--pos">+11</span>
+        <span class="race-pts">48</span>
+        <span class="race-remain">4</span>
+      </div>
+
+      <div class="race-row">
+        <span class="race-pos">9th</span>
+        <span class="race-team">
+          <img src="https://resources.premierleague.com/premierleague/badges/t94.svg" width="22" height="22" alt="Brentford" loading="lazy">
+          Brentford
+        </span>
+        <span class="race-gd race-gd--neg">−1</span>
+        <span class="race-pts">48</span>
+        <span class="race-remain">4</span>
+      </div>
+
+      <div class="race-row is-fulham">
+        <span class="race-pos">10th</span>
+        <span class="race-team">
+          <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" width="22" height="22" alt="Fulham" loading="lazy">
+          Fulham
+          <span class="race-tag">You are here</span>
+        </span>
+        <span class="race-gd race-gd--neg">−2</span>
+        <span class="race-pts">48</span>
+        <span class="race-remain">4</span>
+      </div>
+
+      <div class="race-row">
+        <span class="race-pos">11th</span>
+        <span class="race-team">
+          <img src="https://resources.premierleague.com/premierleague/badges/t43.svg" width="22" height="22" alt="Crystal Palace" loading="lazy">
+          Crystal Palace
+        </span>
+        <span class="race-gd race-gd--neg">−9</span>
+        <span class="race-pts">44</span>
+        <span class="race-remain">4</span>
+      </div>
+
+      <div class="race-row is-projected">
+        <span class="race-pos">↑</span>
+        <span class="race-team">
+          <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" width="22" height="22" alt="Fulham" loading="lazy">
+          Fulham <em>if win vs Arsenal</em>
+          <span class="race-tag race-tag--green">Projected</span>
+        </span>
+        <span class="race-gd race-gd--neg">−1</span>
+        <span class="race-pts">51</span>
+        <span class="race-remain">3</span>
+      </div>
+    </div>
+
+    <p class="race-note">* Projected GD assumes a 1-0 win. Points and standings as of 30 April 2026. Remaining fixtures listed exclude the Arsenal match.</p>
+
+    <div class="race-callout-grid">
+      <div class="race-callout">
+        <div class="race-callout-num">+3</div>
+        <div class="race-callout-label">Points clear of 11th (Crystal Palace) with 4 games to go</div>
+      </div>
+      <div class="race-callout">
+        <div class="race-callout-num">2</div>
+        <div class="race-callout-label">Points separate Fulham (10th) from Brighton (6th, EL spot)</div>
+      </div>
+      <div class="race-callout">
+        <div class="race-callout-num">4</div>
+        <div class="race-callout-label">Teams within 2 points of the Europa League places</div>
+      </div>
+      <div class="race-callout">
+        <div class="race-callout-num race-callout-num--accent">51</div>
+        <div class="race-callout-label">Points a Fulham win Saturday would take them to — potentially 6th</div>
       </div>
     </div>
   </div>
