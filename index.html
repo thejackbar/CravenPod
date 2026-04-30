@@ -355,30 +355,218 @@
     color: var(--ink);
   }
 
-  /* ========== CATEGORY SECTIONS ========== */
-  .category-block {
-    margin-bottom: 56px;
+  /* ========== LATEST SPOTLIGHT ========== */
+  .latest-row { margin-bottom: 80px; }
+  .latest-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  .category-block:last-child { margin-bottom: 0; }
-
-  .category-label {
+  .latest-kicker .pulse {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
+    animation: latestPulse 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes latestPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.45; transform: scale(0.7); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .latest-kicker .pulse { animation: none; }
+  }
+  .latest-card {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-lg);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.06);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.4s, border-color 0.25s;
+    min-height: 340px;
+  }
+  .latest-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.06);
+    border-color: var(--glass-edge-strong);
+  }
+  .latest-visual {
+    background: linear-gradient(135deg, rgba(204,0,51,0.32) 0%, rgba(157,139,255,0.14) 100%);
+    padding: 48px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid var(--glass-edge);
+  }
+  .latest-visual::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -15%;
+    width: 75%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,59,103,0.40) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .latest-visual-tag {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    color: var(--ink-mute);
-    border-bottom: 1px solid var(--glass-edge);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    letter-spacing: 0.25em;
+    color: var(--ink-soft);
+    position: relative;
+    z-index: 1;
+  }
+  .latest-visual-big {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(48px, 7vw, 88px);
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    position: relative;
+    color: var(--ink);
+    z-index: 1;
+  }
+  .latest-visual-big em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 300;
+  }
+  .latest-body {
+    padding: 44px 48px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: baseline;
+    gap: 24px;
+  }
+  .latest-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+  }
+  .latest-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(22px, 2.6vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 18px 0 0 0;
+  }
+  .latest-dek {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .latest-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .latest-cta .arrow {
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s;
+  }
+  .latest-card:hover .latest-cta .arrow { width: 40px; }
+  @media (max-width: 800px) {
+    .latest-card { grid-template-columns: 1fr; min-height: 0; }
+    .latest-visual { min-height: 200px; padding: 32px 28px; border-right: none; border-bottom: 1px solid var(--glass-edge); }
+    .latest-body { padding: 32px 28px; }
   }
 
-  .mini-card {
+  /* ========== ARCHIVE GRID ========== */
+  .archive-heading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--glass-edge);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .archive-heading-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .archive-heading-left::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--ink-mute);
+  }
+  .archive-cat-filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .archive-cat-filter {
+    padding: 5px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-pill);
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .archive-cat-filter:hover {
+    border-color: var(--glass-edge-strong);
+    color: var(--ink);
+  }
+  .archive-cat-filter.active {
+    background: var(--accent);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 18px var(--accent-glow);
+  }
+  .archive-grid {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 900px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .archive-grid { grid-template-columns: 1fr; } }
+  .archive-card {
+    display: flex;
+    flex-direction: column;
     background: var(--glass);
     border: 1px solid var(--glass-edge);
     border-radius: var(--r-lg);
@@ -388,98 +576,114 @@
     overflow: hidden;
     text-decoration: none;
     color: var(--ink);
-    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.35s, border-color 0.25s;
-    margin-bottom: 18px;
+    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.3s, border-color 0.25s, opacity 0.3s;
   }
-  .mini-card:last-child { margin-bottom: 0; }
-  .mini-card:hover {
+  .archive-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.06);
     border-color: var(--glass-edge-strong);
   }
-
-  .mini-visual {
-    background: linear-gradient(135deg, rgba(204,0,51,0.22) 0%, rgba(157,139,255,0.12) 100%);
-    color: var(--ink);
-    padding: 28px 32px;
+  .archive-card.dimmed {
+    opacity: 0.25;
+    transform: scale(0.985);
+    pointer-events: none;
+  }
+  .archive-visual {
+    height: 140px;
+    padding: 22px 26px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 160px;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid var(--glass-edge);
+    border-bottom: 1px solid var(--glass-edge);
   }
-  .mini-visual::before {
+  .archive-visual::before {
     content: '';
     position: absolute;
     top: -20%;
     right: -15%;
-    width: 65%;
+    width: 70%;
     height: 130%;
-    background: radial-gradient(circle, rgba(255,59,103,0.28) 0%, transparent 65%);
+    background: radial-gradient(circle, var(--cat-glow, rgba(255,59,103,0.25)) 0%, transparent 60%);
     pointer-events: none;
   }
-  .mini-visual-kicker {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: var(--ink-mute);
-    position: relative;
-  }
-  .mini-visual-big {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 800;
-    font-size: clamp(28px, 4vw, 52px);
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    position: relative;
-    color: var(--ink);
-  }
-  .mini-visual-big em { color: var(--accent); font-style: normal; font-weight: 300; }
-
-  .mini-body {
-    padding: 24px 28px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .mini-meta {
+  .archive-cat-pill {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 4px 10px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    color: var(--ink-mute);
-  }
-  .mini-title {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 700;
-    font-size: clamp(16px, 2vw, 22px);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-  .mini-dek {
-    font-size: 13px;
-    line-height: 1.55;
+    background: rgba(6,7,15,0.55);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-pill);
     color: var(--ink-soft);
+    position: relative;
+    z-index: 1;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
-  .mini-cta {
+  .archive-visual-big {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    position: relative;
+    z-index: 1;
+  }
+  .archive-visual-big em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 300;
+  }
+  .archive-card.cat-women .archive-visual {
+    background: linear-gradient(135deg, rgba(110,195,212,0.20), rgba(204,0,51,0.06));
+    --cat-glow: rgba(110,195,212,0.32);
+  }
+  .archive-card.cat-review .archive-visual {
+    background: linear-gradient(135deg, rgba(212,175,110,0.18), rgba(110,195,212,0.06));
+    --cat-glow: rgba(212,175,110,0.32);
+  }
+  .archive-card.cat-preview .archive-visual {
+    background: linear-gradient(135deg, rgba(204,0,51,0.20), rgba(157,139,255,0.06));
+    --cat-glow: rgba(255,59,103,0.32);
+  }
+  .archive-card.cat-finance .archive-visual {
+    background: linear-gradient(135deg, rgba(157,139,255,0.20), rgba(204,0,51,0.06));
+    --cat-glow: rgba(157,139,255,0.32);
+  }
+  .archive-body {
+    padding: 22px 26px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+  .archive-meta {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--accent);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
   }
-
-  @media (max-width: 700px) {
-    .mini-card { grid-template-columns: 1fr; }
-    .mini-visual { min-height: 110px; padding: 20px 24px; border-right: none; border-bottom: 1px solid var(--glass-edge); }
+  .archive-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.22;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .archive-dek {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
   }
 
   /* ========== UPCOMING SECTION ========== */
@@ -859,129 +1063,106 @@
 
 <!-- FEATURED -->
 <section class="featured" id="featured">
-  <div class="section-kicker reveal">Archive</div>
-  <h2 class="section-title reveal">Everything, by category.</h2>
 
-  <!-- FFCW -->
-  <div class="category-block reveal">
-    <div class="category-label">
-      <span>Fulham FC Women</span>
-      <span>1 piece</span>
+  <!-- LATEST SPOTLIGHT -->
+  <div class="latest-row reveal">
+    <div class="latest-kicker">
+      <span class="pulse" aria-hidden="true"></span>
+      Just published · The latest article
     </div>
 
-    <a href="/posts/fulham-women-2025-26-season-recap/" class="mini-card">
-      <div class="mini-visual">
-        <div class="mini-visual-kicker">Season Review · 2025/26 · FAWNL Division One SE</div>
-        <div class="mini-visual-big">The <em>Invincibles</em></div>
+    <a href="/posts/arsenal-vs-fulham-may-2026/" class="latest-card">
+      <div class="latest-visual">
+        <div class="latest-visual-tag">Match Preview · GW35 · Emirates Stadium</div>
+        <div class="latest-visual-big">ARS <em>vs</em> FUL</div>
       </div>
-      <div class="mini-body">
+      <div class="latest-body">
         <div>
-          <div class="mini-meta">29 Apr 2026 · P22 W20 D2 L0</div>
-          <div class="mini-title">The Invincibles: Fulham FC Women's 2025/26 Season in Full</div>
-          <p class="mini-dek">Twenty-two games. Twenty wins. Zero defeats. A Capital Cup. A promotion to Tier 3. The most complete season in FFCW's modern history, told in full.</p>
+          <div class="latest-meta">30 Apr 2026 · 8 interactive sections</div>
+          <h3 class="latest-title">Arsenal vs Fulham: Title hopefuls meet European chasers</h3>
+          <p class="latest-dek">Arsenal lead the table, Fulham chase 6th. Form, the European race table predictor, head-to-head, predicted XIs, four key battles, plus poll, score predictor, and pick your XI.</p>
         </div>
-        <div class="mini-cta">Read the recap <span style="display:inline-block;width:20px;height:1px;background:currentColor;vertical-align:middle;"></span></div>
+        <div class="latest-cta">Read the preview <span class="arrow"></span></div>
       </div>
     </a>
   </div>
 
-  <!-- MATCH REVIEWS -->
-  <div class="category-block reveal">
-    <div class="category-label">
-      <span>Match Reviews</span>
-      <span>2 pieces</span>
+  <!-- ARCHIVE GRID -->
+  <div class="archive-row reveal">
+    <div class="archive-heading">
+      <div class="archive-heading-left">More from the archive · 5 articles</div>
+      <div class="archive-cat-filters" id="archive-filters">
+        <button type="button" class="archive-cat-filter active" data-filter="all">All</button>
+        <button type="button" class="archive-cat-filter" data-filter="preview">Previews</button>
+        <button type="button" class="archive-cat-filter" data-filter="review">Reviews</button>
+        <button type="button" class="archive-cat-filter" data-filter="women">FFCW</button>
+        <button type="button" class="archive-cat-filter" data-filter="finance">Finances</button>
+      </div>
     </div>
 
-    <a href="/posts/fulham-1-0-aston-villa-april-2026/" class="mini-card">
-      <div class="mini-visual">
-        <div class="mini-visual-kicker">Match Review · GW34</div>
-        <div class="mini-visual-big">1 <em>–</em> 0</div>
-      </div>
-      <div class="mini-body">
-        <div>
-          <div class="mini-meta">25 Apr 2026 · Craven Cottage</div>
-          <div class="mini-title">Fulham 1–0 Aston Villa: Sessegnon's contract-week strike</div>
-          <p class="mini-dek">A poacher's finish on the stroke of half time, an Andersen masterclass at the back, back-to-back clean sheets, and Europe suddenly back on the table.</p>
-        </div>
-        <div class="mini-cta">Read the review <span style="display:inline-block;width:20px;height:1px;background:currentColor;vertical-align:middle;"></span></div>
-      </div>
-    </a>
+    <div class="archive-grid" id="archive-grid">
 
-    <a href="/posts/brentford-0-0-fulham-april-2026/" class="mini-card">
-      <div class="mini-visual">
-        <div class="mini-visual-kicker">Match Review · GW33</div>
-        <div class="mini-visual-big">0 <em>–</em> 0</div>
-      </div>
-      <div class="mini-body">
-        <div>
-          <div class="mini-meta">18 Apr 2026 · Gtech Community Stadium</div>
-          <div class="mini-title">Brentford 0–0 Fulham: Toothless. Again.</div>
-          <p class="mini-dek">No shots on target away from home for the first time since April 2023. Iwobi off injured. A point that flatters more than it satisfies, and a tough run-in waiting.</p>
+      <a href="/posts/fulham-women-2025-26-season-recap/" class="archive-card cat-women" data-cat="women">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">FFCW · Season Review</span>
+          <div class="archive-visual-big">The <em>Invincibles</em></div>
         </div>
-        <div class="mini-cta">Read the review <span style="display:inline-block;width:20px;height:1px;background:currentColor;vertical-align:middle;"></span></div>
-      </div>
-    </a>
-  </div>
+        <div class="archive-body">
+          <div class="archive-meta">29 Apr 2026 · P22 W20 D2 L0</div>
+          <div class="archive-title">FFCW 2025/26: The Invincibles, in full</div>
+          <p class="archive-dek">Twenty-two games. Twenty wins. Zero defeats. A Capital Cup. A promotion to Tier 3. The most complete season in FFCW's modern history.</p>
+        </div>
+      </a>
 
-  <!-- MATCH PREVIEWS -->
-  <div class="category-block reveal">
-    <div class="category-label">
-      <span>Match Previews</span>
-      <span>2 pieces</span>
+      <a href="/posts/fulham-1-0-aston-villa-april-2026/" class="archive-card cat-review" data-cat="review">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Match Review · GW34</span>
+          <div class="archive-visual-big">1 <em>–</em> 0</div>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">25 Apr 2026 · Craven Cottage</div>
+          <div class="archive-title">Fulham 1–0 Aston Villa: Sessegnon's contract-week strike</div>
+          <p class="archive-dek">A poacher's finish on the stroke of half time, an Andersen masterclass, back-to-back clean sheets, and Europe back on the table.</p>
+        </div>
+      </a>
+
+      <a href="/posts/brentford-0-0-fulham-april-2026/" class="archive-card cat-review" data-cat="review">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Match Review · GW33</span>
+          <div class="archive-visual-big">0 <em>–</em> 0</div>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">18 Apr 2026 · Gtech Community Stadium</div>
+          <div class="archive-title">Brentford 0–0 Fulham: Toothless. Again.</div>
+          <p class="archive-dek">No shots on target away from home for the first time since April 2023. Iwobi off injured. A point that flatters more than it satisfies.</p>
+        </div>
+      </a>
+
+      <a href="/posts/brentford-vs-fulham-april-2026/" class="archive-card cat-preview" data-cat="preview">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Match Preview · GW33</span>
+          <div class="archive-visual-big">BRE <em>vs</em> FUL</div>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">17 Apr 2026 · 7 interactive sections</div>
+          <div class="archive-title">Brentford vs Fulham: The West London Derby Preview</div>
+          <p class="archive-dek">7th vs 12th. Form, key stats, head-to-head, team news, tactical battles, plus poll, score predictor, and pick your XI.</p>
+        </div>
+      </a>
+
+      <a href="/posts/fulham-fc-2024-25-financial-analysis/" class="archive-card cat-finance" data-cat="finance">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Finances · FY24/25</span>
+          <div class="archive-visual-big">£39m <em>loss.</em></div>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">Dec 2025 · ~15 min read</div>
+          <div class="archive-title">Fulham FC 2024/25: The Books Laid Bare</div>
+          <p class="archive-dek">Revenue up 7.3% to £194.8m. Losses widened to £39m. Wage ratio at 85.4%. From 2026/27 the rules change entirely.</p>
+        </div>
+      </a>
+
     </div>
-
-    <a href="/posts/arsenal-vs-fulham-may-2026/" class="mini-card">
-      <div class="mini-visual">
-        <div class="mini-visual-kicker">Match Preview · GW35 · Emirates Stadium</div>
-        <div class="mini-visual-big">ARS <em>vs</em> FUL</div>
-      </div>
-      <div class="mini-body">
-        <div>
-          <div class="mini-meta">30 Apr 2026 · 8 interactive sections</div>
-          <div class="mini-title">Arsenal vs Fulham: Title hopefuls meet European chasers</div>
-          <p class="mini-dek">Arsenal lead the table, Fulham chase 6th. Form, the European race infographic, head-to-head, predicted XIs, four key battles, plus poll, score predictor, and pick your XI.</p>
-        </div>
-        <div class="mini-cta">Read the preview <span style="display:inline-block;width:20px;height:1px;background:currentColor;vertical-align:middle;"></span></div>
-      </div>
-    </a>
-
-    <a href="/posts/brentford-vs-fulham-april-2026/" class="mini-card">
-      <div class="mini-visual">
-        <div class="mini-visual-kicker">Match Preview · West London Derby</div>
-        <div class="mini-visual-big">BRE <em>vs</em> FUL</div>
-      </div>
-      <div class="mini-body">
-        <div>
-          <div class="mini-meta">17 Apr 2026 · 7 interactive sections</div>
-          <div class="mini-title">Brentford vs Fulham: The West London Derby Preview</div>
-          <p class="mini-dek">7th vs 12th. Form guide, key stats, head-to-head history, team news, tactical battles, plus vote on the result, predict the score, and pick your XI.</p>
-        </div>
-        <div class="mini-cta">Read the preview <span style="display:inline-block;width:20px;height:1px;background:currentColor;vertical-align:middle;"></span></div>
-      </div>
-    </a>
-  </div>
-
-  <!-- FINANCES -->
-  <div class="category-block reveal">
-    <div class="category-label">
-      <span>Finances</span>
-      <span>1 piece</span>
-    </div>
-
-    <a href="/posts/fulham-fc-2024-25-financial-analysis/" class="mini-card">
-      <div class="mini-visual">
-        <div class="mini-visual-kicker">Financial Deep-Dive · FY2024/25</div>
-        <div class="mini-visual-big">£39m <em>loss.</em></div>
-      </div>
-      <div class="mini-body">
-        <div>
-          <div class="mini-meta">Dec 2025 · 11 interactive sections · ~15 min read</div>
-          <div class="mini-title">Fulham FC 2024/25: The Books Laid Bare</div>
-          <p class="mini-dek">Revenue up 7.3% to £194.8m. Losses widened to £39m. Wage ratio at 85.4%. And from 2026/27, Premier League rules change entirely. What do the numbers actually mean?</p>
-        </div>
-        <div class="mini-cta">Read the analysis <span style="display:inline-block;width:20px;height:1px;background:currentColor;vertical-align:middle;"></span></div>
-      </div>
-    </a>
   </div>
 
 </section>
@@ -1078,6 +1259,20 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  // Archive category filters
+  const filterBtns = document.querySelectorAll('.archive-cat-filter');
+  const archiveCards = document.querySelectorAll('.archive-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.toggle('active', b === btn));
+      archiveCards.forEach(card => {
+        const match = filter === 'all' || card.dataset.cat === filter;
+        card.classList.toggle('dimmed', !match);
+      });
+    });
+  });
 
   // Smooth scroll nav
   document.querySelectorAll('.site-nav a').forEach(link => {
