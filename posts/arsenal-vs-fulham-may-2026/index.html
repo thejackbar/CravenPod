@@ -1205,7 +1205,143 @@ a{color:inherit}
 
   </div>
 </section>
-<!-- BODY_PLACEHOLDER -->
+<!-- §08 VERDICT -->
+<section class="verdict" id="verdict">
+  <div class="verdict-kicker">The CravenPod verdict</div>
+  <h2 class="verdict-text">Arsenal too strong, Fulham too short on bodies — but a goal in this one would matter.<br><em>Set-piece nightmare looms either way.</em></h2>
+  <p class="verdict-sub">Arsenal won the reverse fixture 1–0 with five players who won't start on Saturday. They have never lost a home league match against Fulham. With Eze fresh from his Atlético cameo and Gyökeres on 12 league goals, the title race demands a result and the Emirates demands a performance. Marco Silva will set Fulham up to frustrate, defend the box ferociously, and back Wilson and Jiménez to nick something — exactly as they did at the Emirates in December 2024. We just don't think they hold out for 90.</p>
+
+  <div class="verdict-prediction">
+    <div>
+      <div class="verdict-score-team">Arsenal</div>
+      <div class="verdict-score" style="color:var(--gunners-light)">2</div>
+    </div>
+    <div>
+      <div class="verdict-score-team">Fulham</div>
+      <div class="verdict-score" style="color:var(--fulham-green)">0</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  Written by CravenPod · 30 April 2026 · COYW · <a href="../../index.html">More previews</a>
+</footer>
+
+<script>
+(function(){
+  // ===== POLL =====
+  var POLL_KEY='afv_poll_2026', POLL_VOTE='afv_poll_2026_vote';
+  function readPoll(){try{return JSON.parse(localStorage.getItem(POLL_KEY))||{arsenal:0,draw:0,fulham:0}}catch(e){return{arsenal:0,draw:0,fulham:0}}}
+  function paintPoll(){
+    var d=readPoll(), total=d.arsenal+d.draw+d.fulham, vote=localStorage.getItem(POLL_VOTE);
+    document.getElementById('poll-total').textContent=(total||0)+' vote'+(total===1?'':'s');
+    ['arsenal','draw','fulham'].forEach(function(k){
+      var pct=total?Math.round(d[k]/total*100):0;
+      var pctEl=document.querySelector('[data-pct="'+k+'"]'),
+          barEl=document.querySelector('[data-bar="'+k+'"]'),
+          btn=document.querySelector('[data-vote="'+k+'"]');
+      if(pctEl)pctEl.textContent=pct+'%';
+      if(barEl)barEl.style.width=pct+'%';
+      if(vote){btn.classList.add('voted'); if(vote===k)btn.classList.add('selected')}
+    });
+  }
+  document.querySelectorAll('[data-vote]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      if(localStorage.getItem(POLL_VOTE))return;
+      var k=btn.dataset.vote, d=readPoll();
+      d[k]=(d[k]||0)+1;
+      localStorage.setItem(POLL_KEY,JSON.stringify(d));
+      localStorage.setItem(POLL_VOTE,k);
+      paintPoll();
+    });
+  });
+  paintPoll();
+
+  // ===== PREDICTOR =====
+  var PRED_KEY='afv_predictor_2026', PRED_LIST='afv_predictor_2026_list';
+  var home=2, away=0;
+  var savedPick=localStorage.getItem(PRED_KEY);
+  if(savedPick){var p=savedPick.split('-'); home=parseInt(p[0],10); away=parseInt(p[1],10)}
+  function paintPred(){document.getElementById('pred-home').textContent=home; document.getElementById('pred-away').textContent=away}
+  paintPred();
+  document.querySelectorAll('[data-pred]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var d=b.dataset.pred;
+      if(d==='home-up'&&home<9)home++;
+      else if(d==='home-down'&&home>0)home--;
+      else if(d==='away-up'&&away<9)away++;
+      else if(d==='away-down'&&away>0)away--;
+      paintPred();
+    });
+  });
+  function paintLeaderboard(){
+    var list={};try{list=JSON.parse(localStorage.getItem(PRED_LIST))||{}}catch(e){}
+    var entries=Object.keys(list).map(function(k){return[k,list[k]]}).sort(function(a,b){return b[1]-a[1]}).slice(0,5);
+    if(!entries.length)return;
+    document.getElementById('pred-results').classList.add('show');
+    document.getElementById('pred-leaderboard').innerHTML=entries.map(function(e){return e[0]+' &nbsp;·&nbsp; '+e[1]+' pick'+(e[1]===1?'':'s')}).join('<br>');
+  }
+  paintLeaderboard();
+  document.getElementById('pred-submit').addEventListener('click',function(){
+    var key=home+'-'+away;
+    var list={};try{list=JSON.parse(localStorage.getItem(PRED_LIST))||{}}catch(e){}
+    list[key]=(list[key]||0)+1;
+    localStorage.setItem(PRED_KEY,key);
+    localStorage.setItem(PRED_LIST,JSON.stringify(list));
+    this.textContent='Saved · '+key;
+    this.disabled=true;
+    paintLeaderboard();
+  });
+  if(savedPick){document.getElementById('pred-submit').textContent='Saved · '+savedPick; document.getElementById('pred-submit').disabled=true}
+
+  // ===== SELECTOR =====
+  var SEL_KEY='afv_selector_2026';
+  var picks={};try{picks=JSON.parse(localStorage.getItem(SEL_KEY))||{}}catch(e){picks={}}
+  function repaintSelector(){
+    document.querySelectorAll('.pitch-slot').forEach(function(slot){
+      var s=slot.dataset.slot, name=picks[s];
+      var nameEl=slot.querySelector('.p-name'), shirt=slot.querySelector('.shirt');
+      if(name){slot.classList.add('filled'); nameEl.textContent=name; shirt.textContent=name.split(' ').slice(-1)[0].slice(0,3).toUpperCase()}
+      else{slot.classList.remove('filled'); nameEl.textContent=''; shirt.textContent=slot.dataset.pos}
+    });
+    var used=Object.values(picks);
+    document.querySelectorAll('.pool-player').forEach(function(p){
+      if(used.indexOf(p.dataset.player)>-1)p.classList.add('used'); else p.classList.remove('used');
+    });
+    var count=Object.keys(picks).length;
+    var res=document.getElementById('selector-results');
+    if(count){res.classList.add('show'); document.getElementById('selector-count').textContent=count}
+    else res.classList.remove('show');
+  }
+  document.querySelectorAll('.pool-player').forEach(function(p){
+    p.addEventListener('click',function(){
+      if(p.classList.contains('used'))return;
+      for(var i=0;i<11;i++){if(!picks[i]){picks[i]=p.dataset.player;break}}
+      localStorage.setItem(SEL_KEY,JSON.stringify(picks));
+      repaintSelector();
+    });
+  });
+  document.querySelectorAll('.pitch-slot').forEach(function(slot){
+    slot.addEventListener('click',function(){
+      var s=slot.dataset.slot;
+      if(picks[s]){delete picks[s]; localStorage.setItem(SEL_KEY,JSON.stringify(picks)); repaintSelector()}
+    });
+  });
+  document.getElementById('selector-submit').addEventListener('click',function(){
+    this.textContent='XI saved';
+  });
+  document.getElementById('selector-reset').addEventListener('click',function(){
+    picks={}; localStorage.removeItem(SEL_KEY); repaintSelector();
+    document.getElementById('selector-submit').textContent='Lock in XI';
+  });
+  repaintSelector();
+
+  // ===== SCROLL REVEAL =====
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible'); io.unobserve(e.target)}})},{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+
 <script data-goatcounter="https://cravenpod.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>
