@@ -105,6 +105,189 @@ a{color:inherit}
 .prob-bar .draw-prob{background:rgba(255,255,255,0.4)}
 .prob-bar .away-prob{background:var(--fulham-green)}
 .prob-labels{display:flex;justify-content:space-between;max-width:500px;margin:8px auto 0;font-family:'JetBrains Mono', monospace;font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,0.6)}
+
+/* ========== SECTION BASE ========== */
+.section{padding:80px 40px;max-width:1400px;margin:0 auto;position:relative;z-index:2}
+.sec-num{font-family:'JetBrains Mono', monospace;font-size:12px;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
+.sec-title{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:clamp(32px,5vw,60px);line-height:.95;letter-spacing:-.03em;margin-bottom:20px;max-width:900px}
+.sec-title em{font-style:normal;font-weight:300;background:linear-gradient(135deg,#ff3b67 0%,#ff7a8a 55%,#ffb1a6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-lede{font-family:'Bricolage Grotesque', sans-serif;font-size:19px;line-height:1.5;max-width:720px;color:var(--ink-soft);margin-bottom:48px}
+
+/* ========== FORM GUIDE ========== */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.form-grid{grid-template-columns:1fr}}
+.form-card{background:var(--glass);border:1px solid var(--rule);padding:32px}
+.form-card-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+.form-card-team{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:24px}
+.form-card-record{font-family:'JetBrains Mono', monospace;font-size:11px;color:var(--muted);letter-spacing:.1em}
+.form-results{display:flex;gap:8px;margin-bottom:20px}
+.form-dot{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono', monospace;font-size:11px;font-weight:700;color:#fff;cursor:default;transition:transform .2s}
+.form-dot:hover{transform:scale(1.15)}
+.form-dot.W{background:var(--ok)}
+.form-dot.D{background:var(--warn)}
+.form-dot.L{background:var(--danger)}
+.form-dot-label{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);margin-top:8px;display:flex;gap:8px}
+.form-dot-label span{display:flex;align-items:center;gap:4px}
+.form-dot-label .swatch{width:10px;height:10px;border-radius:50%}
+.form-narrative{font-family:'Bricolage Grotesque', sans-serif;font-size:16px;line-height:1.5;color:var(--ink-soft);margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.form-matches{margin-top:16px}
+.form-match{display:grid;grid-template-columns:1fr 24px 24px;align-items:center;gap:16px;padding:8px 0;border-bottom:1px solid var(--glass-edge);font-size:14px;font-family:'Inter Tight', sans-serif}
+.form-match:last-child{border-bottom:none}
+.form-match .score{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:13px;text-align:center}
+.form-match .venue{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;text-align:center}
+
+/* ========== KEY STATS ========== */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px,1fr));gap:20px}
+.stat-card{background:var(--glass);border:1px solid var(--rule);padding:28px;position:relative;transition:transform .3s, box-shadow .3s}
+.stat-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -16px rgba(10,10,10,0.12)}
+.stat-card-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px}
+.stat-compare{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.stat-team{text-align:center;flex:1}
+.stat-team-name{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:8px}
+.stat-value{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:36px;line-height:1;letter-spacing:-.02em}
+.stat-value.highlight{color:var(--accent)}
+.stat-vs-label{font-family:'Inter Tight', sans-serif;font-style:italic;font-size:14px;color:var(--muted);flex-shrink:0}
+.stat-bar-track{display:flex;height:8px;gap:2px;margin-top:16px;border-radius:4px;overflow:hidden}
+.stat-bar-track .home{background:var(--gunners)}
+.stat-bar-track .away{background:var(--fulham-green)}
+
+/* ========== EUROPEAN RACE ========== */
+.race-container{background:rgba(6,7,15,0.55);color:var(--ink);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:80px 40px;position:relative;z-index:2}
+.race-inner{max-width:1100px;margin:0 auto}
+.race-table{margin-top:32px;display:flex;flex-direction:column;gap:6px}
+.race-row{display:grid;grid-template-columns:60px 1fr auto auto;align-items:center;gap:16px;padding:18px 22px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-edge);border-radius:var(--r-md);transition:background .25s, transform .25s}
+.race-row:hover{background:rgba(255,255,255,0.07)}
+.race-row.is-fulham{background:rgba(90,140,112,0.18);border-color:rgba(110,165,133,0.45);box-shadow:0 0 0 1px rgba(110,165,133,0.20), 0 18px 50px -28px rgba(110,165,133,0.55)}
+.race-row.is-projected{background:linear-gradient(90deg, rgba(255,59,103,0.22), rgba(255,59,103,0.05));border-color:rgba(255,59,103,0.45);box-shadow:0 0 0 1px rgba(255,59,103,0.20)}
+.race-pos{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:var(--ink-mute)}
+.race-row.is-fulham .race-pos,.race-row.is-projected .race-pos{color:var(--accent)}
+.race-team{font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:18px}
+.race-tag{font-family:'JetBrains Mono', monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mute);padding:4px 10px;border:1px solid var(--glass-edge);border-radius:var(--r-pill)}
+.race-tag.eu{color:var(--gold);border-color:rgba(212,175,110,0.45)}
+.race-tag.win{color:var(--accent);border-color:rgba(255,59,103,0.55)}
+.race-pts{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:18px;letter-spacing:.05em;min-width:64px;text-align:right}
+.race-divider{height:1px;background:linear-gradient(90deg, transparent, rgba(212,175,110,0.45), transparent);margin:6px 0;position:relative}
+.race-divider::after{content:'EUROPA LEAGUE LINE';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(6,7,15,0.95);padding:0 12px;font-family:'JetBrains Mono', monospace;font-size:9px;letter-spacing:.25em;color:var(--gold)}
+.race-note{margin-top:24px;padding:20px 24px;background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-md);font-family:'Bricolage Grotesque', sans-serif;font-size:16px;line-height:1.5;color:var(--ink-soft)}
+.race-note strong{color:var(--accent);font-weight:700}
+
+/* ========== HEAD TO HEAD ========== */
+.h2h-container{background:rgba(6,7,15,0.55);color:var(--ink);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:80px 40px;position:relative;z-index:2}
+.h2h-inner{max-width:1400px;margin:0 auto}
+.h2h-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.1);margin:40px 0}
+.h2h-stat{background:var(--ink);padding:28px 24px;text-align:center}
+.h2h-stat-val{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:48px;line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.h2h-stat-val.gunners{color:var(--gunners-light)}
+.h2h-stat-val.draws{color:rgba(255,255,255,0.5)}
+.h2h-stat-val.whites{color:var(--paper)}
+.h2h-stat-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:rgba(255,255,255,0.6)}
+.h2h-fortress{margin:32px 0 24px;padding:24px 28px;background:linear-gradient(135deg, rgba(219,0,7,0.18), rgba(219,0,7,0.04));border:1px solid rgba(219,0,7,0.35);border-radius:var(--r-md);text-align:center}
+.h2h-fortress-num{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:64px;letter-spacing:-.03em;line-height:1;color:var(--gunners-light)}
+.h2h-fortress-text{font-family:'Bricolage Grotesque', sans-serif;font-size:16px;color:var(--ink-soft);margin-top:8px}
+.h2h-results{display:grid;gap:8px;margin-top:32px}
+.h2h-row{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;padding:16px 20px;background:rgba(255,255,255,0.03);align-items:center;transition:background .2s}
+.h2h-row:hover{background:rgba(255,255,255,0.07)}
+.h2h-home{text-align:right;font-family:'Bricolage Grotesque', sans-serif;font-weight:600;font-size:16px}
+.h2h-score{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:18px;padding:6px 16px;background:rgba(255,255,255,0.08);text-align:center;min-width:70px}
+.h2h-away{font-family:'Bricolage Grotesque', sans-serif;font-weight:600;font-size:16px}
+.h2h-date{font-family:'JetBrains Mono', monospace;font-size:10px;color:rgba(255,255,255,0.5);text-align:right;letter-spacing:.1em}
+.h2h-comp{font-family:'JetBrains Mono', monospace;font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:.1em}
+.h2h-winner-home{border-left:3px solid var(--gunners-light)}
+.h2h-winner-away{border-right:3px solid var(--fulham-green)}
+.h2h-draw{border-left:3px solid rgba(255,255,255,0.3)}
+
+/* ========== TEAM NEWS ========== */
+.teamNews-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.teamNews-grid{grid-template-columns:1fr}}
+.teamNews-card{background:var(--glass);border:1px solid var(--rule);padding:32px;position:relative}
+.teamNews-card.arsenal{border-top:4px solid var(--gunners)}
+.teamNews-card.fulham{border-top:4px solid var(--fulham-green)}
+.teamNews-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}
+.teamNews-team{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:24px}
+.teamNews-formation{font-family:'JetBrains Mono', monospace;font-size:12px;color:var(--muted);letter-spacing:.15em}
+.teamNews-xi{margin-bottom:20px}
+.teamNews-xi-label{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:12px}
+.xi-line{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.xi-player{padding:6px 12px;background:var(--glass);font-family:'Inter Tight', sans-serif;font-size:13px;font-weight:600;border:1px solid var(--rule);transition:all .2s}
+.xi-player:hover{background:var(--glass-strong)}
+.injury-list{margin-top:16px;padding-top:16px;border-top:1px solid var(--rule)}
+.injury-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--glass-edge);font-size:14px}
+.injury-item:last-child{border-bottom:none}
+.injury-name{font-family:'Bricolage Grotesque', sans-serif;font-weight:600}
+.injury-reason{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;padding:3px 8px;background:var(--danger);color:var(--paper)}
+.injury-reason.doubt{background:var(--warn);color:var(--ink)}
+.injury-reason.suspended{background:var(--ink);color:var(--paper)}
+
+/* ========== INTERACTIVE COMPONENTS ========== */
+.interactive-section{background:var(--glass-strong);padding:80px 40px;position:relative;z-index:2}
+.interactive-inner{max-width:1400px;margin:0 auto}
+.poll-container{background:var(--glass);border:1px solid var(--rule);padding:40px;max-width:700px;margin:0 auto}
+.poll-title{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:28px;margin-bottom:8px;text-align:center}
+.poll-sub{font-family:'Inter Tight', sans-serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.poll-options{display:flex;gap:12px;margin-bottom:24px}
+@media(max-width:600px){.poll-options{flex-direction:column}}
+.poll-btn{flex:1;padding:20px;border:2px solid var(--rule);background:var(--glass);cursor:pointer;text-align:center;font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:18px;transition:all .3s;position:relative;overflow:hidden;color:var(--ink)}
+.poll-btn:hover{border-color:var(--ink);background:var(--glass)}
+.poll-btn.selected{border-color:var(--accent);background:rgba(255,59,103,0.20)}
+.poll-btn .poll-pct{display:block;font-family:'JetBrains Mono', monospace;font-size:24px;font-weight:700;margin-top:8px;color:var(--accent);opacity:0;transition:opacity .4s}
+.poll-btn.voted .poll-pct{opacity:1}
+.poll-btn .poll-bar-bg{position:absolute;bottom:0;left:0;height:4px;background:var(--accent);width:0;transition:width .8s cubic-bezier(0.2,0.9,0.3,1)}
+.poll-total{text-align:center;font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
+.predictor{background:var(--glass);border:1px solid var(--rule);padding:40px;max-width:700px;margin:40px auto 0}
+.predictor-title{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:28px;margin-bottom:8px;text-align:center}
+.predictor-sub{font-family:'Inter Tight', sans-serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.predictor-scores{display:flex;align-items:center;justify-content:center;gap:24px}
+.predictor-team{text-align:center}
+.predictor-team-name{font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:18px;margin-bottom:12px}
+.score-picker{display:flex;flex-direction:column;align-items:center;gap:8px}
+.score-picker button{width:44px;height:36px;border:1px solid var(--rule);background:var(--glass);font-family:'JetBrains Mono', monospace;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;color:var(--ink)}
+.score-picker button:hover{background:var(--ink);color:var(--bg-0)}
+.score-picker .score-val{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:56px;line-height:1;letter-spacing:-.03em;min-width:60px;text-align:center}
+.predictor-dash{font-family:'Bricolage Grotesque', sans-serif;font-size:36px;color:var(--muted);margin-top:40px}
+.predictor-submit{display:block;margin:32px auto 0;padding:14px 40px;background:var(--ink);color:var(--bg-0);border:none;font-family:'JetBrains Mono', monospace;font-size:12px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
+.predictor-submit:hover{background:var(--accent)}
+.predictor-submit:disabled{opacity:.4;cursor:not-allowed}
+.predictor-results{margin-top:32px;padding-top:24px;border-top:1px solid var(--rule);display:none}
+.predictor-results.show{display:block}
+.predictor-results-title{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--muted);margin-bottom:16px;text-align:center}
+.popular-scores{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.pop-score{padding:10px 16px;background:var(--glass);border:1px solid var(--rule);text-align:center;min-width:80px}
+.pop-score .s{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:22px}
+.pop-score .n{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:.1em}
+.selector-container{background:var(--glass);border:1px solid var(--rule);padding:40px;max-width:900px;margin:40px auto 0}
+.selector-title{font-family:'Bricolage Grotesque', sans-serif;font-weight:800;font-size:28px;margin-bottom:8px;text-align:center}
+.selector-sub{font-family:'Inter Tight', sans-serif;font-style:italic;font-size:16px;color:var(--muted);text-align:center;margin-bottom:32px}
+.pitch{position:relative;width:100%;max-width:500px;margin:0 auto;aspect-ratio:2/3;background:#3a7d44;border-radius:4px;overflow:hidden;border:3px solid #2d6335}
+.pitch::before{content:'';position:absolute;top:50%;left:10%;right:10%;height:1px;background:rgba(255,255,255,0.3)}
+.pitch::after{content:'';position:absolute;top:50%;left:50%;width:80px;height:80px;border:1px solid rgba(255,255,255,0.3);border-radius:50%;transform:translate(-50%,-50%)}
+.pitch-slot{position:absolute;width:70px;height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
+.pitch-slot:hover{transform:scale(1.08)}
+.pitch-slot .shirt{width:40px;height:40px;border-radius:50%;background:var(--glass);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono', monospace;font-size:11px;font-weight:700;transition:all .3s}
+.pitch-slot.filled .shirt{background:var(--fulham-green);color:var(--paper);border-color:var(--paper)}
+.pitch-slot .p-name{font-family:'JetBrains Mono', monospace;font-size:9px;color:#fff;text-align:center;margin-top:4px;text-shadow:0 1px 2px rgba(0,0,0,0.5);max-width:70px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:.05em}
+.player-pool{margin-top:24px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.pool-player{padding:6px 12px;background:var(--glass);border:1px solid var(--rule);font-family:'Inter Tight', sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;user-select:none}
+.pool-player:hover{background:var(--glass-strong);border-color:var(--ink)}
+.pool-player.used{opacity:.3;pointer-events:none;text-decoration:line-through}
+.pool-player.active{border-color:var(--accent);background:rgba(255,59,103,0.20)}
+.selector-submit{display:block;margin:24px auto 0;padding:12px 32px;background:var(--ink);color:var(--bg-0);border:none;font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;cursor:pointer;transition:background .3s}
+.selector-submit:hover{background:var(--accent)}
+.selector-results{margin-top:24px;padding-top:20px;border-top:1px solid var(--rule);display:none;text-align:center}
+.selector-results.show{display:block}
+.selector-results p{font-family:'Bricolage Grotesque', sans-serif;font-size:15px;color:var(--muted)}
+
+/* ========== TACTICAL ========== */
+.tactical-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:800px){.tactical-grid{grid-template-columns:1fr}}
+.battle-card{background:var(--glass);border:1px solid var(--rule);padding:24px;transition:transform .3s, box-shadow .3s}
+.battle-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -16px rgba(10,10,10,0.12)}
+.battle-header{font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent);margin-bottom:16px}
+.battle-vs{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.battle-player{text-align:center;flex:1}
+.battle-player-name{font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:18px}
+.battle-player-pos{font-family:'JetBrains Mono', monospace;font-size:10px;color:var(--muted);letter-spacing:.15em}
+.battle-v{font-family:'Inter Tight', sans-serif;font-style:italic;font-size:14px;color:var(--muted)}
+.battle-desc{font-family:'Bricolage Grotesque', sans-serif;font-size:15px;line-height:1.5;color:var(--ink-soft)}
 </style>
 </head>
 <body>
