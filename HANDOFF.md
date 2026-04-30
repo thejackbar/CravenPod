@@ -348,6 +348,101 @@ When the data is light, write tighter and more factual rather than padding with 
 
 ---
 
+## 10b. Match Preview research playbook
+
+A long-form match preview is a substantial single-file HTML article (8 sections, ~1,300 lines) that takes 4-6 hours of careful research and writing if every fact is verified. **Don't skip the verification, padding with invented detail breaks the trust this site is built on.**
+
+### Section anatomy (canonical order)
+
+| § | Section | Type | What it contains |
+|---|---------|------|------------------|
+| 00 | Masthead + Match Hero | Static | Date, time (UK + global), TV, venue, both teams' record, probability bar, dramatic hero image |
+| 01 | Form Guide | Static | Last 5-6 PL results both sides, narrative paragraph, W/D/L dot row |
+| 02 | Race Infographic | Static | 5-column standings table for the relevant race (top-4 / Europe / relegation), highlighted row for Fulham, projected row for "if win", callout cards |
+| 03 | Key Stats | Static | Three comparison cards (goals scored / conceded / clean sheets) with proportional bars, side-by-side top scorers list, Fulham strengths panel |
+| 04 | Head to Head | Static | Summary tally (W/D/L), home/away fortress callout if relevant, last 6 meetings with coloured result borders |
+| 05 | Team News | Static | Side-by-side predicted XIs in formation lines, full injury list per side with badge severity (Out / Doubt / Suspended) |
+| 06 | Tactical Battles | Static | Four 1v1 / unit-vs-unit duels with prose explanation |
+| 07 | Interactive | localStorage | Match poll, score predictor, pick your XI on a pitch |
+| 08 | Verdict + Footer + JS | Static + JS | Predicted score, single IIFE for poll/predictor/selector + scroll reveal |
+
+### Pre-writing data to gather (in order)
+
+Before opening the editor, run searches and confirm the following. Every number below should appear somewhere in the article and every one of them must be sourced.
+
+**League state**
+- Both teams' current PL position, points, W/D/L, GD (statmuse, soccerstats.com, premierleague.com)
+- Position and points of the 3-4 teams immediately around Fulham (for the race infographic)
+
+**Recent form**
+- Last 5-6 PL results for both sides, with scorelines (espn.com/soccer match reports, fotmob, premierleague.com fixtures)
+- Note H/A and any clean-sheet or scoring streaks
+
+**Season totals**
+- Goals scored / conceded / GD (statmuse "goals scored by team in PL 2025-26")
+- Clean sheets per team (myfootballfacts.com is reliable for season-long counts)
+- Top 3 scorers per team with goal totals (espn.com team stats page)
+- Top assister per team if it's a notable stat
+- xG / xGA only if you find it from understat.com or fotmob — don't guess from per-game averages
+
+**Head to head**
+- All-time PL W/D/L (sportsmole, 11v11.com)
+- Home / away fortress stat (e.g. "Arsenal 24W 7D 0L at home vs Fulham" — sportsmole carries these well)
+- Last 5-6 meetings with scorelines and any standout context (first win in N years, etc.)
+- Reverse fixture from the current season: confirm scoreline + scorer
+
+**Team news**
+- Confirmed absentees per side with reason and "Out" status
+- Doubts with reason
+- Source: club press conference write-ups (arsenal.com / fulhamfc.com), readarsenal.com / arseblog, sportsmole pre-match team news, premierinjuries.com
+- For predicted XIs: cross-reference whoscored.com or fotmob predicted lineups against the latest reported XI from the club site or sky sports
+- Verify any unfamiliar names against transfer history before assuming someone is at the club (e.g. Hincapié on loan from Leverkusen, Madueke from Chelsea, Bobb from Man City — all 2025-26 arrivals at Arsenal/Fulham that didn't exist last season)
+
+**Match details**
+- Kick-off time UK + ET / PT / CET / AEST conversions
+- TV channel UK + brief mention of others
+- Stadium name (don't say "Emirates Stadium" if Arsenal renamed it; check the club site)
+
+### Verified sources for match previews
+
+In addition to the sources in §10:
+
+- **statmuse.com/fc**: best for one-line team-stat queries (goals conceded, clean sheets etc.)
+- **myfootballfacts.com**: season-long clean-sheet tables that update through the year
+- **understat.com/league/EPL/2025**: xG league table (note: the page itself is JS-rendered, so WebFetch may return empty content — use the search summary)
+- **espn.com/soccer/team/stats/_/id/{id}/{slug}**: top-scorer lists for each team
+- **soccerstats.com/latest.asp?league=england**: full table with GS/GC/GD in one fetch
+- **whoscored.com**: predicted lineups (often automatic, sometimes lag injury news by a day, double-check)
+- **arsenal.com/news/...**: press conference write-ups for Arsenal injury and team news
+- **arseblog.com / readarsenal.com**: opinionated but well-sourced for Arsenal team news
+- **sportsmole.co.uk**: recent meetings list often present in their head-to-head pages
+- **11v11.com**: best for all-time historical home/away records vs a specific opponent
+
+### Things to actively double-check
+
+- **Player at the right club?** Multiple players moved between rivals in 2025/26 (Eze Crystal Palace → Arsenal, Madueke Chelsea → Arsenal, Bobb Man City → Fulham, Hincapié Leverkusen → Arsenal on loan). Predicted lineups from automated sources sometimes haven't caught up, and old training data is worse. When in doubt, search "<player> transfer 2025".
+- **Is the player actually fit?** A predicted XI may include a name who has since picked up a knock. Cross-reference against the most recent press conference (today or yesterday).
+- **Reverse fixture in the current season:** Always grab this — it gives you the obvious narrative hook for the verdict ("Arsenal won this 1-0 in October with five players who won't start on Saturday").
+
+### Visual template specifics
+
+- Use **`https://resources.premierleague.com/premierleague/badges/t{ID}.svg`** for club crests. Common IDs: Arsenal 3, Bournemouth 91, Brighton 36, Brentford 94, Chelsea 8, Crystal Palace 31, Everton 11, Fulham 54, Liverpool 14, Man City 43, Man United 1, Newcastle 4, Nott'm Forest 17, Spurs 6, West Ham 21
+- The "Frosted Touch" hero treatment for an away team should layer **a relevant BBC News image** (palette-matching), backgrounded via `::before` with `filter: saturate(0.82) contrast(1.04) brightness(0.78); opacity: 0.55`, then a multi-layer dark `::after` gradient for text legibility
+- Add the **opponent's primary colour** as a CSS variable in `:root` alongside `--fulham-green` (e.g. `--gunners: #db0007`, `--gunners-light: #ef4444`)
+- Always include the **GoatCounter snippet** before `</body>`
+- Always update **`index.html`** at the project root with the new article in the Match Previews category and bump the "Written pieces" hero stat
+- Single IIFE handles all interactivity, **never** load external JS for these features
+
+### Don'ts
+
+- Don't invent xG figures. If you can't find them, omit xG from the article rather than guessing from per-game averages.
+- Don't assume someone is fit because they were named in last week's XI.
+- Don't write the front three for Arsenal as "Saka, Trossard, Gyökeres" by default — Arteta has at least four wingers and rotates aggressively in title-race weeks. Look at the most recent matchday.
+- Don't say "x clean sheets in last y games" without two-source verification.
+- Don't leave the predicted XI unverified — the credibility of the whole piece rides on it.
+
+---
+
 ## 11. Technical gotchas to avoid
 
 These are landmines I stepped on while building, don't repeat them.
