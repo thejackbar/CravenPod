@@ -1084,6 +1084,127 @@ a{color:inherit}
 
   </div>
 </section>
+<!-- §07 INTERACTIVE -->
+<section class="interactive-section" id="interactive">
+  <div class="interactive-inner">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label">Have your say</div>
+      <h2 class="section-title">Three for the supporters</h2>
+      <p class="section-intro">Cast a verdict, lock in a scoreline, and build the Fulham XI you'd start at the Emirates. All saved locally on your device.</p>
+    </div>
+
+    <!-- POLL -->
+    <div class="poll-container reveal" id="poll">
+      <div class="poll-title">Who wins on Saturday?</div>
+      <div class="poll-sub">One vote per device. Results revealed once you pick.</div>
+      <div class="poll-options">
+        <button class="poll-btn" data-vote="arsenal">
+          Arsenal
+          <span class="poll-pct" data-pct="arsenal">0%</span>
+          <span class="poll-bar-bg" data-bar="arsenal"></span>
+        </button>
+        <button class="poll-btn" data-vote="draw">
+          Draw
+          <span class="poll-pct" data-pct="draw">0%</span>
+          <span class="poll-bar-bg" data-bar="draw"></span>
+        </button>
+        <button class="poll-btn" data-vote="fulham">
+          Fulham
+          <span class="poll-pct" data-pct="fulham">0%</span>
+          <span class="poll-bar-bg" data-bar="fulham"></span>
+        </button>
+      </div>
+      <div class="poll-total" id="poll-total">— votes</div>
+    </div>
+
+    <!-- PREDICTOR -->
+    <div class="predictor reveal" id="predictor">
+      <div class="predictor-title">Predict the score</div>
+      <div class="predictor-sub">Submit once. We'll remember next time you visit.</div>
+      <div class="predictor-scores">
+        <div class="predictor-team">
+          <div class="predictor-team-name" style="color:var(--gunners-light)">Arsenal</div>
+          <div class="score-picker">
+            <button data-pred="home-up" aria-label="Increase Arsenal">▲</button>
+            <div class="score-val" id="pred-home">2</div>
+            <button data-pred="home-down" aria-label="Decrease Arsenal">▼</button>
+          </div>
+        </div>
+        <div class="predictor-dash">–</div>
+        <div class="predictor-team">
+          <div class="predictor-team-name" style="color:var(--fulham-green)">Fulham</div>
+          <div class="score-picker">
+            <button data-pred="away-up" aria-label="Increase Fulham">▲</button>
+            <div class="score-val" id="pred-away">0</div>
+            <button data-pred="away-down" aria-label="Decrease Fulham">▼</button>
+          </div>
+        </div>
+      </div>
+      <button class="predictor-submit" id="pred-submit">Lock in prediction</button>
+      <div class="predictor-results" id="pred-results">
+        <div class="predictor-results-title">Most popular predictions</div>
+        <div id="pred-leaderboard" style="font-family:'JetBrains Mono', monospace;font-size:14px;color:var(--ink-soft);text-align:center;line-height:1.8"></div>
+      </div>
+    </div>
+
+    <!-- PICK YOUR FULHAM XI -->
+    <div class="selector-container reveal" id="selector">
+      <div class="selector-title">Pick your Fulham XI</div>
+      <div class="selector-sub">Tap a player to drop them into the next empty slot. Tap a filled slot to remove.</div>
+
+      <div class="pitch" id="pitch">
+        <!-- GK -->
+        <div class="pitch-slot" data-slot="0" data-pos="GK" style="top:88%;left:50%;transform:translate(-50%,-50%)"><div class="shirt">GK</div><div class="p-name"></div></div>
+        <!-- DEFENDERS (4) -->
+        <div class="pitch-slot" data-slot="1" data-pos="RB"  style="top:70%;left:14%;transform:translate(-50%,-50%)"><div class="shirt">RB</div><div class="p-name"></div></div>
+        <div class="pitch-slot" data-slot="2" data-pos="RCB" style="top:72%;left:38%;transform:translate(-50%,-50%)"><div class="shirt">CB</div><div class="p-name"></div></div>
+        <div class="pitch-slot" data-slot="3" data-pos="LCB" style="top:72%;left:62%;transform:translate(-50%,-50%)"><div class="shirt">CB</div><div class="p-name"></div></div>
+        <div class="pitch-slot" data-slot="4" data-pos="LB"  style="top:70%;left:86%;transform:translate(-50%,-50%)"><div class="shirt">LB</div><div class="p-name"></div></div>
+        <!-- DM (2) -->
+        <div class="pitch-slot" data-slot="5" data-pos="DM"  style="top:52%;left:36%;transform:translate(-50%,-50%)"><div class="shirt">DM</div><div class="p-name"></div></div>
+        <div class="pitch-slot" data-slot="6" data-pos="DM"  style="top:52%;left:64%;transform:translate(-50%,-50%)"><div class="shirt">DM</div><div class="p-name"></div></div>
+        <!-- AM (3) -->
+        <div class="pitch-slot" data-slot="7" data-pos="RW"  style="top:30%;left:14%;transform:translate(-50%,-50%)"><div class="shirt">RW</div><div class="p-name"></div></div>
+        <div class="pitch-slot" data-slot="8" data-pos="AM"  style="top:30%;left:50%;transform:translate(-50%,-50%)"><div class="shirt">AM</div><div class="p-name"></div></div>
+        <div class="pitch-slot" data-slot="9" data-pos="LW"  style="top:30%;left:86%;transform:translate(-50%,-50%)"><div class="shirt">LW</div><div class="p-name"></div></div>
+        <!-- ST -->
+        <div class="pitch-slot" data-slot="10" data-pos="ST" style="top:10%;left:50%;transform:translate(-50%,-50%)"><div class="shirt">ST</div><div class="p-name"></div></div>
+      </div>
+
+      <div style="margin-top:24px">
+        <div style="font-family:'JetBrains Mono', monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--ink-mute);margin-bottom:12px">Squad</div>
+        <div class="pool" id="pool" style="display:flex;flex-wrap:wrap;gap:8px">
+          <span class="pool-player" data-player="Leno">Leno</span>
+          <span class="pool-player" data-player="Lecomte">Lecomte</span>
+          <span class="pool-player" data-player="Castagne">Castagne</span>
+          <span class="pool-player" data-player="Andersen">Andersen</span>
+          <span class="pool-player" data-player="Bassey">Bassey</span>
+          <span class="pool-player" data-player="Diop">Diop</span>
+          <span class="pool-player" data-player="Robinson">Robinson</span>
+          <span class="pool-player" data-player="Sessegnon">Sessegnon</span>
+          <span class="pool-player" data-player="Berge">Berge</span>
+          <span class="pool-player" data-player="Lukic">Lukic</span>
+          <span class="pool-player" data-player="Cairney">Cairney</span>
+          <span class="pool-player" data-player="Reed">Reed</span>
+          <span class="pool-player" data-player="Smith Rowe">Smith Rowe</span>
+          <span class="pool-player" data-player="Wilson">Wilson</span>
+          <span class="pool-player" data-player="Chukwueze">Chukwueze</span>
+          <span class="pool-player" data-player="Bobb">Bobb</span>
+          <span class="pool-player" data-player="Jiménez">Jiménez</span>
+          <span class="pool-player" data-player="Muniz">Muñiz</span>
+        </div>
+      </div>
+
+      <button class="selector-submit" id="selector-submit">Lock in XI</button>
+      <button class="selector-submit" id="selector-reset" style="margin-top:8px;background:transparent;color:var(--ink-soft);border:1px solid var(--glass-edge)">Reset</button>
+
+      <div class="selector-results" id="selector-results">
+        <p>You picked <strong id="selector-count">0</strong> players. Saved locally — refresh the page and they'll still be here.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 <!-- BODY_PLACEHOLDER -->
 <script data-goatcounter="https://cravenpod.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
