@@ -187,12 +187,13 @@ a{color:inherit}
 .fx-team{display:flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque', sans-serif;font-weight:700;font-size:14px;flex:1;min-width:0}
 .fx-team span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fx-team.fx-away{flex-direction:row-reverse;text-align:right}
-.fix-btns{display:flex;gap:4px;flex-shrink:0}
-.fix-btn{padding:7px 10px;border:1px solid var(--glass-edge);background:transparent;font-family:'JetBrains Mono', monospace;font-size:11px;font-weight:700;cursor:pointer;color:var(--ink-mute);border-radius:var(--r-sm);transition:all .2s;min-width:32px;text-align:center;line-height:1}
-.fix-btn:hover{border-color:rgba(255,255,255,0.3);color:var(--ink)}
-.fix-btn.sel-H{background:rgba(219,0,7,0.22);border-color:rgba(219,0,7,0.55);color:#ef4444}
-.fix-btn.sel-D{background:rgba(212,175,110,0.18);border-color:rgba(212,175,110,0.45);color:var(--gold)}
-.fix-btn.sel-A{background:rgba(74,222,128,0.14);border-color:rgba(74,222,128,0.40);color:#4ade80}
+.fx-score{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.fx-score-spin{display:flex;flex-direction:column;align-items:center;gap:2px}
+.fx-score-btn{width:26px;height:20px;border:1px solid var(--glass-edge);background:transparent;font-size:13px;font-weight:700;cursor:pointer;color:var(--ink-mute);border-radius:6px;transition:all .18s;line-height:1;display:flex;align-items:center;justify-content:center}
+.fx-score-btn:hover{border-color:rgba(255,255,255,.3);color:var(--ink);background:rgba(255,255,255,.06)}
+.fx-score-num{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:20px;min-width:26px;text-align:center;line-height:1.2;color:var(--ink)}
+.fx-score-num.unset{color:var(--ink-mute);font-size:14px}
+.fx-score-dash{font-family:'JetBrains Mono', monospace;font-weight:700;font-size:13px;color:var(--ink-mute);padding:0 2px;align-self:center;margin-top:22px}
 .fix-date{font-family:'JetBrains Mono', monospace;font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--ink-mute);margin-top:10px}
 
 /* ========== SCORERS ========== */
@@ -553,7 +554,7 @@ a{color:inherit}
   <div class="section-inner">
     <div class="section-label">Table Predictor · GW35</div>
     <h2 class="section-title">What do the results mean?</h2>
-    <p class="section-intro">Pick the result for each fixture involving the European-race teams. The table updates live — 3 pts for a win, 1 for a draw, and ±1 applied to goal difference. The Europa League line moves with the standings.</p>
+    <p class="section-intro">Set the exact scoreline for each GW35 fixture. The table updates live with accurate goal difference — 3 pts for a win, 1 for a draw. The Europa League qualification line moves with the standings.</p>
 
     <!-- GW35 fixture cards -->
     <div class="fixtures-grid" id="race-fixtures-grid">
@@ -564,10 +565,18 @@ a{color:inherit}
             <img src="https://resources.premierleague.com/premierleague/badges/t3.svg" width="22" height="22" alt="Arsenal" loading="lazy">
             <span>Arsenal</span>
           </div>
-          <div class="fix-btns">
-            <button class="fix-btn" data-fix="0" data-val="H">H</button>
-            <button class="fix-btn" data-fix="0" data-val="D">D</button>
-            <button class="fix-btn" data-fix="0" data-val="A">A</button>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="0" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="0" data-side="h">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="0" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="0" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="0" data-side="a">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="0" data-side="a">−</button>
+            </div>
           </div>
           <div class="fx-team fx-away">
             <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" width="22" height="22" alt="Fulham" loading="lazy">
@@ -583,10 +592,18 @@ a{color:inherit}
             <img src="https://resources.premierleague.com/premierleague/badges/t4.svg" width="22" height="22" alt="Newcastle" loading="lazy">
             <span>Newcastle</span>
           </div>
-          <div class="fix-btns">
-            <button class="fix-btn" data-fix="1" data-val="H">H</button>
-            <button class="fix-btn" data-fix="1" data-val="D">D</button>
-            <button class="fix-btn" data-fix="1" data-val="A">A</button>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="1" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="1" data-side="h">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="1" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="1" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="1" data-side="a">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="1" data-side="a">−</button>
+            </div>
           </div>
           <div class="fx-team fx-away">
             <img src="https://resources.premierleague.com/premierleague/badges/t36.svg" width="22" height="22" alt="Brighton" loading="lazy">
@@ -602,10 +619,18 @@ a{color:inherit}
             <img src="https://resources.premierleague.com/premierleague/badges/t94.svg" width="22" height="22" alt="Brentford" loading="lazy">
             <span>Brentford</span>
           </div>
-          <div class="fix-btns">
-            <button class="fix-btn" data-fix="2" data-val="H">H</button>
-            <button class="fix-btn" data-fix="2" data-val="D">D</button>
-            <button class="fix-btn" data-fix="2" data-val="A">A</button>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="2" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="2" data-side="h">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="2" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="2" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="2" data-side="a">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="2" data-side="a">−</button>
+            </div>
           </div>
           <div class="fx-team fx-away">
             <img src="https://resources.premierleague.com/premierleague/badges/t21.svg" width="22" height="22" alt="West Ham" loading="lazy">
@@ -621,10 +646,18 @@ a{color:inherit}
             <img src="https://resources.premierleague.com/premierleague/badges/t91.svg" width="22" height="22" alt="Bournemouth" loading="lazy">
             <span>Bournemouth</span>
           </div>
-          <div class="fix-btns">
-            <button class="fix-btn" data-fix="3" data-val="H">H</button>
-            <button class="fix-btn" data-fix="3" data-val="D">D</button>
-            <button class="fix-btn" data-fix="3" data-val="A">A</button>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="3" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="3" data-side="h">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="3" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="3" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="3" data-side="a">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="3" data-side="a">−</button>
+            </div>
           </div>
           <div class="fx-team fx-away">
             <img src="https://resources.premierleague.com/premierleague/badges/t43.svg" width="22" height="22" alt="Crystal Palace" loading="lazy">
@@ -640,10 +673,18 @@ a{color:inherit}
             <img src="https://resources.premierleague.com/premierleague/badges/t8.svg" width="22" height="22" alt="Chelsea" loading="lazy">
             <span>Chelsea</span>
           </div>
-          <div class="fix-btns">
-            <button class="fix-btn" data-fix="4" data-val="H">H</button>
-            <button class="fix-btn" data-fix="4" data-val="D">D</button>
-            <button class="fix-btn" data-fix="4" data-val="A">A</button>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="4" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="4" data-side="h">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="4" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-btn fx-score-up" data-fix="4" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="4" data-side="a">–</span>
+              <button class="fx-score-btn fx-score-dn" data-fix="4" data-side="a">−</button>
+            </div>
           </div>
           <div class="fx-team fx-away">
             <img src="https://resources.premierleague.com/premierleague/badges/t17.svg" width="22" height="22" alt="Nott'm Forest" loading="lazy">
@@ -658,7 +699,7 @@ a{color:inherit}
     <!-- Dynamic table — rendered by JS -->
     <div id="race-table-live"></div>
 
-    <p class="race-note">Standings as of 30 April 2026, 34 games played. Points: win +3, draw +1. Goal difference: ±1 per result (approximation). H = home win, D = draw, A = away win.</p>
+    <p class="race-note">Standings as of 30 April 2026, 34 games played. Use the +/− controls to set each scoreline. GD is calculated from the exact score you enter.</p>
   </div>
 </section>
 <!-- §03 KEY STATS -->
@@ -1346,16 +1387,23 @@ a{color:inherit}
     {name:'Fulham',        badge:'t54',pts:48,gd:-2, fix:0,side:'A'},
     {name:'Crystal Palace',badge:'t43',pts:44,gd:-9, fix:3,side:'A'}
   ];
-  var raceRes=[null,null,null,null,null];
+  // each entry: null (unset) or [homeGoals, awayGoals]
+  var raceScores=[null,null,null,null,null];
 
   function renderRaceTable(){
     var BASE_URL='https://resources.premierleague.com/premierleague/badges/';
     var adj=RACE_TEAMS.map(function(t,i){
-      var r=raceRes[t.fix],won=(r===t.side),drew=(r==='D'),lost=(r!==null&&!won&&!drew);
-      return{name:t.name,badge:t.badge,
-        pts:t.pts+(won?3:drew?1:0),ptsDelta:(won?3:drew?1:0),
-        gd:t.gd+(won?1:lost?-1:0),
-        origIdx:i};
+      var s=raceScores[t.fix];
+      var pts=t.pts,gd=t.gd,ptsDelta=0;
+      if(s!==null){
+        var tg=t.side==='H'?s[0]:s[1]; // team goals
+        var og=t.side==='H'?s[1]:s[0]; // opponent goals
+        var won=tg>og,drew=tg===og;
+        ptsDelta=won?3:drew?1:0;
+        pts=t.pts+ptsDelta;
+        gd=t.gd+(tg-og);
+      }
+      return{name:t.name,badge:t.badge,pts:pts,ptsDelta:ptsDelta,gd:gd,origIdx:i};
     });
     adj.sort(function(a,b){return b.pts!==a.pts?b.pts-a.pts:b.gd-a.gd;});
 
@@ -1368,14 +1416,13 @@ a{color:inherit}
       '</div>';
 
     adj.forEach(function(t,i){
-      var newPos=i+6, oldPos=t.origIdx+6;
-      var diff=oldPos-newPos; // positive = moved up
+      var newPos=i+6,oldPos=t.origIdx+6;
+      var diff=oldPos-newPos;
       var moveHtml=diff>0
         ?'<span class="race-move up">▲'+diff+'</span>'
         :diff<0
           ?'<span class="race-move dn">▼'+Math.abs(diff)+'</span>'
           :'<span class="race-move eq">—</span>';
-
       var fulham=t.name==='Fulham';
       var rowClass='race-row'+(fulham?' is-fulham':'');
       var gdStr=(t.gd>0?'+':'')+t.gd;
@@ -1384,10 +1431,7 @@ a{color:inherit}
       var tag=fulham?'<span class="race-tag">Fulham</span>':'';
       var ord=['th','st','nd','rd'];
       var posLabel=newPos+(ord[newPos]||'th');
-
-      // EL divider after first team
       if(i===1)html+='<div class="race-divider"></div>';
-
       html+='<div class="'+rowClass+'">'+
         '<span class="race-pos">'+posLabel+'</span>'+
         '<span class="race-team">'+
@@ -1403,15 +1447,27 @@ a{color:inherit}
     document.getElementById('race-table-live').innerHTML=html;
   }
 
-  document.getElementById('race-fixtures-grid').addEventListener('click',function(e){
-    var btn=e.target.closest('[data-val]');
-    if(!btn)return;
-    var fix=parseInt(btn.closest('[data-fix]').dataset.fix,10);
-    var val=btn.dataset.val;
-    raceRes[fix]=(raceRes[fix]===val)?null:val;
-    document.querySelectorAll('[data-fix="'+fix+'"] [data-val]').forEach(function(b){
-      b.className='fix-btn'+(raceRes[fix]===b.dataset.val?' sel-'+b.dataset.val:'');
+  function updateScoreDisplay(fix){
+    var s=raceScores[fix];
+    document.querySelectorAll('[data-fix="'+fix+'"].fx-score-num').forEach(function(el){
+      if(s===null){
+        el.textContent='–';el.classList.add('unset');
+      }else{
+        el.textContent=el.dataset.side==='h'?s[0]:s[1];el.classList.remove('unset');
+      }
     });
+  }
+
+  document.getElementById('race-fixtures-grid').addEventListener('click',function(e){
+    var btn=e.target.closest('.fx-score-btn');
+    if(!btn)return;
+    var fix=parseInt(btn.dataset.fix,10);
+    var side=btn.dataset.side;
+    var up=btn.classList.contains('fx-score-up');
+    if(raceScores[fix]===null)raceScores[fix]=[0,0];
+    var idx=side==='h'?0:1;
+    raceScores[fix][idx]=Math.max(0,raceScores[fix][idx]+(up?1:-1));
+    updateScoreDisplay(fix);
     renderRaceTable();
   });
   renderRaceTable();
