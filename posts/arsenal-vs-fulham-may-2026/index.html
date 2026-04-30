@@ -82,10 +82,15 @@ a{color:inherit}
 .masthead .meta span::before{content:'●';margin-right:6px;color:var(--gunners-light)}
 
 /* ========== MATCH HERO ========== */
-.match-hero{background:rgba(6,7,15,0.55);color:var(--ink);-webkit-backdrop-filter:blur(22px) saturate(140%);backdrop-filter:blur(22px) saturate(140%);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:80px 40px 60px;position:relative;z-index:2;overflow:hidden}
-.match-hero::before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:rgba(255,255,255,0.08)}
-.match-hero::after{content:'';position:absolute;top:-50%;right:-10%;width:40%;height:200%;background:radial-gradient(circle, rgba(219,0,7,0.18) 0%, transparent 60%);pointer-events:none}
-.match-hero-inner{max-width:1200px;margin:0 auto;position:relative}
+.match-hero{position:relative;color:var(--ink);border-top:1px solid var(--glass-edge);border-bottom:1px solid var(--glass-edge);padding:96px 40px 72px;z-index:2;overflow:hidden;background:#06070f;isolation:isolate}
+.match-hero::before{content:'';position:absolute;inset:-2% -2%;background-image:url("https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/1efa/live/fcd06260-ac58-11f0-bf12-67c1f4bdac34.jpg");background-size:cover;background-position:center 32%;background-repeat:no-repeat;filter:saturate(0.82) contrast(1.04) brightness(0.78);opacity:0.55;z-index:-2;pointer-events:none}
+.match-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 1100px 540px at 50% 55%, rgba(6,7,15,0.32) 0%, rgba(6,7,15,0.58) 60%, rgba(6,7,15,0.88) 100%),linear-gradient(180deg, rgba(6,7,15,0.65) 0%, rgba(6,7,15,0.10) 25%, rgba(6,7,15,0.10) 70%, rgba(6,7,15,0.95) 100%),radial-gradient(ellipse at 88% 16%, rgba(219,0,7,0.22) 0%, transparent 55%),radial-gradient(ellipse at 12% 84%, rgba(90,140,112,0.18) 0%, transparent 55%);z-index:-1;pointer-events:none}
+.match-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.match-hero .team-crest{position:relative}
+.match-hero .team-crest img{filter:drop-shadow(0 6px 24px rgba(0,0,0,0.55))}
+.match-hero .team-name{text-shadow:0 2px 24px rgba(6,7,15,0.85), 0 1px 2px rgba(6,7,15,0.6)}
+.match-hero .match-details{background:rgba(6,7,15,0.45);-webkit-backdrop-filter:blur(14px) saturate(140%);backdrop-filter:blur(14px) saturate(140%);border:1px solid var(--glass-edge);border-radius:var(--r-md);padding:24px;margin-top:32px;box-shadow:var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06)}
+.match-hero .match-details{border-top:1px solid var(--glass-edge)}
 .match-kicker{font-family:'JetBrains Mono', monospace;font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:32px;text-align:center}
 .match-badge{display:flex;align-items:center;justify-content:center;gap:60px;margin-bottom:40px}
 .team-badge{text-align:center;flex:1;max-width:300px}
@@ -428,6 +433,70 @@ a{color:inherit}
       <span>Arsenal 65.0%</span>
       <span>Draw 21.0%</span>
       <span>Fulham 14.0%</span>
+    </div>
+  </div>
+</section>
+<!-- FORM GUIDE -->
+<section class="section" id="form">
+  <div class="sec-num">§ 01</div>
+  <h2 class="sec-title">Two teams, two <em>different races.</em></h2>
+  <p class="sec-lede">Arsenal need three points to keep Manchester City at arm's length in the title fight. Fulham need three points to leapfrog Brighton and force their way into the European conversation. Same ninety minutes, very different stakes.</p>
+
+  <div class="form-grid">
+    <div class="form-card reveal">
+      <div class="form-card-header">
+        <span class="form-card-team">Arsenal</span>
+        <span class="form-card-record">Recent PL: W3 D0 L2</span>
+      </div>
+      <div class="form-results">
+        <div class="form-dot W" title="Brighton 0-1 Arsenal">W</div>
+        <div class="form-dot W" title="Arsenal 2-0 Everton">W</div>
+        <div class="form-dot L" title="Arsenal 1-2 Bournemouth">L</div>
+        <div class="form-dot L" title="Manchester City 2-1 Arsenal">L</div>
+        <div class="form-dot W" title="Arsenal 1-0 Newcastle">W</div>
+      </div>
+      <div class="form-dot-label">
+        <span><span class="swatch" style="background:var(--ok)"></span>Win</span>
+        <span><span class="swatch" style="background:var(--warn)"></span>Draw</span>
+        <span><span class="swatch" style="background:var(--danger)"></span>Loss</span>
+      </div>
+      <div class="form-narrative">A wobble at the worst possible time. Back-to-back losses to Bournemouth at home and City away invited the Etihad back into the title race. The 1-0 win over Newcastle steadied things, but Tuesday's 1-1 draw away at Atletico Madrid in the Champions League semi-final first leg means tired legs and a spinning fixture list. Arsenal lead City by three with City still holding a game in hand.</div>
+      <div class="form-matches">
+        <div class="form-match"><span>Brighton 0-1 Arsenal</span><span class="score">W</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Arsenal 2-0 Everton</span><span class="score">W</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Arsenal 1-2 Bournemouth</span><span class="score">L</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Manchester City 2-1 Arsenal</span><span class="score">L</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Arsenal 1-0 Newcastle</span><span class="score">W</span><span class="venue">H</span></div>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <div class="form-card-header">
+        <span class="form-card-team">Fulham</span>
+        <span class="form-card-record">Last 6 PL: W2 D2 L2</span>
+      </div>
+      <div class="form-results">
+        <div class="form-dot L" title="Fulham 0-1 West Ham">L</div>
+        <div class="form-dot D" title="Forest 0-0 Fulham">D</div>
+        <div class="form-dot W" title="Fulham 3-1 Burnley">W</div>
+        <div class="form-dot L" title="Liverpool 2-0 Fulham">L</div>
+        <div class="form-dot D" title="Brentford 0-0 Fulham">D</div>
+        <div class="form-dot W" title="Fulham 1-0 Aston Villa">W</div>
+      </div>
+      <div class="form-dot-label">
+        <span><span class="swatch" style="background:var(--ok)"></span>Win</span>
+        <span><span class="swatch" style="background:var(--warn)"></span>Draw</span>
+        <span><span class="swatch" style="background:var(--danger)"></span>Loss</span>
+      </div>
+      <div class="form-narrative">Sessegnon's contract-week strike and back-to-back clean sheets have lifted Fulham off the canvas. Marco Silva's side haven't conceded in nearly 200 minutes of football and arrive at the Emirates with belief that 51 points by Saturday night might just gatecrash the European places. The trip to North London is the hardest fixture of the run-in. Three of the last four are at home.</div>
+      <div class="form-matches">
+        <div class="form-match"><span>Fulham 0-1 West Ham</span><span class="score">L</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Forest 0-0 Fulham</span><span class="score">D</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Fulham 3-1 Burnley</span><span class="score">W</span><span class="venue">H</span></div>
+        <div class="form-match"><span>Liverpool 2-0 Fulham</span><span class="score">L</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Brentford 0-0 Fulham</span><span class="score">D</span><span class="venue">A</span></div>
+        <div class="form-match"><span>Fulham 1-0 Aston Villa</span><span class="score">W</span><span class="venue">H</span></div>
+      </div>
     </div>
   </div>
 </section>
