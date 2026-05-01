@@ -2280,7 +2280,7 @@ function drawBar(containerId, items, color='#CC1414'){
   const valid=items.filter(i=>i.val>0&&isFinite(i.val));
   if(_charts[containerId]){_charts[containerId].destroy();delete _charts[containerId];}
   if(!valid.length){
-    c.innerHTML='<p style="color:var(--grey2);padding:2rem;text-align:center;font-family:'DM Mono',monospace;font-size:0.75rem">No data</p>';
+    c.innerHTML='<p style="color:var(--grey2);padding:2rem;text-align:center;font-family:DM Mono,monospace;font-size:0.75rem">No data</p>';
     return;
   }
   c.innerHTML='<canvas></canvas>';
