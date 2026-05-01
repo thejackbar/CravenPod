@@ -1,0 +1,2774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Applecross CC · 2025/26 Season Wrap</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════
+   ROOT VARS — BLACK & RED
+══════════════════════════════════════════ */
+:root {
+  --black:   #0A0A0A;
+  --black2:  #111111;
+  --black3:  #1A1A1A;
+  --black4:  #222222;
+  --grey1:   #333333;
+  --grey2:   #555555;
+  --grey3:   #888888;
+  --grey4:   #BBBBBB;
+  --white:   #F0F0F0;
+  --red:     #CC1414;
+  --red2:    #E01E1E;
+  --red3:    #FF2424;
+  --red-dim: #7A0A0A;
+  --red-glow:rgba(204,20,20,0.25);
+  --gold:    #D4A017;
+  --gold2:   #F0C040;
+  --border:  rgba(204,20,20,0.2);
+  --border2: rgba(240,240,240,0.07);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  font-weight:400;
+  overflow-x:hidden;
+  cursor:default;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--black2)}
+::-webkit-scrollbar-thumb{background:var(--red-dim);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--red)}
+
+/* ── SELECTION ── */
+::selection{background:var(--red);color:#fff}
+
+/* ══════════════════════════════════════════
+   ANIMATED BG GRID
+══════════════════════════════════════════ */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(204,20,20,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(204,20,20,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+.site-header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(10,10,10,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--red);
+  box-shadow:0 0 40px rgba(204,20,20,0.3);
+}
+
+.header-inner{
+  max-width:1440px;margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:0 1.5rem;gap:1rem;
+  flex-wrap:wrap;
+}
+
+.logo-block{
+  display:flex;align-items:center;gap:1rem;
+  padding:0.8rem 0;
+}
+
+.logo-crest{
+  width:48px;height:48px;flex-shrink:0;
+  position:relative;
+}
+
+.logo-crest svg{width:100%;height:100%}
+
+.club-title{
+  font-family:'Anton',sans-serif;
+  font-size:1.5rem;
+  letter-spacing:0.06em;
+  line-height:1;
+  color:var(--white);
+  text-transform:uppercase;
+}
+
+.club-title span{color:var(--red3)}
+
+.season-tag{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--grey3);
+  margin-top:0.15rem;
+}
+
+/* ── NAV ── */
+nav.main-nav{
+  display:flex;
+  overflow-x:auto;
+  gap:0;
+  -ms-overflow-style:none;scrollbar-width:none;
+}
+nav.main-nav::-webkit-scrollbar{display:none}
+
+nav.main-nav button{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.8rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--grey3);
+  background:transparent;border:none;
+  cursor:pointer;
+  padding:1.25rem 1.1rem;
+  border-bottom:3px solid transparent;
+  transition:color 0.2s,border-color 0.2s;
+  white-space:nowrap;
+  position:relative;top:2px;
+}
+nav.main-nav button:hover{color:var(--white)}
+nav.main-nav button.active{
+  color:var(--red3);
+  border-bottom-color:var(--red3);
+}
+
+/* ══════════════════════════════════════════
+   AWARDS RIBBON
+══════════════════════════════════════════ */
+.awards-ribbon{
+  background:linear-gradient(90deg,var(--red-dim),var(--black3),var(--red-dim));
+  border-bottom:1px solid var(--red-dim);
+  padding:0.6rem 1.5rem;
+  display:flex;align-items:center;justify-content:center;
+  gap:2rem;flex-wrap:wrap;
+  overflow:hidden;position:relative;
+}
+
+.awards-ribbon::before{
+  content:'★ SEASON AWARDS ★';
+  position:absolute;left:1.5rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.65rem;font-weight:700;
+  letter-spacing:0.15em;color:var(--red);
+  white-space:nowrap;
+}
+
+.ribbon-award{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.8rem;font-weight:600;
+  letter-spacing:0.06em;
+  display:flex;align-items:center;gap:0.4rem;
+  color:var(--grey4);
+}
+
+.ribbon-award .aw-name{color:var(--gold2);font-weight:700}
+.ribbon-award .aw-icon{font-size:0.9rem}
+
+/* ══════════════════════════════════════════
+   MAIN
+══════════════════════════════════════════ */
+main{
+  max-width:1440px;margin:0 auto;
+  padding:2rem 1.5rem;
+  position:relative;z-index:1;
+}
+
+/* ── VIEWS ── */
+.view{display:none;animation:fadeUp 0.35s ease}
+.view.active{display:block}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ── SECTION HEADINGS ── */
+.sec-title{
+  font-family:'Anton',sans-serif;
+  font-size:3rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--white);
+  line-height:1;
+  margin-bottom:0.15rem;
+}
+
+.sec-title span{color:var(--red3)}
+
+.sec-sub{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--grey2);
+  margin-bottom:2rem;
+}
+
+/* ══════════════════════════════════════════
+   KPI CARDS
+══════════════════════════════════════════ */
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(170px,1fr));
+  gap:1rem;
+  margin-bottom:2rem;
+}
+
+.kpi-card{
+  background:var(--black3);
+  border:1px solid var(--border2);
+  border-radius:8px;
+  padding:1.2rem;
+  position:relative;
+  overflow:hidden;
+  transition:border-color 0.2s,transform 0.2s;
+  cursor:default;
+}
+
+.kpi-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:var(--red);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s;
+}
+
+.kpi-card:hover{
+  border-color:var(--border);
+  transform:translateY(-2px);
+}
+
+.kpi-card:hover::before{transform:scaleX(1)}
+
+.kpi-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  color:var(--grey2);
+  margin-bottom:0.4rem;
+}
+
+.kpi-val{
+  font-family:'Anton',sans-serif;
+  font-size:2.2rem;
+  line-height:1;
+  color:var(--white);
+  margin-bottom:0.2rem;
+}
+
+.kpi-val.red{color:var(--red3)}
+.kpi-val.gold{color:var(--gold2)}
+
+.kpi-sub{
+  font-size:0.72rem;
+  color:var(--grey3);
+  line-height:1.3;
+}
+
+.kpi-quip{
+  font-size:0.7rem;
+  color:var(--red);
+  font-style:italic;
+  margin-top:0.3rem;
+}
+
+/* ══════════════════════════════════════════
+   DATA TABLE
+══════════════════════════════════════════ */
+.table-wrap{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:2rem;
+  box-shadow:0 0 60px rgba(0,0,0,0.5);
+}
+
+.table-toolbar{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:1rem 1.4rem;
+  border-bottom:1px solid var(--border2);
+  gap:1rem;flex-wrap:wrap;
+  background:var(--black3);
+}
+
+.table-toolbar-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--white);
+}
+
+.tbar-right{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
+
+.search-wrap{
+  display:flex;align-items:center;gap:0.5rem;
+  background:var(--black4);
+  border:1px solid var(--border2);
+  border-radius:6px;
+  padding:0.4rem 0.8rem;
+  transition:border-color 0.2s;
+}
+.search-wrap:focus-within{border-color:var(--red)}
+
+.search-wrap input{
+  background:transparent;border:none;
+  font-family:'Barlow',sans-serif;
+  font-size:0.82rem;color:var(--white);
+  outline:none;width:160px;
+}
+.search-wrap input::placeholder{color:var(--grey2)}
+
+.filter-chip{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.07em;
+  background:var(--black4);
+  border:1px solid var(--border2);
+  border-radius:20px;
+  padding:0.3rem 0.7rem;
+  cursor:pointer;color:var(--grey3);
+  transition:all 0.15s;
+}
+.filter-chip:hover{border-color:var(--red);color:var(--red)}
+.filter-chip.active{background:var(--red);color:#fff;border-color:var(--red)}
+
+.sort-btn{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.07em;
+  background:var(--black4);
+  border:1px solid var(--border2);
+  border-radius:4px;
+  padding:0.3rem 0.7rem;
+  cursor:pointer;color:var(--grey3);
+  transition:all 0.15s;
+}
+.sort-btn:hover{color:var(--white);border-color:var(--grey2)}
+.sort-btn.active{background:var(--red);color:#fff;border-color:var(--red)}
+
+div[style*="overflow-x:auto"]{overflow-x:auto}
+
+table{width:100%;border-collapse:collapse;font-size:0.82rem}
+
+thead th{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;text-transform:uppercase;
+  letter-spacing:0.09em;color:var(--grey2);
+  background:var(--black3);
+  padding:0.7rem 1rem;
+  border-bottom:2px solid var(--border2);
+  cursor:pointer;user-select:none;
+  white-space:nowrap;text-align:left;
+  transition:color 0.2s;
+}
+thead th:hover{color:var(--white)}
+thead th.sorted{color:var(--red)}
+
+tbody tr{
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  transition:background 0.12s;
+  cursor:pointer;
+}
+tbody tr:hover{background:rgba(204,20,20,0.08)}
+tbody tr.award-row{background:rgba(212,160,23,0.05)}
+tbody tr.award-row:hover{background:rgba(212,160,23,0.1)}
+tbody tr.spotlight-row{background:rgba(204,20,20,0.12)!important}
+
+tbody td{
+  padding:0.65rem 1rem;
+  color:var(--grey4);
+  vertical-align:middle;
+}
+
+.name-cell{
+  display:flex;align-items:center;gap:0.5rem;
+  font-weight:600;color:var(--white);
+  white-space:nowrap;
+}
+
+.award-dot{
+  width:7px;height:7px;border-radius:50%;flex-shrink:0;
+}
+.dot-gold{background:var(--gold2)}
+.dot-red{background:var(--red3)}
+.dot-green{background:#3A9A3A}
+.dot-blue{background:#4A9ADE}
+.dot-hof{background:radial-gradient(var(--gold2),var(--gold));box-shadow:0 0 6px var(--gold2)}
+
+.num{font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right}
+.num.hi{color:var(--red3);font-weight:600}
+.num.gold{color:var(--gold2)}
+
+.m-badge{
+  display:inline-block;
+  font-family:'DM Mono',monospace;font-size:0.6rem;
+  background:var(--black4);border:1px solid var(--border2);
+  border-radius:3px;padding:0.1rem 0.35rem;color:var(--grey2);
+}
+
+/* ══════════════════════════════════════════
+   BAR CHART
+══════════════════════════════════════════ */
+.chart-section{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:1.5rem;
+  margin-bottom:2rem;
+}
+
+.chart-header{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;
+  margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;
+}
+
+.chart-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  letter-spacing:0.07em;text-transform:uppercase;
+}
+
+.chart-toggle{display:flex;gap:0.3rem;flex-wrap:wrap}
+.chart-toggle button{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.07em;
+  background:var(--black4);border:1px solid var(--border2);
+  border-radius:4px;padding:0.3rem 0.65rem;
+  cursor:pointer;color:var(--grey3);transition:all 0.15s;
+}
+.chart-toggle button:hover{color:var(--white);border-color:var(--grey2)}
+.chart-toggle button.active{background:var(--red);color:#fff;border-color:var(--red)}
+
+.bar-scroll{overflow-x:auto;padding-bottom:0.5rem}
+
+.bar-inner{
+  display:flex;align-items:flex-end;gap:8px;
+  min-height:200px;padding-bottom:64px;
+  min-width:max-content;
+  position:relative;
+}
+
+.bar-item{
+  display:flex;flex-direction:column;
+  align-items:center;cursor:pointer;
+  transition:opacity 0.2s;
+  position:relative;
+}
+.bar-item:hover{opacity:0.8}
+
+.bar-fill{
+  width:34px;border-radius:4px 4px 0 0;
+  transition:height 0.5s cubic-bezier(.34,1.56,.64,1);
+  position:relative;
+}
+.bar-fill::after{
+  content:attr(data-v);
+  position:absolute;top:-20px;left:50%;
+  transform:translateX(-50%);
+  font-family:'DM Mono',monospace;font-size:0.58rem;
+  color:var(--grey3);white-space:nowrap;
+}
+
+.bar-lbl{
+  position:absolute;bottom:-62px;left:50%;
+  transform:translateX(-50%) rotate(-45deg);
+  transform-origin:top center;
+  font-size:0.6rem;color:var(--grey3);
+  white-space:nowrap;width:70px;
+  text-align:left;overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* ══════════════════════════════════════════
+   OVERVIEW HERO
+══════════════════════════════════════════ */
+.hero{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:2rem;
+  position:relative;
+}
+
+.hero-top{
+  background:linear-gradient(135deg,#1a0000 0%,var(--black3) 60%,#0a0a0a 100%);
+  padding:2.5rem;
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;align-items:center;
+  border-bottom:1px solid var(--border);
+}
+
+.hero-top::after{
+  content:'';
+  position:absolute;
+  top:0;right:0;bottom:0;width:40%;
+  background:radial-gradient(ellipse at right,rgba(204,20,20,0.12),transparent 70%);
+  pointer-events:none;
+}
+
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.15em;
+  text-transform:uppercase;color:var(--red);
+  margin-bottom:0.5rem;
+}
+
+.hero-title{
+  font-family:'Anton',sans-serif;
+  font-size:4rem;letter-spacing:0.03em;
+  line-height:0.95;text-transform:uppercase;
+  color:var(--white);margin-bottom:0.8rem;
+}
+.hero-title span{color:var(--red3)}
+
+.hero-tagline{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:400;font-style:italic;
+  color:var(--grey3);line-height:1.4;
+  max-width:540px;
+}
+
+.hero-numbers{
+  display:flex;gap:2rem;flex-shrink:0;flex-wrap:wrap;
+}
+
+.hero-num{text-align:center}
+
+.hero-num-val{
+  font-family:'Anton',sans-serif;
+  font-size:3rem;line-height:1;
+  color:var(--red3);
+}
+
+.hero-num-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--grey2);
+  margin-top:0.2rem;
+}
+
+/* narrative row */
+.hero-narrative{
+  padding:1.5rem 2.5rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+}
+
+.narrative-block{
+  border-left:3px solid var(--red-dim);
+  padding-left:1rem;
+}
+
+.nb-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--red);
+  margin-bottom:0.3rem;
+}
+
+.nb-text{
+  font-family:'Barlow',sans-serif;
+  font-size:0.85rem;line-height:1.5;
+  color:var(--grey4);
+}
+
+/* ══════════════════════════════════════════
+   ANALYTICS / INSIGHTS
+══════════════════════════════════════════ */
+.insights-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:1.2rem;
+  margin-bottom:2rem;
+}
+
+.insight-card{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:1.3rem;
+  position:relative;overflow:hidden;
+  transition:border-color 0.2s;
+}
+.insight-card:hover{border-color:var(--border)}
+
+.insight-card::before{
+  content:'';
+  position:absolute;top:0;left:0;bottom:0;width:3px;
+  background:var(--red);
+}
+
+.insight-card.gold-accent::before{background:var(--gold)}
+.insight-card.green-accent::before{background:#3A9A3A}
+.insight-card.blue-accent::before{background:#4A9ADE}
+.insight-card.orange-accent::before{background:#E07020}
+
+.insight-icon{
+  font-size:1.5rem;margin-bottom:0.5rem;display:block;
+}
+
+.insight-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.85rem;font-weight:700;
+  letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--red3);margin-bottom:0.4rem;
+}
+
+.insight-card.gold-accent .insight-title{color:var(--gold2)}
+.insight-card.green-accent .insight-title{color:#5ACA5A}
+.insight-card.blue-accent .insight-title{color:#6AB4F0}
+.insight-card.orange-accent .insight-title{color:#F09040}
+
+.insight-body{
+  font-size:0.82rem;line-height:1.55;
+  color:var(--grey4);
+}
+
+.insight-body strong{color:var(--white)}
+.insight-body em{color:var(--grey3);font-style:italic}
+
+.insight-stat{
+  font-family:'Anton',sans-serif;
+  font-size:2rem;color:var(--red3);
+  margin:0.4rem 0 0.2rem;line-height:1;
+}
+
+.insight-card.gold-accent .insight-stat{color:var(--gold2)}
+.insight-card.green-accent .insight-stat{color:#5ACA5A}
+
+/* ══════════════════════════════════════════
+   PLAYER SPOTLIGHT
+══════════════════════════════════════════ */
+.spotlight-section{
+  margin-bottom:2rem;
+}
+
+.player-picker{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:0.5rem;
+  margin-bottom:1.5rem;
+  max-height:260px;
+  overflow-y:auto;
+  padding:0.5rem;
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:8px;
+}
+
+.picker-btn{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.78rem;font-weight:600;
+  letter-spacing:0.05em;
+  background:var(--black4);
+  border:1px solid var(--border2);
+  border-radius:6px;
+  padding:0.55rem 0.7rem;
+  cursor:pointer;color:var(--grey3);
+  transition:all 0.15s;
+  text-align:left;
+  line-height:1.2;
+}
+
+.picker-btn:hover{
+  background:var(--black3);
+  border-color:var(--red-dim);
+  color:var(--white);
+}
+
+.picker-btn.selected{
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+}
+
+.picker-btn .pb-name{display:block}
+.picker-btn .pb-meta{
+  font-family:'DM Mono',monospace;
+  font-size:0.55rem;color:rgba(255,255,255,0.5);
+  display:block;margin-top:0.1rem;
+}
+
+/* Spotlight card */
+.spotlight-card{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.sc-header{
+  background:linear-gradient(135deg,#1a0000,var(--black3));
+  border-bottom:2px solid var(--red);
+  padding:2rem 2.5rem;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;align-items:start;
+}
+
+.sc-name{
+  font-family:'Anton',sans-serif;
+  font-size:3rem;letter-spacing:0.04em;
+  text-transform:uppercase;color:var(--white);
+  line-height:1;
+}
+
+.sc-club{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--red);
+  margin-top:0.4rem;
+}
+
+.sc-awards{
+  display:flex;gap:0.4rem;flex-wrap:wrap;
+  margin-top:0.6rem;
+}
+
+.sc-award-tag{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.07em;
+  padding:0.25rem 0.6rem;border-radius:3px;
+}
+
+.sc-award-tag.red{background:var(--red);color:#fff}
+.sc-award-tag.gold{background:var(--gold);color:#000}
+.sc-award-tag.green{background:#2A7A2A;color:#fff}
+.sc-award-tag.joke{background:var(--black4);color:var(--grey3);border:1px solid var(--grey2)}
+
+.sc-matches{
+  font-family:'Anton',sans-serif;
+  font-size:3.5rem;line-height:1;
+  color:var(--red3);text-align:right;
+}
+.sc-matches-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;text-transform:uppercase;
+  letter-spacing:0.08em;color:var(--grey3);
+  text-align:right;margin-top:0.2rem;
+}
+
+.sc-body{padding:2rem 2.5rem}
+
+.sc-discipline{
+  margin-bottom:2rem;
+}
+
+.sc-disc-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.85rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--grey2);
+  border-bottom:1px solid var(--border2);
+  padding-bottom:0.5rem;
+  margin-bottom:1rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+
+.sc-stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+  gap:0.8rem;
+  margin-bottom:1rem;
+}
+
+.sc-stat{
+  background:var(--black3);
+  border-radius:6px;
+  padding:0.8rem;
+  border:1px solid var(--border2);
+}
+
+.sc-stat-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.55rem;text-transform:uppercase;
+  letter-spacing:0.08em;color:var(--grey2);
+  margin-bottom:0.25rem;
+}
+
+.sc-stat-val{
+  font-family:'Anton',sans-serif;
+  font-size:1.6rem;color:var(--white);line-height:1;
+}
+
+.sc-stat-val.red{color:var(--red3)}
+.sc-stat-val.gold{color:var(--gold2)}
+.sc-stat-val.green{color:#5ACA5A}
+
+/* Progress bars */
+.sc-progress{margin-bottom:0.6rem}
+.sc-prog-header{
+  display:flex;justify-content:space-between;
+  font-family:'DM Mono',monospace;font-size:0.62rem;
+  color:var(--grey3);margin-bottom:0.25rem;
+}
+.sc-prog-bar{
+  background:var(--black4);border-radius:3px;height:6px;overflow:hidden;
+}
+.sc-prog-fill{
+  height:100%;border-radius:3px;
+  background:var(--red);
+  transition:width 0.6s cubic-bezier(.34,1.2,.64,1);
+}
+.sc-prog-fill.gold{background:var(--gold)}
+.sc-prog-fill.green{background:#3A9A3A}
+
+/* Quip box */
+.sc-quip{
+  background:rgba(204,20,20,0.08);
+  border:1px solid var(--red-dim);
+  border-radius:6px;
+  padding:0.9rem 1.1rem;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.9rem;font-weight:400;font-style:italic;
+  color:var(--grey4);line-height:1.4;
+  margin-top:1rem;
+}
+.sc-quip strong{color:var(--white);font-style:normal}
+.sc-quip.gold-quip{background:rgba(212,160,23,0.08);border-color:rgba(212,160,23,0.3)}
+
+/* Radar SVG */
+.radar-wrap{
+  display:flex;justify-content:center;
+  margin-bottom:1.5rem;
+}
+
+/* ══════════════════════════════════════════
+   LEADERBOARD
+══════════════════════════════════════════ */
+.lb-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.2rem;
+  margin-bottom:2rem;
+}
+
+.lb-card{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.lb-header{
+  padding:0.9rem 1.3rem;
+  display:flex;align-items:center;gap:0.7rem;
+  border-bottom:1px solid var(--border2);
+}
+
+.lb-header-icon{font-size:1.1rem}
+
+.lb-header-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.9rem;font-weight:700;
+  letter-spacing:0.07em;text-transform:uppercase;
+  color:var(--white);
+}
+
+.lb-row{
+  display:flex;align-items:center;
+  padding:0.65rem 1.3rem;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+  gap:0.8rem;cursor:pointer;
+  transition:background 0.12s;
+}
+.lb-row:hover{background:rgba(204,20,20,0.08)}
+.lb-row:last-child{border-bottom:none}
+
+.lb-rank{
+  font-family:'Anton',sans-serif;
+  font-size:1.2rem;color:var(--grey2);
+  min-width:22px;text-align:right;
+}
+.lb-rank.r1{color:var(--gold2)}
+.lb-rank.r2{color:var(--grey3)}
+.lb-rank.r3{color:#9B6C3A}
+
+.lb-name{
+  font-size:0.85rem;font-weight:600;
+  color:var(--white);flex:1;
+}
+
+.lb-val{
+  font-family:'DM Mono',monospace;
+  font-size:0.85rem;color:var(--red3);font-weight:500;
+}
+
+.lb-sub{
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem;color:var(--grey2);
+  min-width:55px;text-align:right;
+}
+
+/* ══════════════════════════════════════════
+   ALL PLAYERS GRID
+══════════════════════════════════════════ */
+.players-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:0.8rem;
+  margin-bottom:2rem;
+}
+
+.player-card{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:8px;
+  padding:1rem;
+  cursor:pointer;
+  transition:all 0.15s;
+}
+.player-card:hover{
+  border-color:var(--red);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(204,20,20,0.15);
+}
+.player-card.has-award{border-color:rgba(212,160,23,0.3)}
+.player-card.has-award:hover{border-color:var(--gold)}
+
+.pc-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:700;
+  letter-spacing:0.05em;
+  color:var(--white);margin-bottom:0.3rem;
+}
+
+.pc-roles{font-size:0.75rem;color:var(--grey3);margin-bottom:0.5rem}
+
+.pc-stats{
+  display:flex;gap:0.6rem;
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;color:var(--grey3);
+  flex-wrap:wrap;
+}
+.pc-stats span{color:var(--grey4)}
+
+.pc-awards{
+  display:flex;gap:0.3rem;margin-top:0.5rem;flex-wrap:wrap;
+}
+
+.pc-tag{
+  font-family:'DM Mono',monospace;
+  font-size:0.55rem;text-transform:uppercase;
+  letter-spacing:0.06em;
+  background:rgba(212,160,23,0.15);
+  border:1px solid rgba(212,160,23,0.3);
+  border-radius:3px;
+  padding:0.1rem 0.4rem;
+  color:var(--gold2);
+}
+
+/* ══════════════════════════════════════════
+   FIELDING VIEW
+══════════════════════════════════════════ */
+.wk-spotlight{
+  background:linear-gradient(135deg,#0a0000,var(--black3));
+  border:1px solid var(--red-dim);
+  border-radius:10px;
+  padding:1.5rem 2rem;
+  margin-bottom:1.5rem;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;align-items:center;
+}
+
+.wk-title{
+  font-family:'Anton',sans-serif;
+  font-size:1.8rem;letter-spacing:0.04em;
+  color:var(--white);margin-bottom:0.3rem;
+}
+
+.wk-sub{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--red);
+  margin-bottom:1rem;
+}
+
+.wk-desc{font-size:0.85rem;color:var(--grey4);line-height:1.5}
+.wk-desc strong{color:var(--white)}
+
+.wk-nums{
+  display:flex;gap:1.5rem;flex-shrink:0;flex-wrap:wrap;
+}
+.wk-num-val{
+  font-family:'Anton',sans-serif;font-size:2.5rem;
+  color:var(--red3);text-align:center;line-height:1;
+}
+.wk-num-lab{
+  font-family:'DM Mono',monospace;font-size:0.55rem;
+  text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--grey2);text-align:center;margin-top:0.2rem;
+}
+
+/* ══════════════════════════════════════════
+   MODAL
+══════════════════════════════════════════ */
+.modal-bg{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,0.85);z-index:500;
+  align-items:center;justify-content:center;
+  padding:1rem;backdrop-filter:blur(6px);
+}
+.modal-bg.open{display:flex;animation:fadeUp 0.2s ease}
+
+.modal{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:12px;
+  max-width:680px;width:100%;
+  max-height:88vh;overflow-y:auto;
+  box-shadow:0 20px 80px rgba(0,0,0,0.8),0 0 60px rgba(204,20,20,0.15);
+}
+
+.modal-hdr{
+  background:linear-gradient(135deg,#1a0000,var(--black3));
+  border-bottom:2px solid var(--red);
+  padding:1.5rem 2rem;
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:1rem;
+  border-radius:12px 12px 0 0;
+}
+
+.modal-player-name{
+  font-family:'Anton',sans-serif;
+  font-size:2rem;letter-spacing:0.05em;
+  color:var(--white);line-height:1;
+}
+
+.modal-player-sub{
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--red);
+  margin-top:0.3rem;
+}
+
+.modal-award-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.5rem}
+
+.modal-close{
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--border2);
+  color:var(--grey3);
+  font-size:1rem;width:30px;height:30px;
+  border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all 0.15s;
+}
+.modal-close:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
+.modal-body{padding:1.5rem 2rem}
+
+.modal-sec-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:0.8rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--grey2);border-bottom:1px solid var(--border2);
+  padding-bottom:0.4rem;margin:1.2rem 0 0.7rem;
+  display:flex;align-items:center;gap:0.4rem;
+}
+
+.modal-sg{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0.7rem;margin-bottom:0.8rem;
+}
+
+.modal-stat{
+  background:var(--black3);
+  border-radius:6px;padding:0.8rem;
+  border:1px solid var(--border2);
+}
+.modal-stat .lbl{
+  font-family:'DM Mono',monospace;font-size:0.55rem;
+  text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--grey2);margin-bottom:0.2rem;
+}
+.modal-stat .val{
+  font-family:'Anton',sans-serif;
+  font-size:1.5rem;color:var(--white);line-height:1;
+}
+
+/* ══════════════════════════════════════════
+   AWARDS PAGE
+══════════════════════════════════════════ */
+.awards-page{}
+
+.awards-hero{
+  background:linear-gradient(135deg,#1a0000 0%,#0a0a0a 100%);
+  border:1px solid var(--red-dim);
+  border-radius:12px;
+  padding:3rem;
+  text-align:center;
+  margin-bottom:2rem;
+  position:relative;overflow:hidden;
+}
+
+.awards-hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% -20%,rgba(204,20,20,0.2),transparent 70%);
+  pointer-events:none;
+}
+
+.awards-hero-title{
+  font-family:'Anton',sans-serif;
+  font-size:4rem;letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--white);margin-bottom:0.5rem;
+  position:relative;
+}
+.awards-hero-title span{color:var(--red3)}
+
+.awards-hero-sub{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-style:italic;
+  color:var(--grey3);position:relative;
+}
+
+.big-awards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+  margin-bottom:2rem;
+}
+
+.big-award-card{
+  background:var(--black2);
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid var(--border2);
+  transition:transform 0.2s;
+}
+.big-award-card:hover{transform:translateY(-4px)}
+
+.bac-top{
+  padding:1.5rem;
+  border-bottom:1px solid var(--border2);
+}
+
+.bac-icon{font-size:2rem;display:block;margin-bottom:0.5rem}
+
+.bac-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--grey2);
+  margin-bottom:0.3rem;
+}
+
+.bac-winner{
+  font-family:'Anton',sans-serif;
+  font-size:2rem;letter-spacing:0.04em;
+  text-transform:uppercase;line-height:1;
+}
+
+.bac-winner.red{color:var(--red3)}
+.bac-winner.gold{color:var(--gold2)}
+.bac-winner.green{color:#5ACA5A}
+.bac-winner.joke{color:var(--grey3)}
+
+.bac-stats{
+  font-family:'DM Mono',monospace;
+  font-size:0.68rem;color:var(--grey3);
+  margin-top:0.4rem;
+}
+
+.bac-body{
+  padding:1.2rem 1.5rem;
+  font-size:0.83rem;line-height:1.55;
+  color:var(--grey4);
+}
+
+.bac-body strong{color:var(--white)}
+
+/* ══════════════════════════════════════════
+   ANALYTICS PAGE  
+══════════════════════════════════════════ */
+.analytics-intro{
+  font-size:0.9rem;line-height:1.6;
+  color:var(--grey4);
+  max-width:800px;
+  margin-bottom:2rem;
+  border-left:3px solid var(--red-dim);
+  padding-left:1rem;
+}
+
+/* ══════════════════════════════════════════
+   UTILITY
+══════════════════════════════════════════ */
+.flex-row{display:flex;align-items:center;gap:0.5rem}
+.mt-1{margin-top:0.5rem}
+.mt-2{margin-top:1rem}
+.mb-2{margin-bottom:1rem}
+.text-red{color:var(--red3)}
+.text-gold{color:var(--gold2)}
+.text-grey{color:var(--grey3)}
+.divider{border:none;border-top:1px solid var(--border2);margin:1.5rem 0}
+
+@media(max-width:768px){
+  .hero-top{grid-template-columns:1fr}
+  .hero-numbers{gap:1.2rem}
+  .hero-title{font-size:2.5rem}
+  .sc-header{grid-template-columns:1fr}
+  .modal-sg{grid-template-columns:repeat(2,1fr)}
+  main{padding:1rem}
+  .awards-hero{padding:2rem 1.5rem}
+  .awards-hero-title{font-size:2.5rem}
+  .wk-spotlight{grid-template-columns:1fr}
+  .sc-body{padding:1.5rem}
+}
+
+/* stagger fade-in for cards */
+.insight-card:nth-child(1){animation-delay:.05s}
+.insight-card:nth-child(2){animation-delay:.1s}
+.insight-card:nth-child(3){animation-delay:.15s}
+.insight-card:nth-child(4){animation-delay:.2s}
+.insight-card:nth-child(5){animation-delay:.25s}
+.insight-card:nth-child(6){animation-delay:.3s}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="logo-crest">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4 L42 14 L42 34 L24 44 L6 34 L6 14 Z" fill="#1a0000" stroke="#CC1414" stroke-width="2"/>
+          <path d="M24 10 L36 17 L36 31 L24 38 L12 31 L12 17 Z" fill="none" stroke="#CC1414" stroke-width="0.5" stroke-dasharray="2 2"/>
+          <text x="24" y="28" text-anchor="middle" font-family="Anton" font-size="12" fill="#CC1414" letter-spacing="1">ACC</text>
+        </svg>
+      </div>
+      <div>
+        <div class="club-title">Applecross <span>Cricket</span> Club</div>
+        <div class="season-tag">2025 / 26 · Season Wrap</div>
+      </div>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <button class="active" data-view="overview">Overview</button>
+      <button data-view="awards">Awards</button>
+      <button data-view="analytics">Analytics</button>
+      <button data-view="batting">Batting</button>
+      <button data-view="bowling">Bowling</button>
+      <button data-view="fielding">Fielding</button>
+      <button data-view="leaderboards">Leaderboards</button>
+      <button data-view="players">Players</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ── AWARDS RIBBON ── -->
+<div class="awards-ribbon">
+  <div class="ribbon-award"><span class="aw-icon">🏆</span> B&amp;F: <span class="aw-name">Monument &amp; Seen</span></div>
+  <div class="ribbon-award"><span class="aw-icon">🎯</span> Bowling: <span class="aw-name">Dissanayake</span></div>
+  <div class="ribbon-award"><span class="aw-icon">🏏</span> Batting: <span class="aw-name">Monument</span></div>
+  <div class="ribbon-award"><span class="aw-icon">⭐</span> Hall of Fame: <span class="aw-name">Matt Campbell</span></div>
+  <div class="ribbon-award"><span class="aw-icon">😂</span> Fielding: <span class="aw-name">Not Carmody</span></div>
+</div>
+
+<main>
+
+<!-- ════════════════════════════════════════
+     OVERVIEW
+════════════════════════════════════════ -->
+<section class="view active" id="view-overview">
+  <div class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="hero-eyebrow">⚡ Applecross Cricket Club · Season Wrap 2025/26</div>
+        <div class="hero-title">13 Wins.<br><span>Semi Finals.</span><br>No Regrets.</div>
+        <div class="hero-tagline">Under Angus Castley's captaincy, the black and red won 13 of 17 regular season games, posted 300+ twice, and marched into the finals. The Grand Final was always going to be a washout anyway.</div>
+      </div>
+      <div class="hero-numbers">
+        <div class="hero-num"><div class="hero-num-val">13</div><div class="hero-num-label">Wins</div></div>
+        <div class="hero-num"><div class="hero-num-val">3</div><div class="hero-num-label">Losses</div></div>
+        <div class="hero-num"><div class="hero-num-val" id="hn-runs">3541</div><div class="hero-num-label">Runs Scored</div></div>
+        <div class="hero-num"><div class="hero-num-val">SF</div><div class="hero-num-label">Finals</div></div>
+      </div>
+    </div>
+    <div class="hero-narrative">
+      <div class="narrative-block">
+        <div class="nb-label">The Season in Brief</div>
+        <div class="nb-text">Thirteen wins from seventeen regular season games. Two 300-plus scores. A semi-final appearance. Angus Castley skippered the side through a campaign that saw them lose just three times — twice to FMPCC Pirates and once to WSCC in what looked suspiciously like a mid-season wobble. They responded both times by winning the next game. That's a captain's team.</div>
+      </div>
+      <div class="narrative-block">
+        <div class="nb-label">Angus Castley: Captain</div>
+        <div class="nb-text">Castley led from the front all season — not just in the field but with the bat. 287 runs at 31.89, two half-centuries, and a composed 82 in the Round 1 win to set the tone early. When he wasn't available, Jamie Pursell stepped up as deputy — steady, reliable, and the kind of vice-captain who makes leadership look boring in the best possible way. Castley also closed out Round 15 with 65 in a 10-wicket demolition. A proper skipper.</div>
+      </div>
+      <div class="narrative-block">
+        <div class="nb-label">The Road to the Semi Final</div>
+        <div class="nb-text">After five straight wins to start the season, two tight losses in Rounds 9 and 10 were a blip, not a collapse. The team rattled off four more wins on the trot heading into the finals. The semi-final against Swan Athletic — who they'd beaten by 63 runs earlier in the season — was one of those days where the bats didn't fire. Monument top-scored with 37 and Seen took 3-23 with the ball, but 101 all out was never going to be enough. Swan ran it down by 64 runs. Semi-finalists. Season over.</div>
+      </div>
+      <div class="narrative-block">
+        <div class="nb-label">About That Grand Final</div>
+        <div class="nb-text">Here's the thing though: the week of the Grand Final, everyone knew it was going to be a washout. The weather forecast was grim. The outfield would have been unplayable. Applecross, with their superior cricket IQ, simply elected to lose the semi-final in advance and save themselves the inconvenience of travelling for a no-result. Efficient. Professional. Deeply strategic. We are choosing to believe this.</div>
+      </div>
+      <div class="narrative-block">
+        <div class="nb-label">The Elephant in the Room</div>
+        <div class="nb-text">Ryan Carmody played every game. All 17. He stood behind the stumps every single time. 30 dismissals. No fielding award. We will not be investigating this at this time, as no one is willing to explain it with a straight face.</div>
+      </div>
+      <div class="narrative-block">
+        <div class="nb-label">By The Numbers</div>
+        <div class="nb-text">A 195-run win over CVPCC (the biggest margin of the season), 3 centuries, the only five-for in the competition from Dissanayake (5-30), a 10-wicket win in Round 15, and a 300-plus innings twice. Not a bad year's work for a team playing their sixth grade cricket in Perth.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI Grid -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Top Run Scorer</div>
+      <div class="kpi-val red">480</div>
+      <div class="kpi-sub">Darren Monument · Avg 60</div>
+      <div class="kpi-quip">Batting award was never in doubt</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Highest Average (qual.)</div>
+      <div class="kpi-val gold">78.0</div>
+      <div class="kpi-sub">Josh Petersen · 2 matches</div>
+      <div class="kpi-quip">156 runs from 2 games. Alarming.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Top Wicket Taker</div>
+      <div class="kpi-val red">23</div>
+      <div class="kpi-sub">Sakun Dissanayake · Best 5-30</div>
+      <div class="kpi-quip">And still found time to bat</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Best Bowling Average</div>
+      <div class="kpi-val red">11.64</div>
+      <div class="kpi-sub">Gibson Castley · 11 wkts</div>
+      <div class="kpi-quip">Quietly lethal all season</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Best Economy Rate</div>
+      <div class="kpi-val">3.97</div>
+      <div class="kpi-sub">Jonno Seen · 384 balls</div>
+      <div class="kpi-quip">Miserly. Absolutely miserly.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Most Dismissals</div>
+      <div class="kpi-val red">30</div>
+      <div class="kpi-sub">Ryan Carmody · 17 games</div>
+      <div class="kpi-quip">No award. Sensational.</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Centuries</div>
+      <div class="kpi-val">3</div>
+      <div class="kpi-sub">Monument · Barendse · Petersen</div>
+      <div class="kpi-quip">Petersen scored one in 2 games</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Most Sixes</div>
+      <div class="kpi-val gold">9</div>
+      <div class="kpi-sub">Monument &amp; Barendse (tied)</div>
+      <div class="kpi-quip">Different styles, same result</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Season Record</div>
+      <div class="kpi-val red">13-3</div>
+      <div class="kpi-sub">+ 1 Bye · Semi Finalists</div>
+      <div class="kpi-quip">Grand Final was a washout anyway 🌧️</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Highest Strike Rate</div>
+      <div class="kpi-val">200</div>
+      <div class="kpi-sub">Jody Parkin · 3 balls faced</div>
+      <div class="kpi-quip">Hit 6, didn't get out. Retired?</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Total Team Ducks</div>
+      <div class="kpi-val red">19</div>
+      <div class="kpi-sub">Across all batters</div>
+      <div class="kpi-quip">Some players scored more ducks than runs</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Five-Wicket Hauls</div>
+      <div class="kpi-val">1</div>
+      <div class="kpi-sub">Dissanayake 5-30</div>
+      <div class="kpi-quip">The only one. Own it, Sakun.</div>
+    </div>
+  </div>
+
+  <!-- Bar Chart -->
+  <div class="chart-section">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">Top Run Scorers — Season Overview</div>
+        <div style="font-size:0.75rem;color:var(--grey3);margin-top:0.2rem">Click a player bar to jump to their spotlight</div>
+      </div>
+      <div class="chart-toggle">
+        <button class="active" onclick="overviewChart('runs',this)">Runs</button>
+        <button onclick="overviewChart('avg',this)">Avg</button>
+        <button onclick="overviewChart('sr',this)">Strike Rate</button>
+        <button onclick="overviewChart('wkts',this)">Wickets</button>
+        <button onclick="overviewChart('econ',this)">Economy</button>
+      </div>
+    </div>
+    <div class="bar-scroll"><div class="bar-inner" id="overview-chart"></div></div>
+  </div>
+
+  <!-- Match Results -->
+  <div class="chart-section">
+    <div class="chart-header">
+      <div>
+        <div class="chart-title">2025/26 Season Results</div>
+        <div style="font-size:0.75rem;color:var(--grey3);margin-top:0.2rem">17 regular season games + Semi Final · Capt: A. Castley / dep. J. Pursell</div>
+      </div>
+      <div style="display:flex;gap:0.8rem;font-family:'DM Mono',monospace;font-size:0.7rem;align-items:center;flex-wrap:wrap">
+        <span style="color:var(--grey3)"><span style="color:#3A9A3A;font-weight:700">W</span> Won</span>
+        <span style="color:var(--grey3)"><span style="color:var(--red3);font-weight:700">L</span> Lost</span>
+        <span style="color:var(--grey3)"><span style="color:var(--grey2);font-weight:700">NR</span> No Result</span>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:0.8rem">
+        <thead>
+          <tr>
+            <th style="font-family:'DM Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey2);background:var(--black3);padding:0.6rem 1rem;border-bottom:2px solid var(--border2);text-align:left;white-space:nowrap">Round</th>
+            <th style="font-family:'DM Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey2);background:var(--black3);padding:0.6rem 1rem;border-bottom:2px solid var(--border2);text-align:left">Result</th>
+            <th style="font-family:'DM Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey2);background:var(--black3);padding:0.6rem 1rem;border-bottom:2px solid var(--border2);text-align:left">Opponent</th>
+            <th style="font-family:'DM Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey2);background:var(--black3);padding:0.6rem 1rem;border-bottom:2px solid var(--border2);text-align:right">ACC Score</th>
+            <th style="font-family:'DM Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey2);background:var(--black3);padding:0.6rem 1rem;border-bottom:2px solid var(--border2);text-align:right">Opp Score</th>
+            <th style="font-family:'DM Mono',monospace;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey2);background:var(--black3);padding:0.6rem 1rem;border-bottom:2px solid var(--border2);text-align:left">Top Performers</th>
+          </tr>
+        </thead>
+        <tbody id="results-tbody">
+          <!-- Rendered inline -->
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 1 · 18 Oct</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +22</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Bassendean CC 6th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">6-245</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">223</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Castley 82, Campbell 60 · 🎯 Pursell 3-29, Dissanayake 3-38</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(204,20,20,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 2 · 25 Oct</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:var(--red3);background:rgba(204,20,20,0.1);border:1px solid rgba(204,20,20,0.3);border-radius:3px;padding:0.15rem 0.4rem">L −4wk</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">FMPCC Pirates 7th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white)">4-237</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">6-239</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Campbell 65, Pursell 44, Castley 35</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 3 · 1 Nov</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +63</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Balcatta Cats 5th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">8-204</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">7-141</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Barendse 100</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 4 · 8 Nov</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +2r</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">SPSTCC 4th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">6-175</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">173</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 G. Castley 60, Pursell 31 · 🎯 Paterson 3-37</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 5 · 15 Nov</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +63</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Swan Athletic OD4</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">5-209</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">146</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Monument 84, Seen 41 · 🎯 Shub 4-37</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 6 · 29 Nov</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +195</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">CVPCC 5th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--gold2);font-weight:600">6-323</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">8-128</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Monument 110★, R.Campbell 59, Hackett 57 · 🎯 Shub 4-47</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 7 · 6 Dec</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +45</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">NBCCC OD4</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--gold2);font-weight:600">6-311</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">8-266</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Petersen 122, Monument 87, WJ 45</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 8 · 13 Dec</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +47</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Bentley 4th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">6-172</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">9-125</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Stirling 63, Campbell 30 · 🎯 O'Hara 3-18</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(204,20,20,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 9 · 10 Jan</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:var(--red3);background:rgba(204,20,20,0.1);border:1px solid rgba(204,20,20,0.3);border-radius:3px;padding:0.15rem 0.4rem">L −3wk</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">FMPCC Pirates 7th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white)">9-185</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">7-189</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 O'Hara 30</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);background:rgba(204,20,20,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 10 · 17 Jan</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:var(--red3);background:rgba(204,20,20,0.1);border:1px solid rgba(204,20,20,0.3);border-radius:3px;padding:0.15rem 0.4rem">L −6wk</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">WSCC OD4</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white)">136</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">4-141</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Campbell 31</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 11 · 24 Jan</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +14</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Balcatta Cats 5th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">6-189</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">8-175</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Wardell-Johnson 69, Monument 34</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 12 · 31 Jan</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +4r</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">NBCCC OD4</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">8-212</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">9-208</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Wardell-Johnson 48, Petersen 34</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 13 · BYE</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:var(--grey2);background:var(--black4);border:1px solid var(--border2);border-radius:3px;padding:0.15rem 0.4rem">NR</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey3)">— Bye —</td>
+            <td style="padding:0.6rem 1rem;text-align:right;color:var(--grey2)">—</td>
+            <td style="padding:0.6rem 1rem;text-align:right;color:var(--grey2)">—</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey2);font-style:italic">Rested. Recharged. Returned.</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 14 · 14 Feb</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W 10wk</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Swan Athletic OD4</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">2-131</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">130</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Hullett 40, Campbell 39 · 🎯 G.Castley 4-16, Shub 3-29</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 15 · 21 Feb</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W 10wk</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Bentley 4th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">0-115</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">114</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Castley 65, Campbell 38</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 16 · 28 Feb</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +26</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">SPSTCC 4th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">7-212</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">8-186</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Stirling 38, Monument 37</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 17 · 7 Mar</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +6wk</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">WSCC OD4</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">4-146</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">145</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Hullett 45, Castley 35 · 🎯 Paterson 3-21</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04)">
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--grey3);white-space:nowrap">Rd 18 · 14 Mar</td>
+            <td style="padding:0.6rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:#3A9A3A;background:rgba(58,154,58,0.1);border:1px solid rgba(58,154,58,0.3);border-radius:3px;padding:0.15rem 0.4rem">W +4wk</span></td>
+            <td style="padding:0.6rem 1rem;color:var(--grey4)">Bassendean CC 6th</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white);font-weight:600">6-125</td>
+            <td style="padding:0.6rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">121</td>
+            <td style="padding:0.6rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Monument 33 · 🎯 Dissanayake 5-30★</td>
+          </tr>
+          <tr style="background:rgba(212,160,23,0.06);border-top:2px solid rgba(212,160,23,0.3)">
+            <td style="padding:0.7rem 1rem;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--gold2);font-weight:700;white-space:nowrap">Semi Final</td>
+            <td style="padding:0.7rem 1rem"><span style="font-family:'DM Mono',monospace;font-size:0.7rem;font-weight:700;color:var(--red3);background:rgba(204,20,20,0.1);border:1px solid rgba(204,20,20,0.3);border-radius:3px;padding:0.15rem 0.4rem">L −64</span></td>
+            <td style="padding:0.7rem 1rem;color:var(--grey4)">Swan Athletic OD4</td>
+            <td style="padding:0.7rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--white)">101</td>
+            <td style="padding:0.7rem 1rem;font-family:'DM Mono',monospace;font-size:0.78rem;text-align:right;color:var(--grey3)">7-165</td>
+            <td style="padding:0.7rem 1rem;font-size:0.72rem;color:var(--grey3)">🏏 Monument 37 · 🎯 Seen 3-23 · Grand Final was going to be a washout anyway 🌧️</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     AWARDS
+════════════════════════════════════════ -->
+<section class="view" id="view-awards">
+  <div class="awards-hero">
+    <div class="awards-hero-title">Season <span>Awards</span> Night</div>
+    <div class="awards-hero-sub">13 wins. Semi-finalists. Under Angus Castley's watch. The ceremony nobody expected, except Darren Monument who probably wore a nice shirt.</div>
+  </div>
+
+  <div class="big-awards-grid">
+
+    <div class="big-award-card">
+      <div class="bac-top" style="background:linear-gradient(135deg,rgba(212,160,23,0.15),transparent)">
+        <span class="bac-icon">🏆</span>
+        <div class="bac-label">Best &amp; Fairest — Joint Winners</div>
+        <div class="bac-winner gold">Darren Monument</div>
+        <div class="bac-winner gold">&amp; Jonno Seen</div>
+        <div class="bac-stats">Monument: 480 runs · Avg 60 · SR 107 | Seen: 15 wkts · Econ 3.97 · 9 catches</div>
+      </div>
+      <div class="bac-body">A joint award that makes complete sense when you look at the numbers. <strong>Monument</strong> was the run-machine the top order needed — a century, two fifties, and a 107 strike rate that said he was never just playing for average. <strong>Seen</strong> meanwhile was the quietly indispensable one: 15 wickets at under 4 runs an over, 9 catches in the field, and enough batting to keep you guessing. Best and Fairest — and arguably the most deserving joint result of the season. Two blokes who showed up every week and just did the job.</div>
+    </div>
+
+    <div class="big-award-card">
+      <div class="bac-top" style="background:linear-gradient(135deg,rgba(58,154,58,0.15),transparent)">
+        <span class="bac-icon">🎯</span>
+        <div class="bac-label">Bowling Award</div>
+        <div class="bac-winner green">Sakun Dissanayake</div>
+        <div class="bac-stats">23 wkts · Avg 20.91 · Best 5-30 · 1 five-for · 15 matches</div>
+      </div>
+      <div class="bac-body"><strong>Sakun Dissanayake</strong> was the most dangerous bowler in the club this season, full stop. Twenty-three wickets — five more than the next best — including the season's only five-wicket haul (5-30, which is genuinely excellent). He bowled 612 balls and took 10 maidens. The economy of 4.72 is solid for a strike bowler. He was also, technically, a batsman this season — 19 runs across 3 innings — but we'll let the bowling do the talking. A deserved winner.</div>
+    </div>
+
+    <div class="big-award-card">
+      <div class="bac-top" style="background:linear-gradient(135deg,rgba(204,20,20,0.15),transparent)">
+        <span class="bac-icon">🏏</span>
+        <div class="bac-label">Batting Award</div>
+        <div class="bac-winner red">Darren Monument</div>
+        <div class="bac-stats">480 runs · Avg 60.00 · SR 107.14 · 110 not out · 1x 100 · 2x 50</div>
+      </div>
+      <div class="bac-body"><strong>Darren Monument</strong> scored 480 runs at 60. In 10 innings, with 2 not outs, he made a century, two half-centuries, hit 54 fours and 9 sixes, and struck the ball at 107 — meaning he was never just accumulating. He was the top scorer by 141 runs, the top average by a mile among regular batters, and won Best &amp; Fairest in the same breath. The batting award was, frankly, a formality. Monument was in a different postcode to the rest of the competition this season.</div>
+    </div>
+
+    <div class="big-award-card">
+      <div class="bac-top" style="background:linear-gradient(135deg,rgba(212,160,23,0.2),transparent);border:1px solid rgba(212,160,23,0.2)">
+        <span class="bac-icon">⭐</span>
+        <div class="bac-label">Hall of Fame Inductee</div>
+        <div class="bac-winner gold">Matt Campbell</div>
+        <div class="bac-stats">14 matches · 339 runs · Avg 26.08 · 14 seasons of service</div>
+      </div>
+      <div class="bac-body"><strong>Matt Campbell</strong> earns his spot in the Applecross Hall of Fame — and if this season's 339 runs from 14 matches is his swansong, it's a fitting one. A team man through and through. The kind of cricketer who holds the dressing room together as much as the scorecard. Fourteen games this season, never less than committed. Hall of Fame? Absolutely. He's earned every bit of it.</div>
+    </div>
+
+    <div class="big-award-card" style="border-color:rgba(255,255,255,0.05)">
+      <div class="bac-top" style="background:var(--black3)">
+        <span class="bac-icon">😂</span>
+        <div class="bac-label">The Fielding Award (presented to nobody)</div>
+        <div class="bac-winner joke">Definitely Not Ryan Carmody</div>
+        <div class="bac-stats">17 catches · 7 stumpings · 6 run outs · 30 total dismissals</div>
+      </div>
+      <div class="bac-body">In a truly staggering act of selective blindness, <strong>Ryan Carmody</strong> — who played all 17 matches, took 17 catches (16 of them as wicketkeeper), effected 7 stumpings, and assisted 6 run outs — did not win the fielding award. That's 30 dismissals. Thirty. The next closest is 11 catches from DJ O'Hara. Carmody is literally in a different sport. We cannot stress enough: this man's glove work kept this club in games, and he got to watch someone else accept a trophy. We're not saying it's wrong, we're just saying the numbers are having a crisis of confidence about it.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     ANALYTICS
+════════════════════════════════════════ -->
+<section class="view" id="view-analytics">
+  <div class="sec-title">Deep <span>Analytics</span></div>
+  <div class="sec-sub">Dug deep. Found things. Some alarming. All true.</div>
+
+  <div class="analytics-intro">
+    Below are 16 statistical observations drawn from the 2025/26 season data. Some are genuinely impressive. Some are mildly embarrassing. All are real. Numbers don't have feelings, which is probably for the best.
+  </div>
+
+  <div class="insights-grid" id="analytics-grid"></div>
+</section>
+
+<!-- ════════════════════════════════════════
+     BATTING
+════════════════════════════════════════ -->
+<section class="view" id="view-batting">
+  <div class="sec-title">Batting <span>Stats</span></div>
+  <div class="sec-sub">All innings · 2025/26 season</div>
+
+  <div class="kpi-grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+    <div class="kpi-card"><div class="kpi-label">Total Runs</div><div class="kpi-val red" id="bat-total">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Highest Score</div><div class="kpi-val">110*</div><div class="kpi-sub">Monument</div></div>
+    <div class="kpi-card"><div class="kpi-label">Centuries</div><div class="kpi-val">3</div></div>
+    <div class="kpi-card"><div class="kpi-label">Half Centuries</div><div class="kpi-val" id="bat-fifties">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Ducks</div><div class="kpi-val red" id="bat-ducks">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total 6s</div><div class="kpi-val gold" id="bat-sixes">—</div></div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-toolbar">
+      <div class="table-toolbar-title">Batting Averages</div>
+      <div class="tbar-right">
+        <span class="filter-chip active" data-tbl="bat" data-filter="all">All</span>
+        <span class="filter-chip" data-tbl="bat" data-filter="qualified">Qualified</span>
+        <span class="filter-chip" data-tbl="bat" data-filter="100s">Centuries</span>
+        <div class="search-wrap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" placeholder="Search…" id="bat-search"/></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>
+          <th>Player</th>
+          <th>M</th><th class="sorted">Runs ↓</th><th>Avg</th><th>SR</th>
+          <th>Inn</th><th>NO</th><th>HS</th><th>100s</th><th>50s</th>
+          <th>Ducks</th><th>4s</th><th>6s</th>
+        </tr></thead>
+        <tbody id="bat-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-header">
+      <div class="chart-title">Batting Comparison</div>
+      <div class="chart-toggle">
+        <button class="active" onclick="battingChart('runs',this)">Runs</button>
+        <button onclick="battingChart('avg',this)">Average</button>
+        <button onclick="battingChart('sr',this)">Strike Rate</button>
+        <button onclick="battingChart('sixes',this)">Sixes</button>
+        <button onclick="battingChart('fours',this)">Fours</button>
+      </div>
+    </div>
+    <div class="bar-scroll"><div class="bar-inner" id="bat-chart"></div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     BOWLING
+════════════════════════════════════════ -->
+<section class="view" id="view-bowling">
+  <div class="sec-title">Bowling <span>Stats</span></div>
+  <div class="sec-sub">All bowlers · 2025/26 season</div>
+
+  <div class="kpi-grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+    <div class="kpi-card"><div class="kpi-label">Total Wickets</div><div class="kpi-val red" id="bowl-total">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Five-Fors</div><div class="kpi-val">1</div><div class="kpi-sub">Dissanayake 5-30</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best Average</div><div class="kpi-val">11.64</div><div class="kpi-sub">G. Castley</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best Economy</div><div class="kpi-val">3.97</div><div class="kpi-sub">J. Seen</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Balls</div><div class="kpi-val" id="bowl-balls">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Maidens</div><div class="kpi-val" id="bowl-maidens">—</div></div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-toolbar">
+      <div class="table-toolbar-title">Bowling Averages</div>
+      <div class="tbar-right">
+        <span class="filter-chip active" data-tbl="bowl" data-filter="all">All Bowlers</span>
+        <span class="filter-chip" data-tbl="bowl" data-filter="10plus">10+ Wkts</span>
+        <span class="filter-chip" data-tbl="bowl" data-filter="5plus">5+ Wkts</span>
+        <div class="search-wrap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" placeholder="Search…" id="bowl-search"/></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>
+          <th>Player</th>
+          <th>M</th><th class="sorted">Wkts ↓</th><th>Avg</th><th>Econ</th>
+          <th>SR</th><th>Best</th><th>5WI</th><th>Runs</th><th>Balls</th><th>Mdns</th>
+        </tr></thead>
+        <tbody id="bowl-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-header">
+      <div class="chart-title">Bowling Comparison</div>
+      <div class="chart-toggle">
+        <button class="active" onclick="bowlingChart('wkts',this)">Wickets</button>
+        <button onclick="bowlingChart('avg',this)">Average</button>
+        <button onclick="bowlingChart('econ',this)">Economy</button>
+        <button onclick="bowlingChart('balls',this)">Balls</button>
+        <button onclick="bowlingChart('maidens',this)">Maidens</button>
+      </div>
+    </div>
+    <div class="bar-scroll"><div class="bar-inner" id="bowl-chart"></div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FIELDING
+════════════════════════════════════════ -->
+<section class="view" id="view-fielding">
+  <div class="sec-title">Fielding <span>Stats</span></div>
+  <div class="sec-sub">Catches · Stumpings · Run Outs · The Great Carmody Snub</div>
+
+  <div class="wk-spotlight">
+    <div>
+      <div class="wk-title">🧤 Ryan Carmody</div>
+      <div class="wk-sub">Wicketkeeper · 17 Matches · No Award</div>
+      <div class="wk-desc">The most productive fielder in the club by an extraordinary margin, <strong>Ryan Carmody</strong> was involved in 30 dismissals this season. His 16 wicketkeeper catches, 7 stumpings, 6 assisted run outs, and 1 outfield catch add up to more than the next <em>three</em> fielders combined. He played every game. He wore the gloves every game. He smiled through every wide and every dropped catch in the outfield. And then he watched someone else lift a trophy. The Applecross Fielding Award selection committee has some explaining to do.</div>
+    </div>
+    <div class="wk-nums">
+      <div><div class="wk-num-val">17</div><div class="wk-num-lab">WK Catches</div></div>
+      <div><div class="wk-num-val">7</div><div class="wk-num-lab">Stumpings</div></div>
+      <div><div class="wk-num-val">6</div><div class="wk-num-lab">Run Outs</div></div>
+      <div><div class="wk-num-val">30</div><div class="wk-num-lab">Total Dismiss.</div></div>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-label">Team Total Catches</div><div class="kpi-val red" id="f-catches">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Top Outfield Catcher</div><div class="kpi-val">11</div><div class="kpi-sub">DJ O'Hara</div></div>
+    <div class="kpi-card"><div class="kpi-label">Team Run Outs</div><div class="kpi-val" id="f-runouts">—</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Stumpings</div><div class="kpi-val">8</div><div class="kpi-sub">Carmody 7 + R. Campbell 1</div></div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-toolbar">
+      <div class="table-toolbar-title">Fielding Statistics</div>
+      <div class="tbar-right">
+        <div class="search-wrap"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" placeholder="Search…" id="field-search"/></div>
+      </div>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>
+          <th>Player</th><th class="sorted">Total Cat ↓</th>
+          <th>Field Cat</th><th>WK Cat</th><th>Stumpings</th>
+          <th>RO Assisted</th><th>RO Direct</th><th>M</th>
+        </tr></thead>
+        <tbody id="field-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="chart-section">
+    <div class="chart-header">
+      <div class="chart-title">Fielding Dismissals</div>
+      <div class="chart-toggle">
+        <button class="active" onclick="fieldingChart('total',this)">Total</button>
+        <button onclick="fieldingChart('outfield',this)">Outfield</button>
+        <button onclick="fieldingChart('runouts',this)">Run Outs</button>
+      </div>
+    </div>
+    <div class="bar-scroll"><div class="bar-inner" id="field-chart"></div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     LEADERBOARDS
+════════════════════════════════════════ -->
+<section class="view" id="view-leaderboards">
+  <div class="sec-title">Leader<span>boards</span></div>
+  <div class="sec-sub">Top 8 in every major category · Click any row for player spotlight</div>
+  <div class="lb-grid" id="lb-grid"></div>
+</section>
+
+<!-- ════════════════════════════════════════
+     PLAYERS (merged grid + spotlight)
+════════════════════════════════════════ -->
+<section class="view" id="view-players">
+
+  <!-- PLAYER GRID STATE -->
+  <div id="players-list-state">
+    <div class="sec-title">All <span>Players</span></div>
+    <div class="sec-sub">31 brave souls · Click any card for full breakdown</div>
+    <div class="search-wrap" style="max-width:300px;margin-bottom:1.5rem">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search player…" id="all-search" style="width:250px"/>
+    </div>
+    <div class="players-grid" id="players-grid"></div>
+  </div>
+
+  <!-- SPOTLIGHT STATE (hidden until player selected) -->
+  <div id="players-spotlight-state" style="display:none">
+    <div style="margin-bottom:1.5rem">
+      <button onclick="showPlayerList()" style="
+        font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;
+        letter-spacing:0.08em;text-transform:uppercase;
+        background:var(--black3);border:1px solid var(--border2);
+        color:var(--grey3);border-radius:6px;padding:0.5rem 1rem;
+        cursor:pointer;display:flex;align-items:center;gap:0.5rem;
+        transition:all 0.15s;
+      " onmouseenter="this.style.borderColor='var(--red)';this.style.color='var(--white)'"
+         onmouseleave="this.style.borderColor='var(--border2)';this.style.color='var(--grey3)'">
+        ← Back to All Players
+      </button>
+    </div>
+    <div class="spotlight-card" id="spotlight-card">
+      <div style="text-align:center;padding:3rem;color:var(--grey2);font-family:'DM Mono',monospace;font-size:0.75rem;">
+        Loading...
+      </div>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<!-- ── MODAL ── -->
+<div class="modal-bg" id="modal-bg" onclick="closeMBg(event)">
+  <div class="modal">
+    <div class="modal-hdr">
+      <div>
+        <div class="modal-player-name" id="m-name">—</div>
+        <div class="modal-player-sub" id="m-sub">—</div>
+        <div class="modal-award-row" id="m-awards"></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="m-body"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+  DATA + JS
+═══════════════════════════════════ -->
+<script>
+// ─────────────────────────────────────
+//  DATA
+// ─────────────────────────────────────
+const BATTING=[
+  {n:"Monument, Darren",m:12,inn:10,no:2,runs:480,avg:60,sr:107.14,hs:110,hsno:true,c100:1,c50:2,ducks:0,fours:54,sixes:9},
+  {n:"Campbell, Matt",m:14,inn:14,no:1,runs:339,avg:26.08,sr:95.49,hs:65,hsno:false,c100:0,c50:2,ducks:2,fours:40,sixes:7},
+  {n:"Castley, Angus",m:11,inn:11,no:2,runs:287,avg:31.89,sr:83.43,hs:82,hsno:false,c100:0,c50:2,ducks:1,fours:30,sixes:1},
+  {n:"Wardell-Johnson, Leigh",m:11,inn:11,no:1,runs:274,avg:27.4,sr:73.85,hs:69,hsno:false,c100:0,c50:1,ducks:0,fours:38,sixes:3},
+  {n:"Seen, Jonathon",m:14,inn:11,no:7,runs:196,avg:49,sr:72.86,hs:41,hsno:true,c100:0,c50:0,ducks:1,fours:14,sixes:1},
+  {n:"Barendse, Jack",m:9,inn:8,no:0,runs:172,avg:21.5,sr:95.03,hs:100,hsno:false,c100:1,c50:0,ducks:0,fours:17,sixes:9},
+  {n:"Stirling, Doug",m:11,inn:9,no:2,runs:169,avg:24.14,sr:60.14,hs:63,hsno:false,c100:0,c50:1,ducks:1,fours:19,sixes:0},
+  {n:"Petersen, Josh",m:2,inn:2,no:0,runs:156,avg:78,sr:101.96,hs:122,hsno:false,c100:1,c50:0,ducks:0,fours:15,sixes:5},
+  {n:"Pursell, Jamie",m:13,inn:11,no:3,runs:147,avg:18.38,sr:63.36,hs:44,hsno:true,c100:0,c50:0,ducks:2,fours:13,sixes:1},
+  {n:"Paterson, William",m:13,inn:8,no:4,runs:116,avg:29,sr:55.77,hs:24,hsno:false,c100:0,c50:0,ducks:1,fours:6,sixes:0},
+  {n:"Hullett, Mark",m:5,inn:5,no:1,runs:103,avg:25.75,sr:115.73,hs:45,hsno:false,c100:0,c50:0,ducks:0,fours:11,sixes:2},
+  {n:"Castley, Gibson",m:12,inn:8,no:1,runs:95,avg:13.57,sr:55.56,hs:60,hsno:false,c100:0,c50:1,ducks:2,fours:5,sixes:0},
+  {n:"Carmody, Ryan",m:17,inn:10,no:2,runs:94,avg:11.75,sr:81.03,hs:24,hsno:false,c100:0,c50:0,ducks:1,fours:7,sixes:0},
+  {n:"O'Hara, DJ",m:13,inn:8,no:3,runs:79,avg:15.8,sr:101.28,hs:30,hsno:false,c100:0,c50:0,ducks:0,fours:4,sixes:0},
+  {n:"Hackett, Adrian",m:2,inn:2,no:0,runs:71,avg:35.5,sr:118.33,hs:57,hsno:false,c100:0,c50:1,ducks:0,fours:9,sixes:0},
+  {n:"Campbell, Richard",m:3,inn:1,no:0,runs:59,avg:59,sr:128.26,hs:59,hsno:false,c100:0,c50:1,ducks:0,fours:11,sixes:1},
+  {n:"Calder, Bruce",m:5,inn:3,no:1,runs:54,avg:27,sr:94.74,hs:23,hsno:false,c100:0,c50:0,ducks:0,fours:6,sixes:0},
+  {n:"Dissanayake, Sakun",m:15,inn:3,no:2,runs:19,avg:19,sr:76,hs:16,hsno:true,c100:0,c50:0,ducks:0,fours:2,sixes:0},
+  {n:"Davies, Joel",m:1,inn:1,no:0,runs:10,avg:10,sr:62.5,hs:10,hsno:false,c100:0,c50:0,ducks:0,fours:2,sixes:0},
+  {n:"Delport, Isaac",m:5,inn:2,no:1,runs:6,avg:6,sr:75,hs:6,hsno:true,c100:0,c50:0,ducks:1,fours:0,sixes:0},
+  {n:"Parkin, Jody",m:1,inn:1,no:1,runs:6,avg:null,sr:200,hs:6,hsno:true,c100:0,c50:0,ducks:0,fours:1,sixes:0},
+  {n:"Mahin, Samiul",m:1,inn:1,no:0,runs:6,avg:6,sr:35.29,hs:6,hsno:false,c100:0,c50:0,ducks:0,fours:1,sixes:0},
+  {n:"Doloswala, Asitha",m:3,inn:1,no:1,runs:4,avg:null,sr:33.33,hs:4,hsno:true,c100:0,c50:0,ducks:0,fours:0,sixes:0},
+  {n:"Flambard, Matt",m:2,inn:2,no:1,runs:1,avg:1,sr:4,hs:1,hsno:true,c100:0,c50:0,ducks:1,fours:0,sixes:0},
+  {n:"Bhambri, Anirudh",m:2,inn:1,no:0,runs:1,avg:1,sr:null,hs:1,hsno:false,c100:0,c50:0,ducks:0,fours:0,sixes:0},
+  {n:"Shub, Simon",m:11,inn:1,no:0,runs:0,avg:0,sr:null,hs:0,hsno:false,c100:0,c50:0,ducks:1,fours:0,sixes:0},
+  {n:"Sheth, Kashish",m:1,inn:0,no:0,runs:0,avg:null,sr:null,hs:0,hsno:false,c100:0,c50:0,ducks:0,fours:0,sixes:0},
+  {n:"Sajan, Eniyo",m:1,inn:0,no:0,runs:0,avg:null,sr:null,hs:0,hsno:false,c100:0,c50:0,ducks:0,fours:0,sixes:0},
+  {n:"Rogerson, Nick",m:1,inn:0,no:0,runs:0,avg:null,sr:null,hs:0,hsno:false,c100:0,c50:0,ducks:0,fours:0,sixes:0},
+  {n:"Brennan, Aidan",m:2,inn:0,no:0,runs:0,avg:null,sr:null,hs:0,hsno:false,c100:0,c50:0,ducks:0,fours:0,sixes:0},
+  {n:"Gelderbloem, Clinton",m:0,inn:0,no:0,runs:0,avg:null,sr:null,hs:0,hsno:false,c100:0,c50:0,ducks:0,fours:0,sixes:0},
+];
+
+const BOWLING=[
+  {n:"Dissanayake, Sakun",m:15,wkts:23,runs:481,balls:612,avg:20.91,sr:26.61,econ:4.72,best:"5-30",w5:1,maidens:10},
+  {n:"Shub, Simon",m:11,wkts:22,runs:398,balls:414,avg:18.09,sr:18.82,econ:5.77,best:"4-37",w5:0,maidens:2},
+  {n:"Pursell, Jamie",m:13,wkts:16,runs:290,balls:407,avg:18.13,sr:25.44,econ:4.28,best:"3-29",w5:0,maidens:6},
+  {n:"Seen, Jonathon",m:14,wkts:15,runs:254,balls:384,avg:16.93,sr:25.6,econ:3.97,best:"3-23",w5:0,maidens:8},
+  {n:"O'Hara, DJ",m:13,wkts:14,runs:401,balls:491,avg:28.64,sr:35.07,econ:4.9,best:"3-18",w5:0,maidens:7},
+  {n:"Paterson, William",m:13,wkts:12,runs:278,balls:329,avg:23.17,sr:27.42,econ:5.07,best:"3-21",w5:0,maidens:2},
+  {n:"Castley, Gibson",m:12,wkts:11,runs:128,balls:153,avg:11.64,sr:13.91,econ:5.02,best:"4-16",w5:0,maidens:1},
+  {n:"Barendse, Jack",m:9,wkts:6,runs:132,balls:192,avg:22,sr:32,econ:4.13,best:"2-16",w5:0,maidens:3},
+  {n:"Delport, Isaac",m:5,wkts:6,runs:175,balls:210,avg:29.17,sr:35,econ:5,best:"2-28",w5:0,maidens:3},
+  {n:"Stirling, Doug",m:11,wkts:5,runs:99,balls:87,avg:19.8,sr:17.4,econ:6.83,best:"2-15",w5:0,maidens:0},
+  {n:"Brennan, Aidan",m:2,wkts:3,runs:66,balls:78,avg:22,sr:26,econ:5.08,best:"2-48",w5:0,maidens:1},
+  {n:"Sheth, Kashish",m:1,wkts:2,runs:24,balls:30,avg:12,sr:15,econ:4.8,best:"2-24",w5:0,maidens:1},
+  {n:"Bhambri, Anirudh",m:2,wkts:2,runs:38,balls:42,avg:19,sr:21,econ:5.43,best:"1-13",w5:0,maidens:1},
+  {n:"Sajan, Eniyo",m:1,wkts:1,runs:17,balls:42,avg:17,sr:42,econ:2.43,best:"1-17",w5:0,maidens:1},
+  {n:"Petersen, Josh",m:2,wkts:1,runs:27,balls:48,avg:27,sr:48,econ:3.38,best:"1-27",w5:0,maidens:1},
+  {n:"Doloswala, Asitha",m:3,wkts:1,runs:54,balls:60,avg:54,sr:60,econ:5.4,best:"1-28",w5:0,maidens:0},
+  {n:"Campbell, Matt",m:14,wkts:0,runs:20,balls:18,avg:null,sr:null,econ:6.67,best:"0-0",w5:0,maidens:0},
+  {n:"Monument, Darren",m:12,wkts:0,runs:47,balls:56,avg:null,sr:null,econ:5.04,best:"0-0",w5:0,maidens:1},
+  {n:"Calder, Bruce",m:5,wkts:0,runs:14,balls:6,avg:null,sr:null,econ:14,best:"0-14",w5:0,maidens:0},
+  {n:"Flambard, Matt",m:2,wkts:0,runs:40,balls:48,avg:null,sr:null,econ:5,best:"0-0",w5:0,maidens:0},
+  {n:"Parkin, Jody",m:1,wkts:0,runs:8,balls:12,avg:null,sr:null,econ:4,best:"0-8",w5:0,maidens:0},
+];
+
+const FIELDING=[
+  {n:"Carmody, Ryan",m:17,total:17,outfield:1,wkcat:16,stumps:7,roA:6,roDirect:0},
+  {n:"O'Hara, DJ",m:13,total:11,outfield:11,wkcat:0,stumps:0,roA:2,roDirect:0},
+  {n:"Seen, Jonathon",m:14,total:9,outfield:9,wkcat:0,stumps:0,roA:1,roDirect:0},
+  {n:"Pursell, Jamie",m:13,total:8,outfield:8,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Castley, Gibson",m:12,total:7,outfield:7,wkcat:0,stumps:0,roA:1,roDirect:1},
+  {n:"Paterson, William",m:13,total:7,outfield:7,wkcat:0,stumps:0,roA:0,roDirect:1},
+  {n:"Campbell, Matt",m:14,total:6,outfield:6,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Wardell-Johnson, Leigh",m:11,total:5,outfield:5,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Barendse, Jack",m:9,total:5,outfield:5,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Castley, Angus",m:11,total:4,outfield:4,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Campbell, Richard",m:3,total:2,outfield:2,wkcat:0,stumps:1,roA:0,roDirect:0},
+  {n:"Davies, Joel",m:1,total:2,outfield:2,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Monument, Darren",m:12,total:2,outfield:2,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Petersen, Josh",m:2,total:2,outfield:2,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Stirling, Doug",m:11,total:2,outfield:2,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Shub, Simon",m:11,total:1,outfield:1,wkcat:0,stumps:0,roA:1,roDirect:0},
+  {n:"Flambard, Matt",m:2,total:1,outfield:1,wkcat:0,stumps:0,roA:1,roDirect:0},
+  {n:"Sajan, Eniyo",m:1,total:1,outfield:1,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Hullett, Mark",m:5,total:1,outfield:1,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Dissanayake, Sakun",m:15,total:1,outfield:1,wkcat:0,stumps:0,roA:1,roDirect:0},
+  {n:"Brennan, Aidan",m:2,total:0,outfield:0,wkcat:0,stumps:0,roA:1,roDirect:0},
+  {n:"Hackett, Adrian",m:2,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Bhambri, Anirudh",m:2,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Parkin, Jody",m:1,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Doloswala, Asitha",m:3,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:1},
+  {n:"Rogerson, Nick",m:1,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Mahin, Samiul",m:1,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Gelderbloem, Clinton",m:0,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Delport, Isaac",m:5,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Sheth, Kashish",m:1,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+  {n:"Calder, Bruce",m:5,total:0,outfield:0,wkcat:0,stumps:0,roA:0,roDirect:0},
+];
+
+const AWARDS={
+  "Monument, Darren":["Best & Fairest","Batting Award"],
+  "Seen, Jonathon":["Best & Fairest"],
+  "Dissanayake, Sakun":["Bowling Award"],
+  "Campbell, Matt":["Hall of Fame ⭐"],
+  "Carmody, Ryan":["🧤 Still No Fielding Award"],
+};
+
+// ─────────────────────────────────────
+//  QUIPS PER PLAYER
+// ─────────────────────────────────────
+const QUIPS={
+  "Monument, Darren":"The undisputed best bat in the club this season. 480 runs, Best & Fairest, Batting Award — the triple. He scored 141 more runs than the next person on the list. If cricket had a POTM for an entire season, it's him. No debate.",
+  "Campbell, Matt":"Matt Campbell: Applecross Hall of Famer, 339-run season, and apparently still turns up to every game like a man who just enjoys the vibe. 14 matches, 14 innings — absolute model of availability. A club legend, and the numbers back it up.",
+  "Castley, Angus":"287 runs at 31.89 as captain of the side all season — with Jamie Pursell stepping in as deputy when needed. Castley led from the front in Round 1 (82), finished with a composed 65 in Round 15's 10-wicket win, and kept this team pointing in the right direction through the mid-season wobble. Two fifties, consistent appearances, zero drama. That is what captaincy looks like.",
+  "Wardell-Johnson, Leigh":"274 runs and 5 catches — solid across the board. The highest four-hitter in the team this season (38), which suggests he's not exactly slow scoring when he gets going. A reliable top-order presence all year.",
+  "Seen, Jonathon":"Joint Best & Fairest for a reason. 15 wickets at 16.93, economy of 3.97, AND 9 outfield catches. Batting at 49 average despite being effectively not out half the time. Jonno Seen was everywhere this season, and he never looked like he was trying too hard. Suspicious, frankly.",
+  "Barendse, Jack":"Jack Barendse scored a century (100) AND hit 9 sixes — the joint-most in the club. He's clearly not playing for patience. 172 runs at 21.50 from just 9 games, plus 6 wickets. Compact, explosive, occasional bowler. This bloke is dangerous.",
+  "Stirling, Doug":"169 runs, 5 wickets, 2 catches — the sort of complete allrounder stat line that doesn't scream any one thing but adds up to quite a lot of useful contributions. Doug Stirling: did the job, every time.",
+  "Petersen, Josh":"Two games. One century. 156 runs at 78. Josh Petersen waltzed into the season, absolutely tore the cover off it, and apparently had better things to do for the other 15 rounds. 122 is the highest score in the club this season. He took a wicket too. Genuinely alarming.",
+  "Pursell, Jamie":"13 games, 16 wickets, 147 runs, 8 catches — and the club's deputy captain when Castley needed a break. Jamie Pursell is one of the most all-round contributors in the side. Best bowling figure of 3-29 (Round 1, no less), a consistent presence with bat and ball, and the kind of vice-captain who makes leadership look boring in the best possible way. Underrated. Genuinely.",
+  "Paterson, William":"12 wickets at 23.17, 116 runs at 29 — Will Paterson is quietly one of the most complete cricketers in the side. A run-out assist AND a direct hit. He's reading the game well, every week.",
+  "Hullett, Mark":"5 games, 103 runs, strike rate of 115.73. Mark Hullett only played 5 games and STILL managed to score a hundred runs at better than a run a ball. Absolutely no idea what he was doing when he wasn't playing, but whatever it was, it kept his game sharp.",
+  "Castley, Gibson":"The most economical wicket-taker in the club by average — 11.64 — and best strike rate of 13.91. Gibson Castley is the quiet assassin of the bowling attack. 11 wickets, best 4-16, and he bats as well (60 high score). Junior Castley has arrived and he's not messing around.",
+  "Carmody, Ryan":"Ryan Carmody played every single game. All 17. He stood behind the stumps in every one of them. He took 17 catches (16 as wicketkeeper), made 7 stumpings, helped run out 6 batsmen. Total dismissals: 30. Awards: 0. This is the sort of thing that happens when the selection committee doesn't look at the stats. Or looks at them and decides they're feeling brave.",
+  "O'Hara, DJ":"11 outfield catches — the most in the club. 14 wickets. 79 runs at over 100 strike rate. DJ O'Hara was everywhere in the field and not a bad performer with ball and bat either. The sort of cricketer you build a team around.",
+  "Hackett, Adrian":"2 games, 71 runs, average of 35.5, strike rate of 118.33. Adrian Hackett came in, smashed 57 in one innings, and we presumably couldn't get him to come back again. A man who batted like he had somewhere to be.",
+  "Campbell, Richard":"1 innings, 59 runs at 128 strike rate. Richard Campbell turned up, hit 59, and probably felt he had done enough. He has a stumping on his fielding record too. A multi-skilled cameo.",
+  "Calder, Bruce":"5 games, 54 runs at 27, and Bruce Calder somehow has the worst economy rate of any bowler (14.00) — but this is based on a grand total of 6 balls bowled. 14 runs from 1 over. No wickets. That's it. The batting is fine. The bowling is a one-over blip. A man of mystery.",
+  "Dissanayake, Sakun":"The season's standout bowler. 23 wickets — most in the club. Five-for. 10 maidens. 612 balls bowled. Bowling Award: justified. He also technically batted 3 times and finished not out twice, so he's basically unbeatable. Also one of the most available players all season at 15 games.",
+  "Shub, Simon":"22 wickets — second most in the club. Simon Shub bowled 414 balls and took them at 18.09 apiece. Best 4-37. Only 2 maidens, suggesting he prefers wickets to dots. Absolutely invaluable to the bowling attack.",
+  "Delport, Isaac":"6 wickets in 5 games — a decent return for a bowler who only played half the season. 175 runs conceded at 29.17 average isn't bad for limited opportunities. A player who contributes when called upon.",
+  "Brennan, Aidan":"3 wickets including 2-48 as best figures — which suggests it was a very long day in the field. Aidan Brennan also assisted a run out, which was probably the highlight. Simple, effective, showed up.",
+  "Sheth, Kashish":"1 game, 2 wickets for 24 runs. Bowling average of 12. If we could get Kashish Sheth to play more, we would have another genuine option at the top of the attack. A very promising one-match return.",
+  "Flambard, Matt":"Matt Flambard has 1 run, 0 wickets, and 1 catch to show for 2 games. Technically participated. Full points for showing up. The 5.0 economy over 8 overs is quietly respectable.",
+  "Bhambri, Anirudh":"2 wickets and 1 catch from 2 games. Anirudh Bhambri is quietly getting the job done in a small sample. 19 runs per wicket is a solid return.",
+  "Sajan, Eniyo":"1 game, 1 wicket, 1 catch. Eniyo Sajan is running at 100% conversion rate across all departments. We should play him more. Genuinely.",
+  "Parkin, Jody":"3 balls faced. 6 runs. Not out. Strike rate: 200. Jody Parkin batted for what appears to be about 2 minutes and was technically unbeatable. Also bowled 12 balls and gave away 8 runs but took no wickets. The numbers on Jody Parkin are extremely confusing and we have many questions.",
+  "Mahin, Samiul":"6 runs from 17 balls. A 35.29 strike rate suggests a struggle, but Samiul Mahin was there and counted. Sometimes that is enough.",
+  "Doloswala, Asitha":"4 runs not out, 1 wicket from 3 games. Asitha Doloswala's economy of 5.4 is the most honest number in his stat line. And that direct run-out is genuinely excellent.",
+  "Davies, Joel":"2 runs, 2 catches in 1 game. Joel Davies had a productive afternoon in the field at least. Two catches in one game is a solid debut.",
+  "Rogerson, Nick":"1 appearance, nothing to report statistically. Nick Rogerson was present. That counts for something. We hope.",
+  "Gelderbloem, Clinton":"0 matches, 0 stats — Clinton Gelderbloem may have been listed on the squad sheet and then simply decided against it. Completely respectable. We see you, Clinton.",
+};
+
+// ─────────────────────────────────────
+//  HELPERS
+// ─────────────────────────────────────
+const ALL_NAMES=[...new Set([...BATTING,...BOWLING,...FIELDING].map(p=>p.n))].filter(n=>n!='********');
+
+function short(full){
+  const p=full.split(', ');
+  return p.length===2?p[1]+' '+p[0].split(' ')[0]:full;
+}
+
+function fmt(v,d=2){
+  if(v===null||v===undefined||v===''||isNaN(v))return'—';
+  return Number(v).toFixed(d);
+}
+
+function getBat(n){return BATTING.find(p=>p.n===n)}
+function getBowl(n){return BOWLING.filter(p=>p.n===n).reduce((acc,p)=>{
+  // de-dup: merge if multiple rows
+  if(!acc){return {...p}}
+  acc.wkts+=p.wkts;acc.runs+=p.runs;acc.balls+=p.balls;
+  acc.maidens+=p.maidens;
+  return acc;
+},null)}
+function getField(n){return FIELDING.find(p=>p.n===n)}
+
+function awardDots(n){
+  const aw=AWARDS[n];if(!aw)return'';
+  return aw.map(a=>{
+    if(a.includes('Hall'))return'<span class="award-dot dot-hof" title="Hall of Fame"></span>';
+    if(a.includes('Best'))return'<span class="award-dot dot-gold" title="Best & Fairest"></span>';
+    if(a.includes('Batting'))return'<span class="award-dot dot-blue" title="Batting Award"></span>';
+    if(a.includes('Bowling'))return'<span class="award-dot dot-green" title="Bowling Award"></span>';
+    if(a.includes('Fielding'))return'<span class="award-dot" style="background:#555" title="No fielding award"></span>';
+    return'';
+  }).join('');
+}
+
+function isAward(n){return!!AWARDS[n]}
+
+// ─────────────────────────────────────
+//  NAV
+// ─────────────────────────────────────
+document.getElementById('mainNav').addEventListener('click',e=>{
+  const btn=e.target.closest('button');if(!btn)return;
+  document.querySelectorAll('.main-nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const v=btn.dataset.view;
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  if(v==='batting')initBatting();
+  else if(v==='bowling')initBowling();
+  else if(v==='fielding')initFielding();
+  else if(v==='leaderboards')initLeaderboards();
+  else if(v==='players'){showPlayerList();}
+  else if(v==='analytics')initAnalytics();
+});
+
+// ─────────────────────────────────────
+//  BAR CHART ENGINE
+// ─────────────────────────────────────
+function drawBar(containerId, items, color='#CC1414'){
+  // items: [{label, val, display, name}]
+  const c=document.getElementById(containerId);if(!c)return;
+  const valid=items.filter(i=>i.val>0&&isFinite(i.val));
+  const mx=Math.max(...valid.map(i=>i.val));
+  const maxH=160;
+  c.innerHTML=valid.map(item=>{
+    const h=Math.max(4,Math.round((item.val/mx)*maxH));
+    const bg=item.color||color;
+    return`<div class="bar-item" onclick="goSpotlight('${item.name.replace(/'/g,"\\'")}')">
+      <div class="bar-fill" style="height:${h}px;background:${bg};margin-top:${maxH-h}px" data-v="${item.display||item.val}"></div>
+      <div class="bar-lbl">${short(item.name)}</div>
+    </div>`;
+  }).join('');
+}
+
+function goSpotlight(name){
+  // Navigate to Players tab
+  document.querySelectorAll('.main-nav button').forEach(b=>b.classList.remove('active'));
+  document.querySelector('[data-view="players"]').classList.add('active');
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));
+  document.getElementById('view-players').classList.add('active');
+  // Ensure grid is initialised then show spotlight
+  initPlayers();
+  showPlayerSpotlight(name);
+}
+
+// ─────────────────────────────────────
+//  OVERVIEW CHART
+// ─────────────────────────────────────
+function overviewChart(mode, btn){
+  document.querySelectorAll('#view-overview .chart-toggle button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(mode==='runs'){
+    const d=[...BATTING].filter(p=>p.runs>0).sort((a,b)=>b.runs-a.runs).slice(0,15);
+    drawBar('overview-chart',d.map(p=>({name:p.n,val:p.runs,display:p.runs,color:getColor(p.n)})));
+  }else if(mode==='avg'){
+    const d=[...BATTING].filter(p=>p.inn>=3&&p.avg>0).sort((a,b)=>b.avg-a.avg).slice(0,15);
+    drawBar('overview-chart',d.map(p=>({name:p.n,val:p.avg,display:fmt(p.avg),'color':'#E8A020'})),'#E8A020');
+  }else if(mode==='sr'){
+    const d=[...BATTING].filter(p=>p.inn>=2&&p.sr>0).sort((a,b)=>b.sr-a.sr).slice(0,12);
+    drawBar('overview-chart',d.map(p=>({name:p.n,val:p.sr,display:fmt(p.sr)})),'#4A9ADE');
+  }else if(mode==='wkts'){
+    const d=[...BOWLING].filter(p=>p.wkts>0).sort((a,b)=>b.wkts-a.wkts).slice(0,12);
+    drawBar('overview-chart',d.map(p=>({name:p.n,val:p.wkts,display:p.wkts})),'#3A9A3A');
+  }else if(mode==='econ'){
+    const d=[...BOWLING].filter(p=>p.balls>=60&&p.econ>0).sort((a,b)=>a.econ-b.econ).slice(0,12);
+    drawBar('overview-chart',d.map(p=>({name:p.n,val:20-p.econ,display:fmt(p.econ)})),'#9A3A9A');
+  }
+}
+
+function getColor(n){
+  if(n==='Monument, Darren')return'#D4A017';
+  if(n==='Dissanayake, Sakun')return'#3A9A3A';
+  if(n==='Carmody, Ryan')return'#4A9ADE';
+  return'#CC1414';
+}
+
+// ─────────────────────────────────────
+//  BATTING
+// ─────────────────────────────────────
+let batFilter='all';
+function initBatting(){
+  const total=BATTING.reduce((s,p)=>s+p.runs,0);
+  document.getElementById('bat-total').textContent=total;
+  document.getElementById('bat-fifties').textContent=BATTING.reduce((s,p)=>s+p.c50,0);
+  document.getElementById('bat-ducks').textContent=BATTING.reduce((s,p)=>s+p.ducks,0);
+  document.getElementById('bat-sixes').textContent=BATTING.reduce((s,p)=>s+p.sixes,0);
+  renderBatTable();
+  battingChart('runs',document.querySelector('#view-batting .chart-toggle button'));
+}
+
+function renderBatTable(search=''){
+  search=search||(document.getElementById('bat-search')?.value||'').toLowerCase();
+  let data=[...BATTING];
+  if(batFilter==='qualified')data=data.filter(p=>p.inn>=3);
+  if(batFilter==='100s')data=data.filter(p=>p.c100>0);
+  if(search)data=data.filter(p=>p.n.toLowerCase().includes(search));
+  data.sort((a,b)=>b.runs-a.runs);
+  document.getElementById('bat-tbody').innerHTML=data.map(p=>`
+    <tr class="${isAward(p.n)?'award-row':''}" onclick="openModal('${p.n.replace(/'/g,"\\'").replace(/\"/g,'\\"')}')">
+      <td><div class="name-cell">${awardDots(p.n)}${short(p.n)}</div></td>
+      <td class="num"><span class="m-badge">${p.m}</span></td>
+      <td class="num ${p.runs===480?'hi':p.runs>=200?'gold':''}">${p.runs}</td>
+      <td class="num">${fmt(p.avg)}</td>
+      <td class="num">${fmt(p.sr)}</td>
+      <td class="num">${p.inn}</td>
+      <td class="num">${p.no}</td>
+      <td class="num">${p.hs}${p.hsno?'*':''}</td>
+      <td class="num">${p.c100}</td>
+      <td class="num">${p.c50}</td>
+      <td class="num ${p.ducks>=2?'hi':''}">${p.ducks}</td>
+      <td class="num">${p.fours}</td>
+      <td class="num ${p.sixes>=9?'gold':''}">${p.sixes}</td>
+    </tr>
+  `).join('');
+}
+
+document.addEventListener('input',e=>{
+  if(e.target.id==='bat-search')renderBatTable(e.target.value.toLowerCase());
+  if(e.target.id==='bowl-search')renderBowlTable(e.target.value.toLowerCase());
+  if(e.target.id==='field-search')renderFieldTable(e.target.value.toLowerCase());
+  if(e.target.id==='all-search')initPlayers(e.target.value.toLowerCase());
+});
+
+document.addEventListener('click',e=>{
+  const chip=e.target.closest('.filter-chip');
+  if(!chip)return;
+  const tbl=chip.dataset.tbl;
+  const filter=chip.dataset.filter;
+  document.querySelectorAll(`.filter-chip[data-tbl="${tbl}"]`).forEach(c=>c.classList.remove('active'));
+  chip.classList.add('active');
+  if(tbl==='bat'){batFilter=filter;renderBatTable();}
+  if(tbl==='bowl'){bowlFilter=filter;renderBowlTable();}
+});
+
+function battingChart(mode,btn){
+  if(btn){btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  let d;
+  if(mode==='runs'){d=[...BATTING].filter(p=>p.runs>0).sort((a,b)=>b.runs-a.runs).slice(0,15);drawBar('bat-chart',d.map(p=>({name:p.n,val:p.runs,display:p.runs})));}
+  else if(mode==='avg'){d=[...BATTING].filter(p=>p.inn>=3&&p.avg>0).sort((a,b)=>b.avg-a.avg).slice(0,15);drawBar('bat-chart',d.map(p=>({name:p.n,val:p.avg,display:fmt(p.avg)})),'#E8A020');}
+  else if(mode==='sr'){d=[...BATTING].filter(p=>p.inn>=2&&p.sr>0).sort((a,b)=>b.sr-a.sr).slice(0,12);drawBar('bat-chart',d.map(p=>({name:p.n,val:p.sr,display:fmt(p.sr)})),'#4A9ADE');}
+  else if(mode==='sixes'){d=[...BATTING].filter(p=>p.sixes>0).sort((a,b)=>b.sixes-a.sixes);drawBar('bat-chart',d.map(p=>({name:p.n,val:p.sixes,display:p.sixes})),'#D4A017');}
+  else if(mode==='fours'){d=[...BATTING].filter(p=>p.fours>0).sort((a,b)=>b.fours-a.fours).slice(0,15);drawBar('bat-chart',d.map(p=>({name:p.n,val:p.fours,display:p.fours})),'#9A4A2A');}
+}
+
+// ─────────────────────────────────────
+//  BOWLING
+// ─────────────────────────────────────
+let bowlFilter='all';
+function initBowling(){
+  // Deduplicate bowling data by name
+  const deduped={};
+  BOWLING.forEach(p=>{
+    if(!deduped[p.n])deduped[p.n]={...p};
+    else{deduped[p.n].wkts+=p.wkts;deduped[p.n].runs+=p.runs;deduped[p.n].balls+=p.balls;}
+  });
+  const bowlers=Object.values(deduped);
+  document.getElementById('bowl-total').textContent=bowlers.reduce((s,p)=>s+p.wkts,0);
+  document.getElementById('bowl-balls').textContent=bowlers.filter(p=>p.balls>0).reduce((s,p)=>s+p.balls,0);
+  document.getElementById('bowl-maidens').textContent=bowlers.reduce((s,p)=>s+p.maidens,0);
+  renderBowlTable();
+  bowlingChart('wkts',document.querySelector('#view-bowling .chart-toggle button'));
+}
+
+const BOWL_DEDUPED=()=>{
+  const d={};
+  BOWLING.forEach(p=>{
+    if(!d[p.n])d[p.n]={...p};
+    else{d[p.n].wkts+=p.wkts;d[p.n].runs+=p.runs;d[p.n].balls+=p.balls;d[p.n].maidens+=p.maidens;}
+  });
+  return Object.values(d);
+};
+
+function renderBowlTable(search=''){
+  search=search||(document.getElementById('bowl-search')?.value||'').toLowerCase();
+  let data=BOWL_DEDUPED().filter(p=>p.balls>0);
+  if(bowlFilter==='10plus')data=data.filter(p=>p.wkts>=10);
+  if(bowlFilter==='5plus')data=data.filter(p=>p.wkts>=5);
+  if(search)data=data.filter(p=>p.n.toLowerCase().includes(search));
+  data.sort((a,b)=>b.wkts-a.wkts);
+  document.getElementById('bowl-tbody').innerHTML=data.map(p=>`
+    <tr class="${isAward(p.n)?'award-row':''}" onclick="openModal('${p.n.replace(/'/g,"\\'").replace(/\"/g,'\\"')}')">
+      <td><div class="name-cell">${awardDots(p.n)}${short(p.n)}</div></td>
+      <td class="num"><span class="m-badge">${p.m}</span></td>
+      <td class="num ${p.wkts>=20?'hi':p.wkts>=10?'gold':''}">${p.wkts}</td>
+      <td class="num">${fmt(p.avg)}</td>
+      <td class="num ${p.econ<=4?'gold':''}">${fmt(p.econ)}</td>
+      <td class="num">${fmt(p.sr)}</td>
+      <td class="num">${p.best}</td>
+      <td class="num">${p.w5}</td>
+      <td class="num">${p.runs}</td>
+      <td class="num">${p.balls}</td>
+      <td class="num">${p.maidens}</td>
+    </tr>
+  `).join('');
+}
+
+function bowlingChart(mode,btn){
+  if(btn){btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  const data=BOWL_DEDUPED().filter(p=>p.balls>0);
+  if(mode==='wkts'){const d=data.filter(p=>p.wkts>0).sort((a,b)=>b.wkts-a.wkts).slice(0,14);drawBar('bowl-chart',d.map(p=>({name:p.n,val:p.wkts,display:p.wkts})),'#3A9A3A');}
+  else if(mode==='avg'){const d=data.filter(p=>p.avg>0&&p.wkts>=3).sort((a,b)=>a.avg-b.avg).slice(0,12);drawBar('bowl-chart',d.map(p=>({name:p.n,val:100-p.avg,display:fmt(p.avg)})),'#5ACA5A');}
+  else if(mode==='econ'){const d=data.filter(p=>p.econ>0&&p.balls>=30).sort((a,b)=>a.econ-b.econ).slice(0,12);drawBar('bowl-chart',d.map(p=>({name:p.n,val:15-p.econ,display:fmt(p.econ)})),'#9A9A3A');}
+  else if(mode==='balls'){const d=data.sort((a,b)=>b.balls-a.balls).slice(0,12);drawBar('bowl-chart',d.map(p=>({name:p.n,val:p.balls,display:p.balls})),'#4A9ADE');}
+  else if(mode==='maidens'){const d=data.filter(p=>p.maidens>0).sort((a,b)=>b.maidens-a.maidens).slice(0,12);drawBar('bowl-chart',d.map(p=>({name:p.n,val:p.maidens,display:p.maidens})),'#9A4ADE');}
+}
+
+// ─────────────────────────────────────
+//  FIELDING
+// ─────────────────────────────────────
+function initFielding(){
+  document.getElementById('f-catches').textContent=FIELDING.reduce((s,p)=>s+p.total,0);
+  document.getElementById('f-runouts').textContent=FIELDING.reduce((s,p)=>s+p.roA+p.roDirect,0);
+  renderFieldTable();
+  fieldingChart('total',document.querySelector('#view-fielding .chart-toggle button'));
+}
+
+function renderFieldTable(search=''){
+  search=search||(document.getElementById('field-search')?.value||'').toLowerCase();
+  let data=[...FIELDING];
+  if(search)data=data.filter(p=>p.n.toLowerCase().includes(search));
+  data.sort((a,b)=>b.total-a.total);
+  document.getElementById('field-tbody').innerHTML=data.map(p=>`
+    <tr class="${p.n==='Carmody, Ryan'?'spotlight-row':isAward(p.n)?'award-row':''}" onclick="openModal('${p.n.replace(/'/g,"\\'").replace(/\"/g,'\\"')}')">
+      <td><div class="name-cell">${awardDots(p.n)}${short(p.n)}${p.n==='Carmody, Ryan'?'<span style="margin-left:4px;font-size:0.65rem;color:var(--red)">🧤 WK</span>':''}</div></td>
+      <td class="num ${p.total>=10?'hi':''}">${p.total}</td>
+      <td class="num">${p.outfield}</td>
+      <td class="num">${p.wkcat||0}</td>
+      <td class="num ${p.stumps>0?'gold':''}">${p.stumps||0}</td>
+      <td class="num">${p.roA||0}</td>
+      <td class="num">${p.roDirect||0}</td>
+      <td class="num"><span class="m-badge">${p.m}</span></td>
+    </tr>
+  `).join('');
+}
+
+function fieldingChart(mode,btn){
+  if(btn){btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+  if(mode==='total'){const d=[...FIELDING].filter(p=>p.total>0).sort((a,b)=>b.total-a.total).slice(0,14);drawBar('field-chart',d.map(p=>({name:p.n,val:p.total,display:p.total,color:p.n==='Carmody, Ryan'?'#4A9ADE':'#CC1414'})));}
+  else if(mode==='outfield'){const d=[...FIELDING].filter(p=>p.outfield>0).sort((a,b)=>b.outfield-a.outfield).slice(0,14);drawBar('field-chart',d.map(p=>({name:p.n,val:p.outfield,display:p.outfield})));}
+  else if(mode==='runouts'){const d=[...FIELDING].filter(p=>(p.roA+p.roDirect)>0).sort((a,b)=>(b.roA+b.roDirect)-(a.roA+a.roDirect));drawBar('field-chart',d.map(p=>({name:p.n,val:p.roA+p.roDirect,display:p.roA+p.roDirect})),'#D4A017');}
+}
+
+// ─────────────────────────────────────
+//  ANALYTICS
+// ─────────────────────────────────────
+const INSIGHTS=[
+  {
+    icon:'📊',accent:'',
+    title:'Monument vs The Field',
+    stat:'141',
+    body:`<strong>Darren Monument</strong> scored 480 runs — that's <strong>141 more than Matt Campbell in second</strong> (339). To put that gap in perspective, 141 runs is more than 12 players scored in the entire season. Monument didn't just win the batting race, he lapped it.`
+  },
+  {
+    icon:'🤡',accent:'red',
+    title:'The Great Carmody Snub',
+    stat:'30',
+    body:`Ryan Carmody made <strong>30 dismissals</strong> — catches, stumpings, run outs. The next highest individual fielding total is 11. That's <strong>2.7× more</strong> than anyone else in the club. He also played every game. No fielding award. We are professionally baffled.`
+  },
+  {
+    icon:'⚡',accent:'gold',
+    title:'Josh Petersen: Two-Game Wrecking Ball',
+    stat:'78.0',
+    body:`Josh Petersen played <strong>2 games</strong>, scored <strong>156 runs</strong>, averaged <strong>78</strong>, and made <strong>122</strong> — the highest innings of the season bar Monument's 110*. He also took a wicket and 2 catches. This is not normal. This is someone who had two extraordinary days and then left.`
+  },
+  {
+    icon:'🎯',accent:'green',
+    title:'Gibson Castley: The Secret Weapon',
+    stat:'11.64',
+    body:`<strong>Gibson Castley's bowling average of 11.64</strong> is the best in the club for anyone with 5+ wickets. His strike rate of 13.91 means he took a wicket every <strong>14 balls</strong>. 4-16 is his best. He's also not a tail-ender with the bat (60 HS). Someone needs to give Gibson more overs.`
+  },
+  {
+    icon:'💰',accent:'blue',
+    title:'Jonno Seen: The Economy King',
+    stat:'3.97',
+    body:`Jonno Seen conceded <strong>3.97 runs per over</strong> across 64 overs — the best economy in the club for any bowler with 10+ wickets. He took 15 wickets at 16.93 average. He also batted at an average of 49 (mostly not out). AND took 9 catches. AND won joint Best & Fairest. <em>Make it make sense.</em>`
+  },
+  {
+    icon:'🦆',accent:'red',
+    title:'The Duck Count: A Reckoning',
+    stat:'19',
+    body:`The club collectively walked back to the sheds <strong>19 times for nothing</strong>. The worst offenders: <strong>Campbell, Pursell</strong> (2 ducks each), <strong>Castley G, Carmody, Stirling</strong> (1 each). Highlights include a player with more ducks (1) than average per innings — genuinely distressing mathematics.`
+  },
+  {
+    icon:'🏏',accent:'gold',
+    title:'Six Appeal: Who Hit the Big Ones',
+    stat:'9',
+    body:`<strong>Monument and Barendse</strong> are tied on 9 sixes each — the most in the club. Combined with Petersen (5), the top-3 sixes scorers hit 23 of the team's total. If you want sixes, call those three. <em>Wardell-Johnson (38 fours) prefers the rope-grazing, controlled elegance route, which is also valid.</em>`
+  },
+  {
+    icon:'🎲',accent:'',
+    title:'The One-Game Wonders',
+    stat:'6',
+    body:`At least <strong>6 players appeared once and only once</strong> — Davies, Parkin, Mahin, Sajan, Sheth, Rogerson. Collectively they scored 22 runs, took 4 wickets, and held 6 catches. One of them (Sheth) took 2-24. One (Parkin) hit a 6, didn't get out, and SR'd at 200. <em>We never saw any of them again.</em>`
+  },
+  {
+    icon:'📉',accent:'orange',
+    title:'Calder\'s Economy Anomaly',
+    stat:'14.0',
+    body:`Bruce Calder's economy rate is <strong>14.00 runs per over</strong> — the highest in the club — but this is based on bowling <strong>exactly 1 over (6 balls)</strong>, from which he conceded 14 runs and took no wickets. It's a sample size of one over. Let's not hold it against him. The batting (54 runs at 27) is considerably more respectable. Calder: batsman who bowled one over. That's the story.`
+  },
+  {
+    icon:'🔢',accent:'green',
+    title:'Shub vs Dissanayake: The Wicket Arms Race',
+    stat:'45',
+    body:`<strong>Sakun Dissanayake (23) and Simon Shub (22)</strong> took <strong>45 wickets between them</strong> — 30.6% of the team's total. Remove those two and the rest of the bowling attack managed 102 wickets from 29 players. They were not the depth — they were the engine room.`
+  },
+  {
+    icon:'🧮',accent:'blue',
+    title:'Paterson: The Most Complete Contributor',
+    stat:'3',
+    body:`<strong>William Paterson</strong> contributed meaningfully in all three departments: 116 runs (avg 29), 12 wickets (avg 23.17), 7 catches, AND a direct run-out. Only a handful of players impacted all three boxes meaningfully. Paterson's name belongs in the <em>actually doing everything</em> conversation.`
+  },
+  {
+    icon:'⏱️',accent:'red',
+    title:'Jody Parkin: The Most Efficient Innings in History',
+    stat:'200',
+    body:`Jody Parkin faced <strong>3 balls</strong>. He scored <strong>6 runs</strong>. He was <strong>not out</strong>. His strike rate: <strong>200</strong>. His average: technically infinite. He then bowled 2 overs and gave 8 runs. Parkin came, saw, and conquered — but only for about three minutes — and we cannot find out why he didn't bat again.`
+  },
+  {
+    icon:'🧤',accent:'',
+    title:'The WK Productivity Index',
+    stat:'1.76',
+    body:`Ryan Carmody achieved <strong>1.76 dismissals per match</strong> — an extraordinary return for a wicketkeeper. In the 17 games he played, he effectively removed almost 2 batsmen per game through his own actions alone. The team's overall dismissal rate (catches + stumpings + run outs) would be dramatically worse without him behind the stumps.`
+  },
+  {
+    icon:'📐',accent:'gold',
+    title:'Hullett: The SR Underdog',
+    stat:'115.73',
+    body:`Mark Hullett only played 5 games but struck the ball at <strong>115.73</strong> — top 5 in the club among batters with multiple innings. 103 runs at 25.75, including a 45. He apparently isn't available much, but when he is: <em>the ball goes far</em>. Someone fix Hullett's availability.`
+  },
+  {
+    icon:'🏗️',accent:'green',
+    title:'The O\'Hara Completeness Award',
+    stat:'14+11',
+    body:`<strong>DJ O'Hara</strong> took <strong>14 wickets</strong> AND held <strong>11 outfield catches</strong> — the most of any outfielder. He also batted at a strike rate above 100. O'Hara was involved in something meaningful in nearly every game he played. Statistically, he might be the most dangerous player to bat against AND field around.`
+  },
+  {
+    icon:'🌟',accent:'red',
+    title:'The Barendse Problem',
+    stat:'9',
+    body:`Jack Barendse scored a century, hit 9 sixes, took 6 wickets, and held 5 catches — in <strong>just 9 games</strong>. If you project his season across 17 games (Carmody's total), he'd end up with ~320 runs, ~11 wickets, ~9 catches. That's quietly one of the best allround profiles in the club. <em>Where was he for 8 games?</em>`
+  },
+];
+
+let analyticsInited=false;
+function initAnalytics(){
+  if(analyticsInited)return;
+  analyticsInited=true;
+  const grid=document.getElementById('analytics-grid');
+  grid.innerHTML=INSIGHTS.map(ins=>`
+    <div class="insight-card ${ins.accent?ins.accent+'-accent':''}">
+      <span class="insight-icon">${ins.icon}</span>
+      <div class="insight-title">${ins.title}</div>
+      <div class="insight-stat">${ins.stat}</div>
+      <div class="insight-body">${ins.body}</div>
+    </div>
+  `).join('');
+}
+
+// ─────────────────────────────────────
+//  LEADERBOARDS
+// ─────────────────────────────────────
+let lbInited=false;
+function initLeaderboards(){
+  if(lbInited)return;
+  lbInited=true;
+  const g=document.getElementById('lb-grid');
+  const boards=[
+    {title:'Top Run Scorers',icon:'🏏',color:'var(--red)',
+     rows:[...BATTING].filter(p=>p.runs>0).sort((a,b)=>b.runs-a.runs).slice(0,8).map(p=>({name:p.n,val:p.runs,sub:`Avg ${fmt(p.avg)}`}))},
+    {title:'Best Batting Average (3+ inn)',icon:'📊',color:'#D4A017',
+     rows:[...BATTING].filter(p=>p.inn>=3&&p.avg>0).sort((a,b)=>b.avg-a.avg).slice(0,8).map(p=>({name:p.n,val:fmt(p.avg),sub:`${p.runs} runs`}))},
+    {title:'Top Wicket Takers',icon:'🎯',color:'#3A9A3A',
+     rows:BOWL_DEDUPED().filter(p=>p.wkts>0).sort((a,b)=>b.wkts-a.wkts).slice(0,8).map(p=>({name:p.n,val:p.wkts,sub:`Best ${p.best}`}))},
+    {title:'Best Bowling Average (5+ wkts)',icon:'📉',color:'#5ACA5A',
+     rows:BOWL_DEDUPED().filter(p=>p.wkts>=5&&p.avg>0).sort((a,b)=>a.avg-b.avg).slice(0,8).map(p=>({name:p.n,val:fmt(p.avg),sub:`${p.wkts} wkts`}))},
+    {title:'Best Economy Rate (60+ balls)',icon:'💰',color:'#9A9A3A',
+     rows:BOWL_DEDUPED().filter(p=>p.balls>=60&&p.econ>0).sort((a,b)=>a.econ-b.econ).slice(0,8).map(p=>({name:p.n,val:fmt(p.econ),sub:`${p.balls} balls`}))},
+    {title:'Most Catches (Total)',icon:'🧤',color:'#4A9ADE',
+     rows:[...FIELDING].filter(p=>p.total>0).sort((a,b)=>b.total-a.total).slice(0,8).map(p=>({name:p.n,val:p.total,sub:`${p.m}m`}))},
+    {title:'Best Strike Rate (2+ inn)',icon:'⚡',color:'#9A3A9A',
+     rows:[...BATTING].filter(p=>p.inn>=2&&p.sr>0).sort((a,b)=>b.sr-a.sr).slice(0,8).map(p=>({name:p.n,val:fmt(p.sr),sub:`${p.runs} runs`}))},
+    {title:'Most Sixes',icon:'💥',color:'#D4A017',
+     rows:[...BATTING].filter(p=>p.sixes>0).sort((a,b)=>b.sixes-a.sixes).slice(0,8).map(p=>({name:p.n,val:p.sixes,sub:`${p.runs} runs`}))},
+    {title:'Most Stumpings',icon:'🥅',color:'#4A9ADE',
+     rows:[...FIELDING].filter(p=>(p.stumps||0)>0).sort((a,b)=>(b.stumps||0)-(a.stumps||0)).slice(0,8).map(p=>({name:p.n,val:p.stumps,sub:`${p.m}m`}))},
+    {title:'Most Maidens',icon:'🔒',color:'#5ACA5A',
+     rows:BOWL_DEDUPED().filter(p=>p.maidens>0).sort((a,b)=>b.maidens-a.maidens).slice(0,8).map(p=>({name:p.n,val:p.maidens,sub:`${p.balls} balls`}))},
+  ];
+  g.innerHTML=boards.map(b=>`
+    <div class="lb-card">
+      <div class="lb-header" style="background:${b.color}20;border-bottom:1px solid ${b.color}40">
+        <span class="lb-header-icon">${b.icon}</span>
+        <div class="lb-header-title">${b.title}</div>
+      </div>
+      ${b.rows.map((r,i)=>`
+        <div class="lb-row" onclick="goSpotlight('${r.name.replace(/'/g,"\\'").replace(/"/g,'\\"')}')">
+          <div class="lb-rank ${i===0?'r1':i===1?'r2':i===2?'r3':''}">${i+1}</div>
+          <div class="lb-name">${short(r.name)}</div>
+          <div class="lb-val" style="color:${b.color}">${r.val}</div>
+          <div class="lb-sub">${r.sub}</div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+// ─────────────────────────────────────
+//  PLAYERS (merged list + spotlight)
+// ─────────────────────────────────────
+let playersInited=false;
+
+function initPlayers(search){
+  search=search||'';
+  renderPlayerGrid(search);
+}
+
+function renderPlayerGrid(search){
+  search=(search||'').toLowerCase();
+  let names=ALL_NAMES.filter(n=>n!=='********');
+  if(search)names=names.filter(n=>n.toLowerCase().includes(search));
+
+  document.getElementById('players-grid').innerHTML=names.map(n=>{
+    const bat=getBat(n);
+    const bowl=BOWL_DEDUPED().find(p=>p.n===n);
+    const field=getField(n);
+    const m=bat?.m||bowl?.m||field?.m||0;
+    const aw=AWARDS[n]||[];
+    const roles=[];
+    if(bat?.inn>0)roles.push('🏏 Bat');
+    if(bowl?.wkts>0)roles.push('🎯 Bowl');
+    if(field?.total>0||field?.stumps>0)roles.push('🧤 Field');
+    const safen=n.replace(/\'/g,"\\\'").replace(/"/g,'\\"');
+    return`<div class="player-card ${aw.length?'has-award':''}" onclick="showPlayerSpotlight('${safen}')">
+      <div class="pc-name">${short(n)}</div>
+      <div class="pc-roles">${roles.join(' · ')||'Listed Player'}</div>
+      <div class="pc-stats">
+        ${bat?.inn>0?`<span style="color:var(--grey3)">${bat.runs}r</span>`:''}
+        ${bat?.avg?`<span style="color:var(--grey3)"> avg ${fmt(bat.avg)}</span>`:''}
+        ${bowl?.wkts>0?`<span style="color:#5ACA5A"> ${bowl.wkts}wk</span>`:''}
+      </div>
+      ${aw.length?`<div class="pc-awards">${aw.map(a=>`<span class="pc-tag">${a}</span>`).join('')}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+function showPlayerList(){
+  document.getElementById('players-list-state').style.display='block';
+  document.getElementById('players-spotlight-state').style.display='none';
+  const s=document.getElementById('all-search');
+  if(s)s.value='';
+  renderPlayerGrid('');
+}
+
+function showPlayerSpotlight(name){
+  document.getElementById('players-list-state').style.display='none';
+  document.getElementById('players-spotlight-state').style.display='block';
+  renderSpotlight(name);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderSpotlight(name){
+  const bat=getBat(name);
+  const bowl=BOWL_DEDUPED().find(p=>p.n===name);
+  const field=getField(name);
+  const aw=AWARDS[name]||[];
+  const m=bat?.m||bowl?.m||field?.m||0;
+  const quip=QUIPS[name]||'A player who showed up, played their part, and made Applecross CC better for it.';
+
+  const awardHTML=aw.map(a=>{
+    if(a.includes('Hall'))return`<span class="sc-award-tag gold">⭐ Hall of Fame</span>`;
+    if(a.includes('Best'))return`<span class="sc-award-tag gold">🏆 Best &amp; Fairest</span>`;
+    if(a.includes('Batting'))return`<span class="sc-award-tag red">🏏 Batting Award</span>`;
+    if(a.includes('Bowling'))return`<span class="sc-award-tag green">🎯 Bowling Award</span>`;
+    return`<span class="sc-award-tag joke">${a}</span>`;
+  }).join('');
+
+  const maxRuns=480,maxAvg=78,maxWkts=23,maxField=30,maxSR=130;
+  const runsP=bat?Math.min(100,Math.round(bat.runs/maxRuns*100)):0;
+  const avgP=bat&&bat.avg?Math.min(100,Math.round(bat.avg/maxAvg*100)):0;
+  const srP=bat&&bat.sr?Math.min(100,Math.round(bat.sr/maxSR*100)):0;
+  const wktsP=bowl?Math.min(100,Math.round(bowl.wkts/maxWkts*100)):0;
+  const fieldP=field?Math.min(100,Math.round((field.total+(field.stumps||0)*2)/maxField*100)):0;
+
+  let battingHTML='';
+  if(bat&&bat.inn>0){
+    battingHTML=`
+    <div class="sc-discipline">
+      <div class="sc-disc-title"><span>🏏</span> Batting</div>
+      <div class="sc-stat-grid">
+        <div class="sc-stat"><div class="sc-stat-label">Runs</div><div class="sc-stat-val ${bat.runs===480?'gold':bat.runs>=200?'red':''}">${bat.runs}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Average</div><div class="sc-stat-val">${fmt(bat.avg)}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Strike Rate</div><div class="sc-stat-val">${fmt(bat.sr)}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">High Score</div><div class="sc-stat-val">${bat.hs}${bat.hsno?'*':''}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Innings</div><div class="sc-stat-val">${bat.inn}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Not Outs</div><div class="sc-stat-val">${bat.no}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">100s</div><div class="sc-stat-val ${bat.c100>0?'gold':''}">${bat.c100}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">50s</div><div class="sc-stat-val">${bat.c50}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Ducks</div><div class="sc-stat-val ${bat.ducks>=2?'red':''}">${bat.ducks}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Fours</div><div class="sc-stat-val">${bat.fours}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Sixes</div><div class="sc-stat-val ${bat.sixes>=9?'gold':''}">${bat.sixes}</div></div>
+      </div>
+      <div class="sc-progress"><div class="sc-prog-header"><span>Runs vs Club Best (480)</span><span>${runsP}%</span></div><div class="sc-prog-bar"><div class="sc-prog-fill" style="width:${runsP}%"></div></div></div>
+      <div class="sc-progress"><div class="sc-prog-header"><span>Average vs Club Best (78)</span><span>${avgP}%</span></div><div class="sc-prog-bar"><div class="sc-prog-fill gold" style="width:${avgP}%"></div></div></div>
+      <div class="sc-progress"><div class="sc-prog-header"><span>Strike Rate vs 130 benchmark</span><span>${srP}%</span></div><div class="sc-prog-bar"><div class="sc-prog-fill" style="width:${srP}%;background:#4A9ADE"></div></div></div>
+    </div>`;
+  }
+
+  let bowlHTML='';
+  if(bowl&&bowl.balls>0){
+    const econP=bowl.econ?Math.min(100,Math.round((10-bowl.econ)/10*100)):0;
+    bowlHTML=`
+    <div class="sc-discipline">
+      <div class="sc-disc-title"><span>🎯</span> Bowling</div>
+      <div class="sc-stat-grid">
+        <div class="sc-stat"><div class="sc-stat-label">Wickets</div><div class="sc-stat-val ${bowl.wkts>=20?'red':bowl.wkts>=10?'green':''}">${bowl.wkts}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Average</div><div class="sc-stat-val">${fmt(bowl.avg)}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Economy</div><div class="sc-stat-val ${bowl.econ<=4?'green':''}">${fmt(bowl.econ)}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Strike Rate</div><div class="sc-stat-val">${fmt(bowl.sr)}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Best Figures</div><div class="sc-stat-val" style="font-size:1.2rem">${bowl.best}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">5-Wicket Hauls</div><div class="sc-stat-val ${bowl.w5>0?'gold':''}">${bowl.w5}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Balls Bowled</div><div class="sc-stat-val">${bowl.balls}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Runs Conceded</div><div class="sc-stat-val">${bowl.runs}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Maidens</div><div class="sc-stat-val">${bowl.maidens}</div></div>
+      </div>
+      <div class="sc-progress"><div class="sc-prog-header"><span>Wickets vs Club Best (23)</span><span>${wktsP}%</span></div><div class="sc-prog-bar"><div class="sc-prog-fill green" style="width:${wktsP}%"></div></div></div>
+      <div class="sc-progress"><div class="sc-prog-header"><span>Economy (lower is better)</span><span>${econP}%</span></div><div class="sc-prog-bar"><div class="sc-prog-fill" style="width:${econP}%;background:#9A9A3A"></div></div></div>
+    </div>`;
+  }
+
+  let fieldHTML='';
+  if(field){
+    const isWK=(field.wkcat||0)>0||(field.stumps||0)>0;
+    fieldHTML=`
+    <div class="sc-discipline">
+      <div class="sc-disc-title"><span>${isWK?'🧤':'⚡'}</span> ${isWK?'Wicketkeeping &amp; ':''}Fielding</div>
+      <div class="sc-stat-grid">
+        <div class="sc-stat"><div class="sc-stat-label">Total Catches</div><div class="sc-stat-val ${field.total>=10?'red':''}">${field.total}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Outfield Catches</div><div class="sc-stat-val">${field.outfield}</div></div>
+        ${isWK?`<div class="sc-stat"><div class="sc-stat-label">WK Catches</div><div class="sc-stat-val red">${field.wkcat}</div></div><div class="sc-stat"><div class="sc-stat-label">Stumpings</div><div class="sc-stat-val gold">${field.stumps}</div></div>`:''}
+        <div class="sc-stat"><div class="sc-stat-label">Run Outs (Assisted)</div><div class="sc-stat-val">${field.roA}</div></div>
+        <div class="sc-stat"><div class="sc-stat-label">Run Outs (Direct)</div><div class="sc-stat-val">${field.roDirect}</div></div>
+      </div>
+      <div class="sc-progress"><div class="sc-prog-header"><span>Dismissals vs Club Best (30)</span><span>${fieldP}%</span></div><div class="sc-prog-bar"><div class="sc-prog-fill" style="width:${fieldP}%;background:#4A9ADE"></div></div></div>
+    </div>`;
+  }
+
+  const quipClass=aw.some(a=>a.includes('Hall'))?'gold-quip':'';
+  document.getElementById('spotlight-card').innerHTML=`
+    <div class="sc-header">
+      <div>
+        <div class="sc-name">${short(name)}</div>
+        <div class="sc-club">Applecross Cricket Club · ${m} Appearances</div>
+        ${awardHTML?`<div class="sc-awards">${awardHTML}</div>`:''}
+      </div>
+      <div><div class="sc-matches">${m}</div><div class="sc-matches-label">Matches</div></div>
+    </div>
+    <div class="sc-body">
+      ${battingHTML}
+      ${bowlHTML}
+      ${fieldHTML}
+      ${name==='Carmody, Ryan'?`<div style="background:rgba(204,20,20,0.1);border:1px solid var(--red-dim);border-radius:6px;padding:0.8rem 1rem;font-size:0.82rem;color:var(--grey4);margin-bottom:1rem">😂 <strong style="color:var(--white)">Fun Fact:</strong> 30 dismissals this season. No fielding award. No further comment at this time.</div>`:''}
+      <div class="sc-quip ${quipClass}">💬 ${quip}</div>
+    </div>
+  `;
+}
+
+function openModal(name){
+  const bat=getBat(name);
+  const bowl=BOWL_DEDUPED().find(p=>p.n===name);
+  const field=getField(name);
+  const aw=AWARDS[name]||[];
+  const m=bat?.m||bowl?.m||field?.m||0;
+
+  document.getElementById('m-name').textContent=short(name);
+  document.getElementById('m-sub').textContent=`Applecross CC · ${m} matches`;
+
+  document.getElementById('m-awards').innerHTML=aw.map(a=>{
+    const cls=a.includes('Hall')?'gold':a.includes('Best')||a.includes('Batting')||a.includes('Bowling')?'red':'';
+    return`<span class="sc-award-tag ${cls}">${a}</span>`;
+  }).join('');
+
+  let html='';
+
+  if(bat&&bat.inn>0){
+    html+=`<div class="modal-sec-title">🏏 Batting</div>
+    <div class="modal-sg">
+      <div class="modal-stat"><div class="lbl">Runs</div><div class="val">${bat.runs}</div></div>
+      <div class="modal-stat"><div class="lbl">Average</div><div class="val">${fmt(bat.avg)}</div></div>
+      <div class="modal-stat"><div class="lbl">Strike Rate</div><div class="val">${fmt(bat.sr)}</div></div>
+      <div class="modal-stat"><div class="lbl">HS</div><div class="val">${bat.hs}${bat.hsno?'*':''}</div></div>
+      <div class="modal-stat"><div class="lbl">100s/50s</div><div class="val">${bat.c100}/${bat.c50}</div></div>
+      <div class="modal-stat"><div class="lbl">Ducks</div><div class="val">${bat.ducks}</div></div>
+    </div>`;
+  }
+
+  if(bowl&&bowl.balls>0){
+    html+=`<div class="modal-sec-title">🎯 Bowling</div>
+    <div class="modal-sg">
+      <div class="modal-stat"><div class="lbl">Wickets</div><div class="val">${bowl.wkts}</div></div>
+      <div class="modal-stat"><div class="lbl">Average</div><div class="val">${fmt(bowl.avg)}</div></div>
+      <div class="modal-stat"><div class="lbl">Economy</div><div class="val">${fmt(bowl.econ)}</div></div>
+      <div class="modal-stat"><div class="lbl">Best</div><div class="val" style="font-size:1.1rem">${bowl.best}</div></div>
+      <div class="modal-stat"><div class="lbl">5-Fors</div><div class="val">${bowl.w5}</div></div>
+      <div class="modal-stat"><div class="lbl">Balls</div><div class="val">${bowl.balls}</div></div>
+    </div>`;
+  }
+
+  if(field){
+    html+=`<div class="modal-sec-title">🧤 Fielding</div>
+    <div class="modal-sg">
+      <div class="modal-stat"><div class="lbl">Total Catches</div><div class="val">${field.total}</div></div>
+      <div class="modal-stat"><div class="lbl">Stumpings</div><div class="val">${field.stumps}</div></div>
+      <div class="modal-stat"><div class="lbl">Run Outs</div><div class="val">${field.roA+field.roDirect}</div></div>
+    </div>`;
+  }
+
+  if(name==='Carmody, Ryan'){
+    html+=`<div style="background:rgba(204,20,20,0.1);border:1px solid var(--red-dim);border-radius:6px;padding:0.8rem 1rem;font-size:0.82rem;color:var(--grey4);margin-top:0.5rem">😂 <strong style="color:var(--white)">Fun Fact:</strong> Ryan Carmody had 30 dismissals this season and did not win the fielding award. No further comment at this time.</div>`;
+  }
+
+  const quip=QUIPS[name];
+  if(quip)html+=`<div style="background:rgba(255,255,255,0.03);border-left:3px solid var(--red-dim);padding:0.8rem 1rem;margin-top:1rem;font-style:italic;font-size:0.8rem;color:var(--grey3);line-height:1.5">${quip}</div>`;
+
+  document.getElementById('m-body').innerHTML=html;
+  document.getElementById('modal-bg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeModal(){
+  document.getElementById('modal-bg').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function closeMBg(e){
+  if(e.target===document.getElementById('modal-bg'))closeModal();
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// ─────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────
+// Hero numbers
+const totalRuns=BATTING.reduce((s,p)=>s+p.runs,0);
+const totalWkts=BOWL_DEDUPED().reduce((s,p)=>s+p.wkts,0);
+const totalDismissals=FIELDING.reduce((s,p)=>s+p.total+p.stumps+p.roA+p.roDirect,0);
+document.getElementById('hn-players').textContent=ALL_NAMES.filter(n=>n!=='********').length;
+document.getElementById('hn-runs').textContent=totalRuns;
+document.getElementById('hn-wkts').textContent=totalWkts;
+document.getElementById('hn-catches').textContent=totalDismissals;
+
+// Overview chart init
+const top15=[...BATTING].filter(p=>p.runs>0).sort((a,b)=>b.runs-a.runs).slice(0,15);
+drawBar('overview-chart',top15.map(p=>({name:p.n,val:p.runs,display:p.runs,color:getColor(p.n)})));
+</script>
+</body>
+</html>
