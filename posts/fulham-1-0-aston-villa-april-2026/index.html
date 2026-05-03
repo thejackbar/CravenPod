@@ -143,25 +143,39 @@ body::before {
 
 /* ── Hero ── */
 .hero {
-  background: rgba(6,7,15,0.55);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
-          backdrop-filter: blur(22px) saturate(140%);
+  background: #06070f;
   border-top: 1px solid var(--glass-edge);
   border-bottom: 1px solid var(--glass-edge);
   color: var(--ink);
   padding: 64px 32px 56px;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: -40%;
-  left: -20%;
-  width: 60%;
-  height: 200%;
-  background: radial-gradient(ellipse, rgba(204,0,0,0.08) 0%, transparent 70%);
+  inset: -2% -2%;
+  background-image: url("https://e0.365dm.com/26/04/768x432/skysports-ryan-sessegnon-fulham_7230035.jpg?20260425131728");
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  filter: saturate(0.82) contrast(1.04) brightness(0.78);
+  opacity: 0.55;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 1100px 540px at 50% 55%, rgba(6,7,15,0.28) 0%, rgba(6,7,15,0.52) 60%, rgba(6,7,15,0.86) 100%),
+    linear-gradient(180deg, rgba(6,7,15,0.60) 0%, rgba(6,7,15,0.08) 25%, rgba(6,7,15,0.08) 70%, rgba(6,7,15,0.92) 100%),
+    radial-gradient(ellipse at 12% 84%, rgba(90,140,112,0.18) 0%, transparent 55%);
+  z-index: -1;
   pointer-events: none;
 }
 
