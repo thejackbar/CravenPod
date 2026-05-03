@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arsenal 3–0 Fulham · Match Review · Cravenpod</title>
+<meta name="description" content="Three first-half goals, Berge absent with illness, no changes at half-time despite the three-goal deficit. A night to forget at the Emirates, with one small positive to cling to.">
+<meta property="og:title" content="Arsenal 3–0 Fulham · Match Review">
+<meta property="og:description" content="Three before the break. No half-time changes. Berge absent. One bright spark. The GW35 verdict from a Fulham fan.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cravenpod">
+<meta name="twitter:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* base atmosphere */
+  --bg-0: #06070f;
+  --bg-1: #0a0d1c;
+  --bg-2: #0e1226;
+
+  /* text */
+  --ink:      #f5f6fa;
+  --ink-soft: rgba(245,246,250,0.78);
+  --ink-mute: rgba(245,246,250,0.55);
+
+  /* legacy aliases */
+  --paper:      #f5f6fa;
+  --paper-dark: rgba(255,255,255,0.05);
+
+  /* glass surfaces */
+  --glass:             rgba(255,255,255,0.05);
+  --glass-strong:      rgba(255,255,255,0.09);
+  --glass-edge:        rgba(255,255,255,0.10);
+  --glass-edge-strong: rgba(255,255,255,0.20);
+
+  /* brand accents */
+  --accent:      #ff3b67;
+  --accent-soft: #cc0033;
+  --accent-glow: rgba(255,59,103,0.40);
+  --gold:        #d4af6e;
+
+  /* status */
+  --ok:     #4a8060;
+  --warn:   #d4a015;
+  --danger: #ff5577;
+
+  /* utility */
+  --rule:  rgba(255,255,255,0.10);
+  --muted: rgba(245,246,250,0.55);
+
+  /* team palette */
+  --gunners:      #db0007;
+  --fulham-green: #5a8c70;
+
+  /* shadows + radius */
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+  --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+  --r-sm:   10px;
+  --r-md:   16px;
+  --r-lg:   22px;
+  --r-pill: 999px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; color-scheme: dark; }
+
+body {
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse  900px 760px at 94% 10%, rgba(204,0,51,0.20)    0%, transparent 60%),
+    radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(110,195,212,0.11) 0%, transparent 70%),
+    linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ── Masthead ── */
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--glass-edge);
+  background: rgba(10,13,28,0.60);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.back-link { color: var(--accent); }
+
+.brand { font-weight: 500; }
+
+.masthead .meta {
+  display: flex;
+  gap: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.masthead .meta a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.masthead .meta a:hover { color: var(--ink); }
+
+/* ── Hero ── */
+.hero {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 64px 32px 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(219,0,7,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-kicker::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.matchup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.club-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 90px;
+}
+
+.club-block img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.club-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.scoreline {
+  flex: 1;
+  text-align: center;
+  min-width: 120px;
+}
+
+.score-nums {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.score-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+
+.hero h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-dek {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  line-height: 1.65;
+}
+
+.hero-meta {
+  margin-top: 28px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-meta span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── Article body ── */
+.article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 56px 0 0;
+}
+
+.section-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section h2 em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
+.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+/* ── Pull quote ── */
+.pullquote {
+  border-left: 3px solid var(--accent);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: var(--glass);
+}
+
+.pullquote p {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 8px !important;
+}
+
+.pullquote cite {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ── Stats grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.stat-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stat-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-home { color: var(--gunners); }
+.stat-away { color: var(--fulham-green); }
+.stat-sep { color: var(--muted); font-size: 1rem; }
+
+.stat-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.stat-bar-home {
+  height: 4px;
+  background: var(--gunners);
+  border-radius: 2px;
+  flex: var(--home-pct);
+  opacity: 0.7;
+}
+
+.stat-bar-away {
+  height: 4px;
+  background: var(--fulham-green);
+  border-radius: 2px;
+  flex: var(--away-pct);
+  opacity: 0.7;
+}
+
+/* ── Timeline ── */
+.timeline {
+  margin: 28px 0;
+  border-left: 2px solid var(--rule);
+  padding-left: 24px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--glass);
+  border: 2px solid var(--rule);
+}
+
+.timeline-item.key-moment::before { border-color: var(--accent); background: var(--accent); }
+
+.timeline-minute {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.timeline-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2px 0 4px;
+}
+
+.timeline-body {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  display: none;
+  margin-top: 6px;
+}
+
+.timeline-item.open .timeline-body { display: block; }
+.timeline-toggle { font-size: 0.7rem; color: var(--accent); margin-top: 4px; }
+
+/* ── Form table ── */
+.drought-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.9rem;
+}
+
+.drought-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.drought-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.drought-table tr:last-child td { border-bottom: none; }
+
+.result-badge {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.result-badge.W { background: var(--ok); color: #fff; }
+.result-badge.D { background: var(--warn); color: #fff; }
+.result-badge.L { background: var(--danger); color: #fff; }
+
+.goals-cell { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; }
+
+/* ── Info card ── */
+.info-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.info-card .card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0 !important;
+}
+
+/* ── Table context ── */
+.table-snapshot {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.table-snapshot h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.league-row {
+  display: grid;
+  grid-template-columns: 24px 1fr 40px 40px 40px 48px;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.88rem;
+}
+
+.league-row:last-child { border-bottom: none; }
+
+.league-row .pos {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.league-row .team-name { font-weight: 500; }
+
+.league-row .pts {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  text-align: right;
+}
+
+.league-row .sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.league-row.highlight { background: rgba(184,147,94,0.12); border-radius: 3px; padding: 7px 6px; }
+
+/* ── Poll / Interactive ── */
+.interactive-section {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 56px 32px;
+  margin: 56px -32px 0;
+}
+
+.interactive-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.interactive-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+}
+
+.poll-block {
+  margin-bottom: 48px;
+}
+
+.poll-block h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.poll-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--ink);
+  padding: 12px 16px;
+  cursor: pointer;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: background 0.15s;
+  width: 100%;
+}
+
+.poll-btn:hover { background: rgba(255,255,255,0.1); }
+
+.poll-btn-label { flex: 1; }
+
+.poll-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--gold);
+  min-width: 36px;
+  text-align: right;
+  display: none;
+}
+
+.poll-bar-wrap {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  margin-top: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  display: none;
+}
+
+.poll-bar {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+.poll-voted .poll-pct { display: block; }
+.poll-voted .poll-bar-wrap { display: block; }
+.poll-voted .poll-btn { cursor: default; }
+.poll-voted .poll-btn:hover { background: rgba(255,255,255,0.06); }
+.poll-voted .poll-btn.user-choice { border-color: var(--gold); background: rgba(184,147,94,0.1); }
+
+.poll-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* Rating widget */
+.rating-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.rating-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-radius: 3px;
+}
+
+.rating-btn:hover { background: rgba(255,255,255,0.12); }
+.rating-btn.selected { background: var(--gold); color: #0d0d0d; border-color: var(--gold); }
+
+.rating-result {
+  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: none;
+}
+
+.rating-result.visible { display: block; }
+
+/* ── Footer ── */
+.footer {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  color: rgba(255,255,255,0.5);
+  padding: 40px 32px;
+}
+
+.footer > div {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer a:hover { color: var(--ink); }
+
+/* ── Frosted card overrides ── */
+.pullquote, .stat-card, .info-card, .table-snapshot {
+  border-radius: var(--r-md);
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.poll-btn, .rating-btn { border-radius: var(--r-pill); border-color: var(--glass-edge); }
+.poll-btn:hover, .rating-btn:hover { border-color: var(--glass-edge-strong); }
+.timeline-item::before { background: var(--glass-strong); border-color: var(--glass-edge); }
+.league-row.highlight { background: rgba(212,175,110,0.15); border: 1px solid rgba(212,175,110,0.30); }
+.rating-btn.selected { background: var(--gold); color: var(--bg-1); border-color: var(--gold); box-shadow: 0 0 24px rgba(212,175,110,0.35); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .masthead { padding: 12px 20px; }
+  .hero { padding: 40px 20px 40px; }
+  .article-body { padding: 0 20px 60px; }
+  .score-nums { font-size: 2.8rem; }
+  .matchup { gap: 16px; }
+  .club-block img { width: 52px; height: 52px; }
+  .interactive-section { padding: 40px 20px; margin: 40px -20px 0; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .league-row { grid-template-columns: 20px 1fr 36px 36px 36px 42px; font-size: 0.82rem; }
+  .masthead .meta { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="/" class="brand-link">
+    <span class="back-link">← That's So Craven</span>
+    <span>/</span>
+    <span class="brand">Match Review</span>
+  </a>
+  <div class="meta">
+    <span><a href="https://podfollow.com/thats-so-craven">🎙 Podcast</a></span>
+    <span><a href="https://discord.gg/mUZQhDHJPR">💬 Discord</a></span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Premier League · GW35 · 2 May 2026</div>
+    <div class="matchup">
+      <div class="club-block">
+        <img src="https://resources.premierleague.com/premierleague/badges/t3.svg" alt="Arsenal FC crest">
+        <span class="club-name">Arsenal</span>
+      </div>
+      <div class="scoreline">
+        <div class="score-nums">3 – 0</div>
+        <div class="score-label">Full Time</div>
+      </div>
+      <div class="club-block">
+        <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" alt="Fulham FC crest">
+        <span class="club-name">Fulham</span>
+      </div>
+    </div>
+    <h1>Three before the break. <em>Nothing after.</em></h1>
+    <p class="hero-dek">Arsenal were always going to be a difficult proposition, top of the table and buzzing from their Champions League semi-final. But three goals conceded before half-time, Sander Berge absent with illness, and no changes at the interval despite the scoreline: there are questions here that go beyond the occasion.</p>
+    <div class="hero-meta">
+      <span>Emirates Stadium</span>
+      <span>2 May 2026</span>
+      <span>~7 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <!-- §01 The Story -->
+  <section class="section">
+    <div class="section-kicker">§ 01 · The Story</div>
+    <h2>A difficult evening, honestly <em>assessed</em>.</h2>
+    <p>Nobody booked this trip to north London with anything more than guarded optimism. Arsenal are top of the Premier League, six points clear of Manchester City after this result, and came into the match having held Atletico Madrid in the first leg of their Champions League semi-final in midweek. Fulham were always the sideshow.</p>
+    <p>That context matters, because it would be too easy to use it as a blanket excuse. Marco Silva, to his credit, refused to do exactly that. A virus had been doing the rounds at the training ground in the days before the match, claiming Sander Berge among the casualties, and there was an obvious temptation to lean on that explanation after a heavy defeat. Silva did not take it.</p>
+
+    <div class="pullquote">
+      <p>"Yes, a virus at the training ground; some players, some staff members too. It's not the reason why in the first half we weren't at the level."</p>
+      <cite>Marco Silva, post-match</cite>
+    </div>
+
+    <p>The first half was, in his own words, one where Fulham "made their life too easy, too easy." Arsenal scored through Viktor Gyokeres in the ninth minute, Bukayo Saka doubled the lead on forty minutes, and Gyokeres added his second before the break. Three goals, all before half-time, and Fulham had barely been in the game. The xG numbers told the same story: Arsenal generated 2.4 in the opening forty-five minutes alone, one of their highest returns in a Premier League home first half in years.</p>
+    <p>The second half was quieter. Arsenal, with a title to protect and a European tie on Tuesday, took their foot off the accelerator. Fulham pushed forward and improved, and there was one moment from Josh King after he came on that suggested what a different Fulham might have offered. But the deficit was too large, and the chance to reshape things at half-time had already been passed over.</p>
+
+    <div class="pullquote">
+      <p>"We were second best in almost everything during the first half. We have to be very disappointed with the performance."</p>
+      <cite>Marco Silva, post-match</cite>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §02 Key Moments -->
+  <section class="section">
+    <div class="section-kicker">§ 02 · Key Moments</div>
+    <h2>Minute by minute, the <em>incidents that mattered</em></h2>
+    <p>Click any moment to expand the detail.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">9' ·</div>
+        <div class="timeline-title">Gyokeres opens the scoring</div>
+        <div class="timeline-body">Viktor Gyokeres prodded home after Bukayo Saka created the opening down the right. Fulham had barely settled before they were behind. The goal came from a Saka cross that the Swedish striker converted from close range, and the tone for the first half was set almost immediately.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">40' ·</div>
+        <div class="timeline-title">Saka doubles the lead</div>
+        <div class="timeline-body">Saka was starting his first Premier League game since the Carabao Cup final and made his presence felt. Gyokeres turned provider this time, playing Saka through to slot past Bernd Leno. Two goals in the space of a game from the league's two most dangerous players was not what a struggling Fulham backline needed.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">42' ·</div>
+        <div class="timeline-title">Gyokeres adds his second, three before the break</div>
+        <div class="timeline-body">Gyokeres completed his brace with a header before the interval to make it 3-0. Fulham had offered almost nothing going forward, restricted to two long-range attempts. Three goals conceded in 42 minutes against the title leaders: there was no way back from this, and both sides knew it.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">Half-time ·</div>
+        <div class="timeline-title">No changes at the interval</div>
+        <div class="timeline-body">Silva sent the same eleven out for the second half. Three goals down against a title-chasing side, and there were no tactical adjustments at the break. Whether that was a conscious decision to stay patient or a reluctance to admit the starting shape wasn't working, it drew scrutiny. The changes, when they did come, arrived twenty minutes into the second half.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">65' ·</div>
+        <div class="timeline-title">Triple change: King, Bobb and Cairney on</div>
+        <div class="timeline-body">Josh King replaced Samuel Chukwueze, Oscar Bobb came on for Harry Wilson, and Tom Cairney replaced Harrison Reed. Three substitutions arriving almost simultaneously, reshaping the midfield and the attacking options in one go. King in particular showed some purpose after coming on, and gave Fulham a bit more to work with in the closing period.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">73' ·</div>
+        <div class="timeline-title">Muniz on for Jimenez</div>
+        <div class="timeline-body">Rodrigo Muniz replaced Raul Jimenez as Fulham continued to ring the changes. By now the game was long decided, though Fulham at least had more energy on the pitch to make Arsenal work defensively in the final stages. The second half attempts count was better than the first, but the quality to trouble Arsenal's backline wasn't quite there.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">90+' ·</div>
+        <div class="timeline-title">Full time, 3-0</div>
+        <div class="timeline-body">The referee brought proceedings to a close. Arsenal moved six points clear of Manchester City at the top. Fulham finished the evening with a scoreline that reflected an uncomfortable truth about how the first half had gone, in Silva's own words: a night when all the things that make them hard to play against simply weren't on the pitch.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §03 Stats -->
+  <section class="section">
+    <div class="section-kicker">§ 03 · By the Numbers</div>
+    <h2>The first half told <em>the whole story</em>.</h2>
+    <p>Arsenal's first-half xG of 2.4 was among their highest in a Premier League home opening forty-five in years, and they didn't need much more than that to settle the tie. Fulham's first-half contribution was two shots from long range. That is not a performance that builds from a position of pressure, it is a passive one that invites exactly what followed.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Arsenal First-Half Shots</div>
+        <div class="stat-values">
+          <span class="stat-home">14</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Fulham First-Half Shots</div>
+        <div class="stat-values">
+          <span class="stat-away">2</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Arsenal First-Half xG</div>
+        <div class="stat-values">
+          <span class="stat-home">2.4</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Fulham Away Wins vs Arsenal (All Time)</div>
+        <div class="stat-values">
+          <span class="stat-away">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="card-label">Historical Context</div>
+      <p>Fulham have now made 33 away trips to Arsenal without a win across English Football League history. That is, according to Opta, the longest such run of any club against another in the history of the EFL. A grim record that got no better on Saturday evening.</p>
+    </div>
+
+    <p>The second-half numbers were marginally better for Fulham, generating roughly twice their first-half shot count after the triple substitution. But "better than virtually nothing" is a low benchmark, and none of those attempts troubled Raya meaningfully. Arsenal had already done what they came to do inside forty-five minutes.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §04 The Form -->
+  <section class="section">
+    <div class="section-kicker">§ 04 · The Form</div>
+    <h2>One win in four, <em>before this</em>.</h2>
+    <p>This result sits at the end of a run that has been difficult to watch from late April onward. A home win over Aston Villa last week was the only victory in four games, and the away record in that stretch has been poor. Three defeats on the road out of three in the spring run-in, with twelve goals conceded across those three away trips.</p>
+
+    <table class="drought-table">
+      <thead>
+        <tr>
+          <th>Opposition</th>
+          <th>Venue</th>
+          <th>Score</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Burnley</td>
+          <td>H</td>
+          <td class="goals-cell">3–1</td>
+          <td><span class="result-badge W">W</span></td>
+        </tr>
+        <tr>
+          <td>Liverpool</td>
+          <td>A</td>
+          <td class="goals-cell">0–2</td>
+          <td><span class="result-badge L">L</span></td>
+        </tr>
+        <tr>
+          <td>Brentford</td>
+          <td>A</td>
+          <td class="goals-cell">0–0</td>
+          <td><span class="result-badge D">D</span></td>
+        </tr>
+        <tr>
+          <td>Aston Villa</td>
+          <td>H</td>
+          <td class="goals-cell">1–0</td>
+          <td><span class="result-badge W">W</span></td>
+        </tr>
+        <tr>
+          <td>Arsenal</td>
+          <td>A</td>
+          <td class="goals-cell">0–3</td>
+          <td><span class="result-badge L">L</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Fulham at home have been a different prospect to Fulham away this season, and that gap is showing up at exactly the wrong point in the calendar. Three games remain: Bournemouth at home, Wolves away, and Newcastle at home on the last day. There is still something worth playing for, but the away fixtures need to start producing something.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §05 The Half-Time Non-Change -->
+  <section class="section">
+    <div class="section-kicker">§ 05 · The Decision</div>
+    <h2>Three down, and <em>no change</em>.</h2>
+    <p>The question a lot of supporters will be sitting with is a simple one: why were there no substitutions at half-time? Three goals down against the team that is about to win the Premier League, and Silva sent the same eleven out for the second period.</p>
+    <p>There are arguments in both directions. Some managers prefer to give players the chance to correct things themselves at the start of a second half rather than immediately pulling them. Wholesale changes can disrupt structure as much as they solve problems. And in fairness, Arsenal had already done the damage, so the calculus of what a half-time change might achieve was limited.</p>
+    <p>But the counter-argument is hard to ignore. The starting shape had produced two long-range shots in forty-five minutes. The trio that eventually came on at sixty-five minutes, King, Bobb, and Cairney, gave Fulham noticeably more drive and variety. Twenty minutes earlier, that might at least have produced a consolation and a different atmosphere in the second half.</p>
+
+    <div class="pullquote">
+      <p>"One thing that is making us be a team that is always hard to play against... during the first half, all these aspects were not on the pitch."</p>
+      <cite>Marco Silva, post-match</cite>
+    </div>
+
+    <p>Silva did not address the half-time non-change directly in his post-match comments, instead focusing on the broader first-half failings. That is his prerogative. But it is the kind of decision that lingers, particularly when the substitutes who did come on showed more intent than the players they replaced.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §06 Josh King -->
+  <section class="section">
+    <div class="section-kicker">§ 06 · The Positive</div>
+    <h2>One bright spark, <em>for what it's worth</em>.</h2>
+    <p>The evening was not entirely without something to note on the positive side. When Josh King came on in the sixty-fifth minute for Samuel Chukwueze, he was one of the livelier figures on the pitch in the second half. He got into promising positions, showed willingness to take players on, and drew a foul from Noni Madueke in the seventy-first minute, earning Fulham a free kick in an attacking area.</p>
+    <p>It was not enough to change the shape of the evening, and nobody should pretend it was. But King has done this before: come off the bench and look sharper than the players he has replaced. Whether that earns him a starting spot at Bournemouth next week is a conversation worth having.</p>
+
+    <div class="info-card">
+      <div class="card-label">The One To Note</div>
+      <p>King came on at 65', looked lively against a side that had already taken their foot off the gas. Fulham's second-half shot count improved markedly after the triple substitution. Whether that reflects the substitutes' quality or Arsenal's cruise control is a question without a clean answer, but King at least gave supporters something to watch.</p>
+    </div>
+
+    <p>The wider point is that Chukwueze, who started, and Wilson, who also made way for Bobb, had offered little before they came off. That is partly a product of the first-half scoreline making attacking play extremely difficult. But it is also worth asking whether the starting eleven was the most dangerous attacking shape available to Silva before kick-off.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §07 The Bigger Picture -->
+  <section class="section">
+    <div class="section-kicker">§ 07 · The Bigger Picture</div>
+    <h2>Tenth, 48 points, <em>three games to play</em>.</h2>
+    <p>Step back from the scoreline and the situation is still a reasonable one. Fulham are tenth in the Premier League with 48 points and three matches remaining. They are safe, comfortably clear of any relevance to the bottom of the table, and still within reach of a top-half finish. Given where this club has been, that is not nothing.</p>
+
+    <div class="table-snapshot">
+      <h3>Three games remaining</h3>
+      <div class="league-row" style="grid-template-columns: 70px 1fr 60px;">
+        <span class="sm">9 May</span>
+        <span class="team-name">Bournemouth (H)</span>
+        <span class="sm">GW36</span>
+      </div>
+      <div class="league-row" style="grid-template-columns: 70px 1fr 60px;">
+        <span class="sm">17 May</span>
+        <span class="team-name">Wolves (A)</span>
+        <span class="sm">GW37</span>
+      </div>
+      <div class="league-row highlight" style="grid-template-columns: 70px 1fr 60px;">
+        <span class="sm">24 May</span>
+        <span class="team-name">Newcastle (H)</span>
+        <span class="sm">GW38</span>
+      </div>
+    </div>
+
+    <p>The run-in is not without its challenges. Bournemouth have been one of the more surprising sides of the season at the Cottage end. Wolves away, despite their struggles, is the type of fixture that requires a performance. And Newcastle on the final day will be fighting for something at the top end of the table.</p>
+    <p>Losing 3-0 to the eventual champions, without your first-choice central midfielder and away from home, was never going to be a shock result. The disappointment is in the manner, particularly in those forty-two minutes when Fulham offered almost no resistance. Silva said as much himself. Three games remain to finish on the right side of this season's story by the Thames.</p>
+  </section>
+
+</div><!-- end article-body -->
+
+<!-- §08 Interactive -->
+<section class="interactive-section">
+  <div class="interactive-inner">
+    <div class="interactive-kicker">§ 08 · Your verdict</div>
+
+    <!-- POTM Vote -->
+    <div class="poll-block" id="potm-block">
+      <h3>Man of the Match</h3>
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-family:'JetBrains Mono', monospace;letter-spacing:0.05em;">All 16 Fulham players who featured. Pick one.</p>
+      <div class="poll-options" id="potm-options">
+
+        <button class="poll-btn" data-poll="potm" data-choice="leno" onclick="castVote('potm','leno')">
+          <span class="poll-btn-label">Bernd Leno (GK)</span>
+          <span class="poll-pct" id="potm-pct-leno">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-leno"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="castagne" onclick="castVote('potm','castagne')">
+          <span class="poll-btn-label">Timothy Castagne</span>
+          <span class="poll-pct" id="potm-pct-castagne">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-castagne"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="andersen" onclick="castVote('potm','andersen')">
+          <span class="poll-btn-label">Joachim Andersen</span>
+          <span class="poll-pct" id="potm-pct-andersen">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-andersen"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="bassey" onclick="castVote('potm','bassey')">
+          <span class="poll-btn-label">Calvin Bassey</span>
+          <span class="poll-pct" id="potm-pct-bassey">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bassey"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="robinson" onclick="castVote('potm','robinson')">
+          <span class="poll-btn-label">Antonee Robinson</span>
+          <span class="poll-pct" id="potm-pct-robinson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-robinson"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="reed" onclick="castVote('potm','reed')">
+          <span class="poll-btn-label">Harrison Reed</span>
+          <span class="poll-pct" id="potm-pct-reed">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-reed"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="lukic" onclick="castVote('potm','lukic')">
+          <span class="poll-btn-label">Saša Lukić</span>
+          <span class="poll-pct" id="potm-pct-lukic">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-lukic"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="wilson" onclick="castVote('potm','wilson')">
+          <span class="poll-btn-label">Harry Wilson</span>
+          <span class="poll-pct" id="potm-pct-wilson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-wilson"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="esr" onclick="castVote('potm','esr')">
+          <span class="poll-btn-label">Emile Smith Rowe</span>
+          <span class="poll-pct" id="potm-pct-esr">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-esr"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="chukwueze" onclick="castVote('potm','chukwueze')">
+          <span class="poll-btn-label">Samuel Chukwueze</span>
+          <span class="poll-pct" id="potm-pct-chukwueze">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-chukwueze"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="jimenez" onclick="castVote('potm','jimenez')">
+          <span class="poll-btn-label">Raúl Jiménez</span>
+          <span class="poll-pct" id="potm-pct-jimenez">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-jimenez"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="bobb" onclick="castVote('potm','bobb')">
+          <span class="poll-btn-label">Oscar Bobb (65')</span>
+          <span class="poll-pct" id="potm-pct-bobb">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bobb"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="king" onclick="castVote('potm','king')">
+          <span class="poll-btn-label">Josh King (65')</span>
+          <span class="poll-pct" id="potm-pct-king">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-king"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="cairney" onclick="castVote('potm','cairney')">
+          <span class="poll-btn-label">Tom Cairney (65')</span>
+          <span class="poll-pct" id="potm-pct-cairney">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-cairney"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="muniz" onclick="castVote('potm','muniz')">
+          <span class="poll-btn-label">Rodrigo Muniz (73')</span>
+          <span class="poll-pct" id="potm-pct-muniz">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-muniz"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="kusiasare" onclick="castVote('potm','kusiasare')">
+          <span class="poll-btn-label">Jonah Kusi-Asare (78')</span>
+          <span class="poll-pct" id="potm-pct-kusiasare">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-kusiasare"></div></div>
+
+      </div>
+      <div class="poll-count" id="potm-count"></div>
+    </div>
+
+    <!-- Fair Result poll -->
+    <div class="poll-block" id="fair-block">
+      <h3>How fair was 3-0?</h3>
+      <div class="poll-options" id="fair-options">
+        <button class="poll-btn" data-poll="fair" data-choice="fair" onclick="castVote('fair','fair')">
+          <span class="poll-btn-label">Fair, Arsenal were clearly better</span>
+          <span class="poll-pct" id="fair-pct-fair">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="fair-bar-fair"></div></div>
+
+        <button class="poll-btn" data-poll="fair" data-choice="harsh" onclick="castVote('fair','harsh')">
+          <span class="poll-btn-label">Harsh, the second half was better</span>
+          <span class="poll-pct" id="fair-pct-harsh">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="fair-bar-harsh"></div></div>
+
+        <button class="poll-btn" data-poll="fair" data-choice="worse" onclick="castVote('fair','worse')">
+          <span class="poll-btn-label">Could have been worse</span>
+          <span class="poll-pct" id="fair-pct-worse">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="fair-bar-worse"></div></div>
+      </div>
+      <div class="poll-count" id="fair-count"></div>
+    </div>
+
+    <!-- Biggest Concern poll -->
+    <div class="poll-block" id="concern-block">
+      <h3>What bothers you most about tonight?</h3>
+      <div class="poll-options" id="concern-options">
+        <button class="poll-btn" data-poll="concern" data-choice="firsthalf" onclick="castVote('concern','firsthalf')">
+          <span class="poll-btn-label">The passivity in the first half</span>
+          <span class="poll-pct" id="concern-pct-firsthalf">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="concern-bar-firsthalf"></div></div>
+
+        <button class="poll-btn" data-poll="concern" data-choice="nosubs" onclick="castVote('concern','nosubs')">
+          <span class="poll-btn-label">No changes made at half-time</span>
+          <span class="poll-pct" id="concern-pct-nosubs">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="concern-bar-nosubs"></div></div>
+
+        <button class="poll-btn" data-poll="concern" data-choice="away" onclick="castVote('concern','away')">
+          <span class="poll-btn-label">The broader away form this spring</span>
+          <span class="poll-pct" id="concern-pct-away">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="concern-bar-away"></div></div>
+
+        <button class="poll-btn" data-poll="concern" data-choice="nothing" onclick="castVote('concern','nothing')">
+          <span class="poll-btn-label">Nothing, was always going to be tough</span>
+          <span class="poll-pct" id="concern-pct-nothing">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="concern-bar-nothing"></div></div>
+      </div>
+      <div class="poll-count" id="concern-count"></div>
+    </div>
+
+    <!-- Performance Rating -->
+    <div class="poll-block" id="rating-block">
+      <h3>Rate the performance out of 10</h3>
+      <div class="rating-widget">
+        <div class="rating-row" id="rating-row"></div>
+        <div class="rating-result" id="rating-result"></div>
+        <div class="poll-count" id="rating-count"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="/">← Back to Cravenpod</a>
+    <a href="https://podfollow.com/thats-so-craven">🎙 Listen to the Podcast</a>
+    <a href="https://discord.gg/mUZQhDHJPR">💬 Join the Discord</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+  const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+  const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+  const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+  const LS_PREFIX = 'cravenpod-ars3ful-may26-';
+
+  const POLL_IDS = {
+    potm:    'ars-ful-may26-potm',
+    fair:    'ars-ful-may26-fair',
+    concern: 'ars-ful-may26-concern',
+    rating:  'ars-ful-may26-rating',
+  };
+
+  function getUserChoice(poll) {
+    try { return localStorage.getItem(LS_PREFIX + poll) || null; } catch(e) { return null; }
+  }
+  function saveUserChoice(poll, choice) {
+    try { localStorage.setItem(LS_PREFIX + poll, choice); } catch(e) {}
+  }
+
+  async function fetchCounts(pollId) {
+    const { data, error } = await sb.from('poll_counts')
+      .select('choice, count')
+      .eq('poll_id', pollId);
+    if (error || !data) return {};
+    const counts = {};
+    data.forEach(row => { counts[row.choice] = parseInt(row.count) || 0; });
+    return counts;
+  }
+
+  function renderPoll(pollName, userChoice, counts) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return;
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userChoice) return;
+
+    block.classList.add('poll-voted');
+    block.querySelectorAll('.poll-btn').forEach(btn => {
+      btn.classList.remove('user-choice');
+      if (btn.dataset.choice === userChoice) btn.classList.add('user-choice');
+    });
+
+    const choices = getPollChoices(pollName);
+    choices.forEach(choice => {
+      const count = counts[choice] || 0;
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      const pctEl = document.getElementById(pollName + '-pct-' + choice);
+      const barEl = document.getElementById(pollName + '-bar-' + choice);
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (barEl) setTimeout(() => { barEl.style.width = pct + '%'; }, 50);
+    });
+
+    const countEl = document.getElementById(pollName + '-count');
+    if (countEl) countEl.textContent = total + (total === 1 ? ' vote' : ' votes') + ' cast';
+  }
+
+  function getPollChoices(pollName) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return [];
+    return Array.from(block.querySelectorAll('.poll-btn[data-choice]')).map(b => b.dataset.choice);
+  }
+
+  window.castVote = async function(pollName, choice) {
+    if (getUserChoice(pollName)) return;
+    const pollId = POLL_IDS[pollName];
+    if (!pollId) return;
+
+    saveUserChoice(pollName, choice);
+    await sb.from('poll_votes').insert({ poll_id: pollId, choice: choice });
+    const counts = await fetchCounts(pollId);
+    renderPoll(pollName, choice, counts);
+  };
+
+  async function initPolls() {
+    for (const [pollName, pollId] of Object.entries(POLL_IDS)) {
+      if (pollName === 'rating') continue;
+      const userChoice = getUserChoice(pollName);
+      const counts = await fetchCounts(pollId);
+      renderPoll(pollName, userChoice, counts);
+    }
+  }
+  initPolls();
+
+  /* ── Rating widget ── */
+  const ratingRow    = document.getElementById('rating-row');
+  const ratingResult = document.getElementById('rating-result');
+  const ratingCount  = document.getElementById('rating-count');
+
+  function buildRatingButtons() {
+    if (!ratingRow) return;
+    for (let i = 1; i <= 10; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'rating-btn';
+      btn.textContent = i;
+      btn.dataset.val = i;
+      btn.onclick = () => castRating(i);
+      ratingRow.appendChild(btn);
+    }
+  }
+
+  async function castRating(val) {
+    if (getUserChoice('rating')) return;
+    saveUserChoice('rating', String(val));
+    await sb.from('poll_votes').insert({ poll_id: POLL_IDS.rating, choice: String(val) });
+    await renderRating(String(val));
+  }
+
+  async function renderRating(userVal) {
+    if (!ratingRow) return;
+    const counts = await fetchCounts(POLL_IDS.rating);
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userVal) return;
+
+    ratingRow.querySelectorAll('.rating-btn').forEach(btn => {
+      btn.onclick = null;
+      btn.style.cursor = 'default';
+      btn.classList.toggle('selected', btn.dataset.val === userVal);
+    });
+
+    if (total > 0) {
+      const sum = Object.entries(counts).reduce((acc, [r, c]) => acc + parseInt(r) * c, 0);
+      const avg = (sum / total).toFixed(1);
+      if (ratingResult) {
+        ratingResult.textContent = 'Community average: ' + avg + ' / 10';
+        ratingResult.classList.add('visible');
+      }
+      if (ratingCount) ratingCount.textContent = total + (total === 1 ? ' rating' : ' ratings') + ' submitted';
+    }
+  }
+
+  buildRatingButtons();
+  const existingRating = getUserChoice('rating');
+  if (existingRating) renderRating(existingRating);
+
+  /* ── Timeline toggle ── */
+  window.toggleTimeline = function(el) {
+    const isOpen = el.classList.contains('open');
+    el.classList.toggle('open', !isOpen);
+    const toggle = el.querySelector('.timeline-toggle');
+    if (toggle) toggle.textContent = isOpen ? '+ show more' : '– show less';
+  };
+
+})();
+</script>
+
+<script data-goatcounter="https://cravenpod.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
