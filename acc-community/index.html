@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Applecross Cricket Club · Community Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ══════════════════════════════════════════
+   ROOT VARS
+══════════════════════════════════════════ */
+:root {
+  --black:   #0A0A0A;
+  --black2:  #111111;
+  --black3:  #1A1A1A;
+  --black4:  #222222;
+  --grey1:   #333333;
+  --grey2:   #555555;
+  --grey3:   #888888;
+  --grey4:   #BBBBBB;
+  --white:   #F0F0F0;
+  --red:     #CC1414;
+  --red2:    #E01E1E;
+  --red3:    #FF2424;
+  --red-dim: #7A0A0A;
+  --red-glow:rgba(204,20,20,0.25);
+  --gold:    #D4A017;
+  --gold2:   #F0C040;
+  --blue:    #4A9ADE;
+  --border:  rgba(204,20,20,0.2);
+  --border2: rgba(240,240,240,0.07);
+  --gold-border: rgba(212,160,23,0.35);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Barlow',sans-serif;
+  font-weight:400;
+  overflow-x:hidden;
+  cursor:default;
+}
+
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--black2)}
+::-webkit-scrollbar-thumb{background:var(--red-dim);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--red)}
+
+::selection{background:var(--red);color:#fff}
+
+/* animated bg grid */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(204,20,20,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(204,20,20,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+.site-header{
+  position:sticky;top:0;z-index:200;
+  background:rgba(10,10,10,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--red);
+  box-shadow:0 0 40px rgba(204,20,20,0.3);
+}
+
+.header-inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:0 1.5rem;gap:1rem;
+  flex-wrap:wrap;
+}
+
+.logo-block{
+  display:flex;align-items:center;gap:1rem;
+  padding:0.8rem 0;
+}
+
+.logo-img{
+  width:48px;height:48px;flex-shrink:0;
+  border-radius:50%;
+  object-fit:contain;
+  background:transparent;
+}
+
+.club-title{
+  font-family:'Anton',sans-serif;
+  font-size:1.4rem;
+  letter-spacing:0.06em;
+  line-height:1;
+  color:var(--white);
+  text-transform:uppercase;
+}
+.club-title span{color:var(--red3)}
+
+.season-tag{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--grey3);
+  margin-top:0.15rem;
+}
+
+.header-badge{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--grey3);
+  border:1px solid var(--border2);
+  border-radius:4px;
+  padding:0.35rem 0.7rem;
+}
+
+/* ══════════════════════════════════════════
+   MAIN
+══════════════════════════════════════════ */
+main{
+  max-width:1200px;margin:0 auto;
+  padding:2.5rem 1.5rem 4rem;
+  position:relative;z-index:1;
+}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+.hero{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:14px;
+  overflow:hidden;
+  margin-bottom:2rem;
+  position:relative;
+}
+
+.hero-top{
+  background:linear-gradient(135deg,#1a0000 0%,var(--black3) 55%,#0a0a0a 100%);
+  padding:3rem 2.5rem 2.5rem;
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;align-items:center;
+  border-bottom:1px solid var(--border);
+}
+
+.hero-top::after{
+  content:'';
+  position:absolute;
+  top:0;right:0;bottom:0;width:45%;
+  background:radial-gradient(ellipse at right,rgba(204,20,20,0.12),transparent 70%);
+  pointer-events:none;
+}
+
+.hero-eyebrow{
+  font-family:'DM Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--red);
+  margin-bottom:0.6rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.hero-eyebrow::before{
+  content:'';
+  display:inline-block;
+  width:24px;height:2px;
+  background:var(--red);
+  flex-shrink:0;
+}
+
+.hero-title{
+  font-family:'Anton',sans-serif;
+  font-size:4.2rem;letter-spacing:0.02em;
+  line-height:0.95;text-transform:uppercase;
+  color:var(--white);margin-bottom:1rem;
+}
+.hero-title .accent{color:var(--red3)}
+
+.hero-tagline{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:400;font-style:italic;
+  color:var(--grey3);line-height:1.5;
+  max-width:520px;
+}
+.hero-tagline strong{color:var(--grey4);font-weight:600;font-style:normal}
+
+.hero-nums{
+  display:flex;flex-direction:column;gap:1.5rem;
+  flex-shrink:0;
+  position:relative;z-index:1;
+}
+
+.hero-num{text-align:center}
+
+.hero-num-val{
+  font-family:'Anton',sans-serif;
+  font-size:3rem;line-height:1;
+  color:var(--red3);
+}
+.hero-num-val.gold{color:var(--gold2)}
+.hero-num-val.white{color:var(--white)}
+
+.hero-num-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.55rem;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--grey2);
+  margin-top:0.15rem;
+  max-width:90px;
+  line-height:1.3;
+}
+
+.hero-footer{
+  padding:1.5rem 2.5rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+}
+
+.hero-footer-block{
+  border-left:3px solid var(--red-dim);
+  padding-left:1rem;
+}
+
+.hfb-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--red);
+  margin-bottom:0.3rem;
+}
+
+.hfb-text{
+  font-size:0.88rem;line-height:1.5;
+  color:var(--grey4);
+}
+
+/* ══════════════════════════════════════════
+   SECTION HEADINGS
+══════════════════════════════════════════ */
+.sec-head{margin-bottom:1.2rem}
+
+.sec-title{
+  font-family:'Anton',sans-serif;
+  font-size:2.4rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--white);
+  line-height:1;
+  margin-bottom:0.15rem;
+}
+.sec-title span{color:var(--red3)}
+
+.sec-sub{
+  font-family:'DM Mono',monospace;
+  font-size:0.62rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--grey2);
+}
+
+/* ══════════════════════════════════════════
+   KPI CARDS
+══════════════════════════════════════════ */
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-bottom:2.5rem;
+}
+
+.kpi-card{
+  background:var(--black3);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:1.4rem 1.2rem;
+  position:relative;
+  overflow:hidden;
+  transition:border-color 0.2s,transform 0.2s;
+}
+
+.kpi-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--accent,var(--red));
+  opacity:0.6;
+}
+
+.kpi-card.gold-accent::before{background:var(--gold2)}
+.kpi-card.white-accent::before{background:var(--grey4)}
+
+.kpi-label{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  color:var(--grey2);
+  margin-bottom:0.5rem;
+  line-height:1.4;
+}
+
+.kpi-val{
+  font-family:'Anton',sans-serif;
+  font-size:2.6rem;
+  line-height:1;
+  color:var(--white);
+  margin-bottom:0.25rem;
+}
+.kpi-val.red{color:var(--red3)}
+.kpi-val.gold{color:var(--gold2)}
+
+.kpi-sub{
+  font-size:0.72rem;
+  color:var(--grey3);
+  line-height:1.3;
+}
+
+/* ══════════════════════════════════════════
+   TEAMS GRID
+══════════════════════════════════════════ */
+.teams-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin-bottom:2.5rem;
+}
+
+.team-card{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:1.4rem 1.4rem 1.2rem;
+  position:relative;
+  overflow:hidden;
+  transition:border-color 0.2s,transform 0.2s;
+}
+
+.team-card.premiers{
+  border-color:var(--gold-border);
+  background:linear-gradient(135deg,rgba(212,160,23,0.06) 0%,var(--black2) 60%);
+}
+
+.team-card.premiers::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));
+}
+
+.team-card-header{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;
+  gap:0.8rem;
+  margin-bottom:0.6rem;
+}
+
+.team-name{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.15rem;font-weight:700;
+  letter-spacing:0.05em;text-transform:uppercase;
+  color:var(--white);
+  line-height:1.1;
+}
+.team-card.premiers .team-name{color:var(--gold2)}
+
+.badge{
+  font-family:'DM Mono',monospace;
+  font-size:0.58rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:0.2rem 0.55rem;
+  border-radius:3px;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+
+.badge-gold{
+  background:rgba(212,160,23,0.15);
+  border:1px solid rgba(212,160,23,0.4);
+  color:var(--gold2);
+}
+.badge-grey{
+  background:rgba(136,136,136,0.12);
+  border:1px solid rgba(136,136,136,0.25);
+  color:var(--grey3);
+}
+.badge-red{
+  background:rgba(204,20,20,0.12);
+  border:1px solid rgba(204,20,20,0.3);
+  color:var(--red3);
+}
+.badge-blue{
+  background:rgba(74,154,222,0.12);
+  border:1px solid rgba(74,154,222,0.3);
+  color:var(--blue);
+}
+
+.team-detail{
+  font-size:0.82rem;
+  color:var(--grey3);
+  line-height:1.4;
+}
+.team-detail strong{color:var(--grey4);font-weight:600}
+
+/* ══════════════════════════════════════════
+   COMMUNITY FOOTPRINT
+══════════════════════════════════════════ */
+.footprint-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:1rem;
+  margin-bottom:2.5rem;
+}
+
+.footprint-card{
+  background:var(--black3);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:1.6rem 1.4rem;
+  position:relative;overflow:hidden;
+}
+
+.footprint-card.highlight{
+  background:linear-gradient(135deg,rgba(204,20,20,0.15) 0%,var(--black3) 60%);
+  border-color:var(--border);
+}
+
+.footprint-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:var(--red);
+  opacity:0.4;
+}
+.footprint-card.highlight::before{opacity:1}
+
+.fp-val{
+  font-family:'Anton',sans-serif;
+  font-size:3.2rem;line-height:1;
+  color:var(--white);
+  margin-bottom:0.5rem;
+}
+.footprint-card.highlight .fp-val{color:var(--red3)}
+
+.fp-label{
+  font-size:0.85rem;
+  color:var(--grey3);
+  line-height:1.4;
+  max-width:200px;
+}
+.footprint-card.highlight .fp-label{color:var(--grey4)}
+
+/* ══════════════════════════════════════════
+   WASTCA CALLOUT
+══════════════════════════════════════════ */
+.wastca-callout{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:12px;
+  padding:2rem 2.5rem;
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  margin-bottom:2.5rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.wastca-callout::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at left,rgba(204,20,20,0.07),transparent 60%);
+  pointer-events:none;
+}
+
+.wastca-icon{
+  font-size:2.5rem;
+  flex-shrink:0;
+  color:var(--red);
+  position:relative;z-index:1;
+}
+
+.wastca-text{position:relative;z-index:1}
+
+.wastca-title{
+  font-family:'Anton',sans-serif;
+  font-size:1.5rem;letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:0.4rem;
+  line-height:1.1;
+}
+.wastca-title span{color:var(--red3)}
+
+.wastca-body{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1rem;font-weight:400;
+  color:var(--grey3);
+  line-height:1.5;
+  max-width:680px;
+}
+.wastca-body strong{color:var(--grey4);font-weight:600}
+
+/* ══════════════════════════════════════════
+   IMPACT STATEMENT
+══════════════════════════════════════════ */
+.impact-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin-bottom:2.5rem;
+}
+
+.impact-card{
+  background:var(--black2);
+  border:1px solid var(--border2);
+  border-radius:10px;
+  padding:1.6rem;
+  position:relative;overflow:hidden;
+}
+
+.impact-card::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--red),transparent);
+  opacity:0.3;
+}
+
+.impact-quote{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:1.3rem;font-weight:600;font-style:italic;
+  color:var(--white);
+  line-height:1.35;
+  margin-bottom:0.6rem;
+}
+.impact-quote span{color:var(--red3)}
+
+.impact-sub{
+  font-size:0.78rem;
+  color:var(--grey3);
+  line-height:1.4;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.site-footer{
+  border-top:1px solid var(--border2);
+  padding:1.5rem 1.5rem;
+  text-align:center;
+  position:relative;z-index:1;
+}
+
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+}
+
+.footer-text{
+  font-family:'DM Mono',monospace;
+  font-size:0.6rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--grey2);
+}
+.footer-text span{color:var(--red)}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media(max-width:900px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .teams-grid{grid-template-columns:1fr}
+  .footprint-grid{grid-template-columns:1fr 1fr}
+  .impact-row{grid-template-columns:1fr}
+  .hero-top{grid-template-columns:1fr}
+  .hero-nums{flex-direction:row;flex-wrap:wrap;justify-content:flex-start;gap:1.5rem}
+  .hero-title{font-size:3rem}
+}
+
+@media(max-width:600px){
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .footprint-grid{grid-template-columns:1fr}
+  .hero-title{font-size:2.4rem}
+  .wastca-callout{flex-direction:column;gap:1rem;padding:1.5rem}
+  main{padding:1.5rem 1rem 3rem}
+  .hero-top{padding:2rem 1.5rem}
+  .hero-footer{padding:1.2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="logo-block">
+      <img
+        class="logo-img"
+        src="https://static1.squarespace.com/static/5b100f4d50a54f206a1883f8/t/5b100fa470a6ad899166de75/1775960101602/"
+        alt="Applecross CC"
+        onerror="this.style.display='none'"
+      />
+      <div>
+        <div class="club-title">Applecross <span>Cricket</span> Club</div>
+        <div class="season-tag">Est. 1975 · Perth, WA · WASTCA</div>
+      </div>
+    </div>
+    <div class="header-badge">2025 – 26 Season</div>
+  </div>
+</header>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="hero-eyebrow">Community Dashboard · 2025–26</div>
+        <h1 class="hero-title">
+          At ACC, we <span class="accent">ARE</span><br>
+          Community Cricket.
+        </h1>
+        <p class="hero-tagline">
+          <strong>Est. 1975 · Perth, Western Australia · WASTCA</strong><br>
+          Celebrating every player, every family, every season.
+        </p>
+      </div>
+      <div class="hero-nums">
+        <div class="hero-num">
+          <div class="hero-num-val red">212</div>
+          <div class="hero-num-label">Senior players</div>
+        </div>
+        <div class="hero-num">
+          <div class="hero-num-val white">220+</div>
+          <div class="hero-num-label">Junior participants</div>
+        </div>
+        <div class="hero-num">
+          <div class="hero-num-val gold">2</div>
+          <div class="hero-num-label">Premierships</div>
+        </div>
+        <div class="hero-num">
+          <div class="hero-num-val white">16</div>
+          <div class="hero-num-label">Competitive teams</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-footer">
+      <div class="hero-footer-block">
+        <div class="hfb-label">Who we are</div>
+        <div class="hfb-text">One of WASTCA's largest and most active clubs, fielding 16 competitive teams across men's, women's, colts, T20, ICL, and inclusive cricket — and growing every season.</div>
+      </div>
+      <div class="hero-footer-block">
+        <div class="hfb-label">Our community</div>
+        <div class="hfb-text">Over 430 players, juniors, and families through our gates every week. A junior program that is the envy of Perth cricket, with 220+ kids and growing.</div>
+      </div>
+      <div class="hero-footer-block">
+        <div class="hfb-label">Our season</div>
+        <div class="hfb-text">Two premierships. Three semi-final appearances. Six WA state representatives. A Women's A Grade title and a Men's 3rd Grade flag — community cricket at its finest.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI CARDS -->
+  <div class="sec-head">
+    <div class="sec-title">Season at a <span>Glance</span></div>
+    <div class="sec-sub">2025 – 26 · Applecross Cricket Club</div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Senior players registered</div>
+      <div class="kpi-val red">212</div>
+      <div class="kpi-sub">Across 9 Saturday + 3 T20 + ICL teams</div>
+    </div>
+    <div class="kpi-card white-accent">
+      <div class="kpi-label">Junior participants</div>
+      <div class="kpi-val">220+</div>
+      <div class="kpi-sub">The envy of Perth junior cricket</div>
+    </div>
+    <div class="kpi-card gold-accent">
+      <div class="kpi-label">Premierships this season</div>
+      <div class="kpi-val gold">2</div>
+      <div class="kpi-sub">Women's A Grade · Men's 3rd Grade</div>
+    </div>
+    <div class="kpi-card white-accent">
+      <div class="kpi-label">Competitive teams fielded</div>
+      <div class="kpi-val">16</div>
+      <div class="kpi-sub">Men's · Women's · Colts · T20 · ICL · BVI</div>
+    </div>
+  </div>
+
+  <!-- TEAMS -->
+  <div class="sec-head">
+    <div class="sec-title">Teams &amp; <span>Programs</span></div>
+    <div class="sec-sub">2025 – 26 · All grades &amp; formats</div>
+  </div>
+  <div class="teams-grid">
+
+    <!-- Premiers -->
+    <div class="team-card premiers">
+      <div class="team-card-header">
+        <div class="team-name">Women's A Grade</div>
+        <span class="badge badge-gold">★ Premiers</span>
+      </div>
+      <div class="team-detail">
+        <strong>2 women's teams</strong> — the A Grade squad went the distance and claimed the title. A landmark season for women's cricket at Applecross.
+      </div>
+    </div>
+
+    <div class="team-card premiers">
+      <div class="team-card-header">
+        <div class="team-name">Men's 3rd Grade</div>
+        <span class="badge badge-gold">★ Premiers</span>
+      </div>
+      <div class="team-detail">
+        <strong>9 Saturday men's teams</strong> — 3 sides reached the semi-finals. The 3rd Grade side went all the way, delivering the flag in a superb season.
+      </div>
+    </div>
+
+    <!-- Standard -->
+    <div class="team-card">
+      <div class="team-card-header">
+        <div class="team-name">Sunday T20</div>
+        <span class="badge badge-grey">Semi-finalists</span>
+      </div>
+      <div class="team-detail">
+        <strong>3 T20 teams</strong> — fast cricket, big crowds. One side reached the semi-finals in what was an entertaining competition format.
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-card-header">
+        <div class="team-name">ICL Team</div>
+        <span class="badge badge-red">6 WA Reps</span>
+      </div>
+      <div class="team-detail">
+        <strong>6 players</strong> selected to represent Western Australia this season — a remarkable achievement and testament to the quality of cricket at ACC.
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-card-header">
+        <div class="team-name">Colts</div>
+        <span class="badge badge-grey">Semi-finalists</span>
+      </div>
+      <div class="team-detail">
+        A semi-final appearance as Colts continue to <strong>develop the next generation</strong> of senior cricketers at the club. The pathway is working.
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-card-header">
+        <div class="team-name">WA Blind &amp; Vision Impaired</div>
+        <span class="badge badge-blue">Home ground</span>
+      </div>
+      <div class="team-detail">
+        Proud home of the <strong>WA BVI state team</strong> — a partnership that reflects our commitment to inclusive cricket for all abilities and backgrounds.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- COMMUNITY FOOTPRINT -->
+  <div class="sec-head">
+    <div class="sec-title">Community <span>Footprint</span></div>
+    <div class="sec-sub">The reach behind the results</div>
+  </div>
+  <div class="footprint-grid">
+    <div class="footprint-card">
+      <div class="fp-val">430+</div>
+      <div class="fp-label">Players, juniors &amp; families through our gates every week</div>
+    </div>
+    <div class="footprint-card">
+      <div class="fp-val">6</div>
+      <div class="fp-label">State representatives from our ICL squad this season</div>
+    </div>
+    <div class="footprint-card highlight">
+      <div class="fp-val">220+</div>
+      <div class="fp-label">Kids in our junior program — and growing every year</div>
+    </div>
+  </div>
+
+  <!-- IMPACT STATEMENTS -->
+  <div class="impact-row">
+    <div class="impact-card">
+      <div class="impact-quote">
+        A junior program that is the <span>envy of Perth cricket</span>
+      </div>
+      <div class="impact-sub">
+        More than 220 registered junior participants this season. Our pathways program feeds directly into our Colts and senior grades — the pipeline has never been stronger.
+      </div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-quote">
+        Inclusive cricket is at the <span>heart of who we are</span>
+      </div>
+      <div class="impact-sub">
+        As the home ground of the WA Blind &amp; Vision Impaired state team, Applecross CC continues to lead the way in making cricket accessible to every member of our community.
+      </div>
+    </div>
+  </div>
+
+  <!-- WASTCA CALLOUT -->
+  <div class="wastca-callout">
+    <div class="wastca-icon">★</div>
+    <div class="wastca-text">
+      <div class="wastca-title">One of WASTCA's <span>largest</span> and most active clubs</div>
+      <div class="wastca-body">
+        <strong>16 teams</strong> across men's, women's, colts, T20, ICL &amp; inclusive cricket —
+        few clubs in the association come close. With 212 senior players, 220+ juniors,
+        and over 430 people through the gates each week, ACC is community cricket in action.
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-text">
+      <span>Applecross Cricket Club</span> · Est. 1975 · WASTCA · Perth, Western Australia
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
