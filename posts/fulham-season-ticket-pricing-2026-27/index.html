@@ -1,0 +1,1489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay Up. Again. Fulham's 2026/27 Season Ticket Pricing Explained | Cravenpod</title>
+<meta name="description" content="Fulham's fourth consecutive price rise, a Fan Advisory Board bound by NDA, and a Hammersmith End that still looks exactly the same. We break down the numbers and the nonsense.">
+<meta property="og:title" content="Pay Up. Again. Fulham's 2026/27 Season Ticket Pricing Explained">
+<meta property="og:description" content="Four consecutive rises. A board that can't tell you what it discussed. And what exactly £38 per game at the Hammy End now buys you.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@cravenpod">
+<meta name="twitter:image" content="https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-0: #06070f;
+    --bg-1: #0a0d1c;
+    --bg-2: #0e1226;
+    --ink:      #f5f6fa;
+    --ink-soft: rgba(245,246,250,0.78);
+    --ink-mute: rgba(245,246,250,0.55);
+    --paper:      #f5f6fa;
+    --paper-dark: rgba(255,255,255,0.05);
+    --glass:             rgba(255,255,255,0.05);
+    --glass-strong:      rgba(255,255,255,0.09);
+    --glass-edge:        rgba(255,255,255,0.10);
+    --glass-edge-strong: rgba(255,255,255,0.20);
+    --accent:      #ff3b67;
+    --accent-soft: #cc0033;
+    --accent-glow: rgba(255,59,103,0.40);
+    --gold:        #d4af6e;
+    --ok:     #4a9060;
+    --warn:   #d4a015;
+    --danger: #ff5577;
+    --rule:  rgba(255,255,255,0.10);
+    --muted: rgba(245,246,250,0.55);
+    --shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+    --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+    --r-sm:   10px;
+    --r-md:   16px;
+    --r-lg:   22px;
+    --r-pill: 999px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; color-scheme: dark; }
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: var(--bg-0);
+    background-image:
+      radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse  900px 760px at 94% 10%, rgba(204,0,51,0.18)    0%, transparent 60%),
+      radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(110,195,212,0.09) 0%, transparent 70%),
+      linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+    background-attachment: fixed;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    border-bottom: 1px solid var(--glass-edge);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(6,7,15,0.7);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    position: relative;
+    z-index: 100;
+  }
+  .brand-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .brand-link .brand { font-weight: 700; color: var(--accent); }
+  .masthead .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: flex;
+    gap: 24px;
+    color: var(--ink-mute);
+  }
+  .masthead .meta a { color: var(--ink-mute); text-decoration: none; transition: color 0.2s; }
+  .masthead .meta a:hover { color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    filter: saturate(0.7) brightness(0.45);
+    z-index: 0;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(6,7,15,0.15) 0%,
+      rgba(6,7,15,0.30) 40%,
+      rgba(6,7,15,0.80) 70%,
+      rgba(6,7,15,0.98) 100%
+    );
+    z-index: 1;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: 80px 40px 72px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--accent);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .kicker::before {
+    content: '';
+    width: 36px;
+    height: 2px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .headline {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(64px, 12vw, 180px);
+    line-height: 0.86;
+    letter-spacing: -0.045em;
+    margin-bottom: 36px;
+  }
+  .headline em {
+    font-style: normal;
+    font-weight: 300;
+    background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .dek {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.5;
+    max-width: 680px;
+    color: rgba(245,246,250,0.78);
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(245,246,250,0.45);
+  }
+  .hero-meta span::before { content: '— '; }
+
+  /* ── MARQUEE ── */
+  .marquee {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: var(--rule);
+    gap: 1px;
+    position: relative;
+    z-index: 2;
+  }
+  .marquee-item {
+    background: rgba(6,7,15,0.85);
+    padding: 28px 24px;
+  }
+  .marquee-item .m-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+    margin-bottom: 10px;
+  }
+  .marquee-item .m-value {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(24px, 3.2vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .marquee-item .m-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    margin-top: 8px;
+    color: var(--ink-mute);
+  }
+  .m-value.red  { color: var(--accent); }
+  .m-value.gold { color: var(--gold); }
+  .m-value.ok   { color: var(--ok); }
+
+  /* ── STICKY NAV ── */
+  .sec-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(6,7,15,0.82);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    padding: 0 40px;
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--rule);
+    scrollbar-width: none;
+  }
+  .sec-nav::-webkit-scrollbar { display: none; }
+  .sec-nav a {
+    color: var(--ink-mute);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 14px 20px;
+    border-right: 1px solid var(--rule);
+    white-space: nowrap;
+    transition: color 0.2s, background 0.2s;
+  }
+  .sec-nav a:first-child { padding-left: 0; }
+  .sec-nav a:last-child { border-right: none; }
+  .sec-nav a:hover { color: var(--ink); background: var(--glass); }
+
+  /* ── ARTICLE BODY ── */
+  .article-body {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 80px 40px 60px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .sec-header {
+    margin-bottom: 40px;
+    padding-top: 80px;
+  }
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .sec-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 4.5vw, 56px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  .sec-lede {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400;
+    max-width: 720px;
+  }
+
+  /* ── PROSE ── */
+  .prose p {
+    font-size: 17px;
+    line-height: 1.72;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    max-width: 720px;
+  }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { color: var(--ink); font-weight: 600; }
+
+  /* ── PULLQUOTE ── */
+  .pullquote {
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin: 40px 0;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  }
+  .pullquote p {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--ink);
+    margin: 0 0 12px;
+    font-style: italic;
+  }
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ── DIVIDER ── */
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 48px 0; }
+
+  /* ── PRICE HISTORY CHART ── */
+  .chart-block {
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-md);
+    padding: 32px;
+    margin: 40px 0;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: var(--shadow-sm);
+  }
+  .chart-block-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+    margin-bottom: 24px;
+  }
+  .bar-chart { display: flex; flex-direction: column; gap: 16px; }
+  .bar-row { display: grid; grid-template-columns: 100px 1fr 56px; gap: 12px; align-items: center; }
+  .bar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-mute);
+    text-align: right;
+  }
+  .bar-track {
+    background: rgba(255,255,255,0.07);
+    border-radius: var(--r-pill);
+    height: 28px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: var(--r-pill);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .bar-fill.big   { background: linear-gradient(90deg, #cc0033, #ff3b67); }
+  .bar-fill.med   { background: linear-gradient(90deg, #c47a1a, var(--warn)); }
+  .bar-fill.small { background: linear-gradient(90deg, #2a6644, var(--ok)); }
+  .bar-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-mute);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .bar-cumulative {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-align: center;
+    letter-spacing: 0.12em;
+  }
+  .bar-cumulative strong { color: var(--accent); font-size: 15px; }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 32px 0;
+  }
+  .compare-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-md);
+    padding: 20px;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .compare-card.fulham {
+    border-color: rgba(255,59,103,0.35);
+    background: rgba(255,59,103,0.07);
+  }
+  .compare-card.frozen {
+    border-color: rgba(74,144,96,0.35);
+    background: rgba(74,144,96,0.06);
+  }
+  .cc-club {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .cc-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 4px 10px;
+    border-radius: var(--r-pill);
+    display: inline-block;
+    width: fit-content;
+    margin-top: 4px;
+  }
+  .cc-status.rise  { background: rgba(255,59,103,0.15); color: var(--accent); }
+  .cc-status.freeze { background: rgba(74,144,96,0.15); color: var(--ok); }
+  .cc-note {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-top: 4px;
+  }
+
+  /* ── CALCULATOR ── */
+  .calc-block {
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-md);
+    padding: 36px 32px;
+    margin: 40px 0;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: var(--shadow-sm);
+  }
+  .calc-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .calc-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+  }
+  .calc-input-row {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .calc-input-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 180px;
+  }
+  .calc-input-wrap .currency {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--gold);
+    pointer-events: none;
+  }
+  .calc-input {
+    width: 100%;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-sm);
+    color: var(--ink);
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 14px 14px 14px 36px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .calc-input:focus { border-color: var(--gold); }
+  .calc-input::placeholder { color: var(--ink-mute); font-weight: 400; }
+  .calc-games-select {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-sm);
+    color: var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 14px 16px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    white-space: nowrap;
+  }
+  .calc-games-select:focus { border-color: var(--gold); }
+  .calc-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border-radius: var(--r-sm);
+    overflow: hidden;
+  }
+  .calc-result-item {
+    background: rgba(6,7,15,0.6);
+    padding: 20px;
+    text-align: center;
+  }
+  .calc-result-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .calc-result-value {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(20px, 3vw, 32px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .calc-result-value.new-cost { color: var(--ink); }
+  .calc-result-value.increase { color: var(--accent); }
+  .calc-result-value.per-game { color: var(--gold); }
+  .calc-placeholder {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    text-align: center;
+    padding: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── LOYALTY TABLE ── */
+  .loyalty-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0;
+    font-size: 14px;
+  }
+  .loyalty-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+  }
+  .loyalty-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--ink-soft);
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .loyalty-table tr:last-child td { border-bottom: none; }
+  .loyalty-table tr:nth-child(even) td { background: var(--glass); }
+  .loyalty-table .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 3px 8px;
+    border-radius: var(--r-pill);
+  }
+  .loyalty-table .tag.ok     { background: rgba(74,144,96,0.15); color: var(--ok); }
+  .loyalty-table .tag.penalised { background: rgba(255,59,103,0.12); color: var(--accent); }
+  .loyalty-table .tag.trapped { background: rgba(212,160,21,0.15); color: var(--warn); }
+
+  /* ── INLINE STAT CARD ── */
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    margin: 40px 0;
+  }
+  .stat-strip-item {
+    background: rgba(6,7,15,0.75);
+    padding: 24px 20px;
+  }
+  .stat-strip-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+  }
+  .stat-strip-value {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: clamp(22px, 3vw, 36px);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  /* ── FAB TIMELINE ── */
+  .fab-timeline { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
+  .fab-step {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 16px;
+    padding-bottom: 28px;
+    position: relative;
+  }
+  .fab-step:last-child { padding-bottom: 0; }
+  .fab-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--glass-strong);
+    border: 1px solid var(--glass-edge);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .fab-step:not(:last-child) .fab-dot::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: calc(100% + 16px);
+    background: var(--rule);
+    z-index: 0;
+  }
+  .fab-content { padding-top: 4px; }
+  .fab-content h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .fab-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-mute);
+    margin: 0;
+  }
+
+  /* ── VERDICT CARDS ── */
+  .verdict-grid { display: flex; flex-direction: column; gap: 16px; margin: 32px 0; }
+  .verdict-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-md);
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    align-items: start;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+  }
+  .verdict-icon {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1;
+  }
+  .verdict-card h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  .verdict-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-mute);
+    margin: 0;
+  }
+
+  /* ── INTERACTIVE SECTION ── */
+  .interactive-section {
+    background: rgba(6,7,15,0.65);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border-top: 1px solid var(--glass-edge);
+    border-bottom: 1px solid var(--glass-edge);
+    color: var(--ink);
+    padding: 72px 40px;
+    margin-top: 60px;
+  }
+  .interactive-inner { max-width: 760px; margin: 0 auto; }
+  .interactive-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 36px;
+  }
+  .poll-block { margin-bottom: 52px; }
+  .poll-block:last-child { margin-bottom: 0; }
+  .poll-block h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .poll-options { display: flex; flex-direction: column; gap: 8px; }
+  .poll-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-edge);
+    color: var(--ink);
+    padding: 14px 18px;
+    cursor: pointer;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    text-align: left;
+    transition: background 0.15s, border-color 0.15s;
+    width: 100%;
+    border-radius: var(--r-pill);
+  }
+  .poll-btn:hover { background: rgba(255,255,255,0.09); border-color: var(--glass-edge-strong); }
+  .poll-btn-label { flex: 1; }
+  .poll-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    min-width: 40px;
+    text-align: right;
+    display: none;
+  }
+  .poll-bar-wrap {
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    margin-top: 4px;
+    border-radius: 2px;
+    overflow: hidden;
+    display: none;
+  }
+  .poll-bar { height: 100%; background: var(--gold); border-radius: 2px; width: 0; transition: width 0.55s ease; }
+  .poll-voted .poll-pct { display: block; }
+  .poll-voted .poll-bar-wrap { display: block; }
+  .poll-voted .poll-btn { cursor: default; }
+  .poll-voted .poll-btn:hover { background: rgba(255,255,255,0.05); border-color: var(--glass-edge); }
+  .poll-voted .poll-btn.user-choice { border-color: var(--gold); background: rgba(212,175,110,0.1); }
+  .poll-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.28);
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: rgba(6,7,15,0.7);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border-top: 1px solid var(--glass-edge);
+    color: rgba(255,255,255,0.4);
+    padding: 48px 40px;
+  }
+  .footer > div {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .footer .footer-brand {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink-mute);
+  }
+  .footer p {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: color 0.2s;
+  }
+  .footer a:hover { color: var(--ink); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .masthead { padding: 16px 20px; }
+    .hero-inner { padding: 48px 20px 56px; }
+    .marquee { grid-template-columns: repeat(2, 1fr); }
+    .marquee-item:last-child { grid-column: span 2; }
+    .sec-nav { padding: 0 20px; }
+    .article-body { padding: 48px 20px 40px; }
+    .sec-header { padding-top: 48px; }
+    .interactive-section { padding: 48px 20px; }
+    .footer { padding: 40px 20px; }
+    .compare-grid { grid-template-columns: 1fr 1fr; }
+    .calc-results { grid-template-columns: 1fr; }
+    .bar-row { grid-template-columns: 72px 1fr 44px; }
+    .bar-label { font-size: 9px; }
+  }
+  @media (max-width: 400px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .marquee { grid-template-columns: 1fr 1fr; }
+    .marquee-item:last-child { grid-column: span 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <a href="/" class="brand-link">
+    <span>That's So Craven</span>
+    <span>/</span>
+    <span class="brand">Analysis</span>
+  </a>
+  <nav class="meta">
+    <a href="https://podfollow.com/thats-so-craven">Podcast</a>
+    <a href="https://discord.gg/mUZQhDHJPR">Discord</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="kicker">Season Ticket Pricing · 2026/27 · Cravenpod Analysis</div>
+    <h1 class="headline">Pay Up.<br><em>Again.</em></h1>
+    <p class="dek">Fulham's fourth consecutive price rise. A Fan Advisory Board that cannot tell you what it discussed. And a Hammersmith End that still looks exactly as it did three seasons ago. We break down the numbers and the nonsense.</p>
+    <div class="hero-meta">
+      <span>4 May 2026</span>
+      <span>Season Tickets</span>
+      <span>~7 min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE STATS -->
+<div class="marquee">
+  <div class="marquee-item">
+    <div class="m-label">2026/27 Rise</div>
+    <div class="m-value red">+3.5%</div>
+    <div class="m-note">All stands, all categories</div>
+  </div>
+  <div class="marquee-item">
+    <div class="m-label">Cumulative rise since 2022/23</div>
+    <div class="m-value red">+30.6%</div>
+    <div class="m-note">Four seasons compounded</div>
+  </div>
+  <div class="marquee-item">
+    <div class="m-label">Hammy End cost</div>
+    <div class="m-value gold">£38</div>
+    <div class="m-note">Per home league game</div>
+  </div>
+  <div class="marquee-item">
+    <div class="m-label">PL clubs that froze</div>
+    <div class="m-value ok">3+</div>
+    <div class="m-note">Palace, City, Spurs confirmed</div>
+  </div>
+  <div class="marquee-item">
+    <div class="m-label">Matchday % of revenue</div>
+    <div class="m-value gold">&lt;10%</div>
+    <div class="m-note">Per Fulham Supporters Trust</div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="sec-nav">
+  <a href="#rise">The Rise</a>
+  <a href="#comparison">How We Compare</a>
+  <a href="#loyalty">The Loyalty Trap</a>
+  <a href="#fab">The FAB Problem</a>
+  <a href="#facilities">What You're Buying</a>
+  <a href="#verdict">The Verdict</a>
+  <a href="#have-your-say">Have Your Say</a>
+</nav>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <!-- § 01 THE RISE -->
+  <div id="rise" class="sec-header">
+    <div class="sec-num">§ 01</div>
+    <h2 class="sec-title">The Rise</h2>
+    <p class="sec-lede">Four years in the Premier League, four price increases. The 2026/27 announcement was predictable, but that does not make it acceptable.</p>
+  </div>
+  <div class="prose">
+    <p>The club's announcement is professionally drafted and entirely unremarkable in its logic. Matchday operating costs continue to rise. The club is navigating new Premier League financial regulations. A 3.5% increase, we are told, "balances the Club's financial sustainability with the needs of our supporters."</p>
+    <p>Taken in isolation, the figure is defensible. An extra £25-30 a year on a Hammersmith End season ticket — roughly £1.50 per game — is not going to price the average supporter out of the ground overnight. It is roughly in line with broader consumer price inflation. As one supporter in our group put it bluntly: "no business ever keeps the same price when its costs have increased."</p>
+    <p>The problem is that nothing in football exists in isolation. The 3.5% lands on top of a 2.8% rise last season, a 4% rise the season before that, and the headline-grabbing 18% increase in 2023/24 when the club returned to the top flight. Compound those four years of rises and a Fulham supporter is paying roughly <strong>30.6% more</strong> for their seat today than they were in 2022/23. UK CPI over the same period has risen by approximately half that figure.</p>
+  </div>
+
+  <div class="chart-block">
+    <div class="chart-block-title">Season Ticket Price Increases · Fulham FC · Four-Year Trend</div>
+    <div class="bar-chart" id="histChart">
+      <div class="bar-row">
+        <div class="bar-label">2023/24</div>
+        <div class="bar-track"><div class="bar-fill big" data-pct="18" style="width:0"></div></div>
+        <div class="bar-pct">+18%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2024/25</div>
+        <div class="bar-track"><div class="bar-fill med" data-pct="4" style="width:0"></div></div>
+        <div class="bar-pct">+4%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2025/26</div>
+        <div class="bar-track"><div class="bar-fill small" data-pct="2.8" style="width:0"></div></div>
+        <div class="bar-pct">+2.8%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">2026/27</div>
+        <div class="bar-track"><div class="bar-fill med" data-pct="3.5" style="width:0"></div></div>
+        <div class="bar-pct">+3.5%</div>
+      </div>
+    </div>
+    <div class="bar-cumulative">Compounded over four seasons: <strong>+30.6%</strong> total increase since 2022/23</div>
+  </div>
+
+  <div class="prose">
+    <p>The club says the initial proposal put to the Fan Advisory Board was higher than 3.5%, and that consultation brought it down to the final figure. FAB Chair David Claridge confirmed as much in his statement. What the original proposal was, supporters will never know. The NDA prevents anyone on the board from saying.</p>
+  </div>
+
+  <hr class="rule">
+
+  <!-- § 02 COMPARISON -->
+  <div id="comparison" class="sec-header">
+    <div class="sec-num">§ 02</div>
+    <h2 class="sec-title">How We Compare</h2>
+    <p class="sec-lede">Fulham's 3.5% rise looks different when you see which clubs chose to hold the line.</p>
+  </div>
+  <div class="prose">
+    <p>Crystal Palace froze their prices. Manchester City froze their prices. Tottenham Hotspur froze their prices. These are not small clubs operating on thin margins — they are Premier League sides with vast commercial operations and significant matchday infrastructure to maintain.</p>
+    <p>The Fulham Supporters Trust framed the issue plainly in their statement: <strong>matchday receipts account for less than ten percent of total club revenue.</strong> Broadcast deals and commercial income account for over ninety percent, and both continue to grow. The decision to raise prices is, in their words, "a choice, not a necessity."</p>
+  </div>
+
+  <div class="compare-grid">
+    <div class="compare-card fulham">
+      <div class="cc-club">Fulham</div>
+      <div class="cc-status rise">+3.5%</div>
+      <div class="cc-note">Fourth consecutive annual rise</div>
+    </div>
+    <div class="compare-card frozen">
+      <div class="cc-club">Crystal Palace</div>
+      <div class="cc-status freeze">Price freeze</div>
+      <div class="cc-note">Held prices flat for 2026/27</div>
+    </div>
+    <div class="compare-card frozen">
+      <div class="cc-club">Manchester City</div>
+      <div class="cc-status freeze">Price freeze</div>
+      <div class="cc-note">Held prices flat for 2026/27</div>
+    </div>
+    <div class="compare-card frozen">
+      <div class="cc-club">Tottenham</div>
+      <div class="cc-status freeze">Price freeze</div>
+      <div class="cc-note">Held prices flat for 2026/27</div>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"Matchday receipts account for less than 10% of total revenue. The rise in broadcast and commercial income means this increase is a choice, not a necessity."</p>
+    <cite>Fulham Supporters Trust, May 2026</cite>
+  </div>
+
+  <div class="prose">
+    <p>The club will argue — correctly — that a price freeze is easier to implement when you have a larger fanbase and higher commercial returns to absorb the shortfall. Craven Cottage's capacity is constrained by its riverside setting and listed status. Revenue per seat matters more at SW6 than at the Etihad. That context is real.</p>
+    <p>It does not, however, explain why Palace — a club of comparable size operating in a stadium that also needs significant upgrade work — managed to hold the line. The argument that a price freeze was impossible at Fulham requires more evidence than the club has provided.</p>
+  </div>
+
+  <hr class="rule">
+
+  <!-- § 02b CALCULATOR -->
+  <div class="calc-block">
+    <div class="calc-title">What does 3.5% actually cost you?</div>
+    <div class="calc-sub">Enter your 2025/26 annual season ticket cost</div>
+    <div class="calc-input-row">
+      <div class="calc-input-wrap">
+        <span class="currency">£</span>
+        <input class="calc-input" id="calcInput" type="number" min="0" max="5000" placeholder="e.g. 722" inputmode="numeric">
+      </div>
+      <select class="calc-games-select" id="calcGames">
+        <option value="19">19 home games</option>
+        <option value="20">20 home games</option>
+        <option value="21">21 home games</option>
+        <option value="22">22 home games</option>
+      </select>
+    </div>
+    <div class="calc-results" id="calcResults">
+      <div class="calc-placeholder" style="grid-column:1/-1">Enter your season ticket price above to see your 2026/27 costs</div>
+    </div>
+  </div>
+
+  <!-- § 03 LOYALTY TRAP -->
+  <div id="loyalty" class="sec-header">
+    <div class="sec-num">§ 03</div>
+    <h2 class="sec-title">The Loyalty Trap</h2>
+    <p class="sec-lede">Two fans, identical seats, different prices. The two-tier structure rewards tenure and penalises anyone who dared to step away.</p>
+  </div>
+  <div class="prose">
+    <p>The club's announcement contains a sentence that sounds like good news. Read it carefully: "supporters who have held a Season Ticket since the 2022/23 campaign will continue to receive the lowest renewal price for the upcoming season."</p>
+    <p>What this means in practice is a two-tier system. Two supporters sitting next to each other in the Hammersmith End may be paying materially different amounts for the same match, the same view, the same pie. One has held their ticket without interruption since before the Premier League return. The other took a year off — to travel, manage a difficult financial period, accommodate a new baby — and re-entered at the prevailing price when they came back.</p>
+    <p>The first supporter benefits from loyalty pricing. The second does not, and has no defined path back to that lower tier. The gap widens with every passing season as 3.5% is applied to two different baselines.</p>
+  </div>
+
+  <table class="loyalty-table">
+    <thead>
+      <tr>
+        <th>Supporter</th>
+        <th>ST history</th>
+        <th>2026/27 status</th>
+        <th>Situation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Long-standing holder</td>
+        <td>Continuous since 2022/23 or earlier</td>
+        <td><span class="tag ok">Lowest tier</span></td>
+        <td>Protected pricing — renewing is straightforward</td>
+      </tr>
+      <tr>
+        <td>Returning supporter</td>
+        <td>Took 1+ season off (e.g. worked abroad)</td>
+        <td><span class="tag penalised">Higher base</span></td>
+        <td>Re-entered at a higher price — permanently higher than long-standing peers</td>
+      </tr>
+      <tr>
+        <td>New parent / life change</td>
+        <td>Wants to pause 2026/27 and return</td>
+        <td><span class="tag trapped">Loyalty dilemma</span></td>
+        <td>Cannot take a year off without permanently losing their tier — even if they can't attend</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pullquote">
+    <p>"I want a year out due to the new baby, but I'll have to keep the ticket because I won't be able to afford to come back if I lose the loyalty discount."</p>
+    <cite>Dave, Cravenpod</cite>
+  </div>
+
+  <div class="prose">
+    <p>The club frames the loyalty tier as a reward for commitment. What it has also become is a mechanism that prevents supporters from exercising normal financial judgement about their own lives. Taking a year away from your season ticket — for any reason — is now a decision with permanent financial consequences. That is not a supporter benefit. It is a retention tool designed to make leaving feel costly.</p>
+    <p>One practical response, as discussed in our group: use the club's Ticket Exchange for games you cannot attend. The exchange is a genuine benefit, has grown significantly, and does at least give holders a way to recoup some cost. But it is not a substitute for a pricing structure that treats all supporters fairly regardless of when they first signed up.</p>
+  </div>
+
+  <hr class="rule">
+
+  <!-- § 04 FAB -->
+  <div id="fab" class="sec-header">
+    <div class="sec-num">§ 04</div>
+    <h2 class="sec-title">The FAB Problem</h2>
+    <p class="sec-lede">A fan board that cannot tell fans what it discussed is not a mechanism of representation. It is an alibi.</p>
+  </div>
+  <div class="prose">
+    <p>The Fulham Advisory Board was established with the right instincts — a formal channel between the club and its supporters, with structured access to the people making decisions. In practice, its limitations are becoming harder to overlook.</p>
+    <p>FAB members are bound by a non-disclosure agreement. The board is appointed by the club, not elected by supporters. Its Chair confirmed in this week's statement that the club's initial pricing proposal for 2026/27 was higher than 3.5%, and that FAB's input helped reduce it. That is the full extent of what supporters are permitted to know.</p>
+  </div>
+
+  <div class="fab-timeline">
+    <div class="fab-step">
+      <div class="fab-dot">1</div>
+      <div class="fab-content">
+        <h4>Club presents initial proposal</h4>
+        <p>Higher than 3.5% — the exact figure is unknown, and NDA prevents any FAB member from disclosing it.</p>
+      </div>
+    </div>
+    <div class="fab-step">
+      <div class="fab-dot">2</div>
+      <div class="fab-content">
+        <h4>FAB enters consultation</h4>
+        <p>The board reminded the club of its support for the FSA's 'Stop Exploiting Loyalty' campaign — which called for a league-wide price freeze.</p>
+      </div>
+    </div>
+    <div class="fab-step">
+      <div class="fab-dot">3</div>
+      <div class="fab-content">
+        <h4>Club "adjusts" proposal</h4>
+        <p>Final figure settles at 3.5%. FAB Chair describes the process as "positive and constructive." Supporters cannot see the working.</p>
+      </div>
+    </div>
+    <div class="fab-step">
+      <div class="fab-dot">4</div>
+      <div class="fab-content">
+        <h4>Announcement goes public</h4>
+        <p>Supporters are invited to trust the outcome. FAB's endorsement of the rise is used as evidence of consultation. The club marks its own homework.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"We are disappointed by the Club's hand-picked Fan Advisory Board's decision to not oppose these increases... this reveals structural limitations of their ability to truly stand up for the interests of all our fans."</p>
+    <cite>Fulham Supporters Trust, May 2026</cite>
+  </div>
+
+  <div class="prose">
+    <p>To be fair to David Claridge and the FAB members: they are operating within the structure they were given. The NDA is a condition of their seat at the table, not a personal choice. They may well have pushed harder than the outcome suggests. We cannot know — which is precisely the problem.</p>
+    <p>The FAB entered these meetings explicitly supporting a price freeze. They left having agreed to a 3.5% rise. Whatever happened in that room, no supporter can scrutinise it. The Fulhamish editorial described this week's announcement as following "the least shit option playbook" — and that framing feels apt. The FAB's function, as currently constituted, is less to represent supporters than to provide the club with documented evidence of having consulted them.</p>
+    <p>That is not nothing. But it is not enough.</p>
+  </div>
+
+  <hr class="rule">
+
+  <!-- § 05 FACILITIES -->
+  <div id="facilities" class="sec-header">
+    <div class="sec-num">§ 05</div>
+    <h2 class="sec-title">What £38 Per Game Buys You</h2>
+    <p class="sec-lede">The Hammersmith End faithful are paying more. Here is what has changed — and what has not.</p>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-strip-item">
+      <div class="stat-strip-label">Hammy End — per game</div>
+      <div class="stat-strip-value" style="color:var(--accent)">£38</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-label">New turnstile readers</div>
+      <div class="stat-strip-value" style="color:var(--ok)">JHS only</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-label">Hammy End upgrades</div>
+      <div class="stat-strip-value" style="color:var(--warn)">TBC</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-label">Food &amp; drink improvements</div>
+      <div class="stat-strip-value" style="color:var(--warn)">Exploring</div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>The club's announcement includes a section on improving the matchday experience. It is worth reading in full, because its specificity tells you something. New digital ticketing infrastructure — implemented across the ground. New turnstile readers installed in the Johnny Haynes Stand partway through this season. A reduction in plastic card usage. Away supporters now using digital tickets.</p>
+    <p>On everything else — concourse facilities, food and drink, toilets, general amenities in the older parts of the ground — the club says it is "actively exploring new initiatives" and will "share further details around these developments and commitment to any planned works in due course."</p>
+    <p>"In due course" is doing a lot of heavy lifting there. For supporters who have watched the Riverside Stand emerge as a gleaming hospitality and events complex — generating premium revenue from corporate packages, private dining, and the Fulham Pier operation year-round — the gap between the Riverside experience and the Hammersmith End experience is not a comfortable one.</p>
+    <p>The Riverside Stand should, over time, help fund improvements across the whole ground. The club has acknowledged limitations imposed by Craven Cottage's listed status and riverside setting. These are genuine constraints. But "actively exploring" is not a working concourse, and supporters paying more this season deserve more precision about what is actually coming, and when.</p>
+  </div>
+
+  <div class="pullquote">
+    <p>"Owing to the nature of our venue, there remain limitations for what can be achieved in some areas of the ground."</p>
+    <cite>Fulham FC Official Statement, May 2026</cite>
+  </div>
+
+  <div class="prose">
+    <p>The digital ticketing infrastructure is real progress. Record numbers through the Ticket Exchange is genuinely positive. And the club is right that five consecutive Premier League seasons is an achievement that reflects real investment in the squad. The issue is that improvements to the in-ground experience for general admission supporters — especially at the Hammersmith End — remain vague, while the bill increases every year.</p>
+  </div>
+
+  <hr class="rule">
+
+  <!-- § 06 VERDICT -->
+  <div id="verdict" class="sec-header">
+    <div class="sec-num">§ 06</div>
+    <h2 class="sec-title">The Verdict</h2>
+    <p class="sec-lede">Three separate problems, presented as one decision. The 3.5% is the least of them.</p>
+  </div>
+
+  <div class="verdict-grid">
+    <div class="verdict-card">
+      <div class="verdict-icon" style="color:var(--warn)">01</div>
+      <div>
+        <h4>The 3.5% is galling, not catastrophic</h4>
+        <p>In isolation, the rise is roughly inflation-level and defensible. In the context of four consecutive increases totalling over 30%, it represents a sustained erosion of affordability that compounds every year — particularly painful when other Premier League clubs have shown that a freeze is achievable.</p>
+      </div>
+    </div>
+    <div class="verdict-card">
+      <div class="verdict-icon" style="color:var(--accent)">02</div>
+      <div>
+        <h4>The two-tier structure is the bigger injustice</h4>
+        <p>Penalising supporters for having taken a break — for any reason — and giving them no route back to the lower tier is not loyalty pricing. It is a pricing structure that holds people hostage to their own history. The club should introduce a defined pathway for supporters to restore their original tier after a fixed period of continuous renewal.</p>
+      </div>
+    </div>
+    <div class="verdict-card">
+      <div class="verdict-icon" style="color:var(--danger)">03</div>
+      <div>
+        <h4>The FAB cannot do what it needs to do</h4>
+        <p>A fan advisory board bound by NDA, appointed by the club, cannot be a genuine mechanism of representation. The structure produces useful optics — documented consultation, a named Chair, a statement of process — but not genuine accountability. The Supporters Trust's critique is correct: as long as FAB cannot speak openly to the people it represents, its endorsements mean little.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose">
+    <p>None of this makes Fulham uniquely villainous in the Premier League landscape. Clubs routinely test the outer limits of what supporters will pay. The question is what kind of club Fulham wants to be, and whether the atmosphere that makes Craven Cottage genuinely special — the intimacy, the noise, the sense that real people rather than corporate packages fill those seats — can survive a fourth successive year of pricing pressure without a corresponding improvement in what supporters receive in return.</p>
+    <p>If you are a season ticket holder, the Ticket Exchange remains your best practical lever. Use it. It is a genuine benefit, and it grows more useful every season. If you want a year off, the maths of keeping your seat and exchanging games you cannot attend is, for many, preferable to losing your tier permanently. That is a rational response to an irrational structure — which is more or less where Fulham supporters find themselves this week.</p>
+    <p>Renewals open 11 May. All seats held until 5 June. Instalment plans available through V12 Finance. The club would like to once again thank you for your continued support.</p>
+  </div>
+
+</div><!-- /article-body -->
+
+<!-- INTERACTIVE POLLS -->
+<section id="have-your-say" class="interactive-section">
+  <div class="interactive-inner">
+    <div class="interactive-kicker">// Have Your Say</div>
+
+    <div class="poll-block" id="block-renewing">
+      <h3>Are you renewing your season ticket?</h3>
+      <div class="poll-options" id="poll-renewing">
+        <button class="poll-btn" data-poll="renewing" data-choice="yes-fine">
+          <span class="poll-btn-label">Yes — unhappy but not walking away</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="renewing" data-choice="yes-exchange">
+          <span class="poll-btn-label">Yes — using Ticket Exchange to offset the cost</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="renewing" data-choice="no">
+          <span class="poll-btn-label">No — this is the year I step away</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="renewing" data-choice="trapped">
+          <span class="poll-btn-label">Renewing only because I can't afford to lose my loyalty tier</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="renewing" data-choice="no-st">
+          <span class="poll-btn-label">Not a season ticket holder — just watching this</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+      </div>
+      <div class="poll-count" id="count-renewing"></div>
+    </div>
+
+    <div class="poll-block" id="block-concern">
+      <h3>What bothers you most about the announcement?</h3>
+      <div class="poll-options" id="poll-concern">
+        <button class="poll-btn" data-poll="concern" data-choice="rise">
+          <span class="poll-btn-label">The price rise itself — fourth year running</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="concern" data-choice="tier">
+          <span class="poll-btn-label">The two-tier pricing — loyal holders trapped, returners penalised</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="concern" data-choice="fab">
+          <span class="poll-btn-label">The FAB — an NDA-bound board can't properly represent fans</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="concern" data-choice="facilities">
+          <span class="poll-btn-label">Facilities — vague promises, especially at the Hammy End</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+        <button class="poll-btn" data-poll="concern" data-choice="all">
+          <span class="poll-btn-label">All of the above, equally</span>
+          <span class="poll-pct"></span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
+      </div>
+      <div class="poll-count" id="count-concern"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <div class="footer-brand">That's So Craven / Cravenpod</div>
+    <p>Independent Fulham FC analysis. Not affiliated with Fulham Football Club. Pricing data sourced from the official Fulham FC announcement, Fulhamish, and the Fulham Supporters Trust statement — all published May 2026.</p>
+    <div class="footer-links">
+      <a href="/">All Articles</a>
+      <a href="https://podfollow.com/thats-so-craven">Podcast</a>
+      <a href="https://discord.gg/mUZQhDHJPR">Discord</a>
+      <a href="https://www.fulhamsupporterstrust.com/news/2026/05/trust-statement-on-fulham-fc-2026-27-season-ticket-prices/">FST Statement</a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+  'use strict';
+
+  /* ── Price history bars animate on scroll ── */
+  const bars = document.querySelectorAll('.bar-fill[data-pct]');
+  const maxPct = 18;
+  function animateBars() {
+    bars.forEach(bar => {
+      const pct = parseFloat(bar.dataset.pct);
+      bar.style.width = ((pct / maxPct) * 100) + '%';
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { animateBars(); obs.disconnect(); } });
+    }, { threshold: 0.3 });
+    const chartBlock = document.getElementById('histChart');
+    if (chartBlock) obs.observe(chartBlock);
+  } else {
+    animateBars();
+  }
+
+  /* ── Calculator ── */
+  const calcInput  = document.getElementById('calcInput');
+  const calcGames  = document.getElementById('calcGames');
+  const calcResults = document.getElementById('calcResults');
+
+  function fmt(n) {
+    return '£' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function updateCalc() {
+    const current = parseFloat(calcInput.value);
+    const games   = parseInt(calcGames.value, 10);
+    if (!current || isNaN(current) || current <= 0) {
+      calcResults.innerHTML = '<div class="calc-placeholder" style="grid-column:1/-1">Enter your season ticket price above to see your 2026/27 costs</div>';
+      return;
+    }
+    const newCost  = current * 1.035;
+    const increase = newCost - current;
+    const perGame  = newCost / games;
+    calcResults.innerHTML = `
+      <div class="calc-result-item">
+        <div class="calc-result-label">New 2026/27 cost</div>
+        <div class="calc-result-value new-cost">${fmt(newCost)}</div>
+      </div>
+      <div class="calc-result-item">
+        <div class="calc-result-label">Annual increase</div>
+        <div class="calc-result-value increase">+${fmt(increase)}</div>
+      </div>
+      <div class="calc-result-item">
+        <div class="calc-result-label">Cost per game (${games} matches)</div>
+        <div class="calc-result-value per-game">${fmt(perGame)}</div>
+      </div>
+    `;
+  }
+
+  if (calcInput) {
+    calcInput.addEventListener('input', updateCalc);
+    calcGames.addEventListener('change', updateCalc);
+  }
+
+  /* ── Polls ── */
+  const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+  const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+  const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+  const LS_PREFIX = 'cravenpod-st-pricing-26-';
+
+  const POLL_IDS = {
+    renewing: 'st-pricing-26-renewing',
+    concern:  'st-pricing-26-concern',
+  };
+
+  function getUserChoice(poll) {
+    try { return localStorage.getItem(LS_PREFIX + poll) || null; } catch(e) { return null; }
+  }
+  function saveUserChoice(poll, choice) {
+    try { localStorage.setItem(LS_PREFIX + poll, choice); } catch(e) {}
+  }
+
+  async function fetchCounts(pollId) {
+    const { data, error } = await sb.from('poll_counts')
+      .select('choice, count')
+      .eq('poll_id', pollId);
+    if (error || !data) return {};
+    const out = {};
+    data.forEach(r => { out[r.choice] = parseInt(r.count, 10) || 0; });
+    return out;
+  }
+
+  async function renderPoll(pollName, userChoice) {
+    const pollId = POLL_IDS[pollName];
+    const container = document.getElementById('poll-' + pollName);
+    const countEl   = document.getElementById('count-' + pollName);
+    if (!container) return;
+
+    const counts = await fetchCounts(pollId);
+    const total  = Object.values(counts).reduce((a, b) => a + b, 0);
+
+    container.classList.add('poll-voted');
+
+    const btns = container.querySelectorAll('.poll-btn');
+    btns.forEach(btn => {
+      const choice = btn.dataset.choice;
+      const count  = counts[choice] || 0;
+      const pct    = total > 0 ? Math.round((count / total) * 100) : 0;
+      const pctEl  = btn.querySelector('.poll-pct');
+      const barEl  = btn.nextElementSibling && btn.nextElementSibling.classList.contains('poll-bar-wrap')
+        ? btn.nextElementSibling.querySelector('.poll-bar')
+        : null;
+      if (pctEl)  pctEl.textContent  = pct + '%';
+      if (barEl)  { setTimeout(() => { barEl.style.width = pct + '%'; }, 100); }
+      if (choice === userChoice) btn.classList.add('user-choice');
+      btn.onclick = null;
+    });
+
+    if (countEl) countEl.textContent = total + (total === 1 ? ' vote' : ' votes') + ' submitted';
+  }
+
+  async function castVote(pollName, choice) {
+    if (getUserChoice(pollName)) return;
+    saveUserChoice(pollName, choice);
+    const pollId = POLL_IDS[pollName];
+    await sb.from('poll_votes').insert({ poll_id: pollId, choice });
+    await renderPoll(pollName, choice);
+  }
+
+  document.querySelectorAll('.poll-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const poll   = btn.dataset.poll;
+      const choice = btn.dataset.choice;
+      if (!getUserChoice(poll)) castVote(poll, choice);
+    });
+  });
+
+  Object.keys(POLL_IDS).forEach(pollName => {
+    const existing = getUserChoice(pollName);
+    if (existing) renderPoll(pollName, existing);
+  });
+
+})();
+</script>
+
+<script data-goatcounter="https://cravenpod.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
