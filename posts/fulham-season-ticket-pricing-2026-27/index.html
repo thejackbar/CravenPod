@@ -1053,7 +1053,7 @@
         <div class="bar-pct">+3.5%</div>
       </div>
     </div>
-    <div class="bar-cumulative">Compounded over four seasons: <strong>+30.6%</strong> total increase since 2022/23</div>
+    <div class="bar-cumulative">Compounded over four confirmed seasons: <strong>+30.6%</strong> since 2022/23. Use the calculator below to see what that means for your seat.</div>
   </div>
 
   <div class="prose">
@@ -1062,16 +1062,30 @@
 
   <!-- FOUR-YEAR BILL CALCULATOR -->
   <div class="calc-block" id="billCalc">
-    <div class="calc-title">The Four-Year Bill</div>
-    <div class="calc-sub">What has the cumulative rise actually cost you since 2022/23?</div>
+    <div class="calc-title">The Bill So Far</div>
+    <div class="calc-sub">Pick the season you first got your ticket and what you paid — we'll show you the full picture</div>
     <div class="calc-input-row">
-      <div class="calc-input-wrap">
+      <select class="calc-games-select" id="billYear" style="flex:1.2;min-width:200px;">
+        <option value="">When did you first get a season ticket?</option>
+        <option value="2015/16">2015/16</option>
+        <option value="2016/17">2016/17</option>
+        <option value="2017/18">2017/18 (PL promotion season)</option>
+        <option value="2018/19">2018/19 (Premier League)</option>
+        <option value="2019/20">2019/20 (Championship)</option>
+        <option value="2020/21">2020/21 (Premier League)</option>
+        <option value="2021/22">2021/22 (Championship)</option>
+        <option value="2022/23">2022/23 (PL return — loyalty baseline year)</option>
+        <option value="2023/24">2023/24</option>
+        <option value="2024/25">2024/25</option>
+        <option value="2025/26">2025/26</option>
+      </select>
+      <div class="calc-input-wrap" style="flex:1;min-width:160px;">
         <span class="currency">£</span>
-        <input class="calc-input" id="billInput" type="number" min="0" max="5000" placeholder="Your 2022/23 price" inputmode="numeric">
+        <input class="calc-input" id="billInput" type="number" min="0" max="5000" placeholder="Price you paid" inputmode="numeric">
       </div>
     </div>
     <div id="billResults">
-      <div class="calc-placeholder">Enter your 2022/23 season ticket price to see the full picture</div>
+      <div class="calc-placeholder">Select your first season and enter the price you paid</div>
     </div>
   </div>
 
@@ -1488,70 +1502,110 @@
     calcGames.addEventListener('change', updateCalc);
   }
 
-  /* ── Four-Year Bill calculator ── */
+  /* ── The Bill So Far calculator ── */
+  const billYear    = document.getElementById('billYear');
   const billInput   = document.getElementById('billInput');
   const billResults = document.getElementById('billResults');
 
-  const SEASONS = [
-    { label: '2023/24', pct: 0.18,   multiplier: 1.18,    badge: 'big' },
-    { label: '2024/25', pct: 0.04,   multiplier: 1.2272,  badge: '' },
-    { label: '2025/26', pct: 0.028,  multiplier: 1.26156, badge: '' },
-    { label: '2026/27', pct: 0.035,  multiplier: 1.30571, badge: '' },
-  ];
-
   function fmtR(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
 
+  // Full season timeline. step = confirmed % rise applied TO get to this season.
+  // null = no confirmed data (Championship era or PL return without known % vs prior year).
+  const TIMELINE = [
+    { season: '2015/16', step: null,  note: 'Championship' },
+    { season: '2016/17', step: null,  note: 'Championship' },
+    { season: '2017/18', step: null,  note: 'Championship' },
+    { season: '2018/19', step: null,  note: 'Premier League' },
+    { season: '2019/20', step: null,  note: 'Championship' },
+    { season: '2020/21', step: null,  note: 'Premier League' },
+    { season: '2021/22', step: null,  note: 'Championship' },
+    { season: '2022/23', step: null,  note: 'PL return' },
+    { season: '2023/24', step: 0.18,  note: null },
+    { season: '2024/25', step: 0.04,  note: null },
+    { season: '2025/26', step: 0.028, note: null },
+    { season: '2026/27', step: 0.035, note: null },
+  ];
+
   function updateBill() {
-    const base = parseFloat(billInput.value);
-    if (!base || isNaN(base) || base <= 0) {
-      billResults.innerHTML = '<div class="calc-placeholder">Enter your 2022/23 season ticket price to see the full picture</div>';
+    const startSeason = billYear.value;
+    const startPrice  = parseFloat(billInput.value);
+
+    if (!startSeason || !startPrice || isNaN(startPrice) || startPrice <= 0) {
+      billResults.innerHTML = '<div class="calc-placeholder">Select your first season and enter the price you paid</div>';
       return;
     }
 
+    const startIdx = TIMELINE.findIndex(t => t.season === startSeason);
+    if (startIdx === -1) return;
+
+    // Walk forward from start year, accumulating price
+    let price = startPrice;
     let totalExtra = 0;
-    let rows = '';
-    SEASONS.forEach(s => {
-      const actual = base * s.multiplier;
-      const extra  = actual - base;
-      totalExtra  += extra;
-      const pctStr = '+' + (s.pct * 100).toFixed(1) + '%';
-      rows += `
-        <tr>
-          <td class="season-label">${s.label} <span class="pct-badge ${s.badge}">${pctStr}</span></td>
-          <td class="frozen-price">${fmtR(base)}</td>
-          <td class="actual-price">${fmtR(actual)}</td>
+    let confirmedSeasonsCount = 0;
+    const rows = TIMELINE.slice(startIdx).map((t, i) => {
+      const isStart = i === 0;
+      if (!isStart && t.step !== null) {
+        price = price * (1 + t.step);
+        const extra = price - startPrice;
+        totalExtra += extra;
+        confirmedSeasonsCount++;
+        const badge = t.step >= 0.1 ? 'big' : '';
+        return `<tr>
+          <td class="season-label">${t.season} <span class="pct-badge ${badge}">+${(t.step*100).toFixed(1)}%</span></td>
+          <td class="frozen-price">${fmtR(startPrice)}</td>
+          <td class="actual-price">${fmtR(price)}</td>
           <td class="extra">+${fmtR(extra)}</td>
         </tr>`;
-    });
+      } else if (isStart) {
+        return `<tr>
+          <td class="season-label">${t.season} <span class="pct-badge" style="background:rgba(212,175,110,0.15);color:var(--gold)">Your start</span></td>
+          <td class="frozen-price">${fmtR(startPrice)}</td>
+          <td class="actual-price">${fmtR(startPrice)}</td>
+          <td class="extra" style="color:var(--ink-mute)">—</td>
+        </tr>`;
+      } else {
+        // Unknown step (Championship / early PL era)
+        return `<tr style="opacity:0.45">
+          <td class="season-label">${t.season} <span class="pct-badge" style="background:rgba(255,255,255,0.07);color:var(--ink-mute)">${t.note || 'Data unavailable'}</span></td>
+          <td colspan="3" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);text-align:center">Confirmed rise data not available for this season</td>
+        </tr>`;
+      }
+    }).join('');
 
-    const projection2728 = base * 1.30571 * 1.035;
+    const hasUnknown = TIMELINE.slice(startIdx).some((t, i) => i > 0 && t.step === null);
+    const projection2728 = price * 1.035;
+    const totalNote = hasUnknown
+      ? `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-mute);margin-top:8px;letter-spacing:0.1em">* Greyed rows = confirmed rise data unavailable. Extra costs calculated from first confirmed rise only.</div>`
+      : '';
 
     billResults.innerHTML = `
       <table class="bill-table">
         <thead>
           <tr>
             <th>Season</th>
-            <th>If frozen at 2022/23</th>
-            <th>What you actually paid</th>
-            <th>Extra cost</th>
+            <th>If frozen at your start price</th>
+            <th>Estimated price paid</th>
+            <th>Extra vs freeze</th>
           </tr>
         </thead>
         <tbody>
           ${rows}
           <tr class="total-row">
-            <td class="season-label">4-season total overspend</td>
+            <td class="season-label">Total extra paid vs a freeze${hasUnknown ? '*' : ''}</td>
             <td></td>
             <td></td>
-            <td class="extra">+${fmtR(totalExtra)}</td>
+            <td class="extra">${totalExtra > 0 ? '+' + fmtR(totalExtra) : fmtR(0)}</td>
           </tr>
         </tbody>
       </table>
+      ${totalNote}
       <div class="bill-projection">
-        <div class="bill-projection-label">If 3.5% continues next season<br>Your 2027/28 price would be</div>
+        <div class="bill-projection-label">If 3.5% continues into 2027/28<br>your price would reach</div>
         <div class="bill-projection-value">${fmtR(projection2728)}</div>
       </div>`;
   }
 
+  if (billYear)  billYear.addEventListener('change', updateBill);
   if (billInput) billInput.addEventListener('input', updateBill);
 
   /* ── Polls ── */
