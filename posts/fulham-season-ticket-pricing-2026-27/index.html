@@ -728,6 +728,78 @@
     margin: 0;
   }
 
+  /* ── FOUR-YEAR BILL TABLE ── */
+  .bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  .bill-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+    padding: 8px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+  }
+  .bill-table th:not(:first-child) { text-align: right; }
+  .bill-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--ink-soft);
+    font-family: 'Inter Tight', sans-serif;
+  }
+  .bill-table td:not(:first-child) { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+  .bill-table .season-label { font-weight: 600; color: var(--ink); }
+  .bill-table .season-label .pct-badge {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: var(--r-pill);
+    margin-left: 8px;
+    background: rgba(255,59,103,0.12);
+    color: var(--accent);
+    vertical-align: middle;
+  }
+  .bill-table .season-label .pct-badge.big { background: rgba(255,59,103,0.2); }
+  .bill-table .frozen-price { color: var(--ok); }
+  .bill-table .actual-price { color: var(--ink); }
+  .bill-table .extra { color: var(--accent); }
+  .bill-table tr.total-row td { border-top: 1px solid var(--rule); border-bottom: none; padding-top: 16px; font-weight: 600; }
+  .bill-table tr.total-row .season-label { color: var(--gold); }
+  .bill-table tr.total-row .extra { color: var(--gold); font-size: 15px; }
+  .bill-projection {
+    margin-top: 20px;
+    padding: 16px 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--rule);
+    border-radius: var(--r-sm);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .bill-projection-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    flex: 1;
+    min-width: 180px;
+  }
+  .bill-projection-value {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: -0.03em;
+    color: var(--warn);
+  }
+
   /* ── INTERACTIVE SECTION ── */
   .interactive-section {
     background: rgba(6,7,15,0.65);
@@ -953,8 +1025,8 @@
   </div>
   <div class="prose">
     <p>The club's announcement is professionally drafted and entirely unremarkable in its logic. Matchday operating costs continue to rise. The club is navigating new Premier League financial regulations. A 3.5% increase, we are told, "balances the Club's financial sustainability with the needs of our supporters."</p>
-    <p>Taken in isolation, the figure is defensible. An extra £25-30 a year on a Hammersmith End season ticket — roughly £1.50 per game — is not going to price the average supporter out of the ground overnight. It is roughly in line with broader consumer price inflation. As one supporter in our group put it bluntly: "no business ever keeps the same price when its costs have increased."</p>
-    <p>The problem is that nothing in football exists in isolation. The 3.5% lands on top of a 2.8% rise last season, a 4% rise the season before that, and the headline-grabbing 18% increase in 2023/24 when the club returned to the top flight. Compound those four years of rises and a Fulham supporter is paying roughly <strong>30.6% more</strong> for their seat today than they were in 2022/23. UK CPI over the same period has risen by approximately half that figure.</p>
+    <p>Taken in isolation, the figure is defensible. An extra £25-30 a year on a Hammersmith End season ticket, roughly £1.50 per game, is not going to price the average supporter out of the ground overnight. It is roughly in line with broader consumer price inflation. As one supporter in our group put it bluntly: "no business ever keeps the same price when its costs have increased."</p>
+    <p>The problem is that nothing in football exists in isolation. The 3.5% lands on top of 2.8% last season, 4% the season before that, and the gut-punch 18% in 2023/24 when the club came back up. Compound those four years and a Fulham supporter is paying roughly <strong>30.6% more</strong> for their seat today than they were in 2022/23. UK CPI over the same period has run at roughly half that.</p>
   </div>
 
   <div class="chart-block">
@@ -985,7 +1057,22 @@
   </div>
 
   <div class="prose">
-    <p>The club says the initial proposal put to the Fan Advisory Board was higher than 3.5%, and that consultation brought it down to the final figure. FAB Chair David Claridge confirmed as much in his statement. What the original proposal was, supporters will never know. The NDA prevents anyone on the board from saying.</p>
+    <p>The club says the initial proposal put to the Fan Advisory Board was higher than 3.5%, and that consultation brought it down. FAB Chair David Claridge confirmed as much. What the original proposal was, supporters will never know. The NDA prevents anyone on the board from saying.</p>
+  </div>
+
+  <!-- FOUR-YEAR BILL CALCULATOR -->
+  <div class="calc-block" id="billCalc">
+    <div class="calc-title">The Four-Year Bill</div>
+    <div class="calc-sub">What has the cumulative rise actually cost you since 2022/23?</div>
+    <div class="calc-input-row">
+      <div class="calc-input-wrap">
+        <span class="currency">£</span>
+        <input class="calc-input" id="billInput" type="number" min="0" max="5000" placeholder="Your 2022/23 price" inputmode="numeric">
+      </div>
+    </div>
+    <div id="billResults">
+      <div class="calc-placeholder">Enter your 2022/23 season ticket price to see the full picture</div>
+    </div>
   </div>
 
   <hr class="rule">
@@ -997,7 +1084,7 @@
     <p class="sec-lede">Fulham's 3.5% rise looks different when you see which clubs chose to hold the line.</p>
   </div>
   <div class="prose">
-    <p>Crystal Palace froze their prices. Manchester City froze their prices. Tottenham Hotspur froze their prices. These are not small clubs operating on thin margins — they are Premier League sides with vast commercial operations and significant matchday infrastructure to maintain.</p>
+    <p>Crystal Palace froze their prices. Manchester City froze their prices. Tottenham Hotspur froze their prices. These are Premier League sides with vast commercial operations and significant matchday infrastructure to maintain. Not small clubs scraping by.</p>
     <p>The Fulham Supporters Trust framed the issue plainly in their statement: <strong>matchday receipts account for less than ten percent of total club revenue.</strong> Broadcast deals and commercial income account for over ninety percent, and both continue to grow. The decision to raise prices is, in their words, "a choice, not a necessity."</p>
   </div>
 
@@ -1030,8 +1117,8 @@
   </div>
 
   <div class="prose">
-    <p>The club will argue — correctly — that a price freeze is easier to implement when you have a larger fanbase and higher commercial returns to absorb the shortfall. Craven Cottage's capacity is constrained by its riverside setting and listed status. Revenue per seat matters more at SW6 than at the Etihad. That context is real.</p>
-    <p>It does not, however, explain why Palace — a club of comparable size operating in a stadium that also needs significant upgrade work — managed to hold the line. The argument that a price freeze was impossible at Fulham requires more evidence than the club has provided.</p>
+    <p>The club will argue, and it is not entirely wrong, that a price freeze is easier to implement when you have a larger fanbase and higher commercial returns to absorb the shortfall. Craven Cottage's capacity is constrained by its riverside setting and listed status. Revenue per seat matters more at SW6 than at the Etihad. That context is real.</p>
+    <p>It still does not explain why Palace, a club of comparable size with a stadium that also needs significant upgrade work, managed to hold the line. The argument that a freeze was simply impossible at Fulham requires more evidence than the club has given us.</p>
   </div>
 
   <hr class="rule">
@@ -1065,8 +1152,8 @@
   </div>
   <div class="prose">
     <p>The club's announcement contains a sentence that sounds like good news. Read it carefully: "supporters who have held a Season Ticket since the 2022/23 campaign will continue to receive the lowest renewal price for the upcoming season."</p>
-    <p>What this means in practice is a two-tier system. Two supporters sitting next to each other in the Hammersmith End may be paying materially different amounts for the same match, the same view, the same pie. One has held their ticket without interruption since before the Premier League return. The other took a year off — to travel, manage a difficult financial period, accommodate a new baby — and re-entered at the prevailing price when they came back.</p>
-    <p>The first supporter benefits from loyalty pricing. The second does not, and has no defined path back to that lower tier. The gap widens with every passing season as 3.5% is applied to two different baselines.</p>
+    <p>What this means in practice is a two-tier system. Two supporters sitting next to each other in the Hammersmith End may be paying materially different amounts for the same match, the same view, the same pie. One has held their ticket without interruption since before the Premier League return. The other took a year off to travel, or deal with a difficult financial stretch, or accommodate a new baby, and re-entered at whatever price was current when they came back.</p>
+    <p>The first supporter benefits from loyalty pricing. The second does not, with no defined path back to the lower tier. The gap widens every season as 3.5% is applied to two different starting points.</p>
   </div>
 
   <table class="loyalty-table">
@@ -1083,19 +1170,19 @@
         <td>Long-standing holder</td>
         <td>Continuous since 2022/23 or earlier</td>
         <td><span class="tag ok">Lowest tier</span></td>
-        <td>Protected pricing — renewing is straightforward</td>
+        <td>Protected pricing. Renewing is straightforward.</td>
       </tr>
       <tr>
         <td>Returning supporter</td>
         <td>Took 1+ season off (e.g. worked abroad)</td>
         <td><span class="tag penalised">Higher base</span></td>
-        <td>Re-entered at a higher price — permanently higher than long-standing peers</td>
+        <td>Re-entered at a higher base price. Permanently higher than long-standing peers with no route back.</td>
       </tr>
       <tr>
         <td>New parent / life change</td>
         <td>Wants to pause 2026/27 and return</td>
         <td><span class="tag trapped">Loyalty dilemma</span></td>
-        <td>Cannot take a year off without permanently losing their tier — even if they can't attend</td>
+        <td>Cannot take a year off without permanently losing their tier, even if life genuinely gets in the way</td>
       </tr>
     </tbody>
   </table>
@@ -1106,7 +1193,7 @@
   </div>
 
   <div class="prose">
-    <p>The club frames the loyalty tier as a reward for commitment. What it has also become is a mechanism that prevents supporters from exercising normal financial judgement about their own lives. Taking a year away from your season ticket — for any reason — is now a decision with permanent financial consequences. That is not a supporter benefit. It is a retention tool designed to make leaving feel costly.</p>
+    <p>The club frames the loyalty tier as a reward for commitment. It has also become a mechanism that prevents supporters from making normal financial decisions about their own lives. Taking a year away from your season ticket, for any reason at all, is now a decision with permanent financial consequences. Call it what it is: a retention tool designed to make leaving feel expensive.</p>
     <p>One practical response, as discussed in our group: use the club's Ticket Exchange for games you cannot attend. The exchange is a genuine benefit, has grown significantly, and does at least give holders a way to recoup some cost. But it is not a substitute for a pricing structure that treats all supporters fairly regardless of when they first signed up.</p>
   </div>
 
@@ -1119,7 +1206,7 @@
     <p class="sec-lede">A fan board that cannot tell fans what it discussed is not a mechanism of representation. It is an alibi.</p>
   </div>
   <div class="prose">
-    <p>The Fulham Advisory Board was established with the right instincts — a formal channel between the club and its supporters, with structured access to the people making decisions. In practice, its limitations are becoming harder to overlook.</p>
+    <p>The Fulham Advisory Board was established with the right instincts: a structured channel between the club and its supporters, with regular access to the people making decisions. In practice, its limitations are getting harder to ignore.</p>
     <p>FAB members are bound by a non-disclosure agreement. The board is appointed by the club, not elected by supporters. Its Chair confirmed in this week's statement that the club's initial pricing proposal for 2026/27 was higher than 3.5%, and that FAB's input helped reduce it. That is the full extent of what supporters are permitted to know.</p>
   </div>
 
@@ -1128,14 +1215,14 @@
       <div class="fab-dot">1</div>
       <div class="fab-content">
         <h4>Club presents initial proposal</h4>
-        <p>Higher than 3.5% — the exact figure is unknown, and NDA prevents any FAB member from disclosing it.</p>
+        <p>Higher than 3.5%. The exact figure is unknown, and the NDA prevents any FAB member from disclosing it.</p>
       </div>
     </div>
     <div class="fab-step">
       <div class="fab-dot">2</div>
       <div class="fab-content">
         <h4>FAB enters consultation</h4>
-        <p>The board reminded the club of its support for the FSA's 'Stop Exploiting Loyalty' campaign — which called for a league-wide price freeze.</p>
+        <p>The board reminded the club of its support for the FSA's 'Stop Exploiting Loyalty' campaign, which had been pushing for a league-wide price freeze.</p>
       </div>
     </div>
     <div class="fab-step">
@@ -1160,8 +1247,8 @@
   </div>
 
   <div class="prose">
-    <p>To be fair to David Claridge and the FAB members: they are operating within the structure they were given. The NDA is a condition of their seat at the table, not a personal choice. They may well have pushed harder than the outcome suggests. We cannot know — which is precisely the problem.</p>
-    <p>The FAB entered these meetings explicitly supporting a price freeze. They left having agreed to a 3.5% rise. Whatever happened in that room, no supporter can scrutinise it. The Fulhamish editorial described this week's announcement as following "the least shit option playbook" — and that framing feels apt. The FAB's function, as currently constituted, is less to represent supporters than to provide the club with documented evidence of having consulted them.</p>
+    <p>To be fair to David Claridge and the FAB members: they are operating within the structure they were given. The NDA is a condition of their seat at the table, not a personal choice. They may well have pushed harder than the outcome suggests. We cannot know. And that is the whole problem with this structure.</p>
+    <p>The FAB went into these meetings explicitly backing a price freeze. They came out having agreed to a 3.5% rise. Whatever happened in that room, no supporter can scrutinise it. The Fulhamish editorial described this week's announcement as following "the least shit option playbook". Hard to argue. The FAB's function, as currently constituted, is less to represent supporters than to give the club documented evidence of having consulted them.</p>
     <p>That is not nothing. But it is not enough.</p>
   </div>
 
@@ -1171,12 +1258,12 @@
   <div id="facilities" class="sec-header">
     <div class="sec-num">§ 05</div>
     <h2 class="sec-title">What £38 Per Game Buys You</h2>
-    <p class="sec-lede">The Hammersmith End faithful are paying more. Here is what has changed — and what has not.</p>
+    <p class="sec-lede">The Hammersmith End faithful are paying more. Here is what has actually changed, and what has not.</p>
   </div>
 
   <div class="stat-strip">
     <div class="stat-strip-item">
-      <div class="stat-strip-label">Hammy End — per game</div>
+      <div class="stat-strip-label">Hammy End per game</div>
       <div class="stat-strip-value" style="color:var(--accent)">£38</div>
     </div>
     <div class="stat-strip-item">
@@ -1194,9 +1281,9 @@
   </div>
 
   <div class="prose">
-    <p>The club's announcement includes a section on improving the matchday experience. It is worth reading in full, because its specificity tells you something. New digital ticketing infrastructure — implemented across the ground. New turnstile readers installed in the Johnny Haynes Stand partway through this season. A reduction in plastic card usage. Away supporters now using digital tickets.</p>
-    <p>On everything else — concourse facilities, food and drink, toilets, general amenities in the older parts of the ground — the club says it is "actively exploring new initiatives" and will "share further details around these developments and commitment to any planned works in due course."</p>
-    <p>"In due course" is doing a lot of heavy lifting there. For supporters who have watched the Riverside Stand emerge as a gleaming hospitality and events complex — generating premium revenue from corporate packages, private dining, and the Fulham Pier operation year-round — the gap between the Riverside experience and the Hammersmith End experience is not a comfortable one.</p>
+    <p>The club's announcement includes a section on improving the matchday experience. It is worth reading carefully, because the specificity tells you something. New digital ticketing infrastructure, rolled out across the ground. New turnstile readers installed in the Johnny Haynes Stand partway through this season. A reduction in plastic card usage. Away supporters now on digital tickets.</p>
+    <p>For everything else, the stuff supporters actually talk about, concourse facilities, food and drink, toilets, general amenities in the older stands, the club says it is "actively exploring new initiatives" and will "share further details around these developments and commitment to any planned works in due course."</p>
+    <p>"In due course" is doing a lot of heavy lifting. For supporters who have watched the Riverside Stand emerge as a gleaming hospitality complex, generating premium revenue from corporate packages, private dining, and the Fulham Pier year-round, the gap between the Riverside experience and the Hammersmith End experience is not a comfortable one.</p>
     <p>The Riverside Stand should, over time, help fund improvements across the whole ground. The club has acknowledged limitations imposed by Craven Cottage's listed status and riverside setting. These are genuine constraints. But "actively exploring" is not a working concourse, and supporters paying more this season deserve more precision about what is actually coming, and when.</p>
   </div>
 
@@ -1206,7 +1293,7 @@
   </div>
 
   <div class="prose">
-    <p>The digital ticketing infrastructure is real progress. Record numbers through the Ticket Exchange is genuinely positive. And the club is right that five consecutive Premier League seasons is an achievement that reflects real investment in the squad. The issue is that improvements to the in-ground experience for general admission supporters — especially at the Hammersmith End — remain vague, while the bill increases every year.</p>
+    <p>The digital ticketing infrastructure is real progress. Record numbers through the Ticket Exchange is genuinely positive. And five consecutive Premier League seasons does not happen by accident. But improvements to the in-ground experience for general admission supporters, particularly at the Hammersmith End, remain vague and undated, while the bill goes up every summer without fail.</p>
   </div>
 
   <hr class="rule">
@@ -1223,29 +1310,29 @@
       <div class="verdict-icon" style="color:var(--warn)">01</div>
       <div>
         <h4>The 3.5% is galling, not catastrophic</h4>
-        <p>In isolation, the rise is roughly inflation-level and defensible. In the context of four consecutive increases totalling over 30%, it represents a sustained erosion of affordability that compounds every year — particularly painful when other Premier League clubs have shown that a freeze is achievable.</p>
+        <p>In isolation, the rise is roughly inflation-level and defensible. Across four consecutive seasons totalling over 30%, it is a sustained erosion of affordability. Particularly galling when clubs like Palace and City showed that a freeze was achievable.</p>
       </div>
     </div>
     <div class="verdict-card">
       <div class="verdict-icon" style="color:var(--accent)">02</div>
       <div>
         <h4>The two-tier structure is the bigger injustice</h4>
-        <p>Penalising supporters for having taken a break — for any reason — and giving them no route back to the lower tier is not loyalty pricing. It is a pricing structure that holds people hostage to their own history. The club should introduce a defined pathway for supporters to restore their original tier after a fixed period of continuous renewal.</p>
+        <p>Penalising supporters for having taken a break, for whatever reason, and giving them no route back to the lower tier is not loyalty pricing. It is a pricing structure that holds people hostage to their own history. The club should offer a defined pathway back to the original tier after a fixed period of continuous renewal.</p>
       </div>
     </div>
     <div class="verdict-card">
       <div class="verdict-icon" style="color:var(--danger)">03</div>
       <div>
         <h4>The FAB cannot do what it needs to do</h4>
-        <p>A fan advisory board bound by NDA, appointed by the club, cannot be a genuine mechanism of representation. The structure produces useful optics — documented consultation, a named Chair, a statement of process — but not genuine accountability. The Supporters Trust's critique is correct: as long as FAB cannot speak openly to the people it represents, its endorsements mean little.</p>
+        <p>A fan advisory board bound by NDA, appointed by the club, cannot be a genuine mechanism of representation. The structure produces useful optics: documented consultation, a named Chair, a statement of process. Not genuine accountability. The Supporters Trust's critique is correct. As long as FAB cannot speak openly to the people it represents, its endorsements mean very little.</p>
       </div>
     </div>
   </div>
 
   <div class="prose">
-    <p>None of this makes Fulham uniquely villainous in the Premier League landscape. Clubs routinely test the outer limits of what supporters will pay. The question is what kind of club Fulham wants to be, and whether the atmosphere that makes Craven Cottage genuinely special — the intimacy, the noise, the sense that real people rather than corporate packages fill those seats — can survive a fourth successive year of pricing pressure without a corresponding improvement in what supporters receive in return.</p>
-    <p>If you are a season ticket holder, the Ticket Exchange remains your best practical lever. Use it. It is a genuine benefit, and it grows more useful every season. If you want a year off, the maths of keeping your seat and exchanging games you cannot attend is, for many, preferable to losing your tier permanently. That is a rational response to an irrational structure — which is more or less where Fulham supporters find themselves this week.</p>
-    <p>Renewals open 11 May. All seats held until 5 June. Instalment plans available through V12 Finance. The club would like to once again thank you for your continued support.</p>
+    <p>None of this makes Fulham uniquely bad in the Premier League landscape. Clubs routinely push pricing as far as supporters will tolerate. But the atmosphere that makes Craven Cottage genuinely special, the intimacy, the noise, the sense that real people rather than corporate packages fill those seats, depends on those people being able to afford to keep coming. That case has not been made convincingly.</p>
+    <p>If you are a season ticket holder, the Ticket Exchange is your best practical lever. Use it. It is a genuine benefit that gets better every season. If you want a year off, the maths of keeping your seat and listing games you cannot attend is, for many, still better than losing your tier and paying more when you come back. Rational response to an irrational structure. Which is more or less where we all are this week.</p>
+    <p>Renewals open 11 May. All seats held until 5 June. Instalments available through V12 Finance. The club would like to thank you for your continued support.</p>
   </div>
 
 </div><!-- /article-body -->
@@ -1259,27 +1346,27 @@
       <h3>Are you renewing your season ticket?</h3>
       <div class="poll-options" id="poll-renewing">
         <button class="poll-btn" data-poll="renewing" data-choice="yes-fine">
-          <span class="poll-btn-label">Yes — unhappy but not walking away</span>
+          <span class="poll-btn-label">Yes, unhappy but not walking away</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
         <button class="poll-btn" data-poll="renewing" data-choice="yes-exchange">
-          <span class="poll-btn-label">Yes — using Ticket Exchange to offset the cost</span>
+          <span class="poll-btn-label">Yes, using the Ticket Exchange to offset the cost</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
         <button class="poll-btn" data-poll="renewing" data-choice="no">
-          <span class="poll-btn-label">No — this is the year I step away</span>
+          <span class="poll-btn-label">No. This is the year I step away.</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
         <button class="poll-btn" data-poll="renewing" data-choice="trapped">
-          <span class="poll-btn-label">Renewing only because I can't afford to lose my loyalty tier</span>
+          <span class="poll-btn-label">Renewing because I can't afford to lose my loyalty tier</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
         <button class="poll-btn" data-poll="renewing" data-choice="no-st">
-          <span class="poll-btn-label">Not a season ticket holder — just watching this</span>
+          <span class="poll-btn-label">Not a season ticket holder, just watching this unfold</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
@@ -1291,22 +1378,22 @@
       <h3>What bothers you most about the announcement?</h3>
       <div class="poll-options" id="poll-concern">
         <button class="poll-btn" data-poll="concern" data-choice="rise">
-          <span class="poll-btn-label">The price rise itself — fourth year running</span>
+          <span class="poll-btn-label">The price rise itself. Fourth year in a row.</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
         <button class="poll-btn" data-poll="concern" data-choice="tier">
-          <span class="poll-btn-label">The two-tier pricing — loyal holders trapped, returners penalised</span>
+          <span class="poll-btn-label">The two-tier pricing. Loyal holders trapped, returners penalised.</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
         <button class="poll-btn" data-poll="concern" data-choice="fab">
-          <span class="poll-btn-label">The FAB — an NDA-bound board can't properly represent fans</span>
+          <span class="poll-btn-label">The FAB. An NDA-bound board cannot properly represent fans.</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
         <button class="poll-btn" data-poll="concern" data-choice="facilities">
-          <span class="poll-btn-label">Facilities — vague promises, especially at the Hammy End</span>
+          <span class="poll-btn-label">Facilities. Vague promises, especially at the Hammy End.</span>
           <span class="poll-pct"></span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar"></div></div>
@@ -1326,7 +1413,7 @@
 <footer class="footer">
   <div>
     <div class="footer-brand">That's So Craven / Cravenpod</div>
-    <p>Independent Fulham FC analysis. Not affiliated with Fulham Football Club. Pricing data sourced from the official Fulham FC announcement, Fulhamish, and the Fulham Supporters Trust statement — all published May 2026.</p>
+    <p>Independent Fulham FC analysis. Not affiliated with Fulham Football Club. Pricing data sourced from the official Fulham FC announcement, Fulhamish, and the Fulham Supporters Trust statement, all published May 2026.</p>
     <div class="footer-links">
       <a href="/">All Articles</a>
       <a href="https://podfollow.com/thats-so-craven">Podcast</a>
@@ -1400,6 +1487,72 @@
     calcInput.addEventListener('input', updateCalc);
     calcGames.addEventListener('change', updateCalc);
   }
+
+  /* ── Four-Year Bill calculator ── */
+  const billInput   = document.getElementById('billInput');
+  const billResults = document.getElementById('billResults');
+
+  const SEASONS = [
+    { label: '2023/24', pct: 0.18,   multiplier: 1.18,    badge: 'big' },
+    { label: '2024/25', pct: 0.04,   multiplier: 1.2272,  badge: '' },
+    { label: '2025/26', pct: 0.028,  multiplier: 1.26156, badge: '' },
+    { label: '2026/27', pct: 0.035,  multiplier: 1.30571, badge: '' },
+  ];
+
+  function fmtR(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+
+  function updateBill() {
+    const base = parseFloat(billInput.value);
+    if (!base || isNaN(base) || base <= 0) {
+      billResults.innerHTML = '<div class="calc-placeholder">Enter your 2022/23 season ticket price to see the full picture</div>';
+      return;
+    }
+
+    let totalExtra = 0;
+    let rows = '';
+    SEASONS.forEach(s => {
+      const actual = base * s.multiplier;
+      const extra  = actual - base;
+      totalExtra  += extra;
+      const pctStr = '+' + (s.pct * 100).toFixed(1) + '%';
+      rows += `
+        <tr>
+          <td class="season-label">${s.label} <span class="pct-badge ${s.badge}">${pctStr}</span></td>
+          <td class="frozen-price">${fmtR(base)}</td>
+          <td class="actual-price">${fmtR(actual)}</td>
+          <td class="extra">+${fmtR(extra)}</td>
+        </tr>`;
+    });
+
+    const projection2728 = base * 1.30571 * 1.035;
+
+    billResults.innerHTML = `
+      <table class="bill-table">
+        <thead>
+          <tr>
+            <th>Season</th>
+            <th>If frozen at 2022/23</th>
+            <th>What you actually paid</th>
+            <th>Extra cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows}
+          <tr class="total-row">
+            <td class="season-label">4-season total overspend</td>
+            <td></td>
+            <td></td>
+            <td class="extra">+${fmtR(totalExtra)}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="bill-projection">
+        <div class="bill-projection-label">If 3.5% continues next season<br>Your 2027/28 price would be</div>
+        <div class="bill-projection-value">${fmtR(projection2728)}</div>
+      </div>`;
+  }
+
+  if (billInput) billInput.addEventListener('input', updateBill);
 
   /* ── Polls ── */
   const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
