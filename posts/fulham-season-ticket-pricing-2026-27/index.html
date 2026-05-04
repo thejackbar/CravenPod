@@ -8,10 +8,11 @@
 <meta property="og:title" content="Pay Up. Again. Fulham's 2026/27 Season Ticket Pricing Explained">
 <meta property="og:description" content="Four consecutive rises. A board that can't tell you what it discussed. And what exactly £38 per game at the Hammy End now buys you.">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg">
+<meta property="og:url" content="https://blog.cravenpod.com/posts/fulham-season-ticket-pricing-2026-27/">
+<meta property="og:image" content="https://hounslowherald.com/18-07-2025-05-35-31-am-8427701.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@cravenpod">
-<meta name="twitter:image" content="https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg">
+<meta name="twitter:image" content="https://hounslowherald.com/18-07-2025-05-35-31-am-8427701.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -109,7 +110,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg');
+    background-image: url('https://hounslowherald.com/18-07-2025-05-35-31-am-8427701.png');
     background-size: cover;
     background-position: center 20%;
     filter: saturate(0.7) brightness(0.45);
@@ -766,6 +767,7 @@
     vertical-align: middle;
   }
   .bill-table .season-label .pct-badge.big { background: rgba(255,59,103,0.2); }
+  .bill-table .season-label .pct-badge.cut { background: rgba(74,222,128,0.12); color: #4ade80; }
   .bill-table .frozen-price { color: var(--ok); }
   .bill-table .actual-price { color: var(--ink); }
   .bill-table .extra { color: var(--accent); }
@@ -1053,7 +1055,7 @@
         <div class="bar-pct">+3.5%</div>
       </div>
     </div>
-    <div class="bar-cumulative">Compounded over four seasons: <strong>+30.6%</strong> total increase since 2022/23</div>
+    <div class="bar-cumulative">Compounded over four confirmed seasons: <strong>+30.6%</strong> since 2022/23. Use the calculator below to see what that means for your seat.</div>
   </div>
 
   <div class="prose">
@@ -1062,16 +1064,32 @@
 
   <!-- FOUR-YEAR BILL CALCULATOR -->
   <div class="calc-block" id="billCalc">
-    <div class="calc-title">The Four-Year Bill</div>
-    <div class="calc-sub">What has the cumulative rise actually cost you since 2022/23?</div>
+    <div class="calc-title">The Bill So Far</div>
+    <div class="calc-sub">Pick the season you first got your ticket and what you paid — we'll show you the full picture</div>
     <div class="calc-input-row">
-      <div class="calc-input-wrap">
+      <select class="calc-games-select" id="billYear" style="flex:1.2;min-width:200px;">
+        <option value="">When did you first get a season ticket?</option>
+        <option value="2013/14">2013/14 — Championship</option>
+        <option value="2014/15">2014/15 — Championship</option>
+        <option value="2015/16">2015/16 — Championship (15% price cut)</option>
+        <option value="2016/17">2016/17 — Championship (price freeze)</option>
+        <option value="2017/18">2017/18 — Championship (price freeze)</option>
+        <option value="2018/19">2018/19 — Premier League (renewal freeze)</option>
+        <option value="2019/20">2019/20 — Championship</option>
+        <option value="2020/21">2020/21 — Premier League (no fans)</option>
+        <option value="2021/22">2021/22 — Championship</option>
+        <option value="2022/23">2022/23 — PL return (loyalty baseline year)</option>
+        <option value="2023/24">2023/24</option>
+        <option value="2024/25">2024/25</option>
+        <option value="2025/26">2025/26</option>
+      </select>
+      <div class="calc-input-wrap" style="flex:1;min-width:160px;">
         <span class="currency">£</span>
-        <input class="calc-input" id="billInput" type="number" min="0" max="5000" placeholder="Your 2022/23 price" inputmode="numeric">
+        <input class="calc-input" id="billInput" type="number" min="0" max="5000" placeholder="Price you paid" inputmode="numeric">
       </div>
     </div>
     <div id="billResults">
-      <div class="calc-placeholder">Enter your 2022/23 season ticket price to see the full picture</div>
+      <div class="calc-placeholder">Select your first season and enter the price you paid</div>
     </div>
   </div>
 
@@ -1488,70 +1506,118 @@
     calcGames.addEventListener('change', updateCalc);
   }
 
-  /* ── Four-Year Bill calculator ── */
+  /* ── The Bill So Far calculator ── */
+  const billYear    = document.getElementById('billYear');
   const billInput   = document.getElementById('billInput');
   const billResults = document.getElementById('billResults');
 
-  const SEASONS = [
-    { label: '2023/24', pct: 0.18,   multiplier: 1.18,    badge: 'big' },
-    { label: '2024/25', pct: 0.04,   multiplier: 1.2272,  badge: '' },
-    { label: '2025/26', pct: 0.028,  multiplier: 1.26156, badge: '' },
-    { label: '2026/27', pct: 0.035,  multiplier: 1.30571, badge: '' },
-  ];
-
   function fmtR(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
 
+  // Full season timeline. step = confirmed % change applied TO get to this season vs prior year.
+  // Negative = price cut. Zero = confirmed freeze. null = no confirmed % data for that transition.
+  const TIMELINE = [
+    { season: '2013/14', step: null,   note: 'Championship' },
+    { season: '2014/15', step: null,   note: 'Championship' },
+    { season: '2015/16', step: -0.15,  note: null },  // Confirmed: "renewals saving 15% on last season"
+    { season: '2016/17', step: 0,      note: null },  // Confirmed: "no supporter renewing will pay a penny more"
+    { season: '2017/18', step: 0,      note: null },  // Confirmed: prices frozen
+    { season: '2018/19', step: 0,      note: null },  // Confirmed: "renewal prices same as 2017/18 Regular Prices"
+    { season: '2019/20', step: null,   note: 'Championship' },
+    { season: '2020/21', step: null,   note: 'No fans (COVID)' },
+    { season: '2021/22', step: null,   note: 'Championship' },
+    { season: '2022/23', step: null,   note: 'PL return' },
+    { season: '2023/24', step: 0.18,   note: null },
+    { season: '2024/25', step: 0.04,   note: null },
+    { season: '2025/26', step: 0.028,  note: null },
+    { season: '2026/27', step: 0.035,  note: null },
+  ];
+
   function updateBill() {
-    const base = parseFloat(billInput.value);
-    if (!base || isNaN(base) || base <= 0) {
-      billResults.innerHTML = '<div class="calc-placeholder">Enter your 2022/23 season ticket price to see the full picture</div>';
+    const startSeason = billYear.value;
+    const startPrice  = parseFloat(billInput.value);
+
+    if (!startSeason || !startPrice || isNaN(startPrice) || startPrice <= 0) {
+      billResults.innerHTML = '<div class="calc-placeholder">Select your first season and enter the price you paid</div>';
       return;
     }
 
-    let totalExtra = 0;
-    let rows = '';
-    SEASONS.forEach(s => {
-      const actual = base * s.multiplier;
-      const extra  = actual - base;
-      totalExtra  += extra;
-      const pctStr = '+' + (s.pct * 100).toFixed(1) + '%';
-      rows += `
-        <tr>
-          <td class="season-label">${s.label} <span class="pct-badge ${s.badge}">${pctStr}</span></td>
-          <td class="frozen-price">${fmtR(base)}</td>
-          <td class="actual-price">${fmtR(actual)}</td>
-          <td class="extra">+${fmtR(extra)}</td>
-        </tr>`;
-    });
+    const startIdx = TIMELINE.findIndex(t => t.season === startSeason);
+    if (startIdx === -1) return;
 
-    const projection2728 = base * 1.30571 * 1.035;
+    // Walk forward from start year, accumulating price
+    let price = startPrice;
+    let totalExtra = 0;
+    let confirmedSeasonsCount = 0;
+    const rows = TIMELINE.slice(startIdx).map((t, i) => {
+      const isStart = i === 0;
+      if (!isStart && t.step !== null) {
+        price = price * (1 + t.step);
+        const extra = price - startPrice;
+        totalExtra += extra;
+        confirmedSeasonsCount++;
+        const pctLabel = t.step === 0 ? 'Freeze' : (t.step > 0 ? `+${(t.step*100).toFixed(1)}%` : `${(t.step*100).toFixed(1)}%`);
+        const badge = t.step >= 0.1 ? 'big' : (t.step < 0 ? 'cut' : '');
+        const extraCell = extra === 0
+          ? `<td class="extra" style="color:var(--ink-mute)">—</td>`
+          : extra > 0
+            ? `<td class="extra">+${fmtR(extra)}</td>`
+            : `<td class="extra" style="color:#4ade80">${fmtR(extra)}</td>`;
+        return `<tr>
+          <td class="season-label">${t.season} <span class="pct-badge ${badge}">${pctLabel}</span></td>
+          <td class="frozen-price">${fmtR(startPrice)}</td>
+          <td class="actual-price">${fmtR(price)}</td>
+          ${extraCell}
+        </tr>`;
+      } else if (isStart) {
+        return `<tr>
+          <td class="season-label">${t.season} <span class="pct-badge" style="background:rgba(212,175,110,0.15);color:var(--gold)">Your start</span></td>
+          <td class="frozen-price">${fmtR(startPrice)}</td>
+          <td class="actual-price">${fmtR(startPrice)}</td>
+          <td class="extra" style="color:var(--ink-mute)">—</td>
+        </tr>`;
+      } else {
+        // Unknown step (Championship / early PL era)
+        return `<tr style="opacity:0.45">
+          <td class="season-label">${t.season} <span class="pct-badge" style="background:rgba(255,255,255,0.07);color:var(--ink-mute)">${t.note || 'Data unavailable'}</span></td>
+          <td colspan="3" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);text-align:center">Confirmed rise data not available for this season</td>
+        </tr>`;
+      }
+    }).join('');
+
+    const hasUnknown = TIMELINE.slice(startIdx).some((t, i) => i > 0 && t.step === null);
+    const projection2728 = price * 1.035;
+    const totalNote = hasUnknown
+      ? `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-mute);margin-top:8px;letter-spacing:0.1em">* Greyed rows = confirmed rise data unavailable. Extra costs calculated from first confirmed rise only.</div>`
+      : '';
 
     billResults.innerHTML = `
       <table class="bill-table">
         <thead>
           <tr>
             <th>Season</th>
-            <th>If frozen at 2022/23</th>
-            <th>What you actually paid</th>
-            <th>Extra cost</th>
+            <th>If frozen at your start price</th>
+            <th>Estimated price paid</th>
+            <th>Extra vs freeze</th>
           </tr>
         </thead>
         <tbody>
           ${rows}
           <tr class="total-row">
-            <td class="season-label">4-season total overspend</td>
+            <td class="season-label">Total extra paid vs a freeze${hasUnknown ? '*' : ''}</td>
             <td></td>
             <td></td>
-            <td class="extra">+${fmtR(totalExtra)}</td>
+            <td class="extra">${totalExtra > 0 ? '+' + fmtR(totalExtra) : fmtR(0)}</td>
           </tr>
         </tbody>
       </table>
+      ${totalNote}
       <div class="bill-projection">
-        <div class="bill-projection-label">If 3.5% continues next season<br>Your 2027/28 price would be</div>
+        <div class="bill-projection-label">If 3.5% continues into 2027/28<br>your price would reach</div>
         <div class="bill-projection-value">${fmtR(projection2728)}</div>
       </div>`;
   }
 
+  if (billYear)  billYear.addEventListener('change', updateBill);
   if (billInput) billInput.addEventListener('input', updateBill);
 
   /* ── Polls ── */
