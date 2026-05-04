@@ -8,10 +8,11 @@
 <meta property="og:title" content="Pay Up. Again. Fulham's 2026/27 Season Ticket Pricing Explained">
 <meta property="og:description" content="Four consecutive rises. A board that can't tell you what it discussed. And what exactly £38 per game at the Hammy End now buys you.">
 <meta property="og:type" content="article">
-<meta property="og:image" content="https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg">
+<meta property="og:url" content="https://blog.cravenpod.com/posts/fulham-season-ticket-pricing-2026-27/">
+<meta property="og:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@cravenpod">
-<meta name="twitter:image" content="https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg">
+<meta name="twitter:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -766,6 +767,7 @@
     vertical-align: middle;
   }
   .bill-table .season-label .pct-badge.big { background: rgba(255,59,103,0.2); }
+  .bill-table .season-label .pct-badge.cut { background: rgba(74,222,128,0.12); color: #4ade80; }
   .bill-table .frozen-price { color: var(--ok); }
   .bill-table .actual-price { color: var(--ink); }
   .bill-table .extra { color: var(--accent); }
@@ -1067,14 +1069,16 @@
     <div class="calc-input-row">
       <select class="calc-games-select" id="billYear" style="flex:1.2;min-width:200px;">
         <option value="">When did you first get a season ticket?</option>
-        <option value="2015/16">2015/16</option>
-        <option value="2016/17">2016/17</option>
-        <option value="2017/18">2017/18 (PL promotion season)</option>
-        <option value="2018/19">2018/19 (Premier League)</option>
-        <option value="2019/20">2019/20 (Championship)</option>
-        <option value="2020/21">2020/21 (Premier League)</option>
-        <option value="2021/22">2021/22 (Championship)</option>
-        <option value="2022/23">2022/23 (PL return — loyalty baseline year)</option>
+        <option value="2013/14">2013/14 — Championship</option>
+        <option value="2014/15">2014/15 — Championship</option>
+        <option value="2015/16">2015/16 — Championship (15% price cut)</option>
+        <option value="2016/17">2016/17 — Championship (price freeze)</option>
+        <option value="2017/18">2017/18 — Championship (price freeze)</option>
+        <option value="2018/19">2018/19 — Premier League (renewal freeze)</option>
+        <option value="2019/20">2019/20 — Championship</option>
+        <option value="2020/21">2020/21 — Premier League (no fans)</option>
+        <option value="2021/22">2021/22 — Championship</option>
+        <option value="2022/23">2022/23 — PL return (loyalty baseline year)</option>
         <option value="2023/24">2023/24</option>
         <option value="2024/25">2024/25</option>
         <option value="2025/26">2025/26</option>
@@ -1509,21 +1513,23 @@
 
   function fmtR(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
 
-  // Full season timeline. step = confirmed % rise applied TO get to this season.
-  // null = no confirmed data (Championship era or PL return without known % vs prior year).
+  // Full season timeline. step = confirmed % change applied TO get to this season vs prior year.
+  // Negative = price cut. Zero = confirmed freeze. null = no confirmed % data for that transition.
   const TIMELINE = [
-    { season: '2015/16', step: null,  note: 'Championship' },
-    { season: '2016/17', step: null,  note: 'Championship' },
-    { season: '2017/18', step: null,  note: 'Championship' },
-    { season: '2018/19', step: null,  note: 'Premier League' },
-    { season: '2019/20', step: null,  note: 'Championship' },
-    { season: '2020/21', step: null,  note: 'Premier League' },
-    { season: '2021/22', step: null,  note: 'Championship' },
-    { season: '2022/23', step: null,  note: 'PL return' },
-    { season: '2023/24', step: 0.18,  note: null },
-    { season: '2024/25', step: 0.04,  note: null },
-    { season: '2025/26', step: 0.028, note: null },
-    { season: '2026/27', step: 0.035, note: null },
+    { season: '2013/14', step: null,   note: 'Championship' },
+    { season: '2014/15', step: null,   note: 'Championship' },
+    { season: '2015/16', step: -0.15,  note: null },  // Confirmed: "renewals saving 15% on last season"
+    { season: '2016/17', step: 0,      note: null },  // Confirmed: "no supporter renewing will pay a penny more"
+    { season: '2017/18', step: 0,      note: null },  // Confirmed: prices frozen
+    { season: '2018/19', step: 0,      note: null },  // Confirmed: "renewal prices same as 2017/18 Regular Prices"
+    { season: '2019/20', step: null,   note: 'Championship' },
+    { season: '2020/21', step: null,   note: 'No fans (COVID)' },
+    { season: '2021/22', step: null,   note: 'Championship' },
+    { season: '2022/23', step: null,   note: 'PL return' },
+    { season: '2023/24', step: 0.18,   note: null },
+    { season: '2024/25', step: 0.04,   note: null },
+    { season: '2025/26', step: 0.028,  note: null },
+    { season: '2026/27', step: 0.035,  note: null },
   ];
 
   function updateBill() {
@@ -1549,12 +1555,18 @@
         const extra = price - startPrice;
         totalExtra += extra;
         confirmedSeasonsCount++;
-        const badge = t.step >= 0.1 ? 'big' : '';
+        const pctLabel = t.step === 0 ? 'Freeze' : (t.step > 0 ? `+${(t.step*100).toFixed(1)}%` : `${(t.step*100).toFixed(1)}%`);
+        const badge = t.step >= 0.1 ? 'big' : (t.step < 0 ? 'cut' : '');
+        const extraCell = extra === 0
+          ? `<td class="extra" style="color:var(--ink-mute)">—</td>`
+          : extra > 0
+            ? `<td class="extra">+${fmtR(extra)}</td>`
+            : `<td class="extra" style="color:#4ade80">${fmtR(extra)}</td>`;
         return `<tr>
-          <td class="season-label">${t.season} <span class="pct-badge ${badge}">+${(t.step*100).toFixed(1)}%</span></td>
+          <td class="season-label">${t.season} <span class="pct-badge ${badge}">${pctLabel}</span></td>
           <td class="frozen-price">${fmtR(startPrice)}</td>
           <td class="actual-price">${fmtR(price)}</td>
-          <td class="extra">+${fmtR(extra)}</td>
+          ${extraCell}
         </tr>`;
       } else if (isStart) {
         return `<tr>
