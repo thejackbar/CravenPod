@@ -1075,10 +1075,10 @@
         <option value="2016/17">2016/17 — Championship (price freeze)</option>
         <option value="2017/18">2017/18 — Championship (price freeze)</option>
         <option value="2018/19">2018/19 — Premier League (renewal freeze)</option>
-        <option value="2019/20">2019/20 — Championship</option>
-        <option value="2020/21">2020/21 — Premier League (no fans)</option>
-        <option value="2021/22">2021/22 — Championship</option>
-        <option value="2022/23">2022/23 — PL return (loyalty baseline year)</option>
+        <option value="2019/20">2019/20 — Championship (price freeze)</option>
+        <option value="2020/21">2020/21 — Premier League (COVID, no fans)</option>
+        <option value="2021/22">2021/22 — Championship (~11% rise)</option>
+        <option value="2022/23">2022/23 — PL return (~10% rise)</option>
         <option value="2023/24">2023/24</option>
         <option value="2024/25">2024/25</option>
         <option value="2025/26">2025/26</option>
@@ -1514,18 +1514,19 @@
   function fmtR(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
 
   // Full season timeline. step = confirmed % change applied TO get to this season vs prior year.
-  // Negative = price cut. Zero = confirmed freeze. null = no confirmed % data for that transition.
+  // approx: true = calculated from price tables, not a single announced figure.
+  // Negative = price cut. Zero = confirmed freeze. null = no confirmed data.
   const TIMELINE = [
     { season: '2013/14', step: null,   note: 'Championship' },
     { season: '2014/15', step: null,   note: 'Championship' },
-    { season: '2015/16', step: -0.15,  note: null },  // Confirmed: "renewals saving 15% on last season"
-    { season: '2016/17', step: 0,      note: null },  // Confirmed: "no supporter renewing will pay a penny more"
-    { season: '2017/18', step: 0,      note: null },  // Confirmed: prices frozen
-    { season: '2018/19', step: 0,      note: null },  // Confirmed: "renewal prices same as 2017/18 Regular Prices"
-    { season: '2019/20', step: null,   note: 'Championship' },
-    { season: '2020/21', step: null,   note: 'No fans (COVID)' },
-    { season: '2021/22', step: null,   note: 'Championship' },
-    { season: '2022/23', step: null,   note: 'PL return' },
+    { season: '2015/16', step: -0.15,  note: null },         // Confirmed: "renewals saving 15% on last season"
+    { season: '2016/17', step: 0,      note: null },         // Confirmed: "no supporter renewing will pay a penny more"
+    { season: '2017/18', step: 0,      note: null },         // Confirmed: prices frozen
+    { season: '2018/19', step: 0,      note: null },         // Confirmed: "renewal prices same as 2017/18 Regular Prices"
+    { season: '2019/20', step: 0,      note: null },         // Confirmed: FST "PRICE FREEZE" slide
+    { season: '2020/21', step: null,   note: 'PL (COVID)' }, // No fans — pricing unconfirmed
+    { season: '2021/22', step: 0.11,   approx: true,  note: null }, // ~11% Championship return (FST tables)
+    { season: '2022/23', step: 0.10,   approx: true,  note: null }, // ~10% PL return (FST tables)
     { season: '2023/24', step: 0.18,   note: null },
     { season: '2024/25', step: 0.04,   note: null },
     { season: '2025/26', step: 0.028,  note: null },
@@ -1555,7 +1556,10 @@
         const extra = price - startPrice;
         totalExtra += extra;
         confirmedSeasonsCount++;
-        const pctLabel = t.step === 0 ? 'Freeze' : (t.step > 0 ? `+${(t.step*100).toFixed(1)}%` : `${(t.step*100).toFixed(1)}%`);
+        const pctLabel = t.step === 0 ? 'Freeze'
+          : t.approx ? `~${Math.round(t.step*100)}%`
+          : t.step > 0 ? `+${(t.step*100).toFixed(1)}%`
+          : `${(t.step*100).toFixed(1)}%`;
         const badge = t.step >= 0.1 ? 'big' : (t.step < 0 ? 'cut' : '');
         const extraCell = extra === 0
           ? `<td class="extra" style="color:var(--ink-mute)">—</td>`
@@ -1579,7 +1583,7 @@
         // Unknown step (Championship / early PL era)
         return `<tr style="opacity:0.45">
           <td class="season-label">${t.season} <span class="pct-badge" style="background:rgba(255,255,255,0.07);color:var(--ink-mute)">${t.note || 'Data unavailable'}</span></td>
-          <td colspan="3" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);text-align:center">Confirmed rise data not available for this season</td>
+          <td colspan="3" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-mute);text-align:center">${t.note || 'No confirmed pricing data'}</td>
         </tr>`;
       }
     }).join('');
