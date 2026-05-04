@@ -775,6 +775,68 @@
   .bill-table tr.total-row .season-label { color: var(--gold); }
   .bill-table tr.total-row .extra { color: var(--gold); font-size: 15px; }
   /* ── Comparison strip ── */
+  /* ── Inflation race ── */
+  .inf-race { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; }
+  .inf-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 12px;
+    align-items: center;
+  }
+  .inf-row.fulham-row .inf-label { color: var(--ink); font-weight: 600; }
+  .inf-label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    color: var(--ink-sub);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .inf-prices {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    white-space: nowrap;
+    text-align: right;
+  }
+  .inf-bar-col { grid-column: 1 / -1; }
+  .inf-track {
+    background: rgba(255,255,255,0.06);
+    border-radius: var(--r-pill);
+    height: 26px;
+    overflow: hidden;
+    position: relative;
+  }
+  .inf-fill {
+    height: 100%;
+    border-radius: var(--r-pill);
+    width: 0;
+    transition: width 1.1s cubic-bezier(.25,.8,.25,1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+  .inf-fill.fulham { background: linear-gradient(90deg, #aa0022, var(--accent)); }
+  .inf-fill.item   { background: rgba(255,255,255,0.18); }
+  .inf-fill.index  { background: rgba(212,175,110,0.28); }
+  .inf-fill-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    white-space: nowrap;
+  }
+  .inf-fill.fulham .inf-fill-pct { color: #fff; }
+  .inf-note-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: rgba(255,255,255,0.2);
+    margin-top: 14px;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+  }
+  /* ── Comparison strip ── */
   .compare-strip-head {
     margin-top: 28px;
     font-family: 'JetBrains Mono', monospace;
@@ -1143,6 +1205,90 @@
     <div id="billResults">
       <div class="calc-placeholder">Select your first season and enter the price you paid</div>
     </div>
+  </div>
+
+  <hr class="rule">
+
+  <!-- INFLATION RACE -->
+  <div class="calc-block" id="infRace">
+    <div class="calc-title">Keeping pace</div>
+    <div class="calc-sub">Cumulative price rises since 2018/19 — Fulham season tickets vs things you actually buy</div>
+    <div class="inf-race">
+
+      <div class="inf-row fulham-row">
+        <span class="inf-label">Fulham ST — Hammy End (H3-H6)</span>
+        <span class="inf-prices">£449 &rarr; ~£718</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill fulham" data-inf-pct="60"><span class="inf-fill-pct">+60%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">Pint of beer (pub average)</span>
+        <span class="inf-prices">£3.69 &rarr; ~£5.40</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill item" data-inf-pct="46"><span class="inf-fill-pct">+46%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">Dozen free-range eggs</span>
+        <span class="inf-prices">£2.60 &rarr; ~£3.80</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill item" data-inf-pct="46"><span class="inf-fill-pct">+46%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">4 pints of milk</span>
+        <span class="inf-prices">£1.09 &rarr; ~£1.55</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill item" data-inf-pct="42"><span class="inf-fill-pct">+42%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">UK food price index</span>
+        <span class="inf-prices">ONS 2018 &rarr; 2026</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill index" data-inf-pct="40"><span class="inf-fill-pct">+40%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">800g loaf of bread</span>
+        <span class="inf-prices">£1.09 &rarr; ~£1.49</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill item" data-inf-pct="37"><span class="inf-fill-pct">+37%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">UK CPI — all items</span>
+        <span class="inf-prices">ONS 2018 &rarr; 2026</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill index" data-inf-pct="31"><span class="inf-fill-pct">+31%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">Average UK wages</span>
+        <span class="inf-prices">£30.4k &rarr; ~£37k</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill index" data-inf-pct="22"><span class="inf-fill-pct">+22%</span></div></div>
+        </div>
+      </div>
+
+      <div class="inf-row">
+        <span class="inf-label">Petrol (per litre)</span>
+        <span class="inf-prices">£1.28 &rarr; ~£1.44</span>
+        <div class="inf-bar-col">
+          <div class="inf-track"><div class="inf-fill item" data-inf-pct="13"><span class="inf-fill-pct">+13%</span></div></div>
+        </div>
+      </div>
+
+    </div>
+    <p class="inf-note-text">Fulham figure: Hammersmith End H3-H6 adult renewal, 2018/19 (£449) to 2026/27 (~£718), compounded from confirmed and FST-derived rises. COVID season (2020/21) treated as a freeze. Grocery prices: ONS/supermarket averages. Pub pint: CAMRA survey data. Wages: ONS ASHE median. All figures approximate.</p>
   </div>
 
   <hr class="rule">
@@ -1516,6 +1662,25 @@
     if (chartBlock) obs.observe(chartBlock);
   } else {
     animateBars();
+  }
+
+  /* ── Inflation race bars animate on scroll ── */
+  const infBars = document.querySelectorAll('.inf-fill[data-inf-pct]');
+  const infMax = 60;
+  function animateInfBars() {
+    infBars.forEach((bar, i) => {
+      const pct = parseFloat(bar.dataset.infPct);
+      setTimeout(() => { bar.style.width = ((pct / infMax) * 100) + '%'; }, i * 80);
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    const infObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { animateInfBars(); infObs.disconnect(); } });
+    }, { threshold: 0.2 });
+    const infBlock = document.getElementById('infRace');
+    if (infBlock) infObs.observe(infBlock);
+  } else {
+    animateInfBars();
   }
 
   /* ── Calculator ── */
