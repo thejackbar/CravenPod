@@ -657,6 +657,10 @@
     font-style: normal;
     font-weight: 300;
   }
+  .archive-card.cat-analysis .archive-visual {
+    background: linear-gradient(135deg, rgba(255,59,103,0.22), rgba(212,175,110,0.10));
+    --cat-glow: rgba(255,59,103,0.35);
+  }
   .archive-card.cat-women .archive-visual {
     background: linear-gradient(135deg, rgba(110,195,212,0.20), rgba(204,0,51,0.06));
     --cat-glow: rgba(110,195,212,0.32);
@@ -1063,7 +1067,7 @@
       </div>
       <div class="hero-stat">
         <span class="hero-stat-label">Written pieces</span>
-        <span class="hero-stat-value">07</span>
+        <span class="hero-stat-value">08</span>
         <span class="hero-stat-desc">long-form articles published</span>
       </div>
       <div class="hero-stat">
@@ -1099,18 +1103,18 @@
       Just published · The latest article
     </div>
 
-    <a href="/posts/arsenal-3-0-fulham-may-2026/" class="latest-card has-hero" style="--hero-img: url('https://www.arsenal.com/sites/default/files/styles/large_16x9/public/london-england-viktor-gyoekeres-of-arsenal-scores-his-teams-first-goal-during-the-premier_apzmx6rd.jpeg?h=893d5f4e&auto=webp&itok=ZpSV_pqi');">
+    <a href="/posts/fulham-season-ticket-pricing-2026-27/" class="latest-card has-hero" style="--hero-img: url('https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg');">
       <div class="latest-visual">
-        <div class="latest-visual-tag">Match Review · GW35 · Emirates Stadium</div>
-        <div class="latest-visual-big">3 <em>–</em> 0</div>
+        <div class="latest-visual-tag">Season Tickets · Analysis · 2026/27</div>
+        <div class="latest-visual-big">Pay Up.<br><em>Again.</em></div>
       </div>
       <div class="latest-body">
         <div>
-          <div class="latest-meta">2 May 2026 · Emirates Stadium</div>
-          <h3 class="latest-title">Arsenal 3–0 Fulham: Three before the break, and nothing after</h3>
-          <p class="latest-dek">Three first-half goals, Berge absent with illness, no changes at half-time despite the deficit. One bright spark in King. The GW35 verdict.</p>
+          <div class="latest-meta">4 May 2026 · Season Ticket Pricing</div>
+          <h3 class="latest-title">Fulham's 2026/27 season ticket pricing: the numbers and the nonsense</h3>
+          <p class="latest-dek">Four consecutive rises, a 30.6% cumulative increase, a fan board bound by NDA, and a Hammersmith End that still looks exactly the same. We break it all down.</p>
         </div>
-        <div class="latest-cta">Read the review <span class="arrow"></span></div>
+        <div class="latest-cta">Read the analysis <span class="arrow"></span></div>
       </div>
     </a>
   </div>
@@ -1118,9 +1122,10 @@
   <!-- ARCHIVE GRID -->
   <div class="archive-row reveal">
     <div class="archive-heading">
-      <div class="archive-heading-left">More from the archive · 6 articles</div>
+      <div class="archive-heading-left">More from the archive · 8 articles</div>
       <div class="archive-cat-filters" id="archive-filters">
         <button type="button" class="archive-cat-filter active" data-filter="all">All</button>
+        <button type="button" class="archive-cat-filter" data-filter="analysis">Analysis</button>
         <button type="button" class="archive-cat-filter" data-filter="preview">Previews</button>
         <button type="button" class="archive-cat-filter" data-filter="review">Reviews</button>
         <button type="button" class="archive-cat-filter" data-filter="women">FFCW</button>
@@ -1129,6 +1134,28 @@
     </div>
 
     <div class="archive-grid" id="archive-grid">
+
+      <a href="/posts/fulham-season-ticket-pricing-2026-27/" class="archive-card cat-analysis has-hero" data-cat="analysis" style="--hero-img: url('https://images.webapi.fulhamfc.com/fit-in/1400x1400/ec234600-7403-11ea-b3da-e7601ae4952c.jpg');">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Analysis · Season Tickets</span>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">4 May 2026 · Interactive</div>
+          <div class="archive-title">Pay Up. Again. The 2026/27 season ticket pricing breakdown</div>
+          <p class="archive-dek">Four consecutive rises, cumulative +30.6%, two-tier loyalty trap, FAB transparency issues, and what £38/game at the Hammy End actually buys.</p>
+        </div>
+      </a>
+
+      <a href="/posts/arsenal-3-0-fulham-may-2026/" class="archive-card cat-review has-hero" data-cat="review" style="--hero-img: url('https://www.arsenal.com/sites/default/files/styles/large_16x9/public/london-england-viktor-gyoekeres-of-arsenal-scores-his-teams-first-goal-during-the-premier_apzmx6rd.jpeg?h=893d5f4e&auto=webp&itok=ZpSV_pqi');">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Match Review · GW35</span>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">2 May 2026 · Emirates Stadium</div>
+          <div class="archive-title">Arsenal 3–0 Fulham: Three before the break, and nothing after</div>
+          <p class="archive-dek">Three first-half goals, Berge absent with illness, no half-time changes. One bright spark in King. The GW35 verdict.</p>
+        </div>
+      </a>
 
       <a href="/posts/arsenal-vs-fulham-may-2026/" class="archive-card cat-preview has-hero" data-cat="preview" style="--hero-img: url('https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/1efa/live/fcd06260-ac58-11f0-bf12-67c1f4bdac34.jpg');">
         <div class="archive-visual">
@@ -1264,9 +1291,9 @@
       </div>
       <div class="foot-col">
         <h4>Read</h4>
+        <a href="/posts/fulham-season-ticket-pricing-2026-27/">Pay Up. Again. ST Pricing 2026/27</a>
         <a href="/posts/arsenal-3-0-fulham-may-2026/">Arsenal 3–0 Fulham</a>
         <a href="/posts/fulham-women-2025-26-season-recap/">FFCW 2025/26: The Invincibles</a>
-        <a href="/posts/fulham-1-0-aston-villa-april-2026/">Fulham 1–0 Aston Villa</a>
         <a href="/posts/fulham-fc-2024-25-financial-analysis/">The Ledger 2024/25</a>
       </div>
       <div class="foot-col">
