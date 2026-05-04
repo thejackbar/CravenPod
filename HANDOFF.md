@@ -430,7 +430,7 @@ In addition to the sources in §10:
 - The "Frosted Touch" hero treatment for an away team should layer **a relevant BBC News image** (palette-matching), backgrounded via `::before` with `filter: saturate(0.82) contrast(1.04) brightness(0.78); opacity: 0.55`, then a multi-layer dark `::after` gradient for text legibility
 - Add the **opponent's primary colour** as a CSS variable in `:root` alongside `--fulham-green` (e.g. `--gunners: #db0007`, `--gunners-light: #ef4444`)
 - Always include the **GoatCounter snippet** before `</body>`
-- Always update **`index.html`** at the project root with the new article in the Match Previews category and bump the "Written pieces" hero stat
+- Always update **`index.html`** at the project root when publishing — see §12 for the full checklist
 - Single IIFE handles all interactivity, **never** load external JS for these features
 
 ### Don'ts
@@ -488,4 +488,72 @@ When you (the human) bring this to Claude Code, try this opening prompt:
 
 ---
 
-*Document version: 1.0 · Generated during handoff from Claude (web) to Claude Code. If you're reading this months later and some context feels stale, ask the project owner whether it still holds.*
+## 14. Publishing a new article — home page update checklist
+
+The home page (`index.html`) is entirely hand-coded. Nothing populates automatically. Every time a new article is published, the following changes to `index.html` must be made in the same commit. Do all of them — skipping any one leaves the page in an inconsistent state.
+
+### Step-by-step
+
+**1. Promote the new article to the "latest" spotlight**
+
+Find the `.latest-card` `<a>` element (inside `.latest-row`). Replace its `href`, `--hero-img` CSS variable, the `.latest-visual-tag` text, the `.latest-visual-big` display text (or leave blank if using a photo hero), the `.latest-meta`, `.latest-title`, `.latest-dek`, and the `.latest-cta` label (e.g. "Read the analysis" vs "Read the review").
+
+Use `class="latest-card has-hero"` with `style="--hero-img: url('...');"` whenever a hero photo is available, which it almost always is.
+
+**2. Move the previous "latest" into the archive grid**
+
+The article that was in the spotlight is now in the past — add it as the first `<a>` card in `.archive-grid`. Follow the `.archive-card` pattern:
+
+```html
+<a href="/posts/{slug}/" class="archive-card cat-{category} has-hero" data-cat="{category}"
+   style="--hero-img: url('{image-url}');">
+  <div class="archive-visual">
+    <span class="archive-cat-pill">{Category label}</span>
+  </div>
+  <div class="archive-body">
+    <div class="archive-meta">{Date} · {Venue or descriptor}</div>
+    <div class="archive-title">{Short title}</div>
+    <p class="archive-dek">{One-sentence summary}</p>
+  </div>
+</a>
+```
+
+Place it as the **first card** in the grid so the archive reads newest-first.
+
+**3. Add the new article's own archive card**
+
+The new article should also appear in the archive grid (so it's discoverable via filters). Add it as the **second card**, directly after the card from step 2, following the same pattern.
+
+**4. Add the category filter if it's a new type**
+
+The filter bar lives in `.archive-cat-filters`. Current categories: `all`, `analysis`, `preview`, `review`, `women`, `finance`. If the new article introduces a new type, add a `<button>` for it and add a corresponding `.archive-card.cat-{new}` CSS rule in the `<style>` block (follow the pattern of the existing `cat-analysis` or `cat-finance` rules).
+
+**5. Bump the archive heading count**
+
+`<div class="archive-heading-left">More from the archive · N articles</div>` — increment N by 1.
+
+**6. Bump the hero stat counter**
+
+`<span class="hero-stat-value">NN</span>` under the "Written pieces" label — increment by 1.
+
+**7. Update the footer "Read" links**
+
+Add the new article as the first link in the `foot-col` "Read" column, and drop the oldest link if the list exceeds four items (keeps the footer tidy).
+
+### Summary table
+
+| What | Where in `index.html` | Action |
+|---|---|---|
+| Latest spotlight | `.latest-card` `<a>` | Replace entirely with new article |
+| Previous latest → archive | First card in `.archive-grid` | Insert new `archive-card` |
+| New article → archive | Second card in `.archive-grid` | Insert new `archive-card` |
+| Category filter | `.archive-cat-filters` | Add button if new category |
+| Archive heading count | `.archive-heading-left` | +1 |
+| Hero stat | `.hero-stat-value` (Written pieces) | +1 |
+| Footer links | `.foot-col` "Read" | Prepend new link, trim to 4 |
+
+All seven changes belong in **one commit** alongside the new article file itself.
+
+---
+
+*Document version: 1.1 · Generated during handoff from Claude (web) to Claude Code. If you're reading this months later and some context feels stale, ask the project owner whether it still holds.*
