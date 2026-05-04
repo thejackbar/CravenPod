@@ -774,6 +774,58 @@
   .bill-table tr.total-row td { border-top: 1px solid var(--rule); border-bottom: none; padding-top: 16px; font-weight: 600; }
   .bill-table tr.total-row .season-label { color: var(--gold); }
   .bill-table tr.total-row .extra { color: var(--gold); font-size: 15px; }
+  /* ── Comparison strip ── */
+  .compare-strip-head {
+    margin-top: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    margin-bottom: 12px;
+  }
+  .compare-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  .compare-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--rule);
+    border-radius: var(--r-sm);
+    padding: 14px 12px 12px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .compare-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .compare-card-emoji { font-size: 22px; line-height: 1; margin-bottom: 6px; }
+  .compare-card-count {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.03em;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+  .compare-card-label {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    color: var(--ink-mute);
+    margin-top: 4px;
+    line-height: 1.3;
+  }
+  .compare-card-unit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: rgba(255,255,255,0.2);
+    margin-top: 5px;
+    letter-spacing: 0.05em;
+  }
   .bill-projection {
     margin-top: 20px;
     padding: 16px 14px;
@@ -1513,6 +1565,15 @@
 
   function fmtR(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
 
+  const COMPARE_ITEMS = [
+    { emoji: '⛽', label: 'full tanks of petrol',   unitPrice: 73,   unitLabel: '~£73 / 50L tank'    },
+    { emoji: '🍺', label: 'pints at the pub',        unitPrice: 6.50, unitLabel: '~£6.50 / pint'      },
+    { emoji: '🐔', label: 'whole chickens',          unitPrice: 6.50, unitLabel: '~£6.50 / bird'      },
+    { emoji: '🥚', label: 'dozen eggs',              unitPrice: 3.50, unitLabel: '~£3.50 / dozen'     },
+    { emoji: '🥛', label: 'pints of milk',           unitPrice: 0.75, unitLabel: '~£0.75 / pint'      },
+    { emoji: '🏠', label: "days of London rent",     unitPrice: 90,   unitLabel: '~£90/day avg London' },
+  ];
+
   // Full season timeline. step = confirmed % change applied TO get to this season vs prior year.
   // approx: true = calculated from price tables, not a single announced figure.
   // Negative = price cut. Zero = confirmed freeze. null = no confirmed data.
@@ -1594,6 +1655,24 @@
       ? `<div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-mute);margin-top:8px;letter-spacing:0.1em">* Greyed rows = confirmed rise data unavailable. Extra costs calculated from first confirmed rise only.</div>`
       : '';
 
+    const compareCards = totalExtra > 0
+      ? COMPARE_ITEMS.map(item => {
+          const count = totalExtra / item.unitPrice;
+          const display = count >= 10 ? Math.round(count).toLocaleString('en-GB') : count.toFixed(1);
+          return `<div class="compare-card">
+            <div class="compare-card-emoji">${item.emoji}</div>
+            <div class="compare-card-count">${display}</div>
+            <div class="compare-card-label">${item.label}</div>
+            <div class="compare-card-unit">${item.unitLabel}</div>
+          </div>`;
+        }).join('')
+      : '';
+
+    const compareStrip = totalExtra > 0
+      ? `<div class="compare-strip-head">That extra cost is also...</div>
+         <div class="compare-strip">${compareCards}</div>`
+      : '';
+
     billResults.innerHTML = `
       <table class="bill-table">
         <thead>
@@ -1618,7 +1697,15 @@
       <div class="bill-projection">
         <div class="bill-projection-label">If 3.5% continues into 2027/28<br>your price would reach</div>
         <div class="bill-projection-value">${fmtR(projection2728)}</div>
-      </div>`;
+      </div>
+      ${compareStrip}`;
+
+    // Stagger card animations
+    requestAnimationFrame(() => {
+      billResults.querySelectorAll('.compare-card').forEach((card, i) => {
+        setTimeout(() => card.classList.add('visible'), i * 60);
+      });
+    });
   }
 
   if (billYear)  billYear.addEventListener('change', updateBill);
