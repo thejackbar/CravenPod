@@ -1,0 +1,31 @@
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: posts
+    label: Posts
+    path: posts
+    type: collection
+    format: raw
+    subfolders: true
+    view:
+      fields: [name]
+    fields:
+      - name: body
+        label: Content
+        type: code
+        options:
+          lang: html
+
+  - name: homepage
+    label: Homepage
+    path: index.html
+    type: file
+    format: raw
+    fields:
+      - name: body
+        label: Content
+        type: code
+        options:
+          lang: html
