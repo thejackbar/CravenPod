@@ -148,7 +148,11 @@ a{color:inherit}
 .race-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,110,0.45),transparent);margin:6px 0;position:relative}
 .race-divider::after{content:'EUROPA LEAGUE LINE';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(6,7,15,0.95);padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.25em;color:var(--gold)}
 .race-note{margin-top:24px;padding:20px 24px;background:var(--glass);border:1px solid var(--glass-edge);border-radius:var(--r-md);font-family:'Bricolage Grotesque',sans-serif;font-size:15px;line-height:1.5;color:var(--ink-mute)}
-.fixture-card{background:rgba(255,255,255,0.04);border:1px solid var(--glass-edge);border-radius:var(--r-md);padding:16px 20px;max-width:540px;margin:32px auto 0;transition:border-color .25s}
+.fixtures-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:32px 0 0}
+@media(max-width:700px){.fixtures-grid{grid-template-columns:1fr}}
+.fixtures-day-label{grid-column:span 2;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);padding:12px 0 4px;border-top:1px solid rgba(212,175,110,0.2)}
+.fixtures-day-label:first-child{border-top:none;padding-top:0}
+.fixture-card{background:rgba(255,255,255,0.04);border:1px solid var(--glass-edge);border-radius:var(--r-md);padding:16px 20px;transition:border-color .25s}
 .fixture-card.fx-fulham{background:rgba(90,140,112,0.10);border-color:rgba(110,165,133,0.30)}
 .fixture-matchup{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .fx-team{display:flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:14px;flex:1;min-width:0}
@@ -525,42 +529,166 @@ a{color:inherit}
     <h2 class="sec-title" style="max-width:none">The European table: <em>within reach.</em></h2>
     <p class="sec-lede" style="max-width:720px;margin-bottom:32px">A single point separates Fulham from 7th. Four points separate them from 6th, which Bournemouth currently occupy. With nine points still to play for, winning today takes Fulham to 51 and puts them within one point of a Europa League place. Losing almost certainly ends it. Set today's scoreline and see what it means.</p>
 
-    <!-- Single fixture predictor -->
-    <div class="fixture-card fx-fulham">
-      <div class="fixture-matchup">
-        <div class="fx-team">
-          <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" width="22" height="22" alt="Fulham" loading="lazy">
-          <span>Fulham</span>
-        </div>
-        <div class="fx-score">
-          <div class="fx-score-spin">
-            <button class="fx-score-btn" id="ful-up">+</button>
-            <span class="fx-score-num unset" id="ful-score">–</span>
-            <button class="fx-score-btn" id="ful-dn">−</button>
+    <!-- GW36 fixture cards — all teams in European contention -->
+    <div class="fixtures-grid" id="race-fixtures-grid">
+
+      <div class="fixtures-day-label">Saturday 9 May 2026</div>
+
+      <div class="fixture-card fx-fulham" data-fix="0">
+        <div class="fixture-matchup">
+          <div class="fx-team"><img src="https://resources.premierleague.com/premierleague/badges/t54.svg" width="22" height="22" alt="Fulham" loading="lazy"><span>Fulham</span></div>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="0" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="0" data-side="h">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="0" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="0" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="0" data-side="a">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="0" data-side="a">−</button>
+            </div>
           </div>
-          <span class="fx-score-dash">:</span>
-          <div class="fx-score-spin">
-            <button class="fx-score-btn" id="bou-up">+</button>
-            <span class="fx-score-num unset" id="bou-score">–</span>
-            <button class="fx-score-btn" id="bou-dn">−</button>
-          </div>
+          <div class="fx-team fx-away"><img src="https://resources.premierleague.com/premierleague/badges/t91.svg" width="22" height="22" alt="Bournemouth" loading="lazy"><span>Bournemouth</span></div>
         </div>
-        <div class="fx-team fx-away">
-          <img src="https://resources.premierleague.com/premierleague/badges/t91.svg" width="22" height="22" alt="Bournemouth" loading="lazy">
-          <span>Bournemouth</span>
-        </div>
+        <div class="fix-date">Craven Cottage · 15:00 BST · Race teams: Fulham, Bournemouth</div>
       </div>
-      <div class="fix-date">Sat 9 May · Craven Cottage · 15:00 BST</div>
+
+      <div class="fixture-card" data-fix="1">
+        <div class="fixture-matchup">
+          <div class="fx-team"><img src="https://resources.premierleague.com/premierleague/badges/t14.svg" width="22" height="22" alt="Liverpool" loading="lazy"><span>Liverpool</span></div>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="1" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="1" data-side="h">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="1" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="1" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="1" data-side="a">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="1" data-side="a">−</button>
+            </div>
+          </div>
+          <div class="fx-team fx-away"><img src="https://resources.premierleague.com/premierleague/badges/t8.svg" width="22" height="22" alt="Chelsea" loading="lazy"><span>Chelsea</span></div>
+        </div>
+        <div class="fix-date">Anfield · 12:30 BST · Race team: Chelsea (away)</div>
+      </div>
+
+      <div class="fixture-card" data-fix="2">
+        <div class="fixture-matchup">
+          <div class="fx-team"><img src="https://resources.premierleague.com/premierleague/badges/t36.svg" width="22" height="22" alt="Brighton" loading="lazy"><span>Brighton</span></div>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="2" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="2" data-side="h">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="2" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="2" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="2" data-side="a">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="2" data-side="a">−</button>
+            </div>
+          </div>
+          <div class="fx-team fx-away"><img src="https://resources.premierleague.com/premierleague/badges/t39.svg" width="22" height="22" alt="Wolves" loading="lazy"><span>Wolves</span></div>
+        </div>
+        <div class="fix-date">Amex Stadium · 15:00 BST · Race team: Brighton (home)</div>
+      </div>
+
+      <div class="fixture-card" data-fix="3">
+        <div class="fixture-matchup">
+          <div class="fx-team"><img src="https://resources.premierleague.com/premierleague/badges/t56.svg" width="22" height="22" alt="Sunderland" loading="lazy"><span>Sunderland</span></div>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="3" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="3" data-side="h">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="3" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="3" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="3" data-side="a">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="3" data-side="a">−</button>
+            </div>
+          </div>
+          <div class="fx-team fx-away"><img src="https://resources.premierleague.com/premierleague/badges/t1.svg" width="22" height="22" alt="Man United" loading="lazy"><span>Man United</span></div>
+        </div>
+        <div class="fix-date">Stadium of Light · 15:00 BST · Race team: Sunderland (home)</div>
+      </div>
+
+      <div class="fixture-card" data-fix="4">
+        <div class="fixture-matchup">
+          <div class="fx-team"><img src="https://resources.premierleague.com/premierleague/badges/t43.svg" width="22" height="22" alt="Man City" loading="lazy"><span>Man City</span></div>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="4" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="4" data-side="h">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="4" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="4" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="4" data-side="a">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="4" data-side="a">−</button>
+            </div>
+          </div>
+          <div class="fx-team fx-away"><img src="https://resources.premierleague.com/premierleague/badges/t94.svg" width="22" height="22" alt="Brentford" loading="lazy"><span>Brentford</span></div>
+        </div>
+        <div class="fix-date">Etihad Stadium · 17:30 BST · Race team: Brentford (away)</div>
+      </div>
+
+      <div class="fixtures-day-label">Sunday 10 May 2026</div>
+
+      <div class="fixture-card" data-fix="5">
+        <div class="fixture-matchup">
+          <div class="fx-team"><img src="https://resources.premierleague.com/premierleague/badges/t31.svg" width="22" height="22" alt="Crystal Palace" loading="lazy"><span>Crystal Palace</span></div>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="5" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="5" data-side="h">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="5" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="5" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="5" data-side="a">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="5" data-side="a">−</button>
+            </div>
+          </div>
+          <div class="fx-team fx-away"><img src="https://resources.premierleague.com/premierleague/badges/t11.svg" width="22" height="22" alt="Everton" loading="lazy"><span>Everton</span></div>
+        </div>
+        <div class="fix-date">Selhurst Park · 14:00 BST · Race team: Everton (away)</div>
+      </div>
+
+      <div class="fixture-card" data-fix="6">
+        <div class="fixture-matchup">
+          <div class="fx-team"><img src="https://resources.premierleague.com/premierleague/badges/t17.svg" width="22" height="22" alt="Nott'm Forest" loading="lazy"><span>Nott'm Forest</span></div>
+          <div class="fx-score">
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="6" data-side="h">+</button>
+              <span class="fx-score-num unset" data-fix="6" data-side="h">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="6" data-side="h">−</button>
+            </div>
+            <span class="fx-score-dash">:</span>
+            <div class="fx-score-spin">
+              <button class="fx-score-up fx-score-btn" data-fix="6" data-side="a">+</button>
+              <span class="fx-score-num unset" data-fix="6" data-side="a">–</span>
+              <button class="fx-score-dn fx-score-btn" data-fix="6" data-side="a">−</button>
+            </div>
+          </div>
+          <div class="fx-team fx-away"><img src="https://resources.premierleague.com/premierleague/badges/t4.svg" width="22" height="22" alt="Newcastle" loading="lazy"><span>Newcastle</span></div>
+        </div>
+        <div class="fix-date">City Ground · 14:00 BST · Race team: Newcastle (away)</div>
+      </div>
+
     </div>
 
-    <!-- Live table -->
-    <div class="race-table" id="race-table-live">
-      <div class="race-header">
-        <span></span><span>Club</span><span></span><span style="text-align:right">GD</span><span style="text-align:right">Pts</span>
-      </div>
-    </div>
+    <!-- Dynamic table — rendered by JS -->
+    <div id="race-table-live"></div>
 
-    <p class="race-note">Standings correct to GW35 (35 games played). Only Fulham and Bournemouth points and GD update when you set a scoreline. Other teams' results are not yet known. Three games remain for most sides.</p>
+    <p class="race-note">Standings correct to GW35. Set any scoreline to see how that result shifts the European race table. Teams not in the race (Liverpool, Wolves, Man United, Man City, Crystal Palace, Forest) do not appear in the table but their results affect the race teams shown.</p>
   </div>
 </section>
 
@@ -1127,31 +1255,45 @@ a{color:inherit}
 
   /* ====== RACE TABLE PREDICTOR ====== */
   const BASE_TABLE = [
-    { name: 'Aston Villa',    pts: 58, gd: 4,  gs: 48, ga: 44, isFul: false, isBou: false },
-    { name: 'AFC Bournemouth',pts: 52, gd: 3,  gs: 55, ga: 52, isFul: false, isBou: true  },
-    { name: 'Brentford',      pts: 51, gd: 6,  gs: 52, ga: 46, isFul: false, isBou: false },
-    { name: 'Brighton',       pts: 50, gd: 7,  gs: 49, ga: 42, isFul: false, isBou: false },
-    { name: 'Chelsea',        pts: 48, gd: 6,  gs: 54, ga: 48, isFul: false, isBou: false },
-    { name: 'Everton',        pts: 48, gd: 0,  gs: 44, ga: 44, isFul: false, isBou: false },
+    { name: 'Aston Villa',    pts: 58, gd:  4, gs: 48, ga: 44, isFul: false, isBou: false },
+    { name: 'AFC Bournemouth',pts: 52, gd:  3, gs: 55, ga: 52, isFul: false, isBou: true  },
+    { name: 'Brentford',      pts: 51, gd:  6, gs: 52, ga: 46, isFul: false, isBou: false },
+    { name: 'Brighton',       pts: 50, gd:  7, gs: 49, ga: 42, isFul: false, isBou: false },
+    { name: 'Chelsea',        pts: 48, gd:  6, gs: 54, ga: 48, isFul: false, isBou: false },
+    { name: 'Everton',        pts: 48, gd:  0, gs: 44, ga: 44, isFul: false, isBou: false },
     { name: 'Fulham',         pts: 48, gd: -5, gs: 44, ga: 49, isFul: true,  isBou: false },
     { name: 'Sunderland',     pts: 47, gd: -9, gs: 37, ga: 46, isFul: false, isBou: false },
     { name: 'Newcastle',      pts: 45, gd: -2, gs: 49, ga: 51, isFul: false, isBou: false },
   ];
 
-  let fulScore = null;
-  let bouScore = null;
+  /* Maps each fixture index to which race-table teams are affected */
+  const FIXTURE_MAP = [
+    { homeRace: 'Fulham',         awayRace: 'AFC Bournemouth' }, /* 0 */
+    { homeRace: null,             awayRace: 'Chelsea'         }, /* 1 */
+    { homeRace: 'Brighton',       awayRace: null              }, /* 2 */
+    { homeRace: 'Sunderland',     awayRace: null              }, /* 3 */
+    { homeRace: null,             awayRace: 'Brentford'       }, /* 4 */
+    { homeRace: null,             awayRace: 'Everton'         }, /* 5 */
+    { homeRace: null,             awayRace: 'Newcastle'       }, /* 6 */
+  ];
+
+  const scores = {};
+  FIXTURE_MAP.forEach((_, i) => { scores[i] = { h: null, a: null }; });
 
   function computeTable() {
     const data = BASE_TABLE.map(t => ({ ...t }));
-    const ful = data.find(t => t.isFul);
-    const bou = data.find(t => t.isBou);
-    if (fulScore !== null && bouScore !== null) {
-      ful.gs += fulScore; ful.ga += bouScore; ful.gd = ful.gs - ful.ga;
-      bou.gs += bouScore; bou.ga += fulScore; bou.gd = bou.gs - bou.ga;
-      if (fulScore > bouScore)      { ful.pts += 3; }
-      else if (fulScore === bouScore){ ful.pts += 1; bou.pts += 1; }
-      else                           { bou.pts += 3; }
-    }
+    FIXTURE_MAP.forEach((fix, i) => {
+      const { h, a } = scores[i];
+      if (h === null || a === null) return;
+      if (fix.homeRace) {
+        const t = data.find(x => x.name === fix.homeRace);
+        if (t) { t.gs += h; t.ga += a; t.gd = t.gs - t.ga; if (h > a) t.pts += 3; else if (h === a) t.pts += 1; }
+      }
+      if (fix.awayRace) {
+        const t = data.find(x => x.name === fix.awayRace);
+        if (t) { t.gs += a; t.ga += h; t.gd = t.gs - t.ga; if (a > h) t.pts += 3; else if (a === h) t.pts += 1; }
+      }
+    });
     return data.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gs - a.gs);
   }
 
@@ -1173,13 +1315,12 @@ a{color:inherit}
       else if (moved < 0) moveHtml = '<span class="race-move dn">&#9660;</span>';
       else                moveHtml = '<span class="race-move eq">–</span>';
 
-      const ptsDelta = (team.isFul || team.isBou) && fulScore !== null && bouScore !== null
-        ? (team.pts - BASE_TABLE.find(t => t.name === team.name).pts)
-        : 0;
+      const basePts  = BASE_TABLE.find(t => t.name === team.name).pts;
+      const ptsDelta = team.pts - basePts;
 
       const rowClass = team.isFul ? 'race-row is-fulham' : team.isBou ? 'race-row is-bou' : 'race-row';
       const gdClass  = team.gd >= 0 ? 'race-gd race-gd--pos' : 'race-gd race-gd--neg';
-      const tag = pos === 6 ? '<span class="race-tag">Europa</span>' : '';
+      const tag   = pos === 6 ? '<span class="race-tag">Europa</span>' : '';
       const delta = ptsDelta > 0 ? `<span class="race-pts-delta">+${ptsDelta}</span>` : '';
 
       html += `<div class="${rowClass}">
@@ -1189,36 +1330,35 @@ a{color:inherit}
         <div class="${gdClass}">${gdStr(team.gd)}</div>
         <div class="race-pts">${team.pts}${delta}</div>
       </div>`;
-
-      if (pos === 6) {
-        html += '<div class="race-divider"></div>';
-      }
+      if (pos === 6) html += '<div class="race-divider"></div>';
     });
-
     container.innerHTML = html;
   }
 
-  function setupScoreSpinner(upId, dnId, scoreId, onUpdate) {
-    const upBtn = document.getElementById(upId);
-    const dnBtn = document.getElementById(dnId);
-    const display = document.getElementById(scoreId);
-    let val = null;
-    upBtn.addEventListener('click', () => {
-      val = (val === null) ? 0 : Math.min(val + 1, 9);
-      display.textContent = val;
-      display.classList.remove('unset');
-      onUpdate(val);
-    });
-    dnBtn.addEventListener('click', () => {
-      if (val === null) return;
-      val = Math.max(val - 1, 0);
-      display.textContent = val;
-      onUpdate(val);
-    });
+  function updateScoreDisplay(fix, side) {
+    const el = document.querySelector(`.fx-score-num[data-fix="${fix}"][data-side="${side}"]`);
+    if (el) { el.textContent = scores[fix][side]; el.classList.remove('unset'); }
   }
 
-  setupScoreSpinner('ful-up', 'ful-dn', 'ful-score', v => { fulScore = v; renderTable(); });
-  setupScoreSpinner('bou-up', 'bou-dn', 'bou-score', v => { bouScore = v; renderTable(); });
+  document.querySelectorAll('.fx-score-up').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const fix = btn.dataset.fix, side = btn.dataset.side;
+      scores[fix][side] = scores[fix][side] === null ? 0 : Math.min(scores[fix][side] + 1, 9);
+      updateScoreDisplay(fix, side);
+      renderTable();
+    });
+  });
+
+  document.querySelectorAll('.fx-score-dn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const fix = btn.dataset.fix, side = btn.dataset.side;
+      if (scores[fix][side] === null) return;
+      scores[fix][side] = Math.max(scores[fix][side] - 1, 0);
+      updateScoreDisplay(fix, side);
+      renderTable();
+    });
+  });
+
   renderTable();
 
   /* ====== POLL ====== */
