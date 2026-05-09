@@ -143,14 +143,28 @@ body::before {
   isolation: isolate;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -2% -2%;
+  background-image: url("https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/6c0dabe7-b12e-463f-bc15-4cd6895f6bbd.jpeg");
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  filter: saturate(0.75) contrast(1.05) brightness(0.72);
+  opacity: 0.55;
+  z-index: -2;
+  pointer-events: none;
+}
+
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 900px 500px at 50% 60%, rgba(6,7,15,0.20) 0%, rgba(6,7,15,0.55) 60%, rgba(6,7,15,0.88) 100%),
-    radial-gradient(ellipse at 90% 10%, rgba(208,0,39,0.22) 0%, transparent 50%),
-    radial-gradient(ellipse at 10% 90%, rgba(90,140,112,0.10) 0%, transparent 50%);
+    radial-gradient(ellipse 1100px 540px at 50% 55%, rgba(6,7,15,0.22) 0%, rgba(6,7,15,0.54) 60%, rgba(6,7,15,0.88) 100%),
+    linear-gradient(180deg, rgba(6,7,15,0.64) 0%, rgba(6,7,15,0.08) 25%, rgba(6,7,15,0.08) 70%, rgba(6,7,15,0.94) 100%),
+    radial-gradient(ellipse at 88% 12%, rgba(208,0,39,0.20) 0%, transparent 50%);
   z-index: -1;
   pointer-events: none;
 }
@@ -841,9 +855,9 @@ body::before {
   <section class="section">
     <div class="section-kicker">§ 01 · The Story</div>
     <h2>The moment the season <em>slipped away</em>.</h2>
-    <p>There will be a version of this game that lives long in the memory, and not for the right reasons. Bournemouth arrived at Craven Cottage with a red card on their books, reduced to ten men and facing a Fulham side that had every reason to believe this was their afternoon. It was not. By the time Joachim Andersen was dismissed, the numerical advantage was gone, the momentum had shifted, and Bournemouth needed only one moment to punish a ten-man Fulham side that could not find the goal their play had deserved.</p>
-    <p>The result was cruel in its simplicity. One goal. One red card on each side. A winner that came against the run of play after Andersen's sending-off levelled the numbers. And a European dream that had flickered at Craven Cottage for weeks was finally, decisively, extinguished.</p>
-    <p>Emile Smith Rowe had looked lively in the first half, Tom Cairney was at the heart of everything good in Fulham's build-up, and Kevin's return from the sidelines gave the game a brightness that felt, for a spell, like it might be enough. It wasn't. The window had opened, and Fulham couldn't climb through it.</p>
+    <p>There will be a version of this game that lives long in the memory, and not for the right reasons. Bournemouth arrived at Craven Cottage on a 16-game unbeaten run, chasing Champions League football, and they left with three points that Fulham had all but handed to them. Ryan Christie's red card in the 41st minute gave the hosts a numerical advantage they desperately needed. Joachim Andersen's dismissal in first-half stoppage time gave it straight back. Eight minutes later, Rayan Cherki punished the chaos and the dream was over.</p>
+    <p>The result was cruel in its simplicity. One goal. One red card on each side, both arriving inside the first half. A deflected winner against ten-man Fulham that Bournemouth barely had to construct. And a European ambition that had flickered at Craven Cottage for much of the spring was finally, decisively, extinguished by a side going in the opposite direction.</p>
+    <p>Tom Cairney was at the heart of everything good in Fulham's build-up, Antonee Robinson had one of his better afternoons of the run-in, and Kevin's return from the sidelines added genuine brightness. None of it mattered once Andersen walked. The window was open; Fulham could not climb through it.</p>
   </section>
 
   <hr class="rule">
@@ -852,15 +866,15 @@ body::before {
   <section class="section">
     <div class="section-kicker">§ 02 · The Cards</div>
     <h2>One advantage created, <em>one thrown away</em>.</h2>
-    <p>The tale of two cards is the story of this game. Bournemouth had a player sent off, handing Fulham the numerical superiority this occasion demanded. The crowd sensed it. The opportunity was real. Then came Andersen's dismissal, and in the space of a few seconds, everything changed.</p>
-    <p>Andersen's red card was the turning point in the most literal sense. The moment the numbers returned to parity, Bournemouth regrouped with the efficiency of a side that knew exactly what they were doing. They sat deeper, stayed compact, and waited. The one chance they manufactured was the one they took.</p>
+    <p>Ryan Christie went in the 41st minute, a VAR-reviewed straight red for a dangerous sliding challenge on Timothy Castagne. It was the moment Craven Cottage came alive. Fulham had eleven men, Bournemouth ten, and the European place they had been chasing all spring was suddenly back within touching distance. The crowd felt it. The players must have felt it. Then came first-half stoppage time, and Andersen's challenge on Adrien Truffert, and a second VAR review, and another red card. Numbers level again. Momentum evaporated.</p>
+    <p>Andersen's dismissal was the turning point in the most literal sense. The moment parity was restored, Bournemouth reorganised with the calm efficiency of a side on a 16-game unbeaten run. They sat compact, conceded almost nothing in behind, and waited for their moment. When it came, they took it. That is what teams who know how to win do.</p>
 
     <div class="info-card danger-card">
       <div class="card-label">Season Over for Andersen</div>
-      <p>Joachim Andersen's sending-off carries consequences that stretch beyond this afternoon. With two games remaining, a suspension will rule him out for the rest of the season. One of Fulham's most consistent performers across 2025-26 will watch the final fixtures from the stands. A painful postscript to a difficult day.</p>
+      <p>Joachim Andersen's sending-off carries consequences that stretch beyond this afternoon. A suspension will rule him out for the two remaining games, meaning one of Fulham's most consistent performers across 2025-26 watches the final fixtures from the stands. A painful postscript to a desperate day.</p>
     </div>
 
-    <p>The frustration is not simply that Andersen was dismissed. It is what the red card represented: Fulham had been given an advantage, a genuine opportunity to force a result that might still have made the top ten mathematically interesting, and they allowed the game's momentum to flip entirely. Silva's response was to withdraw Smith Rowe immediately, reshaping the team around the numerical reality. Understandable. Still painful to watch.</p>
+    <p>The frustration is not simply that Andersen was dismissed. It is the timing, coming in the four minutes of stoppage time added after Christie's card, with Fulham yet to properly exploit the advantage they had been handed. Silva's immediate response was to withdraw Smith Rowe and reshape the side around the new numerical reality. Pragmatic, yes. But it also removed the one player carrying an attacking threat from an advanced position, and with it went Fulham's best hope of scoring first.</p>
 
     <div class="pullquote">
       <p>"We had the man advantage and we have to be better in those moments. To then give a red card away, it changes everything."</p>
@@ -879,51 +893,44 @@ body::before {
     <div class="timeline">
 
       <div class="timeline-item" onclick="toggleTimeline(this)">
-        <div class="timeline-minute">Early ·</div>
-        <div class="timeline-title">Kevin's return lights up the Cottage</div>
-        <div class="timeline-body">A genuinely bright moment in the opening exchanges. Kevin's return to the matchday squad had been anticipated, and from the first time he got on the ball it was clear his absence had been felt. Sharp in tight spaces, willing to carry the ball forward, and showing no signs of rust. The kind of return that makes you wonder what the previous weeks might have looked like with him available.</div>
-        <div class="timeline-toggle">+ show more</div>
-      </div>
-
-      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
         <div class="timeline-minute">First half ·</div>
-        <div class="timeline-title">Smith Rowe and Cairney pull the strings</div>
-        <div class="timeline-body">Emile Smith Rowe produced some of the most encouraging work of his Fulham career in the first half, combining well with Cairney through the lines. Cairney himself was excellent, dropping deep to receive, turning quickly, and driving play forward with a purpose that made Fulham look like a team that knew what it wanted to do. The engine was running. The goal simply would not come.</div>
+        <div class="timeline-title">Cairney and Robinson set the tone</div>
+        <div class="timeline-body">Fulham started with purpose. Cairney was everywhere in the first half, receiving between the lines, turning sharply, and driving forward with a clarity of thought the occasion demanded. Robinson, too, had one of his better afternoons of the run-in on the left, getting forward with intent and providing an outlet Fulham used well before the game was disrupted. On paper, the first half was Fulham's; in reality, the goal that should have come from it never did.</div>
         <div class="timeline-toggle">+ show more</div>
       </div>
 
       <div class="timeline-item card-moment" onclick="toggleTimeline(this)">
-        <div class="timeline-minute">Red card ·</div>
-        <div class="timeline-title">Bournemouth reduced to ten men</div>
-        <div class="timeline-body">A moment that had Craven Cottage buzzing. Bournemouth lost a player to a straight red, handing Fulham eleven against ten and a genuine platform to take control of the game. The noise in the ground lifted. The sense was of a game about to be won.</div>
+        <div class="timeline-minute">41' ·</div>
+        <div class="timeline-title">Christie red: Bournemouth down to ten</div>
+        <div class="timeline-body">Ryan Christie was shown a straight red following a VAR review for a dangerous sliding challenge on Timothy Castagne. High, hard, no contact with the ball. The decision was correct, and it handed Fulham an eleven-versus-ten advantage with the clock still well under the hour. Craven Cottage lifted. The afternoon felt like it was tilting in Fulham's favour. It was not tilting for long.</div>
         <div class="timeline-toggle">+ show more</div>
       </div>
 
       <div class="timeline-item card-moment" onclick="toggleTimeline(this)">
-        <div class="timeline-minute">Red card ·</div>
-        <div class="timeline-title">Andersen sees red: back to ten each</div>
-        <div class="timeline-body">The moment that defined the afternoon. Joachim Andersen, one of Fulham's most important players this season, was sent off and the numerical advantage disappeared in an instant. Whatever had been building, whatever the crowd had believed was coming, was suddenly irrelevant. Bournemouth reorganised. Fulham had to reshape. Silva immediately withdrew Smith Rowe to restore some defensive structure.</div>
+        <div class="timeline-minute">45+6' ·</div>
+        <div class="timeline-title">Andersen red: advantage squandered before half-time</div>
+        <div class="timeline-body">In the sixth minute of first-half stoppage time, Joachim Andersen went in recklessly on Adrien Truffert and VAR confirmed another straight red. The numerical advantage had lasted barely five minutes. Bournemouth reorganised at the break. Silva withdrew Smith Rowe to shore things up. The Fulham that emerged for the second half looked defensively solid and offensively blunted — which, when you need a goal, is precisely the wrong trade-off.</div>
         <div class="timeline-toggle">+ show more</div>
       </div>
 
       <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
-        <div class="timeline-minute">Goal ·</div>
-        <div class="timeline-title">Bournemouth score the only goal</div>
-        <div class="timeline-body">Against the run of play, and against a ten-man Fulham side still adjusting to the numerical reality, Bournemouth found the net. It was the kind of goal that comes when a team is organised, patient, and clinical with their single chance. Fulham had created more. It did not matter. 1-0 Bournemouth, and the game was effectively done.</div>
+        <div class="timeline-minute">53' ·</div>
+        <div class="timeline-title">Rayan — the only goal, deflected past Leno</div>
+        <div class="timeline-body">Rayan collected the ball outside the box and struck a powerful right-footed shot from roughly 25 yards. It took a deflection off Calvin Bassey on its way through, wrong-footing Leno, who might have been better positioned had the ball travelled true. The 19-year-old January signing, brought in for around £34 million, now has five Premier League goals in 13 appearances. He barely had to work for this one. That is the part that stings.</div>
         <div class="timeline-toggle">+ show more</div>
       </div>
 
       <div class="timeline-item" onclick="toggleTimeline(this)">
         <div class="timeline-minute">Late ·</div>
-        <div class="timeline-title">Bobb and King enter; King strikes the bar</div>
-        <div class="timeline-body">Oscar Bobb and Josh King came on with Fulham chasing the game, and both made their presence felt. King in particular came agonisingly close, striking the crossbar with a shot that had Craven Cottage on its feet. It would have been a remarkable equaliser, the kind of moment that rescues not just a result but a narrative. It didn't go in. The woodwork denied Fulham the point that might have kept something alive.</div>
+        <div class="timeline-title">Kevin introduced; Bobb and King chase the game</div>
+        <div class="timeline-body">Kevin came on and looked bright from the moment he got the ball, which only reinforced the question of why the return from his absence had not come sooner. Oscar Bobb and Josh King were also introduced as Fulham chased an equaliser, and both showed the urgency the situation demanded. The Cottage was loud again. The game was not, however, quite dead.</div>
         <div class="timeline-toggle">+ show more</div>
       </div>
 
-      <div class="timeline-item" onclick="toggleTimeline(this)">
-        <div class="timeline-minute">90' ·</div>
-        <div class="timeline-title">Full time, 0-1</div>
-        <div class="timeline-body">The final whistle confirmed what the afternoon had delivered: a 1-0 defeat to a ten-man Bournemouth side who had held their nerve better than the hosts. The European dream is over. The top ten finish is drifting. Two games remain.</div>
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">90+' ·</div>
+        <div class="timeline-title">King hits the crossbar; Bobb goes close</div>
+        <div class="timeline-body">Josh King struck the crossbar with a shot that would have been one of the goals of Fulham's season. Bobb also went close. The dying minutes produced the sort of frantic pressure that should have come sixty minutes earlier, and the woodwork denied what the afternoon's performance had not quite deserved. The final whistle ended it. 0-1 Bournemouth. European dream over.</div>
         <div class="timeline-toggle">+ show more</div>
       </div>
 
@@ -936,15 +943,33 @@ body::before {
   <section class="section">
     <div class="section-kicker">§ 04 · By the Numbers</div>
     <h2>More of everything, <em>except the goal</em>.</h2>
-    <p>Fulham will have done enough on the statistics to feel aggrieved. A home side playing against ten men for a portion of the game, generating chances, striking the crossbar, and losing 1-0 to a side that scored with their clearest opportunity: the numbers tell a story of a game that should have gone differently.</p>
+    <p>The statistics up to half-time tell the story of a game Fulham were winning on paper while losing in reality. Possession 58-42 in Fulham's favour. Shots 7-3 to Fulham. An xG of 0.56 to Bournemouth's 0.13. The hosts created more, pressed more, and looked the better side for stretches — yet they conceded a deflected goal, lost a man, and went in at the break trailing. Football's cruelty rarely arranges itself this neatly.</p>
 
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-label">Result</div>
+        <div class="stat-label">Possession (HT)</div>
         <div class="stat-values">
-          <span class="stat-home">0</span>
+          <span class="stat-home">58%</span>
+          <span class="stat-sep">·</span>
+          <span class="stat-away">42%</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Shots (HT)</div>
+        <div class="stat-values">
+          <span class="stat-home">7</span>
           <span class="stat-sep">–</span>
-          <span class="stat-away">1</span>
+          <span class="stat-away">3</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">xG (HT)</div>
+        <div class="stat-values">
+          <span class="stat-home">0.56</span>
+          <span class="stat-sep">·</span>
+          <span class="stat-away">0.13</span>
         </div>
       </div>
 
@@ -956,27 +981,13 @@ body::before {
           <span class="stat-away">1</span>
         </div>
       </div>
-
-      <div class="stat-card">
-        <div class="stat-label">Crossbar Strikes</div>
-        <div class="stat-values">
-          <span class="stat-home">1</span>
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <div class="stat-label">Games Remaining</div>
-        <div class="stat-values">
-          <span style="color:var(--ink)">2</span>
-        </div>
-      </div>
     </div>
 
-    <p>The crossbar strike from King in the closing stages is the image that will stay with supporters. An inch lower and the season has a different ending, at least for this afternoon. Instead, the woodwork held, Bournemouth held, and the three points boarded the coach back to the south coast.</p>
+    <p>King's crossbar strike deep into stoppage time is the image that will stay with supporters. An inch lower and there is a different conversation to be had about this afternoon. Instead, the woodwork held, Bournemouth's ten men held, and the three points headed back to the south coast for a side now 16 games unbeaten in the league.</p>
 
     <div class="info-card">
       <div class="card-label">The Lost Opportunity</div>
-      <p>Fulham had a man advantage. Fulham had the crowd. Fulham had the chances. Losing 1-0 to a ten-man side at home is the sort of result that defines a run-in, and rarely in a positive way. The gap to the top ten grows harder to close with only two fixtures to play.</p>
+      <p>Fulham had the man advantage, the crowd, the xG, and the possession. Losing 1-0 to a ten-man side at home on a deflected goal from a 19-year-old making his name in English football is the sort of result that defines a run-in for all the wrong reasons. The gap to the top ten grows harder to close with two fixtures to play.</p>
     </div>
   </section>
 
@@ -986,8 +997,9 @@ body::before {
   <section class="section">
     <div class="section-kicker">§ 05 · The Bigger Picture</div>
     <h2>Another poor end to the season. <em>A familiar pattern emerging.</em></h2>
-    <p>There is a conversation that needs to happen about how Fulham finish seasons under Marco Silva. It is becoming a pattern: a promising mid-season run, European football within reach or at least within view, and then a collapse in form when the games matter most. This is not a new story at Craven Cottage. It is, however, getting harder to dismiss as coincidence.</p>
-    <p>The European dream had been real, at least for a spell. Going into this game, the numbers were still alive. After it, they are not. With two matches left, Wolves away next week and Newcastle at home on the final day, the task now is simply to finish with some dignity rather than something to celebrate.</p>
+    <p>There is a conversation that needs to happen about how Fulham finish seasons under Marco Silva. It is becoming a pattern: a promising mid-season run, European football within reach or at least within view, and then a collapse in form when the games matter most. This is not a new story at Craven Cottage. It is, however, getting harder to dismiss as coincidence, and harder for supporters to absorb with each passing May.</p>
+    <p>The European dream had been real, at least for a spell. Bournemouth, for context, sit in sixth on the back of that 16-game unbeaten run, with a squad built around players like Rayan, the teenager they paid £34 million for in January. That is the level Fulham were trying to compete with. The gap in trajectory, not just in table position, is worth sitting with.</p>
+    <p>Going into this game, the numbers were still alive. After it, they are not. With two matches left, Wolves away next week and Newcastle at home on the final day, the task now is simply to finish with some dignity rather than something to celebrate.</p>
 
     <table class="drought-table">
       <thead>
@@ -1049,17 +1061,16 @@ body::before {
   <!-- §06 The Positives -->
   <section class="section">
     <div class="section-kicker">§ 06 · The Positives</div>
-    <h2>Cairney, Kevin, and <em>reasons not to give up</em>.</h2>
-    <p>It would be wrong to leave this without acknowledging what worked, because some of it genuinely did. Tom Cairney was outstanding: a performance that reminded the Cottage of exactly what a fit and confident Cairney looks like in Fulham colours. He covered ground, he linked play, he competed for second balls, and he did everything a central midfielder should do in a home game that demanded leadership from the engine room. His was the best individual performance in a white shirt today.</p>
-    <p>Kevin's return was equally welcome, and he looked sharp throughout his time on the pitch. A player who had been absent long enough for his absence to be felt, and who came back with the kind of energy and directness that had clearly been missed. Whether he can maintain that sharpness into the final two games will be important.</p>
+    <h2>Cairney, Robinson, Kevin, and <em>reasons not to give up</em>.</h2>
+    <p>It would be wrong to leave this without acknowledging what worked, because some of it genuinely did. Tom Cairney was the best player on the pitch in a white shirt: a performance that reminded the Cottage of what a fit and purposeful Cairney looks like. He covered the ground, linked the play, competed for second balls, and brought a calm to Fulham's build-up that made the first half look coherent even as it failed to produce a goal. In a match that had little to celebrate, his was the performance to point to.</p>
+    <p>Antonee Robinson also deserves a mention. Much improved from his recent showings, he was an active and effective presence on the left throughout the afternoon, getting forward with conviction and providing width that stretched Bournemouth defensively. If Robinson can carry that form into the last two games, Fulham have at least one reliable outlet going forward.</p>
 
     <div class="info-card">
-      <div class="card-label">Smith Rowe Before the Change</div>
-      <p>Emile Smith Rowe was Fulham's brightest attacking outlet in the first half. He pressed with intelligence, found space between the lines, and linked with Cairney in a combination that had Bournemouth uncomfortable. His withdrawal after Andersen's red card was a tactical necessity, not a reflection of his performance. He had done enough to suggest there is a real footballer emerging here.</p>
+      <div class="card-label">Smith Rowe: Bright Enough, No More</div>
+      <p>Emile Smith Rowe showed promise before his withdrawal, and there were flashes of the combination play with Cairney that hinted at something worthwhile. But he was not Fulham's best player, and the improvement that came when he was taken off was partly structural rather than a reflection of his impact. He is a work in progress; today was not his breakthrough.</p>
     </div>
 
-    <p>And then there was King's crossbar. Oscar Bobb and Josh King both came on and both showed intent, and the late flurry gave Craven Cottage something to cheer in the closing minutes even as the result drifted away. King hitting the bar is not a consolation. But it is a reminder that the firepower is there, and that the game was not as dead as the scoreline eventually suggested.</p>
-    <p>These are things to take to Molineux next week. Not just the positive individual performances, but the knowledge that this Fulham side can play when it is set up correctly, and that the talent to win games in the final weeks of the season is available. Whether Silva can unlock it in a different environment is the question that will linger until the final whistle on the last day.</p>
+    <p>Kevin's return was the other genuine positive. He came on and immediately looked sharp, finding pockets of space and showing the kind of direct intent that had been absent from Fulham's attacks since he dropped out. The timing of his return, with two games left, is frustrating in hindsight. Then there was King's crossbar, and Bobb's late pressure, which at least confirmed the bench has something to offer. King hitting the woodwork is not a consolation. But it is a reminder that the firepower is there if Molineux is approached differently.</p>
   </section>
 
 </div><!-- end article-body -->
@@ -1111,11 +1122,11 @@ body::before {
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-cairney"></div></div>
 
-        <button class="poll-btn" data-poll="potm" data-choice="reed" onclick="castVote('potm','reed')">
-          <span class="poll-btn-label">Harrison Reed</span>
-          <span class="poll-pct" id="potm-pct-reed">0%</span>
+        <button class="poll-btn" data-poll="potm" data-choice="lukic" onclick="castVote('potm','lukic')">
+          <span class="poll-btn-label">Saša Lukić</span>
+          <span class="poll-pct" id="potm-pct-lukic">0%</span>
         </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-reed"></div></div>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-lukic"></div></div>
 
         <button class="poll-btn" data-poll="potm" data-choice="esr" onclick="castVote('potm','esr')">
           <span class="poll-btn-label">Emile Smith Rowe</span>
@@ -1123,23 +1134,29 @@ body::before {
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-esr"></div></div>
 
-        <button class="poll-btn" data-poll="potm" data-choice="kevin" onclick="castVote('potm','kevin')">
-          <span class="poll-btn-label">Kevin</span>
-          <span class="poll-pct" id="potm-pct-kevin">0%</span>
-        </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-kevin"></div></div>
-
         <button class="poll-btn" data-poll="potm" data-choice="wilson" onclick="castVote('potm','wilson')">
           <span class="poll-btn-label">Harry Wilson</span>
           <span class="poll-pct" id="potm-pct-wilson">0%</span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-wilson"></div></div>
 
-        <button class="poll-btn" data-poll="potm" data-choice="jimenez" onclick="castVote('potm','jimenez')">
-          <span class="poll-btn-label">Raúl Jiménez</span>
-          <span class="poll-pct" id="potm-pct-jimenez">0%</span>
+        <button class="poll-btn" data-poll="potm" data-choice="chukwueze" onclick="castVote('potm','chukwueze')">
+          <span class="poll-btn-label">Samuel Chukwueze</span>
+          <span class="poll-pct" id="potm-pct-chukwueze">0%</span>
         </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-jimenez"></div></div>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-chukwueze"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="muniz" onclick="castVote('potm','muniz')">
+          <span class="poll-btn-label">Rodrigo Muniz</span>
+          <span class="poll-pct" id="potm-pct-muniz">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-muniz"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="kevin" onclick="castVote('potm','kevin')">
+          <span class="poll-btn-label">Kevin (sub)</span>
+          <span class="poll-pct" id="potm-pct-kevin">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-kevin"></div></div>
 
         <button class="poll-btn" data-poll="potm" data-choice="bobb" onclick="castVote('potm','bobb')">
           <span class="poll-btn-label">Oscar Bobb (sub)</span>
