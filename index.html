@@ -844,10 +844,17 @@
     font-size: 13px;
     line-height: 1;
   }
-  .vote-btn:hover {
+  .vote-btn:hover:not(:disabled) {
     background: var(--glass-strong);
     border-color: var(--glass-edge-strong);
     color: var(--ink);
+  }
+  .vote-btn:disabled {
+    cursor: default;
+    opacity: 0.55;
+  }
+  .vote-btn:disabled.active {
+    opacity: 1;
   }
   .vote-btn.is-up.active {
     background: rgba(74,128,96,0.22);
@@ -1565,92 +1572,106 @@
     });
   });
 
-  // Pipeline voting
+  // (Pipeline voting is wired separately, after Supabase loads)
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
   (function () {
-    const VOTE_KEY   = 'cp_pipeline_votes_v2';
-    const COUNTS_KEY = 'cp_pipeline_counts_v2';
     const grid = document.getElementById('upcoming-grid');
     if (!grid) return;
 
-    const seedCounts = {};
-    const userVotes  = (() => {
-      try { return JSON.parse(localStorage.getItem(VOTE_KEY)) || {}; }
-      catch { return {}; }
-    })();
+    const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+    const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+    const sb = window.supabase && window.supabase.createClient(SB_URL, SB_KEY);
 
+    const LS_PREFIX  = 'cravenpod-pipeline-v1-';
+    const POLL_ID_OF = id => 'pipeline-' + id;
+
+    const counts = {};
     grid.querySelectorAll('.upcoming-item').forEach(item => {
-      const id = item.dataset.id;
-      seedCounts[id] = {
-        up:   parseInt(item.dataset.up,   10) || 0,
-        down: parseInt(item.dataset.down, 10) || 0,
-      };
+      counts[item.dataset.id] = { up: 0, down: 0 };
     });
 
-    function loadCounts() {
-      try {
-        const saved = JSON.parse(localStorage.getItem(COUNTS_KEY)) || {};
-        const out = {};
-        Object.keys(seedCounts).forEach(id => {
-          out[id] = saved[id] || { up: seedCounts[id].up, down: seedCounts[id].down };
-        });
-        return out;
-      } catch {
-        return JSON.parse(JSON.stringify(seedCounts));
-      }
+    function userVote(id) {
+      try { return localStorage.getItem(LS_PREFIX + id) || null; } catch { return null; }
+    }
+    function saveUserVote(id, choice) {
+      try { localStorage.setItem(LS_PREFIX + id, choice); } catch {}
     }
 
-    function saveCounts(c) { try { localStorage.setItem(COUNTS_KEY, JSON.stringify(c)); } catch {} }
-    function saveVotes()    { try { localStorage.setItem(VOTE_KEY,   JSON.stringify(userVotes)); } catch {} }
-
     function render() {
-      const counts = loadCounts();
       grid.querySelectorAll('.upcoming-item').forEach(item => {
         const id  = item.dataset.id;
-        const c   = counts[id];
+        const c   = counts[id] || { up: 0, down: 0 };
         const net = c.up - c.down;
         const upBtn   = item.querySelector('.vote-btn.is-up');
         const downBtn = item.querySelector('.vote-btn.is-down');
         const netEl   = item.querySelector('.vote-net');
+        const choice  = userVote(id);
+
         upBtn.querySelector('.vote-count').textContent   = c.up;
         downBtn.querySelector('.vote-count').textContent = c.down;
         netEl.textContent = (net > 0 ? '+' : net < 0 ? '−' : '') + Math.abs(net);
         netEl.classList.toggle('pos', net > 0);
         netEl.classList.toggle('neg', net < 0);
-        upBtn.classList.toggle('active',   userVotes[id] === 'up');
-        downBtn.classList.toggle('active', userVotes[id] === 'down');
+
+        upBtn.classList.toggle('active',   choice === 'up');
+        downBtn.classList.toggle('active', choice === 'down');
+        upBtn.disabled   = !!choice;
+        downBtn.disabled = !!choice;
+        item.classList.toggle('has-voted', !!choice);
       });
 
       const sorted = Array.from(grid.querySelectorAll('.upcoming-item')).sort((a, b) => {
-        const na = counts[a.dataset.id], nb = counts[b.dataset.id];
+        const na = counts[a.dataset.id] || { up: 0, down: 0 };
+        const nb = counts[b.dataset.id] || { up: 0, down: 0 };
         return (nb.up - nb.down) - (na.up - na.down);
       });
       sorted.forEach(el => grid.appendChild(el));
     }
 
+    async function fetchAllCounts() {
+      if (!sb) return;
+      const ids = Object.keys(counts).map(POLL_ID_OF);
+      const { data, error } = await sb.from('poll_counts')
+        .select('poll_id, choice, count')
+        .in('poll_id', ids);
+      if (error || !data) return;
+      data.forEach(row => {
+        const id = row.poll_id.replace(/^pipeline-/, '');
+        if (!counts[id]) return;
+        if (row.choice === 'up' || row.choice === 'down') {
+          counts[id][row.choice] = parseInt(row.count, 10) || 0;
+        }
+      });
+      render();
+    }
+
+    async function castVote(id, choice) {
+      if (userVote(id)) return;
+      if (choice !== 'up' && choice !== 'down') return;
+
+      saveUserVote(id, choice);
+      counts[id][choice] += 1;
+      render();
+
+      if (!sb) return;
+      const { error } = await sb.from('poll_votes')
+        .insert({ poll_id: POLL_ID_OF(id), choice });
+      if (!error) await fetchAllCounts();
+    }
+
     grid.addEventListener('click', e => {
       const btn = e.target.closest('.vote-btn');
-      if (!btn) return;
-      const item    = btn.closest('.upcoming-item');
-      const id      = item.dataset.id;
-      const newVote = btn.dataset.vote;
-      const counts  = loadCounts();
-      const prev    = userVotes[id] || null;
-
-      if (prev === newVote) {
-        counts[id][newVote] = Math.max(0, counts[id][newVote] - 1);
-        delete userVotes[id];
-      } else {
-        if (prev) counts[id][prev] = Math.max(0, counts[id][prev] - 1);
-        counts[id][newVote] += 1;
-        userVotes[id] = newVote;
-      }
-
-      saveCounts(counts);
-      saveVotes();
-      render();
+      if (!btn || btn.disabled) return;
+      const item = btn.closest('.upcoming-item');
+      if (!item) return;
+      castVote(item.dataset.id, btn.dataset.vote);
     });
 
     render();
+    fetchAllCounts();
   })();
 </script>
 
