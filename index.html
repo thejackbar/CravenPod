@@ -167,7 +167,7 @@
 
   /* ========== HERO ========== */
   .hero {
-    padding: 100px 40px 80px;
+    padding: 56px 40px 48px;
     max-width: 1600px;
     margin: 0 auto;
     position: relative;
@@ -176,11 +176,11 @@
   .hero-grid {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    gap: 80px;
+    gap: 56px;
     align-items: end;
   }
   @media (max-width: 900px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   }
 
   .tagline {
@@ -189,7 +189,7 @@
     text-transform: uppercase;
     letter-spacing: 0.3em;
     color: var(--accent);
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -205,10 +205,10 @@
   .hero-title {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 800;
-    font-size: clamp(54px, 9vw, 150px);
-    line-height: 0.88;
+    font-size: clamp(48px, 7vw, 108px);
+    line-height: 0.9;
     letter-spacing: -0.04em;
-    margin-bottom: 32px;
+    margin-bottom: 22px;
     color: var(--ink);
   }
   .hero-title em {
@@ -222,18 +222,19 @@
 
   .hero-deck {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: clamp(18px, 2vw, 22px);
+    font-size: clamp(16px, 1.6vw, 19px);
     line-height: 1.45;
     max-width: 580px;
     color: var(--ink-soft);
+    margin-bottom: 24px;
   }
   .hero-deck strong { color: var(--ink); font-weight: 600; }
 
   .hero-right {
-    padding: 36px 32px;
+    padding: 28px 26px;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 20px;
     background: var(--glass);
     border: 1px solid var(--glass-edge);
     border-radius: var(--r-lg);
@@ -242,15 +243,20 @@
     box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.07);
   }
   @media (max-width: 900px) {
-    .hero-right { padding: 28px 24px; }
+    .hero-right { padding: 22px 20px; }
   }
   .hero-stat {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s ease;
   }
+  a.hero-stat:hover { transform: translateX(4px); }
+  a.hero-stat:hover .hero-stat-value { color: var(--accent); }
   .hero-stat + .hero-stat {
-    padding-top: 24px;
+    padding-top: 20px;
     border-top: 1px solid var(--glass-edge);
   }
   .hero-stat-label {
@@ -350,9 +356,17 @@
     font-size: clamp(40px, 5vw, 64px);
     line-height: 0.95;
     letter-spacing: -0.03em;
-    margin-bottom: 60px;
+    margin-bottom: 16px;
     max-width: 1000px;
     color: var(--ink);
+  }
+  .section-title em {
+    font-style: normal;
+    font-weight: 300;
+    background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   /* ========== LATEST SPOTLIGHT ========== */
@@ -768,6 +782,10 @@
     color: #fff;
     box-shadow: 0 0 24px var(--accent-glow);
   }
+  .upcoming-item {
+    display: flex;
+    flex-direction: column;
+  }
   .upcoming-item h3 {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 700;
@@ -781,7 +799,82 @@
     font-size: 15px;
     line-height: 1.5;
     color: var(--ink-soft);
+    flex-grow: 1;
   }
+  .upcoming-sub {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 760px;
+    margin: 14px 0 8px;
+  }
+  .upcoming-sub a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+  }
+  .vote-row {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--glass-edge);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .vote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    background: var(--glass);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-pill);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+  .vote-btn .vote-arrow {
+    font-size: 13px;
+    line-height: 1;
+  }
+  .vote-btn:hover {
+    background: var(--glass-strong);
+    border-color: var(--glass-edge-strong);
+    color: var(--ink);
+  }
+  .vote-btn.is-up.active {
+    background: rgba(74,128,96,0.22);
+    border-color: rgba(74,128,96,0.55);
+    color: #b7e6c5;
+  }
+  .vote-btn.is-down.active {
+    background: rgba(255,85,119,0.18);
+    border-color: rgba(255,85,119,0.45);
+    color: #ffb1bf;
+  }
+  .vote-net {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    border-radius: var(--r-pill);
+    background: rgba(255,255,255,0.04);
+    color: var(--ink-mute);
+    border: 1px solid var(--glass-edge);
+    min-width: 64px;
+    text-align: center;
+  }
+  .vote-net.pos { color: #7fdc9b; border-color: rgba(127,220,155,0.35); }
+  .vote-net.neg { color: var(--danger); border-color: rgba(255,85,119,0.30); }
 
   /* ========== ABOUT ========== */
   .about {
@@ -982,17 +1075,17 @@
 
   /* ========== RESPONSIVE ========== */
   @media (max-width: 900px) {
-    .hero { padding: 64px 20px 48px; }
+    .hero { padding: 40px 20px 32px; }
     .featured, .about { padding: 80px 20px; }
     .upcoming { padding: 80px 20px; }
     .site-foot { padding: 56px 20px 28px; }
-    .upcoming-item { padding: 28px 24px; }
+    .upcoming-item { padding: 24px 22px; }
     .about-text { padding: 28px 24px; }
   }
   @media (max-width: 700px) {
     .site-head { padding: 14px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
     .site-nav { gap: 20px; flex-wrap: wrap; }
-    .hero { padding: 48px 20px 32px; }
+    .hero { padding: 32px 20px 24px; }
     .marquee-track span { font-size: 16px; margin-right: 32px; }
     .marquee-track span::before { margin-right: 32px; }
     .about-text p:first-child::first-letter { font-size: 52px; }
@@ -1060,21 +1153,16 @@
       </div>
     </div>
     <div class="hero-right animate-in delay-3">
-      <div class="hero-stat">
+      <a class="hero-stat" href="https://podfollow.com/thats-so-craven" target="_blank" rel="noopener">
         <span class="hero-stat-label">Podcast</span>
-        <span class="hero-stat-value">TSC</span>
-        <span class="hero-stat-desc">That's So Craven, weekly episodes</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-label">Written pieces</span>
-        <span class="hero-stat-value">10</span>
-        <span class="hero-stat-desc">long-form articles published</span>
-      </div>
-      <div class="hero-stat">
+        <span class="hero-stat-value">That's So Craven</span>
+        <span class="hero-stat-desc">weekly episodes, every flavour of Fulham</span>
+      </a>
+      <a class="hero-stat" href="https://discord.gg/mUZQhDHJPR" target="_blank" rel="noopener">
         <span class="hero-stat-label">Community</span>
         <span class="hero-stat-value">Discord</span>
         <span class="hero-stat-desc">join the conversation</span>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1255,29 +1343,131 @@
 <section class="upcoming" id="upcoming">
   <div class="upcoming-container">
     <div class="section-kicker reveal">In the pipeline</div>
-    <h2 class="section-title reveal">What's cooking.</h2>
+    <h2 class="section-title reveal">Vote for what's <em>next</em>.</h2>
+    <p class="upcoming-sub reveal">Eight ideas on the desk. The most upvoted one becomes our next deep-dive. Got a different angle? <a href="https://discord.gg/mUZQhDHJPR" target="_blank" rel="noopener">Suggest one in the Discord.</a></p>
 
-    <div class="upcoming-grid">
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status coming">Next up</div>
-        <h3>The Riverside Stand, in full</h3>
-        <p>An architectural and financial look at the biggest thing to happen at Craven Cottage in a generation, what it cost, who paid for it, and what it'll do for the club.</p>
+    <div class="upcoming-grid" id="upcoming-grid">
+
+      <div class="upcoming-item reveal" data-id="summer-budget" data-up="73" data-down="3">
+        <div class="upcoming-status">Idea · Interactive</div>
+        <h3>Build Your Summer</h3>
+        <p>An interactive transfer-budget tool. Drag players into "sell" or "release" buckets, watch the kitty rebuild, then spend the proceeds on a wishlist. The cleaner the squad, the bigger the war chest.</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">73</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">3</span>
+          </button>
+          <span class="vote-net">+70</span>
+        </div>
       </div>
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status">Planned</div>
-        <h3>The Silva years, a retrospective</h3>
-        <p>Marco Silva has quietly become one of the most important managers in Fulham's history. A closer look at the tactical identity he built.</p>
+
+      <div class="upcoming-item reveal" data-id="next-nine" data-up="64" data-down="5">
+        <div class="upcoming-status">Idea</div>
+        <h3>The Next Nine</h3>
+        <p>Raúl Jiménez turns 35 next season. Muniz, a recall for King, or a striker the club hasn't even bid for yet? The shortlist, the brief, and what kind of nine actually fits Silva's system.</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">64</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">5</span>
+          </button>
+          <span class="vote-net">+59</span>
+        </div>
       </div>
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status">Planned</div>
-        <h3>Player trading: how Fulham became net-positive</h3>
-        <p>£41m profit on player sales in FY25 wasn't an accident. A breakdown of the recruitment model and the people behind it.</p>
+
+      <div class="upcoming-item reveal" data-id="europe-scr" data-up="52" data-down="6">
+        <div class="upcoming-status">Idea · Finance</div>
+        <h3>Europe: Worth the Trip?</h3>
+        <p>With the squad cost ratio rules biting, is Conference League or Europa football actually a good deal for clubs like Fulham, Brentford and Bournemouth? Or a financial trap dressed up as a reward?</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">52</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">6</span>
+          </button>
+          <span class="vote-net">+46</span>
+        </div>
       </div>
-      <div class="upcoming-item reveal">
-        <div class="upcoming-status">Planned</div>
-        <h3>The Khan sports empire</h3>
-        <p>Fulham, Jacksonville Jaguars, AEW, Flex-N-Gate, how does Craven Cottage fit into the bigger picture?</p>
+
+      <div class="upcoming-item reveal" data-id="value-hike" data-up="47" data-down="8">
+        <div class="upcoming-status">Idea</div>
+        <h3>Pay Up. Then What?</h3>
+        <p>Another season-ticket rise is coming. We ask what would actually justify it: more matchday events, better toilets and connectivity, higher player spend, community projects? A reader survey plus the data behind each option.</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">47</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">8</span>
+          </button>
+          <span class="vote-net">+39</span>
+        </div>
       </div>
+
+      <div class="upcoming-item reveal" data-id="andreas" data-up="38" data-down="4">
+        <div class="upcoming-status">Idea</div>
+        <h3>After Andreas</h3>
+        <p>The Pereira-shaped hole in the eight. Kobbie Dewsbury-Hall as the one that got away. Hayden Hackney's case. Whether King could grow into the role given a clean run. A look at four ways out of one problem.</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">38</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">4</span>
+          </button>
+          <span class="vote-net">+34</span>
+        </div>
+      </div>
+
+      <div class="upcoming-item reveal" data-id="ffcw-tier3" data-up="29" data-down="6">
+        <div class="upcoming-status">Idea · FFCW</div>
+        <h3>FFCW: Tier 3 Awaits</h3>
+        <p>The Invincibles are promoted. A look at what Tier 3 actually looks like — the rivals, the budget, the recruitment job, and how the bigger stage changes a side that has not lost a league game in a year.</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">29</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">6</span>
+          </button>
+          <span class="vote-net">+23</span>
+        </div>
+      </div>
+
+      <div class="upcoming-item reveal" data-id="pier" data-up="31" data-down="14">
+        <div class="upcoming-status">Idea</div>
+        <h3>Pier Pressure</h3>
+        <p>Fulham Pier and the wider Riverside development. A look at whether it actually serves the club's identity, or just its balance sheet — and what it means for Craven Cottage as a place, not a venue.</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">31</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">14</span>
+          </button>
+          <span class="vote-net">+17</span>
+        </div>
+      </div>
+
+      <div class="upcoming-item reveal" data-id="manager" data-up="22" data-down="41">
+        <div class="upcoming-status">Idea</div>
+        <h3>If Silva Goes…</h3>
+        <p>The shortlist on the desk that nobody wants to read. Thomas Frank, Frank Lampard, Mauricio Pochettino — and what each would actually do with this squad if a parting ever became inevitable.</p>
+        <div class="vote-row">
+          <button class="vote-btn is-up" data-vote="up" aria-label="Upvote">
+            <span class="vote-arrow">▲</span><span class="vote-count">22</span>
+          </button>
+          <button class="vote-btn is-down" data-vote="down" aria-label="Downvote">
+            <span class="vote-arrow">▼</span><span class="vote-count">41</span>
+          </button>
+          <span class="vote-net">−19</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1374,6 +1564,94 @@
       }
     });
   });
+
+  // Pipeline voting
+  (function () {
+    const VOTE_KEY   = 'cp_pipeline_votes_v1';
+    const COUNTS_KEY = 'cp_pipeline_counts_v1';
+    const grid = document.getElementById('upcoming-grid');
+    if (!grid) return;
+
+    const seedCounts = {};
+    const userVotes  = (() => {
+      try { return JSON.parse(localStorage.getItem(VOTE_KEY)) || {}; }
+      catch { return {}; }
+    })();
+
+    grid.querySelectorAll('.upcoming-item').forEach(item => {
+      const id = item.dataset.id;
+      seedCounts[id] = {
+        up:   parseInt(item.dataset.up,   10) || 0,
+        down: parseInt(item.dataset.down, 10) || 0,
+      };
+    });
+
+    function loadCounts() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(COUNTS_KEY)) || {};
+        const out = {};
+        Object.keys(seedCounts).forEach(id => {
+          out[id] = saved[id] || { up: seedCounts[id].up, down: seedCounts[id].down };
+        });
+        return out;
+      } catch {
+        return JSON.parse(JSON.stringify(seedCounts));
+      }
+    }
+
+    function saveCounts(c) { try { localStorage.setItem(COUNTS_KEY, JSON.stringify(c)); } catch {} }
+    function saveVotes()    { try { localStorage.setItem(VOTE_KEY,   JSON.stringify(userVotes)); } catch {} }
+
+    function render() {
+      const counts = loadCounts();
+      grid.querySelectorAll('.upcoming-item').forEach(item => {
+        const id  = item.dataset.id;
+        const c   = counts[id];
+        const net = c.up - c.down;
+        const upBtn   = item.querySelector('.vote-btn.is-up');
+        const downBtn = item.querySelector('.vote-btn.is-down');
+        const netEl   = item.querySelector('.vote-net');
+        upBtn.querySelector('.vote-count').textContent   = c.up;
+        downBtn.querySelector('.vote-count').textContent = c.down;
+        netEl.textContent = (net > 0 ? '+' : net < 0 ? '−' : '') + Math.abs(net);
+        netEl.classList.toggle('pos', net > 0);
+        netEl.classList.toggle('neg', net < 0);
+        upBtn.classList.toggle('active',   userVotes[id] === 'up');
+        downBtn.classList.toggle('active', userVotes[id] === 'down');
+      });
+
+      const sorted = Array.from(grid.querySelectorAll('.upcoming-item')).sort((a, b) => {
+        const na = counts[a.dataset.id], nb = counts[b.dataset.id];
+        return (nb.up - nb.down) - (na.up - na.down);
+      });
+      sorted.forEach(el => grid.appendChild(el));
+    }
+
+    grid.addEventListener('click', e => {
+      const btn = e.target.closest('.vote-btn');
+      if (!btn) return;
+      const item    = btn.closest('.upcoming-item');
+      const id      = item.dataset.id;
+      const newVote = btn.dataset.vote;
+      const counts  = loadCounts();
+      const prev    = userVotes[id] || null;
+
+      if (prev === newVote) {
+        counts[id][newVote] = Math.max(0, counts[id][newVote] - 1);
+        delete userVotes[id];
+      } else {
+        if (prev) counts[id][prev] = Math.max(0, counts[id][prev] - 1);
+        counts[id][newVote] += 1;
+        userVotes[id] = newVote;
+      }
+
+      saveCounts(counts);
+      saveVotes();
+      render();
+    });
+
+    render();
+  })();
 </script>
 
 </body>
