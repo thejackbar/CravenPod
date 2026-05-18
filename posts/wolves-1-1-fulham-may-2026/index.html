@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wolves 1–1 Fulham · Match Review · Cravenpod</title>
+<meta name="description" content="Robinson iced the penalty. Brentford dropped points. Everything lined up on Sunday afternoon. Fulham drew 1-1 with a side relegated in April and that is probably that.">
+<meta property="og:title" content="Wolves 1–1 Fulham · Match Review">
+<meta property="og:description" content="Robinson. Coolest penalty all season. Not enough.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cravenpod">
+<meta name="twitter:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-0: #06070f;
+  --bg-1: #0a0d1c;
+  --bg-2: #0e1226;
+
+  --ink:      #f5f6fa;
+  --ink-soft: rgba(245,246,250,0.78);
+  --ink-mute: rgba(245,246,250,0.55);
+
+  --paper:      #f5f6fa;
+  --paper-dark: rgba(255,255,255,0.05);
+
+  --glass:             rgba(255,255,255,0.05);
+  --glass-strong:      rgba(255,255,255,0.09);
+  --glass-edge:        rgba(255,255,255,0.10);
+  --glass-edge-strong: rgba(255,255,255,0.20);
+
+  --accent:      #ff3b67;
+  --accent-soft: #cc0033;
+  --accent-glow: rgba(255,59,103,0.40);
+  --gold:        #d4af6e;
+
+  --ok:     #4a8060;
+  --warn:   #d4a015;
+  --danger: #ff5577;
+
+  --rule:  rgba(255,255,255,0.10);
+  --muted: rgba(245,246,250,0.55);
+
+  --wolves-gold:  #fdb913;
+  --fulham-green: #5a8c70;
+
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+  --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+  --r-sm:   10px;
+  --r-md:   16px;
+  --r-lg:   22px;
+  --r-pill: 999px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; color-scheme: dark; }
+
+body {
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse  900px 760px at 94% 10%, rgba(253,185,19,0.14)   0%, transparent 60%),
+    radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(110,195,212,0.11) 0%, transparent 70%),
+    linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ── Masthead ── */
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--glass-edge);
+  background: rgba(10,13,28,0.60);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.back-link { color: var(--accent); }
+
+.brand { font-weight: 500; }
+
+.masthead .meta {
+  display: flex;
+  gap: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.masthead .meta a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.masthead .meta a:hover { color: var(--ink); }
+
+/* ── Hero ── */
+.hero {
+  background: #06070f;
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 64px 32px 56px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -2% -2%;
+  background-image: url("https://resources.premierleague.pulselive.com/photo-resources/2025/11/01/3ec0518d-1d1c-46bd-b5d7-09d141aa34d4/FULWOL.jpg?width=1440");
+  background-size: cover;
+  background-position: center 38%;
+  background-repeat: no-repeat;
+  filter: saturate(0.6) contrast(1.04) brightness(0.65);
+  opacity: 0.45;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 1100px 540px at 50% 55%, rgba(6,7,15,0.28) 0%, rgba(6,7,15,0.52) 60%, rgba(6,7,15,0.86) 100%),
+    linear-gradient(180deg, rgba(6,7,15,0.65) 0%, rgba(6,7,15,0.10) 25%, rgba(6,7,15,0.10) 70%, rgba(6,7,15,0.95) 100%),
+    radial-gradient(ellipse at 88% 84%, rgba(253,185,19,0.06) 0%, transparent 55%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-kicker::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.matchup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.club-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 90px;
+}
+
+.club-block img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.club-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.scoreline {
+  flex: 1;
+  text-align: center;
+  min-width: 120px;
+}
+
+.score-nums {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.score-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+
+.hero h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-dek {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  line-height: 1.65;
+}
+
+.hero-meta {
+  margin-top: 28px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-meta span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── Article body ── */
+.article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 56px 0 0;
+}
+
+.section-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section h2 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
+.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+/* ── Pull quote ── */
+.pullquote {
+  border-left: 3px solid var(--accent);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: var(--glass);
+}
+
+.pullquote p {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 8px !important;
+}
+
+.pullquote cite {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ── Stats grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.stat-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 16px;
+  text-align: center;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stat-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-wolves { color: var(--wolves-gold); }
+.stat-fulham { color: var(--fulham-green); }
+.stat-sep { color: var(--muted); font-size: 1rem; }
+
+.stat-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.stat-bar-wolves {
+  height: 4px;
+  background: var(--wolves-gold);
+  border-radius: 2px;
+  flex: var(--wolves-pct);
+  opacity: 0.7;
+}
+
+.stat-bar-fulham {
+  height: 4px;
+  background: var(--fulham-green);
+  border-radius: 2px;
+  flex: var(--fulham-pct);
+  opacity: 0.7;
+}
+
+/* ── Timeline ── */
+.timeline {
+  margin: 28px 0;
+  border-left: 2px solid var(--rule);
+  padding-left: 24px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  border: 2px solid var(--glass-edge);
+}
+
+.timeline-item.key-moment::before { border-color: var(--accent); background: var(--accent); }
+
+.timeline-minute {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.timeline-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2px 0 4px;
+}
+
+.timeline-body {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  display: none;
+  margin-top: 6px;
+}
+
+.timeline-item.open .timeline-body { display: block; }
+.timeline-toggle { font-size: 0.7rem; color: var(--accent); margin-top: 4px; }
+
+/* ── Form table ── */
+.drought-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.9rem;
+}
+
+.drought-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.drought-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.drought-table tr:last-child td { border-bottom: none; }
+.drought-table tr.current-row td { background: rgba(255,59,103,0.06); }
+
+.result-badge {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.result-badge.W { background: var(--ok); color: #fff; }
+.result-badge.D { background: var(--warn); color: #fff; }
+.result-badge.L { background: var(--danger); color: #fff; }
+
+.goals-cell { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; }
+
+/* ── Split stat card ── */
+.split-stat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.split-half {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  padding: 20px 24px;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.split-half-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.split-half-pts {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.split-half.good .split-half-pts { color: var(--fulham-green); }
+.split-half.bad  .split-half-pts { color: var(--danger); }
+
+.split-half-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ── Info card ── */
+.info-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.info-card .card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0 !important;
+}
+
+/* ── Table context ── */
+.table-snapshot {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.table-snapshot h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.league-row {
+  display: grid;
+  grid-template-columns: 24px 1fr 40px 40px 40px 48px;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.88rem;
+}
+
+.league-row:last-child { border-bottom: none; }
+
+.league-row .pos {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.league-row .team-name { font-weight: 500; }
+
+.league-row .pts {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  text-align: right;
+}
+
+.league-row .sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-align: right;
+}
+
+.league-row.highlight { background: rgba(212,175,110,0.15); border-radius: 3px; border: 1px solid rgba(212,175,110,0.30); padding: 7px 6px; }
+
+/* ── Poll / Interactive ── */
+.interactive-section {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 56px 32px;
+  margin: 56px -32px 0;
+}
+
+.interactive-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.interactive-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+}
+
+.poll-block {
+  margin-bottom: 48px;
+}
+
+.poll-block h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.poll-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--ink);
+  padding: 12px 16px;
+  cursor: pointer;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: background 0.15s;
+  width: 100%;
+}
+
+.poll-btn:hover { background: rgba(255,255,255,0.1); }
+
+.poll-btn-label { flex: 1; }
+
+.poll-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--gold);
+  min-width: 36px;
+  text-align: right;
+  display: none;
+}
+
+.poll-bar-wrap {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  margin-top: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  display: none;
+}
+
+.poll-bar {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+.poll-voted .poll-pct { display: block; }
+.poll-voted .poll-bar-wrap { display: block; }
+.poll-voted .poll-btn { cursor: default; }
+.poll-voted .poll-btn:hover { background: rgba(255,255,255,0.06); }
+.poll-voted .poll-btn.user-choice { border-color: var(--gold); background: rgba(184,147,94,0.1); }
+
+.poll-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* Rating widget */
+.rating-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.rating-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-radius: 3px;
+}
+
+.rating-btn:hover { background: rgba(255,255,255,0.12); }
+.rating-btn.selected { background: var(--gold); color: #0d0d0d; border-color: var(--gold); }
+
+.rating-result {
+  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: none;
+}
+
+.rating-result.visible { display: block; }
+
+/* ── Footer ── */
+.footer {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  color: rgba(255,255,255,0.5);
+  padding: 40px 32px;
+}
+
+.footer > div {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer a:hover { color: var(--ink); }
+
+/* ── Frosted card overrides ── */
+.pullquote, .stat-card, .info-card, .table-snapshot {
+  border-radius: var(--r-md);
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.poll-btn, .rating-btn { border-radius: var(--r-pill); border-color: var(--glass-edge); }
+.poll-btn:hover, .rating-btn:hover { border-color: var(--glass-edge-strong); }
+.timeline-item::before { background: var(--glass-strong); border-color: var(--glass-edge); }
+.league-row.highlight { background: rgba(212,175,110,0.15); border: 1px solid rgba(212,175,110,0.30); }
+.rating-btn.selected { background: var(--gold); color: var(--bg-1); border-color: var(--gold); box-shadow: 0 0 24px rgba(212,175,110,0.35); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .masthead { padding: 12px 20px; }
+  .hero { padding: 40px 20px 40px; }
+  .article-body { padding: 0 20px 60px; }
+  .score-nums { font-size: 2.8rem; }
+  .matchup { gap: 16px; }
+  .club-block img { width: 52px; height: 52px; }
+  .interactive-section { padding: 40px 20px; margin: 40px -20px 0; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .split-stat { grid-template-columns: 1fr; }
+  .league-row { grid-template-columns: 20px 1fr 36px 36px 36px 42px; font-size: 0.82rem; }
+  .masthead .meta { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="/" class="brand-link">
+    <span class="back-link">← That's So Craven</span>
+    <span>/</span>
+    <span class="brand">Match Review</span>
+  </a>
+  <div class="meta">
+    <span><a href="https://podfollow.com/thats-so-craven">🎙 Podcast</a></span>
+    <span><a href="https://discord.gg/mUZQhDHJPR">💬 Discord</a></span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Premier League · GW37 · 17 May 2026</div>
+    <div class="matchup">
+      <div class="club-block">
+        <img src="https://resources.premierleague.com/premierleague/badges/t39.svg" alt="Wolves crest">
+        <span class="club-name">Wolves</span>
+      </div>
+      <div class="scoreline">
+        <div class="score-nums">1 – 1</div>
+        <div class="score-label">Full Time</div>
+      </div>
+      <div class="club-block">
+        <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" alt="Fulham FC crest">
+        <span class="club-name">Fulham</span>
+      </div>
+    </div>
+    <h1>Robinson. Coolest penalty all season. <em>Not enough.</em></h1>
+    <p class="hero-dek">Everything that needed to happen elsewhere, happened. Brentford dropped points. The results lined up. Fulham drew 1-1 at a side that got relegated in April, and that is probably that for another season without European football.</p>
+    <div class="hero-meta">
+      <span>Molineux, Wolverhampton</span>
+      <span>17 May 2026</span>
+      <span>GW37</span>
+      <span>~6 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <!-- §01 The Story -->
+  <section class="section">
+    <div class="section-kicker">§ 01 · The Story</div>
+    <h2>The dominance, the wrong result, <em>a season that quietly fell apart</em>.</h2>
+    <p>Mateus Mané caught Fulham cold on 25 minutes. A fine finish, well-taken, and the kind of goal you give a side of that quality precisely none of in a game you need to win. Mané is a useful player. His season has not been the problem at Molineux. But giving him a clean run at goal inside the opening half-hour, against a side that were relegated five weeks ago and had nothing left to play for, is a specific kind of painful.</p>
+    <p>Antonee Robinson equalised from the spot before half time, the penalty given after Mané fouled in the area, and Robinson rolled it home with a composure that would have been impressive from a seasoned penalty-taker. It was his first in the Premier League. For a few minutes either side of that, the afternoon had the feel of a side that might push on and get what they came for.</p>
+
+    <div class="pullquote">
+      <p>"It was a must-win game for us to keep some hopes under our control."</p>
+      <cite>Marco Silva, post-match</cite>
+    </div>
+
+    <p>It didn't push on. Fulham had seventy per cent of the ball across the ninety minutes and thirteen shots to Wolves' eleven. The second half was the problem: possession without purpose, chances that didn't materialise, and a performance that Silva himself struggled to account for. "The second half wasn't good enough; we didn't create many chances. It was a very weird second half and for me, it is difficult to find a reason." When a manager of his experience says that in a game his side needed to win, it's hard to know where to look.</p>
+    <p>Meanwhile, across the Premier League, all the results that Fulham needed landed exactly right. Brentford, in eighth, drew 2-2 with Crystal Palace. The table was there for the taking. Fulham drew with a relegated side and left it sitting on the shelf.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §02 Key Moments -->
+  <section class="section">
+    <div class="section-kicker">§ 02 · Key Moments</div>
+    <h2>Minute by minute, <em>the moments that mattered</em>.</h2>
+    <p>Click any moment to expand the detail.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">1H</div>
+        <div class="timeline-title">Bobb direct, Castagne steady at the back</div>
+        <div class="timeline-body">Oscar Bobb looked sharp from the start, carrying into space and causing problems on the right. Timothy Castagne was solid in both phases throughout the first half, keeping it tight defensively while still getting forward when the opportunity appeared.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">25' ·</div>
+        <div class="timeline-title">MANÉ. Wolves in front</div>
+        <div class="timeline-body">Mateus Mané found space in behind the Fulham defensive line and finished with real quality past Bernd Leno. A goal against the run of play in a broader sense, but one Fulham's defence had to take responsibility for. Mané was the scorer of Wolves' goal in a season where the club spent most of it bottom of the table. A fine finish.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">45+' ·</div>
+        <div class="timeline-title">ROBINSON. Penalty. Ice-cold</div>
+        <div class="timeline-body">Mané, having given Wolves the lead, then gave Fulham the chance to level, fouling in the area. Up stepped Antonee Robinson, left-back, and dispatched the penalty with a composure that belied the fact it was his first goal in the Premier League. Rolled in, low, side-netting. The half ended level.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">2H</div>
+        <div class="timeline-title">Possession without a purpose</div>
+        <div class="timeline-body">Fulham dominated the ball in the second half as expected against a relegated Wolves side. The problem was translating that possession into chances of substance. The shots went in, but mostly from distance and without real conviction. Wolves sat back and absorbed. Fulham couldn't find the way through.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">FT</div>
+        <div class="timeline-title">Full time, 1-1. Brentford already drawing</div>
+        <div class="timeline-body">The whistle went and the news filtered through: Brentford had drawn 2-2 with Crystal Palace. The gap stays at three points with one game left. The mathematical chance of European football still exists, just about. The realistic chance, having drawn with a relegated side when Brentford handed a point back, is something else entirely.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §03 Stats -->
+  <section class="section">
+    <div class="section-kicker">§ 03 · By the Numbers</div>
+    <h2>Seventy per cent of the ball, <em>one point from it</em>.</h2>
+    <p>The possession number tells you the shape of the game. The shots number tells you Fulham at least tried to do something with it. The fact that the scoreline reads 1-1 tells you the second half happened.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Possession (WOL / FUL)</div>
+        <div class="stat-values">
+          <span class="stat-wolves">30%</span>
+          <span class="stat-sep">/</span>
+          <span class="stat-fulham">70%</span>
+        </div>
+        <div class="stat-bar-row">
+          <div class="stat-bar-wolves" style="--wolves-pct: 30"></div>
+          <div class="stat-bar-fulham" style="--fulham-pct: 70"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Total Shots (WOL / FUL)</div>
+        <div class="stat-values">
+          <span class="stat-wolves">11</span>
+          <span class="stat-sep">/</span>
+          <span class="stat-fulham">13</span>
+        </div>
+        <div class="stat-bar-row">
+          <div class="stat-bar-wolves" style="--wolves-pct: 11"></div>
+          <div class="stat-bar-fulham" style="--fulham-pct: 13"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">Corners (WOL / FUL)</div>
+        <div class="stat-values">
+          <span class="stat-wolves">3</span>
+          <span class="stat-sep">/</span>
+          <span class="stat-fulham">6</span>
+        </div>
+        <div class="stat-bar-row">
+          <div class="stat-bar-wolves" style="--wolves-pct: 3"></div>
+          <div class="stat-bar-fulham" style="--fulham-pct: 6"></div>
+        </div>
+      </div>
+    </div>
+
+    <p>Fulham had double Wolves' corners, double their possession, and more shots. In most games that produces a win, or at minimum a more convincing draw. The second-half performance stripped that promise away. Silva couldn't explain it, which is about the most honest thing a manager can say.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §04 The Form -->
+  <section class="section">
+    <div class="section-kicker">§ 04 · The Form</div>
+    <h2>A season that broke in half. <em>The numbers say it clearly.</em></h2>
+    <p>The last five has been painful reading. One win, a couple of draws, and two defeats against Bournemouth and Arsenal in games that, on paper, were meant to keep the European push alive. The picture across the full last third of the season is worse.</p>
+
+    <table class="drought-table">
+      <thead>
+        <tr>
+          <th>Opposition</th>
+          <th>Venue</th>
+          <th>Score</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Brentford</td>
+          <td>A</td>
+          <td class="goals-cell">0–0</td>
+          <td><span class="result-badge D">D</span></td>
+        </tr>
+        <tr>
+          <td>Aston Villa</td>
+          <td>H</td>
+          <td class="goals-cell">1–0</td>
+          <td><span class="result-badge W">W</span></td>
+        </tr>
+        <tr>
+          <td>Arsenal</td>
+          <td>A</td>
+          <td class="goals-cell">0–3</td>
+          <td><span class="result-badge L">L</span></td>
+        </tr>
+        <tr>
+          <td>Bournemouth</td>
+          <td>H</td>
+          <td class="goals-cell">0–1</td>
+          <td><span class="result-badge L">L</span></td>
+        </tr>
+        <tr class="current-row">
+          <td>Wolves</td>
+          <td>A</td>
+          <td class="goals-cell">1–1</td>
+          <td><span class="result-badge D">D</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>One win and two draws from the last five. But zoom out and it becomes something more uncomfortable. The first 23 games of this season brought 34 points. The next 14 have brought 15. That split tells you more than any individual result. Something changed around the turn of the year, and it hasn't turned back.</p>
+
+    <div class="split-stat">
+      <div class="split-half good">
+        <div class="split-half-label">Games 1–23</div>
+        <div class="split-half-pts">34 pts</div>
+        <div class="split-half-sub">10W · 4D · 9L</div>
+      </div>
+      <div class="split-half bad">
+        <div class="split-half-label">Games 24–37</div>
+        <div class="split-half-pts">15 pts</div>
+        <div class="split-half-sub">4W · 3D · 7L</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §05 The Penalty -->
+  <section class="section">
+    <div class="section-kicker">§ 05 · The Penalty</div>
+    <h2>Robinson. <em>First in the Premier League, cool as anything.</em></h2>
+    <p>There are not many better things you can say about a penalty-taker than that they looked like they'd been doing it all their career. Antonee Robinson, stepping up for the first time in the Premier League, looked exactly like that. Low, to the right of the keeper, side-netting. No run-up drama. No telegraphing. Just the ball in the net.</p>
+
+    <div class="info-card">
+      <div class="card-label">The penalty, in three steps</div>
+      <p>1. Mateus Mané fouls in the area, penalty given in first-half stoppage time.<br>2. Robinson, not a regular taker, is given the ball. Silva had made the call in training during the week.<br>3. Robinson rolls it low to the keeper's right. The technique is unhurried, the finish composed. 1-1.</p>
+    </div>
+
+    <div class="pullquote">
+      <p>"I was 100% sure he was capable to do it."</p>
+      <cite>Marco Silva, on Robinson's penalty</cite>
+    </div>
+
+    <p>It was a bright moment in a game that needed more of them. Robinson had a solid afternoon at left-back, and Castagne was equally dependable on the other side, keeping things tight defensively even as Wolves found their goal. The problem was elsewhere: Bobb had good moments in the first half, carrying with purpose and creating the sort of chances that the second half never managed to replicate. One Castagne chance from a Bobb ball went wide with a decent amount of time and space. It's that kind of afternoon.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §06 The Bigger Picture -->
+  <section class="section">
+    <div class="section-kicker">§ 06 · The Bigger Picture</div>
+    <h2>Twelve, not eighth. <em>One game to go.</em></h2>
+    <p>Forty-nine points. Twelfth place. Three points behind Brentford in eighth with one match remaining. The mathematics of it still work: Fulham win at home to Newcastle, Brentford lose their final fixture, goal difference behaves. It's there on paper. The afternoon at Molineux makes it feel considerably further away.</p>
+
+    <div class="table-snapshot">
+      <h3>The table around Fulham — after GW37</h3>
+      <div class="league-row">
+        <span class="pos sm">7</span>
+        <span class="team-name">Sunderland</span>
+        <span class="sm pts">37</span>
+        <span class="sm">37</span>
+        <span class="sm">37</span>
+        <span class="pts">54</span>
+      </div>
+      <div class="league-row">
+        <span class="pos sm">8</span>
+        <span class="team-name">Brentford</span>
+        <span class="sm pts">37</span>
+        <span class="sm">37</span>
+        <span class="sm">37</span>
+        <span class="pts">52</span>
+      </div>
+      <div class="league-row highlight">
+        <span class="pos sm">12</span>
+        <span class="team-name">Fulham</span>
+        <span class="sm pts">37</span>
+        <span class="sm">37</span>
+        <span class="sm">37</span>
+        <span class="pts">49</span>
+      </div>
+    </div>
+
+    <p>The concern now is not just missing Europe. The final-day fixture against Newcastle brings its own variables. A Fulham side low on confidence, finishing with a mixed run that includes four defeats in the last seven, hosting a Newcastle team who may have plenty riding on their own result. A win seals a top-half finish. A defeat, combined with results elsewhere, leaves the cottage looking at 15th.</p>
+
+    <div class="table-snapshot" style="margin-top: 16px;">
+      <h3>Final fixture</h3>
+      <div class="league-row" style="grid-template-columns: 70px 1fr 60px;">
+        <span class="sm">24 May</span>
+        <span class="team-name">Newcastle (H)</span>
+        <span class="sm">GW38</span>
+      </div>
+    </div>
+
+    <p>It is also worth noting, if it hasn't already been noted elsewhere, that Marco Silva is out of contract at the end of the season. His post-match comments on Sunday stopped short of confirming anything: "I will not say something if the decision is not made." Whether that decision lands before or after the final whistle at the cottage on the 24th adds a layer to what should simply be a football match.</p>
+    <p>A season that had the look of something genuinely interesting around Christmas, those 34 points from the first 23 games, has ended up requiring a win on the last day just to secure a respectable finish. That is the honest version of where we are.</p>
+  </section>
+
+</div>
+
+<!-- §07 Interactive -->
+<section class="interactive-section">
+  <div class="interactive-inner">
+    <div class="interactive-kicker">§ 07 · Your verdict</div>
+
+    <!-- POTM Vote -->
+    <div class="poll-block" id="potm-block">
+      <h3>Man of the Match</h3>
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-family:'JetBrains Mono', monospace;letter-spacing:0.05em;">All 11 Fulham starters. Pick one.</p>
+      <div class="poll-options" id="potm-options">
+
+        <button class="poll-btn" data-poll="potm" data-choice="leno" onclick="castVote('potm','leno')">
+          <span class="poll-btn-label">Bernd Leno (GK)</span>
+          <span class="poll-pct" id="potm-pct-leno">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-leno"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="castagne" onclick="castVote('potm','castagne')">
+          <span class="poll-btn-label">Timothy Castagne</span>
+          <span class="poll-pct" id="potm-pct-castagne">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-castagne"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="bassey" onclick="castVote('potm','bassey')">
+          <span class="poll-btn-label">Calvin Bassey</span>
+          <span class="poll-pct" id="potm-pct-bassey">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bassey"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="diop" onclick="castVote('potm','diop')">
+          <span class="poll-btn-label">Issa Diop</span>
+          <span class="poll-pct" id="potm-pct-diop">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-diop"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="robinson" onclick="castVote('potm','robinson')">
+          <span class="poll-btn-label">Antonee Robinson</span>
+          <span class="poll-pct" id="potm-pct-robinson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-robinson"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="esr" onclick="castVote('potm','esr')">
+          <span class="poll-btn-label">Emile Smith Rowe</span>
+          <span class="poll-pct" id="potm-pct-esr">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-esr"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="iwobi" onclick="castVote('potm','iwobi')">
+          <span class="poll-btn-label">Alex Iwobi</span>
+          <span class="poll-pct" id="potm-pct-iwobi">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-iwobi"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="lukic" onclick="castVote('potm','lukic')">
+          <span class="poll-btn-label">Saša Lukić</span>
+          <span class="poll-pct" id="potm-pct-lukic">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-lukic"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="berge" onclick="castVote('potm','berge')">
+          <span class="poll-btn-label">Sander Berge</span>
+          <span class="poll-pct" id="potm-pct-berge">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-berge"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="bobb" onclick="castVote('potm','bobb')">
+          <span class="poll-btn-label">Oscar Bobb</span>
+          <span class="poll-pct" id="potm-pct-bobb">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bobb"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="muniz" onclick="castVote('potm','muniz')">
+          <span class="poll-btn-label">Rodrigo Muniz</span>
+          <span class="poll-pct" id="potm-pct-muniz">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-muniz"></div></div>
+
+      </div>
+      <div class="poll-count" id="potm-count"></div>
+    </div>
+
+    <!-- Fair Result poll -->
+    <div class="poll-block" id="fair-block">
+      <h3>Was 1–1 a fair result?</h3>
+      <div class="poll-options" id="fair-options">
+        <button class="poll-btn" data-poll="fair" data-choice="no" onclick="castVote('fair','no')">
+          <span class="poll-btn-label">No, Fulham should have won</span>
+          <span class="poll-pct" id="fair-pct-no">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="fair-bar-no"></div></div>
+
+        <button class="poll-btn" data-poll="fair" data-choice="yes" onclick="castVote('fair','yes')">
+          <span class="poll-btn-label">Yes, the second half earned Wolves their point</span>
+          <span class="poll-pct" id="fair-pct-yes">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="fair-bar-yes"></div></div>
+
+        <button class="poll-btn" data-poll="fair" data-choice="more" onclick="castVote('fair','more')">
+          <span class="poll-btn-label">Fulham should have scored more in the first half</span>
+          <span class="poll-pct" id="fair-pct-more">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="fair-bar-more"></div></div>
+
+        <button class="poll-btn" data-poll="fair" data-choice="wolves" onclick="castVote('fair','wolves')">
+          <span class="poll-btn-label">Wolves actually deserved it, weirdly</span>
+          <span class="poll-pct" id="fair-pct-wolves">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="fair-bar-wolves"></div></div>
+      </div>
+      <div class="poll-count" id="fair-count"></div>
+    </div>
+
+    <!-- Season finish poll -->
+    <div class="poll-block" id="finish-block">
+      <h3>Where do we finish on the last day?</h3>
+      <div class="poll-options" id="finish-options">
+        <button class="poll-btn" data-poll="finish" data-choice="top10" onclick="castVote('finish','top10')">
+          <span class="poll-btn-label">Top 10, win vs Newcastle sorts it</span>
+          <span class="poll-pct" id="finish-pct-top10">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-top10"></div></div>
+
+        <button class="poll-btn" data-poll="finish" data-choice="mid" onclick="castVote('finish','mid')">
+          <span class="poll-btn-label">11th or 12th, mid-table and move on</span>
+          <span class="poll-pct" id="finish-pct-mid">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-mid"></div></div>
+
+        <button class="poll-btn" data-poll="finish" data-choice="lower" onclick="castVote('finish','lower')">
+          <span class="poll-btn-label">Worse than 12th if Newcastle win</span>
+          <span class="poll-pct" id="finish-pct-lower">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-lower"></div></div>
+
+        <button class="poll-btn" data-poll="finish" data-choice="europe" onclick="castVote('finish','europe')">
+          <span class="poll-btn-label">Still believe: win and results go our way</span>
+          <span class="poll-pct" id="finish-pct-europe">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-europe"></div></div>
+      </div>
+      <div class="poll-count" id="finish-count"></div>
+    </div>
+
+    <!-- Performance Rating -->
+    <div class="poll-block" id="rating-block">
+      <h3>Rate the performance out of 10</h3>
+      <div class="rating-widget">
+        <div class="rating-row" id="rating-row"></div>
+        <div class="rating-result" id="rating-result"></div>
+        <div class="poll-count" id="rating-count"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="/">← Back to Cravenpod</a>
+    <a href="https://podfollow.com/thats-so-craven">🎙 Listen to the Podcast</a>
+    <a href="https://discord.gg/mUZQhDHJPR">💬 Join the Discord</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+  const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+  const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+  const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+  const LS_PREFIX = 'cravenpod-wol11ful-may26-';
+
+  const POLL_IDS = {
+    potm:   'wol-ful-may26-potm',
+    fair:   'wol-ful-may26-fair',
+    finish: 'wol-ful-may26-finish',
+    rating: 'wol-ful-may26-rating',
+  };
+
+  function getUserChoice(poll) {
+    try { return localStorage.getItem(LS_PREFIX + poll) || null; } catch(e) { return null; }
+  }
+  function saveUserChoice(poll, choice) {
+    try { localStorage.setItem(LS_PREFIX + poll, choice); } catch(e) {}
+  }
+
+  async function fetchCounts(pollId) {
+    const { data, error } = await sb.from('poll_counts')
+      .select('choice, count')
+      .eq('poll_id', pollId);
+    if (error || !data) return {};
+    const counts = {};
+    data.forEach(row => { counts[row.choice] = parseInt(row.count) || 0; });
+    return counts;
+  }
+
+  function renderPoll(pollName, userChoice, counts) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return;
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userChoice) return;
+
+    block.classList.add('poll-voted');
+    block.querySelectorAll('.poll-btn').forEach(btn => {
+      btn.classList.remove('user-choice');
+      if (btn.dataset.choice === userChoice) btn.classList.add('user-choice');
+    });
+
+    const choices = getPollChoices(pollName);
+    choices.forEach(choice => {
+      const count = counts[choice] || 0;
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      const pctEl = document.getElementById(pollName + '-pct-' + choice);
+      const barEl = document.getElementById(pollName + '-bar-' + choice);
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (barEl) setTimeout(() => { barEl.style.width = pct + '%'; }, 50);
+    });
+
+    const countEl = document.getElementById(pollName + '-count');
+    if (countEl) countEl.textContent = total + (total === 1 ? ' vote' : ' votes') + ' cast';
+  }
+
+  function getPollChoices(pollName) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return [];
+    return Array.from(block.querySelectorAll('.poll-btn[data-choice]')).map(b => b.dataset.choice);
+  }
+
+  window.castVote = async function(pollName, choice) {
+    if (getUserChoice(pollName)) return;
+    const pollId = POLL_IDS[pollName];
+    if (!pollId) return;
+
+    saveUserChoice(pollName, choice);
+    await sb.from('poll_votes').insert({ poll_id: pollId, choice: choice });
+    const counts = await fetchCounts(pollId);
+    renderPoll(pollName, choice, counts);
+  };
+
+  async function initPolls() {
+    for (const [pollName, pollId] of Object.entries(POLL_IDS)) {
+      if (pollName === 'rating') continue;
+      const userChoice = getUserChoice(pollName);
+      const counts = await fetchCounts(pollId);
+      renderPoll(pollName, userChoice, counts);
+    }
+  }
+  initPolls();
+
+  /* ── Rating widget ── */
+  const ratingRow    = document.getElementById('rating-row');
+  const ratingResult = document.getElementById('rating-result');
+  const ratingCount  = document.getElementById('rating-count');
+
+  function buildRatingButtons() {
+    if (!ratingRow) return;
+    for (let i = 1; i <= 10; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'rating-btn';
+      btn.textContent = i;
+      btn.dataset.val = i;
+      btn.onclick = () => castRating(i);
+      ratingRow.appendChild(btn);
+    }
+  }
+
+  async function castRating(val) {
+    if (getUserChoice('rating')) return;
+    saveUserChoice('rating', String(val));
+    await sb.from('poll_votes').insert({ poll_id: POLL_IDS.rating, choice: String(val) });
+    await renderRating(String(val));
+  }
+
+  async function renderRating(userVal) {
+    if (!ratingRow) return;
+    const counts = await fetchCounts(POLL_IDS.rating);
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userVal) return;
+
+    ratingRow.querySelectorAll('.rating-btn').forEach(btn => {
+      btn.onclick = null;
+      btn.style.cursor = 'default';
+      btn.classList.toggle('selected', btn.dataset.val === userVal);
+    });
+
+    if (total > 0) {
+      const sum = Object.entries(counts).reduce((acc, [r, c]) => acc + parseInt(r) * c, 0);
+      const avg = (sum / total).toFixed(1);
+      if (ratingResult) {
+        ratingResult.textContent = 'Community average: ' + avg + ' / 10';
+        ratingResult.classList.add('visible');
+      }
+      if (ratingCount) ratingCount.textContent = total + (total === 1 ? ' rating' : ' ratings') + ' submitted';
+    }
+  }
+
+  buildRatingButtons();
+  const existingRating = getUserChoice('rating');
+  if (existingRating) renderRating(existingRating);
+
+  /* ── Timeline toggle ── */
+  window.toggleTimeline = function(el) {
+    const isOpen = el.classList.contains('open');
+    el.classList.toggle('open', !isOpen);
+    const toggle = el.querySelector('.timeline-toggle');
+    if (toggle) toggle.textContent = isOpen ? '+ show more' : '– show less';
+  };
+
+})();
+</script>
+
+<script data-goatcounter="https://cravenpod.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
