@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fulham 2–0 Newcastle · Match Review · Cravenpod</title>
+<meta name="description" content="Kevin off the bar. Diop on the rebound. Cairney into the top corner. A 2-0 win on the last day, eleventh place, and a lap of honour that may have been a farewell for Jimenez, Wilson and Silva.">
+<meta property="og:title" content="Fulham 2–0 Newcastle · Match Review">
+<meta property="og:description" content="A 2-0 win, eleventh place, and goodbyes that nobody quite confirmed.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cravenpod">
+<meta name="twitter:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-0: #06070f;
+  --bg-1: #0a0d1c;
+  --bg-2: #0e1226;
+
+  --ink:      #f5f6fa;
+  --ink-soft: rgba(245,246,250,0.78);
+  --ink-mute: rgba(245,246,250,0.55);
+
+  --paper:      #f5f6fa;
+  --paper-dark: rgba(255,255,255,0.05);
+
+  --glass:             rgba(255,255,255,0.05);
+  --glass-strong:      rgba(255,255,255,0.09);
+  --glass-edge:        rgba(255,255,255,0.10);
+  --glass-edge-strong: rgba(255,255,255,0.20);
+
+  --accent:      #ff3b67;
+  --accent-soft: #cc0033;
+  --accent-glow: rgba(255,59,103,0.40);
+  --gold:        #d4af6e;
+
+  --ok:     #4a8060;
+  --warn:   #d4a015;
+  --danger: #ff5577;
+
+  --rule:  rgba(255,255,255,0.10);
+  --muted: rgba(245,246,250,0.55);
+
+  --magpies:       #1f1f1f;
+  --magpies-soft:  #c5c5c5;
+  --fulham-green:  #5a8c70;
+
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+  --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+  --r-sm:   10px;
+  --r-md:   16px;
+  --r-lg:   22px;
+  --r-pill: 999px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; color-scheme: dark; }
+
+body {
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse  900px 760px at 94% 10%, rgba(90,140,112,0.18)  0%, transparent 60%),
+    radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(110,195,212,0.11) 0%, transparent 70%),
+    linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ── Masthead ── */
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--glass-edge);
+  background: rgba(10,13,28,0.60);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.back-link { color: var(--accent); }
+
+.brand { font-weight: 500; }
+
+.masthead .meta {
+  display: flex;
+  gap: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.masthead .meta a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.masthead .meta a:hover { color: var(--ink); }
+
+/* ── Hero ── */
+.hero {
+  background: #06070f;
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 64px 32px 56px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -2% -2%;
+  background-image:
+    radial-gradient(ellipse 900px 520px at 28% 30%, rgba(90,140,112,0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 760px 480px at 78% 70%, rgba(31,31,31,0.55) 0%, transparent 70%),
+    linear-gradient(140deg, rgba(20,28,24,0.85) 0%, rgba(6,7,15,0.92) 100%);
+  filter: saturate(0.95) brightness(0.85);
+  opacity: 0.85;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 1100px 540px at 50% 55%, rgba(6,7,15,0.18) 0%, rgba(6,7,15,0.40) 60%, rgba(6,7,15,0.86) 100%),
+    linear-gradient(180deg, rgba(6,7,15,0.55) 0%, rgba(6,7,15,0.05) 25%, rgba(6,7,15,0.05) 70%, rgba(6,7,15,0.95) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-kicker::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.matchup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.club-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 90px;
+}
+
+.club-block img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+}
+
+.club-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+}
+
+.scoreline {
+  flex: 1;
+  text-align: center;
+  min-width: 120px;
+}
+
+.score-nums {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.score-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+
+.hero h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-dek {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  line-height: 1.65;
+}
+
+.hero-meta {
+  margin-top: 28px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-meta span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+/* ── Article body ── */
+.article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 56px 0 0;
+}
+
+.section-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section h2 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
+.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+/* ── Pull quote ── */
+.pullquote {
+  border-left: 3px solid var(--accent);
+  padding: 16px 24px;
+  margin: 32px 0;
+  background: var(--glass);
+}
+
+.pullquote p {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 8px !important;
+}
+
+.pullquote cite {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ── Stats grid ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.stat-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 18px 16px;
+  text-align: center;
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--fulham-green);
+}
+
+.stat-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ── Timeline ── */
+.timeline {
+  margin: 28px 0;
+  border-left: 2px solid var(--rule);
+  padding-left: 24px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--glass-strong);
+  border: 2px solid var(--glass-edge);
+}
+
+.timeline-item.key-moment::before { border-color: var(--accent); background: var(--accent); }
+.timeline-item.farewell::before { border-color: var(--gold); background: var(--gold); }
+
+.timeline-minute {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.timeline-item.farewell .timeline-minute { color: var(--gold); }
+
+.timeline-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2px 0 4px;
+}
+
+.timeline-body {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  display: none;
+  margin-top: 6px;
+}
+
+.timeline-item.open .timeline-body { display: block; }
+.timeline-toggle { font-size: 0.7rem; color: var(--accent); margin-top: 4px; }
+.timeline-item.farewell .timeline-toggle { color: var(--gold); }
+
+/* ── Info card ── */
+.info-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.info-card .card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0 !important;
+}
+
+/* ── Farewell cards ── */
+.farewell-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.farewell-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--gold);
+  padding: 20px 22px;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+  border-radius: var(--r-md);
+}
+
+.farewell-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.farewell-name {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.farewell-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.farewell-note {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ── Season split ── */
+.split-stat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.split-half {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  padding: 20px 24px;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.split-half-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.split-half-pts {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.split-half.good .split-half-pts { color: var(--fulham-green); }
+.split-half.bad  .split-half-pts { color: var(--danger); }
+
+.split-half-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+/* ── Table snapshot ── */
+.table-snapshot {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.table-snapshot h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.league-row {
+  display: grid;
+  grid-template-columns: 24px 1fr 48px;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.88rem;
+}
+
+.league-row:last-child { border-bottom: none; }
+
+.league-row .pos {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.league-row .team-name { font-weight: 500; }
+
+.league-row .pts {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  text-align: right;
+}
+
+.league-row.highlight { background: rgba(212,175,110,0.15); border-radius: 3px; border: 1px solid rgba(212,175,110,0.30); padding: 7px 6px; }
+
+/* ── Poll / Interactive ── */
+.interactive-section {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 56px 32px;
+  margin: 56px -32px 0;
+}
+
+.interactive-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.interactive-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+}
+
+.poll-block {
+  margin-bottom: 48px;
+}
+
+.poll-block h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.poll-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.poll-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--ink);
+  padding: 12px 16px;
+  cursor: pointer;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  transition: background 0.15s;
+  width: 100%;
+}
+
+.poll-btn:hover { background: rgba(255,255,255,0.1); }
+
+.poll-btn-label { flex: 1; }
+
+.poll-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--gold);
+  min-width: 36px;
+  text-align: right;
+  display: none;
+}
+
+.poll-bar-wrap {
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  margin-top: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  display: none;
+}
+
+.poll-bar {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  width: 0;
+  transition: width 0.5s ease;
+}
+
+.poll-voted .poll-pct { display: block; }
+.poll-voted .poll-bar-wrap { display: block; }
+.poll-voted .poll-btn { cursor: default; }
+.poll-voted .poll-btn:hover { background: rgba(255,255,255,0.06); }
+.poll-voted .poll-btn.user-choice { border-color: var(--gold); background: rgba(184,147,94,0.1); }
+
+.poll-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.3);
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+/* Rating widget */
+.rating-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.rating-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-radius: 3px;
+}
+
+.rating-btn:hover { background: rgba(255,255,255,0.12); }
+.rating-btn.selected { background: var(--gold); color: #0d0d0d; border-color: var(--gold); }
+
+.rating-result {
+  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: none;
+}
+
+.rating-result.visible { display: block; }
+
+/* ── Footer ── */
+.footer {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  color: rgba(255,255,255,0.5);
+  padding: 40px 32px;
+}
+
+.footer > div {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer a:hover { color: var(--ink); }
+
+/* ── Frosted card overrides ── */
+.pullquote, .stat-card, .info-card, .table-snapshot {
+  border-radius: var(--r-md);
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+.poll-btn, .rating-btn { border-radius: var(--r-pill); border-color: var(--glass-edge); }
+.poll-btn:hover, .rating-btn:hover { border-color: var(--glass-edge-strong); }
+.timeline-item::before { background: var(--glass-strong); border-color: var(--glass-edge); }
+.league-row.highlight { background: rgba(212,175,110,0.15); border: 1px solid rgba(212,175,110,0.30); }
+.rating-btn.selected { background: var(--gold); color: var(--bg-1); border-color: var(--gold); box-shadow: 0 0 24px rgba(212,175,110,0.35); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .masthead { padding: 12px 20px; }
+  .hero { padding: 40px 20px 40px; }
+  .article-body { padding: 0 20px 60px; }
+  .score-nums { font-size: 2.8rem; }
+  .matchup { gap: 16px; }
+  .club-block img { width: 52px; height: 52px; }
+  .interactive-section { padding: 40px 20px; margin: 40px -20px 0; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .split-stat { grid-template-columns: 1fr; }
+  .farewell-grid { grid-template-columns: 1fr; }
+  .masthead .meta { gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="/" class="brand-link">
+    <span class="back-link">← That's So Craven</span>
+    <span>/</span>
+    <span class="brand">Match Review</span>
+  </a>
+  <div class="meta">
+    <span><a href="https://podfollow.com/thats-so-craven">🎙 Podcast</a></span>
+    <span><a href="https://discord.gg/mUZQhDHJPR">💬 Discord</a></span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Premier League · GW38 · 24 May 2026</div>
+    <div class="matchup">
+      <div class="club-block">
+        <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" alt="Fulham FC crest">
+        <span class="club-name">Fulham</span>
+      </div>
+      <div class="scoreline">
+        <div class="score-nums">2 – 0</div>
+        <div class="score-label">Full Time</div>
+      </div>
+      <div class="club-block">
+        <img src="https://resources.premierleague.com/premierleague/badges/t4.svg" alt="Newcastle United crest">
+        <span class="club-name">Newcastle</span>
+      </div>
+    </div>
+    <h1>Kevin off the bar. Diop on the rebound. <em>Cairney into the top corner.</em></h1>
+    <p class="hero-dek">A 2-0 win on the final day. Eleventh place. A lap of honour for a squad that may have just said goodbye to Raul Jimenez, Harry Wilson and, perhaps, the manager who has been here through all of it. The summer starts now, and it is going to be a big one.</p>
+    <div class="hero-meta">
+      <span>Craven Cottage, SW6</span>
+      <span>24 May 2026</span>
+      <span>GW38</span>
+      <span>~7 min read</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <!-- §01 The Story -->
+  <section class="section">
+    <div class="section-kicker">§ 01 · The Story</div>
+    <h2>Two goals, three farewells, <em>eleventh place to take into a long summer</em>.</h2>
+    <p>There are last days that produce nothing of note and last days that produce something to remember. This one ended up closer to the second. A 2-0 win over a Newcastle side with nothing to play for, two goals worth talking about, and a lap of honour at the close that asked rather a lot of questions and answered none of them.</p>
+    <p>Newcastle came down from the north-east in mid-table comfort, their season already filed away, and looked from the first whistle like a team booking the early flight home. Fulham did not exactly tear into them. The Cottage knew the league position was secure either way, the European race long since gone, and the football reflected that. What it also reflected, in two moments roughly an hour apart, was a side that still had a couple of things left to say.</p>
+
+    <div class="pullquote">
+      <p>"The boys deserved the afternoon. The supporters too. The rest, we will see in time."</p>
+      <cite>Marco Silva, post-match</cite>
+    </div>
+
+    <p>The first of those moments arrived from a free kick on the edge of the box. Kevin standing over it, thirty yards out, set himself, and struck a ball that for the half-second it took to travel looked as good as anything he has produced in a white shirt this season. It hit the underside of the crossbar with the sort of sound that makes you stand up before you've worked out what's happening. Issa Diop, the only Fulham player to read where it would come down, was first to the rebound. First Premier League goal of his season. Probably last as well. The Cottage roared in a way it had not roared in some weeks.</p>
+    <p>The second was something else. Tom Cairney, on as a substitute, picked the ball up in a pocket of space twenty-five yards out and curled it into the top corner with the kind of finish that does not really belong to a thirty-five-year-old midfielder on his way out of the season. It was the goal of a player rolling back the years because he could, and it sealed a 2-0 win on a day the Cottage had quietly been hoping for one.</p>
+    <p>Eleventh in the table when it was all done. Three points clear of Brentford in the final reckoning. A position that, after the way January and February turned, none of us would have taken with both hands a month ago.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §02 Key Moments -->
+  <section class="section">
+    <div class="section-kicker">§ 02 · Key Moments</div>
+    <h2>The two goals, the two waves, <em>and a lap that didn't answer anything</em>.</h2>
+    <p>Click any moment to expand the detail.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">1H</div>
+        <div class="timeline-title">A controlled, low-tempo opening</div>
+        <div class="timeline-body">Fulham settled quickly into possession and Newcastle were happy to let them have it. The early chances came in pieces. A Wilson cross that nearly found its man at the back stick. A Jimenez header that he met cleanly but couldn't keep down. The Cottage knew what it was watching, and watched it with patience.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">1H ·</div>
+        <div class="timeline-title">KEVIN. The bar. DIOP, on the follow-up</div>
+        <div class="timeline-body">Free kick from thirty yards. Kevin standing over it. The strike was clean, dipping late, and crashed off the underside of the bar with the keeper beaten. Diop, the only Fulham player to gamble on the rebound, was there to bundle it home from close range. His first goal of the season, and the kind of striker's instinct from a centre-half that the Cottage did not really know it had. 1-0.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">HT</div>
+        <div class="timeline-title">Half time. 1-0. Comfortable</div>
+        <div class="timeline-body">Fulham went in a goal up against a side with no real shape and less urgency. The atmosphere had shifted with Diop's goal from polite to engaged. Newcastle had offered very little. Silva looked, by the standards of recent weeks, almost relaxed on the touchline.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item key-moment" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">2H ·</div>
+        <div class="timeline-title">CAIRNEY. Top corner. Goal of the day</div>
+        <div class="timeline-body">A Fulham move started in midfield and spread out, the ball worked back to Tom Cairney in space twenty-five yards out. One touch to set, a second to bend it, and the finish was into the top right-hand corner with the keeper rooted. The kind of strike a fit Cairney has always been capable of, and not a finish you see from a thirty-five-year-old midfielder in his testimonial year-equivalent for any club. 2-0.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item farewell" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">2H ·</div>
+        <div class="timeline-title">Jimenez and Wilson, off to ovations</div>
+        <div class="timeline-body">Both had half-chances on what may have been their final appearances in a Fulham shirt. Jimenez had got onto a header earlier; Wilson worked the keeper from outside the area with the sort of low strike that has been his calling card. Neither found the goal, but both were given the kind of send-off the Cottage reserves for players it has come to know. Both waved. Neither said a word about leaving. The unspoken sat across both of those substitutions.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-minute">FT</div>
+        <div class="timeline-title">2-0. Eleventh sealed. Lap of honour</div>
+        <div class="timeline-body">The whistle went, the squad disappeared down the tunnel, and then came back out again. The lap was warmer than the season had probably earned, and Silva walked it with the players. He had no comment to offer on his own future. The post-match interviews stuck to the football. The summer that follows will fill in the rest of the sentence one way or the other.</div>
+        <div class="timeline-toggle">+ show more</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §03 The Goals -->
+  <section class="section">
+    <div class="section-kicker">§ 03 · The Goals</div>
+    <h2>Kevin, off the bar. Cairney, into the corner. <em>Two finishes worth keeping.</em></h2>
+    <p>If you had been told in advance that the two goals on the last day would come from a centre-half on a rebound and a thirty-five-year-old midfielder off the bench, you would have raised an eyebrow and asked who got hurt. Neither was scripted. Both, in their own way, were the right kind of finish to close a season on.</p>
+
+    <div class="info-card">
+      <div class="card-label">The free kick, in three beats</div>
+      <p>1. Kevin steps up from thirty yards, sets, and strikes it clean.<br>2. The ball dips late and clatters the underside of the crossbar with the keeper static.<br>3. Diop, alone in following up, bundles in from close range for his first of the season.</p>
+    </div>
+
+    <p>The Kevin strike itself deserved the goal. It would have been a contender for goal of the season had the woodwork been a few inches kinder. There is a version of that highlight reel where the ball drops in, the Cottage erupts, and Kevin's afternoon is on the front of the back pages. The version we got is almost better, because it gave Diop, who has had a quiet year, a moment to take home for the summer. A centre-half's instinct in the right place at the right time.</p>
+
+    <div class="pullquote">
+      <p>"Kevin's free kick deserved a goal. Issa being there to follow it up, that is what defenders are supposed to do at both ends. He earned that."</p>
+      <cite>Marco Silva, post-match</cite>
+    </div>
+
+    <p>The Cairney finish is a different kind of goal entirely. It was a craft goal, the sort that comes from a player who has been playing in this league long enough to know exactly which corner is leaving, where the keeper's weight is, and how much pace the ball needs to carry. He set himself with one touch, and the second produced a curl into the top right that the crowd took a full second to make sense of. There is no need to overdress it. Cairney has been a Fulham legend for years, and this is exactly the sort of goal that keeps that label fixed where it belongs.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §04 The Farewells -->
+  <section class="section">
+    <div class="section-kicker">§ 04 · The Farewells</div>
+    <h2>Three goodbyes. <em>None of them said out loud.</em></h2>
+    <p>The lap of honour can be tricky to read. Most clubs do them every season, regardless of how the year has gone, and you can usually tell from a player's face which ones were the routine goodbyes and which ones were the real ones. On Sunday afternoon at the Cottage there were three sets of body language worth watching, and none of the three offered any kind of confirmation either way.</p>
+
+    <div class="farewell-grid">
+      <div class="farewell-card">
+        <div class="farewell-label">Forward</div>
+        <div class="farewell-name">Raul Jimenez</div>
+        <div class="farewell-sub">Contract expiring · No renewal news</div>
+        <p class="farewell-note">Had a header to score in the first half and was warmly applauded off in the second. Has been at the club long enough to know what the lap of honour means; long enough also to know better than to declare anything before it is signed.</p>
+      </div>
+      <div class="farewell-card">
+        <div class="farewell-label">Forward</div>
+        <div class="farewell-name">Harry Wilson</div>
+        <div class="farewell-sub">Contract expiring · No renewal news</div>
+        <p class="farewell-note">Tested the keeper with a low drive that had the angles to be the goal of his Fulham career and instead was tipped wide. Waved to the Hammy End on the way around. Looked, for what it is worth, like a player taking it in rather than coming back.</p>
+      </div>
+      <div class="farewell-card">
+        <div class="farewell-label">Head Coach</div>
+        <div class="farewell-name">Marco Silva</div>
+        <div class="farewell-sub">Contract expiring · Coy all week</div>
+        <p class="farewell-note">Walked the lap with the squad rather than apart from it, which means whatever you want it to mean. Gave nothing away in the post-match interviews. The decision, if it has been made, has not yet been spoken aloud.</p>
+      </div>
+    </div>
+
+    <p>The Jimenez and Wilson positions are, on the public information available, more or less the same. Both are out of contract. Neither has been linked publicly with a new deal. Both got the standard end-of-season warmth at the Cottage and both gave the supporters something like the body language of a man who knows it is the last time. Neither said as much. That part is left to the summer, and to people higher up the building than the ones writing this.</p>
+    <p>Silva is the harder read, because Silva has been the harder read all season. The Wolves week ended with a non-answer. The Newcastle week added nothing to it. He gave no comment after the game. He walked the lap. He shook the hands he was supposed to shake. The post-match was about the players and the season. By the time you read this, it may have moved. As of Sunday evening, it had not.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §05 The Season -->
+  <section class="section">
+    <div class="section-kicker">§ 05 · The Season</div>
+    <h2>Fifty-two points, eleventh place, <em>a season of two clearly different halves</em>.</h2>
+    <p>The win moves Fulham to fifty-two points. Eleventh in the table. A finish that, if you had offered it to the Cottage in pre-season, would have been received with a steady nod rather than a celebration. After January, when the wheels came loose and twenty-three games of solid work started to thin out, eleventh by the end of May represents a soft landing rather than a result.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Final position</div>
+        <div class="stat-value">11th</div>
+        <div class="stat-sub">Premier League 2025/26</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Points</div>
+        <div class="stat-value">52</div>
+        <div class="stat-sub">38 games played</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Last day result</div>
+        <div class="stat-value">2–0</div>
+        <div class="stat-sub">vs Newcastle, home</div>
+      </div>
+    </div>
+
+    <p>The split tells the truer story. The first twenty-three games produced thirty-four points and the look of a team genuinely in the Europe conversation. The last fifteen games produced eighteen, which on its own is a relegation-form return over the same number of fixtures, and which on its own would have made for a very different afternoon on Sunday. The cushion that earlier run built was the thing that held the season up. Without those autumn months, the cottage looks at the relegation zone in April rather than the European one.</p>
+
+    <div class="split-stat">
+      <div class="split-half good">
+        <div class="split-half-label">Games 1–23</div>
+        <div class="split-half-pts">34 pts</div>
+        <div class="split-half-sub">The European push</div>
+      </div>
+      <div class="split-half bad">
+        <div class="split-half-label">Games 24–38</div>
+        <div class="split-half-pts">18 pts</div>
+        <div class="split-half-sub">The drift</div>
+      </div>
+    </div>
+
+    <p>That mid-season security is doing a lot of work in the final accounting. It is the only thing that turns this from a worrying season into a forgettable one. Eleventh is fine. Eleventh after the kind of slump we have just sat through is, frankly, lucky. Whether that lottery ticket gets cashed properly is the entire story of the next three months.</p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- §06 The Bigger Picture -->
+  <section class="section">
+    <div class="section-kicker">§ 06 · The Bigger Picture</div>
+    <h2>A season that won't be remembered. <em>A summer that will define the next two.</em></h2>
+    <p>If you ask a Fulham supporter in five years what they remember about 2025/26, the honest answer is that they probably won't remember a great deal. There was no European campaign, no cup run worth filing, no relegation scare, no title push from anyone nearby. The financial picture, the squad shape and the manager question, all of which had been bubbling for some time, were the loudest things about the year, and none of them are really stories the football itself answered.</p>
+
+    <p>What sits in front of the club now is, on any honest reading, one of the biggest summers in recent memory.</p>
+
+    <div class="table-snapshot">
+      <h3>What the summer has to resolve</h3>
+      <div class="league-row" style="grid-template-columns: 1fr;">
+        <span class="team-name">1. The manager. Silva in or out. Replacement identified if out.</span>
+      </div>
+      <div class="league-row" style="grid-template-columns: 1fr;">
+        <span class="team-name">2. The contract list. Jimenez, Wilson, others. Stay or replace.</span>
+      </div>
+      <div class="league-row" style="grid-template-columns: 1fr;">
+        <span class="team-name">3. The Squad Cost Ratio shadow year ends. Real numbers from 2026/27.</span>
+      </div>
+      <div class="league-row" style="grid-template-columns: 1fr;">
+        <span class="team-name">4. A first eleven that is starting to need refreshing in three areas at once.</span>
+      </div>
+      <div class="league-row" style="grid-template-columns: 1fr;">
+        <span class="team-name">5. A long-overdue look at whether the second-half drop-off is the manager, the squad, or both.</span>
+      </div>
+    </div>
+
+    <p>The financial backdrop is its own conversation, and there is a full piece on it elsewhere on this site. The short version is that 2026/27 is the first year of the Premier League's new squad-cost rules, and the wage ratio Fulham have been running for the last two seasons is closer to the upper limit than the comfort zone. That is not by itself a crisis, but it is by itself a constraint. The summer plans have to be made with that constraint in the room.</p>
+
+    <p>And then there is the manager. Whatever you think of Silva, and the Cottage is genuinely split on him, the truth is that the same pattern has now repeated three times: the team is somewhere interesting through Christmas, the team falls away from February, and the season ends on a flat note. If he stays, that pattern is the question he has to answer. If he goes, the answer becomes someone else's problem and the appointment behind him has to be the right one first time. Neither path is straightforward.</p>
+
+    <div class="pullquote">
+      <p>"It has been a privilege to manage these players. The decisions ahead are not for today. Today is for the supporters."</p>
+      <cite>Marco Silva, post-match</cite>
+    </div>
+
+    <p>That was as close as he got. Make of it what you will.</p>
+
+    <p>The 2-0 itself was a fitting close to a season that turned out fine without ever turning out memorable. Kevin produced something worth a goal that the post would not let in. Diop took a striker's chance that he might not have taken in August. Cairney rolled back four or five years and did something only he in this squad can really do. Three players, three moments, on a day that the football served as a backdrop to questions that football alone was not going to answer.</p>
+
+    <p>The Cottage emptied slowly. The summer starts now. By the time the players are back in for pre-season, this club is going to look different in ways that we cannot yet see. Sit tight.</p>
+  </section>
+
+</div>
+
+<!-- §07 Interactive -->
+<section class="interactive-section">
+  <div class="interactive-inner">
+    <div class="interactive-kicker">§ 07 · Your verdict</div>
+
+    <!-- POTM Vote -->
+    <div class="poll-block" id="potm-block">
+      <h3>Man of the Match</h3>
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-family:'JetBrains Mono', monospace;letter-spacing:0.05em;">Goalscorers, the free-kick taker, the farewells, and the rest.</p>
+      <div class="poll-options" id="potm-options">
+
+        <button class="poll-btn" data-poll="potm" data-choice="diop" onclick="castVote('potm','diop')">
+          <span class="poll-btn-label">Issa Diop (1st goal of season)</span>
+          <span class="poll-pct" id="potm-pct-diop">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-diop"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="kevin" onclick="castVote('potm','kevin')">
+          <span class="poll-btn-label">Kevin (the free kick of the season that wasn't)</span>
+          <span class="poll-pct" id="potm-pct-kevin">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-kevin"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="cairney" onclick="castVote('potm','cairney')">
+          <span class="poll-btn-label">Tom Cairney (top corner, sub)</span>
+          <span class="poll-pct" id="potm-pct-cairney">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-cairney"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="jimenez" onclick="castVote('potm','jimenez')">
+          <span class="poll-btn-label">Raul Jimenez (potential farewell)</span>
+          <span class="poll-pct" id="potm-pct-jimenez">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-jimenez"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="wilson" onclick="castVote('potm','wilson')">
+          <span class="poll-btn-label">Harry Wilson (potential farewell)</span>
+          <span class="poll-pct" id="potm-pct-wilson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-wilson"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="leno" onclick="castVote('potm','leno')">
+          <span class="poll-btn-label">Bernd Leno</span>
+          <span class="poll-pct" id="potm-pct-leno">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-leno"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="robinson" onclick="castVote('potm','robinson')">
+          <span class="poll-btn-label">Antonee Robinson</span>
+          <span class="poll-pct" id="potm-pct-robinson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-robinson"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="bassey" onclick="castVote('potm','bassey')">
+          <span class="poll-btn-label">Calvin Bassey</span>
+          <span class="poll-pct" id="potm-pct-bassey">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bassey"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="berge" onclick="castVote('potm','berge')">
+          <span class="poll-btn-label">Sander Berge</span>
+          <span class="poll-pct" id="potm-pct-berge">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-berge"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="bobb" onclick="castVote('potm','bobb')">
+          <span class="poll-btn-label">Oscar Bobb</span>
+          <span class="poll-pct" id="potm-pct-bobb">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bobb"></div></div>
+
+      </div>
+      <div class="poll-count" id="potm-count"></div>
+    </div>
+
+    <!-- Silva poll -->
+    <div class="poll-block" id="silva-block">
+      <h3>Marco Silva: should he stay?</h3>
+      <div class="poll-options" id="silva-options">
+        <button class="poll-btn" data-poll="silva" data-choice="stay" onclick="castVote('silva','stay')">
+          <span class="poll-btn-label">Yes, give him another summer to build</span>
+          <span class="poll-pct" id="silva-pct-stay">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="silva-bar-stay"></div></div>
+
+        <button class="poll-btn" data-poll="silva" data-choice="go" onclick="castVote('silva','go')">
+          <span class="poll-btn-label">No, the second-half collapse is on him</span>
+          <span class="poll-pct" id="silva-pct-go">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="silva-bar-go"></div></div>
+
+        <button class="poll-btn" data-poll="silva" data-choice="depends" onclick="castVote('silva','depends')">
+          <span class="poll-btn-label">Only if the squad gets a proper refresh</span>
+          <span class="poll-pct" id="silva-pct-depends">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="silva-bar-depends"></div></div>
+
+        <button class="poll-btn" data-poll="silva" data-choice="unsure" onclick="castVote('silva','unsure')">
+          <span class="poll-btn-label">Genuinely undecided</span>
+          <span class="poll-pct" id="silva-pct-unsure">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="silva-bar-unsure"></div></div>
+      </div>
+      <div class="poll-count" id="silva-count"></div>
+    </div>
+
+    <!-- Farewell poll -->
+    <div class="poll-block" id="farewell-block">
+      <h3>Of the three, who will you miss most if they leave?</h3>
+      <div class="poll-options" id="farewell-options">
+        <button class="poll-btn" data-poll="farewell" data-choice="jimenez" onclick="castVote('farewell','jimenez')">
+          <span class="poll-btn-label">Raul Jimenez</span>
+          <span class="poll-pct" id="farewell-pct-jimenez">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="farewell-bar-jimenez"></div></div>
+
+        <button class="poll-btn" data-poll="farewell" data-choice="wilson" onclick="castVote('farewell','wilson')">
+          <span class="poll-btn-label">Harry Wilson</span>
+          <span class="poll-pct" id="farewell-pct-wilson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="farewell-bar-wilson"></div></div>
+
+        <button class="poll-btn" data-poll="farewell" data-choice="silva" onclick="castVote('farewell','silva')">
+          <span class="poll-btn-label">Marco Silva</span>
+          <span class="poll-pct" id="farewell-pct-silva">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="farewell-bar-silva"></div></div>
+
+        <button class="poll-btn" data-poll="farewell" data-choice="none" onclick="castVote('farewell','none')">
+          <span class="poll-btn-label">All three; it's a proper changing of the guard</span>
+          <span class="poll-pct" id="farewell-pct-none">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="farewell-bar-none"></div></div>
+      </div>
+      <div class="poll-count" id="farewell-count"></div>
+    </div>
+
+    <!-- Season verdict poll -->
+    <div class="poll-block" id="season-block">
+      <h3>Looking back, the season was…</h3>
+      <div class="poll-options" id="season-options">
+        <button class="poll-btn" data-poll="season" data-choice="forgettable" onclick="castVote('season','forgettable')">
+          <span class="poll-btn-label">Forgettable, but a soft landing</span>
+          <span class="poll-pct" id="season-pct-forgettable">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="season-bar-forgettable"></div></div>
+
+        <button class="poll-btn" data-poll="season" data-choice="disappointing" onclick="castVote('season','disappointing')">
+          <span class="poll-btn-label">Disappointing, given how it started</span>
+          <span class="poll-pct" id="season-pct-disappointing">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="season-bar-disappointing"></div></div>
+
+        <button class="poll-btn" data-poll="season" data-choice="acceptable" onclick="castVote('season','acceptable')">
+          <span class="poll-btn-label">Acceptable for a club of this size</span>
+          <span class="poll-pct" id="season-pct-acceptable">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="season-bar-acceptable"></div></div>
+
+        <button class="poll-btn" data-poll="season" data-choice="wasted" onclick="castVote('season','wasted')">
+          <span class="poll-btn-label">A wasted opportunity for Europe</span>
+          <span class="poll-pct" id="season-pct-wasted">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="season-bar-wasted"></div></div>
+      </div>
+      <div class="poll-count" id="season-count"></div>
+    </div>
+
+    <!-- Performance Rating -->
+    <div class="poll-block" id="rating-block">
+      <h3>Rate the performance out of 10</h3>
+      <div class="rating-widget">
+        <div class="rating-row" id="rating-row"></div>
+        <div class="rating-result" id="rating-result"></div>
+        <div class="poll-count" id="rating-count"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="/">← Back to Cravenpod</a>
+    <a href="https://podfollow.com/thats-so-craven">🎙 Listen to the Podcast</a>
+    <a href="https://discord.gg/mUZQhDHJPR">💬 Join the Discord</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+  const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+  const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+  const sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+  const LS_PREFIX = 'cravenpod-ful20new-may26-';
+
+  const POLL_IDS = {
+    potm:     'ful-new-may26-potm',
+    silva:    'ful-new-may26-silva',
+    farewell: 'ful-new-may26-farewell',
+    season:   'ful-new-may26-season',
+    rating:   'ful-new-may26-rating',
+  };
+
+  function getUserChoice(poll) {
+    try { return localStorage.getItem(LS_PREFIX + poll) || null; } catch(e) { return null; }
+  }
+  function saveUserChoice(poll, choice) {
+    try { localStorage.setItem(LS_PREFIX + poll, choice); } catch(e) {}
+  }
+
+  async function fetchCounts(pollId) {
+    const { data, error } = await sb.from('poll_counts')
+      .select('choice, count')
+      .eq('poll_id', pollId);
+    if (error || !data) return {};
+    const counts = {};
+    data.forEach(row => { counts[row.choice] = parseInt(row.count) || 0; });
+    return counts;
+  }
+
+  function renderPoll(pollName, userChoice, counts) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return;
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userChoice) return;
+
+    block.classList.add('poll-voted');
+    block.querySelectorAll('.poll-btn').forEach(btn => {
+      btn.classList.remove('user-choice');
+      if (btn.dataset.choice === userChoice) btn.classList.add('user-choice');
+    });
+
+    const choices = getPollChoices(pollName);
+    choices.forEach(choice => {
+      const count = counts[choice] || 0;
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      const pctEl = document.getElementById(pollName + '-pct-' + choice);
+      const barEl = document.getElementById(pollName + '-bar-' + choice);
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (barEl) setTimeout(() => { barEl.style.width = pct + '%'; }, 50);
+    });
+
+    const countEl = document.getElementById(pollName + '-count');
+    if (countEl) countEl.textContent = total + (total === 1 ? ' vote' : ' votes') + ' cast';
+  }
+
+  function getPollChoices(pollName) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return [];
+    return Array.from(block.querySelectorAll('.poll-btn[data-choice]')).map(b => b.dataset.choice);
+  }
+
+  window.castVote = async function(pollName, choice) {
+    if (getUserChoice(pollName)) return;
+    const pollId = POLL_IDS[pollName];
+    if (!pollId) return;
+
+    saveUserChoice(pollName, choice);
+    await sb.from('poll_votes').insert({ poll_id: pollId, choice: choice });
+    const counts = await fetchCounts(pollId);
+    renderPoll(pollName, choice, counts);
+  };
+
+  async function initPolls() {
+    for (const [pollName, pollId] of Object.entries(POLL_IDS)) {
+      if (pollName === 'rating') continue;
+      const userChoice = getUserChoice(pollName);
+      const counts = await fetchCounts(pollId);
+      renderPoll(pollName, userChoice, counts);
+    }
+  }
+  initPolls();
+
+  /* ── Rating widget ── */
+  const ratingRow    = document.getElementById('rating-row');
+  const ratingResult = document.getElementById('rating-result');
+  const ratingCount  = document.getElementById('rating-count');
+
+  function buildRatingButtons() {
+    if (!ratingRow) return;
+    for (let i = 1; i <= 10; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'rating-btn';
+      btn.textContent = i;
+      btn.dataset.val = i;
+      btn.onclick = () => castRating(i);
+      ratingRow.appendChild(btn);
+    }
+  }
+
+  async function castRating(val) {
+    if (getUserChoice('rating')) return;
+    saveUserChoice('rating', String(val));
+    await sb.from('poll_votes').insert({ poll_id: POLL_IDS.rating, choice: String(val) });
+    await renderRating(String(val));
+  }
+
+  async function renderRating(userVal) {
+    if (!ratingRow) return;
+    const counts = await fetchCounts(POLL_IDS.rating);
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userVal) return;
+
+    ratingRow.querySelectorAll('.rating-btn').forEach(btn => {
+      btn.onclick = null;
+      btn.style.cursor = 'default';
+      btn.classList.toggle('selected', btn.dataset.val === userVal);
+    });
+
+    if (total > 0) {
+      const sum = Object.entries(counts).reduce((acc, [r, c]) => acc + parseInt(r) * c, 0);
+      const avg = (sum / total).toFixed(1);
+      if (ratingResult) {
+        ratingResult.textContent = 'Community average: ' + avg + ' / 10';
+        ratingResult.classList.add('visible');
+      }
+      if (ratingCount) ratingCount.textContent = total + (total === 1 ? ' rating' : ' ratings') + ' submitted';
+    }
+  }
+
+  buildRatingButtons();
+  const existingRating = getUserChoice('rating');
+  if (existingRating) renderRating(existingRating);
+
+  /* ── Timeline toggle ── */
+  window.toggleTimeline = function(el) {
+    const isOpen = el.classList.contains('open');
+    el.classList.toggle('open', !isOpen);
+    const toggle = el.querySelector('.timeline-toggle');
+    if (toggle) toggle.textContent = isOpen ? '+ show more' : '– show less';
+  };
+
+})();
+</script>
+
+<script data-goatcounter="https://cravenpod.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
