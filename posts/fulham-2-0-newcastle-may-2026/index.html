@@ -880,7 +880,6 @@ body::before {
 
 <div class="article-body">
 
-  <!-- §01 The Story -->
   <section class="section">
     <div class="section-kicker">§ 01 · The Story</div>
     <h2>Two goals, three farewells, <em>eleventh place to take into a long summer</em>.</h2>
@@ -898,7 +897,6 @@ body::before {
 
   <hr class="rule">
 
-  <!-- §02 Key Moments -->
   <section class="section">
     <div class="section-kicker">§ 02 · Key Moments</div>
     <h2>The two goals, the two waves, <em>and a lap that didn't answer anything</em>.</h2>
@@ -967,7 +965,6 @@ body::before {
 
   <hr class="rule">
 
-  <!-- §03 The Goals -->
   <section class="section">
     <div class="section-kicker">§ 03 · The Goals</div>
     <h2>Kevin off the bar. Cairney into the corner. <em>Two finishes worth keeping.</em></h2>
@@ -992,7 +989,6 @@ body::before {
 
   <hr class="rule">
 
-  <!-- §04 The Farewells -->
   <section class="section">
     <div class="section-kicker">§ 04 · The Farewells</div>
     <h2>Three goodbyes. <em>One of them confirmed by Silva himself.</em></h2>
@@ -1031,7 +1027,6 @@ body::before {
 
   <hr class="rule">
 
-  <!-- §05 The Season -->
   <section class="section">
     <div class="section-kicker">§ 05 · The Season</div>
     <h2>Fifty-two points, eleventh place, <em>a season of two clearly different halves</em>.</h2>
@@ -1082,7 +1077,6 @@ body::before {
 
   <hr class="rule">
 
-  <!-- §06 The Bigger Picture -->
   <section class="section">
     <div class="section-kicker">§ 06 · The Bigger Picture</div>
     <h2>A season that won't be remembered. <em>A summer that will define the next two.</em></h2>
@@ -1134,16 +1128,26 @@ body::before {
 
 </div>
 
-<!-- §07 Interactive -->
 <section class="interactive-section">
   <div class="interactive-inner">
     <div class="interactive-kicker">§ 07 · Your verdict</div>
 
-    <!-- POTM Vote -->
     <div class="poll-block" id="potm-block">
       <h3>Man of the Match</h3>
-      <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-family:'JetBrains Mono', monospace;letter-spacing:0.05em;">Goalscorers, the free-kick taker, the farewells, and the rest.</p>
+      <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-family:'JetBrains Mono', monospace;letter-spacing:0.05em;">All 11 starters and the five subs. Pick one.</p>
       <div class="poll-options" id="potm-options">
+
+        <button class="poll-btn" data-poll="potm" data-choice="leno" onclick="castVote('potm','leno')">
+          <span class="poll-btn-label">Bernd Leno (GK)</span>
+          <span class="poll-pct" id="potm-pct-leno">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-leno"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="castagne" onclick="castVote('potm','castagne')">
+          <span class="poll-btn-label">Timothy Castagne</span>
+          <span class="poll-pct" id="potm-pct-castagne">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-castagne"></div></div>
 
         <button class="poll-btn" data-poll="potm" data-choice="diop" onclick="castVote('potm','diop')">
           <span class="poll-btn-label">Issa Diop (1st goal of season)</span>
@@ -1151,35 +1155,11 @@ body::before {
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-diop"></div></div>
 
-        <button class="poll-btn" data-poll="potm" data-choice="kevin" onclick="castVote('potm','kevin')">
-          <span class="poll-btn-label">Kevin (the free kick of the season that wasn't)</span>
-          <span class="poll-pct" id="potm-pct-kevin">0%</span>
+        <button class="poll-btn" data-poll="potm" data-choice="bassey" onclick="castVote('potm','bassey')">
+          <span class="poll-btn-label">Calvin Bassey</span>
+          <span class="poll-pct" id="potm-pct-bassey">0%</span>
         </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-kevin"></div></div>
-
-        <button class="poll-btn" data-poll="potm" data-choice="cairney" onclick="castVote('potm','cairney')">
-          <span class="poll-btn-label">Tom Cairney (top corner, sub)</span>
-          <span class="poll-pct" id="potm-pct-cairney">0%</span>
-        </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-cairney"></div></div>
-
-        <button class="poll-btn" data-poll="potm" data-choice="jimenez" onclick="castVote('potm','jimenez')">
-          <span class="poll-btn-label">Raul Jimenez (potential farewell)</span>
-          <span class="poll-pct" id="potm-pct-jimenez">0%</span>
-        </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-jimenez"></div></div>
-
-        <button class="poll-btn" data-poll="potm" data-choice="wilson" onclick="castVote('potm','wilson')">
-          <span class="poll-btn-label">Harry Wilson (potential farewell)</span>
-          <span class="poll-pct" id="potm-pct-wilson">0%</span>
-        </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-wilson"></div></div>
-
-        <button class="poll-btn" data-poll="potm" data-choice="leno" onclick="castVote('potm','leno')">
-          <span class="poll-btn-label">Bernd Leno</span>
-          <span class="poll-pct" id="potm-pct-leno">0%</span>
-        </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-leno"></div></div>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bassey"></div></div>
 
         <button class="poll-btn" data-poll="potm" data-choice="robinson" onclick="castVote('potm','robinson')">
           <span class="poll-btn-label">Antonee Robinson</span>
@@ -1187,17 +1167,17 @@ body::before {
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-robinson"></div></div>
 
-        <button class="poll-btn" data-poll="potm" data-choice="bassey" onclick="castVote('potm','bassey')">
-          <span class="poll-btn-label">Calvin Bassey</span>
-          <span class="poll-pct" id="potm-pct-bassey">0%</span>
-        </button>
-        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bassey"></div></div>
-
         <button class="poll-btn" data-poll="potm" data-choice="berge" onclick="castVote('potm','berge')">
           <span class="poll-btn-label">Sander Berge</span>
           <span class="poll-pct" id="potm-pct-berge">0%</span>
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-berge"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="iwobi" onclick="castVote('potm','iwobi')">
+          <span class="poll-btn-label">Alex Iwobi (top rated, 8.1)</span>
+          <span class="poll-pct" id="potm-pct-iwobi">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-iwobi"></div></div>
 
         <button class="poll-btn" data-poll="potm" data-choice="bobb" onclick="castVote('potm','bobb')">
           <span class="poll-btn-label">Oscar Bobb</span>
@@ -1205,11 +1185,58 @@ body::before {
         </button>
         <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-bobb"></div></div>
 
+        <button class="poll-btn" data-poll="potm" data-choice="esr" onclick="castVote('potm','esr')">
+          <span class="poll-btn-label">Emile Smith Rowe</span>
+          <span class="poll-pct" id="potm-pct-esr">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-esr"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="kevin" onclick="castVote('potm','kevin')">
+          <span class="poll-btn-label">Kevin (the free kick of the season that wasn't)</span>
+          <span class="poll-pct" id="potm-pct-kevin">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-kevin"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="muniz" onclick="castVote('potm','muniz')">
+          <span class="poll-btn-label">Rodrigo Muniz</span>
+          <span class="poll-pct" id="potm-pct-muniz">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-muniz"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="cairney" onclick="castVote('potm','cairney')">
+          <span class="poll-btn-label">Tom Cairney (top corner, sub)</span>
+          <span class="poll-pct" id="potm-pct-cairney">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-cairney"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="wilson" onclick="castVote('potm','wilson')">
+          <span class="poll-btn-label">Harry Wilson (assisted the 2-0, sub)</span>
+          <span class="poll-pct" id="potm-pct-wilson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-wilson"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="king" onclick="castVote('potm','king')">
+          <span class="poll-btn-label">Joshua King (sub)</span>
+          <span class="poll-pct" id="potm-pct-king">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-king"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="jimenez" onclick="castVote('potm','jimenez')">
+          <span class="poll-btn-label">Raul Jimenez (potential farewell, sub)</span>
+          <span class="poll-pct" id="potm-pct-jimenez">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-jimenez"></div></div>
+
+        <button class="poll-btn" data-poll="potm" data-choice="cuenca" onclick="castVote('potm','cuenca')">
+          <span class="poll-btn-label">Jorge Cuenca (sub)</span>
+          <span class="poll-pct" id="potm-pct-cuenca">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="potm-bar-cuenca"></div></div>
+
       </div>
       <div class="poll-count" id="potm-count"></div>
     </div>
 
-    <!-- Silva poll -->
     <div class="poll-block" id="silva-block">
       <h3>Marco Silva: should he stay?</h3>
       <div class="poll-options" id="silva-options">
@@ -1240,7 +1267,6 @@ body::before {
       <div class="poll-count" id="silva-count"></div>
     </div>
 
-    <!-- Farewell poll -->
     <div class="poll-block" id="farewell-block">
       <h3>Of the three, who will you miss most if they leave?</h3>
       <div class="poll-options" id="farewell-options">
@@ -1271,7 +1297,6 @@ body::before {
       <div class="poll-count" id="farewell-count"></div>
     </div>
 
-    <!-- Season verdict poll -->
     <div class="poll-block" id="season-block">
       <h3>Looking back, the season was…</h3>
       <div class="poll-options" id="season-options">
@@ -1302,7 +1327,6 @@ body::before {
       <div class="poll-count" id="season-count"></div>
     </div>
 
-    <!-- Performance Rating -->
     <div class="poll-block" id="rating-block">
       <h3>Rate the performance out of 10</h3>
       <div class="rating-widget">
