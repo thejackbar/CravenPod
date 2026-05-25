@@ -630,6 +630,55 @@ body::before {
 
 .league-row.highlight { background: rgba(212,175,110,0.15); border-radius: 3px; border: 1px solid rgba(212,175,110,0.30); padding: 7px 6px; }
 
+/* ── Pod embed ── */
+.pod-embed {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  padding: 20px;
+  margin: 28px 0 0;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.pod-embed-frame {
+  display: flex;
+  justify-content: center;
+}
+
+.pod-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 496px;
+  height: 279px;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(6,7,15,0.6);
+  box-shadow: var(--shadow-sm);
+}
+
+.pod-embed-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pod-embed-meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.pod-embed-meta a:hover { color: var(--ink); }
+
 /* ── Poll / Interactive ── */
 .interactive-section {
   background: rgba(6,7,15,0.55);
@@ -1126,11 +1175,34 @@ body::before {
     <p>The Cottage emptied slowly. The summer starts now. By the time the players are back in for pre-season, this club is going to look different in ways that we cannot yet see. Sit tight.</p>
   </section>
 
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 07 · The Pod</div>
+    <h2>Hear us argue about it. <em>That's So Craven, on the season finale.</em></h2>
+    <p>Our match reaction in full. The lap of honour, Silva's "next week, for sure," Wilson's assist for what may have been his last act in a Fulham shirt, and whether eleventh is a finish we should take with both hands or one we should hold our nose at.</p>
+
+    <div class="pod-embed">
+      <div class="pod-embed-frame">
+        <iframe data-testid="embed-iframe"
+                src="https://open.spotify.com/embed/episode/6s9WeRRS5XaFs2l9kFimOA/video?utm_source=generator"
+                title="That's So Craven · Fulham 2-0 Newcastle"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                allowfullscreen
+                loading="lazy"></iframe>
+      </div>
+      <div class="pod-embed-meta">
+        <span>That's So Craven · GW38 reaction</span>
+        <a href="https://podfollow.com/thats-so-craven" target="_blank" rel="noopener">Subscribe →</a>
+      </div>
+    </div>
+  </section>
+
 </div>
 
 <section class="interactive-section">
   <div class="interactive-inner">
-    <div class="interactive-kicker">§ 07 · Your verdict</div>
+    <div class="interactive-kicker">§ 08 · Your verdict</div>
 
     <div class="poll-block" id="potm-block">
       <h3>Man of the Match</h3>
