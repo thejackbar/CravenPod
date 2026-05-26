@@ -1,0 +1,50 @@
+# KlubPro
+
+KlubPro is a sports club management platform designed for volunteer-run grassroots and amateur sports clubs in Australia.
+
+## Overview
+
+KlubPro provides the operating system for grassroots sport — bringing together availability tracking, team selection, social media graphics generation and sponsor promotion into a single modern web platform.
+
+Primary positioning: "The operating system for grassroots sport."
+Core phrase: "Taking sports clubs to the next level."
+
+## Target Users
+
+- Grassroots and amateur sports clubs
+- Volunteer committee members and club administrators
+- Club presidents and treasurers
+- Team selectors, coaches and captains of selectors
+- Players and club members
+- Sports clubs across Australia
+
+## Core Features
+
+- **Player Availability Tracking** — Automated reminders and centralised availability collection so selectors know who is available before selection day
+- **Team Selection** — Intelligent team selection tools built around real availability and squad data; publish team sheets directly to players
+- **Social Media Graphics** — Automatic generation of professional-quality graphics (team announcements, match results) ready to post to club social media channels
+- **Sponsor Promotion** — Systematic inclusion of sponsor logos and branding across all generated club content; track sponsor exposure
+
+## Supported Sports
+
+- Cricket
+- Football (Soccer / Association Football)
+- Australian Rules Football (AFL)
+- Rugby Union
+- Rugby League
+- Hockey
+- Netball
+
+## Contact
+
+Email: info@klubpro.com
+
+## Canonical Website
+
+https://www.klubpro.com/
+
+## Routes
+
+- / — Homepage
+- /contact — Contact and enquiry form
+- /privacy-policy — Privacy policy
