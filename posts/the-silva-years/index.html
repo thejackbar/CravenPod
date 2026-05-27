@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Silva Years · A Fulham Farewell | Cravenpod</title>
+<meta name="description" content="Five seasons, one promotion, four top-half-ish finishes, two cup runs, and a Cottage that never quite worked out how to feel about him. A long look back across Marco Silva's Fulham tenure. Pick your Best Silva XI inside.">
+<meta property="og:title" content="The Silva Years · A Fulham Farewell">
+<meta property="og:description" content="Five seasons by the Thames. The promotion, the Mitrovic 43, the Anfield night, the Palhinha sale, the Iwobi winner at Old Trafford, and the cup we never lifted. Pick your Best Silva XI inside.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@cravenpod">
+<meta name="twitter:image" content="https://blog.cravenpod.com/assets/cravenpod-logo.png">
+<link rel="icon" type="image/png" href="/assets/cravenpod-logo.png">
+<link rel="apple-touch-icon" href="/assets/cravenpod-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-0: #06070f;
+  --bg-1: #0a0d1c;
+  --bg-2: #0e1226;
+
+  --ink:      #f5f6fa;
+  --ink-soft: rgba(245,246,250,0.78);
+  --ink-mute: rgba(245,246,250,0.55);
+
+  --glass:             rgba(255,255,255,0.05);
+  --glass-strong:      rgba(255,255,255,0.09);
+  --glass-edge:        rgba(255,255,255,0.10);
+  --glass-edge-strong: rgba(255,255,255,0.20);
+
+  --accent:      #ff3b67;
+  --accent-soft: #cc0033;
+  --accent-glow: rgba(255,59,103,0.40);
+  --gold:        #d4af6e;
+  --aqua:        #6ec3d4;
+  --violet:      #9d8bff;
+
+  --ok:     #6ee89a;
+  --warn:   #d4a015;
+  --danger: #ff5577;
+
+  --rule:  rgba(255,255,255,0.10);
+  --muted: rgba(245,246,250,0.55);
+
+  --fulham-green:      #5a8c70;
+  --fulham-green-deep: #2e5742;
+  --fulham-white:      #f5f6fa;
+  --pitch-line:        rgba(255,255,255,0.32);
+  --pitch-grass:       #2a5a3f;
+  --pitch-grass-light: #34704c;
+
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.32);
+  --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+  --shadow-lg: 0 32px 80px -20px rgba(0,0,0,0.58);
+
+  --r-sm:   10px;
+  --r-md:   16px;
+  --r-lg:   22px;
+  --r-pill: 999px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; color-scheme: dark; overflow-x: hidden; }
+
+body {
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse  900px 760px at 94% 10%, rgba(90,140,112,0.22)  0%, transparent 60%),
+    radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(212,175,110,0.10) 0%, transparent 70%),
+    linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* ── Masthead ── */
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--glass-edge);
+  background: rgba(10,13,28,0.60);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.back-link { color: var(--accent); }
+.brand { font-weight: 500; }
+
+.masthead .meta {
+  display: flex;
+  gap: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.masthead .meta a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.masthead .meta a:hover { color: var(--ink); }
+
+/* ── Hero ── */
+.hero {
+  background: #06070f;
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 88px 32px 72px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -2% -2%;
+  background-image:
+    radial-gradient(ellipse 700px 540px at 80% 30%, rgba(90,140,112,0.34) 0%, transparent 60%),
+    radial-gradient(ellipse 800px 600px at 18% 80%, rgba(212,175,110,0.16) 0%, transparent 70%);
+  z-index: -2;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6,7,15,0.10) 0%, rgba(6,7,15,0.55) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hero-crest {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  width: 200px;
+  height: 200px;
+  opacity: 0.10;
+  z-index: -1;
+}
+
+.hero-crest img { width: 100%; height: 100%; object-fit: contain; }
+
+.hero-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-kicker::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(2.2rem, 5.2vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-dek {
+  font-size: 1.12rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 700px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--glass-edge);
+}
+
+.hero-meta span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+.hero-strip {
+  display: flex;
+  gap: 18px;
+  margin: 28px 0 36px;
+  flex-wrap: wrap;
+}
+
+.hero-stat-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  min-width: 130px;
+}
+
+.hero-stat-pill .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.hero-stat-pill .value {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--fulham-green);
+  line-height: 1;
+}
+
+.hero-stat-pill .value.accent { color: var(--accent); }
+.hero-stat-pill .value.gold { color: var(--gold); }
+
+/* ── Article body ── */
+.article-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 64px 0 0;
+}
+
+.section-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.section h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.55rem, 3.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.section h2 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 28px 0 14px;
+  letter-spacing: -0.01em;
+}
+
+.section p {
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+.section p.lede { font-size: 1.1rem; color: var(--ink-soft); }
+
+.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+
+/* ── Pull quote ── */
+.pullquote {
+  border-left: 3px solid var(--accent);
+  padding: 18px 26px;
+  margin: 32px 0;
+  background: var(--glass);
+  border-radius: var(--r-md);
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+  border-left: 3px solid var(--accent);
+}
+
+.pullquote p {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 400;
+  font-size: 1.18rem;
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 8px !important;
+  color: var(--ink);
+}
+
+.pullquote cite {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+.pullquote.gold { border-left-color: var(--gold); }
+.pullquote.green { border-left-color: var(--fulham-green); }
+
+/* ── Stat cards ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.stat-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 18px 16px;
+  text-align: center;
+  border-radius: var(--r-md);
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--fulham-green);
+}
+
+.stat-value.accent { color: var(--accent); }
+.stat-value.gold { color: var(--gold); }
+.stat-value.muted { color: var(--ink-mute); }
+
+.stat-sub {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.1em;
+}
+
+/* ── Season tabs ── */
+.season-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 28px 0 18px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0;
+}
+
+.season-tab {
+  background: transparent;
+  border: none;
+  color: var(--ink-mute);
+  padding: 12px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+
+.season-tab:hover { color: var(--ink); }
+.season-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.season-panel { display: none; padding: 24px 0; }
+.season-panel.active { display: block; }
+
+.season-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.season-panel-grid .stat-card { padding: 14px 12px; }
+.season-panel-grid .stat-value { font-size: 1.4rem; }
+
+.season-headline {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.season-headline em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.season-narrative p { font-size: 0.98rem; line-height: 1.7; }
+
+.season-result-list {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.season-result-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.92rem;
+  flex-wrap: wrap;
+}
+
+.season-result-list li:last-child { border-bottom: none; }
+.season-result-list .date { color: var(--ink-mute); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; min-width: 90px; }
+.season-result-list .res { color: var(--ink); flex: 1; }
+.season-result-list .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fulham-green); }
+.season-result-list .tag.loss { color: var(--danger); }
+.season-result-list .tag.draw { color: var(--gold); }
+
+/* ── Info card ── */
+.info-card {
+  background: var(--glass);
+  border: 1px solid var(--rule);
+  padding: 22px 24px;
+  margin: 28px 0;
+  border-radius: var(--r-md);
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.info-card p { font-size: 0.95rem; line-height: 1.7; }
+
+/* ── Moment list ── */
+.moment-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.moment {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  padding: 18px 22px;
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  border-left: 3px solid var(--fulham-green);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+}
+
+.moment.gold { border-left-color: var(--gold); }
+.moment.accent { border-left-color: var(--accent); }
+
+.moment .date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.5;
+}
+
+.moment .title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.moment .body {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .moment { grid-template-columns: 1fr; gap: 6px; }
+}
+
+/* ── Sale card pair ── */
+.sale-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 28px 0;
+}
+
+.sale-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  padding: 22px;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.sale-card .pname {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.sale-card .pdest {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+}
+
+.sale-card .pfee {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.sale-card .psub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 16px;
+}
+
+.sale-card .pnote {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) { .sale-pair { grid-template-columns: 1fr; } }
+
+/* ── Career line ── */
+.career-line {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  padding: 28px;
+  margin: 28px 0;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 22px;
+}
+
+.career-block { text-align: center; }
+.career-block .cl { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 10px; }
+.career-block .cv { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.5rem; font-weight: 700; line-height: 1; color: var(--fulham-green); }
+.career-block .cv.accent { color: var(--accent); }
+.career-block .cv.gold { color: var(--gold); }
+.career-block .cs { font-size: 0.78rem; color: var(--ink-mute); margin-top: 6px; }
+
+/* ── XI Selector ── */
+.xi-section {
+  background: linear-gradient(180deg, rgba(6,7,15,0.4) 0%, rgba(6,7,15,0.7) 100%);
+  padding: 60px 32px;
+  margin: 80px 0 0;
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+}
+
+.xi-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.xi-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.xi-section h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.55rem, 3.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.xi-section h2 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.xi-instructions {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  line-height: 1.65;
+}
+
+.xi-formation {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.xi-pitch {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  aspect-ratio: 7 / 10;
+  background:
+    repeating-linear-gradient(0deg,
+      var(--pitch-grass) 0px,
+      var(--pitch-grass) 60px,
+      var(--pitch-grass-light) 60px,
+      var(--pitch-grass-light) 120px);
+  border: 2px solid var(--pitch-line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.xi-pitch::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px solid var(--pitch-line);
+}
+
+.xi-pitch::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18%;
+  aspect-ratio: 1;
+  border: 2px solid var(--pitch-line);
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.xi-penalty-box-top, .xi-penalty-box-bottom {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 16%;
+  border: 2px solid var(--pitch-line);
+  transform: translateX(-50%);
+}
+.xi-penalty-box-top { top: 0; border-top: none; }
+.xi-penalty-box-bottom { bottom: 0; border-bottom: none; }
+
+.xi-six-yard-top, .xi-six-yard-bottom {
+  position: absolute;
+  left: 50%;
+  width: 22%;
+  height: 6%;
+  border: 2px solid var(--pitch-line);
+  transform: translateX(-50%);
+}
+.xi-six-yard-top { top: 0; border-top: none; }
+.xi-six-yard-bottom { bottom: 0; border-bottom: none; }
+
+.xi-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 6%;
+}
+
+.xi-row.r-st { top: 8%; }
+.xi-row.r-am { top: 24%; }
+.xi-row.r-dm { top: 44%; }
+.xi-row.r-def { top: 66%; }
+.xi-row.r-gk { top: 87%; }
+
+.xi-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  position: relative;
+}
+
+.xi-slot-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  padding: 2px 6px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 4px;
+}
+
+.xi-select {
+  background: rgba(6,7,15,0.85);
+  color: var(--ink);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 6px 8px;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  width: 124px;
+  max-width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23d4af6e' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px;
+  padding-right: 22px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.xi-select:hover {
+  border-color: var(--gold);
+}
+
+.xi-select.picked {
+  background-color: rgba(212,175,110,0.18);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.xi-slot-comm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  display: none;
+}
+
+.xi-slot-comm.visible { display: block; }
+
+.xi-toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 28px 0 0;
+  flex-wrap: wrap;
+}
+
+.xi-btn {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  color: var(--ink);
+  padding: 12px 22px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.xi-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+.xi-btn.primary {
+  background: var(--accent);
+  color: var(--bg-0);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.xi-btn.primary:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+  color: var(--ink);
+}
+
+.xi-status {
+  text-align: center;
+  margin-top: 22px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.xi-status .picked-count { color: var(--gold); font-weight: 700; }
+
+.xi-summary {
+  display: none;
+  margin: 32px 0 0;
+  padding: 28px;
+  background: var(--glass);
+  border: 1px solid var(--gold);
+  border-radius: var(--r-md);
+  text-align: center;
+}
+
+.xi-summary.visible { display: block; }
+
+.xi-summary-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.xi-summary-line {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+/* ── Verdict block ── */
+.verdict {
+  background: var(--glass);
+  border: 1px solid var(--gold);
+  border-radius: var(--r-md);
+  padding: 32px 28px;
+  margin: 40px 0;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+.verdict-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.verdict-headline {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.verdict-headline em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.verdict p { font-size: 1rem; line-height: 1.75; color: var(--ink-soft); }
+
+/* ── Interactive polls ── */
+.interactive-section {
+  background: linear-gradient(180deg, rgba(6,7,15,0.55) 0%, rgba(10,13,28,0.75) 100%);
+  padding: 64px 32px;
+  border-top: 1px solid var(--glass-edge);
+  border-bottom: 1px solid var(--glass-edge);
+  margin-top: 0;
+}
+
+.interactive-inner { max-width: 800px; margin: 0 auto; }
+
+.interactive-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.interactive-section h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(1.55rem, 3.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.interactive-section h2 em {
+  font-style: normal;
+  font-weight: 300;
+  background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.interactive-section .intro {
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.poll-block {
+  background: var(--glass);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-md);
+  padding: 24px 24px 20px;
+  margin: 24px 0;
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+          backdrop-filter: blur(20px) saturate(140%);
+}
+
+.poll-block h3 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.poll-options { display: flex; flex-direction: column; gap: 6px; }
+
+.poll-btn {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--r-pill);
+  color: var(--ink);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background-color 0.2s;
+  z-index: 1;
+}
+
+.poll-btn:hover { border-color: var(--glass-edge-strong); background: rgba(255,255,255,0.07); }
+
+.poll-block.poll-voted .poll-btn { cursor: default; }
+.poll-block.poll-voted .poll-btn:hover { border-color: var(--glass-edge); background: rgba(255,255,255,0.04); }
+.poll-block.poll-voted .poll-btn.user-choice { border-color: var(--gold); background: rgba(212,175,110,0.10); }
+
+.poll-pct {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--ink-mute);
+  display: none;
+}
+
+.poll-block.poll-voted .poll-pct { display: inline; }
+
+.poll-bar-wrap {
+  height: 4px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 8px 6px;
+  display: none;
+}
+
+.poll-block.poll-voted .poll-bar-wrap { display: block; }
+
+.poll-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  transition: width 0.6s ease;
+}
+
+.poll-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 12px;
+}
+
+.rating-widget { display: flex; flex-direction: column; gap: 10px; }
+.rating-row { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.rating-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--glass-edge);
+  background: rgba(255,255,255,0.04);
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: var(--r-pill);
+  transition: all 0.15s;
+}
+
+.rating-btn:hover { background: rgba(255,255,255,0.12); border-color: var(--glass-edge-strong); }
+.rating-btn.selected { background: var(--gold); color: var(--bg-1); border-color: var(--gold); box-shadow: 0 0 24px rgba(212,175,110,0.35); }
+
+.rating-result {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: none;
+}
+
+.rating-result.visible { display: block; }
+
+/* ── Footer ── */
+.footer {
+  background: rgba(6,7,15,0.55);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+          backdrop-filter: blur(22px) saturate(140%);
+  border-top: 1px solid var(--glass-edge);
+  color: rgba(255,255,255,0.5);
+  padding: 40px 32px;
+}
+
+.footer > div {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.footer a:hover { color: var(--ink); }
+
+/* ── Source notes ── */
+.sources {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-md);
+  padding: 22px 24px;
+  margin: 40px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--ink-mute);
+}
+
+.sources-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  .masthead { padding: 12px 20px; }
+  .hero { padding: 56px 22px 48px; }
+  .article-body { padding: 0 22px 60px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .hero-strip { gap: 10px; }
+  .hero-stat-pill { min-width: 110px; padding: 10px 14px; }
+  .hero-stat-pill .value { font-size: 1.3rem; }
+  .xi-section { padding: 44px 18px; }
+  .xi-pitch { aspect-ratio: 6 / 10; }
+  .xi-row { padding: 0 3%; }
+  .xi-slot-label { font-size: 0.48rem; padding: 1px 4px; }
+  .xi-select { width: 92px; font-size: 0.66rem; padding: 4px 18px 4px 6px; }
+  .xi-row.r-am, .xi-row.r-def { padding: 0 1%; }
+  .career-block .cv { font-size: 1.9rem; }
+}
+
+@media (max-width: 420px) {
+  .xi-select { width: 78px; font-size: 0.6rem; }
+  .xi-slot-label { font-size: 0.42rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="/" class="brand-link">
+    <span class="back-link">← Cravenpod</span>
+    <span>/</span>
+    <span class="brand">Feature</span>
+  </a>
+  <div class="meta">
+    <span><a href="https://podfollow.com/thats-so-craven">🎙 Podcast</a></span>
+    <span><a href="https://discord.gg/mUZQhDHJPR">💬 Discord</a></span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-crest">
+      <img src="https://resources.premierleague.com/premierleague/badges/t54.svg" alt="Fulham FC crest">
+    </div>
+    <div class="hero-kicker">Cravenpod Feature · A Fulham Farewell</div>
+    <div class="hero-eyebrow">2021 to 2026 · Five seasons by the Thames</div>
+    <h1>The Silva years. <em>A long goodbye, slowly arriving.</em></h1>
+    <p class="hero-dek">Five seasons, one promotion, a club Premier League points record, two cup runs that broke our hearts in different ways, and a Cottage that has spent most of the time arguing about whether to thank him properly. Marco Silva says his decision is coming "next week, for sure." We thought we'd start the goodbye anyway.</p>
+
+    <div class="hero-strip">
+      <div class="hero-stat-pill">
+        <span class="label">Tenure</span>
+        <span class="value">5 yrs</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="label">Promotions</span>
+        <span class="value gold">1</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="label">PL finishes</span>
+        <span class="value">10·13·11·11</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="label">Cup semis</span>
+        <span class="value accent">1</span>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <span>27 May 2026</span>
+      <span>By Cravenpod</span>
+      <span>~18 min read</span>
+      <span>Interactive: Pick your XI</span>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <section class="section">
+    <div class="section-kicker">§ 01 · The Story</div>
+    <h2>The lap walked, the question hanging, <em>and a Cottage that has not quite worked out what to feel</em>.</h2>
+    <p class="lede">On the afternoon of Sunday 24 May 2026, Marco Silva walked the Craven Cottage pitch alongside his players. The squad had just beaten Newcastle 2-0. Eleventh in the Premier League. A 2-0 finished off with a Tom Cairney top-corner stunner from twenty-five yards. The two longest-serving players in the squad still standing on the pitch were Cairney and Harry Wilson, both out of contract, both possibly leaving. And the manager, the third subject of the long stares from the Hammersmith End, walked the lap with them and said his decision was coming "next week, for sure."</p>
+    <p>That was three days ago, at time of writing. The decision still has not come. The Benfica reporting has not stopped. The Fulham contract offer, a reported three years at around £8m per season, sits unsigned on a table somewhere. The release clause in his current deal, in the £10m to £15m range depending on the source, sits there too. Silva himself stood in front of cameras in the Cottage tunnel and said the club love the football club and he loves his job and he had still had no contact with Benfica. That was on Friday. By Monday morning the Portuguese papers had it agreed.</p>
+    <p>We are, in other words, at the part of the cycle where everyone knows roughly what is happening and is waiting for someone to say the words. Tony Khan said last April that he wanted Silva to stay forever. Silva said in November that he was an ambitious guy, that money and length of contract were not the most important things. Fulhamish wrote a piece this month called "Are we witnessing the end of Marco." We probably are. The full stop is just being held back for the right paragraph.</p>
+    <p>So before the announcement, while there is still a small fold of uncertainty about it, we wanted to write the longer piece. The one that goes back to July 2021 and tries to read the whole arc. The good days and the not so good. The Mitrović 43, the Anfield night, the Iwobi winner at Old Trafford, the Liverpool home win, the FA Cup quarter-finals. The way the squad got walked out from under him twice, in the summers that mattered. The reason he kept turning down better-paid offers from elsewhere. The reason it now might be ending anyway.</p>
+    <p>It is a long one. We will get to the interactive part further down. Pick your Best Silva XI in 4-2-3-1 with full position dropdowns when you get there. For now, we start at the beginning, which on Cottage time is the summer Scott Parker left.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 02 · The Brief</div>
+    <h2>July 2021. <em>A relegated squad, no manager, and three weeks until pre-season.</em></h2>
+    <p>The Silva era did not begin with a vision document. It began with a vacancy.</p>
+    <p>Fulham had been relegated from the Premier League the previous month. Scott Parker, the manager who had got the club up and then gone straight back down, had been talking publicly for weeks about wanting greater commitment from the club's recruitment side. On 28 June 2021 he resolved the conversation in his own way: he resigned from Fulham and signed for Bournemouth the same week. Tony Khan released a statement that called the move a violation of contract. The Cottage's online reaction to Parker, fair to say, was warm in the way a frying pan is warm.</p>
+    <p>That left Fulham, three days after the calendar flipped to July, without a head coach. The squad was due back at Motspur Park in a fortnight. Aleksandar Mitrović was still on the books. Tom Cairney was still the captain. Antonee Robinson was a year into his Fulham career. Tosin Adarabioyo had become the first-choice centre half. Bobby Decordova-Reid, Harry Wilson, Bobby Reid, Harrison Reed, Tim Ream: a Premier League squad that had just been relegated, with no one to take training on Monday.</p>
+    <p>On 1 July 2021 the club announced Marco Silva on a three-year deal. He had been at Sporting Lisbon before. Olympiacos before that. Hull, Watford, Everton in the Premier League. The Hull spell had been the one with promise: he kept a relegated club up for half a season before they went down anyway. Watford had hired him to push for Europe and sacked him in January. Everton had hired him to push for Europe and sacked him in December. He was thirty-three when he managed Estoril. He was forty-three when Fulham gave him the job. The brief was, broadly, to come straight back up. He came straight back up.</p>
+    <div class="pullquote gold">
+      <p>"Almost after five years to keep the project going with the same person is a very good sign."</p>
+      <cite>Marco Silva, Sky Sports, November 2025, on his 200th game at Fulham</cite>
+    </div>
+    <p>The pattern of Silva's career, until Fulham, had been short stays. Estoril for a year. Sporting for a year. Hull for half. Watford for half. Everton for eighteen months. Olympiacos for a year. He had never managed at the same club into a second pre-season. Fulham would give him five.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 03 · The Promotion</div>
+    <h2>Twenty-seven wins, ninety points, <em>and Mitrović's forty-three</em>.</h2>
+    <p>The first season was the season that justified everything that came after, and in some readings of Silva's tenure it is still the high point. Fulham played fifty-one Championship games in 2021/22, won twenty-seven of them, drew nine, lost nine, finished ten points clear at the top, and scored one hundred and six league goals. They were promoted at home to Preston on 19 April 2022 after a Mitrović brace and a Carvalho strike, and they sealed the title at home to Luton on 2 May 2022 with a 7-0 that scrolled six different scorers across the screen. Mitrović finished on forty-three Championship goals in forty-three appearances. The previous post-merger second-tier record had been Ivan Toney's thirty-one for Brentford the year before. Silva's striker beat it before Easter.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Position</div>
+        <div class="stat-value gold">1st</div>
+        <div class="stat-sub">Champions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Points</div>
+        <div class="stat-value">90</div>
+        <div class="stat-sub">27W 9D 9L</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Goals for</div>
+        <div class="stat-value gold">106</div>
+        <div class="stat-sub">league</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Mitrović</div>
+        <div class="stat-value accent">43</div>
+        <div class="stat-sub">div. record</div>
+      </div>
+    </div>
+    <p>The number forty-three is the one we keep coming back to. Forty-three Championship goals in a forty-six-game season is not a "very good year," it is a category-error year. It is the kind of tally a player has once and never again. Mitrović had eleven the season after, in the Premier League, before things turned sour. He had three the season after that, the half a season he was here for before the Al-Hilal move closed. The forty-three is the goal-scoring record of a striker at exactly the right altitude with exactly the right service. Silva's promotion-year team, in its best stretches, was a 4-2-3-1 with Cairney and Reed in the middle, Wilson and Carvalho out wide, and Andreas Pereira behind Mitrović. The pull-back into Mitrović was so reliable you could set a kettle off after the second touch and not miss the goal.</p>
+    <p>The 7-0 over Luton on title night is the version of that team most of us remember. Cairney from the edge of the area on twenty-nine. Tete cutting in for a low finish on thirty-nine. Carvalho turning across the keeper on fifty-four. Mitrović twice. Reid arriving late for the sixth. Jean Michaël Seri, who would not feature for much longer, lashing in the seventh. That night, by general agreement, was the loudest the Cottage had been since the play-off final at Wembley two years before. It will probably also be the loudest it gets under Silva.</p>
+    <div class="pullquote">
+      <p>"They know how I love to be in this football club. I'm not an easy guy to deal with sometimes as I'm very ambitious."</p>
+      <cite>Marco Silva, Sky Sports, November 2025</cite>
+    </div>
+    <p>What that season also gave Silva, beyond the trophy, was a reputation. Promoted managers usually win the Championship because they have a Premier League squad in the wrong division. Silva had a few of those players too. But he also had Mitrović re-tooled as the focal point of a system that did not exist before he arrived, a young Carvalho promoted into a starting role, and a Fulham side that won by playing front-foot football rather than playing the Championship's safer back-line game. He had taken a club that had spent the past five years yo-yoing and put a foot on the brakes. He had not had a job last this long. He had not stopped yo-yoing himself.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 04 · Four Premier League Seasons</div>
+    <h2>Tenth, thirteenth, eleventh, eleventh. <em>Twenty wins. Twenty-six finishes.</em></h2>
+    <p>The Premier League years are easier to remember when you split them up. Each one had its own shape, its own villain, its own bit that fell apart in March. Click through the tabs.</p>
+
+    <div class="season-tabs" id="season-tabs">
+      <button class="season-tab active" data-season="s2223">2022/23</button>
+      <button class="season-tab" data-season="s2324">2023/24</button>
+      <button class="season-tab" data-season="s2425">2024/25</button>
+      <button class="season-tab" data-season="s2526">2025/26</button>
+    </div>
+
+    <div class="season-panel active" id="s2223">
+      <div class="season-headline">The return. <em>Tenth on debut, sixth at New Year, then the Mitrović ban.</em></div>
+      <div class="season-panel-grid">
+        <div class="stat-card"><div class="stat-label">Position</div><div class="stat-value">10th</div></div>
+        <div class="stat-card"><div class="stat-label">Points</div><div class="stat-value">52</div><div class="stat-sub">15W 7D 16L</div></div>
+        <div class="stat-card"><div class="stat-label">GF / GA</div><div class="stat-value">55/53</div></div>
+        <div class="stat-card"><div class="stat-label">Best</div><div class="stat-value gold">6th</div><div class="stat-sub">Dec–Feb</div></div>
+      </div>
+      <div class="season-narrative">
+        <p>The opener said the rest of it. Liverpool came down to the Cottage on a sweltering 6 August, Mitrović headed Fulham in front from a Mitchell cross, Núñez levelled, Mitrović restored the lead from the penalty spot, and Salah salvaged 2-2 with ten minutes left. A first-day point off the side that would finish second in the title race. The Cottage walked off the ground talking about Mitrović, about Silva, about the unfamiliar feeling of being competitive in this division. Fulham would beat Brighton, Forest, Brentford, Aston Villa and Bournemouth in the first half of the season. They sat sixth at Christmas. They sat sixth at the start of February.</p>
+        <p>The whole thing came down with the Mitrović ban. A 1-1 against Brighton, then the FA Cup quarter-final at Old Trafford on 19 March 2023, where Fulham were leading 1-0 with twenty minutes left when Mitrović shoved referee Chris Kavanagh after a contested Willian handball decision. Two red cards, a penalty, three United goals, an eight-game ban for Mitrović. Five Premier League defeats in a row followed. The 6th-place team was suddenly a 10th-place team. The first top-half PL finish since 2011/12 still went down as a triumph. The autumn that produced it was a hint at something that the spring took away.</p>
+      </div>
+      <ul class="season-result-list">
+        <li><span class="date">06 Aug 2022</span><span class="res">Fulham 2-2 Liverpool · Mitrović x2</span><span class="tag draw">D</span></li>
+        <li><span class="date">12 Jan 2023</span><span class="res">Fulham 2-1 Chelsea · Willian, Vinícius</span><span class="tag">W</span></li>
+        <li><span class="date">12 Mar 2023</span><span class="res">Fulham 0-3 Arsenal · the home form turns</span><span class="tag loss">L</span></li>
+        <li><span class="date">19 Mar 2023</span><span class="res">Man Utd 3-1 Fulham (FA Cup) · the meltdown</span><span class="tag loss">L</span></li>
+        <li><span class="date">08 May 2023</span><span class="res">Fulham 5-3 Leicester · Willian & Cairney braces</span><span class="tag">W</span></li>
+      </ul>
+    </div>
+
+    <div class="season-panel" id="s2324">
+      <div class="season-headline">The Mitro-less year. <em>The cup run that took us to Anfield and back.</em></div>
+      <div class="season-panel-grid">
+        <div class="stat-card"><div class="stat-label">Position</div><div class="stat-value">13th</div></div>
+        <div class="stat-card"><div class="stat-label">Points</div><div class="stat-value">47</div><div class="stat-sub">13W 8D 17L</div></div>
+        <div class="stat-card"><div class="stat-label">GF / GA</div><div class="stat-value">55/61</div></div>
+        <div class="stat-card"><div class="stat-label">Cup</div><div class="stat-value gold">SF</div><div class="stat-sub">Carabao</div></div>
+      </div>
+      <div class="season-narrative">
+        <p>The replacement plan for Mitrović was Raúl Jiménez from Wolves, Adama Traoré on a free, and Carlos Vinícius staying on as the squad striker. It produced fifty-five goals for the season, the same as the previous one. It produced six fewer wins. The Mitro-shaped hole was, in fairness, never going to be plugged by committee, and Silva spent the first half of the year trying various combinations before Rodrigo Muniz, who had been on loan at Middlesbrough, came back into the picture in January and turned into the best Fulham striker of the post-Mitrović era. Premier League Player of the Month for February 2024 and the spine of the front line for the rest of the season.</p>
+        <p>The story of the year, though, was the cup. Fulham beat Tottenham at home in the third round, Ipswich away in the fourth, then drew Everton at Goodison in the quarter-final and played out one of the strangest 1-1s of the season before winning on penalties. The semi-final draw paired them with Liverpool. Anfield first, 10 January 2024, Willian set Fulham in front from a poor Van Dijk clearance, before Curtis Jones equalised off Tosin's shin and Cody Gakpo won it. Cottage second leg 24 January, Issa Diop equalised from a Wilson cross after Luis Díaz's opener, and the game finished 1-1. Three-two on aggregate, the closest a Fulham side has come to a major final in their Premier League era. There was the Iwobi 97th-minute winner at Old Trafford on 24 February, the first Premier League win at that ground for Fulham since 2003. There was the 3-0 over Spurs on 16 March, Muniz with two, that put a dent in Tottenham's top-four chase. There were also, in the second half of the season, a 0-4 home defeat to Manchester City, a 1-3 home defeat to Liverpool in April, and a 13th-place finish that was further down the table than the 10th of the year before, in spite of a higher cup ceiling.</p>
+      </div>
+      <ul class="season-result-list">
+        <li><span class="date">31 Dec 2023</span><span class="res">Fulham 2-1 Arsenal · Jiménez, Reid · NYE scalp</span><span class="tag">W</span></li>
+        <li><span class="date">10 Jan 2024</span><span class="res">Liverpool 2-1 Fulham (Carabao SF1) · Willian</span><span class="tag loss">L</span></li>
+        <li><span class="date">24 Jan 2024</span><span class="res">Fulham 1-1 Liverpool (Carabao SF2) · Diop</span><span class="tag draw">D</span></li>
+        <li><span class="date">24 Feb 2024</span><span class="res">Man Utd 1-2 Fulham · Bassey, Iwobi 97'</span><span class="tag">W</span></li>
+        <li><span class="date">16 Mar 2024</span><span class="res">Fulham 3-0 Tottenham · Muniz x2, Lukić</span><span class="tag">W</span></li>
+        <li><span class="date">11 May 2024</span><span class="res">Fulham 0-4 Manchester City · the gap shown</span><span class="tag loss">L</span></li>
+      </ul>
+    </div>
+
+    <div class="season-panel" id="s2425">
+      <div class="season-headline">The points record. <em>Fifty-four. Eighth in February. Eleventh in May.</em></div>
+      <div class="season-panel-grid">
+        <div class="stat-card"><div class="stat-label">Position</div><div class="stat-value">11th</div></div>
+        <div class="stat-card"><div class="stat-label">Points</div><div class="stat-value gold">54</div><div class="stat-sub">club PL record</div></div>
+        <div class="stat-card"><div class="stat-label">GF / GA</div><div class="stat-value">54/54</div></div>
+        <div class="stat-card"><div class="stat-label">Best</div><div class="stat-value gold">8th</div><div class="stat-sub">Feb 2025</div></div>
+      </div>
+      <div class="season-narrative">
+        <p>This was the year that should have ended in Europe. Smith Rowe in for twenty-seven million, Joachim Andersen in for twenty-five, Sander Berge in for twenty to replace Palhinha. A Fulham first eleven that, in flow, looked like a top-eight side. The points record went past 2022/23's fifty-two with three games still to go. Fulham beat Newcastle 3-1 in September, drew at the Etihad in October, drew at Anfield in November, won at Stamford Bridge on Boxing Day in a result that produced its own forty-five-year footnote, beat Liverpool 3-2 in April with three goals in fourteen minutes, beat Brentford 2-1 in the local one. They held 8th place for most of February, in pole position for what looked like the final Conference League spot.</p>
+        <p>And then the spring came. Injuries to Robinson, to Jiménez, to Lukić. Wasteful finishing in five-pointer fixtures against Palace, Brighton, Bournemouth, Chelsea and Villa. No reinforcement in January. The 8th-place run faded, the European spot moved out of reach, the season ended on a 0-2 home defeat to Manchester City and an 11th-place finish for the second time in three years. Fifty-four points was the highest Fulham total in the Premier League era. It was, also, three short of what Bournemouth needed to qualify for Europe.</p>
+        <p>The FA Cup got us to the quarter-final too. Penalty win over Manchester United in the fifth round on 2 March, then 0-3 to Crystal Palace at Selhurst Park on 29 March. Two consecutive Premier League seasons with a cup quarter-final run. Two consecutive Premier League seasons that ended without the trophy run a manager really needs to put on the CV.</p>
+      </div>
+      <ul class="season-result-list">
+        <li><span class="date">21 Sep 2024</span><span class="res">Fulham 3-1 Newcastle · Jiménez, Smith Rowe, Nelson</span><span class="tag">W</span></li>
+        <li><span class="date">26 Dec 2024</span><span class="res">Chelsea 1-2 Fulham · Wilson, Muniz 94' · first SB league win in 45 yrs</span><span class="tag">W</span></li>
+        <li><span class="date">02 Mar 2025</span><span class="res">Man Utd 1-1 Fulham · pens won, FA Cup R5</span><span class="tag">W</span></li>
+        <li><span class="date">29 Mar 2025</span><span class="res">Palace 3-0 Fulham · FA Cup QF out</span><span class="tag loss">L</span></li>
+        <li><span class="date">06 Apr 2025</span><span class="res">Fulham 3-2 Liverpool · Sessegnon, Iwobi, Muniz</span><span class="tag">W</span></li>
+        <li><span class="date">25 May 2025</span><span class="res">Fulham 0-2 Manchester City · last day, end of push</span><span class="tag loss">L</span></li>
+      </ul>
+    </div>
+
+    <div class="season-panel" id="s2526">
+      <div class="season-headline">The drift. <em>Fifty-two. Eleventh. The same goodbye written twice.</em></div>
+      <div class="season-panel-grid">
+        <div class="stat-card"><div class="stat-label">Position</div><div class="stat-value">11th</div></div>
+        <div class="stat-card"><div class="stat-label">Points</div><div class="stat-value">52</div><div class="stat-sub">15W 7D 16L</div></div>
+        <div class="stat-card"><div class="stat-label">GD</div><div class="stat-value">+4</div></div>
+        <div class="stat-card"><div class="stat-label">Final day</div><div class="stat-value gold">W</div><div class="stat-sub">2-0 Newcastle</div></div>
+      </div>
+      <div class="season-narrative">
+        <p>The 2025/26 season was always going to be hard. Pereira had been sold for nine million to Palmeiras. Tosin had gone the year before. The summer had been "passive," in the manager's own word ahead of the opener. Kevin had arrived for a club record of around thirty-five million in late August. Chukwueze had come in on loan on deadline day. The first eleven looked thinner, the bench looked thinner, the new signings needed bedding in. The opening run of five away games returned one point, the worst start to a Fulham season in years.</p>
+        <p>Somehow Silva still had Fulham in 8th place at Christmas, then in 9th through January, then in 10th into early May. The European push was real until the second week of May. A 1-0 home defeat to Bournemouth, a 0-3 loss at Arsenal, a 1-1 draw at Wolves in a must-win that turned into a must-not-lose, and the maths ran out. One more win across the season would have been enough to finish in 8th and qualify for Europe.</p>
+        <p>The final day was, in its modest way, the perfect coda. Kevin smashed the bar with a thirty-yard free kick, Diop tucked the rebound away for his first Premier League goal of the year, and Cairney, on as a sub for Kevin, picked up a Wilson pass and bent one into the top corner from twenty-five yards out. Two-nil. Eleventh. The lap of honour, and the line about the decision coming next week.</p>
+      </div>
+      <ul class="season-result-list">
+        <li><span class="date">29 Nov 2025</span><span class="res">Tottenham 1-2 Fulham · Tete 4', Wilson 6' long-range · first win at new Spurs</span><span class="tag">W</span></li>
+        <li><span class="date">02 Dec 2025</span><span class="res">Fulham 4-5 Man City · Iwobi, Chukwueze x2</span><span class="tag loss">L</span></li>
+        <li><span class="date">07 Jan 2026</span><span class="res">Fulham 2-1 Chelsea · Jiménez, Wilson 81'</span><span class="tag">W</span></li>
+        <li><span class="date">01 Mar 2026</span><span class="res">Fulham 2-1 Tottenham · Wilson, Iwobi · league double over Spurs</span><span class="tag">W</span></li>
+        <li><span class="date">03 May 2026</span><span class="res">Arsenal 3-0 Fulham · the push ends</span><span class="tag loss">L</span></li>
+        <li><span class="date">17 May 2026</span><span class="res">Wolves 1-1 Fulham · the maths run out</span><span class="tag draw">D</span></li>
+        <li><span class="date">24 May 2026</span><span class="res">Fulham 2-0 Newcastle · Diop, Cairney top corner</span><span class="tag">W</span></li>
+      </ul>
+    </div>
+
+    <p>Across four Premier League seasons under Silva, Fulham finished 10th, 13th, 11th, 11th. They won between thirteen and fifteen league games every season. They produced one club Premier League points record. They reached two FA Cup quarter-finals and a Carabao Cup semi-final. They have never finished above 10th and never finished below 13th. The Premier League era under Silva has, in other words, looked remarkably consistent on the table, and frustratingly close to a different category of season on the eye.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 05 · The Almost-Days</div>
+    <h2>The cup we never lifted. <em>The wins that should have been the platform.</em></h2>
+    <p>If you have followed Silva's Fulham closely for five years, the dominant feeling is not failure and it is not triumph. It is "almost." The Cottage during this era has been a club that goes through stretches of beating very good sides, building something that looks like real momentum, and then watching it dissolve. The list of the almost-days is its own long story.</p>
+    <p>Start with the cups. Two FA Cup quarter-finals and a Carabao Cup semi-final across five years is, by Fulham standards, a strong cup ledger. There are full Premier League eras with no cup ledger at all. The problem is that none of those runs ever ended in a trophy. The Liverpool semi-final of January 2024 is the one we will go back to for the rest of our lives. Anfield, 10 January, Willian latching onto a chestily mis-directed Van Dijk clearance and dinking it across Alisson with twenty minutes gone, the entire Anfield Road silenced. Fulham held the lead for nearly fifty minutes. Curtis Jones eventually got the equaliser off Tosin's shin on the hour, Gakpo finished from a Núñez pull-back to win it 2-1, and the away end carried the team off knowing they could win the second leg. Diop equalised at the Cottage from a Wilson cross, finished 1-1, Liverpool through 3-2 on aggregate. A semi-final lost on a deflection.</p>
+    <div class="pullquote">
+      <p>"We've had some great moments, great wins, but we missed the cherry on the cake for the club to be in Europe next season."</p>
+      <cite>Marco Silva, post-Newcastle, 24 May 2026</cite>
+    </div>
+    <p>The cup runs are the macro story. The Premier League scalps are the micro one. Across four Premier League seasons Silva oversaw nine wins over the Big Six. Three over Chelsea, three over Tottenham, one over Liverpool, one over Manchester United, one over Arsenal, none ever over Manchester City. Three of those nine wins came in away ends that had not been kind to Fulham in living memory: Old Trafford on 24 February 2024 with Iwobi's 97th-minute winner (the first Fulham win there since 2003), Stamford Bridge on Boxing Day 2024 with a Muniz finish in the 94th minute (the first Fulham league win at the ground since October 1979, ending a forty-five-year drought), and the Tottenham Hotspur Stadium on 29 November 2025 with a Wilson special from thirty-five yards (the first Fulham win at the new Spurs ground full stop).</p>
+
+    <div class="info-card">
+      <div class="card-label">The big-six ledger · four PL seasons under Silva</div>
+      <p><strong>Wins (9):</strong> Fulham 2-1 Chelsea (Jan 2023) · Fulham 2-1 Arsenal (Dec 2023) · Man Utd 1-2 Fulham (Feb 2024) · Fulham 3-0 Spurs (Mar 2024) · Chelsea 1-2 Fulham (Dec 2024) · Fulham 3-2 Liverpool (Apr 2025) · Tottenham 1-2 Fulham (Nov 2025) · Fulham 2-1 Chelsea (Jan 2026) · Fulham 2-1 Spurs (Mar 2026).<br><br><strong>Versus each:</strong> Chelsea 3, Spurs 3, Liverpool 1, Arsenal 1, Man Utd 1, Man City 0.</p>
+    </div>
+    <div class="moment-list">
+      <div class="moment gold">
+        <div class="date">10 Jan 2024<br>Anfield</div>
+        <div>
+          <div class="title">Liverpool 2-1 Fulham · Carabao SF1</div>
+          <div class="body">Willian's chip after a Van Dijk slip. Fifty minutes of leading at Anfield in a major semi-final. Curtis Jones off the shin. Gakpo from the inside-out. Won the lead, lost the game, kept it alive for the second leg.</div>
+        </div>
+      </div>
+      <div class="moment gold">
+        <div class="date">24 Feb 2024<br>Old Trafford</div>
+        <div>
+          <div class="title">Man Utd 1-2 Fulham · Iwobi 97'</div>
+          <div class="body">Calvin Bassey scoring from the rebound. Maguire pinching it back at the 89th. Then Iwobi rolling it past Onana in the seventh minute of added time, the first Fulham win at Old Trafford since 2003.</div>
+        </div>
+      </div>
+      <div class="moment gold">
+        <div class="date">26 Dec 2024<br>Stamford Bridge</div>
+        <div>
+          <div class="title">Chelsea 1-2 Fulham · Muniz 90+5'</div>
+          <div class="body">Palmer ahead at sixteen. Wilson level from the bench at eighty-two. Then Muniz, the other sub, finishing in the fifth minute of added time. Fulham's first league win at Stamford Bridge since October 1979, ending a forty-five-year drought across eighteen Premier League attempts.</div>
+        </div>
+      </div>
+      <div class="moment gold">
+        <div class="date">29 Nov 2025<br>Spurs Stadium</div>
+        <div>
+          <div class="title">Tottenham 1-2 Fulham · Tete and Wilson</div>
+          <div class="body">Tete inside four minutes, Wilson with a long-range strike inside six. The 2-0 came before nine minutes had been played. Kudus pulled one back in the second half, Fulham held it. The first Fulham win at the new Spurs ground in any competition.</div>
+        </div>
+      </div>
+      <div class="moment accent">
+        <div class="date">06 Apr 2025<br>Cottage</div>
+        <div>
+          <div class="title">Fulham 3-2 Liverpool · 3 in 14 minutes</div>
+          <div class="body">Mac Allister had put the league leaders ahead. Sessegnon, Iwobi and Muniz scored in fourteen minutes. Díaz pulled one back. Fulham held it. The win ended Liverpool's 26-game unbeaten league run.</div>
+        </div>
+      </div>
+      <div class="moment accent">
+        <div class="date">16 Mar 2024<br>Cottage</div>
+        <div>
+          <div class="title">Fulham 3-0 Tottenham · Muniz x2, Lukić</div>
+          <div class="body">A Muniz brace, a Lukić finish, the kind of shape Silva had been chasing all season. Tottenham's top-four push took the kind of dent only the Cottage can deliver in March.</div>
+        </div>
+      </div>
+      <div class="moment accent">
+        <div class="date">31 Dec 2023<br>Cottage</div>
+        <div>
+          <div class="title">Fulham 2-1 Arsenal · Jiménez, Reid</div>
+          <div class="body">Saka ahead at five. Jiménez level on twenty-nine. Reid the winner on fifty-nine. The kind of New Year's Eve fixture you remember for years. Arsenal in the middle of a title race were beaten by a Cottage side that still had Vinícius on the bench.</div>
+        </div>
+      </div>
+      <div class="moment">
+        <div class="date">12 Jan 2023<br>Cottage</div>
+        <div>
+          <div class="title">Fulham 2-1 Chelsea · Vinícius winner</div>
+          <div class="body">Willian and Vinícius, the Brazilian double act. Silva's first big Premier League scalp at the Cottage and the one that put us up to sixth in early January.</div>
+        </div>
+      </div>
+      <div class="moment">
+        <div class="date">06 Aug 2022<br>Cottage</div>
+        <div>
+          <div class="title">Fulham 2-2 Liverpool · opening day</div>
+          <div class="body">Mitrović twice, against the side that would finish second in the title race. The PL announcement night. The moment a lot of us realised this might not be a relegation season at all.</div>
+        </div>
+      </div>
+    </div>
+    <p>What ties all of these moments together is that they were waypoints, not destinations. The 2-1 over Chelsea did not lead to a top-half finish that year, it led to the Mitrović ban and the March collapse. The Iwobi night at Old Trafford did not lead to a top-half finish, it led to a thirteenth-place season. The 3-2 over Liverpool was the high point of a year that ended in 11th and an 8th-place finish slipping away. The Cottage years under Silva have produced moments any of us would put in our greatest-hits reel. They have rarely produced the campaign that runs to the European postcards.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 06 · What the club took away</div>
+    <h2>Mitrović in 2023. Palhinha in 2024. <em>The two summers the squad got walked out from under him.</em></h2>
+    <p>If you want to understand why this stops feeling like a Silva story and starts feeling like a Fulham story, the two summers to spend time with are 2023 and 2024. They are the windows where the club's commercial logic and Silva's footballing logic stopped pointing in the same direction, and the squad got reshaped without the manager having much of a say.</p>
+    <div class="sale-pair">
+      <div class="sale-card">
+        <div class="pname">Aleksandar Mitrović</div>
+        <div class="pdest">Out · 19 August 2023 · Al-Hilal</div>
+        <div class="pfee">£46m+</div>
+        <div class="psub">Fulham record sale (at the time)</div>
+        <div class="pnote">Demanded the move on 12 July. Refused to train. Was kept away from the squad through the back end of pre-season. Sold on 19 August for a fee Sky Sports headlined at over forty-six million, three weeks into the league season, with no proper striker replacement in the building.</div>
+      </div>
+      <div class="sale-card">
+        <div class="pname">João Palhinha</div>
+        <div class="pdest">Out · 11 July 2024 · Bayern Munich</div>
+        <div class="pfee">£47.4m</div>
+        <div class="psub">Fulham record sale (the new one)</div>
+        <div class="pnote">Tried to leave on 1 September 2023 deadline day, flew to Munich, passed a Bayern medical, did media duties in a Bayern shirt before the deal collapsed when Fulham could not get a replacement signed. Eventually moved in July 2024 for fifty-one million euros plus add-ons.</div>
+      </div>
+    </div>
+    <p>The Mitrović exit was the strange one. There had been the Al-Hilal interest from earlier in the summer. The first bid of £25.5 million was rejected. The second bid of around thirty was rejected. By 19 July Sky Sports were reporting that Fulham had set the valuation at fifty-two million and that Mitrović had told family he would never play for the club again. He briefly threatened to skip the pre-season United States tour. His agent Pini Zahavi and PFA representatives convinced him to travel. He landed in the US, did not train with the group, did not feature in the friendlies, and on 22 July Silva sat in front of cameras and said the situation "is not the ideal scenario." He said Mitrović was "not working properly with his team-mates." Three weeks later, with the league season already started, the Al-Hilal move went through for a fee Sky headlined at over forty-six million.</p>
+    <div class="pullquote">
+      <p>"He forced everything to leave the club. He wanted to leave the club. He was not in the squad because he did not train with the team."</p>
+      <cite>Marco Silva, on Mitrović's exit, August 2023</cite>
+    </div>
+    <p>Replacement plan: Raúl Jiménez on a free from Wolves, Adama Traoré on a free, Carlos Vinícius retained, Rodrigo Muniz already in the building. Three free transfers and an existing squad member to replace a striker who had scored forty-three Championship goals and eleven Premier League goals across the previous two seasons. The 2023/24 finish was 13th, the worst of Silva's four PL seasons, and the goal output of the side dropped in just about every metric you can measure it by. The Premier League's own preview noted shots per game fell from twelve to ten and xG per game fell from 1.44 to 0.9.</p>
+    <p>The Palhinha story is the one that hurts in a different way, because it played out across two summers. On deadline day 2023 Palhinha had flown to Munich on a Friday morning, taken a medical, posed for the photographs, given a Bayern shirt to Müller, and the deal collapsed in the late afternoon when Fulham could not get a replacement defensive midfielder in before the Bundesliga window shut at 5pm UK time. The story spent the following ten months in the awkward middle ground of a player who had publicly tried to leave for Bayern but was now back in the dressing room. To Palhinha's enormous professional credit, the 2023/24 season he produced was probably his best at the club. The cup runs ran through him. He was a Premier League team-of-the-season name in some publications. Bayern came back in July 2024 and got him for £47.4m. The eventual replacement was Sander Berge for twenty.</p>
+    <p>Berge is a fine Premier League midfielder. He is not João Palhinha. The Cottage spent most of 2024/25 watching a midfield that was, on balance, slower to win the ball back than the year before. Sasa Lukić, who had arrived from Torino in January 2023, was reliable rather than transformative. The downstream effect of the Palhinha sale was that Fulham's defensive structure, which had been one of Silva's most underrated assets in 2022/23 and 2023/24, became more workmanlike for the rest of the era. The 54-point season would arguably have been a 60-point season with Palhinha in it. The 2025/26 season started without a single replacement signed in the position Pereira had vacated, which is its own conversation.</p>
+    <p>What the two sales have in common, and what Silva-era Fulham fans have been arguing about in the Discord for two years, is the question of whether they were managed well. Both sales realised a lot of money for the club. Both sales effectively dictated the football of the season that followed them. Neither sale produced a replacement of equivalent quality in the same window. Both fall, in the most natural reading of the way Fulham is run, on the desk of the football operations side rather than the head coach side. Tony Khan has been director of football operations since February 2017. Alistair Mackintosh is the chief executive. Silva, in five years, has done exactly two things on the subject: said diplomatically that he hopes the club acts in the market, and said publicly in August 2025 that the 2025/26 transfer business had been "too passive." He has not named names. He has not had to.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 07 · Why he stayed</div>
+    <h2>Al-Ahli's £40 million. <em>And the line he gave the Cottage instead.</em></h2>
+    <p>The Mitrović saga in July 2023 had a parallel story that, with the benefit of two years, looks more important. Al-Ahli, who had not yet completed their hire of Steven Gerrard, made an approach for Silva on a package Sky Sports reported as worth around forty million pounds across two years. Around twenty million a season. Roughly four times the salary he was on at Fulham at that point. Silva confirmed the approach existed in his Brentford pre-season press conference on 24 July 2023. He did not take it.</p>
+    <div class="pullquote green">
+      <p>"I've showed my commitment to this football club. My commitment to the football club is total."</p>
+      <cite>Marco Silva, on Al-Ahli, 24 July 2023</cite>
+    </div>
+    <p>That paragraph deserves its own thinking time. A manager whose previous longest stay had been eighteen months, who had been sacked from his last two Premier League jobs, turning down a contract that would have made him, at that moment, one of the highest-paid managers in world football. The Saudi Pro League in summer 2023 was paying eye-watering numbers across the board: Mitrović was getting his own Saudi contract that week. Silva said no.</p>
+    <p>The reasons, when you stitch them together from what he said at the time and what he has said in the two years since, were roughly these. He was eighteen months into the longest job of his career. He had a Fulham squad that had just finished tenth and was about to begin its second Premier League season. He was, by his own description, an ambitious manager rather than a money-driven one. And he said, repeatedly, that he loved the club. There is a reading of that last one as standard managerial press-conference language. There is another reading of it where, if you look at the contract extension he signed in October 2023, taking him through to June 2026 on a deal that was not anywhere near Al-Ahli money, you have to take him at his word.</p>
+    <p>The Cottage, in spring 2024, took him at his word. The fan reception around Silva that year was the warmest it had been at any point in his tenure. The Liverpool semi-final lifted the mood. The Iwobi winner at Old Trafford crystallised it. The 3-0 over Spurs and the Muniz form in February and March added to it. The club opened renewal talks in spring 2025. Tony Khan went on BBC Radio London in April 2025 and said the line we all remember.</p>
+    <div class="pullquote">
+      <p>"We really love Marco and we want him to stay at Fulham forever. Marco has a great relationship with my father and with me."</p>
+      <cite>Tony Khan, BBC Radio London, April 2025</cite>
+    </div>
+    <p>The Khans' affection was sincere. It was also, from a footballing point of view, not enough on its own. By the time those quotes were broadcast, the 2024/25 European push had already started to come apart at the seams. Silva's own statements over the following twelve months tracked an evolving position: in November 2025 he said that the length and the financial side of a deal "are not the most important things"; in May 2026 he said that "next summer is going to be very important for the future of this football club"; and by the time of the Newcastle final-day press conference he was saying his decision was coming the week after. The man who turned down Saudi money in 2023 is the same man who, three years later, was no longer willing to sign Fulham's three-year extension on the table.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 08 · The Spring Slumps</div>
+    <h2>March 2023. March 2025. May 2026. <em>The bit that became a pattern.</em></h2>
+    <p>If the Mitrović and Palhinha sales are the structural complaints, the cyclical one is the spring slump. The shape of a Silva Premier League season tended to be: solid August through November, peak somewhere around Christmas, fade from late February, end the year a couple of places below the high-water mark. In three of the four PL seasons this turned the season's character.</p>
+    <p>2022/23 had the run of five Premier League defeats in a row from late March into April that brought Fulham down from 6th to 10th. The Mitrović eight-game ban accounted for some of it. Some of it was a side that had over-performed for nine months gently regressing to a mean. The first-top-half-since-2011 line covered it. The fade was real.</p>
+    <p>2023/24 was a flatter line, finishing 13th with the cup-driven highs sprinkled across the back end. The numerical fade was less obvious in this one because the team had not climbed as high to start with. The shape was familiar though: a stronger back half of 2023 than 2024.</p>
+    <p>2024/25 is the one that hurts. Fulham held 8th in February with a points record on track. Five fixtures against direct rivals in March and April produced one win, two draws and two losses. Wasteful finishing was the consistent theme: Fulhamish counted four matches in that window where Fulham led at half-time and dropped points after. Robinson's hamstring went, Jiménez missed two months, Lukić had a knock. The January transfer window had brought no senior reinforcements. The points record went to fifty-four. The European spot went to Bournemouth.</p>
+    <p>2025/26 was the season Silva himself called out the early form: one point from the first five away games. The Cottage hauled itself back into 8th by Christmas, sat 9th into the new year, drifted to 10th by April, dropped to 11th in May. A one-point-from-five-away start meant the cushion to mid-table was never large. A late-May run of three games without a win, including the loss at Arsenal and the draw at Wolves, eliminated the European push. The final-day win over Newcastle salvaged 11th by goal difference and got Fulham above Newcastle in the table on the same points total. One more win across the season would have been Europe.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">22/23 slump</div>
+        <div class="stat-value muted">L5</div>
+        <div class="stat-sub">Mar–Apr</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">24/25 spring</div>
+        <div class="stat-value muted">1W 2D 2L</div>
+        <div class="stat-sub">vs rivals</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">25/26 away start</div>
+        <div class="stat-value muted">1 pt</div>
+        <div class="stat-sub">first 5 away</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">25/26 May</div>
+        <div class="stat-value muted">0W in 3</div>
+        <div class="stat-sub">push ends</div>
+      </div>
+    </div>
+    <p>There is more than one available reading of the fades. The kindest one is that Fulham have been a thin-squad club playing in the Premier League at the edge of their financial means, and the late-season tax on injuries and rotation is heavier here than at clubs with a sixty-million-pound bench. Silva himself made exactly that point at the Newcastle press conference, looking at Newcastle's substitutions and noting the player values going off and on. There is a less kind reading too, which is that the Cottage has a pattern under Silva of slowing down in the second half of the season, and that pattern repeats often enough to belong to the manager as much as to the squad. Most honest reads probably land somewhere between the two: a thin squad managed well enough to over-perform in the autumn and out of fuel in the spring.</p>
+    <div class="pullquote">
+      <p>"I'm telling the players always to, yes, be frustrated, be disappointed, but make those moments make you better in the future."</p>
+      <cite>Marco Silva, post-Newcastle, 24 May 2026</cite>
+    </div>
+    <p>Whichever reading you prefer, the consequence is the same. Across four PL seasons under Silva, Fulham never finished above 10th. They came genuinely close to Europe in 2024/25 and 2025/26. They never crossed the line. That is the manager's record. It is also the squad's record. The thing they share, the thing that defines this whole stretch, is the gap between where the team got to in February and where it landed in May.</p>
+  </section>
+
+  <hr class="rule">
+
+</div>
+
+<!-- ============ INTERACTIVE: BEST SILVA XI ============ -->
+<section class="xi-section">
+  <div class="xi-inner">
+    <div class="xi-kicker">§ 09 · Your Best Silva XI</div>
+    <h2>Five years of squad. <em>Eleven slots. Build it.</em></h2>
+    <p class="xi-instructions">A 4-2-3-1, the shape Silva returned to more often than any other. Pick one player at each of the eleven positions. Choices save in your browser as you go. Once you've completed your XI, the community pick at each position will be revealed underneath the slot. Players are filtered by the position they actually played under Silva.</p>
+    <p class="xi-formation">Formation · 4-2-3-1</p>
+
+    <div class="xi-pitch" id="xi-pitch">
+      <div class="xi-penalty-box-top"></div>
+      <div class="xi-six-yard-top"></div>
+      <div class="xi-penalty-box-bottom"></div>
+      <div class="xi-six-yard-bottom"></div>
+
+      <div class="xi-row r-st">
+        <div class="xi-slot" data-pos="st">
+          <span class="xi-slot-label">Striker</span>
+          <select class="xi-select" data-pos="st">
+            <option value="">Pick striker…</option>
+            <option value="mitrovic">Aleksandar Mitrović</option>
+            <option value="jimenez">Raúl Jiménez</option>
+            <option value="muniz">Rodrigo Muniz</option>
+            <option value="vinicius">Carlos Vinícius</option>
+            <option value="broja">Armando Broja (loan)</option>
+            <option value="stansfield">Jay Stansfield</option>
+            <option value="kamara">Aboubakar Kamara</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="st"></span>
+        </div>
+      </div>
+
+      <div class="xi-row r-am">
+        <div class="xi-slot" data-pos="lw">
+          <span class="xi-slot-label">Left wing</span>
+          <select class="xi-select" data-pos="lw">
+            <option value="">Pick LW…</option>
+            <option value="solomon">Manor Solomon (loan)</option>
+            <option value="iwobi">Alex Iwobi</option>
+            <option value="kevin">Kevin</option>
+            <option value="smithrowe">Emile Smith Rowe</option>
+            <option value="nelson">Reiss Nelson (loan)</option>
+            <option value="kebano">Neeskens Kebano</option>
+            <option value="willianL">Willian</option>
+            <option value="godo">Martial Godo</option>
+            <option value="cavaleiro">Ivan Cavaleiro</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="lw"></span>
+        </div>
+        <div class="xi-slot" data-pos="am">
+          <span class="xi-slot-label">Number 10</span>
+          <select class="xi-select" data-pos="am">
+            <option value="">Pick the 10…</option>
+            <option value="pereira">Andreas Pereira</option>
+            <option value="smithrowe">Emile Smith Rowe</option>
+            <option value="cairneyA">Tom Cairney</option>
+            <option value="iwobi">Alex Iwobi</option>
+            <option value="king">Josh King</option>
+            <option value="carvalho">Fábio Carvalho</option>
+            <option value="reidA">Bobby Decordova-Reid</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="am"></span>
+        </div>
+        <div class="xi-slot" data-pos="rw">
+          <span class="xi-slot-label">Right wing</span>
+          <select class="xi-select" data-pos="rw">
+            <option value="">Pick RW…</option>
+            <option value="wilson">Harry Wilson</option>
+            <option value="willianR">Willian</option>
+            <option value="traore">Adama Traoré</option>
+            <option value="bobb">Oscar Bobb</option>
+            <option value="chukwueze">Samuel Chukwueze (loan)</option>
+            <option value="james">Daniel James (loan)</option>
+            <option value="reidR">Bobby Decordova-Reid</option>
+            <option value="knockaert">Anthony Knockaert</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="rw"></span>
+        </div>
+      </div>
+
+      <div class="xi-row r-dm">
+        <div class="xi-slot" data-pos="dml">
+          <span class="xi-slot-label">DM (left)</span>
+          <select class="xi-select" data-pos="dml">
+            <option value="">Pick DM…</option>
+            <option value="palhinha">João Palhinha</option>
+            <option value="reed">Harrison Reed</option>
+            <option value="berge">Sander Berge</option>
+            <option value="lukic">Saša Lukić</option>
+            <option value="cairneyD">Tom Cairney</option>
+            <option value="anguissa">Zambo Anguissa</option>
+            <option value="seri">Jean Michaël Seri</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="dml"></span>
+        </div>
+        <div class="xi-slot" data-pos="dmr">
+          <span class="xi-slot-label">DM (right)</span>
+          <select class="xi-select" data-pos="dmr">
+            <option value="">Pick DM…</option>
+            <option value="palhinha">João Palhinha</option>
+            <option value="reed">Harrison Reed</option>
+            <option value="berge">Sander Berge</option>
+            <option value="lukic">Saša Lukić</option>
+            <option value="cairneyD">Tom Cairney</option>
+            <option value="anguissa">Zambo Anguissa</option>
+            <option value="seri">Jean Michaël Seri</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="dmr"></span>
+        </div>
+      </div>
+
+      <div class="xi-row r-def">
+        <div class="xi-slot" data-pos="lb">
+          <span class="xi-slot-label">Left back</span>
+          <select class="xi-select" data-pos="lb">
+            <option value="">Pick LB…</option>
+            <option value="robinson">Antonee Robinson</option>
+            <option value="sessegnon">Ryan Sessegnon</option>
+            <option value="bryan">Joe Bryan</option>
+            <option value="ballotoure">Fodé Ballo-Touré (loan)</option>
+            <option value="kurzawa">Layvin Kurzawa (loan)</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="lb"></span>
+        </div>
+        <div class="xi-slot" data-pos="lcb">
+          <span class="xi-slot-label">CB (left)</span>
+          <select class="xi-select" data-pos="lcb">
+            <option value="">Pick LCB…</option>
+            <option value="bassey">Calvin Bassey</option>
+            <option value="ream">Tim Ream</option>
+            <option value="tosin">Tosin Adarabioyo</option>
+            <option value="andersen">Joachim Andersen</option>
+            <option value="diop">Issa Diop</option>
+            <option value="cuenca">Jorge Cuenca</option>
+            <option value="duffy">Shane Duffy</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="lcb"></span>
+        </div>
+        <div class="xi-slot" data-pos="rcb">
+          <span class="xi-slot-label">CB (right)</span>
+          <select class="xi-select" data-pos="rcb">
+            <option value="">Pick RCB…</option>
+            <option value="tosin">Tosin Adarabioyo</option>
+            <option value="andersen">Joachim Andersen</option>
+            <option value="diop">Issa Diop</option>
+            <option value="ream">Tim Ream</option>
+            <option value="bassey">Calvin Bassey</option>
+            <option value="cuenca">Jorge Cuenca</option>
+            <option value="duffy">Shane Duffy</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="rcb"></span>
+        </div>
+        <div class="xi-slot" data-pos="rb">
+          <span class="xi-slot-label">Right back</span>
+          <select class="xi-select" data-pos="rb">
+            <option value="">Pick RB…</option>
+            <option value="tete">Kenny Tete</option>
+            <option value="castagne">Timothy Castagne</option>
+            <option value="odoi">Denis Odoi</option>
+            <option value="mbabu">Kevin Mbabu</option>
+            <option value="cedric">Cedric Soares (loan)</option>
+            <option value="christie">Cyrus Christie</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="rb"></span>
+        </div>
+      </div>
+
+      <div class="xi-row r-gk">
+        <div class="xi-slot" data-pos="gk">
+          <span class="xi-slot-label">Goalkeeper</span>
+          <select class="xi-select" data-pos="gk">
+            <option value="">Pick keeper…</option>
+            <option value="leno">Bernd Leno</option>
+            <option value="rodak">Marek Rodák</option>
+            <option value="gazzaniga">Paulo Gazzaniga</option>
+            <option value="lecomte">Benjamin Lecomte</option>
+          </select>
+          <span class="xi-slot-comm" data-pos="gk"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="xi-toolbar">
+      <button class="xi-btn" id="xi-reset" type="button">Reset XI</button>
+      <button class="xi-btn primary" id="xi-reveal" type="button" disabled>Reveal community XI</button>
+    </div>
+    <div class="xi-status"><span class="picked-count" id="xi-picked-count">0</span> / 11 picked</div>
+
+    <div class="xi-summary" id="xi-summary">
+      <div class="xi-summary-title">Your Best Silva XI</div>
+      <div class="xi-summary-line" id="xi-summary-line"></div>
+    </div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <section class="section">
+    <div class="section-kicker">§ 10 · The Khan Question</div>
+    <h2>An ambitious manager. <em>A patient board. A market that moves slowly.</em></h2>
+    <p>This is the bit that, depending on which corner of the Cottage you sit in, either reframes the whole tenure or is grumbling about something every Premier League club deals with. Silva and the Khans are, by all available signals, on warm terms. Tony Khan said in April 2025 he wanted Silva to stay forever. Shahid Khan reportedly flew over to London this spring specifically to discuss the new contract with Silva in person. The relationship between the head coach and the ownership has never been the public problem in this tenure. The problem, if there is one, sits in the operational layer between them.</p>
+    <p>Three things have come up enough times that they deserve naming. The first is the pace of Fulham's transfer business. Silva's "passive" line in August 2025 was the most public version of a complaint that had been hinted at for two years. The 2025 summer window had returned, by the eve of the Premier League opener, exactly one signing: Benjamin Lecomte, a backup keeper from Montpellier for half a million pounds. Kevin arrived on deadline day for around thirty-five million. Chukwueze arrived on deadline day on loan. The rest of the squad that started the season had been assembled, broadly, the summer before.</p>
+    <div class="pullquote">
+      <p>"It's not an ideal scenario. I didn't expect us to be this passive. I knew what I wanted and the plan was there but it hasn't happened. Right now we need to reinforce. In some positions we are very short."</p>
+      <cite>Marco Silva, 15 August 2025, eve of opener</cite>
+    </div>
+    <p>The second thing is the absence of a like-for-like replacement for the players the club sold. The Mitrović sale was followed by Jiménez, Traoré, no other striker. The Palhinha sale was followed by Berge, who is not Palhinha. The Pereira sale was followed by no senior creator in the summer 2025 window at all. The bench in 2025/26, on the day Silva looked across at Newcastle and quietly noted the player values, was a much thinner thing than the one across the touchline. Fulham have done very smart business at Cougar Holdco level. They have, on the football side, frequently realised value on the way out and not realised equivalent value on the way in.</p>
+    <div class="pullquote">
+      <p>"I don't want to compare, but when I look at their substitutions and I see players from the eleven go out, 60, 70, 80 million, and players to go in, 60 and 70 million, it just speaks about sometimes the difference on the paper that is there."</p>
+      <cite>Marco Silva, post-Newcastle, 24 May 2026</cite>
+    </div>
+    <p>The third thing is the structure of the contract impasse itself. Fulham have offered Silva three years, reportedly around eight million per season. The Cottage Discord has spent April and May debating whether it is the money, the length, the squad-planning autonomy, or some combination of the three, that has held things up. Reporting from Fulhamish and Hammyend through May 2026 has flagged that the new offer would give Silva "greater control over transfers" than he has previously held, which is the kind of detail that confirms the hold-up is structural rather than financial. The release clause in the existing contract, sitting somewhere between ten and fifteen million, gives the conversation a kind of price tag: if the buyer comes in at the number, the club cannot keep him whether they want to or not.</p>
+    <div class="pullquote gold">
+      <p>"Sometimes people think that the length and the financial things are most important. I am not going to be naïve and say they are not important, but other things are important too."</p>
+      <cite>Marco Silva, Sky Sports, November 2025</cite>
+    </div>
+    <p>If you read those three quotes together, in the order Silva said them, you get a picture of a manager whose patience has been a finite resource and who, sometime over the past year, has watched the meter run out. The "passive" comment was in August 2025. The "other things are important too" was in November. The "60 and 70 million" line was in May. The decision came "next week, for sure" three days ago. Whether the announcement is staying or going, the cycle that produced it tells most of the story. Marco Silva has been the most successful Fulham manager since Roy Hodgson. He has also, over the past two years, been a manager who has wanted the club to match his ambition with structure and squad investment, and has found the response polite but slow. At some point that ends a relationship. We may be at that point now.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 11 · Where next</div>
+    <h2>Benfica, probably. <em>Or a longer pause.</em></h2>
+    <p>The Benfica link, on the public reporting, has gone from "rumour" in early May to "agreed deal" in Portuguese outlets by 21 May to "Silva says no contact" at his own press conference on the Friday before the Newcastle game. The mechanism that makes it likely, if any of it is right, is the José Mourinho situation. Mourinho was reappointed Benfica head coach in late 2025. If Real Madrid come for him this summer, as Madrid have been reported to be doing for months, Benfica need a new head coach by July. The shortlist, in the Portuguese papers, has been short. Silva is on it. He has managed Sporting before, which is the rival club, but he is Portuguese, he is in his prime, and he has been managing Premier League opposition for five years. From a Benfica selection-committee point of view, the appointment makes a lot of sense.</p>
+    <p>From a Silva point of view, it makes sense for different reasons. Benfica is a major European club with European football every season. Silva has never managed in European competition in his career: not at Sporting, not at Olympiacos, not at Watford, not at Everton, not at Fulham. A Champions League group stage is the obvious career experience he has not yet had. Lisbon is home. The salary, if reported figures are accurate, would be in the same broad range as the Fulham offer. The promotion of his stock would be considerable.</p>
+    <p>It is, on balance, the move that makes the most sense. It is also, on balance, the move that you would not bet the house on. The reporting has been split. Silva has been characteristically non-committal in his press conferences, with the recurring line being some version of "I love this club and I love my job, and I will make my decision after the season." Tony Khan has continued to say publicly that he expects Silva to stay. Shahid Khan flew in personally. The release-clause valuation, if Benfica are willing to pay it, makes the transaction simple. If they would rather negotiate a smaller compensation in exchange for waiting six weeks, Fulham might have leverage they have not yet had to use.</p>
+    <p>The fixture we will probably be looking at in two weeks is one in which Silva does join Benfica, Fulham receive a compensation in the high single-digit millions, Tony Khan makes a statement thanking him for the five years, and the club starts a head-coach search with Andoni Iraola, Kieran McKenna, Edin Terzić, and the obligatory Iraola alternate at the top of the shortlist. The fixture in which Silva stays involves him signing a contract that gives him meaningful control over the 2026 summer window, with Tony Khan stepping back from the day-to-day on incoming transfers. We are about a week from finding out which of those it is.</p>
+    <div class="pullquote">
+      <p>"It's going to be next week for sure. We have to announce, because the club has to move on, or for me to be here we have many things to prepare."</p>
+      <cite>Marco Silva, post-Newcastle, 24 May 2026</cite>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 12 · Thank you</div>
+
+    <div class="career-line">
+      <div class="career-grid">
+        <div class="career-block">
+          <div class="cl">Tenure</div>
+          <div class="cv">5 yrs</div>
+          <div class="cs">Jul 2021 to present</div>
+        </div>
+        <div class="career-block">
+          <div class="cl">Approx. games</div>
+          <div class="cv">~220</div>
+          <div class="cs">all competitions</div>
+        </div>
+        <div class="career-block">
+          <div class="cl">Promotions</div>
+          <div class="cv gold">1</div>
+          <div class="cs">2021-22 Champions</div>
+        </div>
+        <div class="career-block">
+          <div class="cl">Top PL points</div>
+          <div class="cv accent">54</div>
+          <div class="cs">2024-25, club record</div>
+        </div>
+        <div class="career-block">
+          <div class="cl">Cup runs</div>
+          <div class="cv gold">3</div>
+          <div class="cs">2 FA QF, 1 Carabao SF</div>
+        </div>
+        <div class="career-block">
+          <div class="cl">Best PL pos.</div>
+          <div class="cv">10th</div>
+          <div class="cs">2022-23</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Five years that were better than the four before them. <em>And the goodbye that probably comes anyway.</em></h2>
+    <p>Silva walked into a relegated dressing room three days into July 2021, with no pre-season, with a sulking owner of a press release about Scott Parker, and with a squad most of whom had spent the previous year going down. He spent the following year getting them up. He spent the four years after that turning Fulham into the most stable mid-table Premier League side the club has had. By the time the 2025/26 season closed, the team was running a club PL points record, had taken Premier League scalps off five of the Big Six at various points, had a Carabao Cup semi-final and two FA Cup quarter-finals on the ledger, and was nearly always nudging at the European places without ever quite getting there.</p>
+    <p>What he never won was a trophy. Three cup runs that did not end in a final. A points record that did not end in Europe. A semi-final at Anfield where Willian put us in front and we lost on a deflection. A quarter-final at Old Trafford where Mitrović pushed a referee and the eight-game ban followed. A run in February 2025 where we sat 8th and watched it slip. A spring 2026 where one more win across the season would have been enough. The Cottage has, in five years, watched Silva get closer to the silverware than any Fulham manager since the Hodgson Europa final, and never quite cross the line. That is the line on the gravestone. It is also, on a fair reading, the line on a manager working at a club whose financial limits sit one or two transfer windows below the genuinely-European tier.</p>
+    <div class="verdict">
+      <div class="verdict-label">The Cravenpod View</div>
+      <div class="verdict-headline">Thank you, Marco. <em>Five years was longer than any of us had any right to expect.</em></div>
+      <p>Silva has been the most successful Fulham manager of the post-Hodgson era. He took a relegated squad straight back up. He made the Cottage feel like a Premier League ground again on a Saturday afternoon. He produced Mitrović's forty-three. He produced the Anfield night. He produced the Old Trafford night. He produced the 3-2 Liverpool 14 minutes of madness. He produced the points record. He turned down the Saudi money in 2023 and put his name on a renewal that made him our manager for as long as we had any right to ask. He sat in a press room in May 2026 and said the club has a great future, and that he loves the job, and the body language said he might be saying it for the last time.</p>
+      <p>If next week's announcement is the one almost everyone has assumed it would be, the Cottage will say goodbye warmly, because of all the reasons above. The cup we never lifted will sit on the list of regrets. The European spots we got close to and lost will sit there too. The two summers the squad got walked out from under him belong to a different ledger entirely, and the next manager is going to find that ledger waiting on the desk on day one. Until then, thank you, Marco. Five years was longer than any of us had any right to expect. Whatever the decision turns out to be, the Cottage is the better for the time he gave it.</p>
+    </div>
+  </section>
+
+  <div class="sources">
+    <div class="sources-label">Sources & verification</div>
+    <p>Match facts, scorelines and lineups verified via Premier League, fulhamfc.com, ESPN, Sky Sports, Fulhamish and Sportsmole. Manager quotes from Silva's own Sky Sports presser archive, his beIN Sports post-Newcastle interview (24 May 2026), and the Sky Sports 200-games exclusive (November 2025). Mitrović sale figures and Palhinha sale figures from Sky Sports' transfer coverage. Tony Khan quotes from BBC Radio London (April 2025) via HammyEnd. Benfica reporting from Tribuna and Sky Sports across May 2026. Contract details (release clause, offer length) from Fulhamish and GiveMeSport. Approximate-games figure (~220) extrapolated from the verified Silva milestone at 174 games as of March 2025 plus the subsequent 2024/25 run-in (15 games) and the full 2025/26 season (38 PL + cup games). No invented quotes. Where reporting differed between sources, the more conservative figure was used.</p>
+  </div>
+
+</div>
+
+<section class="interactive-section">
+  <div class="interactive-inner">
+    <div class="interactive-kicker">§ 13 · Your Verdict</div>
+    <h2>Five years to sum up, four questions to answer. <em>Cast your votes.</em></h2>
+    <p class="intro">Pick once per poll. Results revealed as soon as you vote. Saved in your browser so you can come back to them; tallied across the Cravenpod community in real time.</p>
+
+    <div class="poll-block" id="moment-block">
+      <h3>What was Silva's greatest day at Fulham?</h3>
+      <div class="poll-options" id="moment-options">
+        <button class="poll-btn" data-poll="moment" data-choice="luton" onclick="castVote('moment','luton')">
+          <span>7-0 vs Luton, 2 May 2022 · title clinched, Mitrović's 43rd</span>
+          <span class="poll-pct" id="moment-pct-luton">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-luton"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="anfield" onclick="castVote('moment','anfield')">
+          <span>Liverpool 2-1 Fulham, 10 Jan 2024 · Willian at Anfield, Carabao SF1</span>
+          <span class="poll-pct" id="moment-pct-anfield">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-anfield"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="iwobi97" onclick="castVote('moment','iwobi97')">
+          <span>Man Utd 1-2 Fulham, 24 Feb 2024 · Iwobi 97' at Old Trafford</span>
+          <span class="poll-pct" id="moment-pct-iwobi97">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-iwobi97"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="chelsea-h" onclick="castVote('moment','chelsea-h')">
+          <span>Fulham 2-1 Chelsea, 12 Jan 2023 · the local one, Vinícius winner</span>
+          <span class="poll-pct" id="moment-pct-chelsea-h">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-chelsea-h"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="liverpool-h" onclick="castVote('moment','liverpool-h')">
+          <span>Fulham 3-2 Liverpool, 6 Apr 2025 · three in 14 minutes</span>
+          <span class="poll-pct" id="moment-pct-liverpool-h">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-liverpool-h"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="spurs-h" onclick="castVote('moment','spurs-h')">
+          <span>Fulham 3-0 Spurs, 16 Mar 2024 · Muniz brace</span>
+          <span class="poll-pct" id="moment-pct-spurs-h">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-spurs-h"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="preston" onclick="castVote('moment','preston')">
+          <span>Fulham 3-0 Preston, 19 Apr 2022 · promotion sealed</span>
+          <span class="poll-pct" id="moment-pct-preston">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-preston"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="opener-liv" onclick="castVote('moment','opener-liv')">
+          <span>Fulham 2-2 Liverpool, 6 Aug 2022 · the PL return statement</span>
+          <span class="poll-pct" id="moment-pct-opener-liv">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-opener-liv"></div></div>
+
+        <button class="poll-btn" data-poll="moment" data-choice="lap" onclick="castVote('moment','lap')">
+          <span>Fulham 2-0 Newcastle, 24 May 2026 · the lap of honour</span>
+          <span class="poll-pct" id="moment-pct-lap">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="moment-bar-lap"></div></div>
+      </div>
+      <div class="poll-count" id="moment-count"></div>
+    </div>
+
+    <div class="poll-block" id="signing-block">
+      <h3>Best signing of the Silva era?</h3>
+      <div class="poll-options" id="signing-options">
+        <button class="poll-btn" data-poll="signing" data-choice="leno" onclick="castVote('signing','leno')">
+          <span>Bernd Leno · £3m from Arsenal, 2022</span>
+          <span class="poll-pct" id="signing-pct-leno">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-leno"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="palhinha" onclick="castVote('signing','palhinha')">
+          <span>João Palhinha · £20m from Sporting, 2022</span>
+          <span class="poll-pct" id="signing-pct-palhinha">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-palhinha"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="pereira" onclick="castVote('signing','pereira')">
+          <span>Andreas Pereira · £8.5m from Man Utd, 2022</span>
+          <span class="poll-pct" id="signing-pct-pereira">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-pereira"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="iwobi" onclick="castVote('signing','iwobi')">
+          <span>Alex Iwobi · from Everton, 2023</span>
+          <span class="poll-pct" id="signing-pct-iwobi">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-iwobi"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="bassey" onclick="castVote('signing','bassey')">
+          <span>Calvin Bassey · £18m from Ajax, 2023</span>
+          <span class="poll-pct" id="signing-pct-bassey">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-bassey"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="jimenez" onclick="castVote('signing','jimenez')">
+          <span>Raúl Jiménez · free from Wolves, 2023</span>
+          <span class="poll-pct" id="signing-pct-jimenez">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-jimenez"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="andersen" onclick="castVote('signing','andersen')">
+          <span>Joachim Andersen · £25m from Palace, 2024</span>
+          <span class="poll-pct" id="signing-pct-andersen">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-andersen"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="smithrowe" onclick="castVote('signing','smithrowe')">
+          <span>Emile Smith Rowe · £27m from Arsenal, 2024</span>
+          <span class="poll-pct" id="signing-pct-smithrowe">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-smithrowe"></div></div>
+
+        <button class="poll-btn" data-poll="signing" data-choice="kevin" onclick="castVote('signing','kevin')">
+          <span>Kevin · club record £34.6m from Shakhtar, 2025</span>
+          <span class="poll-pct" id="signing-pct-kevin">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="signing-bar-kevin"></div></div>
+      </div>
+      <div class="poll-count" id="signing-count"></div>
+    </div>
+
+    <div class="poll-block" id="next-block">
+      <h3>Where will Marco Silva be on 1 August 2026?</h3>
+      <div class="poll-options" id="next-options">
+        <button class="poll-btn" data-poll="next" data-choice="fulham" onclick="castVote('next','fulham')">
+          <span>Still at Fulham · signed the extension</span>
+          <span class="poll-pct" id="next-pct-fulham">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="next-bar-fulham"></div></div>
+
+        <button class="poll-btn" data-poll="next" data-choice="benfica" onclick="castVote('next','benfica')">
+          <span>Benfica · Lisbon, Champions League group stage</span>
+          <span class="poll-pct" id="next-pct-benfica">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="next-bar-benfica"></div></div>
+
+        <button class="poll-btn" data-poll="next" data-choice="otherpl" onclick="castVote('next','otherpl')">
+          <span>Another Premier League club · Spurs, Chelsea, surprise move</span>
+          <span class="poll-pct" id="next-pct-otherpl">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="next-bar-otherpl"></div></div>
+
+        <button class="poll-btn" data-poll="next" data-choice="saudi" onclick="castVote('next','saudi')">
+          <span>Saudi Pro League · the offer he turned down in 2023 returns</span>
+          <span class="poll-pct" id="next-pct-saudi">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="next-bar-saudi"></div></div>
+
+        <button class="poll-btn" data-poll="next" data-choice="break" onclick="castVote('next','break')">
+          <span>Sabbatical · gardening leave, take stock</span>
+          <span class="poll-pct" id="next-pct-break">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="next-bar-break"></div></div>
+      </div>
+      <div class="poll-count" id="next-count"></div>
+    </div>
+
+    <div class="poll-block" id="legacy-block">
+      <h3>Where does Silva sit in the Fulham manager pantheon?</h3>
+      <div class="poll-options" id="legacy-options">
+        <button class="poll-btn" data-poll="legacy" data-choice="best" onclick="castVote('legacy','best')">
+          <span>Best Fulham manager of the modern era</span>
+          <span class="poll-pct" id="legacy-pct-best">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="legacy-bar-best"></div></div>
+
+        <button class="poll-btn" data-poll="legacy" data-choice="hodgson" onclick="castVote('legacy','hodgson')">
+          <span>Up there with Hodgson, just below the Europa run</span>
+          <span class="poll-pct" id="legacy-pct-hodgson">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="legacy-bar-hodgson"></div></div>
+
+        <button class="poll-btn" data-poll="legacy" data-choice="solid" onclick="castVote('legacy','solid')">
+          <span>Solid mid-table-PL stabiliser, no more, no less</span>
+          <span class="poll-pct" id="legacy-pct-solid">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="legacy-bar-solid"></div></div>
+
+        <button class="poll-btn" data-poll="legacy" data-choice="underwhelm" onclick="castVote('legacy','underwhelm')">
+          <span>Under-delivered given the squad we built around him</span>
+          <span class="poll-pct" id="legacy-pct-underwhelm">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="legacy-bar-underwhelm"></div></div>
+      </div>
+      <div class="poll-count" id="legacy-count"></div>
+    </div>
+
+    <div class="poll-block" id="rating-block">
+      <h3>Rate the Silva tenure out of 10</h3>
+      <div class="rating-widget">
+        <div class="rating-row" id="rating-row"></div>
+        <div class="rating-result" id="rating-result"></div>
+        <div class="poll-count" id="rating-count"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <a href="/">← Back to Cravenpod</a>
+    <a href="https://podfollow.com/thats-so-craven">🎙 Listen to the Podcast</a>
+    <a href="https://discord.gg/mUZQhDHJPR">💬 Join the Discord</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+
+  /* ── Season tabs ── */
+  const tabBar = document.getElementById('season-tabs');
+  if (tabBar) {
+    tabBar.addEventListener('click', function(e) {
+      const btn = e.target.closest('.season-tab');
+      if (!btn) return;
+      const target = btn.dataset.season;
+      tabBar.querySelectorAll('.season-tab').forEach(b => b.classList.toggle('active', b === btn));
+      document.querySelectorAll('.season-panel').forEach(p => p.classList.toggle('active', p.id === target));
+    });
+  }
+
+  /* ── Supabase ── */
+  const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+  const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+  const sb = (window.supabase && window.supabase.createClient) ? window.supabase.createClient(SB_URL, SB_KEY) : null;
+
+  /* ── XI selector ── */
+  const LS_PREFIX = 'cravenpod-silva-xi-';
+  const POSITIONS = ['gk','rb','rcb','lcb','lb','dml','dmr','lw','am','rw','st'];
+  const POSITION_LABELS = {
+    gk: 'GK', rb: 'RB', rcb: 'RCB', lcb: 'LCB', lb: 'LB',
+    dml: 'DM', dmr: 'DM', lw: 'LW', am: 'AM', rw: 'RW', st: 'ST'
+  };
+  const POLL_IDS = {};
+  POSITIONS.forEach(p => POLL_IDS[p] = 'silva-xi-' + p);
+
+  const PLAYER_NAMES = {
+    /* GK */
+    leno: 'Bernd Leno', rodak: 'Marek Rodák', gazzaniga: 'Paulo Gazzaniga', lecomte: 'Benjamin Lecomte',
+    /* RB */
+    tete: 'Kenny Tete', castagne: 'Timothy Castagne', odoi: 'Denis Odoi', mbabu: 'Kevin Mbabu', cedric: 'Cedric Soares', christie: 'Cyrus Christie',
+    /* CB */
+    tosin: 'Tosin Adarabioyo', andersen: 'Joachim Andersen', diop: 'Issa Diop', ream: 'Tim Ream', bassey: 'Calvin Bassey', cuenca: 'Jorge Cuenca', duffy: 'Shane Duffy',
+    /* LB */
+    robinson: 'Antonee Robinson', sessegnon: 'Ryan Sessegnon', bryan: 'Joe Bryan', ballotoure: 'Fodé Ballo-Touré', kurzawa: 'Layvin Kurzawa',
+    /* DM */
+    palhinha: 'João Palhinha', reed: 'Harrison Reed', berge: 'Sander Berge', lukic: 'Saša Lukić', cairneyD: 'Tom Cairney', anguissa: 'Zambo Anguissa', seri: 'Jean Michaël Seri',
+    /* AM */
+    pereira: 'Andreas Pereira', smithrowe: 'Emile Smith Rowe', cairneyA: 'Tom Cairney', iwobi: 'Alex Iwobi', king: 'Josh King', carvalho: 'Fábio Carvalho', reidA: 'Bobby Decordova-Reid',
+    /* LW */
+    solomon: 'Manor Solomon', kevin: 'Kevin', nelson: 'Reiss Nelson', kebano: 'Neeskens Kebano', willianL: 'Willian', godo: 'Martial Godo', cavaleiro: 'Ivan Cavaleiro',
+    /* RW */
+    wilson: 'Harry Wilson', willianR: 'Willian', traore: 'Adama Traoré', bobb: 'Oscar Bobb', chukwueze: 'Samuel Chukwueze', james: 'Daniel James', reidR: 'Bobby Decordova-Reid', knockaert: 'Anthony Knockaert',
+    /* ST */
+    mitrovic: 'Aleksandar Mitrović', jimenez: 'Raúl Jiménez', muniz: 'Rodrigo Muniz', vinicius: 'Carlos Vinícius', broja: 'Armando Broja', stansfield: 'Jay Stansfield', kamara: 'Aboubakar Kamara'
+  };
+
+  const lsGet = (k) => { try { return localStorage.getItem(LS_PREFIX + k); } catch(e) { return null; } };
+  const lsSet = (k, v) => { try { localStorage.setItem(LS_PREFIX + k, v); } catch(e) {} };
+  const lsDel = (k) => { try { localStorage.removeItem(LS_PREFIX + k); } catch(e) {} };
+
+  const selects = {};
+  POSITIONS.forEach(pos => {
+    selects[pos] = document.querySelector('.xi-select[data-pos="' + pos + '"]');
+  });
+
+  function getPicks() {
+    const picks = {};
+    POSITIONS.forEach(pos => {
+      const sel = selects[pos];
+      if (sel && sel.value) picks[pos] = sel.value;
+    });
+    return picks;
+  }
+
+  function countPicked() { return Object.keys(getPicks()).length; }
+
+  function refreshStatus() {
+    const n = countPicked();
+    const el = document.getElementById('xi-picked-count');
+    if (el) el.textContent = n;
+    const reveal = document.getElementById('xi-reveal');
+    if (reveal) reveal.disabled = (n < 11);
+    if (n === 11) renderSummary();
+  }
+
+  function styleSelect(sel) {
+    if (sel) sel.classList.toggle('picked', !!sel.value);
+  }
+
+  function renderSummary() {
+    const picks = getPicks();
+    if (Object.keys(picks).length < 11) return;
+    const block = document.getElementById('xi-summary');
+    const line = document.getElementById('xi-summary-line');
+    if (!block || !line) return;
+    const order = ['st','lw','am','rw','dml','dmr','lb','lcb','rcb','rb','gk'];
+    const parts = order.map(pos => {
+      const id = picks[pos];
+      return POSITION_LABELS[pos] + ': ' + (PLAYER_NAMES[id] || id);
+    });
+    line.innerHTML = parts.join(' &nbsp;·&nbsp; ');
+    block.classList.add('visible');
+  }
+
+  async function fetchCounts(pollId) {
+    if (!sb) return {};
+    try {
+      const { data, error } = await sb.from('poll_counts')
+        .select('choice, count')
+        .eq('poll_id', pollId);
+      if (error || !data) return {};
+      const counts = {};
+      data.forEach(row => { counts[row.choice] = parseInt(row.count) || 0; });
+      return counts;
+    } catch(e) { return {}; }
+  }
+
+  async function recordXIVote(pos, choice) {
+    if (!sb) return;
+    const pollId = POLL_IDS[pos];
+    if (!pollId) return;
+    try {
+      await sb.from('poll_votes').insert({ poll_id: pollId, choice: choice });
+    } catch(e) {}
+  }
+
+  async function revealCommunity() {
+    const reveal = document.getElementById('xi-reveal');
+    if (reveal) { reveal.disabled = true; reveal.textContent = 'Loading…'; }
+    for (const pos of POSITIONS) {
+      const counts = await fetchCounts(POLL_IDS[pos]);
+      const total = Object.values(counts).reduce((a,b) => a+b, 0);
+      if (total === 0) continue;
+      let topChoice = null, topCount = 0;
+      Object.entries(counts).forEach(([c, n]) => {
+        if (n > topCount) { topCount = n; topChoice = c; }
+      });
+      if (!topChoice) continue;
+      const pct = Math.round((topCount / total) * 100);
+      const commEl = document.querySelector('.xi-slot-comm[data-pos="' + pos + '"]');
+      if (commEl) {
+        const name = PLAYER_NAMES[topChoice] || topChoice;
+        const shortName = name.split(' ').slice(-1)[0];
+        commEl.textContent = 'Community: ' + shortName + ' · ' + pct + '%';
+        commEl.classList.add('visible');
+      }
+    }
+    if (reveal) reveal.textContent = 'Community revealed';
+  }
+
+  /* hydrate from localStorage */
+  POSITIONS.forEach(pos => {
+    const sel = selects[pos];
+    if (!sel) return;
+    const saved = lsGet(pos);
+    if (saved) {
+      const opt = sel.querySelector('option[value="' + saved + '"]');
+      if (opt) {
+        sel.value = saved;
+        styleSelect(sel);
+      }
+    }
+    sel.addEventListener('change', () => {
+      const v = sel.value;
+      if (v) {
+        lsSet(pos, v);
+        recordXIVote(pos, v);
+      } else {
+        lsDel(pos);
+      }
+      styleSelect(sel);
+      refreshStatus();
+    });
+  });
+
+  /* reset */
+  const resetBtn = document.getElementById('xi-reset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      POSITIONS.forEach(pos => {
+        const sel = selects[pos];
+        if (sel) {
+          sel.value = '';
+          styleSelect(sel);
+          lsDel(pos);
+        }
+        const commEl = document.querySelector('.xi-slot-comm[data-pos="' + pos + '"]');
+        if (commEl) { commEl.textContent = ''; commEl.classList.remove('visible'); }
+      });
+      const summary = document.getElementById('xi-summary');
+      if (summary) summary.classList.remove('visible');
+      const reveal = document.getElementById('xi-reveal');
+      if (reveal) reveal.textContent = 'Reveal community XI';
+      refreshStatus();
+    });
+  }
+
+  /* reveal */
+  const revealBtn = document.getElementById('xi-reveal');
+  if (revealBtn) {
+    revealBtn.addEventListener('click', () => {
+      if (countPicked() < 11) return;
+      revealCommunity();
+    });
+  }
+
+  refreshStatus();
+
+  /* ──────────────────────────────────────────────
+     Feedback polls (moment / signing / next / legacy / rating)
+     ────────────────────────────────────────────── */
+  const POLL_LS_PREFIX = 'cravenpod-silva-farewell-';
+  const FEEDBACK_POLL_IDS = {
+    moment:  'silva-farewell-moment',
+    signing: 'silva-farewell-signing',
+    next:    'silva-farewell-next',
+    legacy:  'silva-farewell-legacy',
+    rating:  'silva-farewell-rating'
+  };
+
+  function pollLsGet(p) { try { return localStorage.getItem(POLL_LS_PREFIX + p) || null; } catch(e) { return null; } }
+  function pollLsSet(p, v) { try { localStorage.setItem(POLL_LS_PREFIX + p, v); } catch(e) {} }
+
+  async function fetchPollCounts(pollId) {
+    if (!sb) return {};
+    try {
+      const { data, error } = await sb.from('poll_counts').select('choice, count').eq('poll_id', pollId);
+      if (error || !data) return {};
+      const counts = {};
+      data.forEach(row => { counts[row.choice] = parseInt(row.count) || 0; });
+      return counts;
+    } catch(e) { return {}; }
+  }
+
+  function pollChoices(pollName) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return [];
+    return Array.from(block.querySelectorAll('.poll-btn[data-choice]')).map(b => b.dataset.choice);
+  }
+
+  function renderPoll(pollName, userChoice, counts) {
+    const block = document.getElementById(pollName + '-block');
+    if (!block) return;
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userChoice) return;
+
+    block.classList.add('poll-voted');
+    block.querySelectorAll('.poll-btn').forEach(btn => {
+      btn.classList.remove('user-choice');
+      if (btn.dataset.choice === userChoice) btn.classList.add('user-choice');
+    });
+
+    pollChoices(pollName).forEach(choice => {
+      const count = counts[choice] || 0;
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      const pctEl = document.getElementById(pollName + '-pct-' + choice);
+      const barEl = document.getElementById(pollName + '-bar-' + choice);
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (barEl) setTimeout(() => { barEl.style.width = pct + '%'; }, 50);
+    });
+
+    const countEl = document.getElementById(pollName + '-count');
+    if (countEl) countEl.textContent = total + (total === 1 ? ' vote' : ' votes') + ' cast';
+  }
+
+  window.castVote = async function(pollName, choice) {
+    if (pollLsGet(pollName)) return;
+    const pollId = FEEDBACK_POLL_IDS[pollName];
+    if (!pollId) return;
+    pollLsSet(pollName, choice);
+    if (sb) {
+      try { await sb.from('poll_votes').insert({ poll_id: pollId, choice: choice }); } catch(e) {}
+    }
+    const counts = await fetchPollCounts(pollId);
+    renderPoll(pollName, choice, counts);
+  };
+
+  async function initFeedbackPolls() {
+    for (const [pollName, pollId] of Object.entries(FEEDBACK_POLL_IDS)) {
+      if (pollName === 'rating') continue;
+      const userChoice = pollLsGet(pollName);
+      const counts = await fetchPollCounts(pollId);
+      renderPoll(pollName, userChoice, counts);
+    }
+  }
+  initFeedbackPolls();
+
+  /* ── Rating widget (1-10) ── */
+  const ratingRow    = document.getElementById('rating-row');
+  const ratingResult = document.getElementById('rating-result');
+  const ratingCount  = document.getElementById('rating-count');
+
+  function buildRatingButtons() {
+    if (!ratingRow) return;
+    for (let i = 1; i <= 10; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'rating-btn';
+      btn.textContent = i;
+      btn.dataset.val = i;
+      btn.onclick = () => castRating(i);
+      ratingRow.appendChild(btn);
+    }
+  }
+
+  async function castRating(val) {
+    if (pollLsGet('rating')) return;
+    pollLsSet('rating', String(val));
+    if (sb) {
+      try { await sb.from('poll_votes').insert({ poll_id: FEEDBACK_POLL_IDS.rating, choice: String(val) }); } catch(e) {}
+    }
+    await renderRating(String(val));
+  }
+
+  async function renderRating(userVal) {
+    if (!ratingRow) return;
+    const counts = await fetchPollCounts(FEEDBACK_POLL_IDS.rating);
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userVal) return;
+
+    ratingRow.querySelectorAll('.rating-btn').forEach(btn => {
+      btn.onclick = null;
+      btn.style.cursor = 'default';
+      btn.classList.toggle('selected', btn.dataset.val === userVal);
+    });
+
+    if (total > 0) {
+      const sum = Object.entries(counts).reduce((acc, [r, c]) => acc + parseInt(r) * c, 0);
+      const avg = (sum / total).toFixed(1);
+      if (ratingResult) {
+        ratingResult.textContent = 'Community average: ' + avg + ' / 10';
+        ratingResult.classList.add('visible');
+      }
+      if (ratingCount) ratingCount.textContent = total + (total === 1 ? ' rating' : ' ratings') + ' submitted';
+    }
+  }
+
+  buildRatingButtons();
+  const existingRating = pollLsGet('rating');
+  if (existingRating) renderRating(existingRating);
+
+})();
+</script>
+
+<script data-goatcounter="https://cravenpod.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
