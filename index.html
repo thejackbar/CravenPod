@@ -594,6 +594,95 @@
   }
   @media (max-width: 900px) { .archive-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .archive-grid { grid-template-columns: 1fr; } }
+
+  /* ========== SILVA SERIES PROMO ========== */
+  .series-promo {
+    margin: 28px 0 56px;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(212,175,110,0.10) 0%, rgba(255,59,103,0.06) 100%);
+    border: 1px solid rgba(212,175,110,0.28);
+    border-radius: var(--r-lg);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    backdrop-filter: blur(20px) saturate(140%);
+  }
+  .series-promo-inner { max-width: 100%; }
+  .series-promo-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .series-promo-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .series-promo-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px 16px 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-md);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.2s;
+  }
+  .series-promo-item:hover { border-color: var(--gold); background: rgba(212,175,110,0.06); }
+  .series-promo-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .series-promo-item.is-coming .series-promo-tag { color: var(--ink-mute); }
+  .series-promo-item.is-coming::after {
+    content: 'Coming';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 4px 10px;
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--r-pill);
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+  .series-promo-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .series-promo-item.is-coming .series-promo-title { color: var(--ink-mute); }
+  .series-promo-dek {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .series-promo-item.is-coming .series-promo-dek { color: var(--ink-mute); }
+  @media (max-width: 900px) { .series-promo-list { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .series-promo-list { grid-template-columns: 1fr; } }
+
+  /* Archive cards in coming state */
+  .archive-card.is-coming {
+    opacity: 0.65;
+    pointer-events: auto;
+  }
+  .archive-card.is-coming .archive-cat-pill::after {
+    content: ' · Coming';
+    color: var(--gold);
+  }
+
   .archive-card {
     display: flex;
     flex-direction: column;
@@ -1198,26 +1287,58 @@
       Just published · The latest article
     </div>
 
-    <a href="/posts/the-silva-years/" class="latest-card has-hero" style="--hero-img: url('https://static.standard.co.uk/2025/11/22/18/23/Marco-Silva-22112025.jpeg?trim=19,0,19,0&quality=75&auto=webp&width=1000');">
+    <a href="/posts/the-silva-years-pt1-the-start/" class="latest-card has-hero" style="--hero-img: url('https://s3.eu-west-1.amazonaws.com/gc-media-assets.fulhamfc.com/17e9b4b0-da90-11eb-96c8-53f17f7f9052.jpg');">
       <div class="latest-visual">
-        <div class="latest-visual-tag">Feature · Farewell · 27 May 2026</div>
-        <div class="latest-visual-big">Five seasons.<br><em>One long goodbye.</em></div>
+        <div class="latest-visual-tag">Feature · Series · Part 1 of 4</div>
+        <div class="latest-visual-big">The Start<br><em>of Silva.</em></div>
       </div>
       <div class="latest-body">
         <div>
-          <div class="latest-meta">27 May 2026 · A Fulham Farewell · ~18 min read · Interactive</div>
-          <h3 class="latest-title">The Silva Years: a long look back, with your Best Silva XI to pick</h3>
-          <p class="latest-dek">Five years by the Thames. One promotion, four PL finishes, two cup runs, a club points record, and a Cottage that has not quite worked out how to feel about him. The long retrospective with an interactive Best Silva XI builder and your verdict polls inside.</p>
+          <div class="latest-meta">27 May 2026 · The Silva Years · Pt 1/4 · ~8 min read</div>
+          <h3 class="latest-title">The Start of Silva: the summer the Cottage came back to life</h3>
+          <p class="latest-dek">Part 1 of a four-part series. The hire, the system, Mitrović's 43, the title at the Cottage. Parts 2 to 4 release across the next week. Plus a community vote on the year that started it all.</p>
         </div>
-        <div class="latest-cta">Read the farewell <span class="arrow"></span></div>
+        <div class="latest-cta">Read Part 1 <span class="arrow"></span></div>
       </div>
     </a>
+  </div>
+
+  <!-- THE SILVA YEARS SERIES STRIP -->
+  <div class="series-promo reveal">
+    <div class="series-promo-inner">
+      <div class="series-promo-kicker">
+        <span class="pulse" aria-hidden="true"></span>
+        The Silva Years · A four-part Fulham farewell
+      </div>
+      <div class="series-promo-list" id="silva-series-list">
+        <a href="/posts/the-silva-years-pt1-the-start/" class="series-promo-item" data-release="2026-05-27T06:00:00Z">
+          <div class="series-promo-tag">Pt 1 · 27 May</div>
+          <div class="series-promo-title">The Start of Silva</div>
+          <div class="series-promo-dek">Parker's exit, the hire, Mitrović's 43, the title day 7-0</div>
+        </a>
+        <a href="/posts/the-silva-years-pt2-pl-security/" class="series-promo-item" data-release="2026-05-29T08:00:00Z">
+          <div class="series-promo-tag">Pt 2 · 29 May</div>
+          <div class="series-promo-title">Premier League Security</div>
+          <div class="series-promo-dek">The 2-2 opener, Chelsea scalp, the Anfield semi, Iwobi 97'</div>
+        </a>
+        <a href="/posts/the-silva-years-pt3-the-difficult-follow-up/" class="series-promo-item" data-release="2026-05-31T08:00:00Z">
+          <div class="series-promo-tag">Pt 3 · 31 May</div>
+          <div class="series-promo-title">The Difficult Follow Up</div>
+          <div class="series-promo-dek">The Saudi rejection, the sales, and the spring fades</div>
+        </a>
+        <a href="/posts/the-silva-years-pt4-goodbye-and-thank-you/" class="series-promo-item" data-release="2026-06-02T08:00:00Z">
+          <div class="series-promo-tag">Pt 4 · 2 Jun</div>
+          <div class="series-promo-title">Goodbye and Thank You</div>
+          <div class="series-promo-dek">The lap of honour, the Best Silva XI builder, the verdict</div>
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- ARCHIVE GRID -->
   <div class="archive-row reveal">
     <div class="archive-heading">
-      <div class="archive-heading-left">More from the archive · 15 articles</div>
+      <div class="archive-heading-left">More from the archive · 18 articles</div>
       <div class="archive-cat-filters" id="archive-filters">
         <button type="button" class="archive-cat-filter active" data-filter="all">All</button>
         <button type="button" class="archive-cat-filter" data-filter="analysis">Analysis</button>
@@ -1230,14 +1351,47 @@
 
     <div class="archive-grid" id="archive-grid">
 
-      <a href="/posts/the-silva-years/" class="archive-card cat-analysis has-hero" data-cat="analysis" style="--hero-img: url('https://static.standard.co.uk/2025/11/22/18/23/Marco-Silva-22112025.jpeg?trim=19,0,19,0&quality=75&auto=webp&width=1000');">
+      <a href="/posts/the-silva-years-pt4-goodbye-and-thank-you/" class="archive-card cat-analysis has-hero" data-cat="analysis" data-release="2026-06-02T08:00:00Z" style="--hero-img: url('https://www.thesun.co.uk/wp-content/uploads/2026/05/2026-fulham-manager-marco-silva-1083618680.jpg?quality=80&strip=all&w=1920&h=1440&crop=1');">
         <div class="archive-visual">
-          <span class="archive-cat-pill">Feature · Farewell</span>
+          <span class="archive-cat-pill">Silva Years · Pt 4 of 4</span>
         </div>
         <div class="archive-body">
-          <div class="archive-meta">27 May 2026 · A Fulham Farewell · ~18 min read</div>
-          <div class="archive-title">The Silva Years: Five seasons, the cup we never lifted, and your Best Silva XI to pick</div>
-          <p class="archive-dek">Long-form retrospective on Marco Silva's Fulham tenure. The promotion, the Mitrović 43, the Anfield night, the sales, the spring slumps. Plus an interactive Best Silva XI builder and your verdict polls.</p>
+          <div class="archive-meta">2 Jun 2026 · The series wrap · ~14 min read</div>
+          <div class="archive-title">Goodbye and Thank You: the lap of honour, the Best Silva XI, the verdict</div>
+          <p class="archive-dek">Series finale. The good memories above the gripes, your 4-2-3-1 Best Silva XI builder, the community pantheon vote and the 1-10 rating widget.</p>
+        </div>
+      </a>
+
+      <a href="/posts/the-silva-years-pt3-the-difficult-follow-up/" class="archive-card cat-analysis has-hero" data-cat="analysis" data-release="2026-05-31T08:00:00Z" style="--hero-img: url('https://ichef.bbci.co.uk/ace/standard/922/cpsprodpb/6112/live/c4edf5b0-55ef-11f1-8c9d-3b2d3d323501.jpg');">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Silva Years · Pt 3 of 4</span>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">31 May 2026 · The difficult middle · ~12 min read</div>
+          <div class="archive-title">The Difficult Follow Up: the Saudi money, the sales, the spring fades</div>
+          <p class="archive-dek">The honest one. Al-Ahli's £40m turned down, the Mitrović and Palhinha exits, the 54-point season that should have made Europe.</p>
+        </div>
+      </a>
+
+      <a href="/posts/the-silva-years-pt2-pl-security/" class="archive-card cat-analysis has-hero" data-cat="analysis" data-release="2026-05-29T08:00:00Z" style="--hero-img: url('https://images.webapi.fulhamfc.com/fit-in/1000x1000/a4ddc620-bb2f-11f0-9681-1b588dacf677.jpg');">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Silva Years · Pt 2 of 4</span>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">29 May 2026 · The PL years · ~10 min read</div>
+          <div class="archive-title">Premier League Security: the two PL seasons that earned Silva the renewal</div>
+          <p class="archive-dek">2022/23 and 2023/24. The opening 2-2 with Liverpool. The Cottage's first big Chelsea scalp. The Anfield semi-final. Iwobi 97' at Old Trafford. The 3-0 over Spurs.</p>
+        </div>
+      </a>
+
+      <a href="/posts/the-silva-years-pt1-the-start/" class="archive-card cat-analysis has-hero" data-cat="analysis" data-release="2026-05-27T06:00:00Z" style="--hero-img: url('https://s3.eu-west-1.amazonaws.com/gc-media-assets.fulhamfc.com/17e9b4b0-da90-11eb-96c8-53f17f7f9052.jpg');">
+        <div class="archive-visual">
+          <span class="archive-cat-pill">Silva Years · Pt 1 of 4</span>
+        </div>
+        <div class="archive-body">
+          <div class="archive-meta">27 May 2026 · The Championship year · ~8 min read</div>
+          <div class="archive-title">The Start of Silva: the summer the Cottage came back to life</div>
+          <p class="archive-dek">Parker's exit, Silva's hire, Mitrović's record-breaking 43 Championship goals, the 7-0 over Luton on title day. Part 1 of a four-part series.</p>
         </div>
       </a>
 
@@ -1565,7 +1719,7 @@
       </div>
       <div class="foot-col">
         <h4>Read</h4>
-        <a href="/posts/the-silva-years/">The Silva Years: A Fulham Farewell</a>
+        <a href="/posts/the-silva-years-pt1-the-start/">The Silva Years · Pt 1: The Start of Silva</a>
         <a href="/posts/fulham-2-0-newcastle-may-2026/">Fulham 2–0 Newcastle: Eleventh, a lap of honour</a>
         <a href="/posts/squad-analysis-pt1-leno/">The Leno Drawdown: A Four-Season Composite</a>
         <a href="/posts/wolves-1-1-fulham-may-2026/">Wolves 1–1 Fulham: The Results Lined Up. We Didn't.</a>
@@ -1628,6 +1782,18 @@
   });
 
   // (Pipeline voting is wired separately, after Supabase loads)
+
+  // Silva series: mark un-released cards/items as 'is-coming'
+  (function() {
+    const now = Date.now();
+    document.querySelectorAll('[data-release]').forEach(el => {
+      const release = new Date(el.dataset.release).getTime();
+      if (isNaN(release)) return;
+      if (release > now) {
+        el.classList.add('is-coming');
+      }
+    });
+  })();
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
