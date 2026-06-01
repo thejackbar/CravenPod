@@ -1783,16 +1783,90 @@
 
   // (Pipeline voting is wired separately, after Supabase loads)
 
-  // Silva series: mark un-released cards/items as 'is-coming'
+  // Silva series: mark un-released items as 'is-coming' and auto-promote the
+  // latest released part to the homepage spotlight as each release date passes.
   (function() {
     const now = Date.now();
     document.querySelectorAll('[data-release]').forEach(el => {
       const release = new Date(el.dataset.release).getTime();
       if (isNaN(release)) return;
-      if (release > now) {
-        el.classList.add('is-coming');
-      }
+      if (release > now) el.classList.add('is-coming');
     });
+
+    const seriesParts = [
+      {
+        slug: 'the-silva-years-pt1-the-start',
+        release: '2026-05-27T06:00:00Z',
+        tag: 'Feature · Series · Part 1 of 4',
+        visualBig: 'The Start<br><em>of Silva.</em>',
+        meta: '27 May 2026 · The Silva Years · Pt 1/4 · ~8 min read',
+        title: 'The Start of Silva: the summer the Cottage came back to life',
+        dek: "Part 1 of a four-part series. Scott Parker's exit, Marco Silva's arrival, Mitrović's 43 Championship goals, and the title at the Cottage. Plus a community vote on the year that started it all.",
+        cta: 'Read Part 1',
+        hero: 'https://s3.eu-west-1.amazonaws.com/gc-media-assets.fulhamfc.com/17e9b4b0-da90-11eb-96c8-53f17f7f9052.jpg'
+      },
+      {
+        slug: 'the-silva-years-pt2-pl-security',
+        release: '2026-05-29T08:00:00Z',
+        tag: 'Feature · Series · Part 2 of 4',
+        visualBig: 'Premier League<br><em>Security.</em>',
+        meta: '29 May 2026 · The Silva Years · Pt 2/4 · ~10 min read',
+        title: 'Premier League Security: the two PL seasons that earned Silva the renewal',
+        dek: 'Part 2 of four. The 2-2 Liverpool opener, the 2-1 Chelsea scalp, the Mitro ban at Old Trafford, the Carabao Cup semi at Anfield, the Iwobi 97 at Old Trafford, and the 3-0 over Spurs.',
+        cta: 'Read Part 2',
+        hero: 'https://images.webapi.fulhamfc.com/fit-in/1000x1000/a4ddc620-bb2f-11f0-9681-1b588dacf677.jpg'
+      },
+      {
+        slug: 'the-silva-years-pt3-the-difficult-follow-up',
+        release: '2026-05-31T08:00:00Z',
+        tag: 'Feature · Series · Part 3 of 4',
+        visualBig: 'The Difficult<br><em>Follow Up.</em>',
+        meta: '31 May 2026 · The Silva Years · Pt 3/4 · ~12 min read',
+        title: 'The Difficult Follow Up: the Saudi money, the sales, and the European spot we missed',
+        dek: 'Part 3 of four. The £40m Al-Ahli rejection, the Mitrović and Palhinha sales, the 24/25 club points record that fell 11 points short of Forest in 7th, and the spring fade pattern.',
+        cta: 'Read Part 3',
+        hero: 'https://ichef.bbci.co.uk/ace/standard/922/cpsprodpb/6112/live/c4edf5b0-55ef-11f1-8c9d-3b2d3d323501.jpg'
+      },
+      {
+        slug: 'the-silva-years-pt4-goodbye-and-thank-you',
+        release: '2026-06-02T08:00:00Z',
+        tag: 'Feature · Series · Part 4 of 4',
+        visualBig: 'Goodbye<br><em>and Thank You.</em>',
+        meta: '2 June 2026 · The Silva Years · Pt 4/4 · ~14 min read · Interactive',
+        title: 'Goodbye and Thank You: the lap, the Best Silva XI, and where the road goes next',
+        dek: 'Series wrap. The lap of honour, the five-year ledger, the good memories above the gripes. Full interactive Best Silva XI builder, community pantheon vote and 1-10 rating widget.',
+        cta: 'Read Part 4',
+        hero: 'https://www.thesun.co.uk/wp-content/uploads/2026/05/2026-fulham-manager-marco-silva-1083618680.jpg?quality=80&strip=all&w=1920&h=1440&crop=1'
+      }
+    ];
+
+    const released = seriesParts.filter(p => new Date(p.release).getTime() <= now);
+    released.sort((a, b) => new Date(b.release).getTime() - new Date(a.release).getTime());
+    const latest = released[0];
+
+    if (latest) {
+      const card = document.querySelector('.latest-card');
+      if (card && card.getAttribute('href') !== '/posts/' + latest.slug + '/') {
+        card.setAttribute('href', '/posts/' + latest.slug + '/');
+        card.setAttribute('style', "--hero-img: url('" + latest.hero + "');");
+        const tagEl = card.querySelector('.latest-visual-tag');
+        const bigEl = card.querySelector('.latest-visual-big');
+        const metaEl = card.querySelector('.latest-meta');
+        const titleEl = card.querySelector('.latest-title');
+        const dekEl = card.querySelector('.latest-dek');
+        const ctaTextNode = card.querySelector('.latest-cta');
+        if (tagEl) tagEl.textContent = latest.tag;
+        if (bigEl) bigEl.innerHTML = latest.visualBig;
+        if (metaEl) metaEl.textContent = latest.meta;
+        if (titleEl) titleEl.textContent = latest.title;
+        if (dekEl) dekEl.textContent = latest.dek;
+        if (ctaTextNode) {
+          const arrow = ctaTextNode.querySelector('.arrow');
+          ctaTextNode.firstChild.textContent = latest.cta + ' ';
+          if (arrow) ctaTextNode.appendChild(arrow);
+        }
+      }
+    }
   })();
 </script>
 
