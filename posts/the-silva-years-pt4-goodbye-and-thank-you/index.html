@@ -237,6 +237,15 @@ html:not(.is-locked) .release-gate-screen { display: none; }
 .rating-result { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); display: none; }
 .rating-result.visible { display: block; }
 
+/* Next chapter pointer */
+.next-chapter { background: linear-gradient(135deg, rgba(255,59,103,0.10) 0%, rgba(212,175,110,0.06) 100%); border: 1px solid rgba(255,59,103,0.30); border-radius: var(--r-lg); padding: 32px 28px; margin: 56px 0 0; }
+.next-chapter-kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.next-chapter h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 700; line-height: 1.25; margin-bottom: 12px; }
+.next-chapter h3 em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.next-chapter-blurb { color: var(--ink-soft); font-size: 1rem; line-height: 1.7; margin-bottom: 22px; }
+.next-chapter-cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; background: var(--accent); color: var(--bg-0); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; border-radius: var(--r-pill); text-decoration: none; font-weight: 700; transition: background-color 0.2s; }
+.next-chapter-cta:hover { background: var(--accent-soft); color: var(--ink); }
+
 /* Series complete */
 .series-complete { background: linear-gradient(135deg, rgba(212,175,110,0.10) 0%, rgba(90,140,112,0.10) 100%); border: 1px solid rgba(212,175,110,0.30); border-radius: var(--r-lg); padding: 36px 32px; margin: 60px 0 0; }
 .series-complete-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
@@ -342,7 +351,7 @@ html:not(.is-locked) .release-gate-screen { display: none; }
   <section class="section">
     <div class="section-kicker">§ 01 · The Lap</div>
     <h2>24 May 2026, the Cottage. <em>The lap of honour, walked together.</em></h2>
-    <p class="lede">On the afternoon of Sunday 24 May 2026, Marco Silva walked the Craven Cottage pitch alongside his players. The squad had just beaten Newcastle 2-0. Eleventh in the Premier League. The captain's armband still on Cairney. The Hammersmith End in full voice. The manager, the third subject of the long stares from the stands, walked the lap with the players rather than apart from them. Three days later, the announcement that everyone had been quietly preparing for came: Silva would be leaving Fulham at the end of June for what is by then very widely reported to be the head-coach job at SL Benfica.</p>
+    <p class="lede">On the afternoon of Sunday 24 May 2026, Marco Silva walked the Craven Cottage pitch alongside his players. The squad had just beaten Newcastle 2-0. Eleventh in the Premier League. The captain's armband still on Cairney. The Hammersmith End in full voice. The manager, the third subject of the long stares from the stands, walked the lap with the players rather than apart from them. Nine days later, on the morning of Tuesday 2 June 2026, the official announcement came. Marco Silva would leave Fulham at the end of his contract. Benfica had agreed a deal. Five years was up.</p>
     <p>This is Part 4 of a four-part series. Part 1 covered the start. Part 2 covered the consolidation. Part 3 covered the difficult middle years, the structural issues, the sales, the Saudi rejection. Part 4 is the closer. It is the warm one. It is the part of the series that puts the gripes from Part 3 in their proper context, looks at the actual five-year ledger, and says thank you. Where the manager goes next is a separate sentence, briefly handled. The piece exists to do justice to what we had. We had a lot.</p>
   </section>
 
@@ -367,7 +376,7 @@ html:not(.is-locked) .release-gate-screen { display: none; }
       <p>"This place was really the fortress for us. The home form and the away form was completely different, for the first time in four seasons."</p>
       <cite>Marco Silva, post-Newcastle, 24 May 2026</cite>
     </div>
-    <p>Silva said, that afternoon, that his decision was coming "next week, for sure." It came the Monday after. Benfica appointed him on a two-year deal on 1 June 2026, two days after the final day. The lap of honour, viewed in hindsight, was him telling the Cottage the answer without saying the word. He walked the lap with the players. He gave the standard end-of-season thank-you to the supporters. He did not stay behind to acknowledge the kop as he sometimes had. He walked off, in the way you do when you know it is the last time. The Cottage knew. The players knew. The journalists in the press room knew. The official announcement was a formality of timing rather than substance.</p>
+    <p>Silva said, that afternoon, that his decision was coming "next week, for sure." It came nine days after. On Tuesday 2 June 2026 the club's statement landed: Silva would be leaving at the end of his contract. Within hours, Benfica had confirmed they had agreed a three-year deal (with the option of a fourth) to take him through to 2029. The lap of honour, viewed in hindsight, was him telling the Cottage the answer without saying the word. He walked the lap with the players. He gave the standard end-of-season thank-you to the supporters. He did not stay behind to acknowledge the kop as he sometimes had. He walked off, in the way you do when you know it is the last time. The Cottage knew. The players knew. The journalists in the press room knew. The official announcement was a formality of timing rather than substance.</p>
   </section>
 
   <hr class="rule">
@@ -690,13 +699,13 @@ html:not(.is-locked) .release-gate-screen { display: none; }
   <hr class="rule">
 
   <section class="section">
-    <div class="section-kicker">§ 07 · Where Next</div>
+    <div class="section-kicker">§ 07 · Where He Went</div>
     <h2>Benfica. <em>Champions League nights, in a city he knows.</em></h2>
-    <p>Where Silva is going is also, in its way, the end he had been pointing toward for the past twelve months. Benfica appointed him on a two-year deal on 1 June 2026 following José Mourinho's departure to Real Madrid. The Champions League group stage in September. A Lisbon return that, for a manager born in 1977 who left Estoril for Sporting in 2014 and has been coaching outside Portugal since, is also a kind of homecoming.</p>
-    <p>Silva has never managed in European competition in his career. Not at Sporting in 2014-15 (they were eliminated from the Champions League and Europa play-off before he took the chair). Not at Olympiacos. Not at Hull. Not at Watford. Not at Everton. Not at Fulham. The Champions League group stage is the obvious career experience he has not yet had. Benfica is a major European club in its proper sense, with three Champions League titles in the club's history, a national stadium that holds sixty-five thousand, and a fixture list that pairs a domestic title race with European nights every fortnight. The fit, for both sides, is logical.</p>
+    <p>The Benfica deal, when it landed on 2 June 2026, was the one most of us had been preparing for. A three-year contract with an option for a fourth, taking Silva through to 2029. The brief is a domestic title race that has been won by Sporting in three of the last five years and a Champions League campaign that begins in September. The Cottage spent the spring nodding through the speculation. The Cottage spent the morning of 2 June reading the official statement and quietly accepting that the speculation was the news.</p>
+    <p>Silva has never managed in European competition in his career. Not at Sporting (they were eliminated from the Champions League and Europa play-off before he took the chair in 2014). Not at Olympiacos. Not at Hull. Not at Watford. Not at Everton. Not at Fulham. The Champions League group stage is the obvious career experience he has not yet had. Benfica is a major European club in its proper sense, with two European Cups in the cabinet (the back-to-back 1961 and 1962 wins under Béla Guttmann), a national stadium that holds sixty-five thousand, and a fixture list that pairs a domestic title race with European nights every fortnight. The fit, for both sides, is logical. For Silva specifically, this is also a kind of homecoming: born in Lisbon in 1977, professional debut at Estoril, manager at Estoril, manager at Sporting, and now manager of Benfica. The career has come back to where it started.</p>
     <div class="pullquote">
-      <p>"I love the football club and I love my job. Simple as that."</p>
-      <cite>Marco Silva, on Fulham, May 2026 presser</cite>
+      <p>"Fulham will always be in my heart, and sooner or later I will be back at Craven Cottage."</p>
+      <cite>Marco Silva, Sky Sports, 2 June 2026 farewell statement</cite>
     </div>
     <p>The Cottage's role in his career was to be the longest stop, the one where he learned what it looks like to manage a Premier League club into its fifth consecutive season, the one where he turned down the Saudi money in 2023 and built a Premier League record. Lisbon's role, on the public reading of the deal, will be to give him European football and the next phase of his career. We wish him well. None of this is bitter on our end. Five years was a long time. We took the long way round at Craven Cottage. Most of the way, the football was good.</p>
   </section>
@@ -705,12 +714,20 @@ html:not(.is-locked) .release-gate-screen { display: none; }
 
   <section class="section">
     <div class="section-kicker">§ 08 · Thank You, Marco</div>
+    <div class="pullquote gold">
+      <p>"Marco Silva leaves our club with my gratitude and best wishes. Fulham and Marco were an excellent fit for five years, but change is inevitable in this game."</p>
+      <cite>Shahid Khan, official statement, 2 June 2026</cite>
+    </div>
+    <div class="pullquote">
+      <p>"To our fans, I asked you, from day one, to always be with us. And that's what you did these past five years. My staff and I always felt your support. It will never be forgotten."</p>
+      <cite>Marco Silva, official statement, 2 June 2026</cite>
+    </div>
     <div class="verdict">
       <div class="verdict-label">The Cravenpod View · Series Wrap</div>
       <div class="verdict-headline">Thank you, Marco. <em>Five years was longer than any of us had any right to expect.</em></div>
       <p>Silva has been the most successful Fulham manager of the post-Hodgson era. He took a relegated squad straight back up. He made the Cottage feel like a Premier League ground again on a Saturday afternoon. He produced Mitrović's forty-three. He produced the Anfield night. He produced the Old Trafford night. He produced the Stamford Bridge drought-breaker on Boxing Day. He produced the 3-2 Liverpool fourteen minutes of madness. He produced the points record. He turned down the Saudi money in 2023 and put his name on a renewal that made him our manager for as long as we had any right to ask.</p>
       <p>The cup we never lifted is the line on the gravestone. The European spots we got close to and lost will sit there too. The two summers the squad got walked out from under him belong to a different ledger entirely. None of those things change the basic fact: this Cottage, this Premier League era, this version of the club, is unrecognisable from the one Silva inherited in July 2021. The next manager will walk in to a footballing operation that he reshaped. The next manager will spend the first six months being measured against the man who left. The next manager, whoever it is, will know that.</p>
-      <p>If the announcement when it comes is the one almost everyone has assumed it would be, the Cottage will say goodbye warmly. Because of all the reasons above. Because of the Mitrović 43. Because of the Iwobi 97. Because of Cairney's top corner on the final day. Because of every Saturday afternoon for five years that he made worth turning up to. Thank you, Marco. Whatever the decision turns out to be, the Cottage is the better for the time he gave it. The road from here goes both ways. Yours to Lisbon. Ours to whoever comes next. We will be watching.</p>
+      <p>The Cottage said goodbye warmly. Because of all the reasons above. Because of the Mitrović 43. Because of the Iwobi 97. Because of Cairney's top corner on the final day. Because of every Saturday afternoon for five years that he made worth turning up to. Thank you, Marco. The Cottage is the better for the time he gave it. The road from here goes both ways. Yours to Lisbon, with the Cottage's blessing. Ours to whoever comes next. We will be watching, and the names already on the desk are the subject of the next piece on this site.</p>
     </div>
   </section>
 
@@ -767,6 +784,13 @@ html:not(.is-locked) .release-gate-screen { display: none; }
 </section>
 
 <div class="article-body">
+
+  <div class="next-chapter">
+    <div class="next-chapter-kicker">The next chapter · Released today</div>
+    <h3>The Next Manager. <em>Twelve names on the desk, three buckets, one decision.</em></h3>
+    <p class="next-chapter-blurb">The official Silva announcement landed at 9am on 2 June. By 10am the shortlist had a dozen names on it. Our companion piece, live now, runs through the front runners, the safe bets and the wild cards as the Cottage waits for the next move from Shahid Khan and Alistair Mackintosh.</p>
+    <a href="/posts/the-next-manager/" class="next-chapter-cta">Read the next-manager piece →</a>
+  </div>
 
   <div class="series-complete">
     <div class="series-complete-label">Series complete · Read or revisit any part</div>
