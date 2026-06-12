@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Álvaro Arbeloa: the name that was never on the desk | Cravenpod</title>
+<meta name="description" content="Fulham are closing on Álvaro Arbeloa as Marco Silva's successor. A background on the two-time Champions League winner, a tactical breakdown of his 4-3-3, and what the appointment means for the Cottage.">
+<meta property="og:title" content="Álvaro Arbeloa: the name that was never on the desk">
+<meta property="og:description" content="Two Champions Leagues as a player, a World Cup, 56 Spain caps, six months in the hottest seat in football, and zero Premier League games as a manager. The full Cravenpod breakdown.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/80be/live/83daa6a0-0b75-11f1-87ad-1da650b598ae.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@cravenpod">
+<meta name="twitter:image" content="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/80be/live/83daa6a0-0b75-11f1-87ad-1da650b598ae.jpg">
+<link rel="icon" type="image/png" href="/assets/cravenpod-logo.png">
+<link rel="apple-touch-icon" href="/assets/cravenpod-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-0: #06070f; --bg-1: #0a0d1c; --bg-2: #0e1226;
+  --ink: #f5f6fa; --ink-soft: rgba(245,246,250,0.78); --ink-mute: rgba(245,246,250,0.55);
+  --glass: rgba(255,255,255,0.05); --glass-strong: rgba(255,255,255,0.09);
+  --glass-edge: rgba(255,255,255,0.10); --glass-edge-strong: rgba(255,255,255,0.20);
+  --accent: #ff3b67; --accent-soft: #cc0033; --accent-glow: rgba(255,59,103,0.40);
+  --gold: #d4af6e; --aqua: #6ec3d4; --violet: #9d8bff;
+  --ok: #6ee89a; --warn: #d4a015; --danger: #ff5577;
+  --rule: rgba(255,255,255,0.10); --muted: rgba(245,246,250,0.55);
+  --fulham-green: #5a8c70; --fulham-green-deep: #2e5742;
+  --madrid-white: #e8e9f0;
+  --shadow-sm: 0 4px 16px rgba(0,0,0,0.32); --shadow-md: 0 14px 44px rgba(0,0,0,0.44);
+  --r-sm: 10px; --r-md: 16px; --r-lg: 22px; --r-pill: 999px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; color-scheme: dark; overflow-x: hidden; }
+body {
+  font-family: 'Inter Tight', sans-serif; color: var(--ink); line-height: 1.6; overflow-x: hidden;
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse 1100px 700px at 8% -8%,  rgba(157,139,255,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse  900px 760px at 94% 10%, rgba(255,59,103,0.20) 0%, transparent 60%),
+    radial-gradient(ellipse 1100px 900px at 50% 108%,rgba(110,195,212,0.11) 0%, transparent 70%),
+    linear-gradient(180deg, #06070f 0%, #0a0d1c 35%, #0d1124 100%);
+  background-attachment: fixed;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* Masthead */
+.masthead { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; border-bottom: 1px solid var(--glass-edge); background: rgba(10,13,28,0.60); position: sticky; top: 0; z-index: 50; -webkit-backdrop-filter: blur(22px) saturate(140%); backdrop-filter: blur(22px) saturate(140%); }
+.brand-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--ink); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.back-link { color: var(--accent); }
+.brand { font-weight: 500; }
+.masthead .meta { display: flex; gap: 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.masthead .meta a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.masthead .meta a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { background: #06070f; border-top: 1px solid var(--glass-edge); border-bottom: 1px solid var(--glass-edge); color: var(--ink); padding: 88px 32px 72px; position: relative; overflow: hidden; isolation: isolate; }
+.hero::before {
+  content: ''; position: absolute; inset: -2% -2%;
+  background-image: url("https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/80be/live/83daa6a0-0b75-11f1-87ad-1da650b598ae.jpg");
+  background-size: cover; background-position: center 22%; background-repeat: no-repeat;
+  filter: saturate(0.85) contrast(1.05) brightness(0.66); opacity: 0.60; z-index: -2; pointer-events: none;
+}
+.hero::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 1100px 540px at 50% 60%, rgba(6,7,15,0.22) 0%, rgba(6,7,15,0.50) 60%, rgba(6,7,15,0.86) 100%),
+    linear-gradient(180deg, rgba(6,7,15,0.55) 0%, rgba(6,7,15,0.12) 22%, rgba(6,7,15,0.20) 60%, rgba(6,7,15,0.94) 100%),
+    radial-gradient(ellipse at 12% 88%, rgba(255,59,103,0.18) 0%, transparent 55%);
+  z-index: -1; pointer-events: none;
+}
+.hero-inner { max-width: 880px; margin: 0 auto; position: relative; }
+.hero-kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
+.hero-kicker::after { content: ''; display: block; width: 56px; height: 1px; background: var(--accent); }
+.hero-pill { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(212,175,110,0.5); padding: 6px 14px; border-radius: var(--r-pill); background: rgba(212,175,110,0.06); margin-bottom: 22px; }
+.hero h1 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2.2rem, 5.2vw, 4.2rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 26px; }
+.hero h1 em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-dek { font-size: 1.12rem; color: rgba(255,255,255,0.78); max-width: 720px; line-height: 1.65; margin-bottom: 32px; }
+.hero-strip { display: flex; gap: 14px; margin-bottom: 32px; flex-wrap: wrap; }
+.hero-stat-pill { display: flex; flex-direction: column; gap: 6px; padding: 13px 18px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-edge); border-radius: var(--r-md); min-width: 130px; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.hero-stat-pill .label { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); }
+.hero-stat-pill .value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--fulham-green); line-height: 1; }
+.hero-stat-pill .value.gold { color: var(--gold); }
+.hero-stat-pill .value.accent { color: var(--accent); }
+.hero-meta { display: flex; gap: 24px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid var(--glass-edge); }
+.hero-meta span { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.hero-credit { position: absolute; right: 0; bottom: -52px; font-family: 'JetBrains Mono', monospace; font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+
+/* Article body */
+.article-body { max-width: 880px; margin: 0 auto; padding: 0 32px 80px; position: relative; z-index: 2; }
+.section { padding: 60px 0 0; }
+.section-kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.section h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.55rem, 3.4vw, 2.1rem); font-weight: 700; line-height: 1.2; margin-bottom: 24px; letter-spacing: -0.01em; }
+.section h2 em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.section h2.gold em { background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.section h2.green em { background: linear-gradient(135deg, #5a8c70 0%, #88b89a 60%, #c2dcce 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.section p { font-size: 1rem; line-height: 1.78; color: var(--ink); margin-bottom: 18px; }
+.section p.lede { font-size: 1.1rem; color: var(--ink-soft); }
+.section p:last-child { margin-bottom: 0; }
+.rule { border: none; border-top: 1px solid var(--rule); margin: 0; }
+.note { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); line-height: 1.7; }
+
+/* Pullquote */
+.pullquote { border-left: 3px solid var(--accent); padding: 18px 26px; margin: 32px 0; background: var(--glass); border-radius: var(--r-md); -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%); box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06); }
+.pullquote p { font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 1.18rem; font-style: italic; line-height: 1.55; margin-bottom: 8px !important; color: var(--ink); }
+.pullquote cite { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+.pullquote.gold { border-left-color: var(--gold); }
+
+/* ---- Career timeline ---- */
+.timeline-wrap { margin: 32px 0; }
+.timeline-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.timeline-tab { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); background: rgba(255,255,255,0.04); border: 1px solid var(--glass-edge); border-radius: var(--r-pill); padding: 9px 15px; cursor: pointer; transition: all 0.2s; }
+.timeline-tab:hover { color: var(--ink); border-color: var(--glass-edge-strong); }
+.timeline-tab.active { color: var(--bg-0); background: linear-gradient(135deg, var(--gold), #f1d39c); border-color: transparent; font-weight: 700; }
+.timeline-spine { display: flex; height: 6px; border-radius: 3px; overflow: hidden; margin-bottom: 22px; border: 1px solid var(--glass-edge); }
+.timeline-seg { height: 100%; opacity: 0.45; transition: opacity 0.25s; cursor: pointer; }
+.timeline-seg.active { opacity: 1; }
+.timeline-panel { background: var(--glass); border: 1px solid var(--glass-edge); border-radius: var(--r-lg); padding: 26px 28px; -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%); box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06); min-height: 230px; }
+.timeline-era { display: none; }
+.timeline-era.active { display: block; animation: fadeUp 0.35s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.timeline-era-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 6px; }
+.timeline-era-title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.45rem; letter-spacing: -0.02em; }
+.timeline-era-years { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.timeline-era p { font-size: 0.95rem; line-height: 1.7; color: var(--ink-soft); margin: 12px 0 0; }
+.timeline-facts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.timeline-fact { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); border: 1px solid var(--glass-edge); border-radius: var(--r-pill); padding: 5px 12px; background: rgba(255,255,255,0.03); }
+.timeline-fact b { color: var(--gold); font-weight: 700; }
+
+/* Honours strip */
+.honours-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 30px 0 6px; }
+.honour { background: var(--glass); border: 1px solid var(--glass-edge); border-radius: var(--r-md); padding: 16px 14px; text-align: center; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.honour .num { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.9rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.honour .lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin-top: 8px; line-height: 1.5; }
+
+/* Coaching ladder */
+.ladder { display: flex; flex-direction: column; gap: 0; margin: 30px 0; }
+.ladder-step { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
+.ladder-step:last-child { border-bottom: none; }
+.ladder-year { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.ladder-step.hot .ladder-year { color: var(--accent); }
+.ladder-what { font-size: 0.95rem; line-height: 1.6; color: var(--ink-soft); }
+.ladder-what b { color: var(--ink); font-weight: 600; }
+
+/* Record bar */
+.record-block { background: var(--glass); border: 1px solid var(--glass-edge); border-radius: var(--r-md); padding: 22px 24px; margin: 28px 0; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+.record-label { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 14px; }
+.record-bar { display: flex; height: 30px; border-radius: var(--r-sm); overflow: hidden; border: 1px solid var(--glass-edge); }
+.record-seg { display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; color: var(--bg-0); min-width: 36px; width: 0; transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
+.record-seg.w { background: linear-gradient(180deg, #7df0a8, #58c987); }
+.record-seg.d { background: linear-gradient(180deg, #e8c987, #cfa75e); }
+.record-seg.l { background: linear-gradient(180deg, #ff7a93, #e0496a); color: #fff; }
+.record-foot { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin-top: 12px; }
+
+/* ---- Tactics board ---- */
+.tactics-wrap { margin: 32px 0; }
+.tactics-toggle { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tactics-btn { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); background: rgba(255,255,255,0.04); border: 1px solid var(--glass-edge); border-radius: var(--r-pill); padding: 10px 16px; cursor: pointer; transition: all 0.2s; }
+.tactics-btn:hover { color: var(--ink); border-color: var(--glass-edge-strong); }
+.tactics-btn.active { color: #fff; background: linear-gradient(135deg, var(--accent), #ff7a8a); border-color: transparent; font-weight: 700; box-shadow: 0 6px 22px var(--accent-glow); }
+.pitch { position: relative; width: 100%; aspect-ratio: 3 / 3.6; max-height: 640px; background:
+  linear-gradient(180deg, rgba(90,140,112,0.16) 0%, rgba(90,140,112,0.08) 100%);
+  border: 1px solid var(--glass-edge); border-radius: var(--r-lg); overflow: hidden;
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255,255,255,0.06); }
+.pitch-lines { position: absolute; inset: 0; pointer-events: none; opacity: 0.5; }
+.pitch-lines .half { position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(255,255,255,0.22); }
+.pitch-lines .circle { position: absolute; left: 50%; top: 50%; width: 110px; height: 110px; border: 1px solid rgba(255,255,255,0.22); border-radius: 50%; transform: translate(-50%, -50%); }
+.pitch-lines .box-top { position: absolute; left: 22%; right: 22%; top: 0; height: 13%; border: 1px solid rgba(255,255,255,0.22); border-top: none; }
+.pitch-lines .box-bot { position: absolute; left: 22%; right: 22%; bottom: 0; height: 13%; border: 1px solid rgba(255,255,255,0.22); border-bottom: none; }
+.player { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 5px; transition: left 0.9s cubic-bezier(0.22, 1, 0.36, 1), top 0.9s cubic-bezier(0.22, 1, 0.36, 1); z-index: 2; }
+.player .dot { width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff 0%, #d9dce8 45%, #aeb3c6 100%); border: 2px solid rgba(255,255,255,0.65); box-shadow: 0 4px 14px rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 0.72rem; color: var(--bg-0); }
+.player.gk .dot { background: radial-gradient(circle at 32% 28%, #ffe9a8 0%, #d4af6e 60%, #a8854a 100%); }
+.player .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.88); background: rgba(6,7,15,0.68); padding: 2px 8px; border-radius: var(--r-pill); white-space: nowrap; border: 1px solid rgba(255,255,255,0.12); }
+.tactics-caption { margin-top: 14px; font-size: 0.92rem; line-height: 1.65; color: var(--ink-soft); min-height: 74px; }
+.tactics-caption b { color: var(--ink); }
+
+/* Principle cards */
+.principle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 30px 0; }
+.principle { background: var(--glass); border: 1px solid var(--glass-edge); border-radius: var(--r-md); padding: 20px 22px; -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-top: 3px solid var(--accent); }
+.principle:nth-child(2) { border-top-color: var(--gold); }
+.principle:nth-child(3) { border-top-color: var(--aqua); }
+.principle:nth-child(4) { border-top-color: var(--fulham-green); }
+.principle h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.02rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+.principle p { font-size: 0.88rem; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+
+/* Brief checklist */
+.brief-check { margin: 30px 0; border: 1px solid var(--glass-edge); border-radius: var(--r-lg); overflow: hidden; background: var(--glass); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.brief-row { display: grid; grid-template-columns: 44px 1fr 1.4fr; gap: 14px; padding: 16px 20px; border-bottom: 1px solid var(--rule); align-items: start; }
+.brief-row:last-child { border-bottom: none; }
+.brief-icon { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.1rem; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.brief-icon.yes { color: var(--ok); border: 1px solid rgba(110,232,154,0.4); background: rgba(110,232,154,0.08); }
+.brief-icon.maybe { color: var(--warn); border: 1px solid rgba(212,160,21,0.4); background: rgba(212,160,21,0.08); }
+.brief-icon.no { color: var(--danger); border: 1px solid rgba(255,85,119,0.4); background: rgba(255,85,119,0.08); }
+.brief-ask { font-family: 'JetBrains Mono', monospace; font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); line-height: 1.6; padding-top: 6px; }
+.brief-evidence { font-size: 0.88rem; line-height: 1.65; color: var(--ink-soft); }
+
+/* Verdict */
+.verdict { background: var(--glass); border: 1px solid var(--gold); border-radius: var(--r-md); padding: 32px 28px; margin: 40px 0; -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%); box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,0.06); }
+.verdict-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.verdict-headline { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-bottom: 16px; }
+.verdict-headline em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #d4af6e 0%, #f1d39c 60%, #ffe4b8 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.verdict p { font-size: 1rem; line-height: 1.75; color: var(--ink-soft); margin-bottom: 14px; }
+.verdict p:last-child { margin-bottom: 0; }
+
+/* Interactive */
+.interactive-section { background: linear-gradient(180deg, rgba(6,7,15,0.55) 0%, rgba(10,13,28,0.75) 100%); padding: 64px 32px; border-top: 1px solid var(--glass-edge); border-bottom: 1px solid var(--glass-edge); position: relative; z-index: 2; }
+.interactive-inner { max-width: 800px; margin: 0 auto; }
+.interactive-kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.interactive-section h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.55rem, 3.4vw, 2.1rem); font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+.interactive-section h2 em { font-style: normal; font-weight: 300; background: linear-gradient(135deg, #ff3b67 0%, #ff7a8a 55%, #ffb1a6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.interactive-section .intro { color: var(--ink-soft); font-size: 1rem; line-height: 1.7; margin-bottom: 24px; }
+.poll-block { background: var(--glass); border: 1px solid var(--glass-edge); border-radius: var(--r-md); padding: 24px 24px 20px; margin: 24px 0; -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%); }
+.poll-block h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 14px; letter-spacing: -0.01em; }
+.poll-options { display: flex; flex-direction: column; gap: 6px; }
+.poll-btn { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 18px; background: rgba(255,255,255,0.04); border: 1px solid var(--glass-edge); border-radius: var(--r-pill); color: var(--ink); font-family: 'Inter Tight', sans-serif; font-size: 0.92rem; cursor: pointer; text-align: left; transition: border-color 0.2s, background-color 0.2s; }
+.poll-btn:hover { border-color: var(--glass-edge-strong); background: rgba(255,255,255,0.07); }
+.poll-block.poll-voted .poll-btn { cursor: default; }
+.poll-block.poll-voted .poll-btn:hover { border-color: var(--glass-edge); background: rgba(255,255,255,0.04); }
+.poll-block.poll-voted .poll-btn.user-choice { border-color: var(--gold); background: rgba(212,175,110,0.10); }
+.poll-pct { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; letter-spacing: 0.05em; color: var(--ink-mute); display: none; }
+.poll-block.poll-voted .poll-pct { display: inline; }
+.poll-bar-wrap { height: 4px; background: rgba(255,255,255,0.04); border-radius: 2px; overflow: hidden; margin: 0 8px 6px; display: none; }
+.poll-block.poll-voted .poll-bar-wrap { display: block; }
+.poll-bar { height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--gold)); transition: width 0.6s ease; }
+.poll-count { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); margin-top: 12px; }
+
+/* Footer + sources */
+.footer { background: rgba(6,7,15,0.55); -webkit-backdrop-filter: blur(22px) saturate(140%); backdrop-filter: blur(22px) saturate(140%); border-top: 1px solid var(--glass-edge); color: rgba(255,255,255,0.5); padding: 40px 32px; position: relative; z-index: 2; }
+.footer > div { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.footer a { color: rgba(255,255,255,0.5); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.2s; }
+.footer a:hover { color: var(--ink); }
+.sources { background: rgba(255,255,255,0.02); border: 1px solid var(--rule); border-radius: var(--r-md); padding: 22px 24px; margin: 40px 0 0; font-size: 0.82rem; line-height: 1.7; color: var(--ink-mute); }
+.sources-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 10px; }
+.sources a { color: var(--ink-mute); }
+.sources a:hover { color: var(--ink); }
+
+@media (max-width: 700px) {
+  .masthead { padding: 12px 20px; }
+  .hero { padding: 56px 22px 48px; }
+  .article-body { padding: 0 22px 60px; }
+  .hero-strip { gap: 8px; }
+  .hero-stat-pill { min-width: 104px; padding: 10px 14px; }
+  .hero-stat-pill .value { font-size: 1.2rem; }
+  .interactive-section { padding: 44px 20px; }
+  .honours-strip { grid-template-columns: repeat(2, 1fr); }
+  .principle-grid { grid-template-columns: 1fr; }
+  .brief-row { grid-template-columns: 36px 1fr; }
+  .brief-evidence { grid-column: 2; }
+  .ladder-step { grid-template-columns: 84px 1fr; gap: 12px; }
+  .pitch { aspect-ratio: 3 / 4; }
+  .player .dot { width: 28px; height: 28px; font-size: 0.62rem; }
+  .player .tag { font-size: 0.5rem; padding: 2px 6px; }
+  .timeline-panel { padding: 20px; }
+  .hero-credit { position: static; display: block; margin-top: 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <a href="/" class="brand-link">
+    <span class="back-link">← Cravenpod</span>
+    <span>/</span>
+    <span class="brand">Feature · The Next Chapter</span>
+  </a>
+  <div class="meta">
+    <span><a href="https://podfollow.com/thats-so-craven">🎙 Podcast</a></span>
+    <span><a href="https://discord.gg/mUZQhDHJPR">💬 Discord</a></span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Cravenpod Feature · The Next Chapter</div>
+    <div class="hero-pill">Advanced talks · Ornstein, 10 June 2026 · Announcement expected</div>
+    <h1>Álvaro Arbeloa. <em>The name that was never on the desk.</em></h1>
+    <p class="hero-dek">Ten days ago we published a shortlist with twelve names on it. His was not one of them. Now the former Liverpool and Real Madrid full-back, a World Cup winner with 56 Spain caps and exactly six months of top-flight management behind him, is on the verge of becoming Fulham's head coach. Here is who he is, how his teams play, and what the Cottage should expect.</p>
+    <div class="hero-strip">
+      <div class="hero-stat-pill">
+        <span class="label">Age</span>
+        <span class="value">43</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="label">Spain caps</span>
+        <span class="value gold">56</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="label">Champions Leagues (player)</span>
+        <span class="value gold">2</span>
+      </div>
+      <div class="hero-stat-pill">
+        <span class="label">PL games managed</span>
+        <span class="value accent">0</span>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span>12 June 2026</span>
+      <span>By Cravenpod</span>
+      <span>~12 min read</span>
+      <span>Tactics board inside</span>
+    </div>
+    <div class="hero-credit">Image · BBC Sport</div>
+  </div>
+</section>
+
+<div class="article-body">
+
+  <section class="section">
+    <div class="section-kicker">§ 01 · The Story</div>
+    <h2>How the search ended <em>somewhere nobody was looking.</em></h2>
+    <p class="lede">When Marco Silva's departure for Benfica was confirmed on 2 June, we mapped the race the way everyone mapped it: McKenna the favourite, Frank second, Slot the intriguing third name, a tier of credible alternatives behind them. Twelve names. Arbeloa appeared on none of the boards and in none of the briefings. Then, on 10 June, David Ornstein reported in The Athletic that Fulham had held talks with him about the head coach role, and the picture changed in an afternoon.</p>
+    <p>The shape of it makes more sense than the surprise suggests. McKenna, per The Athletic's reporting, wants a break from football rather than a new job. Frank has had Crystal Palace doing more concrete work on him than Fulham. The alternative names in the same reporting (Matthias Jaissle at Al-Ahli, Sebastian Hoeness at Stuttgart, Bruno Genesio at Lille, Marcelino) are the standard data-led longlist of a modern Premier League search, and Goal has since added Rúben Amorim to the pile. Arbeloa is the one the club actually sat down with.</p>
+    <p>One honesty note before we start. As we publish, no announcement has been made. The reporting says advanced talks, expected appointment, paperwork rather than persuasion. If it collapses, this becomes a very detailed profile of a man who nearly managed Fulham. We have been burned by "done deals" before, so consider the caveat filed.</p>
+    <div class="pullquote gold">
+      <p>"I have already made the leap, improved greatly over these four months, and I feel prepared for new challenges."</p>
+      <cite>Álvaro Arbeloa, confirming his Real Madrid exit, June 2026</cite>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 02 · The Player</div>
+    <h2 class="gold">From Salamanca to two European Cups, <em>by way of the Kop.</em></h2>
+    <p class="lede">Born in Salamanca on 17 January 1983, Arbeloa came through Real Madrid's academy without ever establishing himself in the first team, left for Deportivo La Coruña to get minutes, and was a Premier League player within six months. The playing career that followed was the kind that ends with a trophy cabinet most managers would trade their badges for. Click through the eras below.</p>
+
+    <div class="timeline-wrap">
+      <div class="timeline-tabs" id="era-tabs">
+        <button class="timeline-tab active" data-era="early">2000–07 · The start</button>
+        <button class="timeline-tab" data-era="liverpool">2007–09 · Liverpool</button>
+        <button class="timeline-tab" data-era="madrid">2009–16 · Real Madrid</button>
+        <button class="timeline-tab" data-era="spain">2008–13 · Spain</button>
+        <button class="timeline-tab" data-era="end">2016–17 · The coda</button>
+      </div>
+      <div class="timeline-spine" id="era-spine">
+        <div class="timeline-seg active" data-era="early" style="width:24%; background:#9d8bff;"></div>
+        <div class="timeline-seg" data-era="liverpool" style="width:14%; background:#ff3b67;"></div>
+        <div class="timeline-seg" data-era="madrid" style="width:38%; background:#d4af6e;"></div>
+        <div class="timeline-seg" data-era="spain" style="width:14%; background:#6ec3d4;"></div>
+        <div class="timeline-seg" data-era="end" style="width:10%; background:#5a8c70;"></div>
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-era active" data-era="early">
+          <div class="timeline-era-head">
+            <div class="timeline-era-title">The academy kid who had to leave to arrive</div>
+            <div class="timeline-era-years">Real Madrid youth → Deportivo · 2000–Jan 2007</div>
+          </div>
+          <p>A Real Madrid youth product who could not force his way past the first-team full-backs of the Galáctico era, Arbeloa dropped down to Castilla, then left altogether for Deportivo La Coruña in 2006. He lasted half a season in Galicia. That was all the time it took for Rafa Benítez, a coach with a famous appetite for positionally intelligent defenders, to spot him and bring him to Anfield in the January window.</p>
+          <div class="timeline-facts">
+            <span class="timeline-fact">Born <b>Salamanca, 1983</b></span>
+            <span class="timeline-fact">Real Madrid academy product</span>
+            <span class="timeline-fact"><b>Half a season</b> at Deportivo</span>
+          </div>
+        </div>
+        <div class="timeline-era" data-era="liverpool">
+          <div class="timeline-era-head">
+            <div class="timeline-era-title">The Messi job at Camp Nou</div>
+            <div class="timeline-era-years">Liverpool · Jan 2007–2009</div>
+          </div>
+          <p>His full Liverpool debut is still shown in coaching seminars. February 2007, Champions League last 16, away at Barcelona, and Benítez hands the new right-back a start at left-back with one instruction: deal with the teenage Lionel Messi. He did. Liverpool won 2-1 at Camp Nou and went through, and Arbeloa never looked like a January punt again. He made 98 appearances in two and a half seasons, reached the 2007 Champions League final, and was first-choice right-back in the 2008/09 side that pushed Manchester United to the wire and finished second. When Glen Johnson arrived in 2009, Madrid came calling, and he went home.</p>
+          <div class="timeline-facts">
+            <span class="timeline-fact"><b>98</b> appearances</span>
+            <span class="timeline-fact">CL final <b>2007</b></span>
+            <span class="timeline-fact">PL runner-up <b>2008/09</b></span>
+          </div>
+        </div>
+        <div class="timeline-era" data-era="madrid">
+          <div class="timeline-era-head">
+            <div class="timeline-era-title">Seven seasons, 238 games, La Décima</div>
+            <div class="timeline-era-years">Real Madrid · 2009–2016</div>
+          </div>
+          <p>Back at the Bernabéu, Arbeloa became the connective tissue of a great side: never the star, always the professional, trusted by Mourinho and Ancelotti alike on either flank of the back four. Across 238 appearances he collected two Champions Leagues, a league title, two Copas del Rey, a Club World Cup and both Super Cups. He was the dressing-room enforcer of the Mourinho years, a player teammates described as the first to defend the group and the last to seek the credit. He left in 2016 with a guard of honour's worth of medals.</p>
+          <div class="timeline-facts">
+            <span class="timeline-fact"><b>238</b> appearances</span>
+            <span class="timeline-fact"><b>2</b> Champions Leagues</span>
+            <span class="timeline-fact"><b>1</b> La Liga · <b>2</b> Copas del Rey</span>
+          </div>
+        </div>
+        <div class="timeline-era" data-era="spain">
+          <div class="timeline-era-head">
+            <div class="timeline-era-title">The golden generation's right-back</div>
+            <div class="timeline-era-years">Spain · 2008–2013 · 56 caps</div>
+          </div>
+          <p>Arbeloa's international career is the part that still startles people who remember him as a solid club full-back: 56 caps across the greatest international cycle any nation has produced. He was in the squads that won Euro 2008, the 2010 World Cup and Euro 2012, a starter at the 2012 tournament as Spain retained the title. Three major honours, zero defeats in finals, and a contact book containing the entire golden generation. The Xabi Alonso friendship, forged at Anfield and in those Spain camps, runs all the way into his coaching story.</p>
+          <div class="timeline-facts">
+            <span class="timeline-fact"><b>56</b> caps</span>
+            <span class="timeline-fact">Euro <b>2008</b> · World Cup <b>2010</b> · Euro <b>2012</b></span>
+          </div>
+        </div>
+        <div class="timeline-era" data-era="end">
+          <div class="timeline-era-head">
+            <div class="timeline-era-title">A quiet London goodbye</div>
+            <div class="timeline-era-years">West Ham · 2016–17 · retired June 2017</div>
+          </div>
+          <p>The final chapter was played out a few miles east of the Cottage. Arbeloa signed for West Ham on deadline day in August 2016, made four competitive appearances, was released at the end of the season and retired in June 2017, aged 34. An anticlimax as playing careers go, but a useful footnote now: he has lived and worked in London before, and his last act as a player was in the league he is about to coach in.</p>
+          <div class="timeline-facts">
+            <span class="timeline-fact"><b>4</b> appearances</span>
+            <span class="timeline-fact">Retired <b>June 2017</b>, aged 34</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="honours-strip">
+      <div class="honour"><div class="num">2</div><div class="lbl">Champions Leagues</div></div>
+      <div class="honour"><div class="num">3</div><div class="lbl">International titles<br>(WC 2010 · Euro 2008 &amp; 2012)</div></div>
+      <div class="honour"><div class="num">4</div><div class="lbl">Domestic trophies<br>(1 Liga · 2 Copa · 1 Supercopa)</div></div>
+      <div class="honour"><div class="num">2</div><div class="lbl">World &amp; Super Cups<br>(Club WC · UEFA Super Cup)</div></div>
+    </div>
+    <p class="note" style="margin-top:10px;">Honours as a player, per Real Madrid's official profile.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 03 · The Coach</div>
+    <h2>Six years, five teams, <em>and one impossible job.</em></h2>
+    <p class="lede">The coaching CV is short, steep and entirely contained within one institution. Arbeloa joined Real Madrid's academy in 2020 and climbed a rung roughly every season, the way the club develops coaches it believes in.</p>
+
+    <div class="ladder">
+      <div class="ladder-step">
+        <div class="ladder-year">2020</div>
+        <div class="ladder-what"><b>Joins the Real Madrid academy.</b> Starts at Infantil A (under-14s), then moves up to Cadete A (under-16s), winning league titles at both levels.</div>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-year">2022/23</div>
+        <div class="ladder-what"><b>Juvenil A treble.</b> Takes the under-19s to the league, the Copa del Rey and the Copa de Campeones in a single season, the marquee result of his academy years.</div>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-year">2024/25</div>
+        <div class="ladder-what"><b>Another Juvenil A league title</b>, while feeding players upward into Castilla and the first-team orbit.</div>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-year">May 2025</div>
+        <div class="ladder-what"><b>Promoted to Castilla</b>, Real Madrid's reserve side in the third-tier Primera Federación, replacing Raúl. Wins 12 of 23 matches and has them fourth at the midway point.</div>
+      </div>
+      <div class="ladder-step hot">
+        <div class="ladder-year">12 Jan 2026</div>
+        <div class="ladder-what"><b>Handed the first team.</b> Xabi Alonso and the club part by mutual agreement after seven months, and Arbeloa steps up mid-season into the most scrutinised dugout in world football.</div>
+      </div>
+      <div class="ladder-step hot">
+        <div class="ladder-year">June 2026</div>
+        <div class="ladder-what"><b>Departs as Mourinho returns.</b> A trophyless half-season ends with the club going back to a name from its past, and Arbeloa on the market at exactly the moment Fulham need a head coach.</div>
+      </div>
+    </div>
+
+    <div class="record-block">
+      <div class="record-label">Castilla record under Arbeloa · 23 matches · 2025/26</div>
+      <div class="record-bar" id="castilla-bar">
+        <div class="record-seg w" data-width="52.2">W12</div>
+        <div class="record-seg d" data-width="13.0">D3</div>
+        <div class="record-seg l" data-width="34.8">L8</div>
+      </div>
+      <div class="record-foot">Fourth in Primera Federación when promoted to the first team · per Transfermarkt</div>
+    </div>
+
+    <p>The first-team spell deserves an honest reading, because both the case for and the case against Arbeloa live inside the same six months. It began as badly as a Real Madrid tenure can begin: a Copa del Rey elimination away to second-tier Albacete in his very first match. It steadied. In Europe, his side came through a Champions League knockout tie against Benfica that the BBC billed as the pivotal moment of his interim spell (the hero image above is from that coverage, and yes, Benfica is also where Silva has just gone, football remains a small place). The run ended against Bayern Munich in the quarter-finals. In the league, Madrid finished second, eight points behind Barcelona, a gap that was largely inherited but is the kind of detail that does not get itemised on a Bernabéu season review.</p>
+    <p>Along the way he showed flashes of the personality Fulham would be buying. Asked about the title race in April, he refused the soft answer: "Seven games remain, and we must win all seven." Asked about refereeing, he produced the most Madrid sentence imaginable, that it is "easier for Real Madrid to win the Champions League" than La Liga. He protected young players, leaned on the academy boys he had coached at Castilla and Juvenil level, and left with a reputation intact rather than enhanced. Then the club called Mourinho, because that is what the club does, and Arbeloa's phone started ringing in English.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 04 · The Tactics</div>
+    <h2 class="green">A 4-3-3 that becomes a 4-2-3-1, <em>and full-backs who live in the opposition half.</em></h2>
+    <p class="lede">The clearest picture of Arbeloa the coach comes from Castilla, where he had a full pre-season and a free hand. The analysts who watched that side week to week (Managing Madrid's coverage is the best of it) describe a recognisable, modern identity: a 4-3-3 out of possession that rotates into a 4-2-3-1 with the ball, heavily influenced by his friend Xabi Alonso's ideas. Press the two buttons below to see how the same eleven players occupy the two shapes. We have mapped it onto the XI Silva finished the season with, so you can picture it in white.</p>
+
+    <div class="tactics-wrap">
+      <div class="tactics-toggle">
+        <button class="tactics-btn active" id="btn-shape-def">Out of possession · 4-3-3</button>
+        <button class="tactics-btn" id="btn-shape-att">In possession · 4-2-3-1</button>
+      </div>
+      <div class="pitch" id="pitch">
+        <div class="pitch-lines">
+          <div class="half"></div><div class="circle"></div>
+          <div class="box-top"></div><div class="box-bot"></div>
+        </div>
+        <!-- players injected by JS -->
+      </div>
+      <p class="tactics-caption" id="tactics-caption"></p>
+      <p class="note">Illustrative mapping by Cravenpod: Fulham's most-used late-season XI arranged in Arbeloa's Castilla shapes. Not team news.</p>
+    </div>
+
+    <div class="principle-grid">
+      <div class="principle">
+        <h4>Pressing on triggers, not on adrenaline</h4>
+        <p>Castilla pressed high but not constantly. The front line waited for cues, a poor touch, a pass into a marked man, a ball played backwards, then collapsed on the ball together. The aim was high recoveries without leaving the back four exposed every time the press was beaten. Closer to Silva's organised pressing than to full-throttle chaos.</p>
+      </div>
+      <div class="principle">
+        <h4>Vertical the moment the ball is won</h4>
+        <p>The sharpest difference from late-era Silva. Arbeloa's teams are told to play forward with purpose immediately after a recovery rather than recycle and settle. Managing Madrid's analysts noted the intent to exploit won possession quickly instead of circulating without a forward idea. Fulham's counter-attacking instincts should not be coached out under him.</p>
+      </div>
+      <div class="principle">
+        <h4>Narrow possession, rotating midfield</h4>
+        <p>With the ball, the shape squeezes narrow: short passing, positional rotations between the midfield three and the wide forwards, and a willingness to pass with risk between the lines. Width comes late and from deep, which brings us to the full-backs.</p>
+      </div>
+      <div class="principle">
+        <h4>Full-backs as the width of the team</h4>
+        <p>Fitting for a former full-back, the men in his old position do the most running. Both push aggressively high in possession, supplying the width that the narrow front line gives up. It demands serious athleticism from the two wide defenders and discipline from the pivot players covering behind them.</p>
+      </div>
+    </div>
+
+    <p>The shorthand, then: a possession team with a vertical streak, organised pressure, and attacking full-backs. If that sounds like a continuation of what the Cottage has watched for five years rather than a revolution, that is the point, and almost certainly part of why the club is talking to him.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 05 · What It Means</div>
+    <h2>Measured against the brief, <em>this is continuity with a gamble bolted on.</em></h2>
+    <p class="lede">When the search opened we wrote down the brief as the club's actions described it: possession football, a clear identity, a modern recruitment fit, and a coach comfortable working within a structure where he does not control every signing. Here is Arbeloa, line by line, against that brief.</p>
+
+    <div class="brief-check">
+      <div class="brief-row">
+        <div class="brief-icon yes">✓</div>
+        <div class="brief-ask">Possession-based identity</div>
+        <div class="brief-evidence">His Castilla side played front-foot, short-passing, high-recovery football in a 4-3-3/4-2-3-1. Stylistically the closest thing to Silva continuity of any name linked.</div>
+      </div>
+      <div class="brief-row">
+        <div class="brief-icon yes">✓</div>
+        <div class="brief-ask">Works within a club structure</div>
+        <div class="brief-evidence">Six years inside the most political club on earth, promoted four times, never once briefing against the house. He has spent his entire coaching life developing other people's signings.</div>
+      </div>
+      <div class="brief-row">
+        <div class="brief-icon yes">✓</div>
+        <div class="brief-ask">Improves young players</div>
+        <div class="brief-evidence">League titles at under-14, under-16 and under-19 level, a Juvenil treble, and a track record of moving academy players up the pyramid. Relevant to a squad with Kevin, Bobb and the next academy wave in it.</div>
+      </div>
+      <div class="brief-row">
+        <div class="brief-icon maybe">?</div>
+        <div class="brief-ask">Proven at senior level</div>
+        <div class="brief-evidence">Twenty-three third-tier matches and six months of Real Madrid, ending trophyless: second in La Liga, a Champions League quarter-final, and that Albacete night. Real evidence, tiny sample.</div>
+      </div>
+      <div class="brief-row">
+        <div class="brief-icon no">✕</div>
+        <div class="brief-ask">Premier League experience</div>
+        <div class="brief-evidence">None as a coach. Three seasons at Liverpool and a season at West Ham as a player is familiarity, not experience. He has never managed a relegation scrap, a winter fixture pile-up or a British press room.</div>
+      </div>
+    </div>
+
+    <p>The squad fit is genuinely encouraging, which matters more than the romance. The XI Silva left behind already plays a 4-2-3-1 with a double pivot, attacking full-backs and a narrow creative line: Castagne and Robinson are precisely the high, hard-running wide defenders his system feeds on, Berge and Iwobi can hold a pivot, and the Kevin, Bobb and Smith Rowe profiles suit a coach who wants rotation and risk between the lines. The questions sit at the ends of the pitch. The Athletic's reporting flagged the uncertainty around Raúl Jiménez and Harry Wilson this summer, and a vertical, transition-happy system would change the brief for whoever leads the line. The first window of the Arbeloa era, conducted under the Premier League's new squad cost rules, will tell us quickly how joined-up the appointment is.</p>
+    <p>And there is a cold financial logic underneath it all. From this season the SCR regime is live: squad costs capped against revenue, every wage and amortisation pound counted. A 43-year-old first-time permanent head coach does not command a Slot salary or a McKenna release clause. The money saved in the dugout is money available on the pitch. Unromantic, but it is exactly the kind of arithmetic this club has been quietly good at, and we wrote a whole dashboard about why it has to be.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="section">
+    <div class="section-kicker">§ 06 · The Cravenpod Read</div>
+    <div class="verdict">
+      <div class="verdict-label">The bottom line</div>
+      <div class="verdict-headline">A coherent gamble. <em>The ceiling is real and so is the floor.</em></div>
+      <p>Strip the surprise away and the logic holds. Fulham wanted stylistic continuity, a coach who develops players, and a profile that fits the wage structure of the SCR era. Arbeloa ticks every one of those boxes more cleanly than the bigger names on the original list. The football his teams play would not ask this squad to become something it is not.</p>
+      <p>The risk is just as easy to state. Six months of senior management, none of it in England, none of it without the word Madrid on the badge. Premier League seasons are won in November away ends and February injury crises, places his CV has simply never been. If it goes wrong, it will go wrong in ways no Castilla season could have rehearsed.</p>
+      <p>Our honest position: intrigued, slightly nervous, and more convinced than we expected to be when the name first dropped. The last time Fulham hired a coach most of the fanbase had to Google, it bought us five years and a points record. Sit tight. The announcement, by all accounts, is close.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+</div>
+
+<section class="interactive-section">
+  <div class="interactive-inner">
+    <div class="interactive-kicker">§ 07 · Your Verdict</div>
+    <h2>Rate the appointment. <em>Then call the first season.</em></h2>
+    <p class="intro">Two polls. Both save in your browser and feed the live community totals, same as the next-manager vote.</p>
+
+    <div class="poll-block" id="rating-block">
+      <h3>How do you feel about Arbeloa to Fulham?</h3>
+      <div class="poll-options" id="rating-options">
+        <button class="poll-btn" data-poll="rating" data-choice="excited" onclick="castVote('rating','excited')">
+          <span>Excited · the upside is huge and the fit is right</span>
+          <span class="poll-pct" id="rating-pct-excited">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="rating-bar-excited"></div></div>
+
+        <button class="poll-btn" data-poll="rating" data-choice="intrigued" onclick="castVote('rating','intrigued')">
+          <span>Intrigued · cautiously on board, ask me in December</span>
+          <span class="poll-pct" id="rating-pct-intrigued">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="rating-bar-intrigued"></div></div>
+
+        <button class="poll-btn" data-poll="rating" data-choice="nervous" onclick="castVote('rating','nervous')">
+          <span>Nervous · too big a gamble on too thin a CV</span>
+          <span class="poll-pct" id="rating-pct-nervous">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="rating-bar-nervous"></div></div>
+
+        <button class="poll-btn" data-poll="rating" data-choice="against" onclick="castVote('rating','against')">
+          <span>Against · we should have fought harder for a proven name</span>
+          <span class="poll-pct" id="rating-pct-against">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="rating-bar-against"></div></div>
+      </div>
+      <div class="poll-count" id="rating-count"></div>
+    </div>
+
+    <div class="poll-block" id="finish-block">
+      <h3>Where does Arbeloa's first Fulham season finish?</h3>
+      <div class="poll-options" id="finish-options">
+        <button class="poll-btn" data-poll="finish" data-choice="top8" onclick="castVote('finish','top8')">
+          <span>Top eight · the spring fade finally fixed</span>
+          <span class="poll-pct" id="finish-pct-top8">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-top8"></div></div>
+
+        <button class="poll-btn" data-poll="finish" data-choice="mid" onclick="castVote('finish','mid')">
+          <span>Ninth to twelfth · steady, more of the same</span>
+          <span class="poll-pct" id="finish-pct-mid">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-mid"></div></div>
+
+        <button class="poll-btn" data-poll="finish" data-choice="lower" onclick="castVote('finish','lower')">
+          <span>Thirteenth to seventeenth · a bumpy transition year</span>
+          <span class="poll-pct" id="finish-pct-lower">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-lower"></div></div>
+
+        <button class="poll-btn" data-poll="finish" data-choice="scrap" onclick="castVote('finish','scrap')">
+          <span>A relegation scrap · the gamble misfires</span>
+          <span class="poll-pct" id="finish-pct-scrap">0%</span>
+        </button>
+        <div class="poll-bar-wrap"><div class="poll-bar" id="finish-bar-scrap"></div></div>
+      </div>
+      <div class="poll-count" id="finish-count"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="article-body">
+
+  <div class="sources">
+    <div class="sources-label">Sources &amp; reporting · 12 June 2026</div>
+    <p>Fulham talks reported by David Ornstein in The Athletic (10 June 2026, syndicated via <a href="https://sports.yahoo.com/articles/fulham-hold-talks-alvaro-arbeloa-060500349.html" target="_blank" rel="noopener">Yahoo Sports</a> and <a href="https://tribuna.com/en/news/2026-06-10-fulham-hold-talks-with-alvaro-arbeloa-over-becoming-next-head-coach-ornstein/" target="_blank" rel="noopener">Tribuna</a>), with shortlist context from <a href="https://www.goal.com/en-au/lists/premier-league-news-fulham-alvaro-arbeloa-talks-ruben-amorim-shortlist/blt33ae38ed220d8411" target="_blank" rel="noopener">Goal</a>. Playing career and honours per <a href="https://www.realmadrid.com/en-US/news/football/first-team/latest-news/arbeloa-cumple-43-anos-17-01-2026" target="_blank" rel="noopener">Real Madrid's official profile</a>, <a href="https://www.liverpoolfc.com/news/first-team/286040-7-alvaro-arbeloa-january-2007" target="_blank" rel="noopener">Liverpool FC</a> and <a href="https://www.lfchistory.net/players/1177" target="_blank" rel="noopener">LFChistory</a>; the Camp Nou Messi assignment per <a href="https://www.givemesport.com/1464377-bolo-zenden-says-rafa-benitez-played-arbeloa-leftback-to-mark-lionel-messi-in-2007-cl/" target="_blank" rel="noopener">GiveMeSport</a>. Coaching record per Real Madrid, Transfermarkt (Castilla, W12 D3 L8 from 23) and <a href="https://ca.sports.yahoo.com/news/alvaro-arbeloa-coaching-career-real-191306216.html" target="_blank" rel="noopener">Yahoo's coaching career timeline</a>. First-team appointment per <a href="https://www.espn.com/soccer/story/_/id/47590541/real-madrid-end-coaching-contract-xabi-alonso-mutual-agreement" target="_blank" rel="noopener">ESPN</a>; tenure detail and quotes per <a href="https://www.realmadrid.com/en-US/news/football/first-team/press-conference/rueda-de-prensa-de-arbeloa-pre-real-madrid-alaves-j33-liga-20-04-2026" target="_blank" rel="noopener">Real Madrid press conferences</a>, <a href="https://www.espn.com/soccer/story/_/id/48539458/alvaro-arbeloa-laliga-refs-easier-real-madrid-win-champions-league" target="_blank" rel="noopener">ESPN</a> and AP's departure coverage; the Benfica tie framing and hero image via BBC Sport. Tactical reading informed by Managing Madrid's Arbeloa profile and Castilla season coverage. The Fulham XI used on the tactics board is from our own Fulham 2-0 Newcastle report. At publication Fulham have made no official announcement; this piece will be updated when they do.</p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div>
+    <a href="/">← Back to Cravenpod</a>
+    <a href="/posts/the-next-manager/">↑ Read The Next Manager: how the race looked before this name</a>
+    <a href="/posts/the-silva-years-pt4-goodbye-and-thank-you/">↑ The Silva Years, Pt 4: Goodbye and Thank You</a>
+    <a href="https://podfollow.com/thats-so-craven">🎙 Listen to the Podcast</a>
+    <a href="https://discord.gg/mUZQhDHJPR">💬 Join the Discord</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function() {
+  /* ---------- Career timeline ---------- */
+  const tabs = document.querySelectorAll('#era-tabs .timeline-tab');
+  const segs = document.querySelectorAll('#era-spine .timeline-seg');
+  const eras = document.querySelectorAll('.timeline-era');
+  function showEra(era) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.era === era));
+    segs.forEach(s => s.classList.toggle('active', s.dataset.era === era));
+    eras.forEach(e => e.classList.toggle('active', e.dataset.era === era));
+  }
+  tabs.forEach(t => t.addEventListener('click', () => showEra(t.dataset.era)));
+  segs.forEach(s => s.addEventListener('click', () => showEra(s.dataset.era)));
+
+  /* ---------- Castilla record bar (animate on view) ---------- */
+  const bar = document.getElementById('castilla-bar');
+  if (bar && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          bar.querySelectorAll('.record-seg').forEach(seg => { seg.style.width = seg.dataset.width + '%'; });
+          obs.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.4 });
+    obs.observe(bar);
+  } else if (bar) {
+    bar.querySelectorAll('.record-seg').forEach(seg => { seg.style.width = seg.dataset.width + '%'; });
+  }
+
+  /* ---------- Tactics board ---------- */
+  /* Coordinates are % of pitch (x left→right, y top=opposition goal) */
+  const players = [
+    { id: 'leno',     name: 'Leno',       num: '1',  gk: true,
+      def: { x: 50, y: 93 }, att: { x: 50, y: 92 } },
+    { id: 'castagne', name: 'Castagne',   num: '2',
+      def: { x: 84, y: 76 }, att: { x: 88, y: 38 } },
+    { id: 'diop',     name: 'Diop',       num: '31',
+      def: { x: 63, y: 81 }, att: { x: 64, y: 74 } },
+    { id: 'bassey',   name: 'Bassey',     num: '3',
+      def: { x: 37, y: 81 }, att: { x: 36, y: 74 } },
+    { id: 'robinson', name: 'Robinson',   num: '33',
+      def: { x: 16, y: 76 }, att: { x: 12, y: 38 } },
+    { id: 'berge',    name: 'Berge',      num: '16',
+      def: { x: 50, y: 62 }, att: { x: 60, y: 58 } },
+    { id: 'iwobi',    name: 'Iwobi',      num: '17',
+      def: { x: 32, y: 50 }, att: { x: 40, y: 58 } },
+    { id: 'kevin',    name: 'Kevin',      num: '7',
+      def: { x: 68, y: 50 }, att: { x: 50, y: 36 } },
+    { id: 'bobb',     name: 'Bobb',       num: '11',
+      def: { x: 80, y: 28 }, att: { x: 68, y: 26 } },
+    { id: 'smithrowe',name: 'Smith Rowe', num: '32',
+      def: { x: 20, y: 28 }, att: { x: 32, y: 26 } },
+    { id: 'muniz',    name: 'Muniz',      num: '9',
+      def: { x: 50, y: 18 }, att: { x: 50, y: 14 } }
+  ];
+  const captions = {
+    def: '<b>Out of possession: 4-3-3.</b> Muniz leads a front three with Bobb and Smith Rowe tucked off the touchline, screening passes into midfield and waiting for a pressing trigger. Behind them Iwobi, Berge and Kevin form the midfield three, with Berge sitting deepest. The full-backs hold a conventional line. Compact, organised, ready to collapse on a loose touch.',
+    att: '<b>In possession: 4-2-3-1.</b> The shape rotates rather than changes personnel. Berge and Iwobi settle into a double pivot, Kevin steps up between the lines as the ten, and the wide forwards pinch inside. Castagne and Robinson provide the entire width of the team, pushed up almost level with the front line. High risk at the back, lots of bodies between the lines.'
+  };
+  const pitch = document.getElementById('pitch');
+  const caption = document.getElementById('tactics-caption');
+  const btnDef = document.getElementById('btn-shape-def');
+  const btnAtt = document.getElementById('btn-shape-att');
+
+  players.forEach(p => {
+    const el = document.createElement('div');
+    el.className = 'player' + (p.gk ? ' gk' : '');
+    el.id = 'pl-' + p.id;
+    el.innerHTML = '<div class="dot">' + p.num + '</div><div class="tag">' + p.name + '</div>';
+    pitch.appendChild(el);
+  });
+
+  function setShape(shape) {
+    players.forEach(p => {
+      const el = document.getElementById('pl-' + p.id);
+      const pos = p[shape];
+      el.style.left = pos.x + '%';
+      el.style.top = pos.y + '%';
+    });
+    caption.innerHTML = captions[shape];
+    btnDef.classList.toggle('active', shape === 'def');
+    btnAtt.classList.toggle('active', shape === 'att');
+  }
+  btnDef.addEventListener('click', () => setShape('def'));
+  btnAtt.addEventListener('click', () => setShape('att'));
+  setShape('def');
+
+  /* ---------- Polls (Supabase + localStorage, shared pattern) ---------- */
+  const SB_URL = 'https://tbumgokrhiwjeyszwakk.supabase.co';
+  const SB_KEY = 'sb_publishable__JmdWQo-Ppt1gYzT5eaf8A_rCvXm1iY';
+  const sb = (window.supabase && window.supabase.createClient) ? window.supabase.createClient(SB_URL, SB_KEY) : null;
+
+  const LS_PREFIX = 'cravenpod-arbeloa-';
+  const POLL_IDS = {
+    rating: 'arbeloa-rating',
+    finish: 'arbeloa-first-season'
+  };
+
+  function lsGet(p) { try { return localStorage.getItem(LS_PREFIX + p) || null; } catch(e) { return null; } }
+  function lsSet(p, v) { try { localStorage.setItem(LS_PREFIX + p, v); } catch(e) {} }
+
+  async function fetchCounts(pollId) {
+    if (!sb) return {};
+    try {
+      const { data, error } = await sb.from('poll_counts').select('choice, count').eq('poll_id', pollId);
+      if (error || !data) return {};
+      const counts = {};
+      data.forEach(row => { counts[row.choice] = parseInt(row.count) || 0; });
+      return counts;
+    } catch(e) { return {}; }
+  }
+
+  function pollChoices(pollName) {
+    const block = document.getElementById(pollName + '-block'); if (!block) return [];
+    return Array.from(block.querySelectorAll('.poll-btn[data-choice]')).map(b => b.dataset.choice);
+  }
+
+  function renderPoll(pollName, userChoice, counts) {
+    const block = document.getElementById(pollName + '-block'); if (!block) return;
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (total === 0 && !userChoice) return;
+    block.classList.add('poll-voted');
+    block.querySelectorAll('.poll-btn').forEach(btn => { btn.classList.remove('user-choice'); if (btn.dataset.choice === userChoice) btn.classList.add('user-choice'); });
+    pollChoices(pollName).forEach(choice => {
+      const count = counts[choice] || 0;
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      const pctEl = document.getElementById(pollName + '-pct-' + choice);
+      const barEl = document.getElementById(pollName + '-bar-' + choice);
+      if (pctEl) pctEl.textContent = pct + '%';
+      if (barEl) setTimeout(() => { barEl.style.width = pct + '%'; }, 50);
+    });
+    const countEl = document.getElementById(pollName + '-count');
+    if (countEl) countEl.textContent = total + (total === 1 ? ' vote' : ' votes') + ' cast';
+  }
+
+  window.castVote = async function(pollName, choice) {
+    if (lsGet(pollName)) return;
+    const pollId = POLL_IDS[pollName]; if (!pollId) return;
+    lsSet(pollName, choice);
+    if (sb) { try { await sb.from('poll_votes').insert({ poll_id: pollId, choice: choice }); } catch(e) {} }
+    const counts = await fetchCounts(pollId);
+    renderPoll(pollName, choice, counts);
+  };
+
+  async function initPolls() {
+    for (const [pollName, pollId] of Object.entries(POLL_IDS)) {
+      const userChoice = lsGet(pollName);
+      const counts = await fetchCounts(pollId);
+      renderPoll(pollName, userChoice, counts);
+    }
+  }
+  initPolls();
+})();
+</script>
+
+<script data-goatcounter="https://cravenpod.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
